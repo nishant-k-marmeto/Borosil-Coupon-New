@@ -9,6 +9,18 @@ Shopify.CustomDiscountSubmit = function (requstCouponCode) {
   discountApplyBtn.classList.add('btn-loading');
   discountApplyBtn.setAttribute('disabled', true);
 
+  // Define the button element
+  const discountButton = document.querySelector('.back-button-discount-header');
+  function triggerDiscountButtonClick() {
+    if (discountButton) {
+      discountButton.click(); 
+    } else {
+      console.warn('Button not found!');
+    }
+  }
+  
+
+
   if (afCouponApplyBtn) {
     afCouponApplyBtn.classList.add("af_custom_apply_coupon_trigger_loading");
     afCouponApplyBtn.setAttribute('disabled', true);
@@ -39,7 +51,6 @@ Shopify.CustomDiscountSubmit = function (requstCouponCode) {
     const loaderDiscount = document.querySelector('.loader-discount')
     const applyText = document.getElementById('apply-text');
     const applyLoader = document.getElementById('apply-loader');
-
     // Show the loader and hide the "Apply" text
     applyText.style.display = 'none';
     applyLoader.setAttribute('style', 'display: block !important;');
@@ -64,7 +75,9 @@ Shopify.CustomDiscountSubmit = function (requstCouponCode) {
         const error = await response.json();
         throw { status: response.status, message: error.error };
       }
-
+      debugger
+      window.sessionStorage.setItem('custom_coupon-code', couponCodeValue);
+      document.cookie = "discount_code=" + couponCodeValue + "; expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/";
       debugger
       const res = await response.json();
       const discountCode = res.data.response.formatted_text.discount_pair.discountCode;
@@ -83,19 +96,12 @@ Shopify.CustomDiscountSubmit = function (requstCouponCode) {
       } else {
         console.warn('Element  "final-discount-price" not found!.');
       }
-
+      
       if (discountedPrices.length > 0) {
         discountedPrices.forEach(element => {
           element.remove();
         });
       }
-
-      sessionStorage.setItem('applyCoupun', discount_code);
-      sessionStorage.setItem('Coupun_saveAmount', discountAmount);
-
-      window.sessionStorage.setItem('custom_coupon-applied', JSON.stringify(res));
-      window.sessionStorage.setItem('custom_coupon-code', discountCode);
-      document.cookie = "discount_code=" + discountCode + "; expires=Fri, 31 Dec 9999 23:59:59 GMT;path=/";
     } catch (error) {
       if (error.status === 404 || error.status === 403 || error.status === 0) {
         console.log(error.message);
@@ -110,6 +116,7 @@ Shopify.CustomDiscountSubmit = function (requstCouponCode) {
       applyLoader.setAttribute('style', 'display: none !important;');
       applyText.style.display = 'block';
       resetFrontendState();
+      triggerDiscountButtonClick();
     }
   }
 
