@@ -19,6 +19,8 @@
         </button>
       </div>
     </div>
+    <div id="discount-offer-showBtn" class="discount-offer-showBtn"></div>
+    <div id="discount-price-offShow"></div>
   </div>
   <div class="toogle-button-discount">
     <button class="all-offers-btn selected">All Offers</button>
@@ -96,5 +98,30 @@
     border-radius: 50%;
     -webkit-animation: 1s spin linear infinite;
     animation: 1s spin linear infinite;
+  }
+  .discount-offer-showBtn{
+    display: flex;
+    font-weight: 900;
+    width: fit-content;
+    padding: 10px;
+    line-height: 1.19;
+    text-transform: uppercase;
+    margin: 12px 12px 12px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 0.2px solid black;
+  }
+  #discount-price-offShow {
+    display: flex;
+    padding: 0px 10px;
+    justify-content: space-between;
+  }
+  .dicount-price-closeBtn {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: none;
   }
 </style>

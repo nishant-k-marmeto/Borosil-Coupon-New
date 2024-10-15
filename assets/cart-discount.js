@@ -46,11 +46,15 @@ Shopify.CustomDiscountSubmit = function (requstCouponCode) {
   }
 
   async function applyDiscount(cart, couponCodeValue) {
-    const discountAPI = 'https://f569-106-51-87-194.ngrok-free.app/discount';
+    const discountAPI = 'https://4fe2-106-51-87-194.ngrok-free.app/discount';
     const customerId = parseInt(discountWrapperElement.getAttribute('data-userId'));
     const loaderDiscount = document.querySelector('.loader-discount')
     const applyText = document.getElementById('apply-text');
     const applyLoader = document.getElementById('apply-loader');
+    const discountButton = document.querySelector('#discount-offer-showBtn');
+    const discountOffShow = document.querySelector('#discount-price-offShow');
+
+    
     // Show the loader and hide the "Apply" text
     applyText.style.display = 'none';
     applyLoader.setAttribute('style', 'display: block !important;');
@@ -85,6 +89,8 @@ Shopify.CustomDiscountSubmit = function (requstCouponCode) {
       const totalPrice = res.data.response.formatted_text.total_price;
       const discountAmount = res.data.response.formatted_text.discount_amount;
       const discount_code = res.data.response.formatted_text.discount_pair.discountCode;
+      discountButton.innerHTML = `<span>${couponCodeValue}</span> <button class="dicount-price-closeBtn" onclick="Shopify.DiscountRemove()">X</button>`;
+      discountOffShow.innerHTML=`<span>Discount Applied</span> <span>-₹${finalTotalPrice}</span>`
 
       // Insert the final total price into the specified element
       debugger
@@ -152,3 +158,47 @@ Shopify.CustomDiscountSubmit = function (requstCouponCode) {
     }
   }
 }
+
+Shopify.DiscountRemove = function () {
+  const discountWrapperElement = document.querySelector('.custom-cart-discount-wrapper');
+  const discountButton = document.querySelector('#discount-offer-showBtn');
+  const discountOffShow = document.querySelector('#discount-price-offShow');
+  const initialCartPrice = document.querySelector('#inital-cart-price');
+  const finalDiscountPriceElement = document.querySelector('#final-disocunt-price');
+  const applyLoader = document.getElementById('apply-loader');
+  const applyText = document.getElementById('apply-text');
+
+  // Clear session storage and cookie related to the coupon
+  sessionStorage.removeItem('custom_coupon-code');
+  document.cookie = "discount_code=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+
+  // Undo the discount-related changes in the UI
+  if (initialCartPrice) {
+    initialCartPrice.classList.remove('disocunted-price-main'); // Remove the discounted price class
+  }
+
+  if (finalDiscountPriceElement) {
+    finalDiscountPriceElement.innerHTML = ''; // Clear the final discounted price display
+  }
+
+  if (discountButton) {
+    discountButton.innerHTML = ''; // Clear the discount button content
+  }
+
+  if (discountOffShow) {
+    discountOffShow.innerHTML = ''; // Clear the discount applied message
+  }
+
+  // Reset the loader and apply button text states
+  if (applyLoader) {
+    applyLoader.setAttribute('style', 'display: none !important;');
+  }
+  if (applyText) {
+    applyText.style.display = 'block'; // Restore the "Apply" button text
+  }
+
+  // Optionally reset any other state or UI elements
+  resetFrontendState();
+
+  console.log('Coupon removed and UI reset!');
+};
