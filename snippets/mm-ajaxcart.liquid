@@ -721,9 +721,11 @@
             </div> {% endcomment %}
           </div>
           <div class="mm-bottom-consolidated">
-            <div class="new-price-subtotal">{{ grand_total | money_with_currency }}
+            <div class="new-price-subtotal-container">
+              <span id='inital-cart-price' class="new-price-subtotal">{{ grand_total | money_with_currency }}</span>
+              <span id='final-disocunt-price'class="new-disocunt-price-subtotal"></span>
               <span class="cart_tax_info">Inclusive of all taxes</span>
-            </div>
+              </div>
             <button class="svg-up-arrow">
               {% comment %} <img width="35" height="35" src="https://img.icons8.com/fluency-systems-regular/48/circled-up-2.png" loading="lazy" alt="circled-up-2"/> {% endcomment %}
               <svg fill="#000000" height="20" width="20" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve">

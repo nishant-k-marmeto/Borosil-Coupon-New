@@ -13088,3 +13088,22 @@ virtual-product-button .ProductErrorMessage {
 .haptik-xdk-container iframe{
   z-index: 2 !important;
 }
+/* disocunt price */
+.disocunted-price-main{
+  text-decoration: line-through;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.new-disocunt-price-subtotal{
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  color: #000;
+  font-weight: 900;
+}
+.new-price-subtotal-container {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}

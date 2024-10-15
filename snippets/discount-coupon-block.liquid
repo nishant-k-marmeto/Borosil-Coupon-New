@@ -14,7 +14,8 @@
       </div>
       <div class="cart-discount-apply">
         <button type="button" id="apply-coupon-btn" onclick="Shopify.CustomDiscountSubmit()">
-          <span>Apply</span>
+          <span id="apply-text" style="display: block;">Apply</span>
+          <div class="nb-spinner" id="apply-loader"></div>
         </button>
       </div>
     </div>
@@ -84,3 +85,16 @@
   </div>
 </offer-toggle>
 
+<style>
+  .nb-spinner {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    background: transparent;
+    border-top: 4px solid #013564;;
+    border-right: 4px solid transparent;
+    border-radius: 50%;
+    -webkit-animation: 1s spin linear infinite;
+    animation: 1s spin linear infinite;
+  }
+</style>

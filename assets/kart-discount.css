@@ -28,6 +28,7 @@ offer-toggle{
   padding: 5px;
 }
 .cart_tax_info{
+  font-weight: 500;
   font-size: 10px;
 }
 .mm-bottom-consolidated{
@@ -162,18 +163,17 @@ offer-toggle{
 .new-price-subtotal{
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-size: 18px;
   color: black;
   font-weight: 900 ;
 }
-  .toogle-button-discount {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 20px 10px;
-    background: #F6F6F8;
-  }
+.toogle-button-discount {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 10px;
+  background: #F6F6F8;
+}
 
   .all-offer-combined-container {
     padding: 20px 0px;
