@@ -1,0 +1,909 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "1638533315aab6f728": {
+      "type": "homepage-product-preview",
+      "blocks": {
+        "37ccdb35-0029-4def-8221-4081153d0df2": {
+          "type": "Blocks",
+          "settings": {
+            "link": "shopify://collections/deals",
+            "image": "shopify://shop_images/Glass-mixing-bowl_8e68f863-3746-4b4d-b353-5e074faa0a04.png",
+            "text": "Deals"
+          }
+        },
+        "c5ba86c7-c5b8-447a-b34a-f3576eae5d4c": {
+          "type": "Blocks",
+          "disabled": true,
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/Home-page-circle-6.jpg",
+            "text": "Make Your Dinner Set"
+          }
+        },
+        "6ace512c-16e1-4095-80b7-168c1971ee57": {
+          "type": "Blocks",
+          "disabled": true,
+          "settings": {
+            "link": "",
+            "image": "shopify://shop_images/Home-page-circle-7.jpg",
+            "text": "Customise Your Bottle"
+          }
+        },
+        "3fb0e5cf-119e-47fa-95b8-fd9f56225f9d": {
+          "type": "Blocks",
+          "settings": {
+            "link": "shopify://collections/larah",
+            "image": "shopify://shop_images/Larah-Logo-Color_2.png",
+            "text": "Opal Glass"
+          }
+        },
+        "ad8e4eff-de25-448f-bc05-070639b7f8df": {
+          "type": "Blocks",
+          "settings": {
+            "link": "shopify://collections/wedding",
+            "image": "shopify://shop_images/gift_box_1.jpg",
+            "text": "Wedding Gifts"
+          }
+        },
+        "47076815-bf81-40b6-a00a-e742309a3ba8": {
+          "type": "Blocks",
+          "disabled": true,
+          "settings": {
+            "link": "https://myborosil.com/a/recommendations",
+            "image": "shopify://shop_images/Chopping-board-_-Wooden-spoon-1.png",
+            "text": "Combo"
+          }
+        },
+        "711a7156-cf68-42be-ae19-71e2e0d52a85": {
+          "type": "Blocks",
+          "settings": {
+            "link": "shopify://collections/gas-stove",
+            "image": "shopify://shop_images/Gas-stove-4-burner.png",
+            "text": "Gas Stove"
+          }
+        },
+        "96b546e7-4d44-4109-866f-2b0f0b61b4c9": {
+          "type": "Blocks",
+          "settings": {
+            "link": "shopify://collections/new-arrival",
+            "image": "shopify://shop_images/Chopping-board-_-Wooden-spoon-2.png",
+            "text": "New Arrivals"
+          }
+        },
+        "f6308bbf-603a-4e3e-8204-21c79a84b457": {
+          "type": "Blocks",
+          "settings": {
+            "link": "shopify://collections/breakfast-series",
+            "image": "shopify://shop_images/Breakfast.jpg",
+            "text": "Breakfast Series"
+          }
+        },
+        "e8196482-b2ca-4550-bf65-937d3e33df9f": {
+          "type": "Blocks",
+          "settings": {
+            "link": "shopify://blogs/product-blog",
+            "image": "shopify://shop_images/Home-page-circle-2.jpg",
+            "text": "Blogs"
+          }
+        }
+      },
+      "block_order": [
+        "37ccdb35-0029-4def-8221-4081153d0df2",
+        "c5ba86c7-c5b8-447a-b34a-f3576eae5d4c",
+        "6ace512c-16e1-4095-80b7-168c1971ee57",
+        "3fb0e5cf-119e-47fa-95b8-fd9f56225f9d",
+        "ad8e4eff-de25-448f-bc05-070639b7f8df",
+        "47076815-bf81-40b6-a00a-e742309a3ba8",
+        "711a7156-cf68-42be-ae19-71e2e0d52a85",
+        "96b546e7-4d44-4109-866f-2b0f0b61b4c9",
+        "f6308bbf-603a-4e3e-8204-21c79a84b457",
+        "e8196482-b2ca-4550-bf65-937d3e33df9f"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "163852180237d8610d": {
+      "type": "homepage-slider-banner",
+      "blocks": {
+        "blocks_mJxKzY": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/0_375e481b-1381-45cd-aa82-892c003f8930.png",
+            "mobile_image": "shopify://shop_images/0_e1d3da12-3b9c-408a-89f8-77b375d997bf.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/diwali-sale?utm_source=banner&utm_medium=banner&utm_campaign=festivesale_main_pink",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "blocks_D4ncm8": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Gifts_Festive_SEP24_Desktop_Banner_1.png",
+            "mobile_image": "shopify://shop_images/Gifts_Festive_SEP24_Mobile_Banner_1.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/diwali-sale?utm_source=banner&utm_medium=banner&utm_campaign=giftsforyou_campaign",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "blocks_pXTAFF": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Diya_SEP24_PHASE_2_Desktop_banner-12.png",
+            "mobile_image": "shopify://shop_images/Diya_SEP24_PHASE_2_Mobile_banner-14.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/diya-diffusers?utm_source=banner&utm_medium=banner&utm_campaign=homedecor_festivesale",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "a8cdbf5c-4111-494e-a55b-009cae6f3c4c": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Festive_SEP24_Lunch_Box_Desktop_1.png",
+            "mobile_image": "shopify://shop_images/Festive_SEP24-Mobile_Lunch_Box_1.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/glass-lunchboxes?utm_source=banner&utm_medium=banner&utm_campaign=GLlunchboxes_festivesale",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "b3d2b3d6-28a3-41dd-8fed-1e1a3698f4ea": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Festive_SEP24_Desktop_Banner_Appliance_2.png",
+            "mobile_image": "shopify://shop_images/Festive_SEP24-Mobile_Appliance.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/kitchen-appliances?utm_source=banner&utm_medium=banner&utm_campaign=appliances_festivesale",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "blocks_awzVyc": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Festive_SEP24_Hydra_personalised_Destop.png",
+            "mobile_image": "shopify://shop_images/Festive_SEP24_Hydra_personalised_Mobile.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/personalise-bottles?utm_source=banner&utm_medium=banner&utm_campaign=personalisedbottles_festivesale",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "blocks_VeiUPc": {
+          "type": "Blocks",
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify://shop_images/Cookware_SEP24_Desktop_Banner.png",
+            "mobile_image": "shopify://shop_images/Cookware_SEP24_Mobile_Banner_1.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/shop-by-collection?utm_source=banner&utm_medium=banner&utm_campaign=cookwarenonfestive",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "fdbc4742-b4d4-4a44-b87c-9023d4024b39": {
+          "type": "Blocks",
+          "disabled": true,
+          "settings": {
+            "desktop_image": "shopify://shop_images/Hydra_Personalisation_SEP24_Desktop_Banner_1.png",
+            "mobile_image": "shopify://shop_images/Hydra_Personalisation_SEP24_Mobile_Banner_1.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/personalise-bottles?utm_source=banner&utm_medium=banner&utm_campaign=hydra_personalise_sept",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "05684324-3c57-48f5-be74-f5398d30cb1f": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Larah_Desktop_Banner.png",
+            "mobile_image": "shopify://shop_images/Larah_Mobile_Banner.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/pages/larah-page?utm_source=banner&utm_medium=banner&utm_campaign=larah_sept",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        }
+      },
+      "block_order": [
+        "blocks_mJxKzY",
+        "blocks_D4ncm8",
+        "blocks_pXTAFF",
+        "a8cdbf5c-4111-494e-a55b-009cae6f3c4c",
+        "b3d2b3d6-28a3-41dd-8fed-1e1a3698f4ea",
+        "blocks_awzVyc",
+        "blocks_VeiUPc",
+        "fdbc4742-b4d4-4a44-b87c-9023d4024b39",
+        "05684324-3c57-48f5-be74-f5398d30cb1f"
+      ],
+      "settings": {
+      }
+    },
+    "39499650-1b6a-4b1a-8430-a0dd0ece711e": {
+      "type": "category-section",
+      "blocks": {
+        "f741e7c7-9acd-48fe-8ede-51e1549a8eea": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/Hydra_Best_Offer_SEp24.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "https://myborosil.com/collections/stainless-steel-bottles?utm_source=banner&utm_medium=banner&utm_campaign=hydra_bestoffer_21sep",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "9c3cf3e2-0491-4f65-8fb4-6d497afd1667": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/Gas_Stove_Best_Offer_SEP24_1.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "https://myborosil.com/collections/flare-gas-stove?utm_source=banner&utm_medium=banner&utm_campaign=flaregasstove_bestoffer_festivesale",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "image_7iEpc4": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/Cookware_Best_Offer_SEp24.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "https://myborosil.com/collections/shop-by-collection?utm_source=banner&utm_medium=banner&utm_campaign=cookware_bestoffer_21sep",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "image_DDaH6y": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/Home-Decor-SEP24-BEST-OFFER-Banner.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "https://myborosil.com/collections/vases?utm_source=banner&utm_medium=banner&utm_campaign=homedecor_vases_explorebest_sep",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "d2ba395a-bc88-480e-bd13-34900f5eb2ca": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/Appliance_Best_Offer_SEp24.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "https://myborosil.com/collections/kitchen-appliances?utm_source=banner&utm_medium=banner&utm_campaign=appliances_bestoffer_21sep",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "image_nBQXAL": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/Sandwich_Maker_Best_Offer_banner_1_1.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "https://myborosil.com/collections/sandwich-waffle-makers?utm_source=banner&utm_medium=banner&utm_campaign=sandwichmaker_explorebestoffers",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "image_tdLwiR": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/Choppers-Banner.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "https://myborosil.com/collections/choppers-blenders?utm_source=banner&utm_medium=banner&utm_campaign=choppers_explorebestoffers",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "image_fKCNiz": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/AMPM_Bottle_Best_Offer_SEP24.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "https://myborosil.com/collections/borosilicate-glass-bottles?utm_source=banner&utm_medium=banner&utm_campaign=ampm_bestoffer_festivesale",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "image_ATQeRa": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/Lunch_Box_Best_Offers.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "https://myborosil.com/collections/shop-by-collection-1",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "image_cVh9Pq": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/Zodiac_Best_Offer_SEP24.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "https://myborosil.com/collections/larah-zodiac-mugs?utm_source=banner&utm_medium=banner&utm_campaign=larahzodiac_bestoffer_festivesale",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "image_mzXq8P": {
+          "type": "Image",
+          "disabled": true,
+          "settings": {
+            "category_image": "shopify://shop_images/Lunch-Box-banner-June24.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "https://myborosil.com/collections/glass-lunchboxes?utm_source=banner&utm_medium=banner&utm_campaign=glasslunchboxes_explorebestoffers",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "image_kNij6k": {
+          "type": "Image",
+          "disabled": true,
+          "settings": {
+            "category_image": "shopify://shop_images/0_a10b5c5c-76a1-47c0-b1db-57c6f0394272.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "shopify://collections/opal-glass-lunchboxes",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "bc79bb74-4ad3-4cb9-ab05-5ebcb06d7071": {
+          "type": "Image",
+          "disabled": true,
+          "settings": {
+            "category_image": "shopify://shop_images/1000046664.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "shopify://collections/five-ply",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "image_FMwXqh": {
+          "type": "Image",
+          "disabled": true,
+          "settings": {
+            "category_image": "shopify://shop_images/Utsav_DInner_Set_June24_BEST_OFFER_Banner_992e9802-3ff8-49c9-99fa-6d0ff46e1506.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "",
+            "hover_heading": "",
+            "hover_description": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        }
+      },
+      "block_order": [
+        "f741e7c7-9acd-48fe-8ede-51e1549a8eea",
+        "9c3cf3e2-0491-4f65-8fb4-6d497afd1667",
+        "image_7iEpc4",
+        "image_DDaH6y",
+        "d2ba395a-bc88-480e-bd13-34900f5eb2ca",
+        "image_nBQXAL",
+        "image_tdLwiR",
+        "image_fKCNiz",
+        "image_ATQeRa",
+        "image_cVh9Pq",
+        "image_mzXq8P",
+        "image_kNij6k",
+        "bc79bb74-4ad3-4cb9-ab05-5ebcb06d7071",
+        "image_FMwXqh"
+      ],
+      "custom_css": [
+        "{padding: 16px 16px; padding-top: 16px; padding-right: 16px; padding-bottom: 40px; padding-left: 16px;}",
+        ".category-main__container {margin-bottom: -10px;}",
+        ".category-main__flex.slick-dotted.slick-slider {margin-bottom: 10px;}",
+        ".category-main__flex .slick-dots {bottom: -30px;}"
+      ],
+      "settings": {
+        "category_heading": "Explore Best Offers",
+        "slider_yes": true,
+        "background": "#f3f3f3",
+        "section_heading_color": "#013564",
+        "cards_per_row": "three",
+        "cards_per_row_mob": "one_half"
+      }
+    },
+    "5a6e4f5d-a604-42cf-bd03-c7ae92b7b2b3": {
+      "type": "homepage-slider-banner",
+      "blocks": {
+        "blocks_P8LMbD": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Dinner_Set_winner_Desktop_png.png",
+            "mobile_image": "shopify://shop_images/Dinner_Set_winner_Mobile.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/baking-dishes?utm_source=Bakeware&utm_medium=Banner&utm_campaign=Bakeware&utm_id=Bakeware",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "blocks_DAxHAH": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Mobikwik_Desktop_Strip_banner_1.png",
+            "mobile_image": "shopify://shop_images/Mobikwik_Mobile_Strip_banner_1.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        },
+        "45fbb9f9-b4f7-4bdd-8663-6151637d2980": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Build-ypur-dinner-set-Desktop-Strip-Banner.png",
+            "mobile_image": "shopify://shop_images/Build-ypur-dinner-set-Mobile-Strip-Banner.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/make-your-own-dinner-set?utm_source=homepage&utm_medium=banner&utm_campaign=mmods&utm_id=stripbanner",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        }
+      },
+      "block_order": [
+        "blocks_P8LMbD",
+        "blocks_DAxHAH",
+        "45fbb9f9-b4f7-4bdd-8663-6151637d2980"
+      ],
+      "custom_css": [
+        ".slick-dots {display: none;}",
+        "* {height: 120px; margin-bottom: 15px;}"
+      ],
+      "settings": {
+      }
+    },
+    "16383655806b72cbfd": {
+      "type": "homepage-collection-slider",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "background_color": "#325a00",
+        "section_heading": "MONSOON FLASH SALE",
+        "section_heading_color": "#013564",
+        "enable_countdown": true,
+        "countdown_text": "Deal Ends in",
+        "Countdown_endtime": "Jul 11, 2024 00:00:00",
+        "enable_view_button": true,
+        "button_text_color": "#013564",
+        "button_border_color": "#013564",
+        "button_background_color": "#ffffff",
+        "arrow_background_color": "#ffffff",
+        "selected_dot_color": "#ffffff",
+        "collection": "flash-sale",
+        "product_limit": 10,
+        "background_image_desktop": "shopify://shop_images/Monsoon-Jule24-flash-sale1.png",
+        "background_image_mobile": "shopify://shop_images/Monsoon-Jule24-Mobile-flash-sale.png",
+        "count_down_timer_color": "#ffffff",
+        "flash_sale_text_color": "#ffffff"
+      }
+    },
+    "35a1efcd-7473-410f-83ac-c1e44a4873ca": {
+      "type": "mm-recently-viewed-products",
+      "disabled": true,
+      "settings": {
+        "title": "RECENTLY VIEWED"
+      }
+    },
+    "16383567718f14dede": {
+      "type": "homepage-collection-slider",
+      "custom_css": [
+        ".collection-slider .collection-slider__button {z-index: 2;}"
+      ],
+      "settings": {
+        "background_color": "#f3f3f3",
+        "section_heading": "Best Sellers",
+        "section_heading_color": "#013564",
+        "enable_countdown": false,
+        "countdown_text": "Deal Ends in",
+        "Countdown_endtime": "",
+        "enable_view_button": true,
+        "button_text_color": "#013564",
+        "button_border_color": "#013564",
+        "button_background_color": "",
+        "arrow_background_color": "#cacbcf",
+        "selected_dot_color": "#013564",
+        "collection": "bestsellers",
+        "product_limit": 10,
+        "count_down_timer_color": "#000000",
+        "flash_sale_text_color": "#000000"
+      }
+    },
+    "58388714-6ab2-450b-ba43-e907726647b0": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15893478146186__58388714-6ab2-450b-ba43-e907726647b0-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "COOK WITH BOROSIL",
+            "heading_size": "h0"
+          }
+        }
+      },
+      "block_order": [
+        "template--15893478146186__58388714-6ab2-450b-ba43-e907726647b0-heading-1"
+      ],
+      "custom_css": [
+        "div {margin-bottom: 1rem;}"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    },
+    "17037493014c758142": {
+      "type": "apps",
+      "blocks": {
+        "9f733609-8ff4-4763-969b-eae77915901f": {
+          "type": "shopify://apps/quinn-shoppable-videos/blocks/app-cards-block/150d2781-732b-4020-a9fb-1368e974e6bb",
+          "settings": {
+            "layer_number": 2,
+            "card_margins_desktop": "0",
+            "card_margins_mobile": "0",
+            "custom_metaobject_handle": "null"
+          }
+        }
+      },
+      "block_order": [
+        "9f733609-8ff4-4763-969b-eae77915901f"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "d024e8ba-da25-4100-9a11-f2efbf6054c1": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15893478146186__d024e8ba-da25-4100-9a11-f2efbf6054c1-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "BOROSIL MUST HAVES",
+            "heading_size": "h1"
+          }
+        }
+      },
+      "block_order": [
+        "template--15893478146186__d024e8ba-da25-4100-9a11-f2efbf6054c1-heading-1"
+      ],
+      "custom_css": [
+        "div {margin-bottom: -1rem;}"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    },
+    "17037494027c84148f": {
+      "type": "apps",
+      "blocks": {
+        "8f48013a-4dfc-49d3-adff-52e7dc3d2df7": {
+          "type": "shopify://apps/quinn-shoppable-videos/blocks/app-cards-block/150d2781-732b-4020-a9fb-1368e974e6bb",
+          "settings": {
+            "layer_number": 3,
+            "card_margins_desktop": "0",
+            "card_margins_mobile": "0",
+            "custom_metaobject_handle": "null"
+          }
+        }
+      },
+      "block_order": [
+        "8f48013a-4dfc-49d3-adff-52e7dc3d2df7"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "16383653465fbfa971": {
+      "type": "homepage-collection-slider",
+      "custom_css": [
+        ".collection-slider .collection-slider__button {z-index: 2;}"
+      ],
+      "settings": {
+        "background_color": "#e3e3e3",
+        "section_heading": "New Arrivals",
+        "section_heading_color": "#013564",
+        "enable_countdown": false,
+        "countdown_text": "Deal Ends in",
+        "Countdown_endtime": "",
+        "enable_view_button": true,
+        "button_text_color": "#013564",
+        "button_border_color": "#013564",
+        "button_background_color": "",
+        "arrow_background_color": "#a3a4a7",
+        "selected_dot_color": "#013564",
+        "collection": "new-arrival",
+        "product_limit": 8,
+        "count_down_timer_color": "#000000",
+        "flash_sale_text_color": "#000000"
+      }
+    },
+    "22211bc4-0edf-4f66-b1ef-70fadb38ab93": {
+      "type": "homepage-slider-banner",
+      "blocks": {
+        "c7304582-0884-4e7b-8ff8-7cbf3d2ea0d4": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Product-strip-banner-desktop.png",
+            "mobile_image": "shopify://shop_images/Product-strip-banner-mobile.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/independence-day",
+            "btn_text": "",
+            "banner_name": "",
+            "banner_redirection_page": "",
+            "banner_type": ""
+          }
+        }
+      },
+      "block_order": [
+        "c7304582-0884-4e7b-8ff8-7cbf3d2ea0d4"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".slick-dots {display: none;}",
+        "* {height: 120px; margin-bottom: 15px;}"
+      ],
+      "settings": {
+      }
+    },
+    "72a26613-398c-440c-82cb-123c0504f3e1": {
+      "type": "homepage-shop-with-advantage-section",
+      "blocks": {
+        "d12f954b-bfc1-4fa1-a11c-f9bf7d5d30c3": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/Awesome_appliances_2.png",
+            "text": "",
+            "advantage_link": "https://myborosil.com/collections/kitchen-appliances"
+          }
+        },
+        "a8ec3db5-06d7-44ed-9a3c-c6025dbe2771": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/Charming_cookware3.png",
+            "text": "",
+            "advantage_link": "https://myborosil.com/collections/cookware"
+          }
+        },
+        "0f2abb8f-ca56-4286-a5a6-c45a08285a59": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/Dazzling_dinnerware_1.png",
+            "text": "",
+            "advantage_link": "https://myborosil.com/collections/dinnersets"
+          }
+        },
+        "7397a10a-05df-470a-8aa1-84783eab6069": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/Serveware-20.jpg",
+            "text": "",
+            "advantage_link": "https://myborosil.com/collections/serveware-type"
+          }
+        },
+        "da7ba345-ef83-4a38-b6e7-fad35b1998cc": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/Hydra-15.jpg",
+            "text": "",
+            "advantage_link": "https://myborosil.com/collections/hydra"
+          }
+        }
+      },
+      "block_order": [
+        "d12f954b-bfc1-4fa1-a11c-f9bf7d5d30c3",
+        "a8ec3db5-06d7-44ed-9a3c-c6025dbe2771",
+        "0f2abb8f-ca56-4286-a5a6-c45a08285a59",
+        "7397a10a-05df-470a-8aa1-84783eab6069",
+        "da7ba345-ef83-4a38-b6e7-fad35b1998cc"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "* {padding-bottom: 17px; margin-bottom: -12px; margin-left: 0px; margin-top: -1px; color: black; width: 100%;}"
+      ],
+      "settings": {
+        "heading": "Deals You Can't Miss"
+      }
+    },
+    "166421781575d92558": {
+      "type": "homepage-collection-slider",
+      "disabled": true,
+      "settings": {
+        "background_color": "",
+        "section_heading": "Buy1 get a free gift",
+        "section_heading_color": "#004778",
+        "enable_countdown": false,
+        "countdown_text": "Deal Ends in",
+        "Countdown_endtime": "",
+        "enable_view_button": true,
+        "button_text_color": "",
+        "button_border_color": "",
+        "button_background_color": "",
+        "arrow_background_color": "#cacbcf",
+        "selected_dot_color": "#334fb4",
+        "collection": "buy-1-get-1",
+        "product_limit": 8,
+        "count_down_timer_color": "#000000",
+        "flash_sale_text_color": "#000000"
+      }
+    },
+    "homepage_collection_slider_BzCpkY": {
+      "type": "homepage-collection-slider",
+      "disabled": true,
+      "settings": {
+        "background_color": "",
+        "section_heading": "",
+        "section_heading_color": "",
+        "enable_countdown": false,
+        "countdown_text": "Flash sale ends in:",
+        "Countdown_endtime": "Jun 26, 2024 00:00:00",
+        "enable_view_button": true,
+        "button_text_color": "#334fb4",
+        "button_border_color": "#334fb4",
+        "button_background_color": "#ffffff",
+        "arrow_background_color": "#ffffff",
+        "selected_dot_color": "#ffffff",
+        "collection": "",
+        "product_limit": 8,
+        "background_image_desktop": "shopify://shop_images/Travel-Hydra-Desktop-Banner_1_093892ca-8fd7-4752-aafd-dde17c88d417.webp",
+        "background_image_mobile": "shopify://shop_images/HT3LBB400HEX_8.jpg",
+        "count_down_timer_color": "#000000",
+        "flash_sale_text_color": "#000000"
+      }
+    },
+    "homepage_testimonial_section_fJLWqM": {
+      "type": "homepage-testimonial-section",
+      "blocks": {
+        "testimonials_pnRwpB": {
+          "type": "Testimonials",
+          "settings": {
+            "title": "\"Most Trusted Brand\"",
+            "testimonial_description": "I have been using Borosil dishes for the last 30 years and before that my mother too was using th...",
+            "client_name": "Minni Aurora",
+            "client_location": "Delhi, India"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials_pnRwpB"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "TRUSTED BY MILLIONS OF HAPPY CUSTOMERS",
+        "para": "Lovely experiences shared by our happy customers."
+      }
+    }
+  },
+  "order": [
+    "1638533315aab6f728",
+    "163852180237d8610d",
+    "39499650-1b6a-4b1a-8430-a0dd0ece711e",
+    "5a6e4f5d-a604-42cf-bd03-c7ae92b7b2b3",
+    "16383655806b72cbfd",
+    "35a1efcd-7473-410f-83ac-c1e44a4873ca",
+    "16383567718f14dede",
+    "58388714-6ab2-450b-ba43-e907726647b0",
+    "17037493014c758142",
+    "d024e8ba-da25-4100-9a11-f2efbf6054c1",
+    "17037494027c84148f",
+    "16383653465fbfa971",
+    "22211bc4-0edf-4f66-b1ef-70fadb38ab93",
+    "72a26613-398c-440c-82cb-123c0504f3e1",
+    "166421781575d92558",
+    "homepage_collection_slider_BzCpkY",
+    "homepage_testimonial_section_fJLWqM"
+  ]
+}

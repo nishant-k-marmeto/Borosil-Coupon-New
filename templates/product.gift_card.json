@@ -1,0 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product-gift",
+      "settings": {
+        "ponits_per_rs": 5,
+        "show_TandCs": true,
+        "TandC_title": "Terms and Conditions",
+        "TandC_text": "<li>Borosil e-gift cards are valid only at <a href=\"https://www.myborosil.com/\" target=\"_blank\">myborosil.com</a> and expire 12 months from receipt</li>\n<li>E-Gift Card validity cannot be extended under any circumstances</li>\n<li>E-Gift Card cannot be exchanged for cash</li>\n<li>E-Gift Card are non-refundable and cannot be canceled</li>\n<li>Redeemable during sales, promotions &amp; offers</li>\n<li>Any remaining balance can be used for future purchases</li>\n<li>In case the value of the order exceeds the value of the voucher, the difference shall be paid by the bearer</li>\n<li>Only valid on Online Payments </li>\n<li>E-gift card details shall only be communicated to the recipient via email</li>\n<li>Any offer/promotion running on the site is not applicable on purchase of E-Gift Cards</li>\n<li>Borosil has the final authority on the interpretation of these terms and conditions</li>",
+        "heading_text": "#fff",
+        "content_text": "#000000",
+        "heading_background": "#000000",
+        "content_background": "#FEB599"
+      }
+    },
+    "164222490252b80669": {
+      "type": "main-product-image",
+      "settings": {
+      }
+    },
+    "1642224926d80cf62a": {
+      "type": "main-products-metafields-card",
+      "settings": {
+        "section_heading": "WHAT MAKES OUR PRODUCTS GREAT?"
+      }
+    },
+    "1642224987b96e1683": {
+      "type": "main-product-faqs",
+      "settings": {
+        "faq_title": "FAQS"
+      }
+    },
+    "16422249906f0d12bf": {
+      "type": "main-product-blogs",
+      "settings": {
+        "heading": "OUR BLOGS",
+        "para": "Check out our blogs for ideas on how to get the most out of your Borosil products!"
+      }
+    },
+    "16422248316051912f": {
+      "type": "mm-recently-viewed-products",
+      "settings": {
+        "title": "PREVIOUSLY VIEWED"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "164222490252b80669",
+    "1642224926d80cf62a",
+    "1642224987b96e1683",
+    "16422249906f0d12bf",
+    "16422248316051912f"
+  ]
+}

@@ -1,0 +1,117 @@
+    /* :: Signup */
+    .customer-login-card{
+        box-shadow: none
+    }
+    .customer:not(.account):not(.order){
+        padding: unset
+    }
+
+    .signup-container{
+        max-width: 423px;
+        margin: auto;
+        background: #F5F5F5;
+    }
+    #create_customer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+    }
+    .login-title{
+        margin-bottom: unset;
+        text-align: center
+    }
+    .customer .field{
+        margin: unset;
+    }
+    .user-input{
+        padding: unset;
+        display: flex;
+        background: #fff;
+        /* border: 1px solid #E2E2E2; */
+        outline: none;
+        box-shadow: none;
+    }
+    .user-data-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 20px;
+    }
+    .added-mobile-number{
+        max-width: unset;
+        grid-column-start: 1;
+        grid-column-end: 3
+    }
+    #phonenumber::-webkit-outer-spin-button,
+    #phonenumber::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+        /* Firefox */
+    #phonenumber[type=number] {
+        -moz-appearance: textfield;
+    }
+    .input-email{
+        grid-column-start: 1;
+        grid-column-end: 3
+    }
+    .otp-text.signup{
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .register-custom-two-blocks{
+        grid-column-start: 1;
+        grid-column-end: 3
+    }
+
+    #create_customer .register-checkbox {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        padding: unset
+    }
+
+    .register-checkbox label{
+        font-size: 13px;
+    }
+
+    .signup-container .action-button{
+        grid-column-start: 1;
+        grid-column-end: 3
+    }
+    .dob-gender-container {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        display: flex;
+        gap: 20px;
+    }
+    .input-gender{
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    
+    @media screen and (max-width:768px) {
+        .auth-container-outer--image-container img{
+            object-fit: cover;
+            padding: 10px;
+        }
+    }
+
+    @media screen and (max-width:425px) {
+        .user-data-container{
+            display: flex;
+            flex-direction: column;
+        }
+        .dob-gender-container {
+            gap: 15px;
+        }
+        .signup{
+            border: unset;
+            margin-top: unset;
+            padding-top: unset;
+        }
+        .input-date{
+            width: 50%;
+        }
+    }

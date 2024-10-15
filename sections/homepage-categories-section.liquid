@@ -1,0 +1,119 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+
+    <div class="homepage-categories-section">
+        <div class="homepage-categories-section-inner">
+
+            <div class="homepage-categories-section-categories">
+                <div class="homepage-categories-section-categories-left">
+                    <h2>{{ section.settings.heading }}</h2>
+                    <p>{{ section.settings.para }}</p>
+                </div>
+
+                <div class="homepage-categories-section-categories-right">
+                    <img src=" {{ section.settings.image |img_url: 'original' }}" loading="lazy" class="homepage-categories-section-image" width="{{ section.settings.range_image_desktop.width }}" height="{{ section.settings.range_image_desktop.height }}">
+                    <img src=" {{ section.settings.mobile_image |img_url: 'original' }}" loading="lazy" class="homepage-categories-section-image-mobile" width="{{ section.settings.range_image_desktop.width }}" height="{{ section.settings.range_image_desktop.height }}">
+
+                </div>
+            </div>
+
+            <div class="category-containers-flex" id="homepagecategory">
+                {% for block in section.blocks %}
+                    {% if block.settings.link != blank %}
+
+                        <a href="{{block.settings.link}}" class="flex-item">
+                            <div class="">
+                                {% if block.settings.category_image != blank %}
+                                    <img src="{{ block.settings.category_image | img_url: 'original' }}" width="{{ block.settings.category_image.width }}" height="{{ block.settings.category_image.height }}" loading="lazy" class="homepage-categories-image {% if block.settings.category_image2 != blank %}img-not-hidden{% endif %}">
+                                    {% if block.settings.category_image2 != blank %}
+                                        <img class="img-hidden" src="{{ block.settings.category_image2 | img_url: 'master' }}" width="{{ block.settings.category_image2.width }}" height="{{ block.settings.category_image2.height }}" loading="lazy" alt="{{ block.settings.category_image2.alt }}" width="{{ block.settings.category_image2.width }}" height="{{ block.settings.category_image.height }}">
+                                    {% endif %}
+                                {% endif %}
+                                <div class="item homepage-categories-section-blocks-text-2">
+                                    {% if block.settings.title != blank %}
+                                        <h6>{{ block.settings.title }}</h6>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endif %}       
+      
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+
+{% schema %}
+
+{
+    "name": "Homepage Categories (3)",
+    "class": "homepage-categories-section",
+    "settings": [
+        {
+            "type": "text",
+            "id": "heading",
+            "label": "Add Section Heading"
+        }, {
+            "type": "text",
+            "id": "para",
+            "label": "Add Section Description"
+        }, {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Add Image for Desktop",
+            "info": "Add Jpeg/png Image of Size 865 x 400px"
+        }, {
+            "type": "image_picker",
+            "id": "mobile_image",
+            "label": "Add Image for Mobile",
+            "info": "Add Jpeg/png Image of Size 375 x 240px"
+        }
+    ],
+    "max_blocks": 14,
+    "blocks": [
+        {
+            "type": "square-category",
+            "name": "Add Square Categories",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Add Heading for Category"
+                }, {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Add Link for Category"
+                }, {
+                    "type": "image_picker",
+                    "id": "category_image",
+                    "label": "Add Image for Category",
+                    "info": "Add Jpeg/png Image of Size 400 x 400px"
+                }, {
+                    "type": "image_picker",
+                    "id": "category_image2",
+                    "label": "Select img to show in Mobile View"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "Custom Solution",
+            "name": "Three Column Categories Section"
+        }
+    ]
+}
+
+{% endschema %} 

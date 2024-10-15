@@ -1,0 +1,78 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+
+  <div class="homepage-why-choose-borosil-section">
+    <div class="homepage-why-choose-borosil-section-inner">
+      
+      <div class="homepage-why-choose-borosil-section-inner-header">
+        <h4>{{ section.settings.heading }}</h4>
+        <p>{{ section.settings.para }}</p>
+      </div>
+      
+      
+      <div id="whychooseborosilhomepage" class="homepage-why-choose-borosil-section-inner-block-main">
+      {% for block in section.blocks %}
+      <div class="homepage-why-choose-borosil-section-inner-block">
+        {% if block.settings.image != blank %}
+            <img loading="lazy" src="{{ block.settings.image |img_url: 'original' }}" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}" class="why-choose-borosil-image">
+          {% endif %}
+      </div>
+      {% endfor %}
+      </div>
+        
+    </div>  
+  </div>  
+
+{% endif %}       
+      
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+
+{% schema %}
+  {
+  "name": "Why Choose Borosil",
+  "settings": [
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Add Section Heading"
+    },
+    {
+      "type": "text",
+      "id": "para",
+      "label": "Add Section Description"
+    }
+],
+  "max_blocks": 6,
+  "blocks": [
+	{
+	  "type": "Blocks",
+      "name": "Add Image Blocks",
+      "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Add Image",
+      "info":"Add Jpeg/png Image of Size 120 x 120px"
+    }
+  ]
+}],
+  "presets": [
+    {
+      "category": "Custom Solution",
+      "name": "Why Choose Borosil Section"
+    }
+  ]
+}
+{% endschema %}
+          
+  
+  

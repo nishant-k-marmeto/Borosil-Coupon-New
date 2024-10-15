@@ -1,0 +1,79 @@
+<div class="flash-bandge flash_sale">
+  <p class="m-0 text-uppercase flash_text">
+    <span class="thunder">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lightning-fill" viewBox="0 0 16 16">
+        <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641l2.5-8.5z"></path>
+      </svg>
+    </span>&nbsp;
+  </p>
+  <div class="flashtimer">
+    <h4 class="timer__title">{{ settings.badge_text }}</h4>
+  </div>
+</div>
+<style>
+  .thunder {
+    line-height: 0;
+  }
+    .flash_sale {
+      position: relative;
+      width: 70%;
+      gap: 4%;
+      display: flex;
+      align-items: center;
+      padding: 0px 10px;
+      background: linear-gradient(270deg, {{ settings.badge_color }} 23.86%, #DFB108 47.06%, {{ settings.badge_color }} 66.05%);
+      border-radius: 5px;
+      margin-top: 7px;
+      margin-bottom: 7px;
+      animation: 5s linear 0s infinite normal none running bgstrip;
+    }
+
+    .flash_text {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      color: black;
+    }
+
+    .flashtimer {
+      margin: 0;
+      background: transparent;
+      padding: 10px 0;
+      max-width: max-content;
+      border-radius: 5px;
+      line-height: normal;
+      display: flex;
+      align-items: center;
+    }
+
+    .flashtimer .timer__title {
+      text-align: center;
+      margin: 0 !important;
+      color: #070707;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    @keyframes bgstrip {
+      0% {
+        background-position: -1000px 0px;
+      }
+
+      100% {
+        background-position: 1000px 0px;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      
+      .flash_sale {gap: 3%;justify-content: flex-start;}
+      
+      .flashtimer .timer__title,
+      .flash_text {
+        font-size: 14px !important;
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .flash_sale {width: 250px;}
+    }
+</style>

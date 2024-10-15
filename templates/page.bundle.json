@@ -1,0 +1,99 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "72b507a9-829e-45b7-8352-35bc9784d16a": {
+      "type": "custom-liquid",
+      "custom_css": [
+
+      ],
+      "settings": {
+        "custom_liquid": "<html><head>\n<style>\n      .responsive {\n         width: 100%;\n         height: auto;\n      }\n   </style>\n<img src=\"https://cdn.shopify.com/s/files/1/0551/8009/9722/files/category_page_banner.png?v=1686190583\" alt=\"Girl in a jacket\" style=\"max-width:1250;\" class=\"responsive\">\n</body></html>"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "bc7c0321-ec18-4fea-96c5-405bb785f672": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15879963279498__bc7c0321-ec18-4fea-96c5-405bb785f672-16845025006514be11-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Product Combo Offer",
+            "heading_size": "h1"
+          }
+        },
+        "template--15879963279498__bc7c0321-ec18-4fea-96c5-405bb785f672-16845025006514be11-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "template--15879963279498__bc7c0321-ec18-4fea-96c5-405bb785f672-16845025006514be11-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15879963279498__bc7c0321-ec18-4fea-96c5-405bb785f672-16845025006514be11-0",
+        "template--15879963279498__bc7c0321-ec18-4fea-96c5-405bb785f672-16845025006514be11-1",
+        "template--15879963279498__bc7c0321-ec18-4fea-96c5-405bb785f672-16845025006514be11-2"
+      ],
+      "custom_css": [
+        "* {color: white; background: #013564; margin-top: 0px; margin-bottom: 0px;}"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": false
+      }
+    },
+    "c4bcec97-d8b4-4153-a6f5-ddf5db53cc85": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        "* {color: green; text-align: center;}"
+      ],
+      "settings": {
+        "custom_liquid": "<html><head>\n    <style>\n        .blink_me {\n  animation: blinker 1s linear infinite;\n}\n\n*/@keyframes blinker {\n  50% {\n    opacity: 0;\n  }\n}/*\n    \n@keyframes flash { 0% { background: rgba(255,240,0,.25); } 100% { background: none; } }\n.as-console-row-code, .as-console-row:after { -webkit-animation: flash 1s; -moz-animation: flash 1s; -ms-animation: flash 1s; animation: flash 1s; }</style>\n</head>\n<body>\n\n<div\n<div class=\"flash-bandge flash_sale\">\n  <p class=\"m-0 text-uppercase flash_text\">\n  </p>\n  <div class=\"flashtimer\">\n    <h2 class=\"blink_me\">Additional 5% off on below product combinations!</div></h2>\n  </div>\n</div>\n\n    <script type=\"text/javascript\">\n        \n    </script>\n\n<div class=\"as-console-wrapper\"><div class=\"as-console\"></div></div>\n\n\n</body></html>"
+      }
+    },
+    "933d5375-83b6-41dd-9376-f3ca38918b25": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "* {font-family: Mulish, sans-serif;}",
+        ".a:link {text-decoration: none; color: black;}",
+        "a:link {text-decoration: none; color: black;}",
+        "a:visited {text-decoration: none; color: black;}",
+        "a:hover {text-decoration: none; color: black;}",
+        "a:active {text-decoration: none; color: black;}"
+      ],
+      "settings": {
+        "custom_liquid": "<body>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<style>\n* {\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: Arial, Helvetica, sans-serif;\n}\n\n/* Float four columns side by side */\n.column {\n  float:left;\n  width: 32%;\n  padding: 5px;\n  border-radius: 0;\n  margin: 5px;\n  margin-bottom: 5px;\n  margin-top: 5px;\n  margin-right: 5px;\n  margin-left: 5px; \n/* background:linear-gradient(150deg, #39ef74, #4600f1, lightgreen 100%); \nborder-radius: 10px;  */\n   }\n}\n\n\n/* Remove extra left and right margins, due to padding */\n.row {margin: 0 -1px;}\n\n/* Clear floats after the columns */\n.row:after {\n  content: \"\";\n  display: table;\n  clear: both;\n}\n\n/* Responsive columns */\n@media screen and (max-width: 500px) {\n  .column {\n    width: 100%;\n    display: block;\n    margin-left: 0px;\n    margin-bottom: 10px;\n  }\n}\n\n\n/* Style the counter cards */\n.card {\n  box-shadow: 0 1px 5px 1px \n  rgba(0, 0, 0, 0.2);\n /* height: 500px;*/\n  padding: 1px;\n  margin-top: 5px;\n  text-align: center;\n  border-radius: 1px;\n  background-color: \n  #ffffff;\n\n}\n \n</style>\n\n<style>\n.bndlr-products-container {\n    display: inline-block;\n    padding: 7px;\n    border-radius: 2px;\n    margin-bottom: 20px;\n    position: relative;\n}\n</style>\n\n\n\n<style>\n.bndlr-savings\n  bndlr-money\n  conversion-bear-money\n  money\n  gt_currency\n  gt_currency--inr {\n  color: green;\n}\n</style>\n\n<style>\n.bndlr-bundle-title {\n    width: 100%;\n    display: inline-block;\n    font-size: 12px;\n    color: #070707;\n    font-weight: bold;\n    text-decoration: none;\n    overflow: hidden;\n    white-space: wrap;\n    text-overflow: ellipsis;\n}</style>\n\n<style>\n.bndlr-product-title {\nwidth: 100%;\n    display: inline-block;\n    font-size: 12px;\n    color: #070707;\n    font-weight: bold;\n    text-decoration: none;\n    overflow: hidden;\n    white-space: nowrap;\n    text-overflow: ellipsis;\n}</style>\n\n<style>\n.bndlr-savings bndlr-money conversion-bear-money money gt_currency gt_currency--inr{\nfontcolor: #ff0c0c;\n}</style>\n\n<style>\n.bndlr-product-price,\n.bndlr-total-price, .bndlr-mnm-total-price {\n    font-weight: bold;\n    font-size: 70%;\n}\n</style>\n\n<!-______ Combo 1 ______-->\n  \n<div class=\"column\">\n    <div class=\"card\">\n      <div class=\"bundler-target-element\" data-bndlr-ccid=\"6972\"></div>\n    </div>\n  </div>\n\n\n\n<!-______ Combo 2 ______-->\n   \n<div class=\"column\">\n    <div class=\"card\">\n      <div class=\"bundler-target-element\" data-bndlr-ccid=\"67ou\"></div>\n    </div>\n  </div>\n  \n\n\n<!-______ Combo 3 ______-->\n   \n\n<div class=\"column\">\n    <div class=\"card\">\n      <div class=\"bundler-target-element\" data-bndlr-ccid=\"67ra\"></div>\n    </div>\n  </div>\n\n \n\n<!-______ Combo 3a ______-->\n   \n\n<div class=\"column\">\n    <div class=\"card\">\n      <div class=\"bundler-target-element\" data-bndlr-ccid=\"6ac6\"></div>\n    </div>\n  </div>\n\n \n\n<!-______ Combo 3b ______-->\n   \n <div class=\"column\">\n    <div class=\"card\">\n      <div class=\"bundler-target-element\" data-bndlr-ccid=\"6ayo\"></div>\n    </div>\n  </div>\n\n\n<!-______ Combo 4 ______-->\n\n<div class=\"column\">\n    <div class=\"card\">\n      <div class=\"bundler-target-element\" data-bndlr-ccid=\"68py\"></div>\n    </div>\n  </div>\n\n<!-______ Combo 5 ______-->\n  \n<div class=\"column\">\n    <div class=\"card\">\n      <div class=\"bundler-target-element\" data-bndlr-ccid=\"67or\"></div>\n    </div>\n  </div>\n\n\n\n<!-______ Combo 6 ______-->\n  \n<div class=\"column\">\n    <div class=\"card\">\n      <div class=\"bundler-target-element\" data-bndlr-ccid=\"6aym\"></div>\n    </div>\n  </div>\n    \n \n<!-______ Combo 7 ______-->\n  \n   \n<!-______ Combo 8 ______-->\n\n\n  <div class=\"row\" > \n  <div class=\"column\">\n    <div class=\"card\">\n      <div class=\"bundler-target-element\" data-bndlr-ccid=\"67ot\"></div>\n    </div>\n  </div>\n\n<!-______ Combo 9 ______-->\n   \n <div class=\"column\">\n    <div class=\"card\">\n      <div class=\"bundler-target-element\" data-bndlr-ccid=\"6ac4\"></div>\n    </div>\n  </div>\n\n <div class=\"column\">\n    <div class=\"card\">\n      <div class=\"bundler-target-element\" data-bndlr-ccid=\"62ub\"></div>\n    </div>\n  </div>\n\n\n </div>\n  </div>\n</body>"
+      }
+    }
+  },
+  "order": [
+    "72b507a9-829e-45b7-8352-35bc9784d16a",
+    "main",
+    "bc7c0321-ec18-4fea-96c5-405bb785f672",
+    "c4bcec97-d8b4-4153-a6f5-ddf5db53cc85",
+    "933d5375-83b6-41dd-9376-f3ca38918b25"
+  ]
+}

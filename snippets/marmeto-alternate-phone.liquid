@@ -1,0 +1,107 @@
+<script>
+  
+  //Function to allow only numbers
+  function _isNumberCheck(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+    let len = evt.target.value.replace(/\s/g,"").length + 1;
+//     console.log(evt.target.value.replace(/\s/g,""));
+    if (charCode > 31 && (charCode < 48 || charCode > 57))
+      return false;
+    if (len>10)
+      return false;
+    return true;
+  }
+
+  //Function to validate phone number
+  function _isNumberDigit($input){
+    var $countryInputValue = $('#checkout_shipping_address_country').val();
+
+    if ($countryInputValue == "India") {
+      var $inputNumber = $input.val(),
+          $trimNumber = $inputNumber.replace(/ /g, '');
+
+      $input.val($trimNumber);
+
+      if($input.val().length == 10){
+        if ($trimNumber.match(/^[6-9]\d{9}$/)) {
+          $('.phone-error').hide();
+          return true;
+        }
+        else {
+          $('[data-address-field="phone"]').addClass("field--error");
+          $('.phone-error').show();
+          if ($('#error-for-phone').length > 0 ){$('.phone-error').hide();}
+          return false;
+        }
+      }
+      else {
+        $('[data-address-field="phone"]' ).addClass( "field--error" );
+        $('.phone-error').show();
+        if ($('#error-for-phone').length > 0 ){$('.phone-error').hide();}
+        return false;
+      }
+    } else {
+      return true;
+    }
+  }
+  
+  
+  $(document).on('page:load page:change', function() {
+    if(Shopify.Checkout.step == "contact_information"){
+      var phoneClass = "alternate-phone";
+      var ExistingAttr = '<div class="existing_attributes" style="display:none;">';
+      
+      {% for attribute in checkout.attributes %}
+        {% unless attribute.first == "alternate_phone" %}
+          ExistingAttr += '<input type="hidden" name="checkout[attributes][{{ attribute.first }}]" value="{{ attribute.last  }}" />';
+        {% endunless %}
+      {% endfor %}
+          
+      ExistingAttr += '</div>';
+   
+
+      var AlternateNumber = '{{ checkout.attributes.alternate_phone }}';
+      var AlternativePhoneHtml = '';  
+      AlternativePhoneHtml += '<div class="field '+ phoneClass + '" data-field="alternatephone">';
+      AlternativePhoneHtml += '<div class="field__input-wrapper">';
+      AlternativePhoneHtml += '<label class="field__label field__label--visible" for="checkout_shipping_address_alternative-phone">Mobile Number</label>';
+      AlternativePhoneHtml += '<input type="tel" class="field__input" placeholder="Mobile Number" value="' + AlternateNumber + '" name="checkout[attributes][alternate_phone]" id="checkout_shipping_address_alternative-phone">';
+      AlternativePhoneHtml += '</div>';
+      AlternativePhoneHtml += '<div>';
+      AlternativePhoneHtml += '</div></div>';
+
+      $('[data-address-fields]').after(ExistingAttr);
+      if($('#checkout_shipping_address_alternative-phone').length<1) $('[data-address-fields]').after(AlternativePhoneHtml);
+      $(".alternate-phone").detach().appendTo('.section--contact-information .section__content')
+      
+      //Append the message
+
+      //Phone Field
+      var $phoneInput = $('#checkout_shipping_address_alternative-phone'),
+          $contactForm = $('[data-step="contact_information"] > form');
+
+      //On keypress allow only number 
+      $phoneInput.keypress(function(event) {
+        return _isNumberCheck(event);
+      });
+
+      //On form submit validate number
+      $contactForm.on('submit', function(){
+        return _isNumberDigit($phoneInput);
+      });
+
+      //Input on click remove error message
+      $phoneInput.on('click', function() {
+        $('[data-address-field="phone"]').removeClass("field--error");
+        $('.phone-error').hide();
+      });
+
+      // Prevent 0 as first character in phone number input field
+      $phoneInput.keyup(function(e) {
+        if (/^0/.test(this.value)) {
+          this.value = this.value.replace(/^0/, "")
+        }
+      });
+    }
+  });
+</script>

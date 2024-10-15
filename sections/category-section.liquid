@@ -1,0 +1,244 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+
+  {% assign deskSlider = 1 %}
+  {% assign mobSlider = 1 %}
+  {% if section.settings.cards_per_row == 'two' %}
+    {% assign deskSlider = 2 %}
+  {% elsif section.settings.cards_per_row == 'two_half' %}
+    {% assign deskSlider = 2.5 %}
+  {% elsif section.settings.cards_per_row == 'three' %}
+    {% assign deskSlider = 3 %}
+  {% elsif section.settings.cards_per_row == 'four' %}
+    {% assign deskSlider = 4 %}
+  {% endif%}
+  {% if section.settings.cards_per_row_mob == 'one_half' %}
+    {% assign mobSlider = 1.3 %}
+  {% elsif section.settings.cards_per_row_mob == 'two' %}
+    {% assign mobSlider = 2 %}
+  {% elsif section.settings.cards_per_row_mob == 'two_half' %}
+    {% assign mobSlider = 2.5 %}
+  {% elsif section.settings.cards_per_row_mob == 'three' %}
+    {% assign mobSlider = 3 %}
+  {% elsif section.settings.cards_per_row_mob == 'four' %}
+    {% assign mobSlider = 4 %}
+  {% endif%}
+  {%- capture sliderData -%}
+    {"dots": true,"arrows": true,"infinite": false,"slidesToShow": {{deskSlider | times: 1 }},"slidesToScroll": 3,"responsive": [{"breakpoint": 767,"settings": {"dots": true,"arrows": true,"infinite": false,"slidesToShow": {{mobSlider | times: 1 }},"slidesToScroll": 1}}]}
+  {%- endcapture -%}
+  <div class="category-main__container category-page-width category-main--{{ section.id }}">
+    <div class="category-main__heading">{{ section.settings.category_heading }}</div>
+    <div class="category-main__flex 
+      {% if section.settings.slider_yes %}slider-yes {% endif %}{{ section.settings.cards_per_row }}-cards {{ section.settings.cards_per_row_mob }}-cards-mob"
+      {% assign temp = sliderData | escape %}
+      {% if section.settings.slider_yes %}
+        data-slick='{{ temp }}'
+      {% endif %}>
+      {% for block in section.blocks %}
+        <a href="{{ block.settings.button_link }}" class="category-block__content" data-banner-name="{{ block.settings.banner_name }}" data-banner-url="{{ block.settings.button_link }}" data-banner-redirection-page="{{ block.settings.banner_redirection_page }}" data-banner-type="{{ block.settings.banner_type }}">
+          <div class="category-image__container">
+
+            <div class="category-image__image">
+
+              {% render 'responsive-picture' 
+                forloop: forloop,
+                img_class: 'category-image',
+                desktop_image: block.settings.category_image, 
+                mobile_image: block.settings.category_image,
+                desktop_size: '25vw',
+                mobile_size: '80vw'
+              %}
+            </div>
+            {% if block.settings.main_heading != blank or block.settings.button_text != blank or block.settings.description != blank %}
+              <div class="category-text__container">
+                {% if block.settings.main_heading != blank %}
+                  <div class="category-heading">{{ block.settings.main_heading }}</div>
+                {% endif %}
+                {% if block.settings.button_text != blank %}
+                  <div class="category-button">{{ block.settings.button_text }}</div>
+                {% endif %}
+                {% if block.settings.description != blank %}
+                  <div class="category-text__paragraph">{{ block.settings.description }}</div>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if block.settings.hover_heading != blank or block.settings.hover_description != blank %}
+              <div class="category-hover__container">
+                <div class="category-hover__heading">{{ block.settings.hover_heading }}</div>
+                <div class="category-hover__paragraph">{{ block.settings.hover_description }}</div>
+              </div>
+            {% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+
+{% endif %}       
+      
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+
+{% style %}
+  .category-main__container.category-main--{{ section.id }}{
+    background: {{ section.settings.background }};
+  }
+  .category-main--{{ section.id }} .category-main__heading{
+    color: {{ section.settings.section_heading_color }};
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Category Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "category_heading",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "slider_yes",
+      "label": "Enable slider",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "section_heading_color",
+      "label": "Heading Color",
+      "default": "#013564"
+    },
+    {
+      "type": "select",
+      "id": "cards_per_row",
+      "label": "Number of cards per row",
+      "options": [
+        {
+          "value": "two",
+          "label": "2 per row"
+        },
+        {
+          "value": "two_half",
+          "label": "2.5 per row"
+        },
+        {
+          "value": "three",
+          "label": "3 per row"
+        },
+        {
+          "value": "four",
+          "label": "4 per row"
+        }
+      ],
+      "default": "two"
+    },
+    {
+      "type": "select",
+      "id": "cards_per_row_mob",
+      "label": "Number of cards per row Mobile",
+      "options": [
+        {
+          "value": "one_half",
+          "label": "1.3 per row"
+        },
+        {
+          "value": "two",
+          "label": "2 per row"
+        },
+        {
+          "value": "two_half",
+          "label": "2.5 per row"
+        },
+        {
+          "value": "three",
+          "label": "3 per row"
+        },
+        {
+          "value": "four",
+          "label": "4 per row"
+        }
+      ],
+      "default": "two"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Image",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "category_image",
+          "label": "Category Image",
+          "info": "Image Dimensions (1000x1000)px"
+        },
+        {
+          "type": "text",
+          "id": "main_heading",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "text",
+          "id": "hover_heading",
+          "label": "Hover Button Text"
+        },
+        {
+          "type": "text",
+          "id": "hover_description",
+          "label": "Hover Description"
+        },
+        {
+          "type": "text",
+          "id": "banner_name",
+          "label": "Clevertap event banner name"
+        },
+        {
+          "type": "text",
+          "id": "banner_redirection_page",
+          "label": "Clevertap event Banner Redirection Page"
+        },
+        {
+          "type": "text",
+          "id": "banner_type",
+          "label": "Clevertap event Banner Type"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category Section"
+    }
+  ]
+}
+{% endschema %}

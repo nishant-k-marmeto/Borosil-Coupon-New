@@ -1,0 +1,212 @@
+{% if customer %}
+  {% if template contains 'customers/account' %}
+    <div id="flits-product-register-page-content" style="display: none;">
+        {%- section 'product-registration-block' -%}
+    </div>
+    {% render 'returnprime_script_for_flits_use' %}
+  {% endif %}  
+{% endif %}
+
+
+
+{% unless template contains 'customers/account' %}
+<button class="flits-credit-popup-button">
+  <span class="open-text" style="display: flex;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"> <path fill="#FFFFFF" fill-rule="nonzero" d="M13 16v14H7a4 4 0 0 1-4-4V16h10zm4 0h10v10a4 4 0 0 1-4 4h-6V16zm-4-8v6H2.5A1.5 1.5 0 0 1 1 12.5v-3A1.5 1.5 0 0 1 2.5 8H13zm4 0h10.5A1.5 1.5 0 0 1 29 9.5v3a1.5 1.5 0 0 1-1.5 1.5H17V8zm-7-8h.004a3.541 3.541 0 0 1 3.494 2.964L14 6h-4a3 3 0 1 1 0-6zm10 0a3 3 0 0 1 0 6h-4l.502-3.036A3.541 3.541 0 0 1 19.996 0H20z"/> </svg>
+    <span class="flits-credit-popup-button-text">Boropoints</span>
+  </span>
+    <span class="close-text" style="display: none;" >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="#FFF" fill-rule="nonzero" d="M11.06 10l3.713 3.712a.75.75 0 0 1-1.06 1.061L10 11.061l-3.712 3.712a.75.75 0 0 1-1.061-1.06L8.939 10 5.227 6.288a.75.75 0 1 1 1.06-1.061L10 8.939l3.712-3.712a.75.75 0 0 1 1.061 1.06L11.061 10z"/></svg>
+    </span>
+</button>
+{% endunless %}
+
+
+<div class="flits-credit-popup-main" style="display: none;">
+  <div class="flits-credit-popup-inner">
+    <div class="flits-account-body flist-custom flits-credit-popup-header-part">
+        <div class="flits-credit-fix-header">
+          <div class="back flits-credit-popup-back-btn" style="display:none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </div>
+          <div class="flits-credit-fix-header-logo">
+            <img class="flits-site-logo" alt="" src="https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Logo_2_1_a2b09988-bd78-47a9-8248-e83c9ded857e.png?v=1654424359" />
+          </div>
+          <div class="flits-credit-fix-header-points">
+            {% if customer %}<div class="flits-total-credit" style="display:none;"><span></span> Points</div>
+            {% else %}Borosil Points  
+            {% endif %}
+          </div>
+        </div>
+        <div class="flits-expanded-header-top">
+          <div class="flits-credit-header-top">
+            <div class="flits-credit-popup-name"><img class="flits-site-logo" alt="" src="https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Logo_2_1_a2b09988-bd78-47a9-8248-e83c9ded857e.png?v=1654424359" /></div> 
+          </div>
+          <div class="flits-header-bottom" style="display:none;">
+            {% if customer %}
+              <div class="flits-no-login-welcome-text">Your Points</div>
+              <div class="flits-no-login-site-title"><div class="flits-total-credit" style="display:none;"></div></div>
+            {% else %}
+              <div class="only-front">
+                <div class="flits-no-login-welcome-text">Welcome to Borosil</div>
+                <div class="flits-no-login-site-title">Borosil Points</div>
+              </div>
+              <div class="not-front" style="display:none;"></div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="flits-close-credit-popup"><span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path fill="#FFF" fill-rule="nonzero" d="M11.06 10l3.713 3.712a.75.75 0 0 1-1.06 1.061L10 11.061l-3.712 3.712a.75.75 0 0 1-1.061-1.06L8.939 10 5.227 6.288a.75.75 0 1 1 1.06-1.061L10 8.939l3.712-3.712a.75.75 0 0 1 1.061 1.06L11.061 10z"/></svg></span></div>
+      </div>
+      <div class="flits-credit-box-content-with-scroll flits-credit-popup-body-part">
+        <div class="flits-loading-div flits-custom-earn-loader">
+          <div class="flits-spinner"></div>
+          <p class="flits-loading-text"></p>
+        </div>
+        {% if customer %}
+        {% else %}
+        <div class="flits-front">
+          <div class="flits-not-customer-body-box">
+            <h4>Become a member</h4>
+            <p>With more ways to unlock exciting perks, this is your all access pass to exclusive rewards.</p>
+            <a href="/account/register" class="flits-join-now-btn">Join Now</a>
+            <div>Already a Member? <a href="/account"> Sign in</a></div>
+          </div>
+        </div>
+        {% endif %}
+        <div class="flits-earn-redeem-group">
+          <div class="flits-front-buttons how-to-earn-btn" style="display:none;">
+            <div class="flits-grp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"> <g fill="none" fill-rule="nonzero"> <path fill="#3d3e81" d="M15.5 12a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7zM4 16h2a1 1 0 0 1 1 1v8.5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V17a1 1 0 0 1 1-1z"/> <path fill="#4D4D4D" d="M13.055 17.817l-4.524.803a.75.75 0 0 1-.262-1.477l4.589-.815.131-.011h4.336c2.261 0 3.787 1.425 3.107 4.142a.75.75 0 0 1-.727.568H15.04a.75.75 0 0 1 0-1.5h4.04c.127-1.223-.545-1.71-1.755-1.71h-4.27zm7.822 1.615l-.627.4a.75.75 0 0 1-.807-1.264l.794-.507a.75.75 0 0 1 .404-.118c.25 0 .493-.085.686-.24l2.509-2.007.088-.06a2.785 2.785 0 0 1 3.574.641l.095.118a2.489 2.489 0 0 1-.19 3.35l-5.24 5.343a7.219 7.219 0 0 1-4.612 1.662h-4.577c-.756 0-1.505-.14-2.206-.411L8.13 25.317a.75.75 0 0 1 .542-1.399l2.639 1.022c.528.205 1.093.31 1.664.31h4.577c1.338 0 2.633-.466 3.598-1.263l5.196-5.305a.994.994 0 0 0 .082-1.344l-.095-.117a1.285 1.285 0 0 0-1.606-.316l-2.462 1.97a2.597 2.597 0 0 1-1.387.557z"/> </g> </svg>
+              <span>Ways to earn</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </div>
+          <div class="flits-front-buttons how-to-spent-btn" style="display:none;">
+            <div class="flits-grp">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"> <g fill="none" fill-rule="evenodd"> <path fill="#3d3e81" d="M14 8.989a5.193 5.193 0 0 1-2.13 1.509c-1.148.435-2.504.435-4.058.024a.75.75 0 0 1 .383-1.45c1.274.336 2.317.336 3.142.023.471-.178.888-.442 1.255-.796h-2.167a3.007 3.007 0 0 1-3.007-3.006c0-1.677 1.13-3.043 2.688-3.043 1.359 0 2.683.899 3.554 2.252l1.335 1.969 1.334-1.969c.871-1.353 2.196-2.252 3.555-2.252 1.557 0 2.687 1.366 2.687 3.043a3.007 3.007 0 0 1-3.007 3.006h-2.216c.367.354.784.618 1.255.796.825.313 1.868.313 3.142-.024a.75.75 0 0 1 .383 1.45c-1.554.412-2.91.412-4.057-.023A5.182 5.182 0 0 1 16 9.058V25.55a.45.45 0 0 1-.45.45h-1.1a.45.45 0 0 1-.45-.45V8.989zm5.564-2.19c.833 0 1.507-.674 1.507-1.506 0-.905-.527-1.543-1.187-1.543-.786 0-1.675.603-2.303 1.579l-.997 1.47h2.98zm-6.158 0l-.997-1.47c-.628-.976-1.517-1.579-2.303-1.579-.66 0-1.188.638-1.188 1.543 0 .832.675 1.506 1.507 1.506h2.98z"/> <path fill="#4D4D4D" fill-rule="nonzero" d="M25.185 14.737l-.967 10.425a1.75 1.75 0 0 1-1.742 1.588H7.524a1.75 1.75 0 0 1-1.742-1.588l-.967-10.425C3.66 14.615 2.75 13.667 2.75 12.5v-2c0-1.25 1.045-2.25 2.318-2.25h.541a.75.75 0 0 1 0 1.5h-.54c-.46 0-.819.343-.819.75v2c0 .407.359.75.818.75h19.864c.459 0 .818-.343.818-.75v-2c0-.407-.359-.75-.818-.75h-.504a.75.75 0 0 1 0-1.5h.504c1.273 0 2.318 1 2.318 2.25v2c0 1.166-.91 2.115-2.065 2.237zm-18.862.013l.952 10.273a.25.25 0 0 0 .25.227h14.95a.25.25 0 0 0 .25-.227l.952-10.273H6.323z"/> </g> </svg>
+              <span>Ways to redeem</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </div>
+          </div>
+        </div>
+{% if shop.metafields.Flits.IS_REFER_PROGRAM_ON == 1 %}
+        <div class="flits-front-buttons how-to-refer-btn" style="display:none;">
+          <div class="flits-grp">
+            <span>Refer your friends</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+          <div class="flits-refer-friend-outside-content" style="display: none;">
+            <div class="flits-refer-friend-outside-content-title">Referral Program</div>
+            <div class="flits-refer-friend-outside-content-desc"></div>
+          </div>
+        </div>
+{% endif %}
+        {% if customer %}
+        <div class="flits-front-buttons flits-activity-btn" style="display:none;">
+          <div class="flits-grp">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"> <path d="M5.5 15L4.96967 15.5303C5.22247 15.7831 5.61856 15.8223 5.91603 15.624L5.5 15ZM8.89414 21.475C8.60417 21.1792 8.12932 21.1745 7.83353 21.4644C7.53774 21.7544 7.53302 22.2292 7.82299 22.525L8.89414 21.475ZM3.53033 11.9697C3.23744 11.6768 2.76256 11.6768 2.46967 11.9697C2.17678 12.2626 2.17678 12.7374 2.46967 13.0303L3.53033 11.9697ZM8.91603 13.624C9.26067 13.3943 9.3538 12.9286 9.12404 12.584C8.89427 12.2393 8.42862 12.1462 8.08397 12.376L8.91603 13.624ZM24.75 15C24.75 20.1086 20.6086 24.25 15.5 24.25V25.75C21.4371 25.75 26.25 20.9371 26.25 15H24.75ZM6.25 15C6.25 9.89137 10.3914 5.75 15.5 5.75V4.25C9.56294 4.25 4.75 9.06294 4.75 15H6.25ZM15.5 5.75C20.6086 5.75 24.75 9.89137 24.75 15H26.25C26.25 9.06294 21.4371 4.25 15.5 4.25V5.75ZM15.5 24.25C12.9123 24.25 10.5738 23.1884 8.89414 21.475L7.82299 22.525C9.77316 24.5144 12.493 25.75 15.5 25.75V24.25ZM6.03033 14.4697L3.53033 11.9697L2.46967 13.0303L4.96967 15.5303L6.03033 14.4697ZM5.91603 15.624L8.91603 13.624L8.08397 12.376L5.08397 14.376L5.91603 15.624Z" fill="#4D4D4D"/> <path d="M15 10V15L18.5 17.5" stroke="#3d3e81" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </svg>
+            <span>Your activity</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+          </div>
+        </div>
+        {% endif %}
+        <div class="flits-account-box flits-how-to-earn-div flits-account-box-active" id="flits_tab_howToEarn" style="display: none;">
+            <div class="flits-how-to-earn-container">
+                <div class="flits-container-box">
+                    <div class="flits-box-card flits-rules-card-list flits-p-0">
+                        <div id="custom-earning" class="flits-rules-card flits-d-flex flits-flex-wrap flits-p-20 flits-pr-10 flits-pb-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+      <div class="how-to-spend" style="display:none;">
+        <div class="flits-container-box flits-how-to-spend-inner-container">
+			<div class="flits-box-card flits-spend-rules-range-container flits-p-0">
+				<div class="flits-box-card flits-cart-range-container">
+					<p class="flits-cart-range-note" data-flits-lang="how_to_spend_credit_page.select_cart_value" data-flits-lang-default="Check the amount of points that can spend based on cart value. (Maxmimum Redemption: 300 Points)">Check the amount of points that can spend based on cart value. (Maxmimum Redemption: 300 Points)</p>
+					<div class="flits-cart-range-slider timeline"></div>
+				</div>
+			</div>
+        </div>
+      </div>
+     
+      <div class="flits-refer-friend-div" style="display:none;">
+        {% if customer %}
+        <div class="flits-link-share-container">
+    		<div class="flits-input-wrap flits-referral-link-input-wrap flits-referral-link-full">
+              <div class="flits-input-icon-group">
+                <input type="text" class="flits-input" placeholder="" name="referral link" value="" readonly="">
+                <button type="button" class="flits-btn flits-copy-btn flits-primary-btn flits-ml-0" data-flits-lang="refer_friend_page.copy" data-flits-lang-default="Copy" id="flits-refer-link-copy" data-flits-translation="true">Copy</button>
+              </div>
+            </div>
+            <div class="flits-link-share-btn-box">
+				<p data-flits-lang="refer_friend_page.share_referral_link_title" data-flits-lang-default="Share referral link via" data-flits-translation="true">Share referral link via</p>
+				<div class="flits-share-btn-grp">
+					<div class="flits-button-icon flits-facebook-button flits-share-btn flits-hide" data-flits-share-platform="facebook">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1-2"><path d="M17.5,0H2.5A2.5,2.5,0,0,0,0,2.5v15A2.5,2.5,0,0,0,2.5,20h15A2.5,2.5,0,0,0,20,17.5V2.5A2.5,2.5,0,0,0,17.5,0Z" style="fill:#1976d2"></path><path d="M16.88,10H13.75V7.5c0-.69.56-.63,1.25-.63h1.25V3.75h-2.5A3.75,3.75,0,0,0,10,7.5V10H7.5v3.12H10V20h3.75V13.12h1.88Z" style="fill:#fafafa"></path></g></g></svg>
+					</div>
+					<div class="flits-button-icon flits-whatsapp-button flits-share-btn flits-hide" data-flits-share-platform="whatsapp">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M17.5,0H2.5A2.5,2.5,0,0,0,0,2.5v15A2.5,2.5,0,0,0,2.5,20h15A2.5,2.5,0,0,0,20,17.5V2.5A2.5,2.5,0,0,0,17.5,0Z" style="fill:#00eb78"></path><path d="M7.51,13.73a.52.52,0,0,1,.42.06,4.94,4.94,0,1,0-1.72-1.71.53.53,0,0,1,.06.41c-.15.51-.5,1.74-.5,1.74ZM5.3,12.6a6,6,0,1,1,2.1,2.09l-2.48.72a.28.28,0,0,1-.33-.18.38.38,0,0,1,0-.15C4.83,14.26,5.3,12.6,5.3,12.6Z" style="fill:#fff"></path><path d="M7.59,7.91a4.87,4.87,0,0,0,4.49,4.53h0a1.3,1.3,0,0,0,1-.38l.18-.18a.43.43,0,0,0,.14-.32v-.39a.25.25,0,0,0-.15-.23l-1.16-.58a.26.26,0,0,0-.3.05l-.51.5a.25.25,0,0,1-.23.07h0a2.58,2.58,0,0,1-2-2H9a.25.25,0,0,1,.07-.23l.5-.51a.26.26,0,0,0,.05-.3L9.06,6.73a.25.25,0,0,0-.23-.15H8.5a.53.53,0,0,0-.41.19L7.91,7a1.29,1.29,0,0,0-.32.94Z" style="fill:#fff"></path></svg>
+					</div>
+					<div class="flits-button-icon flits-navigator-button flits-share-btn flits-hide" data-flits-share-platform="navigator_share">
+						<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14.08 15"><path d="M5.07,7a2.64,2.64,0,0,0-.47-.74L9,3.58a2.62,2.62,0,0,0,.45.76Zm.08,1.72a2.62,2.62,0,0,1-.38.8l4.14,2.12a2.62,2.62,0,0,1,.39-.79ZM9.76,4.14l-.33.2a2.63,2.63,0,1,0-.64-1.7A2.62,2.62,0,0,0,9,3.58l.34-.2Zm0,0-.45-.76L9,3.58a2.62,2.62,0,0,0,.45.76Zm0,0-.45-.76L9,3.58a2.62,2.62,0,0,0,.45.76Zm1.67,5.58A2.63,2.63,0,0,0,9.31,10.8l.35.18-.39.79-.35-.18a2.61,2.61,0,0,0-.13.77,2.64,2.64,0,1,0,2.64-2.64ZM9.66,11l-.35-.18a2.62,2.62,0,0,0-.39.79l.35.18Zm0,0-.35-.18a2.62,2.62,0,0,0-.39.79l.35.18ZM4.81,8.5l.34.18a2.61,2.61,0,0,0,.12-.73h0a2.64,2.64,0,0,0-.2-1l-.34.21-.45-.75.33-.2a2.63,2.63,0,1,0,.17,3.26l-.35-.18ZM4.73,7.16,5.07,7a2.64,2.64,0,0,0-.47-.74l-.33.2Zm0,0L5.07,7a2.64,2.64,0,0,0-.47-.74l-.33.2ZM4.81,8.5l-.39.79.35.18a2.62,2.62,0,0,0,.38-.8Zm0,0-.39.79.35.18a2.62,2.62,0,0,0,.38-.8Z" transform="translate(0.01)" style="fill:url(#linear-gradient-share)"></path></svg>
+					</div>
+				</div>
+			</div>
+		</div>
+        {% endif %}
+      </div> 
+      <div class="flits-your-activity-div" style="display:none;">
+        {% if customer %}
+          <div class="flits-activity-list">
+            
+          </div>
+        {% endif %}
+      </div> 
+      </div>    
+    </div>
+  </div>
+<!-- </div> -->
+
+  <div class="flits-hidden-divs" style="display:none;">
+    <div class="flits-templates-list" style="width:0px;height:0px;">
+      <div class="flits-rule-card flits-rule-card-template2">
+        <p class="flits-rule-title"></p>
+        <p class="flits-rule-description"></p>
+        <p class="flits-rule-earn-credit"></p>
+        <a class="flits-rule-redirect-link flits-redirect-link flits-hide">
+          <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8"><path id="Layer_2" data-name="Layer 2" d="M4,8A4,4,0,1,1,8,4,4,4,0,0,1,4,8ZM4,.5A3.5,3.5,0,1,0,7.5,4,3.5,3.5,0,0,0,4,.5ZM5.75,4.25H2.25a.25.25,0,0,1,0-.5h3.5a.25.25,0,0,1,0,.5ZM4,6a.25.25,0,0,1-.25-.25V2.25a.25.25,0,0,1,.5,0v3.5A.25.25,0,0,1,4,6Z" style="fill:#25d872"></path></svg>
+        </a>
+        <div class="flits-rule-footer">
+          <a class="flits-unlock-badge"></a>
+          <div class="flits-rule-image">
+          <img src="">
+       </div>
+      </div>
+    </div>
+    <div class="flits-activity-card flits-activity-card-template">
+      <div class="flits-activity-content">
+        <p class="flits-activity-title"></p>
+        <p class="flits-activity-credit"></p>
+      </div>
+      <p class="flits-activity-date"></p>
+    </div>
+    <div class="flits-no-activity-list">
+      <div class="flits-empty-activity-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.47 74.81"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1">
+          <path d="M166.18,37c2.22,16.55-51.8,27.35-98.29,19.81S.07,19.89,22.25,4.21,164,20.48,166.18,37Z" style="fill:#f2f2f2;opacity:0.26"></path>
+          <path d="M179.47,68.46c0,3.51-40.18,6.35-89.73,6.35S0,72,0,68.46C0,67.2,5.24,66,14.28,65c-2.45-1.39-2.68-4.7-2.68-8.56h3.69c-.69-.74-1.4-1.45-2-2.15-.91-1-1.86-1.93-2.77-2.91A10,10,0,0,0,7.87,49a16.79,16.79,0,0,1,7.42,6.19Q15,54.58,14.78,54c-.7-1.65-1.41-3.29-2.19-4.91a22.6,22.6,0,0,0-1.19-2.29c-.19-.29-.78-.81-1-1.14a.35.35,0,0,1-.17-.19c.28-.53,3.82,2.94,4.11,3.29a19.45,19.45,0,0,1,2.74,4.57,2.52,2.52,0,0,1,.12.29,10.19,10.19,0,0,1,.09-1.1,18.16,18.16,0,0,1,1.21-4.26c.38-1,.76-2.86,1.94-3.46.15-.07.19.21.19.35,0-.15-.08-.32-.24-.19-.75.73-.74,2.37-.93,3.29-.28,1.27-.57,2.55-.76,3.83a13.85,13.85,0,0,0-.15,2.23,11.75,11.75,0,0,1,.54-1.06c1.6-2.74,4.36-5,6.88-7.34A9.42,9.42,0,0,0,25,47.4c-.43.63-.86,1.27-1.28,1.91a40.24,40.24,0,0,0-2.48,4.2,26.41,26.41,0,0,0-1.26,3h3.33c0,3.33-.17,6.24-1.78,7.88C38,63,62.46,62.12,89.74,62.12,139.29,62.12,179.47,65,179.47,68.46Z" style="fill:#f2f2f2"></path>
+          <path d="M103.08,48.91a5.84,5.84,0,0,1-9.71,0A5.83,5.83,0,0,1,85,44.06a5.84,5.84,0,0,1-4.86-8.41,5.84,5.84,0,0,1,0-9.71A5.83,5.83,0,0,1,85,17.54a5.83,5.83,0,0,1,8.4-4.85,5.83,5.83,0,0,1,9.71,0,5.83,5.83,0,0,1,8.41,4.85,5.84,5.84,0,0,1,4.85,8.4,5.84,5.84,0,0,1,0,9.71,5.84,5.84,0,0,1-4.85,8.41,5.84,5.84,0,0,1-8.41,4.85Z" style="fill:#fff"></path><path d="M98.23,17.78a13,13,0,1,1-13,13,13,13,0,0,1,13-13Z" style="fill:#f6feff"></path>
+          <path d="M98.23,44.45A13.66,13.66,0,1,1,111.88,30.8,13.67,13.67,0,0,1,98.23,44.45Zm0-26A12.38,12.38,0,1,0,110.61,30.8,12.39,12.39,0,0,0,98.23,18.42Z" style="fill:#64b9ff"></path>
+          <path d="M119.57,30.8a6.47,6.47,0,0,0-2.44-5.07A6.48,6.48,0,0,0,112.07,17a6.49,6.49,0,0,0-6.4-5.52,6.7,6.7,0,0,0-2.38.45,6.48,6.48,0,0,0-10.13,0,6.7,6.7,0,0,0-2.38-.45A6.47,6.47,0,0,0,84.39,17a6.48,6.48,0,0,0-5.07,8.77,6.48,6.48,0,0,0,0,10.13,6.48,6.48,0,0,0,5.07,8.78,6.44,6.44,0,0,0,3.16,4.64,5.36,5.36,0,0,0,.53.28L81.84,64.38a.64.64,0,0,0,.91.8l7-4.11,2,7.9a.65.65,0,0,0,.57.48h0a.63.63,0,0,0,.59-.39l5.26-12.49,5.25,12.49a.63.63,0,0,0,.59.39h.05a.65.65,0,0,0,.57-.48l2-7.9,7,4.11a.64.64,0,0,0,.91-.8l-6.24-14.82a5.36,5.36,0,0,0,.53-.28,6.48,6.48,0,0,0,3.17-4.64,6.49,6.49,0,0,0,5.06-8.78A6.45,6.45,0,0,0,119.57,30.8ZM97.69,54.58l-.08.2-5.07,12-1.72-6.87a.66.66,0,0,0-.37-.43.61.61,0,0,0-.57,0l-6.12,3.57L89.29,50a6.28,6.28,0,0,0,1.5.18,6.44,6.44,0,0,0,2.37-.45,6.47,6.47,0,0,0,5.07,2.44l.49,0Zm15,8.53-6.12-3.57a.61.61,0,0,0-.57,0,.66.66,0,0,0-.37.43l-1.72,6.87-5-11.86,1.31-3.11a6.48,6.48,0,0,0,3.06-2.13,6.49,6.49,0,0,0,2.38.45,6.81,6.81,0,0,0,1.49-.17Zm3.3-28a.63.63,0,0,0-.22.81,5.2,5.2,0,0,1-4.32,7.49.65.65,0,0,0-.6.6,5.2,5.2,0,0,1-2.59,4.16,5.63,5.63,0,0,1-.94.42,5.15,5.15,0,0,1-1.65.28,5.26,5.26,0,0,1-2.31-.54.63.63,0,0,0-.81.22,5.14,5.14,0,0,1-2.93,2.11h0a4.8,4.8,0,0,1-1.36.19,5.22,5.22,0,0,1-4.33-2.31.62.62,0,0,0-.53-.29.72.72,0,0,0-.28.07,5.25,5.25,0,0,1-2.3.54,5.16,5.16,0,0,1-1.66-.28,5.28,5.28,0,0,1-.94-.42A5.2,5.2,0,0,1,85.6,44a.64.64,0,0,0-.59-.6,5.19,5.19,0,0,1-4.32-7.49.64.64,0,0,0-.22-.81,5.2,5.2,0,0,1,0-8.65.64.64,0,0,0,.22-.81A5.18,5.18,0,0,1,85,18.18a.64.64,0,0,0,.59-.6,5.18,5.18,0,0,1,5.18-4.86,5.29,5.29,0,0,1,2.31.54A.63.63,0,0,0,93.9,13a5.2,5.2,0,0,1,8.65,0,.63.63,0,0,0,.81.22,5.33,5.33,0,0,1,2.31-.54,5.14,5.14,0,0,1,2.59.7,5.19,5.19,0,0,1,2.59,4.16.65.65,0,0,0,.6.6,5.2,5.2,0,0,1,4.32,7.48.63.63,0,0,0,.22.81,5.22,5.22,0,0,1,0,8.65Z" style="fill:#90c7ff"></path>
+          <path d="M75.6,57.32a4.47,4.47,0,1,1,4.47-4.46,4.47,4.47,0,0,1-4.47,4.46Zm0-7.66a3.2,3.2,0,1,0,3.19,3.2,3.2,3.2,0,0,0-3.19-3.2Zm45,9.58a1,1,0,1,1,0,1.91,1,1,0,0,1,0-1.91Zm-44,2.55a1,1,0,1,1-1,1,1,1,0,0,1,1-1ZM121.88,15.2a1,1,0,1,1-1,.95,1,1,0,0,1,1-.95Zm0,21.7a1,1,0,1,1-1,1,1,1,0,0,1,1-1Zm-44.68-23a1,1,0,1,1-1,1,1,1,0,0,1,1-1ZM71.45,33.71a1,1,0,1,1-1,.95,1,1,0,0,1,1-.95Zm18.84,3.51a.64.64,0,0,1-.52-.26,10.41,10.41,0,0,1-2-6.16.64.64,0,0,1,.64-.64.64.64,0,0,1,.64.64,9.13,9.13,0,0,0,1.76,5.41.63.63,0,0,1-.51,1Zm17.76-5.78a.64.64,0,0,1-.64-.64,9.19,9.19,0,0,0-9.18-9.19.64.64,0,1,1,0-1.27A10.47,10.47,0,0,1,108.69,30.8a.64.64,0,0,1-.64.64Zm16.7,19.5a3.83,3.83,0,1,1,3.83-3.83,3.84,3.84,0,0,1-3.83,3.83Zm0-6.38a2.55,2.55,0,1,0,2.55,2.55,2.55,2.55,0,0,0-2.55-2.55Z" style="fill:#90c7ff"></path>
+          <path d="M99.09,29.64h0V26.83a4.81,4.81,0,0,1,2.14.87l1-1.37A6.22,6.22,0,0,0,99,25.21v-.76h-1v.74a3.63,3.63,0,0,0-2.35.9,2.69,2.69,0,0,0-.91,2.11,2.39,2.39,0,0,0,.79,1.95,6.17,6.17,0,0,0,2.47,1.06V34.1a5.18,5.18,0,0,1-2.59-1.3l-1.08,1.3a6.43,6.43,0,0,0,3.67,1.63v1.09h1V35.74a3.89,3.89,0,0,0,2.45-.89,2.71,2.71,0,0,0,.92-2.13,2.46,2.46,0,0,0-.8-2,6.07,6.07,0,0,0-2.52-1.09Zm-1-.27A3.13,3.13,0,0,1,97,28.81a1,1,0,0,1-.3-.79,1.1,1.1,0,0,1,.38-.84,1.85,1.85,0,0,1,1.06-.39Zm2.09,4.36a2.1,2.1,0,0,1-1.14.42V31.46a3.36,3.36,0,0,1,1.23.57,1.11,1.11,0,0,1,.32.83,1.07,1.07,0,0,1-.41.87Z" style="fill:#64b9ff"></path></g></g>
+        </svg>
+      </div>
+      <div class="flits-empty-activity-text">
+        <p class="flits-empty-text">No activity history</p>
+      </div>
+    </div>
+  </div>
+</div>

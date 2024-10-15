@@ -1,0 +1,127 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+  <div class="homepage-slider-banner-section homepage-slider-banner-section--{{section.id}}">
+    <div class="homepage-slider-banner-section-inner">
+      <div class="homepage-slider-banner-section-inner-body-slider" style="position: absolute; z-index: 1; min-height: 250px;">
+      {% for block in section.blocks %}
+      <div class="homepage-slider-banner-section-inner-body" data-banner-name="{{ block.settings.banner_name }}" data-banner-url="{{ block.settings.btn_link}}" data-banner-redirection-page="{{ block.settings.banner_redirection_page }}" data-banner-type="{{ block.settings.banner_type }}">
+        <div class="homepage-slider-banner-section-inner-body-relative">
+          {% if forloop.index0 < 1 %}
+            {% assign load = 'eager' %}
+          {% else %}
+          {% assign load = 'lazy' %}
+          {% endif %}
+          <a href="{{ block.settings.btn_link}}">
+          {% render 'responsive-picture' 
+            forloop: forloop,
+            desktop_image: block.settings.desktop_image, 
+            mobile_image: block.settings.mobile_image,
+            desktop_size: '50vw',
+            mobile_size: '100vw'
+          %}
+          </a>
+        </div>
+        
+        <div class="homepage-slider-banner-section-inner-body-absolute mm-homepage-slide-bottom">
+          
+          {% if block.settings.heading != blank %}
+            <h2 class="hero__title animate-reveal animate-first">{{ block.settings.heading }}</h2>
+          {% endif %}
+          
+          {% if block.settings.text != blank %}
+            <p class="hero__subtitle animate-reveal animate-second">{{ block.settings.text }}</p>
+          {% endif %}
+          
+          {% if block.settings.btn_link != blank or block.settings.btn_text != blank %}
+              <a href="{{ block.settings.btn_link }}" class="homepage-shop-now-button hero__link animate-reveal animate-third">{{ block.settings.btn_text }}</a>
+              <div class="loader-container">
+                  <div class="banner_button_loader" > </div>
+              </div>
+          {% endif %}
+          
+        </div>
+      </div>
+      {% endfor %} 
+      </div>  
+    </div>
+  </div>
+{% endif %}       
+      
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+
+{% schema %}
+  {
+  "name": "Homepage Banner Section",
+  "class": "homepage-slider-banner-section",
+  "max_blocks": 9,
+  "blocks": [
+	{
+	  "type": "Blocks",
+      "name": "Add Blocks",
+      "settings": [
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Add Image",
+      "info":"Add Jpeg/png Image of Size 1920 x 646px"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Add Image",
+      "info":"Add Jpeg/png Image of Size 500 x 407px"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Add Heading"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Add Text"
+    },
+	{
+      "type": "text",
+      "id": "btn_link",
+      "label": "Add Button Link"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Add Button Text"
+    },
+     {
+      "type": "text",
+      "id": "banner_name",
+      "label": "Clevertap event banner name"
+    },
+    {
+      "type": "text",
+      "id": "banner_redirection_page",
+      "label": "Clevertap event Banner Redirection Page"
+    },
+    {
+      "type": "text",
+      "id": "banner_type",
+      "label": "Clevertap event Banner Type"
+    }
+  ]
+}],
+  "presets": [
+    {
+      "category": "Custom Solution",
+      "name": "Homepage Banner Section"
+    }
+  ]
+}
+{% endschema %}

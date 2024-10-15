@@ -1,0 +1,276 @@
+{% comment %} Product Schema {% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ product.title }}",
+  "sku": "{{ product.first_available_variant.sku }}",
+  "color": "Black",
+  "description": "{{ product.description | strip_html}}",
+  "model": "{{ product.type }}",
+  "Category": "{{ product.category}}",
+  "review": {
+    "@type": "Review",
+    "name": "First",
+    "author": {
+      "@type": "Person",
+      "name": "Mrinal Chakraborty"
+    },
+    "datePublished": "2024-09-09",
+    "description": "Had bought this for my wife , so that she can carry her favorite coffee to office and remains warm for 2/3 hours .. so far she is happy .. let's hope it lasts as BOROSIL is such a big name and trusted",
+    "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": 5,
+      "bestRating": 5
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 4.2,
+    "ratingCount": 160
+  },
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ product.vendor }}"
+  },
+  "logo": "https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Borosil-logo-blue.png?v=1693978280",
+  "image": [
+    {% for image in product.images %}
+      {%  assign imageUrl = image |  prepend: 'https://cdn.shopify.com/s/' %}
+       {{ imageUrl |  prepend: '"' |  append: '"' |  }}{% unless forloop.last %}, {% endunless -%}
+    {% endfor %}
+  ],
+    "offers": {
+    "@type": "Offer",
+    "price": {{ product.price | divided_by:100 }},
+    "priceCurrency": "INR",
+    "availability": "https://myborosil.com/collections/deals",
+    "priceValidUntil": "2025-08-05T18:20:56.000Z",
+    "url": "{{ product.handle | prepend: 'https://myborosil.com/products/' }}",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "IN"
+      },
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": {%- if product.first_available_variant.price < 399 -%}"50"{%- else -%}"0"{%- endif -%},
+        "currency": "INR"
+      },
+      "freeShippingThreshold": {
+        "@type": "MonetaryAmount",
+        "value": 399,
+        "currency": "INR"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "businessDays": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "21:00"
+        },
+        "transitTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 3,
+          "maxValue": 5,
+          "unitCode": "DAY",
+          "unitText": "business days"
+        },
+        "handlingTime": {
+          "@type": "QuantitativeValue",
+          "minValue": 1,
+          "maxValue": 3,
+          "unitCode": "DAY",
+          "unitText": "business days"
+        }
+      },
+      "seller": {
+        "@type": "Corporation",
+        "name": "{{ product.vendor }}"
+      }
+    },
+  "Description": "This product comes with a 1-year warranty against defects in materials and workmanship"
+  }
+}
+</script>
+{% comment %} End Product Schema {% endcomment %}
+
+{% comment %} BreadcrumbsList Schema {% endcomment %}
+<script type="application/ld+json">
+{%  assign breadList =  product.metafields.custom.breadcrumbs |  split: "," %}
+
+    {% for bread in breadList %}
+      {% if forloop.index == 1 %}
+        {% assign l1 = bread %}
+      {% elsif forloop.index == 2 %}
+        {% assign l2 = bread %}
+      {% endif %}
+    {% endfor %}
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": {
+        "@id": "https://myborosil.com/"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,  
+      "name": "{{ l1 }}",
+      "item": {
+        "@id": "{{ l1 | prepend: 'https://myborosil.com/collections/' }}"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,  
+      "name": "{{ l2 }}",
+      "item": {
+        "@id": "{{ l2 | prepend: 'https://myborosil.com/collections/' }}"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "{{ product.collections[0].title }}",
+      "item": {
+        "@id": "{{ product.collections[0].url |  prepend: 'https://myborosil.com' }}"
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "{{ product.title }}",
+      "item": {
+        "@id": "{{ product.handle }}"
+      }
+    }
+  ]
+}
+</script>
+{% comment %} End BreadcrumsList Schema {% endcomment %}
+
+{% comment %} Review Schema {% endcomment %}
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Product",
+  "name": "{{ product.title }}",
+  "image": "{{ product.featured_image |  prepend: 'https://myborosil.com/cdn/shop/'  }}",
+  "description": "{{ product.description | strip_html }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "Borosil"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "3.9",
+    "reviewCount": "51"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "INR",
+    "price": "2599.00",
+    "availability": "https://myborosil.com/collections/deals"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "DHWANIT SHAH"
+      },
+      "datePublished": "2024-07-03",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "name": "Great product!",
+      "reviewBody": "This product exceeded my expectations. Highly recommended."
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Priyanka"
+      },
+      "datePublished": "2024-04-19",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "name": "Good product",
+      "reviewBody": "I like the product very much and I am enjoying using it"
+    }
+  ]
+}
+
+</script>
+{% comment %} End Review Schema {% endcomment %}
+
+{% comment %} FAQ Schema Start {% endcomment %}
+<script type="application/ld+json">
+{% if product.metafields.FAQ.question.size > 0 %}
+ 
+  
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "title": "FAQs",
+  "description": "Explore frequently asked questions about Product.",
+  "mainEntity": [
+ {% assign total_faq = product.metafields.FAQ.question.size | minus: 1 %}
+  {% for i in (0..total_faq) limit:5 %}
+    {
+      "@type": "Question",
+      "name": "{{ product.metafields.FAQ.question[i] }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ product.metafields.FAQ.answer }}"
+      }
+    }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+  ],
+  "keywords": {{ product.tags | split: ',' |  join: ',' }}
+}
+{% endif %}
+</script>
+
+
+{% comment %} End FAQ Schema {% endcomment %}
+
+{% comment %} Video Schema {% endcomment %}
+<script type="application/ld+json">
+ {
+   "@context": "https://schema.org",
+   "@type": "VideoObject",
+   "name": "Title of your video",
+   "description": "A short description of your video",
+   "thumbnailUrl": "https://cdn.shopify.com/s/files/1/0551/8009/9722/files/my-borosil-akhand-diya-large-borosil-akhand-diya-brass-33845438972042_720x720.jpg",
+   "uploadDate": "2023-12-15T08:00:00+00:00",  "duration": "PT0H0M03S",  "contentUrl": "https://myborosil.com/cdn/shop/files/quinn_hzc6bgw6dwx5aug1xvpt4dte.mp4",  
+    "author": {
+     "@type": "Person",
+     "name": "Nishant"
+   }
+ }
+ </script>
+{% comment %} End Video Schema {% endcomment %}

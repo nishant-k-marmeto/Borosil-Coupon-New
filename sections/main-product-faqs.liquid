@@ -1,0 +1,138 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+    {% assign faq_questions = product.metafields.FAQ.question %}
+    {% assign faq_questionsanswers = product.metafields.FAQ.answer %}
+    <script src="{{ 'product-page-ask-question.js' | asset_url }}" defer="defer"></script>
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-header">
+            <h2>{{section.settings.faq_title}}</h2>
+            <div class="ask-question lazy-load-parent" style="">
+                <img alt="" loading="lazy" width="18" height="18" data-src="https://cdn.shopify.com/s/files/1/0551/8009/9722/t/252/assets/question.svg?v=48469720349569836891681213257">
+                <h4>Ask a Question</h4>
+            </div>
+            </div>
+            {% if faq_questions.size > 0 %}
+            <div class="FAQread_question_answer">
+                {% assign total_faq = faq_questions.size | minus: 1 %}
+                {% for i in (0..total_faq) limit:4 %}
+                    <div class="faq">
+                        <div class="faq-question">
+                            <h3>{{faq_questions[i]}}</h3>
+                            <button class="PlusButton"> + </button>
+                        </div>
+                        <div class="faq-content">
+                            <p>{{ faq_questionsanswers[i] }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+                {% if faq_questions.size > 4 %}
+                    {% for i in (0..total_faq) offset: continue %}
+                        <div class="faq_hidden">
+                            <div class="faq-question">
+                                <h3>{{faq_questions[i]}}</h3>
+                                <button class="PlusButton"> + </button>
+                            </div>
+                            <div class="faq-content">
+                                <p>{{ faq_questionsanswers[i] }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            <div class="view-all">
+                <a class="view-all-text" >View All</a>
+            </div>
+            <div class="ask-question_mobilescreen lazy-load-parent">
+                <img alt="" data-src="{{ "question.svg" | asset_url }}">
+                <h4>Ask a Question</h4>
+            </div>
+            {% endif %}
+            </div>
+            <div class="FAQwrite_question_answer">
+                <div class="FAQwrite_question_subhead">
+                    <div class="h2"> POST YOUR QUESTION </div>
+                </div>
+                {% form 'contact' %}
+                    {{ form_errors | default_errors }}
+                    <div class="FAQwrite_question_form_contact">
+                        <div class="FAQwrite_question_form_Name">
+                            <label for="fname">Your Name *</label>
+                            <input type="text" id="fname" name="fname" value="" placeholder="Enter Your Name" pattern="^[A-Za-z -]+$">
+                            <span class="Name_Error"></span>
+                        </div>
+                        <div class="FAQwrite_question_form_Email">
+                            <label for="email">Email Id *</label>
+                            <input type="email" id="email" name="email" value="" placeholder="Enter Your Email id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                            <span class="Email_Error"></span>
+                        </div>
+                    </div>
+                    <div class="FAQwrite_question_form_Question">
+                        <label for="question">Ask your Question *<span id="charNum"></span></label> 
+                        <textarea type="text" id="question" name="question" rows="5" value="" placeholder="Enter your question" maxlength="1000" onkeyup="QuestionCountChar(this)"></textarea>
+                        <span class="Text_Error"></span>
+                    </div>
+                    <div class="FAQwrite_question_form_action">
+                        <button class="FAQwrite_question_form_action_cancle">CANCEL</button>
+                        <input class="FAQwrite_question_form_action_submit" type="submit" value="SUBMIT QUESTION">
+                        <div class="Submit_Error"></div>
+                    </div>
+                {% endform %}
+            </div>
+            <div class="QuestionSubmitted_message"> 
+                <div class="h3"> Thank you for submitting your question. </div>
+                    <p> We will get back to as soon as we can. </p>
+                    <div class="Faq_buttons_toRedirect">
+                    <button class="FAQread_section_button">View FAQ's</button>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}       
+      
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+{% schema %}
+{
+    "name": "Product FAQs",
+    "settings": [
+      {
+          "label":"FAQ Heading",
+          "type": "text",
+          "id":"faq_title",
+      	  "default": "FAQS"
+      }  
+    ],
+    "blocks": [
+        {
+            "type": "blocks",
+            "name": "FAQ",
+            "settings": [
+            {
+            "type": "text",
+            "id": "faq_question",
+            "label": "Question"
+            },
+            {
+            "type": "text",
+            "id": "faq_answer",
+            "label": "Answer"
+            }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "Description",
+            "name":"FAQs"
+        }
+    ]
+}
+{% endschema %}

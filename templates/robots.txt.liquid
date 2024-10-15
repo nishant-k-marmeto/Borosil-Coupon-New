@@ -1,0 +1,61 @@
+# we use Shopify as our ecommerce platform
+{%- comment -%}
+# Caution! Please read https://help.shopify.com/en/manual/promoting-marketing/seo/editing-robots-txt before proceeding to make changes to this file.
+{% endcomment %}
+{% for group in robots.default_groups %}
+  {{- group.user_agent -}}
+
+  {% for rule in group.rules %}
+    {{- rule -}}
+  {% endfor %}
+  
+  {%- if group.user_agent.value == '*' -%}
+    {{ 'Disallow: /*?q=*' }}
+  {%- endif -%}
+  {%- if group.user_agent.value == '*' -%}
+    {{ 'Disallow: /search*' }}
+  {%- endif -%}
+
+  {%- if group.user_agent.value == 'Googlebot' -%}
+    {{ 'Disallow: /*?q=*' }}
+  {%- endif -%}
+  {%- if group.user_agent.value == 'Googlebot' -%}
+    {{ 'Disallow: /search*' }}
+  {%- endif -%}
+
+  {%- if group.user_agent.value == 'AdsBot-Google' -%}
+    {{ 'Disallow: /*?q=*' }}
+  {%- endif -%}
+  {%- if group.user_agent.value == 'AdsBot-Google' -%}
+    {{ 'Disallow: /search*' }}
+  {%- endif -%}
+
+  {%- if group.user_agent.value == 'Googlebot-Image' -%}
+    {{ 'Disallow: /*?q=*' }}
+  {%- endif -%}
+  {%- if group.user_agent.value == 'Googlebot-Image' -%}
+    {{ 'Disallow: /search*' }}
+  {%- endif -%}
+
+  {%- if group.user_agent.value == 'adsbot-google' -%}
+    {{ 'Disallow: /*?q=*' }}
+  {%- endif -%}
+  {%- if group.user_agent.value == 'adsbot-google' -%}
+    {{ 'Disallow: /search*' }}
+  {%- endif -%}
+
+  {%- if group.user_agent.value == '*' -%}
+    {{ 'Disallow: /*.atom' }}
+  {%- endif -%}
+
+  {%- if group.sitemap != blank -%}
+    {{ group.sitemap }}
+  {%- endif -%}
+{% endfor %}
+
+User-agent: AdsBot-Google
+Disallow:
+User-agent: Googlebot-Image
+Disallow:
+
+

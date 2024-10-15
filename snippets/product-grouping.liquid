@@ -1,0 +1,32 @@
+{% assign product_array = product.metafields.custom.product_grouping.value %}
+{% assign product_group_heading = product.metafields.custom.product_grouping_heading.value %}
+
+{% if product_array %}
+    <div class="product-grouping__container">
+        <div class="product-grouping__heading">{% if product_group_heading %}{{ product_group_heading }}{% else %}Colors{% endif %}</div>
+        <div class="product-grouping__wrapper">
+            {% for product_item in product_array %}
+                {% assign active_product = false %}
+                {% if product_item.handle == product.handle %}
+                    {% assign active_product = true %}
+                {% endif %}
+                <div class="product-group__item {% if active_product == true %} active {% endif %}" data-product-handle="{{ product_item.handle }}">
+                    <div class="product-group__unavailable"></div>
+                    <div class="product-group__item-title hidden">{{ product_item.title }}</div>
+                    {% for variant in product_item.variants %}
+                        <input type="hidden" data-variant-title-handle="{{ variant.title | handleize }}" data-variant-available={{ variant.available }}>
+                    {% endfor %}
+                    <div class="product-group__item-image">
+                        <img src="{% if product_item.featured_image %}{{ product_item.featured_image | img_url: '150x' }}{% else %}{{ product_item.featured_image | img_url: '150x' }}{% endif %}"
+                            loading="lazy"
+                            width="{{ product_item.featured_image.width }}"
+                            height="{{ product_item.featured_image.height }}">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="mm-loader"></div>
+    </div>
+{% endif %}
+
+

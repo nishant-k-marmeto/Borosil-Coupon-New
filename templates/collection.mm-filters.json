@@ -1,0 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product-grid": {
+      "type": "marmeto-collection-template",
+      "blocks": {
+        "81f96fdd-fbf3-47ad-b0ea-22c5ca6d129f": {
+          "type": "tag_filters",
+          "disabled": true,
+          "settings": {
+            "filter_name": "Shape",
+            "filter_tags": "Round,Square,Rectangular"
+          }
+        },
+        "4fc9216d-4dcf-4a7f-9d50-f50aba87ed4b": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Colour",
+            "filter_tags": "Steel,Black,White,Grey,Red,Blue,Yellow,Olive Green,Pink,Purple,Gold,Copper,Orange,Brown,Green,Maroon,Multicolor"
+          }
+        }
+      },
+      "block_order": [
+        "81f96fdd-fbf3-47ad-b0ea-22c5ca6d129f",
+        "4fc9216d-4dcf-4a7f-9d50-f50aba87ed4b"
+      ],
+      "settings": {
+        "exclude_oos_products": false,
+        "show_oos_last": false,
+        "enable_price_filter": true,
+        "price_filter_heading": "Price",
+        "price_ranges": "0-500,501-1000,1001-2000,2001-3000,3001-5000",
+        "enable_tag_filter": true,
+        "pagination_type": "basic_pagination",
+        "product_per_page": 30
+      }
+    }
+  },
+  "order": [
+    "product-grid"
+  ]
+}

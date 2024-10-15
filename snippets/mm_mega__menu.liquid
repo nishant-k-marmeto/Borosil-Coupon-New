@@ -1,0 +1,115 @@
+<div style="display:none" class="dropdown_container {{menu_name}}" data-dropdown="{{ section.settings.parent | handleize }}">
+  <div class="mm_dropdown container megamenu">
+    <div class="mm_dropdown_contentWrapper ">
+      <div class="mm-megamenu--content">
+        <div class="dropdown_menu-wrapper">
+          {%- for block in section.blocks -%}
+          {%- if block.type == 'menu-with-image' -%}
+          <div class="dropdown__menus{% if forloop.index == 1 %} dropdown__menus_bold{% endif %}">
+            <ul class="dropdown_content">
+              <a href="{{ block.settings.menu_link }}"><span class="dropdown__menu-title">{{ block.settings.menu_title }}</span></a>
+              {%- assign menuLinklist = block.settings.linklist -%}
+              {%- for link in linklists[menuLinklist].links -%}
+              <li class="dropdown__menu-list">
+                <a href="{{ link.url }}" data-menu="{{ block.settings.menu_title }}"><span class="dropdown__menu-subtitle">{{ link.title }}</span></a>
+                {%- if link.links and link.links.size > 0 -%}
+                <ul class="submenu" data-submenu="{{link.title | handle }}">
+                  {%- assign submenu = link.handle -%}
+                  {%- for sublink in linklists[submenu].links -%}
+                  <a href="{{ sublink.url }}" data-menu="{{ block.settings.menu_title }}"><span class="announcement__menu-title">{{ sublink.title }}</span></a>
+                  {%- endfor -%}
+                </ul>
+                {%- endif -%}
+              </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+          {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+        {% if section.settings.image_button_link != blank %}
+        <a href="{{ section.settings.image_button_link }}">
+          <div class="mm-megamenu--image">
+            <img src="{{ section.settings.image | img_url: 'master' }}" width="300px" height="300px" loading="lazy">
+            {% if section.settings.image_title != blank %}
+            <div class="mm-megamenu--image-overlay">
+              <div class="title">{{ section.settings.image_title }}</div>
+            </div>
+            {% endif %}
+          </div>
+        </a>
+        {% else %}
+        {% if section.settings.image != blank %}
+        <div class="mm-megamenu--image">
+          <img src="{{ section.settings.image | img_url: 'master' }}" width="300px" height="300px" loading="lazy">
+
+          {% if section.settings.image_title != blank %}
+          <div class="mm-megamenu--image-overlay">
+            <div class="title">{{ section.settings.image_title }}</div>
+          </div>
+          {% endif %}
+        </div> 
+        {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mm-m-c mobile-megamenu-content-{{section.settings.parent | handle }}">
+  {%- for block in section.blocks -%}
+  <div class="mobile-header-link-container">
+    <a href="{{ block.settings.menu_link }}" class="mm-m-c-dropdown__menu-title">
+      <span>{{ block.settings.menu_title }}</span>
+      <span class="dropdown-view_all">View All</span>
+    </a>
+    {%- assign menuLinklist = block.settings.linklist -%}
+    <div class="mm-m-c-dropdown-links">
+      {%- for link in linklists[menuLinklist].links -%}
+      <a class="mm-m-c-dropdown__menu-link" href="{{ link.url }}">{{link.title}}</a>
+      {%- endfor -%} 
+    </div> 
+  </div>
+  {%- endfor -%}
+  <a href="{{ section.settings.image_button_link }}" class="shop-all-link lk-{{section.settings.parent | handle }}">Shop All {{ section.settings.parent | capitalize }}</a>
+</div>
+
+{% if section.settings.mobile_image != blank %}
+    <div class="mmlg mobile-megamenu--listitem--img-{{section.settings.parent | handle }} lazy-load-parent">
+        <img loading="lazy" data-src="{{ section.settings.mobile_image | img_url: '130x' }}" width="150px" height="150px">
+    </div>
+{% endif %}
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    $('[data-submenu="{{section.settings.parent | handle }}"]').addClass('mm_mega-menu selection-indicator');
+      
+    var $submenu = $('[data-submenu="{{section.settings.parent | handle }}"]');
+    $submenu.append($('[data-dropdown="{{section.settings.parent | handle }}"] > div'));
+    $submenu.parents('.nav-bar__item').addClass('nav-bar__item--static mm_menu--nav-bar__item');
+    
+    $submenu.parents('.nav-bar__item').find('a.nav-bar__link svg').remove();
+
+    if ($('[data-dropdown="{{section.settings.parent | handle }}"]').length > 0) {
+      $submenu.removeClass('hide');
+    }
+    $('[data-submenu="{{section.settings.parent | handle }}"]').append(' <i class="downArrow"></i>')
+
+    $('.nav-item-{{section.settings.parent | handle }}').closest('.mobile-megamenu--listitem').after($('.mobile-megamenu-content-{{section.settings.parent | handle }}'));
+    const menuUrl = $('.bg-color-{{section.settings.parent | handle }}').attr('data-link-url')
+    
+    // setting url of the mobile mega menu shop all button, since its not directly accessible here. 
+    $('.lk-{{section.settings.parent | handle }}').attr('href', menuUrl)
+    $('.mlink.nav-item-{{section.settings.parent | handle }}').siblings('.mm-right-arrow').after($('.mobile-megamenu--listitem--img-{{section.settings.parent | handle }}'))
+        
+    $('.nav-item-{{section.settings.parent | downcase}}').parent('.mobile-megamenu--listitem').addClass('bg-color-{{section.settings.parent | downcase}}')
+  });
+</script>
+
+<style>
+.bg-color-{{section.settings.parent | downcase}} {
+        background-color: {{ section.settings.mobile_menu_color_picker }};
+    }
+</style>

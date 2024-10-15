@@ -1,0 +1,95 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "mm-blogs": {
+      "type": "mm-blogs",
+      "blocks": {
+        "484aaf7c-813c-4e81-a38f-4eadb83c56c8": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Menu",
+            "filter_tags": "Breakfast, Lunch & Dinner, Snacks & Starters,Desserts,Salads,Soups",
+            "filter_tab_name": "receipe"
+          }
+        },
+        "62ab8269-e5b4-4c29-a0fd-3d50e7af7d84": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "CUISINE",
+            "filter_tags": "Indian, Mexican, Italian, Chinese, Lebanese, Thai, North Indian, South Indian, Gujarati, Bengali",
+            "filter_tab_name": "receipe"
+          }
+        },
+        "ce89d51f-e08e-4221-92a1-ac3bb43e3d57": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "DIET",
+            "filter_tags": "Vegan, Vegetarian, Non Vegetarian, Keto, Gluten Free ,Low Calorie",
+            "filter_tab_name": "receipe"
+          }
+        },
+        "af96de4e-9f20-4daf-a7f0-d3f8da393a36": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "BY CONCEPT",
+            "filter_tags": "Lunchbox Ideas, School Snacks, Easy Party Snacks, One Pot Recipes, Under 10 Minutes, Smoothies & Juices, Special Occasions",
+            "filter_tab_name": "receipe"
+          }
+        },
+        "12e18214-c084-4d8b-9934-be9c5bf00531": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "DRINKS",
+            "filter_tags": "Juices, Smoothies, Cocktails",
+            "filter_tab_name": "receipe"
+          }
+        },
+        "49c75cb2-ee94-428f-b584-dc93d452c434": {
+          "type": "tabs",
+          "settings": {
+            "tab_name": "recipe",
+            "tab_tag": "receipe"
+          }
+        },
+        "aa0885a1-f778-4113-bbd1-3a1ddb727fb4": {
+          "type": "tabs",
+          "settings": {
+            "tab_name": "Tips and Tricks",
+            "tab_tag": "tips-and-tricks"
+          }
+        },
+        "c2b10391-c598-43b9-8a54-eed4514c2e64": {
+          "type": "tabs",
+          "settings": {
+            "tab_name": "lifestyle",
+            "tab_tag": "lifestyle"
+          }
+        }
+      },
+      "block_order": [
+        "484aaf7c-813c-4e81-a38f-4eadb83c56c8",
+        "62ab8269-e5b4-4c29-a0fd-3d50e7af7d84",
+        "ce89d51f-e08e-4221-92a1-ac3bb43e3d57",
+        "af96de4e-9f20-4daf-a7f0-d3f8da393a36",
+        "12e18214-c084-4d8b-9934-be9c5bf00531",
+        "49c75cb2-ee94-428f-b584-dc93d452c434",
+        "aa0885a1-f778-4113-bbd1-3a1ddb727fb4",
+        "c2b10391-c598-43b9-8a54-eed4514c2e64"
+      ],
+      "settings": {
+        "enable_tag_filter": true
+      }
+    }
+  },
+  "order": [
+    "mm-blogs"
+  ]
+}

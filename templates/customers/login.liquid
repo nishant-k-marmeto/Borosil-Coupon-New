@@ -1,0 +1,315 @@
+{{ "login.css" | asset_url | stylesheet_tag}}
+
+<div class="auth-container-outer">
+    <div class="auth-container-outer--image-container">
+        <img src="{{ "auth_img.jpg" | asset_url }}" alt="Borosil Login">
+    </div>
+    <div class="auth-container--outer--content-container">
+
+        <div class="phone-number-container step-window" data-step="login">
+            <div class="auth-title title-login">Enter mobile number to continue</div>
+            <div class="mobile-input-container">
+                <div class="country-code">+91</div>
+                <input type="number" class="phone-number" id="signin-phone-number" name="phone-number" min="1" maxlength="10" placeholder="Mobile Number*"
+                       oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+            </div>
+            <div class="invalid-phone-error">Please enter a valid Indian mobile number</div>
+            <button id="login-proceed" class="action-button">Proceed</button>
+            <div class="loader"> </div>
+        </div>
+
+        <div style="display: none" class="otp-verification-container step-window" data-step="otp-verification">
+            <div class="auth-title title-otp">Verify OTP</div>
+            <div class="otp-text otp-text-verify">OTP Successfully Sent to </div>
+            <div id="reenter-phone" data-container-from="phone-number-container" >Change phone number?</div>
+            <div class="otp-container">
+                <input class="otp-input" type="number" id="first" max-length='1' onkeyup="focusNextElement(event, '' , this, 'second')" />
+                <input class="otp-input" type="number" id="second" max-length='1' onkeyup="focusNextElement(event,'first', this, 'third')"/>
+                <input class="otp-input" type="number" id="third" max-length='1' onkeyup="focusNextElement(event,'second', this, 'fourth')"/>
+                <input class="otp-input" type="number" id="fourth" max-length='1' onkeyup="focusNextElement(event, 'third',this, 'btn-verify-otp')"/>
+            </div>
+            <div class="otp-error">Invalid OTP! Please re-enter the correct OTP</div>
+            <button id="btn-verify-otp" class="action-button">Verify OTP</button>
+            <div class="loader"> </div>
+            <div class="resend-otp-text">Resend OTP in <span class="otp-timer">00: 50</span> </div>
+            <div class="resend-otp-text resend-otp-link">Resend OTP</div>
+        </div>
+
+        <div  style="display: none" class="signup-container step-window" data-step="signup">
+            <div class="auth-title title-signup">Sign Up</div>
+            <div class="signup-error"></div>
+            <div class="otp-text signup"></div>
+            <div class="user-data-container">
+                <div class="mobile-input-container added-mobile-number">
+                    <div class="country-code">+91</div>
+                    <input type="tel" class="phone-number" id="signup-phone-number" name="phone-number" min="1" max="10" placeholder="Mobile Number*">
+                </div>
+              	<input type="text" class="user-input input-email" placeholder="Email*">
+                <div class="d-signup-flex">
+                    <input type="text" class="user-input input-fname" placeholder="First Name*">
+                    <input type="text" class="user-input input-lname" placeholder="Last Name*">
+                </div>
+                
+                <div class="dob-gender-container d-signup-flex">
+                    <select name="gender" class="user-input input-gender" id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                    <input type="text" class="user-input input-date" id="dob" placeholder="DOB" onfocus="(this.type='date')">
+                </div>
+                
+                <button class="action-button sign-up-btn">Proceed</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    let userPhoneInput,
+        register,
+        Otptimer;
+    
+    const showWindow = (visibleWindow) => {
+        $('.step-window').css({'display': 'none', 'visibility':'hidden'})
+        $(`.${visibleWindow}`).css({'display': 'block', 'visibility':'visible'})
+    }
+
+    const handleReEnter = () => {
+        const container = $('#reenter-phone').attr('data-container-from');
+        $('#signin-phone-number').val('')
+        $('#first').val('')
+        $('#second').val('')
+        $('#third').val('')
+        $('#fourth').val('')
+        clearTimeout(Otptimer);
+        showWindow(container)
+    }
+
+    function timer(remaining) {
+        let timerOn = true
+        let m = Math.floor(remaining / 60);
+        let s = remaining % 60;
+
+        m = m < 10 ? '0' + m : m;
+        s = s < 10 ? '0' + s : s;
+
+        $('.otp-timer').html(m + ':' + s);
+        remaining -= 1;
+
+        if(remaining >= 0 && timerOn) {
+            Otptimer = setTimeout(() => timer(remaining), 1000);
+            return;
+        }
+
+        // Do timeout stuff here
+        $('.resend-otp-text').hide();
+        $('.resend-otp-link').show();
+    }
+
+    function focusNextElement(event, previous, self, next){
+        if(event.key === "Backspace" && previous === ''){
+            return
+        }        
+        if(event.key === "Backspace"){
+            $(`#${previous}`).val('').focus()
+            return
+        }
+        if(self.value.length) $(`#${next}`).val('').focus()
+    }
+
+    setTimeout(() => {
+        $('#signin-phone-number').val('').focus()
+    }, 500);
+
+    const handleProceedLogin = () => {
+        $('.invalid-phone-error').css({'visibility':'hidden'})
+
+        userPhoneInput = parseInt($('#signin-phone-number').val())
+        const sendOTPUrl = 'https://borosilotp.marmeto.com/api/login/otp/send'
+        const otpData = {phoneNumber : userPhoneInput}
+        register = false;
+        
+        if(userPhoneInput == NaN || userPhoneInput.toString().length !== 10){
+            console.log(userPhoneInput);
+            $('.invalid-phone-error').css({'visibility':'visible'})
+            return
+        }
+        $('#login-proceed').hide();
+        $('.loader').show();
+        fetch(sendOTPUrl, {
+            method:'POST',
+            headers:{"Content-type": "application/json"},
+            body: JSON.stringify(otpData),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          	$('#login-proceed').show();
+            $('.loader').hide()
+            if (data.status !== "SUCCESS") {
+              if(data.status == 'EMAIL_NOT_FOUND'){
+                console.log('email not found')
+                $('.invalid-phone-error').css({'visibility':'visible'}).html(data.message)               
+                return
+              }
+              else if(data.status == 'FAILURE'){
+                console.log(data.message);
+                if($('.data-message').length <=0){
+                  $('.mobile-input-container').before(`<div class="data-message">${data.message}</div>`);  
+                }
+                           
+                return
+              }
+              else {
+                $('.signup-error').css({'visibility':'visible'}).html("We were unable to find an email address with the given phone number. Please enter your email address")
+                $('#signup-phone-number').val($('#signin-phone-number').val())
+                showWindow('signup-container')
+                return;
+              }
+              
+            }
+          
+          showWindow('otp-verification-container')
+          $('#first').focus()
+          $('.otp-text.otp-text-verify').html(`OTP Successfully Sent to ${userPhoneInput}`)
+          console.log('starting timer');
+          timer(30)
+        })
+        .catch((err) => console.log('error', err))
+        .finally(()=>{
+          console.log('')
+        })
+    }
+
+    $('.resend-otp-link').click(event => {
+      	clearTimeout(Otptimer)
+        $('.loader').show()
+        if ($('#reenter-phone').attr('data-container-from') == "signup-container") {
+            $('.sign-up-btn').trigger('click');
+        }
+        else {
+          handleProceedLogin()
+        }
+      setTimeout(() => {
+          $('.resend-otp-text').show();
+          $('.resend-otp-link').hide();             
+      }, 1000)
+    })
+
+
+    // :: OTP screen
+    $('.otp-input').focus(event => $(event.target).val(''))
+
+    const handleVerifyOTP = () => {
+      let otpVerificationURL = register ? 'https://borosilotp.marmeto.com/api/register' : 'https://borosilotp.marmeto.com/api/login/otp'
+        let otp = ''
+        let methodUsed = 'Phone'
+        $('.otp-input').each((index,element) => otp += $(element).val().substring(0,1))
+        console.log(otp);
+
+        if(otp.length < 4 ) {
+            $('.otp-error').html('Please enter the 4 digit OTP').show()
+            return
+        }
+
+        const noLoginCheckoutStatus = localStorage.getItem('no_login_checkout')
+        let prevUrl = sessionStorage.getItem('prevUrl') || null;
+        
+        const verificationData = {
+            phoneNumber:userPhoneInput,
+            otp,
+          	redirectionUrl: prevUrl
+        }
+        if(noLoginCheckoutStatus) verificationData.redirectionUrl = '/checkout'
+
+        localStorage.removeItem('no_login_checkout')
+        
+        $('#btn-verify-otp').hide()
+        $('.loader').show()
+        $('.otp-error').hide()
+
+        fetch(otpVerificationURL,{
+            method:'POST',
+            headers:{"Content-type": "application/json"},
+            body: JSON.stringify(verificationData),
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+
+          if(data.status !== 'SUCCESS'){
+            $('.otp-error').html(`${data.message}`).show()
+            $('.loader').hide()
+            $('#btn-verify-otp').show()
+            return
+            Shopify.analytics.publish("logged_in", { method_used : methodUsed, status : data.message});
+          }
+          
+          if(data.status == 'SUCCESS' && !data.url){
+            console.log('returning from sucess nd no url');
+            localStorage.setItem('user-phone', userPhoneInput)
+            setTimeout(() => {
+              window.location.href = '/account/register'
+            }, 500);
+          }
+          window.location.href = data.url
+          console.log('status', data.status, 'it;s Me Nikkie');
+          Shopify.analytics.publish("logged_in", { method_used : methodUsed, status : data.status });
+        });
+    }
+    
+  // :: OTP screen
+  $('.sign-up-btn').click(function handleProceedSignup () {  
+    let sendOTPUrl = 'https://borosilotp.marmeto.com/api/register/capture'
+    let firstName = $('.input-fname').val(),
+        lastName = $('.input-lname').val(),
+        phoneNumber = parseInt($('#signup-phone-number').val()),
+        email = $('.input-email').val(),
+        gender = $('#gender').val(),
+        dateOfBirth = $('#dob').val()
+
+
+    let otpData = {
+      firstName: firstName,
+      lastName: lastName,
+      phoneNumber: phoneNumber,
+      email: email,
+      gender:  gender, 
+      dob: dateOfBirth
+    }
+    
+    $('.signup-error').css('visibility', 'hidden')
+    $('#reenter-phone').attr('data-container-from', 'signup-container')
+
+    fetch(sendOTPUrl, {
+      method:'POST',
+      headers:{"Content-type": "application/json"},
+      body: JSON.stringify(otpData),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      $('.loader').hide()
+      if (data.status !== "SUCCESS") {
+        $('.signup-error').css({'visibility':'visible'}).html(`${data.message}`);
+        Shopify.analytics.publish("signed_up", { register_option : 'phone', status : data.status });
+        return;
+      }
+      userPhoneInput = phoneNumber;
+	    register = true;
+      showWindow('otp-verification-container')
+      $('#first').focus()
+      $('.otp-text.otp-text-verify').html(`OTP Successfully Sent to ${userPhoneInput}`)
+      timer(30);
+      Shopify.analytics.publish("signed_up", { register_option : 'phone', status : data.status });
+    })
+    .catch((err) => console.log('error', err))
+  })
+    $(document).on('click', '#reenter-phone', () => handleReEnter())
+    $(document).on('click', '#login-proceed', () => handleProceedLogin())
+    $(document).on('click', '#btn-verify-otp', () => handleVerifyOTP())
+
+	$(document).on('blur', '.user-input.input-email', function() {
+    	const trimmedVal = $(this).val().trim()
+        $('.user-input.input-email').val(trimmedVal)
+    })
+</script>

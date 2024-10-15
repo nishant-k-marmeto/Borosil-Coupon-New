@@ -1,0 +1,510 @@
+<script src="https://unpkg.com/papaparse@5.4.1/papaparse.min.js" async></script>
+{{ 'bulk-text-customize-on-product.css' | asset_url | stylesheet_tag }}
+
+<div id="bulk-customizer-Modal" class="customizer_modal">
+  <!-- Modal content -->
+  <div class="customizer_modal-content">
+    <div class="modal---head">
+      <p class="modal-head_text"bulk-customizer_close>Give your stainless steel bottle a personal touch!</p>
+      <span class="bulk-customizer_close">&times;</span>
+    </div>
+
+    {% assign images = product.media %}
+    <div class="modal---body">
+      <div class="image-text">Preview</div>
+      <div class="bulk-customize-image-container customize-image-container">
+        <div class="csv-placeholder">Upload a CSV to view preview</div>
+      </div>
+      <div class="modal-customize-body modal-bulk-customize-body">
+        <div class="bulk-upload-note">
+            <h3 class="bold">CSV Format: </h3>
+            <a href="{{ sample_sheet }}" download="{{ sample_sheet }}">Download Sample Sheet</a>
+            <div class="input-text text-placement bold">1. Text Limit</div>
+            <div class="mobile-font__container">
+              <div class="info--text bulk-vertical-limit">(Vertical max X characters)</div>
+              <div class="info--text bulk-horizontal-limit">(Horizontal max Y characters)</div> 
+            </div>
+            <div class="proto-text__outer"><div class="proto-text"></div></div>
+            
+            <div class="input-text text-placement no-margin-top bold">2. Available Placement</div>
+            {% comment %} using the same container for placement and fonts {% endcomment %}
+            <div class="mobile-font__container" style="display: block;">
+            {% if product.tags contains 'hide-vertical' %}
+                <div class="mobile-font_radio">1. Horizontal</div>
+                {%  assign placement = '["horizontal"]' %}
+            {% elsif product.tags contains 'hide-horizontal' %}
+                <div class="mobile-font_radio">1.Vertical</div>
+                {%  assign placement = '["vertical"]' %}
+            {% else %}
+                <div class="mobile-font_radio">1. Horizontal</div>
+                <div class="mobile-font_radio">2. Vertical</div>
+                {%  assign placement = '["horizontal","vertical"]' %}
+            {% endif %}
+            </div>
+
+            <div class="input-text text-placement bold">3. Available font style</div>
+            
+            {% assign fonts = "" %}
+            <div size="25" name="selectFontFamily" class="mobile-font__container" style="display: block;">
+            {% assign index = 1 %}
+            {% for block in section.blocks %}
+                {% if block.type == 'fontfamily' %}
+                {% assign fonts = fonts |  append:  block.settings['font-family-block'] %}
+                {% unless forloop.last %}
+                    {% assign fonts = fonts | append: "," %}
+                {% endunless %}
+                <div class="mobile-font_radio" style="font-family: {{ block.settings.font-family-block }};font-weight: {{ block.settings.font_weight }};">{{ index }}. {{ block.settings['font-family-block'] }}</div>
+                {% assign index = index |  plus: 1 %}  
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+        <button id="bulk-modal-customizer-button" class="modal-bulk-customize-button" disabled type="button">ADD PERSONALISATION</button>
+        <input type="file" id="csvFileInput" accept=".csv">
+        <div class="input-text">UPLOAD YOUR CSV</div>
+        <div class="csv-error"> </div>
+      </div>
+      <div class="modal-atc-body modal-bulk-atc-body">
+        <div class="personalized-message">Your Personalised Borosil product will be shipped as soon as it is ready.</div>
+
+        <div class="checkout-icons">
+          <div class="checkout-icon__inner">
+            {% if settings.custom_image1 != blank %}
+              <img
+                class="prepaid-image"
+                src="{{ settings.custom_image1 | img_url: 'master' }}"
+                heigth="60"
+                width="60"
+                loading="lazy"
+              >
+            {% endif %}
+          </div>
+          <div class="checkout-icon__inner">
+            {% if settings.custom_image2 != blank %}
+              <img
+                class="noreturn-image"
+                src="{{ settings.custom_image2 | img_url: 'master' }}"
+                heigth="60"
+                width="60"
+                loading="lazy"
+              >
+            {% endif %}
+          </div>
+          <div class="checkout-icon__inner">
+            {% if settings.custom_image3 != blank %}
+              <img
+                class="noreturn-image"
+                src="{{ settings.custom_image3 | img_url: 'master' }}"
+                heigth="60"
+                width="60"
+                loading="lazy"
+              >
+            {% endif %}
+          </div>
+          <div class="checkout-icon__inner">
+            {% if settings.custom_image4 != blank %}
+              <img
+                class="noreturn-image"
+                src="{{ settings.custom_image4 | img_url: 'master' }}"
+                heigth="60"
+                width="60"
+                loading="lazy"
+              >
+            {% endif %}
+          </div>
+        </div>
+
+        {% if settings.disclaimer_text %}
+          <div class="disclaimer-text">{{ settings.disclaimer_text }}</div>
+        {% endif %}
+
+        {%- form 'product',
+          product,
+          id: product_form_id,
+          class: 'form',
+          novalidate: 'novalidate',
+          data-type: 'add-to-cart-bulk-form-custom'
+        -%}
+          <input type="hidden" name="id">
+          <button
+            type="submit"
+            name="add"
+            class="product-form__submit button button--full-width customize-atc"
+          >
+            Add to cart
+          </button>
+        <div class="custom-atc-loader__outer">
+          <span class="product-atc_loader custom-atc-loader"> </span>
+        </div>
+        {%- endform -%}
+        <div class="not-available">{{ settings.not_available }}</div>
+        <button id="bulk-customizer-change-button" class="customize-change-button" type="button">
+          CHANGE PERSONALISATION
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script id="bulk-data" type="application/json">
+{
+    "placements":{{ placement }},
+    "fonts": {{ fonts |  split: "," | json }}
+}
+</script>
+
+<script>
+    {% for value in product.metafields.custom.axis_values.value.horizontal %}
+      {% assign HheightAxis =  value.height %}{% assign HwidthAxis = value.width %}
+    {% endfor %}
+
+    {% for value in product.metafields.custom.axis_values.value.vertical %}
+        {% assign VheightAxis =  value.width %}{% assign VwidthAxis = value.height %}
+    {% endfor %}
+
+    {% assign color = "white" %}
+    {% if product.metafields.custom.color != blank %}
+      {% assign color = product.metafields.custom.color %}
+    {% endif %}
+
+    {% assign mainImage =  images[0] | img_url: 'master'  %}
+    {% if product.metafields.custom.personalize_image != blank %}
+        {% assign mainImage =  product.metafields.custom.personalize_image | img_url: 'master'  %}
+    {% endif %}
+</script>
+
+<script>
+
+    document.getElementById('csvFileInput').addEventListener('change', handleFile);
+    const conditionalData = JSON.parse(document.querySelector('script#bulk-data').innerText)
+    
+    let verLimit, verSize, horLimit, horSize, currentFontSize, jsonData;
+    bulkGetDimensionsData();
+
+      // customize button in modal
+      $('#bulk-modal-customizer-button').click(function() {
+        $('.modal-bulk-customize-body').hide();
+        $('.modal-bulk-atc-body').show();
+      });
+
+      // change button
+      $('#bulk-customizer-change-button').click(function() {
+        $('.modal-bulk-customize-body').show();
+        $('.modal-bulk-atc-body').hide();
+      });
+      
+    function handleFile(event) {
+        const file = event.target.files[0];
+        
+        if (!file) {
+            return;
+        }
+        
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+            const csvData = e.target.result;
+            parseCSV(csvData);
+        };
+        
+        reader.readAsText(file);
+    }
+      
+    function parseCSV(csvData) {
+        Papa.parse(csvData, {
+                header: true,
+                dynamicTyping: true,
+                complete: function(results) {
+                jsonData = JSON.stringify(results.data, null, 2);
+        
+                const isCheckPlacementAndFont = checkPlacementAndFont(JSON.parse(jsonData),conditionalData)
+                document.querySelector('.csv-error').innerHTML = ""
+                if(isCheckPlacementAndFont!=true){
+                    document.querySelector("#bulk-modal-customizer-button").disabled = true
+                    document.querySelector('.csv-error').innerHTML = isCheckPlacementAndFont.error
+                    return
+                }
+
+                document.querySelector("#bulk-modal-customizer-button").disabled = false
+
+                jsonData = JSON.parse(jsonData)
+                renderResults(jsonData)
+            },
+            error: function(error) {
+            console.error('Error parsing CSV:', error.message);
+            }
+        });
+    }
+
+    function initializeSlickSlider() {
+      $('.bulk-customize-image-container')
+      .not(".slick-initialized")
+      .slick({
+        dots: false,
+        arrows: true,
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: `<button class="slick-arrow slick-prev"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left fa-w-14" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg></button>`,
+        nextArrow: `<button class="slick-arrow slick-next"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg></button>`
+      });
+    }
+
+    function renderResults(data) {
+      document.querySelector(".bulk-customize-image-container").innerHTML = "";
+      const filteredData = data.filter(item => item.Name !== null);
+      filteredData.forEach(element => {
+          if (element !== null) {
+              renderCanvasImage(window.base_image, element);
+          }
+      });
+      document.querySelector('.bulk-customize-image-container').classList.remove('slick-initialized');
+      initializeSlickSlider();
+    }
+
+    function getFont(currentFontSize,font) {
+        let fontBase = 400;                   // selected default width for canvas
+
+        var selector = document.querySelector(`#selecth1FontFamily option[value='${font}']`);
+        var family = selector.value;   //.dataset.rc
+        var weight = selector.dataset.wght;
+        $('.proto-text').css("font-size", parseInt(currentFontSize));
+        return weight +' '+(currentFontSize) + 'px '+family; // set font
+    }
+
+    function bulkGetDimensionsData() {
+      let stringJson = JSON.parse($('#dimension-element').attr("data-all-dimensions"));
+      let dimensionTag = $('#dimension-element').attr("data-dimension");
+          for(var i=0; i< stringJson.length; i++){
+              if(stringJson[i]['tag'] == dimensionTag){
+                  verLimit = stringJson[i]['VFL'];
+                  verSize = stringJson[i]['VFS'];
+                  horLimit = stringJson[i]['HFL'];
+                  horSize = stringJson[i]['HFS'];
+                  currentFontSize = verSize;
+          }
+      }
+      $('#customized_Text').attr("maxlength", verLimit);
+      $(".bulk-horizontal-limit").text($(".bulk-horizontal-limit").text().replace("Y", horLimit));
+      $(".bulk-vertical-limit").text($(".bulk-vertical-limit").text().replace("X", verLimit));
+    }
+
+    function renderCanvasImage(base_image, data) {
+        var mainCanvas = document.createElement('canvas');
+        mainCanvas.width = 468;
+        mainCanvas.height = 468;
+        let textRotation = data["Placement"].toLowerCase();
+        let canheight = base_image.naturalHeight;
+        let canwidth = base_image.naturalWidth;
+        let imageHeightToRender = 468;
+        let imageWidthToRender = 468;
+        let rotation = 0;
+        let height=0;
+        let width=0;
+        let message = data["Name"];
+        let messageLength = message.length;
+        let protoWidth = $('.proto-text').width();
+        $('.proto-text').html(message);
+        $('.proto-text').css('font-size',`${currentFontSize}+px`);
+
+        mainCanvas.dataset.id = data["Name"]+data["Placement"]+data["Font"]
+
+        document.querySelector(".bulk-customize-image-container").append(mainCanvas)
+
+        let context = mainCanvas.getContext("2d");
+        context.fillStyle = "blue";
+        context.font = "bold 16px Arial";
+        context.fillText("", 240, 380);
+
+        context.drawImage(base_image, 0, 0, canwidth, canheight, 0, 0, imageWidthToRender, imageHeightToRender);
+        context.save();
+
+        if(textRotation == 'horizontal'){
+        rotation = 0;
+        currentFontSize = horSize
+        height = imageHeightToRender*({{ HheightAxis}}/100);
+        width = imageWidthToRender*({{ HwidthAxis}}/100);
+        } else {
+        rotation = -90;
+        currentFontSize = verSize
+        let afterFont; 
+        if(parseInt(verSize) > 20){
+            afterFont = {{VheightAxis}}  + 1;
+        }
+        else{
+            afterFont = {{VheightAxis}};
+        }
+        height = imageHeightToRender*(afterFont/100);
+        width = -imageWidthToRender*({{ VwidthAxis}}/100);
+        }
+        
+        context.fillStyle = "{{ color }}";
+        context.rotate(rotation * Math.PI / 180);
+        context.font = getFont(currentFontSize, data["Font"]);
+        context.textAlign = 'center';
+        message = message;
+        context.fillText(message, width, height);
+
+        context.beginPath();
+        var path = new Path2D(image);
+        context.strokeStyle = "#fff";
+
+        if(textRotation == 'horizontal'){
+        context.setTransform(1, 0, 0, 1,width-10,height-48); 
+        } else {
+
+            
+        verSize = parseInt(verSize);
+        messageLength = parseInt(messageLength);
+        let vwAxis = {{ VwidthAxis}};
+        vwAxis = vwAxis-6;
+        let newWidth = (imageWidthToRender - protoWidth) * (vwAxis/100);
+        context.setTransform(0, 1, 1, 0,height-17,newWidth);
+        }
+        context.fill(path);
+        context.restore();
+    };
+
+    function checkPlacementAndFont(inputArray, conditionalData) {
+      const placements = conditionalData.placements;
+      const fonts = conditionalData.fonts;
+
+      const filteredArray = inputArray.filter(item => item.Name !== null);
+      let index = 0;
+      for (const item of filteredArray) {
+        // Below code is to check whether any placement in the data is missing or not
+        if(!inputArray[index].Placement){
+          return { error: `Placement column missing in row` };
+        }
+        // Below code is to check whether any font in the data is missing or not
+        if(!inputArray[index].Font){
+          return { error: `Font column missing in row` };
+        }
+        // Below code is to check whether any name in the data is missing or not
+        if(!inputArray[index].Name){
+          return { error: `Name column missing in row` };
+        }
+        index += 1;
+          
+        // Below code is to check whether given placement is available in the placements array or not
+        if (item.Placement && !placements.includes(item.Placement.toLowerCase())) {
+            return { error: item.Placement + " Placement not supported" };
+        }
+        // Below code is to check whether given font is available in the fonts array or not
+        if (item.Font && !fonts.includes(item.Font)) {
+            return { error: item.Font + " Font not supported" };
+        }
+        // Below code is to check whether given vertical placement and its text length matching the condition or not
+        if (item.Placement.toLowerCase() === "vertical" && item.Name && item.Name.length > verLimit) {
+            return { error: item.Placement + " character limit exceeded for vertical placement" };
+        }
+        // Below code is to check whether given horizontal placement and its text length matching the condition or not
+        if (item.Placement.toLowerCase() === "horizontal" && item.Name && item.Name.length > horLimit) {
+            return { error: item.Placement + " character limit exceeded for horizontal placement" };
+        }
+
+        let specialCharRegex = /[!@#$%^&*(),.?":{}|<>\\_\-+~=`]/; // these values are used to check the Name contains special characters or not
+        let numberRegex = /\d/; // these values are used to check the Name contains numbers or not
+
+        let containsSpecialChar = specialCharRegex.test(item.Name);
+        let containsNumber = numberRegex.test(item.Name);
+        // Below code is to check whether Name has special characters and numbers
+        if (item.Name && containsSpecialChar && containsNumber){
+          return { error: "Names should not contains special characters and numbers" };
+        }
+        // Below code is to check whether Name has special characters
+        if (item.Name && containsSpecialChar){
+          return { error: "Names should not contains special characters.." };
+        }
+        // Below code is to check whether Name has numbers
+        if (item.Name && containsNumber){
+          return { error: "Names should not contains numbers.." };
+        }
+      }
+
+
+        return true; // All placements and fonts found in conditional data and character limits satisfied
+    }
+
+    
+    function dataURItoBlob(dataURI) {
+          // convert base64/URLEncoded data component to raw binary data held in a string
+          var byteString;
+          if (dataURI.split(',')[0].indexOf('base64') >= 0)
+            byteString = atob(dataURI.split(',')[1]);
+          else
+            byteString = unescape(dataURI.split(',')[1]);
+
+          // separate out the mime component
+          var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+          // write the bytes of the string to a typed array
+          var ia = new Uint8Array(byteString.length);
+          for (var i = 0; i < byteString.length; i++) {
+            ia[i] = byteString.charCodeAt(i);
+          }
+          return new Blob([ia], {type:mimeString});
+      }
+
+    document.querySelector("[data-type='add-to-cart-bulk-form-custom']").addEventListener("submit", function(e){
+      e.preventDefault()
+      const selectedVariant = $('.variant-options-listItem.is-selected');
+      const variantTitle = selectedVariant.attr('data-variant-title');
+
+      const productJson = {{ product.variants | json }};
+
+      const currentSelectedVariant = productJson.find((ele=> ele.title == variantTitle));
+      const currentSelectedVariantId = currentSelectedVariant.id
+
+      if(currentSelectedVariant.available){
+
+      var formData = new FormData();
+      const filteredJsonData = jsonData.filter(item => item.Name !== null);
+
+      filteredJsonData.forEach((customization,index)=>{
+        const imageCanvas = document.querySelector(`canvas[data-id='${customization.Name+customization.Placement+customization.Font}']`)
+        const dataURL = imageCanvas.toDataURL('image/jpeg', 0.5);
+        const blob = dataURItoBlob(dataURL);
+        formData.append(`items[${index}]id`,currentSelectedVariantId);
+        formData.append(`items[${index}]properties[Placement]`,customization.Placement);
+        formData.append(`items[${index}]properties[Name]`,customization.Name);
+        formData.append(`items[${index}]properties[Font]`,customization.Font);
+        formData.append(`items[${index}]properties[Customise-charge]`,"{{ product.metafields.custom.personalize_price }}");
+        formData.append(`items[${index}]properties[Image]`, blob, 'custom_image_bulk.jpeg');
+      })
+
+      const config = fetchConfig('javascript');
+      config.headers['X-Requested-With'] = 'XMLHttpRequest';
+      delete config.headers['Content-Type']
+      config['body'] = formData;
+      $('.customize-atc').hide();
+      $('.custom-atc-loader').show();
+
+      fetch2(window.Shopify.routes.root + 'cart/add.js', config)
+        .then(response => {
+          return response.json();
+        })
+        .then(response => {
+          mmajaxcart.CartCountHandler();
+          mmajaxcart.AjaxcartRender();
+          setTimeout(function(){
+            mmajaxcart.AjaxcartOpen();
+          },1500);
+          $('.customize-atc').show();
+          $('.custom-atc-loader').hide();
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          $('.customize-atc').show();
+          $('.custom-atc-loader').hide();
+        });
+      } else {
+        $(".not-available").show();
+        $(".customize-atc").css("background","rgb(212, 212, 212)");
+        setTimeout(function(){
+          $(".not-available").hide();
+          $(".customize-atc").css("background","#B4D241");
+        },2000);
+      }
+    })
+</script>

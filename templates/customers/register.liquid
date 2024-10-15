@@ -1,0 +1,217 @@
+<script>
+  location.href = 'https://myborosil.com/account/login';
+</script>
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ "register.css" | asset_url | stylesheet_tag }}
+{{ "login.css" | asset_url | stylesheet_tag }}
+
+{% comment %}
+<div class="customer register mm-customer-login-container">
+  
+  <div class="customer-login-card auth-container-outer">
+    <div class="auth-container-outer--image-container">
+        <img src="{{ "auth_img.jpg" | asset_url }}" alt="Borosil Login">
+    </div>
+  <div class="customer-login-card-layout signup-container"> 
+  
+  <h1 class="login-title">
+    {{ 'customer.register.title' | t }}
+  </h1>
+  <div class="otp-text signup">Looks like your phone number is not Registered. <br>Please fill the following details</div>
+  
+   
+  <div class="cust-customer-login-form customer-reset-form">  
+  {%- form 'create_customer', novalidate: 'novalidate' -%}
+    {%- if form.errors -%}
+      <h2 class="form__message" tabindex="-1" autofocus>
+        <svg aria-hidden="true" focusable="false" role="presentation">
+          <use href="#icon-error" />
+        </svg>
+        {{ 'templates.contact.form.error_heading' | t }}
+      </h2>
+      <ul> 
+        {%- for field in form.errors -%}
+          <li>
+            {%- if field == 'form' -%}
+              {{ form.errors.messages[field] }}
+            {%- else -%}
+              <a href="#RegisterForm-{{ field }}">
+                {{ form.errors.translated_fields[field] | capitalize }}
+                {{ form.errors.messages[field] }}
+              </a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+    <div class="field user-input added-mobile-number">             
+        <input
+          type="number"
+          pattern="/^-?\d+\.?\d*$/" 
+          onKeyPress="if(this.value.length==10) return false;"              
+          name="customer[note][Phone Number ]"
+          id="phonenumber"          
+          aria-required="true"
+          {% if form.errors contains 'phonenumber' %}
+            aria-invalid="true"
+            aria-describedby="RegisterForm-phonenumber-error"
+          {% endif %}
+          placeholder="{{ 'customer.register.phonenumber' | t }}"
+          required     
+            >
+      <label for="phonenumber">
+        {{ 'customer.register.phonenumber' | t }}
+      </label>
+      </div>
+    <div class="field user-input input-fname">      
+      <input
+        type="text"
+        name="customer[first_name]"
+        id="RegisterForm-FirstName"
+        {% if form.first_name %}value="{{ form.first_name }}"{% endif %}
+        autocomplete="given-name"
+        placeholder="{{ 'customer.register.first_name' | t }}"
+      >
+      <label for="RegisterForm-FirstName">
+        {{ 'customer.register.first_name' | t }}
+      </label>
+    </div>
+    <div class="field user-input input-lname">
+      <input
+        type="text"
+        name="customer[last_name]"
+        id="RegisterForm-LastName"
+        {% if form.last_name %}value="{{ form.last_name }}"{% endif %}
+        autocomplete="family-name"
+        placeholder="{{ 'customer.register.last_name' | t }}"
+      >
+      <label for="RegisterForm-LastName">
+        {{ 'customer.register.last_name' | t }}
+      </label>
+    </div>
+    <div class="field user-input input-email">      
+      <input
+        type="email"
+        name="customer[email]"
+        id="RegisterForm-email"
+        {% if form.email %} value="{{ form.email }}"{% endif %}
+        spellcheck="false"
+        autocapitalize="off"
+        autocomplete="email"
+        aria-required="true"
+        {% if form.errors contains 'email' %}
+          aria-invalid="true"
+          aria-describedby="RegisterForm-email-error"
+        {% endif %}
+        placeholder="{{ 'customer.register.email' | t }}"
+      >
+      <label for="RegisterForm-email">
+        {{ 'customer.register.email' | t }}
+      </label>
+    </div>
+    {%- if form.errors contains 'email' -%}
+      <span id="RegisterForm-email-error" class="form__message">
+        <svg aria-hidden="true" focusable="false" role="presentation">
+          <use href="#icon-error" />
+        </svg>
+        {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.
+      </span>
+    {%- endif -%}
+
+
+    <div class="field" style="visibility: hidden; display: none">     
+        <input
+          type="password"
+          name="customer[password]"
+          id="RegisterForm-password"
+          value="defaultkey12345"
+          aria-required="true"
+          {% if form.errors contains 'password' %}
+            aria-invalid="true"
+            aria-describedby="RegisterForm-password-error"
+          {% endif %}
+          placeholder="{{ 'customer.register.password' | t }}"
+        >
+      </div>
+      {%- if form.errors contains 'password' -%}
+        <span id="RegisterForm-password-error" class="form__message">
+          <svg aria-hidden="true" focusable="false" role="presentation">
+            <use href="#icon-error" />
+          </svg>
+          {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
+        </span>
+      {%- endif -%}
+
+
+    
+    <div class="register-custom-two-blocks">
+    	<div class="field user-input input-gender">
+    		<select name="customer[note][Gender ]" id="gender">
+				<option value="">Select Gender</option>
+				<option data-title="Male" value="Male">Male</option>
+				<option data-title="Female" value="Female">Female</option>
+				<option data-title="Not Specified" value="Not Specified">Not Specified</option>
+			</select>            
+    	</div>
+    
+      <div class="field user-input">     
+      	<input
+        type="text"        
+        name="customer[note][Date of Birth ]"
+        id="dob"       
+        onfocus="(this.type='date')"     
+        aria-required="true"
+        {% if form.errors contains 'dob' %}
+          aria-invalid="true"
+          aria-describedby="RegisterForm-dob-error"
+        {% endif %}
+        placeholder="{{ 'customer.register.dob' | t }}"
+      	>
+        <label for="dob">
+        Date Of Birth
+        </label>
+      </div>
+    </div>
+               		
+    <div class="register-checkbox">
+      <input
+        type="checkbox"
+        name="customer[note][Checkbox ]"
+        id="checkbox"             
+        aria-required="true"
+        {% if form.errors contains 'checkbox' %}
+          aria-invalid="true"
+          aria-describedby="RegisterForm-checkbox-error"
+        {% endif %}
+        checked
+      	>
+      	<label for="checkbox">
+        {{ 'customer.register.checkbox' | t }}
+      	</label>            
+	</div>
+        
+    <button class="action-button create_account">
+        {{ 'customer.register.submit' | t }}
+    </button>      	        
+    
+  {%- endform -%}
+    <div class="bottom-text signup">
+        Already have an account ? <a class="signup-link" href="/account/login">Signin</a>
+    </div>
+  </div>  
+ </div>
+ </div>
+</div>
+
+<script>
+    const userPhoneNumber = localStorage.getItem('user-phone')
+    console.log('userPhoneNumber', userPhoneNumber);
+    if (userPhoneNumber) $('#phonenumber').val(userPhoneNumber).attr({'disabled':'true','value':userPhoneNumber})
+
+    $('.create_account').click(event => {
+        localStorage.removeItem('user-phone')
+    })
+    
+    
+</script>
+{% endcomment %}

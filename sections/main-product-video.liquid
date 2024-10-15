@@ -1,0 +1,78 @@
+{% comment %} PDP video section {% endcomment %}
+{% assign card_image = product.metafields.Video_card.Video_image %}
+{% assign card_tilte = product.metafields.Video_card.Video_Title %}
+{% assign card_discription = product.metafields.video_card.video_description %}
+{% assign card_video = product.metafields.video_card.video %}
+
+{% if card_video.size > 0 %}
+  <section id="section-product-videos">
+    <div class="container-product-videos">
+      <div class="video-header">
+        <h3>{{ section.settings.video_header | truncate: 20, '' }}</h3>
+        <div class="video-arrows lazy-load-parent">
+          {% if section.blocks.size %}
+            <img class="arrow-left" data-src="{{"circle_arrow_right.png" | asset_url}}" alt="circle left">
+            <img class="arrow-right" data-src="{{"circle_arrow_right.png" | asset_url}}" alt="circle right">
+          {% endif %}
+        </div>
+      </div>
+      <div class="video-container">
+        {% assign total_cards = card_video.size | minus: 1 %}
+
+        {% for i in (0..total_cards) %}
+          <div class="card">
+            <div class="card-video" data-ImageID="{{ card_video[i] }}" id="video--{{ i }}">
+              <div class="plyr__video-embed" id="player-{{block.id}}">
+                <img src="{{ card_image[i] | image_url: 'master' }}" class="card-video_image" height="{{ card_image[i].height }}" width="{{ card_image[i].width }}">
+                <img src="{{ "videoPlay.png" | asset_url }}" alt="" class="card-video_playBtn">
+              </div>
+            </div>
+            <div class="card-content">
+              <h3>{{ card_tilte[i] }}</h3>
+              <p class="VideoCard_p">{{ card_discription[i] }}</p>
+              <p class="VideoCard_pFull">{{ card_discription[i] }}</p>
+              <div class="VideoCard_readmore">Read more</div>
+              <div class="VideoCard_readless">Read less</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="ProductVideo_modal">
+      <div class="ProductVideo_modal-content">
+        <span class="ProductVideo_modal_close">&times;</span>
+        <div class="main_video_slider">
+          {% assign total_videos = card_video.size | minus: 1 %}
+          {% for j in (0..total_videos) %}
+            <!-- adding the video file -->
+            <video preload="none" class="videocard_BigVideo" id="video--{{ j }}" controls>
+              <source src="{{ card_video[j] }}" type="video/mp4">
+            </video>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Video section",
+  "settings": [
+    {
+      "label":"Video header name",
+      "type":"text",
+      "id":"video_header",
+      "default": "PRODUCT VIDEOS",
+      "info": "Max char: 20"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Video",
+      "name":"Video section"
+    }
+  ]
+}
+{% endschema %}

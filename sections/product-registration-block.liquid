@@ -1,0 +1,116 @@
+<div class="product-registration-section">
+  
+		<div class="product-registration-header">
+          
+            {% if section.settings.heading != blank %}
+				<p class="product-reg-head">{{ section.settings.heading }}</p>
+            {% endif %}
+            
+            {% if section.settings.description != blank %}
+            	<p class="product-reg--desc">{{ section.settings.description }}</p>
+            {% endif %}
+          
+		</div>          
+
+  		<div class="product-registration-body">
+			{% for block in section.blocks %}
+			<div class="product-registration-blocks">
+              
+              	{% if block.settings.image != blank %}
+              		<img src="{{ block.settings.image |img_url: 'original' }}" class="product-block-image">
+              	{% endif %}
+
+              	{% if block.settings.title != blank %}
+              		<p class="product-reg-block-title">{{ block.settings.title }}</p>
+              	{% endif %}
+              
+              	{% if block.settings.description != blank %}
+              		<p class="product-reg-block-desc">{{ block.settings.description }}</p>
+              	{% endif %}
+              
+	         </div>
+			{% endfor %}
+      	</div>    
+           
+        {% if section.settings.reg_btn_txt != blank %}
+  		<div class="product-reg-btn">
+          
+          {% if customer %}
+          
+          		<a href="/pages/product-registration-form">{{ section.settings.reg_btn_txt }}</a>          
+          
+          {% else %}
+                    
+          		<a href="/account" return="false">{{ section.settings.reg_btn_txt }}</a>          
+          
+          {% endif %}
+          
+  		</div>       
+        {% endif %}
+    
+</div>
+
+<script>
+  
+  sessionStorage.setItem("url", "/pages/product-registration-form");
+  
+</script>  
+  
+
+{% schema %}
+  {
+  "name": "Product Registration",
+  "class": "product-registration-section",
+  "settings": [
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Add Section Heading"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Add Section Description"
+    },
+    {
+      "type": "text",
+      "id": "reg_btn_txt",
+      "label": "Add Button Text"
+    }
+],
+  "max_blocks": 3,
+  "blocks": [
+	{
+	  "type": "Blocks",
+      "name": "Add Blocks",
+      "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Add Image",
+	  "info": "Recommended Image Size 200 x 200px"
+    },    
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Add Title"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "Add Description"
+    }
+  ]
+}],
+"presets": [
+	{
+	"category": "Custom Solution",
+	"name": "Product Registration"
+	}
+   ]
+}
+{% endschema %}
+
+
+  
+  

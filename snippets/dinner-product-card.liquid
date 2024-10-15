@@ -1,0 +1,73 @@
+<div class="dnr-card__wrapper"
+     data-main-product-id="{{ mainProduct.id }}"
+     data-main-product-handle="{{ mainProduct.handle }}"
+     data-dnr-variant="{{ variant.id }}"
+     data-dnr-price="{{ variant.price | divided_by: 100 }}"
+     data-dnr-variant-inventory="{{ variant.inventory_quantity }}">
+    <div class="dnr-card__inner">
+        <div class="dnr-card__image-container">
+            <img
+                srcset="{%- if product.featured_image.width >= 165 -%}{{ product.featured_image | img_url: '165x' }} 165w,{%- endif -%}
+                  {%- if product.featured_image.width >= 330 -%}{{ product.featured_image | img_url: '330x' }} 330w,{%- endif -%}
+                  {%- if product.featured_image.width >= 535 -%}{{ product.featured_image | img_url: '535x' }} 535w,{%- endif -%}
+                  {%- if product.featured_image.width >= 750 -%}{{ product.featured_image | img_url: '750x' }} 750w,{%- endif -%}
+                  {%- if product.featured_image.width >= 1000 -%}{{ product.featured_image | img_url: '1000x' }} 1000w,{%- endif -%}
+                  {%- if product.featured_image.width >= 1500 -%}{{ product.featured_image | img_url: '1500x' }} 1500w,{%- endif -%}
+                  {%- if product.featured_image.width >= 3000 -%}{{ product.featured_image | img_url: '3000x' }} 3000w,{%- endif -%}
+                  {{ product.featured_image | img_url: 'master' }} {{ product.featured_image.width }}w"
+                data-src="{{ product.featured_image | img_url: 'master' }}"
+                alt="{{ product.title | escape }}"
+                height="170"
+                width="170"
+                loading="lazy"
+                class="dnr-card__img">
+        </div>
+        <div class="dnr-card__info">
+            <div class="dnr-card__title">{{ variant.product.title }}</div>
+            <div class="dnr-card__price-wrapper">
+                <div class="dnr-card__price">{{ variant.price | money_without_trailing_zeros }}</div>
+                {%- if variant.compare_at_price -%}
+                    <div class="dnr-card__compared-price">MRP: <span>{{ variant.compare_at_price | money_without_trailing_zeros }}</span></div>
+                    <p class="dnr-card__price-off">
+                        {{-
+                          variant.compare_at_price
+                          |times:1.0
+                          | minus: variant.price
+                          | times: 100
+                          | divided_by: variant.compare_at_price
+                          |round
+                        -}}
+                        % off
+                      </p>
+                {%- endif -%}
+            </div>
+            <div class="dnr-card__qty-wrapper">
+                <div class="dnr-card__qty-text">Select Qty:</div>
+                <div class="dnr-card__qty no-trig">
+                    <input type="number" class="dnr-variant-input no-trig" value="0" onkeypress="return event.charCode >= 48">
+                    <div class="dnr-options-qty no-trig">
+                        <div class="dnr-qty-value no-trig">0</div>
+                        <div class="dnr-qty-svg no-trig">
+                            <svg class="no-trig" xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 19.329 10.914"><g id="Group_2339" data-name="Group 2339" transform="translate(1.768 1.767)"><path id="Path_579" data-name="Path 579" d="M475.711-2583.809l7.9,7.9,7.9-7.9" transform="translate(-475.711 2583.809)" fill="none" stroke="#111111" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></g></svg>
+                        </div>
+                        
+                    </div>
+                    <ul class="dnr-list-item__wrapper no-trig">
+                        {% for i in (0..9) %}
+                        <li class="dnr-list-item no-trig" data-value="{{ i }}">{{ i }}</li>
+                        {% endfor %}
+                        <li class="dnr-list-item dnr-more-qty no-trig" data-value="10">10+</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="dnr-check-mark">
+            <div class="dnr-check">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16.641" height="11.694" viewBox="0 0 16.641 11.694"><path id="Path_53" data-name="Path 53" d="M1912.4,220.749l5.654,5.654,9.573-9.573" transform="translate(-1911.693 -216.123)" fill="none" stroke="#fff" stroke-width="2"/></svg>
+            </div>
+        </div>
+        <div class="dnr-card-error">Please select the quantity!</div>
+        <div class="dnr-card-inventory-error">Max available quantity is {{ variant.inventory_quantity }}</div>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+{% capture section_settings %}
+{
+
+  "products": [
+	{%- for product in recommendations.products -%}
+	  {%- assign productJson = product | json -%}
+      {%- assign size = productJson | size | minus: 1 -%}
+      {%- assign productJson = productJson | slice: 0, size -%}      
+        {{ productJson }}
+    {%- endfor -%}
+  ]
+
+}
+{% endcapture %}
+
+
+<link rel="stylesheet" href="{{ 'section-product-recommendations.css' | asset_url }}" media="print" onload="this.media='all'">
+
+
+<product-recommendations class="product-recommendations page-width" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4">
+  <div class="product-page-container product-page-container--{{ section.id }}" data-section-settings='{{ section_settings }}'>
+  {% if recommendations.performed and recommendations.products_count > 0 %}
+    <div class="product-recommendations_header">
+      <h2 class="product-recommendations__heading"> {{ section.settings.section_heading }} </h2>
+    </div>
+  {% endif %}
+  </div>
+
+</product-recommendations>
+
+<script>
+  
+  AllProducts();
+
+  function AllProducts() {
+    var sectionContainer = $('.product-page-container--{{ section.id }}');
+    var sectionSettings = sectionContainer.attr('data-section-settings');
+    sectionSettings = JSON.parse(sectionSettings);
+
+    console.log("products ="+sectionSettings.products)
+  }
+</script>
+
+
+
+
+
+{% javascript %}
+
+  class ProductRecommendations extends HTMLElement {
+    constructor() {
+      super();
+
+      const handleIntersection = (entries, observer) => {
+        if (!entries[0].isIntersecting) return;
+        observer.unobserve(this);
+
+        fetch(this.dataset.url)
+          .then(response => response.text())
+          .then(text => {
+            const html = document.createElement('div');
+            html.innerHTML = text;
+            const recommendations = html.querySelector('product-recommendations');
+            if (recommendations && recommendations.innerHTML.trim().length) {
+              this.innerHTML = recommendations.innerHTML;
+            }
+          })
+          .catch(e => {
+            console.error(e);
+          });
+      }
+
+      new IntersectionObserver(handleIntersection.bind(this), {rootMargin: '0px 0px 200px 0px'}).observe(this);
+    }
+  }
+
+  customElements.define('product-recommendations', ProductRecommendations);
+{% endjavascript %}
+
+
+
+{% schema %}
+{
+  "name": "Recommended Slider",
+  "settings": [
+	{
+	  "type": "header",
+	  "content": "Heading settings"
+	},
+	{
+	  "type": "text",
+      "id": "section_heading",
+      "label": "Heading text",
+	  "default": "You may also like"
+	}
+  ],
+  "presets": [
+    {
+      "name": "Recommended Slider"
+    }
+  ]
+}
+{% endschema %}

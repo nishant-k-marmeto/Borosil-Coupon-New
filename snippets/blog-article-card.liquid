@@ -1,0 +1,10 @@
+<a class="blog-card-container" data-tags='{{ article.tags | uniq | join: ',' }}' href="{{article.url}}">
+    <div class="blog-card--image">
+        <img src="{{article.image | img_url: 'master'}}" alt="{{article.title}}">
+    </div>
+    <div class="blog-card--contents">
+        <div class="blog--title">{{article.title}}</div>
+        <div class="blog--content">{{article.content | strip_html | truncate: 90, '...'}}</div>
+    </div>
+    <div class="blog--link">Read more</div>
+</a>

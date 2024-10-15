@@ -1,0 +1,31 @@
+<section>
+    <div class="collection-container">
+        <div class="collection-bread-crumbs">
+            {% include 'breadcrumbs' %}
+        </div>
+        <div class="collection-banner">
+            <img src="{{section.settings.banner_collection | img_url: 'master'}}" alt="{{section.settings.banner_collection.alt}}" loading="lazy" width="{{section.settings.banner_collection.width}}" height="{{section.settings.banner_collection.height}}">
+            <p>{{collection.title}}</p>
+        </div>
+    </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Banner Image",
+  "settings": [
+    {
+        "type": "image_picker",
+        "id": "banner_collection",
+        "label": "Collection Image"
+    }
+],
+  "presets": [
+    {
+      "category": "Banner",
+      "name": "Collection Banner"
+    }
+  ]
+}
+{% endschema %}

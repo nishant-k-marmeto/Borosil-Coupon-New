@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="{{ 'usp-section.css' | asset_url | append: '&enable_js_minification=1'}}">
+<div class="usp-main__container usp-page-width usp-main--{{ section.id }}">
+  <div class="usp-main__heading">{{ section.settings.usp_heading }}</div>
+  <div class="usp-main__flex">
+    {% for block in section.blocks %}
+      <div class="usp-block__content">
+        <div class="usp-image__container">{{ block.settings.usp_text }}</div>
+          <div class="usp-image__image">
+            <img
+              src="{{ block.settings.usp_image |img_url: 'master' }}"
+              width="{{ block.settings.usp_image.width }}"
+              height="{{ block.settings.usp_image.height }}"
+              loading="lazy"
+              class="usp-image"
+            >
+          </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% style %}
+  .usp-main__container.usp-main--{{ section.id }}{
+    background: {{section.settings.background}};
+  }
+  .usp-main--{{ section.id }} .usp-main__heading{
+    color: {{section.settings.section_heading_color}};
+  }
+{% endstyle %}
+{% schema %}
+{
+     "name": "USP Section",
+     "settings": [
+       {
+         "type": "text",
+         "id": "usp_heading",
+         "label": "Heading"
+       },
+       {
+        "type": "color",
+        "id": "background",
+        "label": "Background Color",
+        "default": "#e3e3e3"
+       },
+       {
+        "type": "color",
+        "id": "section_heading_color",
+        "label": "Heading Color",
+        "default": "#013564"
+       }
+     ],
+     "blocks" : [
+         {
+           "type": "Image",
+           "name": "USP Block",
+           "limit": 3,
+           "settings": [
+               {
+                 "type": "image_picker",
+                 "id": "usp_image",
+                 "label": "USP Image"
+               },
+               {
+                "type": "text",
+                "id": "usp_text",
+                "label": "USP Text"
+               }
+             ]
+         }
+	],
+	"presets": [
+		{
+             "name": "USP Section"
+		}
+	]
+}
+{% endschema %}

@@ -1,0 +1,97 @@
+<bulk-form class="bulk-order {{ product.template_suffix }}">
+  <button id="bulk-quote-popup__button" class="bulk-quote-popup__button button button--secondary button--full-width">Request a Bulk Quote</button>
+  <div class="bulk-form__wrapper customizer_modal">
+    <div class="bulk-form__inner customizer_modal-content">
+      <div class="modal---head">
+        <p class="modal-head_text">Request a Bulk Quote</p>
+        <span class="customizer_close">×</span>
+      </div>
+      <div class="modal---body">
+        <form method="POST" class="bulk-data-form" id="bulk-data-form" action="https://script.google.com/macros/s/AKfycbz-9y3TIwFssVk82hB27vm3Q1mtRrEjhCloiqHNBjBLH1K8zfpwLTo44z6DwkVd8u0Q/exec">
+
+          <div class="bulk-form-container">
+            <div class="bulk-form-group bulk-sku">
+              <label for="ContactFormSKU">
+                <span>Product SKU</span>
+              </label>
+              <input type="hidden" id="ContactFormSKU" name="SKU" value="">
+              <span id="bulk-product-sku"></span>
+            </div>
+
+            <div class="bulk-form-group bulk-sku">
+              <label for="ContactFormMessage">Additonal SKU/Comments box</label>
+              <textarea id="ContactFormMessage" name="Message"></textarea>
+            </div>
+
+
+            <div class="bulk-form-group">
+              <label for="googleName">Name</label>
+              <input name="Name" type="text" id="googleName" placeholder="Name" required>
+            </div>
+
+            <div class="bulk-form-group">
+              <label for="googleEmail">Email</label>
+              <input name="Email" type="email" id="googleEmail" placeholder="Email" required>
+            </div>
+
+            <div class="bulk-form-group">
+              <label for="ContactFormDeadline">Deadline for Delivery</label>
+              <input type="date" id="Deadline" name="Delivery Deadline" autocorrect="off" required>
+            </div>
+
+            <div class="bulk-form-group">
+              <label for="ContactFormLocation">Number of Delivery Locations:</label>
+              <input type="text" id="ContactFormLocation" name="Locations" placeholder="Phone*" value="1">
+            </div>
+
+            <div class="bulk-form-group">
+              <label for="ContactFormPhone">Phone</label>
+              <input type="text" id="ContactFormPhone" name="Phone" placeholder="Phone*" required>
+            </div>
+
+            <div class="bulk-shipping-address__heading">Shipping Address:</div>
+
+            <div class="bulk-form-group">
+              <label for="ContactFormAddress">Address</label>
+              <input type="text" id="ContactFormAddress" name="Address" placeholder="Address*" required>
+            </div>
+
+            <div class="bulk-form-group">
+              <label for="ContactFormCity">City</label>
+              <input type="text" id="ContactFormCity" name="City" placeholder="City*" required>
+            </div>
+
+            <div class="bulk-form-group">
+              <label for="ContactFormState">State/Province</label>
+              <input type="text" id="ContactFormState" name="State" placeholder="State/Province*" required>
+            </div>
+
+            <div class="bulk-form-group">
+              <label for="ContactFormCountry">Country</label>
+              <input type="text" id="ContactFormCountry" name="Country" placeholder="Country*" required>
+            </div>
+
+            <div class="bulk-form-group">
+              <label for="ContactFormZip">Zip/Postal Code</label>
+              <input type="text" id="ContactFormZip" name="Zip" placeholder="Zip/Postal Code*" required>
+            </div>
+
+            <div class="bulk-form-group">
+              <label for="ContactFormQuantity">Quantity</label>
+              <input type="text" id="ContactFormQuantity" name="Quantity" placeholder="Quantity*"required>
+            </div>
+
+            <div class="bulk-form-group">
+              <label for="ContactFormPrice">Expected Price per Item</label>
+              <input type="number" id="ContactFormPrice" name="Price Per Item" placeholder=" Price per Item*" required>
+            </div>
+          </div>
+          <button class="bulk-button" type="submit">
+            <span class="bulk-button__text">Submit</span>
+            <span class="bulk-button__loader"></span>
+          </button>
+        </form> 
+      </div>
+    </div>
+  </div>
+</bulk-form>

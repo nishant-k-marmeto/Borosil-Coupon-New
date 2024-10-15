@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ direction }}" class="{{ checkout_html_classes }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0">
+    <meta name="referrer" content="origin">
+
+    {% if settings.favicon != blank %}
+      <link rel="shortcut icon" type="image/png" href="{{ settings.favicon | img_url: '32x32' }}">
+    {% endif %}
+
+    <title>{{ page_title }}</title>
+
+    {{ content_for_header }}
+
+    {{ checkout_stylesheets }}
+    {{ 'marmeto-checkout-style.scss.css' | asset_url | stylesheet_tag }}
+
+    {{ checkout_scripts }}
+    <script>
+      window.$ = Checkout.$;
+    </script>
+    
+    {% comment %}
+    {% render 'clevertap-variables' %}
+     {% endcomment %}
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-K97VSDP');</script>
+  
+    <!-- End Google Tag Manager -->
+
+     <!--
+    Start of Floodlight Tag: Please do not remove
+    Activity name of this tag: Borosil_Thank You Page
+    URL of the webpage where the tag is expected to be placed: 
+    This tag must be placed between the bodytags, as close as possible to the opening tag.
+    -->
+    <script type="text/javascript">
+    var axel = Math.random() + "";
+    var a = axel * 10000000000000;
+    document.write('<iframe src="https://12770069.fls.doubleclick.net/activityi;src=12770069;type=invmedia;cat=boros00;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+    </script>
+    <noscript>
+    <iframe src="https://12770069.fls.doubleclick.net/activityi;src=12770069;type=invmedia;cat=boros00;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+    </noscript>
+    <!-- End of Floodlight Tag: Please do not remove -->
+      
+<!--Microsoft clarity recorder script start-->
+	<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "c5hivfv0vc");
+    </script>
+    
+<!--Microsoft clarity recorder script end-->
+  
+  <!--Glood Checkout Upsell Widget start
+  <script async type="text/javascript" src="https://assets.loopclub.io/recommendations/storefront/js/personalized-recommendations-v1.js?shop=my-borosil.myshopify.com"></script>	
+Glood Checkout Upsell Widget end-->
+  
+  {% render 'shogun-head' %}
+    <style>
+      @media (max-width: 749px) {
+        .apply-flits-credit{
+            padding: 1.4em 1em;
+        }
+        .apply-flits-credit .btn__content{
+          width:auto;
+          height:auto;
+          clip:unset;
+          position:unset;
+        }
+      }
+    </style>
+</head>
+  <body>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K97VSDP"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    {{ skip_to_content_link }}
+    {% if page_title contains "Shipping" or page_title contains "शिपिंग" %}
+    <div class="full-page-overlay shipping__overlay">
+      <div class="full-page-overlay__wrap">
+        <div class="full-page-overlay__content" id="loading-overlay">
+          <img src="https://cdn.shopify.com/s/files/1/0551/8009/9722/t/221/assets/borosil_blue_new.png?v=44641584867165345091675152023" alt="The Borosil">
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    <header class="banner" data-header role="banner">
+      <div class="wrap">
+        {{ content_for_logo }}
+      </div>
+    </header>
+
+    {{ order_summary_toggle }}
+    <div class="content" data-content>
+      <div class="wrap">
+        <div class="main">
+          <header class="main__header" role="banner">
+            {{ content_for_logo }}
+            {{ breadcrumb }}
+            {{ alternative_payment_methods }}
+          </header>
+          <main class="main__content" role="main">
+            {{ content_for_layout }}
+            <a href="{{ shop.url }}" class="btn" style="margin-top: 10px">Continue Shopping</a>
+
+          </main>
+          <footer class="main__footer" role="contentinfo">
+            {{ content_for_footer }}
+          </footer>
+        </div>
+        <aside class="sidebar" role="complementary">
+          <div class="sidebar__header">
+            {{ content_for_logo }}
+          </div>
+          <div class="sidebar__content">
+            {{ content_for_order_summary }}
+          </div>
+        </aside>
+      </div>
+    </div>
+    <style>
+      .notice.notice--error.default-background {
+        display: none;
+      }
+      .address-fields {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .field[data-address-field="country"] {
+        width: 100%;
+      }
+      .field[data-address-field="first_name"], .field[data-address-field="last_name"] {
+        order: 1;
+      } 
+      .field[data-address-field="phone"] {
+        order: 1;
+        display: block !important;
+      }  
+      .field[data-address-field="address1"], .field[data-address-field="address2"], .field[data-address-field="zip"] {
+        order: 3;
+      }
+      .field[data-address-field="city"], .field[data-address-field="province"] {
+        order: 4;
+      } 
+      .field[data-address-field="country"] {
+        order: 5;
+      }  
+      button#checkout_submit {
+        background: #013564;
+      } 
+      button#continue_button {
+        text-transform: uppercase;
+      }    
+      .sidebar {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: 20px;
+      }
+      .sidebar::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .sidebar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+
+
+      @media (max-width: 999px){
+        .banner {
+          padding: 0;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }}
+      /* page loader */
+
+      .no-overflow{
+        overflow: hidden;
+      }
+
+      #loading-overlay{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        z-index: 9999999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #loading-overlay img{
+        z-index: 1;
+        animation: animation-breathing 2s linear infinite;
+
+      }
+
+      @keyframes animation-breathing{
+        0%{transform: scale(.9);}
+        50%{transform: scale(1.2);}
+        100%{transform: scale(.9);}
+      }
+      .alternate-phone{
+        padding: 0.4285714286em 0;
+      }
+	    .api-error-message {
+        color: red;
+        padding-top: 10px;
+      }
+    </style>
+    
+    {% if settings.enable_gst_validation %}
+      {% render 'marmeto-gst-field' %}
+    {% endif %} 
+    
+    {% unless customer %}
+    {% render 'marmeto-alternate-phone' %}
+    {% endunless %}
+
+    {% section 'marmeto-discount-code' %}
+    {% render 'marmeto-mobile-validation' %}
+    {% render 'marmeto-address-autofill' %}
+    {% render 'marmeto-shipping-skip' %}
+    {% if settings.enable_pincode_check %}
+    {% render 'delhivery-pincode-validation' %}
+    {% endif %}
+    {%- if settings.enable_hide_cod -%}
+    {% render 'marmeto-hide-cod-V2' %}
+    {%- endif -%}
+    {% render 'enable-continue-payment-button' %}
+
+
+
+    {% if page_title contains "Information" or page_title contains "जानकारी" %}
+      <script>
+        let customerName = "{{ checkout.customer.name }}";
+        $(document).on('page:load page:change', function() {
+          $('label.field__label[for="checkout_shipping_address_phone"]').html('Shipping Phone');
+          $('[data-backup="remember_me"]').attr('checked','true');
+          if($('#whatsapp_consent').length<1)
+          $('.address-fields').append(`
+            <div class="checkbox-wrapper" style="
+            order: 2;"><div class="field checkbox__input"><input class="input-checkbox" data-backup="remember_me" type="checkbox" value="1" checked name="checkout[attributes][whatsapp_consent]" id="whatsapp_consent"></div>
+            <label class="checkbox__label" for="whatsapp_consent">Send me order &amp; other updates on Whatsapp
+        </label></div>`);
+        });
+      </script>
+      {% if settings.enable_customer_api %}
+        {% unless customer %}
+        {% render 'mm-customer-api' %}
+        {% endunless %}
+      {% endif %}
+    {% endif %}
+
+    {% if page_title contains "Payment" or page_title contains "भुगतान" %}
+      {% unless customer %}
+        <!--     PREVENT CUSTOMER WITHOUT ALTERNATE NUMBER FROM LANDING ON CHECKOUT PAGE IN CASE OF ABANDONED CHECKOUT LINK -->
+        {% if checkout.attributes.alternate_phone == blank %}
+        <script>
+          document.querySelectorAll('.breadcrumb__link').forEach((element)=>{
+
+            if (element.textContent === 'Information'){
+              element.click();
+            }
+          })
+        </script>
+        {% endif %}
+      {% endunless %}
+
+    {% endif %}
+
+    {{ tracking_code }}
+
+    {% comment %} Hide discount forms starts {% endcomment %}
+    {% render 'hide-discount-forms' %}
+    {% comment %} Hide discount forms ends {% endcomment %}
+
+    {% comment %} Address Only in English Language starts {% endcomment %}
+      {% render 'address-language-english' %}
+    {% comment %} Address Only in English Language ends {% endcomment %}
+
+
+    {% comment %} ajax cart tracking starts {% endcomment %}
+     {% render 'ajax-cart-tracking' %}
+    {% comment %} ajax cart tracking ends {% endcomment %}
+
+    {% comment %} price calculations starts {% endcomment %}
+      {% render 'price-calculations' %}
+    {% comment %} price calculations ends {% endcomment %}  
+
+    {% comment %} Begin Qwikcilver Redemption code {% endcomment %}
+    {% if settings.show_qwikcilver %}
+      {% render 'marmeto-qwikcilver-redemption' %}
+    {% endif %}
+    {% comment %} End Qwikcilver Redemption code {% endcomment %}
+
+    {% render 'marmeto-personalise-tag' %}
+
+
+    {% include 'smile-initializer' %}
+    {% include 'smile-points-slider' %}
+
+    <script async type="text/javascript" src="https://assets.loopclub.io/recommendations/storefront/js/personalized-recommendations-v1.js?shop=my-borosil.myshopify.com"></script>
+
+    {% render 'shoogloo-tracking-checkout' %}
+    <style>
+  .flits-checkout-select-credit-div .field__input-wrapper:after {
+    content: "";
+    margin: 0 0.5em;
+    display: inline-block;
+    border: 7px solid transparent;
+    border-top: 8px solid gray;
+    border-bottom: 0 none;
+    position: absolute;
+    right: 0;
+    top: 23px;
+}
+</style>
+    {{ 'flits_checkout.js' | asset_url | script_tag }}
+  </body>
+</html>
+
+
+

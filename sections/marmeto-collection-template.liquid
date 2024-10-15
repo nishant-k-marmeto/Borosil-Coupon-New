@@ -1,0 +1,308 @@
+{%- capture section_settings -%}
+{
+  "collectionUrl": {{ collection.url | json }},
+  "productCount": {{ collection.products_count | json }},
+  "defaultSortBy": {{ collection.default_sort_by | json }},
+  "paginationType": {{ section.settings.pagination_type | json }},
+  "productPerPage": {{ section.settings.product_per_page | json }},
+  "excludeOosProducts": {{ section.settings.exclude_oos_products | json }},
+  "showOosLast": {{ section.settings.show_oos_last | json }}
+}
+{%- endcapture -%}
+
+{% assign subcollection_size = collection.metafields.subcollection.title.size | minus:1  %}
+{% assign subcollection_title = collection.metafields.subcollection.title %}
+{% assign subcollection_image = collection.metafields.subcollection.image %}
+{% assign subcollection_tag = collection.metafields.subcollection.tag %}
+
+{% assign faq_questionsanswers = collection.metafields.faq.QuestionAndAnswer %}
+
+<section data-section-id="{{ section.id }}" data-section-type="marmeto-collection-template" data-section-settings='{{ section_settings }}'>        
+  <div class="mmc-container">
+    <div class="mmc-breadcrumb" role="navigation" aria-label="breadcrumbs">
+          <a class="mmc-breadcrumb__link" href="/">Home</a>
+          <span class="mmc-breadcrumb__separator">></span>
+          <a class="mmc-breadcrumb__link"href="{{ collection.url }}">{{ collection.title }}</a>
+    </div>
+    {% if collection.image %}
+      <div class="collection-banner">
+        {% render 'responsivePicture', 
+          loading: "eager",
+          desktopImage: collection.image, 
+          mobileImage: collection.image,
+          mobileSize: mobileSize,
+          desktopSize: desktopSize
+        %}
+        <p>{{collection.title}}</p>
+      </div>
+    {% endif %}
+
+    {% if subcollection_size > 0 %}
+    <div class="collection-top-filters mm-collection-style-updated and" data-tag="tag">
+        {% for i in (0..subcollection_size) %}
+            <div class="top-filter-container or filter-item" data-tag="{{subcollection_tag[i] | handleize}}">
+                {% if subcollection_image[i] == blank %}
+                    <img class="top-filter-container--image" src="{{ 'img_filter_no_img_grey.svg' | asset_url }} " alt="">    
+                {% else %}
+                    <img class="top-filter-container--image" src="{{subcollection_image[i]}} " alt="">
+                {% endif %}                    
+                <p class="top-filter-container--title">{{ subcollection_title[i] }}</p>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <div class="mmc-main">
+      <div class="mmc-main__filter">
+        {%- render 'marmeto-filter-sidebar' -%}
+      </div>
+      
+      <div class="mmc-main__wrapper">                
+        <div class="mmc-header">
+
+          {%- if collection.description -%}
+            <div class="mmc-header__description">
+              {{ collection.description }}
+            </div>
+          {%- endif -%}
+        </div>
+        
+        <div class="mmc-toolbar">
+          <h1 class="mmc-toolbar--title">{{collection.title}}</h1>
+
+          <div id="js-sort-desktop" class="mmc-sort-desktop">
+            <span class="mmc-sort-desktop--title" style="color: #B9B9B9">Sort by:</span>
+            <div class="mmc-sort-header">
+              <span data-sort-value>Best Seller</span>              
+            </div>
+            <ul class="mmc-sort-list">
+              <li data-value="best-selling">Best Seller</li>
+              <li data-value="price-ascending">Price: Low to High</li>
+              <li data-value="price-descending">Price: High to Low</li> 
+              <li data-value="created-descending">Date: New to Old</li>
+              <li data-value="created-ascending">Date: Old to New</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mmc-products">
+            <div id="js-product-loop" class="mmc-loop">
+              {% if collection.all_products_count > 0 %}
+                {% for product in collection.products %}
+                    {% render 'collection-product-card', product: product %}
+                  {% if forloop.index > 4 %}{% break %}{% endif %}
+                {% endfor %}
+              {% endif %}
+            </div>          
+            <div id="js-pagination-holder" class="mmc-pagination"></div>
+            <div id="js-empty-products" class="mmc-empty is-hidden"></div>
+        </div>
+      </div>
+      
+      <div id="js-sort-mobile" class="mmc-sort-mobile">
+        <ul>
+          <li data-value="best-selling">Best Seller</li>
+          <li data-value="price-ascending">Price: Low to High</li>
+          <li data-value="price-descending">Price: High to Low</li>   
+          <li data-value="created-descending">Date: New to Old</li>
+          <li data-value="created-ascending">Date: Old to New</li>
+        </ul>
+      </div>
+
+      <div class="backdrop">
+          <!-- added for visual effect -->
+      </div>
+    </div>
+  </div>
+  
+  {% comment %}
+  ------------------------------------------------
+    MOBILE BUTTONS
+    - USED TO TRIGGER FILTER SIDEBAR AND SORT
+  ------------------------------------------------
+  {% endcomment %}
+  
+  <div class="mmc-buttons">
+    <div class="mmc-button" data-action="open-sort">
+      <svg width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" opacity="0.05"></path><path fill="#282C3F" d="M7.445 7.48V5.672L5.665 7.48h1.78zm1.09-4.42c.304.12.465.39.465.706v16.437a.784.784 0 01-.783.797.762.762 0 01-.772-.781V8.982H4.003a.832.832 0 01-.765-.204.759.759 0 01.002-1.105L7.652 3.23a.832.832 0 01.882-.17zm8.02 15.269l1.78-1.81h-1.78v1.81zm4.207-3.107a.76.76 0 01-.002 1.106l-4.412 4.442a.832.832 0 01-.882.17c-.305-.12-.466-.39-.466-.706V3.797c0-.432.332-.797.783-.797.45 0 .772.35.772.781v11.237h3.442a.833.833 0 01.765.204z"></path></g></svg>
+      SORT
+    </div>
+    <div class="mmc-button-divider"></div>
+    <div class="mmc-button" data-action="open-filter">
+      <svg width="24" height="24" viewBox="0 0 24 24"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z" opacity="0.05"></path><path fill="#282C3F" d="M3.749 7.508a.75.75 0 010-1.5h3.138a2.247 2.247 0 014.243 0h9.121a.75.75 0 010 1.5h-9.126a2.248 2.248 0 01-4.232 0H3.749zm13.373 9h3.129a.75.75 0 010 1.5h-3.135a2.247 2.247 0 01-4.231 0H3.749a.75.75 0 010-1.5h9.13a2.248 2.248 0 014.243 0z"></path></g></svg>
+      FILTER
+    </div>
+  </div>
+
+  {% if faq_questionsanswers.size > 0 %}
+    <div id="faq-section-updated" class="faq-section">
+        <div class="faq-container">
+            <h2 class="faq-container--heading">Frequently Asked Questions</h2>
+      {% assign total_faq = faq_questionsanswers.size | minus: 1 %}
+            {% assign read_more = false %}
+            {% for i in (0..total_faq) %}
+              {% if forloop.index < 5 -%}
+                <div class="faq">
+                  <div class="faq-question">	
+                    {%- if faq_questionsanswers[i] contains '__split__' -%}
+                    {%- assign faq_Question = faq_questionsanswers[i] | split: '__split__' -%}
+
+                      {%- for faq in faq_Question -%}
+                          {%- if forloop.first == true -%}
+                              <div>{{ faq }}</div>
+                          {%- endif -%}
+                      {%- endfor -%}
+                    <button class="PlusButton"> + </button>
+                  </div>
+                  <div class="faq-content">
+                      {%- for faq2 in faq_Question -%}
+                          {%- if forloop.last == true  -%}
+                              <p>{{ faq2 }}</p>
+                          {%- endif -%}
+                      {%- endfor -%}
+                  </div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+
+              {% if forloop.index >= 5 %}
+              {% assign read_more = true %}
+          
+              <div class="faq-read-more-container faq-read-more-hidden">
+                  <div class="faq">
+                    <div class="faq-question">	
+                      {%- if faq_questionsanswers[i] contains '__split__' -%}
+                      {%- assign faq_Question = faq_questionsanswers[i] | split: '__split__' -%}
+
+                        {%- for faq in faq_Question -%}
+                          {%- if forloop.index0 == 0 -%}
+                            <div>{{ faq }}</div>
+                          {%- endif -%}
+                        {%- endfor -%}
+                        <button class="PlusButton"> + </button>
+                    </div>
+                    <div class="faq-content">
+                        {%- for faq2 in faq_Question -%}
+                          {%- if forloop.last == true  -%}
+                            <p>{{ faq2 }}</p>
+                          {%- endif -%}
+                        {%- endfor -%}
+                    </div>
+                    {%- endif -%}
+                  </div>
+              </div>
+              {% endif %}
+            {%- endfor -%}
+            {% if read_more %}
+              <div class="read_more_btn">View More</div>
+            {% endif %}
+        </div>
+    </div>
+  {% endif %}
+</section>
+
+{% if section.settings.pagination_type == 'infinite_scroll' %}
+  <style>
+    #js-pagination-holder {      
+      margin: 0;
+      height: 0;
+      cursor: default;
+      visibility: hidden;
+    }
+  </style>
+{% endif %}
+{% schema %}
+{
+  "name": "Collection Page",
+  "blocks": [
+    {
+      "type": "tag_filters",
+      "name": "Tag Filter",
+      "settings": [
+        {
+          "type": "text",
+          "id": "filter_name",
+          "label": "Heading",
+          "default": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "filter_tags",
+          "label": "Tags",
+          "info": "Add a comma-separated list of product tags. Only the tags found in the collection will be displayed as filters."
+        }
+      ]
+    }
+  ],
+  "settings": [
+  {
+      "type": "header",
+      "content": "General Settings"
+    },
+  {
+      "type": "checkbox",
+      "id": "exclude_oos_products",
+      "label": "Exclude Out of stock products",
+      "default": false
+    },
+  {
+      "type": "checkbox",
+      "id": "show_oos_last",
+      "label": "Show Out of stock products on last",
+      "default": false
+    },
+    {
+        "type": "checkbox",
+        "id": "enable_price_filter",
+        "label": "Enable Price Filter",
+        "default": true
+    },
+  {
+        "type": "text",
+        "id": "price_filter_heading",
+        "label": "Heading",
+        "default": "Price"
+        },
+        {
+        "type": "textarea",
+        "id": "price_ranges",
+        "label": "Price Range",
+        "default": "0-500,501-1000,1001-2000,2001-3000,3001-5000"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_tag_filter",
+        "label": "Enable Tag Filter",
+        "info": "Add tag filters in sidebar by adding content blocks.",
+        "default": true
+      },
+  //Pagination settings
+    {
+      "type": "header",
+      "content": "Pagination"
+    },
+    {
+      "type": "select",
+      "id": "pagination_type",
+      "label": "Pagination type",
+      "options": [
+        {
+          "value": "basic_pagination",
+          "label": "Page Links"
+        },
+        {
+          "value": "infinite_scroll",
+          "label": "Infinite Scroll"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "product_per_page",
+      "label": "Products per page",
+      "min": 4,
+      "max": 48,
+      "step": 1,
+      "default": 9
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,255 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "96bd8de7-bb40-4493-9678-d68ad83af639": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/Free-Shipping-over-1000.png",
+            "Icon_text": "Free shipping",
+            "tag_text": "free_shipping",
+            "Icon_message": "Free Shipping on all Orders"
+          }
+        },
+        "9ac68978-f805-470e-9fe5-24b662d41f19": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/Very-fast-Delivery.png",
+            "Icon_text": "Fast Delivery",
+            "tag_text": "fast_delivery",
+            "Icon_message": "Delivery within 3-5 working days."
+          }
+        },
+        "6f49f23e-c106-4e78-a101-d55c7cb9c4fa": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/7-days-return-policy.png",
+            "Icon_text": "7 Day Return Policy",
+            "tag_text": "7day_return",
+            "Icon_message": "1. Returns should be booked within 7 days from the date of delivery.\n2. The item must be returned undamaged with original packaging intact.\n3. Refunds will be processed once the item is picked up by the logistics partner, within 7 days of the receipt of the product at the warehouse."
+          }
+        },
+        "c370288b-cf0a-423d-9304-3dd385538e1d": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/7-days-replacement-policy.png",
+            "Icon_text": "7 Day Replacement Policy",
+            "tag_text": "7day_replacement",
+            "Icon_message": "1. This item is eligible for free replacement within 7 days of delivery, in the unlikely event of a damaged, defective or incorrect item delivered to you. If we are unable to repair or replace the item satisfactorily, the defective / damaged item will be eligible for a refund.\n2. Please keep the item in its original condition, with the undamaged brand outer box, MRP tags attached, user manual, warranty cards, and original accessories.\n3. We may contact you to ascertain the damage or defect in the product prior to issuing refund/replacement.\n4. Please note that any damage caused due to usage will not qualify.\n5. Refunds will be processed once the item is received by the warehouse, within 7 days of the receipt of the product at the warehouse."
+          }
+        },
+        "a869ac70-e624-4e81-996c-5b7be2714db6": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/on-site.png",
+            "Icon_text": "On Site Service",
+            "tag_text": "on_site_service",
+            "Icon_message": "If you are facing a problem with your appliance, you can book a service request and an engineer will visit your site to get your appliance inspected and repaired."
+          }
+        },
+        "55076c02-1f57-4c4c-985c-a44919d48bbf": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/COD.png",
+            "Icon_text": "COD Available",
+            "tag_text": "cod",
+            "Icon_message": "Cash on Delivery is only available for orders below Rs. 5000."
+          }
+        },
+        "dce2311a-c5c4-4b7d-8d1f-a2c6134e1b5d": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "c7126bec-7355-4896-87eb-59f5afc4b416": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/1-Warranty.png",
+            "Icon_text": "1 Year Warranty",
+            "tag_text": "1year_warranty",
+            "Icon_message": "1 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions."
+          }
+        },
+        "3832b5ee-20be-4756-ae06-d49d4bbfda9f": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/2-Warranty.png",
+            "Icon_text": "2 Year Warranty",
+            "tag_text": "2year_warranty",
+            "Icon_message": "2 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions."
+          }
+        },
+        "89951655-4810-46fc-870a-260e5d4379db": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year Warranty",
+            "tag_text": "5year_warranty",
+            "Icon_message": "5 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions."
+          }
+        },
+        "988a29cb-513a-498c-8e4d-084a8f6db089": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/1-Warranty.png",
+            "Icon_text": "1 Year Warranty on Product",
+            "tag_text": "1yearwarranty_product",
+            "Icon_message": "1 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions. This product is meant for domestic use only, and warranty will not be valid if product is used for commercial purposes or is repaired by any person other than Borosil Authorized Service Center."
+          }
+        },
+        "6bd0eac7-d318-40b0-ab68-1d6ca70b0fc3": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year Warranty on Motor",
+            "tag_text": "5yearwarranty_motor",
+            "Icon_message": "This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions. This product is meant for domestic use only, and warranty will not be valid if product is used for commercial purposes or is repaired by any person other than Borosil Authorized Service Center."
+          }
+        },
+        "64f08eb9-5124-4f6c-926c-10fb70b37605": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year Warranty on Lid",
+            "tag_text": "5yearwarranty_lid",
+            "Icon_message": "5 Year warranty on manufacturing defect of lid."
+          }
+        },
+        "f1fe8f34-c8be-4ce7-af7d-9e344560da24": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/2-Warranty.png",
+            "Icon_text": "2 Year Warranty on Product",
+            "tag_text": "2yearwarranty_product",
+            "Icon_message": "2 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions. This product is meant for domestic use only, and warranty will not be valid if product is used for commercial purposes or is repaired by any person other than Borosil Authorized Service Center."
+          }
+        },
+        "3d85daa2-d702-4921-a89c-8a535b3e2be3": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year Warranty on Heating Coil",
+            "tag_text": "5yearwarranty_heatingcoil",
+            "Icon_message": "This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions. This product is meant for domestic use only, and warranty will not be valid if product is used for commercial purposes or is repaired by any person other than Borosil Authorized Service Center."
+          }
+        },
+        "7dacaa04-1bdf-42c1-a5a9-aa717b7f664b": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year warranty on Bottom",
+            "tag_text": "5yearwarranty_bottom",
+            "Icon_message": "5 Year warranty on manufacturing defect of bottom."
+          }
+        }
+      },
+      "block_order": [
+        "96bd8de7-bb40-4493-9678-d68ad83af639",
+        "9ac68978-f805-470e-9fe5-24b662d41f19",
+        "6f49f23e-c106-4e78-a101-d55c7cb9c4fa",
+        "c370288b-cf0a-423d-9304-3dd385538e1d",
+        "a869ac70-e624-4e81-996c-5b7be2714db6",
+        "55076c02-1f57-4c4c-985c-a44919d48bbf",
+        "dce2311a-c5c4-4b7d-8d1f-a2c6134e1b5d",
+        "c7126bec-7355-4896-87eb-59f5afc4b416",
+        "3832b5ee-20be-4756-ae06-d49d4bbfda9f",
+        "89951655-4810-46fc-870a-260e5d4379db",
+        "988a29cb-513a-498c-8e4d-084a8f6db089",
+        "6bd0eac7-d318-40b0-ab68-1d6ca70b0fc3",
+        "64f08eb9-5124-4f6c-926c-10fb70b37605",
+        "f1fe8f34-c8be-4ce7-af7d-9e344560da24",
+        "3d85daa2-d702-4921-a89c-8a535b3e2be3",
+        "7dacaa04-1bdf-42c1-a5a9-aa717b7f664b"
+      ],
+      "settings": {
+        "ponits_per_rs": 5
+      }
+    },
+    "1642224864e16e310f": {
+      "type": "main-product-video",
+      "settings": {
+        "video_header": "PRODUCT VIDEOS"
+      }
+    },
+    "1642224884819f503c": {
+      "type": "main-product-tabs",
+      "settings": {
+      }
+    },
+    "164222490252b80669": {
+      "type": "main-product-image",
+      "settings": {
+      }
+    },
+    "1642224926d80cf62a": {
+      "type": "main-products-metafields-card",
+      "settings": {
+        "section_heading": "WHAT MAKES OUR PRODUCTS GREAT?"
+      }
+    },
+    "1642224948e7099789": {
+      "type": "apps",
+      "blocks": {
+        "d0a0c716-fdb7-4e2a-98e3-9cbe56ff4200": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "d0a0c716-fdb7-4e2a-98e3-9cbe56ff4200"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1642224987b96e1683": {
+      "type": "main-product-faqs",
+      "settings": {
+        "faq_title": "FAQS"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "section_heading": "You may also like"
+      }
+    },
+    "16422249906f0d12bf": {
+      "type": "main-product-blogs",
+      "settings": {
+        "heading": "OUR BLOGS",
+        "para": "Check out our blogs for ideas on how to get the most out of your Borosil products!"
+      }
+    },
+    "16422248316051912f": {
+      "type": "mm-recently-viewed-products",
+      "settings": {
+        "title": "PREVIOUSLY VIEWED"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1642224864e16e310f",
+    "1642224884819f503c",
+    "164222490252b80669",
+    "1642224926d80cf62a",
+    "1642224948e7099789",
+    "1642224987b96e1683",
+    "product-recommendations",
+    "16422249906f0d12bf",
+    "16422248316051912f"
+  ]
+}

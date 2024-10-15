@@ -1,0 +1,438 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "virtual-product-bundle-template",
+      "blocks": {
+        "blocks_QMa86t": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/Only-Prepaid_1_72f389fa-201f-4671-81d0-ee0328d7cd87.jpg",
+            "Icon_text": "Only Prepaid",
+            "tag_text": "restrict_cod",
+            "Icon_message": "Cash on delivery is not allowed on this product."
+          }
+        },
+        "55076c02-1f57-4c4c-985c-a44919d48bbf": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/COD.png",
+            "Icon_text": "COD Available",
+            "tag_text": "cod",
+            "Icon_message": "Cash on Delivery is only available for orders below Rs. 5000."
+          }
+        },
+        "9ac68978-f805-470e-9fe5-24b662d41f19": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/Very-fast-Delivery.png",
+            "Icon_text": "Fast Delivery",
+            "tag_text": "fast_delivery",
+            "Icon_message": "Delivery within 3-5 working days."
+          }
+        },
+        "6f49f23e-c106-4e78-a101-d55c7cb9c4fa": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/7-days-return-policy.png",
+            "Icon_text": "7 Day Return Policy",
+            "tag_text": "7days_return_policy",
+            "Icon_message": "1. Returns should be booked within 7 days from the date of delivery.\n2. The item must be returned undamaged with original packaging intact.\n3. Refunds will be processed once the item is picked up by the logistics partner, within 7 days of the receipt of the product at the warehouse."
+          }
+        },
+        "c370288b-cf0a-423d-9304-3dd385538e1d": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/7-days-replacement-policy.png",
+            "Icon_text": "7 Day Replacement Policy",
+            "tag_text": "7day_replacement",
+            "Icon_message": "1. This item is eligible for free replacement within 7 days of delivery, in the unlikely event of a damaged, defective or incorrect item delivered to you. If we are unable to repair or replace the item satisfactorily, the defective / damaged item will be eligible for a refund.\n2. Please keep the item in its original condition, with the undamaged brand outer box, MRP tags attached, user manual, warranty cards, and original accessories.\n3. We may contact you to ascertain the damage or defect in the product prior to issuing refund/replacement.\n4. Please note that any damage caused due to usage will not qualify.\n5. Refunds will be processed once the item is received by the warehouse, within 7 days of the receipt of the product at the warehouse."
+          }
+        },
+        "a869ac70-e624-4e81-996c-5b7be2714db6": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/on-site.png",
+            "Icon_text": "On Site Service",
+            "tag_text": "on_site_service",
+            "Icon_message": "If you are facing a problem with your appliance, you can book a service request and an engineer will visit your site to get your appliance inspected and repaired."
+          }
+        },
+        "96bd8de7-bb40-4493-9678-d68ad83af639": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/Free-Shipping-over-1000.png",
+            "Icon_text": "Free shipping",
+            "tag_text": "free_shipping",
+            "Icon_message": "Free Shipping on all Orders"
+          }
+        },
+        "dce2311a-c5c4-4b7d-8d1f-a2c6134e1b5d": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "c7126bec-7355-4896-87eb-59f5afc4b416": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/1-Warranty.png",
+            "Icon_text": "1 Year Warranty",
+            "tag_text": "1year_warranty",
+            "Icon_message": "1 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions."
+          }
+        },
+        "3832b5ee-20be-4756-ae06-d49d4bbfda9f": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/2-Warranty.png",
+            "Icon_text": "2 Year Warranty",
+            "tag_text": "2year_warranty",
+            "Icon_message": "2 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions."
+          }
+        },
+        "89951655-4810-46fc-870a-260e5d4379db": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year Warranty",
+            "tag_text": "5year_warranty",
+            "Icon_message": "5 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions."
+          }
+        },
+        "988a29cb-513a-498c-8e4d-084a8f6db089": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/1-Warranty.png",
+            "Icon_text": "1 Year Warranty on Product",
+            "tag_text": "1yearwarranty_product",
+            "Icon_message": "1 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions. This product is meant for domestic use only, and warranty will not be valid if product is used for commercial purposes or is repaired by any person other than Borosil Authorized Service Center."
+          }
+        },
+        "6bd0eac7-d318-40b0-ab68-1d6ca70b0fc3": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year Warranty on Motor",
+            "tag_text": "5yearwarranty_motor",
+            "Icon_message": "This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions. This product is meant for domestic use only, and warranty will not be valid if product is used for commercial purposes or is repaired by any person other than Borosil Authorized Service Center."
+          }
+        },
+        "64f08eb9-5124-4f6c-926c-10fb70b37605": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year Warranty on Lid",
+            "tag_text": "5yearwarranty_lid",
+            "Icon_message": "5 Year warranty on manufacturing defect of lid."
+          }
+        },
+        "f1fe8f34-c8be-4ce7-af7d-9e344560da24": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/2-Warranty.png",
+            "Icon_text": "2 Year Warranty on Product",
+            "tag_text": "2yearwarranty_product",
+            "Icon_message": "2 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions. This product is meant for domestic use only, and warranty will not be valid if product is used for commercial purposes or is repaired by any person other than Borosil Authorized Service Center."
+          }
+        },
+        "3d85daa2-d702-4921-a89c-8a535b3e2be3": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year Warranty on Heating Coil",
+            "tag_text": "5yearwarranty_heatingcoil",
+            "Icon_message": "This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions. This product is meant for domestic use only, and warranty will not be valid if product is used for commercial purposes or is repaired by any person other than Borosil Authorized Service Center."
+          }
+        },
+        "7dacaa04-1bdf-42c1-a5a9-aa717b7f664b": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year warranty on Bottom",
+            "tag_text": "5yearwarranty_bottom",
+            "Icon_message": "5 Year warranty on manufacturing defect of bottom."
+          }
+        },
+        "blocks_am7B7y": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/Very-fast-Delivery.png",
+            "Icon_text": "Delivery Within 7-8 Days",
+            "tag_text": "Deliveryin7to8days",
+            "Icon_message": "The Delivery of this products will take 7-8 working days."
+          }
+        },
+        "8b934cc9-1052-43b4-beae-e93ba1ee20e6": {
+          "type": "categories",
+          "settings": {
+            "font_dimensions": "[\n  {\n    \"tag\": \"dimension1\",\n    \"VFL\": \"7\",\n    \"VFS\": \"10\",\n    \"HFL\": \"5\",\n    \"HFS\": \"8\"\n  },\n  {\n    \"tag\": \"dimension2\",\n    \"VFL\": \"13\",\n    \"VFS\": \"22\",\n    \"HFL\": \"9\",\n    \"HFS\": \"14\"\n  },\n  {\n    \"tag\": \"dimension3\",\n    \"VFL\": \"12\",\n    \"VFS\": \"25\",\n    \"HFL\": \"9\",\n    \"HFS\": \"18\"\n  },\n  {\n    \"tag\": \"dimension4\",\n    \"VFL\": \"13\",\n    \"VFS\": \"22\",\n    \"HFL\": \"15\",\n    \"HFS\": \"24\"\n  }\n]"
+          }
+        },
+        "74f2a479-b9ef-4ef2-9da6-7fbcff7fb378": {
+          "type": "fontfamily",
+          "settings": {
+            "font-family-block": "Arial",
+            "font_weight": "bold"
+          }
+        },
+        "e41616b6-16cf-4b3f-a222-1f4facd0249f": {
+          "type": "fontfamily",
+          "settings": {
+            "font-family-block": "Verlag",
+            "font_weight": "bold"
+          }
+        },
+        "6a367fbe-461f-4ed9-9df3-b1823535882a": {
+          "type": "fontfamily",
+          "settings": {
+            "font-family-block": "Verdana",
+            "font_weight": "bold"
+          }
+        },
+        "b350c603-540d-4f4e-9014-7dbd25b75454": {
+          "type": "fontfamily",
+          "disabled": true,
+          "settings": {
+            "font-family-block": "Kalam",
+            "font_weight": "bold"
+          }
+        },
+        "1c72144b-becd-44c4-b838-abbf7f746594": {
+          "type": "fontfamily",
+          "disabled": true,
+          "settings": {
+            "font-family-block": "monospace",
+            "font_weight": "bolder"
+          }
+        },
+        "a29cff2a-5c2a-4848-bb53-c36183b008fb": {
+          "type": "fontfamily",
+          "disabled": true,
+          "settings": {
+            "font-family-block": "Tahoma",
+            "font_weight": "normal"
+          }
+        },
+        "66286f53-f8be-4abc-99b0-1185e23ca266": {
+          "type": "fontfamily",
+          "disabled": true,
+          "settings": {
+            "font-family-block": "cursive",
+            "font_weight": "bolder"
+          }
+        },
+        "bf37a7cc-659d-437c-80e7-c57aebf159e9": {
+          "type": "emoji",
+          "settings": {
+            "emoji-block": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\"><path d=\"M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.508 13.941c-1.513 1.195-3.174 1.931-5.507 1.931-2.335 0-3.996-.736-5.509-1.931l-.492.493c1.127 1.72 3.2 3.566 6.001 3.566 2.8 0 4.872-1.846 5.999-3.566l-.492-.493zm-9.008-5.941c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm9.5 2.002l-.755.506s-.503-.948-1.746-.948c-1.207 0-1.745.948-1.745.948l-.754-.506c.281-.748 1.205-2.002 2.499-2.002 1.295 0 2.218 1.254 2.501 2.002z\"></path></svg>"
+          }
+        },
+        "03494973-cd30-4682-9846-d92f030bbc75": {
+          "type": "emoji",
+          "settings": {
+            "emoji-block": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\"><path d=\"M19.562 11.32l-1.106.528c.518 1.058.329 2.507-.455 3.383l.944.769c1.1-1.215 1.399-3.177.617-4.68zm-14.506 4.68l.944-.769c-.784-.876-.973-2.326-.455-3.383l-1.107-.528c-.782 1.503-.483 3.465.618 4.68zm6.944-14c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.001 15.203l-.462-.58c-1.263.819-2.683 1.308-4.538 1.308s-3.275-.489-4.538-1.308l-.462.58c.931 1.161 2.71 2.797 5 2.797s4.069-1.636 5-2.797zm-8.501-7.203c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5zm7 0c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5-.672-1.5-1.5-1.5z\"></path></svg>"
+          }
+        },
+        "12ee21c7-6706-4dab-8af7-874810b53115": {
+          "type": "emoji",
+          "settings": {
+            "emoji-block": "<svg width=\"24\" height=\"24\" xmlns=\"http://www.w3.org/2000/svg\" fill-rule=\"evenodd\" clip-rule=\"evenodd\"><path d=\"M1.886 14.826l2.534 4.24-.669.155c-.67.154-1.152.529-1.356 1.052-.161.416-.124.875.099 1.199.24.352.64.553 1.097.553.808 0 1.6-.635 1.835-1.424.102-.339.148-.865-.206-1.441l-2.803-4.656-.531.322zm1.705 8.199c-.792 0-1.493-.359-1.921-.984-.407-.596-.486-1.41-.206-2.129.25-.643.755-1.15 1.427-1.453l-2.374-3.972 2.239-1.359 3.317 5.512c.426.69.537 1.491.311 2.248-.276.926-1.288 2.137-2.793 2.137m14.433.975c.275-.01.491-.24.482-.518-.057-1.629.359-1.939 1.376-2.052 1.502-.17 1.71-1.084 1.86-1.752.161-.707.267-1.176 1.78-1.256.275-.014.487-.248.471-.526-.012-.275-.243-.49-.524-.472-2.095.109-2.473 1.025-2.701 2.033-.139.609-.201.889-.997.978-2.075.233-2.315 1.62-2.265 3.082.01.27.232.483.5.483h.018zm2.665-11.032l.811.388-.118-.893.62-.653-.886-.164-.427-.792-.429.792-.885.164.62.653-.119.893.813-.388zm2.046 2.087l-2.046-.978-2.047.978.299-2.25-1.564-1.644 2.231-.412 1.081-1.996 1.08 1.996 2.23.412-1.562 1.644.298 2.25zm-9.622-14.054c-.291 0-.573.062-.839.185-1.008.464-1.451 1.663-.988 2.672.449.977 1.685 1.441 2.671.989.489-.226.86-.627 1.046-1.132.187-.505.165-1.052-.059-1.541-.328-.712-1.046-1.173-1.831-1.173m.004 5.031c-1.173 0-2.249-.689-2.739-1.755-.693-1.511-.031-3.305 1.478-4 .398-.183.821-.276 1.257-.276 1.174 0 2.25.689 2.739 1.755.336.731.367 1.55.089 2.305-.279.757-.835 1.358-1.566 1.694-.398.184-.821.277-1.258.277m-7.384-2.536c.911 1.47 3.573 5.365 3.573 5.365l-.785 3.399c-.237.886-.13 1.453.047 2.159l2.076 8.591.386-7.645 4.354 1.984s-.602 3.082-.804 4.135c0 0 1.429-3.385 1.772-4.228.138-.342.074-.547-.301-.961-.704-.783-2.549-2.706-2.549-2.706l.791-3.449s4.197-2.938 5.469-3.912c.064-.048.063-.085.053-.114l-.09-.066c-.888.334-2.443 1.008-3.63 1.522l-1.165.504c-.366.156-.775.189-1.16.09l-3.325-.836c-.368-.092-.712-.273-.996-.526l-3.716-3.306zm4.921 20.492c-.401-.002-.891-.248-1.059-.937-.498-2.034-1.999-8.395-1.999-8.395-.197-.791-.338-1.54-.045-2.638l.682-2.955c-.521-.763-2.542-3.727-3.339-4.938-.223-.34-.249-.742-.069-1.077.297-.551 1.101-.719 1.571-.3l3.717 3.306c.164.145.363.251.575.304l3.326.836c.173.045.358.03.523-.041l1.162-.501c1.196-.518 2.765-1.198 3.573-1.516.616-.244 1.291.068 1.491.657.151.449-.003.932-.394 1.231-1.159.886-4.42 3.177-5.187 3.716l-.584 2.546c.456.477 1.63 1.71 2.194 2.337.445.49.85 1.113.486 2.012-.343.845-.958 2.298-1.416 3.384l-.366.866c-.284.675-1.263.837-1.698.31-.195-.236-.266-.557-.2-.898.155-.809.5-2.578.653-3.364l-2.284-1.041c-.067 1.557-.22 5.104-.274 6.075-.033.591-.47 1.021-1.039 1.021m-7.72-17.988l-2.934 2.937 2.934 2.937 2.935-2.937-2.935-2.937zm0 1.415l1.521 1.522-1.521 1.522-1.52-1.522 1.52-1.522z\"></path></svg>"
+          }
+        },
+        "141c59d2-107a-4e27-81cb-1ce4a083c1c7": {
+          "type": "emoji",
+          "settings": {
+            "emoji-block": "<svg width=\"24\" height=\"24\" xmlns=\"http://www.w3.org/2000/svg\" fill-rule=\"evenodd\" clip-rule=\"evenodd\"><path d=\"M11.958 11c-3.073 0-6.779 5.665-7.553 8.716-.597 2.351.774 4.284 2.811 4.284 1.563 0 3.472-1.439 4.788-1.463h.019c1.124 0 3.516 1.399 4.924 1.399 1.99 0 3.154-1.932 2.645-4.22-.575-2.593-4.303-8.716-7.634-8.716zm-10.209-3.952c-.378 0-.71.086-.97.267-.514.36-.779 1.092-.779 2.007 0 .944.281 2.082.861 3.208.762 1.479 1.879 2.47 3.149 2.47.55 0 1.13-.187 1.721-.6 1.697-1.184 1.505-3.432-.082-5.214-1.2-1.348-2.757-2.138-3.9-2.138zm20.377-.566c-1.205 0-2.857 1.151-3.929 2.923-1.265 2.092-1.037 4.394.894 5.271.489.221.95.324 1.378.324 1.519 0 2.631-1.294 3.179-3.12.741-2.463.35-5.398-1.522-5.398zm-5.959-6.482c-1.288 0-2.91 1.671-3.622 3.936-.757 2.405.032 4.655 2.182 5.062 3.75.708 3.876-3.79 3.882-3.913.191-3.588-1.429-5.085-2.442-5.085zm-9.537 0c-1.749 0-2.432 2.789-1.879 5.418.426 2.022 1.539 3.494 3.235 3.494.374 0 .775-.072 1.204-.224 2.061-.732 2.495-3.077 1.377-5.337-.986-1.995-2.68-3.351-3.937-3.351zm5.328 12c2.581 0 6.093 5.388 6.658 7.933.329 1.489-.253 3.424-2.268 2.924-1.03-.253-3.202-1.32-4.361-1.32h-.001c-1.185.022-2.674.887-3.897 1.307-1.932.666-3.216-.902-2.714-2.882.741-2.925 4.274-7.962 6.583-7.962zm-7.056-2.149c.721.81 1.098 1.75 1.008 2.514-.125 1.06-1.23 1.635-1.9 1.635-.805 0-1.628-.702-2.26-1.928-1.047-2.035-.816-3.645-.398-3.937.159-.111 1.694-.367 3.55 1.716zm17.224-2.369l.215.038c.483.219 1.028 1.811.348 4.072-.216.724-.869 2.408-2.22 2.408-.697 0-1.677-.411-1.963-1.335-.239-.772-.04-1.772.547-2.742.925-1.528 2.288-2.441 3.073-2.441zm-5.959-6.482c.247 0 1.61.892 1.444 4.032-.099 1.854-.847 3.335-2.698 2.984-1.931-.367-1.776-2.629-1.413-3.78.629-2.005 1.978-3.236 2.667-3.236zm-9.537 0c.797 0 2.187 1.068 3.04 2.794.523 1.057.641 2.111.325 2.892-.391.962-1.423 1.226-2.009 1.226-1.524 0-2.085-1.888-2.256-2.7-.477-2.266.14-4.212.9-4.212z\"></path></svg>"
+          }
+        },
+        "blocks_d8d8G7": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/NO-RETURN-NO-REFUND_60x60_1.png",
+            "Icon_text": "No Return",
+            "tag_text": "no_cancel_replacement",
+            "Icon_message": "1. This item is only eligible for return or replacement, in the unlikely event of a damaged, defective or incorrect item delivered to you. If we are unable to replace the item satisfactorily, the defective / damaged item will be eligible for a refund.\n2. Please keep the item in its original condition, with the undamaged brand outer box, MRP tags attached, user manual, warranty cards, and original accessories.\n3. We may contact you to ascertain the damage or defect in the product prior to issuing refund/replacement.\n4. Please note that any damage caused due to usage will not qualify."
+          }
+        }
+      },
+      "block_order": [
+        "blocks_QMa86t",
+        "55076c02-1f57-4c4c-985c-a44919d48bbf",
+        "9ac68978-f805-470e-9fe5-24b662d41f19",
+        "6f49f23e-c106-4e78-a101-d55c7cb9c4fa",
+        "c370288b-cf0a-423d-9304-3dd385538e1d",
+        "a869ac70-e624-4e81-996c-5b7be2714db6",
+        "96bd8de7-bb40-4493-9678-d68ad83af639",
+        "dce2311a-c5c4-4b7d-8d1f-a2c6134e1b5d",
+        "c7126bec-7355-4896-87eb-59f5afc4b416",
+        "3832b5ee-20be-4756-ae06-d49d4bbfda9f",
+        "89951655-4810-46fc-870a-260e5d4379db",
+        "988a29cb-513a-498c-8e4d-084a8f6db089",
+        "6bd0eac7-d318-40b0-ab68-1d6ca70b0fc3",
+        "64f08eb9-5124-4f6c-926c-10fb70b37605",
+        "f1fe8f34-c8be-4ce7-af7d-9e344560da24",
+        "3d85daa2-d702-4921-a89c-8a535b3e2be3",
+        "7dacaa04-1bdf-42c1-a5a9-aa717b7f664b",
+        "blocks_am7B7y",
+        "8b934cc9-1052-43b4-beae-e93ba1ee20e6",
+        "74f2a479-b9ef-4ef2-9da6-7fbcff7fb378",
+        "e41616b6-16cf-4b3f-a222-1f4facd0249f",
+        "6a367fbe-461f-4ed9-9df3-b1823535882a",
+        "b350c603-540d-4f4e-9014-7dbd25b75454",
+        "1c72144b-becd-44c4-b838-abbf7f746594",
+        "a29cff2a-5c2a-4848-bb53-c36183b008fb",
+        "66286f53-f8be-4abc-99b0-1185e23ca266",
+        "bf37a7cc-659d-437c-80e7-c57aebf159e9",
+        "03494973-cd30-4682-9846-d92f030bbc75",
+        "12ee21c7-6706-4dab-8af7-874810b53115",
+        "141c59d2-107a-4e27-81cb-1ce4a083c1c7",
+        "blocks_d8d8G7"
+      ],
+      "settings": {
+        "ponits_per_rs": 5,
+        "show_haptic_text": true,
+        "sample_sheet_link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-7H9_2IWnBopas6YEQ74Trad3XdPdgVt-jRp0zfEoWEGDW7NxNY2ftohyaVCRihTGekmWrGVjENeY/pub?output=csv"
+      }
+    },
+    "1715242185b31e3354": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "9914004a-3f14-474a-8356-74f1fd441f19": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "section {background-color: white;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div id='rk-widget-212779' class='rk-bought_together'></div>"
+      }
+    },
+    "1642224864e16e310f": {
+      "type": "main-product-video",
+      "settings": {
+        "video_header": "PRODUCT VIDEOS"
+      }
+    },
+    "1642224884819f503c": {
+      "type": "main-product-tabs",
+      "settings": {
+      }
+    },
+    "164222490252b80669": {
+      "type": "main-product-image",
+      "settings": {
+      }
+    },
+    "1642224926d80cf62a": {
+      "type": "main-products-metafields-card",
+      "settings": {
+        "section_heading": "WHAT MAKES OUR PRODUCTS GREAT?"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "section_heading": "You may also like"
+      }
+    },
+    "1669095887cbc40d26": {
+      "type": "apps",
+      "blocks": {
+        "00934fc4-9a79-4082-9473-3710fef54615": {
+          "type": "shopify://apps/glood-product-recommendations/blocks/app-block/6e79d991-1504-45bb-88e3-1fb55a4f26cd",
+          "settings": {
+            "widget-id": "213743",
+            "padding-top": "",
+            "padding-bottom": "",
+            "class-names": "",
+            "custom-css": "",
+            "add-loader": false,
+            "min-height": "300px",
+            "custom-loader": ""
+          }
+        },
+        "2f97de12-fb51-40c6-bfdb-d67f7d5c6a4b": {
+          "type": "shopify://apps/glood-product-recommendations/blocks/app-block/6e79d991-1504-45bb-88e3-1fb55a4f26cd",
+          "settings": {
+            "widget-id": "214598",
+            "padding-top": "",
+            "padding-bottom": "",
+            "class-names": "",
+            "custom-css": "",
+            "add-loader": false,
+            "min-height": "300px",
+            "custom-loader": ""
+          }
+        }
+      },
+      "block_order": [
+        "00934fc4-9a79-4082-9473-3710fef54615",
+        "2f97de12-fb51-40c6-bfdb-d67f7d5c6a4b"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1642224948e7099789": {
+      "type": "apps",
+      "blocks": {
+        "d0a0c716-fdb7-4e2a-98e3-9cbe56ff4200": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "d0a0c716-fdb7-4e2a-98e3-9cbe56ff4200"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1642224987b96e1683": {
+      "type": "main-product-faqs",
+      "settings": {
+        "faq_title": "FAQS"
+      }
+    },
+    "16422249906f0d12bf": {
+      "type": "main-product-blogs",
+      "settings": {
+        "heading": "OUR BLOGS",
+        "para": "Check out our blogs for ideas on how to get the most out of your Borosil products!"
+      }
+    },
+    "16422248316051912f": {
+      "type": "mm-recently-viewed-products",
+      "settings": {
+        "title": "PREVIOUSLY VIEWED"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1715242185b31e3354",
+    "9914004a-3f14-474a-8356-74f1fd441f19",
+    "1642224864e16e310f",
+    "1642224884819f503c",
+    "164222490252b80669",
+    "1642224926d80cf62a",
+    "product-recommendations",
+    "1669095887cbc40d26",
+    "1642224948e7099789",
+    "1642224987b96e1683",
+    "16422249906f0d12bf",
+    "16422248316051912f"
+  ]
+}

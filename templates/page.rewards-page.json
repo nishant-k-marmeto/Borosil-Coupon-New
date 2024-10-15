@@ -1,0 +1,194 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "e13c9c3b-99f3-4eed-ba72-20bcd2df4958": {
+      "type": "homepage-slider-banner",
+      "blocks": {
+        "621da7b1-ede5-4d51-ae6c-2de128b4c757": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Reward_page_banner.png",
+            "heading": "",
+            "text": "",
+            "btn_link": "",
+            "btn_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "621da7b1-ede5-4d51-ae6c-2de128b4c757"
+      ],
+      "settings": {
+      }
+    },
+    "9c88b33a-4809-4904-a990-b8723ada0013": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15887871410314__9c88b33a-4809-4904-a990-b8723ada0013-16859604446dbf4bf8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "HOW IT WORKS",
+            "heading_size": "h1"
+          }
+        },
+        "template--15887871410314__9c88b33a-4809-4904-a990-b8723ada0013-16859604446dbf4bf8-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "template--15887871410314__9c88b33a-4809-4904-a990-b8723ada0013-16859604446dbf4bf8-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15887871410314__9c88b33a-4809-4904-a990-b8723ada0013-16859604446dbf4bf8-0",
+        "template--15887871410314__9c88b33a-4809-4904-a990-b8723ada0013-16859604446dbf4bf8-1",
+        "template--15887871410314__9c88b33a-4809-4904-a990-b8723ada0013-16859604446dbf4bf8-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    },
+    "dce2dedc-07c6-4bdc-b8d6-0fd43ca6d914": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "*{border-color:white; border-block-color:white;}"
+      ],
+      "settings": {
+        "custom_liquid": "<table style=\"height: 258px; width: 100%; border-collapse: collapse; border-color: white; \nborder-block-color: white;\nbackground-color: white;\" border=\"1\">\n<tbody>\n<tr style=\"border-style: none;\">\n<td style=\"width: 33.3333%; height: 73px; text-align: center;\">\n<h1><span style=\"color: #003300;\">01</span></h1>\n</td>\n<td style=\"width: 33.3333%; height: 73px; text-align: center;\">\n<h1><span style=\"color: #003300;\">02</span></h1>\n</td>\n<td style=\"width: 33.3333%; height: 73px; text-align: center;\">\n<h1><span style=\"color: #003300;\">03</span></h1>\n</td>\n</tr>\n<tr style=\"border-style: none;\">\n<td style=\"width: 33.3333%; height: 89px; text-align: center;\">\n<h2><span style=\"color: #003300;\">SIGN UP</span></h2>\n</td>\n<td style=\"width: 33.3333%; height: 89px; text-align: center;\">\n<h2><span style=\"color: #003300;\">EARN POINTS</span></h2>\n</td>\n<td style=\"width: 33.3333%; height: 89px; text-align: center;\">\n<h2><span style=\"color: #003300;\">REDEEM POINTS</span></h2>\n</td>\n</tr>\n<tr style=\"border-style: none;\">\n<td style=\"width: 33.3333%; height: 96px; text-align: center;\">\n<h3><span style=\"color: #003300;\">Create an account and get 1000 points</span></h3>\n</td>\n<td style=\"width: 33.3333%; height: 96px; text-align: center;\">\n<h3><span style=\"color: #003300;\">Earn points every time you purchase</span></h3>\n</td>\n<td style=\"width: 33.3333%; height: 96px; text-align: center;\">\n<h3><span style=\"color: #003300;\">Redeem points for exclusive discounts.</span></h3>\n</td>\n</tr>\n</tbody>\n</table>"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "4fe62f13-0b14-4e42-bac7-87369ea2f8c5": {
+      "type": "category-section",
+      "blocks": {
+        "120be5c2-c54e-485e-b4f7-0c21c2ee7221": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/1.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "https://myborosil.com/account/login",
+            "hover_heading": "Sign Up",
+            "hover_description": "Already a member? Login"
+          }
+        },
+        "3ca24d42-e6b1-40e8-b4f4-058913fb476d": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/6.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "",
+            "hover_heading": "",
+            "hover_description": ""
+          }
+        },
+        "a220a232-17b0-45fe-b1a4-6718e82d6e42": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/3.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "",
+            "hover_heading": "",
+            "hover_description": ""
+          }
+        },
+        "eb14b4d6-83fc-49e0-9408-d0ff0f0fa950": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/2.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "",
+            "hover_heading": "",
+            "hover_description": ""
+          }
+        },
+        "a018a087-382c-4c32-8411-930bbe94ce78": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/5.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "",
+            "hover_heading": "",
+            "hover_description": ""
+          }
+        },
+        "0fc623bf-5de2-4e70-b846-c1f443d56ad3": {
+          "type": "Image",
+          "settings": {
+            "category_image": "shopify://shop_images/4.png",
+            "main_heading": "",
+            "description": "",
+            "button_text": "",
+            "button_link": "",
+            "hover_heading": "",
+            "hover_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "120be5c2-c54e-485e-b4f7-0c21c2ee7221",
+        "3ca24d42-e6b1-40e8-b4f4-058913fb476d",
+        "a220a232-17b0-45fe-b1a4-6718e82d6e42",
+        "eb14b4d6-83fc-49e0-9408-d0ff0f0fa950",
+        "a018a087-382c-4c32-8411-930bbe94ce78",
+        "0fc623bf-5de2-4e70-b846-c1f443d56ad3"
+      ],
+      "custom_css": [
+        ".category-hover__container {background: rgb(51 51 51 / 100%);}"
+      ],
+      "settings": {
+        "category_heading": "WAYS TO EARN BOROPOINTS",
+        "slider_yes": false,
+        "background": "#ffffff",
+        "section_heading_color": "#013564",
+        "cards_per_row": "three"
+      }
+    },
+    "bcfa13ba-e418-49e5-b19a-4c858f56ac9a": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": ""
+      }
+    }
+  },
+  "order": [
+    "e13c9c3b-99f3-4eed-ba72-20bcd2df4958",
+    "9c88b33a-4809-4904-a990-b8723ada0013",
+    "dce2dedc-07c6-4bdc-b8d6-0fd43ca6d914",
+    "main",
+    "4fe62f13-0b14-4e42-bac7-87369ea2f8c5",
+    "bcfa13ba-e418-49e5-b19a-4c858f56ac9a"
+  ]
+}

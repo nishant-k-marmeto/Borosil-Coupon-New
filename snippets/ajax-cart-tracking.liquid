@@ -1,0 +1,22 @@
+<script>
+    if(Shopify.Checkout.step == 'thank_you') { 
+      window.dataLayer = window.dataLayer || [];
+      {% for line_item in checkout.line_items %}
+        {% if line_item.properties.added_from_cart %}	
+          window.dataLayer.push({
+            'event' : 'cart_upsell_purchase',
+            'status' : 'success',
+            'productTitle' : "{{ line_item.title}}",  
+            'productVariant' : {{ line_item.variant_id }},
+            'productPrice' : {{ line_item.final_price | divided_by: 100 }}
+          }); 
+        {% endif %}
+      {% endfor %}
+   }
+  if(Shopify.Checkout.step == 'payment_method'){
+      if($('.radio__label__primary').length >= 2 && $('.radio__label__primary')[1].innerText == 'Razorpay Secure (UPI, Cards, Wallets, NetBanking)'){
+        $('.radio__label__primary')[1].click();
+      }
+   }
+  sessionStorage.setItem('checkout-loaded','yes')
+</script>

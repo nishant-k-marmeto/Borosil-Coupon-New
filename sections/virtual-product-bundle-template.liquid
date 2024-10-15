@@ -1,0 +1,638 @@
+{% assign sca_product = product -%}
+{%- assign sca_product_id_text = ',' | append: sca_product.id | append: ',' -%}
+{%- assign sca_price = sca_product.price -%}
+{%- assign sca_price_min = sca_product.price_min -%}
+{%- assign sca_price_max = sca_product.price_max -%}
+{%- assign sca_compare_at_price = sca_product.compare_at_price -%}
+{%- assign sca_compare_at_price_min = sca_product.compare_at_price_min -%}
+{%- assign sca_compare_at_price_max = sca_product.compare_at_price_max -%}
+{%- assign sca_product_available = sca_product.available -%}
+{%- assign sca_product_variantCount = sca_product.variants.size -%}
+{%- assign sca_compare_at_price_varies = sca_product.compare_at_price_varies -%}
+{%- assign sca_price_varies = sca_product.price_varies -%}
+{%- assign sca_has_only_default_variant = false -%}
+{%- capture sca_product_variants_json %}{{sca_product.variants | json }}{% endcapture %}
+{% capture sca_product_json %}{% if sca_all_gift_products_ids == null or sca_all_gift_products_ids contains sca_product_id_text %}{% assign sca_product_available = false %}{% assign sca_product_variantCount = 0 %}{% assign sca_has_only_default_variant = true %}{% assign sca_is_first_variant = true %}{% capture sca_variants_json %} [{% for variant in sca_product.variants %}{% unless variant.metafields.secomapp.freegifts %}{% unless variant.title contains '(Freegifts)' %}{% unless variant.title contains '% Off' %}{% unless variant.metafields.shappify_qb.qb_hide == "1" %}{% unless variant.metafields.shappify_bundle.is_bundle == "true" %}{% unless variant.metafields.brodev_scn.hide == "true" %}{% unless variant.metafields.wholesaler2.wholesale %}{% unless variant.metafields.Wholesaler.level %}{% unless variant.title contains '(Wholesale' %}{% if sca_is_first_variant%} {{ variant | json }}{% assign sca_price = variant.price %} {% assign sca_price_min = variant.price %} {% assign sca_price_max = variant.price %} {% assign sca_compare_at_price = variant.compare_at_price %} {% assign sca_compare_at_price_min = variant.compare_at_price %} {% assign sca_compare_at_price_max = variant.compare_at_price %} {% assign sca_product_available = variant.available %} {% assign sca_product_variantCount = 1 %} {% assign sca_is_first_variant = false%}{% else %},{{variant | json }} {% if sca_price_min >= variant.price %} {% assign sca_price_min = variant.price %} {% assign sca_price = variant.price %}{% endif %} {% if sca_price_max <= variant.price %} {% assign sca_price_max = variant.price %} {% endif %} {% if variant.compare_at_price %} {% if sca_compare_at_price_min==null or sca_compare_at_price_min >= variant.compare_at_price %} {% assign sca_compare_at_price_min = variant.compare_at_price %} {% assign sca_compare_at_price = variant.compare_at_price %} {% endif %} {% if sca_compare_at_price_max==null or sca_compare_at_price_max < variant.compare_at_price %} {% assign sca_compare_at_price_max = variant.compare_at_price %} {% endif %} {% endif %} {% if variant.available == true %} {% assign sca_product_available = true %} {% endif %} {% assign sca_product_variantCount = sca_product_variantCount | plus: 1 %}{% endif %}{% endunless %}{% endunless %}{% endunless %}{% endunless %}{% endunless %}{% endunless %}{% endunless %}{% endunless %}{% endunless %}{%endfor%} ]{% endcapture %}{% if sca_price_min < sca_price_max %}{% assign sca_price_varies = true %}{% else %}{% assign sca_price_varies = false %}{% endif %}{% if sca_compare_at_price_min < sca_compare_at_price_max %}{% assign sca_compare_at_price_varies = true %}{% else %}{% assign sca_compare_at_price_varies = false %}{% endif %}{% if sca_product_variantCount > 1 %}{% assign sca_has_only_default_variant = false %}{% endif %}{% if sca_product_variantCount == sca_product.variants.size %} "variants":{{ sca_product.variants }},{% else %}{%assign sca_product_variants_json = sca_variants_json %} "variants":{{ sca_variants_json }},{% endif %}{% else %} "variants":{{ sca_product_variants_json }},{% endif %} "id": {{sca_product.id}}, "title": {{sca_product.title | json}}, "handle": {{sca_product.handle | json}}, "description": {{sca_product.description | json}}, "published_at": "{{sca_product.published_at | date: "%Y-%m-%dT%H-%M-%S%:z" }}", "created_at": "{{sca_product.created_at | date: "%Y-%m-%dT%H-%M-%S%:z" }}", "vendor": {{sca_product.vendor | json}}, "type": {{sca_product.type | json}}, "tags": {{sca_product.tags | json}}, "price": {{sca_price}}, "price_min": {{sca_price_min}}, "price_max": {{sca_price_max}}, "available": {{sca_product.available}}, "price_varies": {{sca_price_varies}}, "compare_at_price": {{sca_compare_at_price}}, "compare_at_price_min": {{sca_compare_at_price_min}}, "compare_at_price_max": {{sca_compare_at_price_max}}, "compare_at_price_varies": {{sca_compare_at_price_varies}}, "images": {{sca_product.images | json}}, "featured_image": {{sca_product.featured_image | json }}, "options": {{sca_product.options | json}}, "media": {{sca_product.media | json }}, "content": {{sca_product.content | json }}} {% endcapture %}
+
+{%- assign review_value = product.metafields.judgeme.badge
+  | split: "data-average-rating='"
+  | last
+  | split: "'"
+  | first
+  | plus: 0
+-%}
+{% for media in product.media %}
+  {%- if media.media_type == 'model'or media.media_type == 'external_video'or media.media_type == 'video'-%}
+    <link rel="stylesheet" href="{{ 'component-deferred-media.css' | asset_url }}">
+    <script  id="ProductJSON-{{ product.id }}">
+      {{ product.media | where: 'media_type', 'model' | json }}
+    </script>
+    <script type="lazy-script" src="{{ 'product-model.js' | asset_url }}"></script>
+    {% break %}
+  {%- endif -%}
+{% endfor %}
+{% assign RewardPointsPerRs = 0.01 | times: section.settings.ponits_per_rs %}
+<section class="section--product-details" data-section-id="{{ section.id }}"	
+  data-product-id="{{ product.id }}" 	
+  data-variant-id=
+  data-variant-sku="{{ product.first_available_variant.sku }}"	
+  data-variant-id="{{ product.first_available_variant.id }}"	
+  data-variant-weight="{{ product.first_available_variant.weight_in_unit }}"	
+  data-main-product-handle="{{ product.handle }}"
+  {% if product.tags contains 'Larah'%}data-product="larah"{% else %}data-product="borosil"{% endif %}
+  {% if product.tags contains 'variant-gallery-true' %}data-variant-gallery="true"{% endif %}
+  {% if product.tags contains 'variant-pills-true' %}data-variant-pills="true"{% endif %}
+  {% if product.tags contains 'product-grouping-independent-variants' %}data-independent-variants="true"{% endif %}
+
+  >
+  <div class="bread-crumbs">
+    {% include 'breadcrumbs' %}
+  </div>
+  <div class="section-after-breadcrumbs">
+    <div class="product-image-container">
+        <div class="product-thumbnail-images">
+          {% for media in product.media %}
+            {%- if media.media_type == 'model'
+              or media.media_type == 'external_video'
+              or media.media_type == 'video'
+            -%}
+              <div class="product-thumbnail-image">
+                {%- liquid
+                  if section.settings.hide_variants and variant_images contains media.src
+                    assign variant_image = true
+                  else
+                    assign variant_image = false
+                  endif
+                  unless media.id == product.selected_or_first_available_variant.featured_media.id
+                    render '3d-model-thumbnail', media: media, loop: true, variant_image: variant_image
+                  endunless
+                -%}
+              </div>
+            {% else %}
+              {%- if media.media_type == 'image' -%}
+                {% assign alt_handles = '' %}
+                {% assign media_alts = media.alt | split: ',' %}
+                {%for alt in media_alts %}
+                  {% assign alt_handle = alt | handleize | append: ',' %}
+                  {% assign alt_handles = alt_handles | append: alt_handle %}
+                {% endfor %}
+                {% assign  alt_handles = alt_handles | join: ',' | remove_last: ',' %}
+                <div class="product-thumbnail-image" data-thumb-src-alt="{{ alt_handles }}">
+                  <img
+                    src="{{ media.preview_image | img_url: 'master' }}"
+                    alt="{{ forloop.index }}"
+                    loading="lazy"
+                    width="{{ media.preview_image.width }}"
+                    height="{{ media.preview_image.height }}"
+                  >
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="product-main-images-dope hidden">
+          {%- for media in product.media -%}
+            {%- if media.media_type == 'image' -%}
+              {% assign alt_handles = '' %}
+              {% assign media_alts = media.alt | split: ',' %}
+              {%for alt in media_alts %}
+                {% assign alt_handle = alt | handleize | append: ',' %}
+                {% assign alt_handles = alt_handles | append: alt_handle %}
+              {% endfor %}
+              {% assign  alt_handles = alt_handles | join: ',' | remove_last: ',' %}
+              
+              <div class="product-slick-image" data-src-alt="{{ alt_handles }}">
+                <img
+                  class="product-main-image"
+                  src="{{ media.preview_image | img_url: 'master' }}"
+                  data-alt="{{ media.alt | handleize }}"
+                  alt="{{ forloop.index }}"
+                  {% if forloop.index == 1 %}loading="eager"{% else %}loading="lazy"{% endif %}
+                  width="{{ media.preview_image.width }}"
+                  height="{{ media.preview_image.height }}"
+                  fetchpriority="high"
+                >
+              </div>
+              <div class="product-thumbnail-image" data-thumb-src-alt="{{ media.alt | handleize }}">
+                <img
+                  src="{{ media.preview_image | img_url: 'master' }}"
+                  alt="{{ forloop.index }}"
+                  loading="lazy"
+                  width="{{ media.preview_image.width }}"
+                  height="{{ media.preview_image.height }}"
+                >
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="product-main-images">
+          {%- for media in product.media -%}
+            {%- if media.media_type == 'model'
+              or media.media_type == 'external_video'
+              or media.media_type == 'video'
+            -%}
+              <div class="product-slick-image no-zoom{% if media.media_type == 'model'%} no-dragging{% endif %}">
+                {%- liquid
+                  if section.settings.hide_variants and variant_images contains media.src
+                    assign variant_image = true
+                  else
+                    assign variant_image = false
+                  endif
+
+                  unless media.id == product.selected_or_first_available_variant.featured_media.id
+                    render 'product-media', media: media, loop: true, variant_image: variant_image
+                  endunless
+                -%}
+              </div>
+            {% else %}
+              {%- if media.media_type == 'image' -%}
+                <div class="product-slick-image" data-src-alt="{{ media.alt | handleize }}">
+                  <img
+                    class="product-main-image"
+                    src="{{ media.preview_image | img_url: 'master' }}"
+                    data-alt="{{ media.alt | handleize }}"
+                    alt="{{ forloop.index }}"
+                    {% if forloop.index == 1 %}loading="eager"{% else %}loading="lazy"{% endif %}
+                    width="{{ media.preview_image.width }}"
+                    height="{{ media.preview_image.height }}"
+                    fetchpriority="high"
+                  >
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      <a href="#" class="wishlist-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20.034" height="17.824" viewBox="0 0 20.034 17.824">
+          <path id="Product_wishlist_svg" d="M18.445,1.744A5.387,5.387,0,0,0,14.438,0,5.04,5.04,0,0,0,11.29,1.087a6.44,6.44,0,0,0-1.273,1.329A6.437,6.437,0,0,0,8.745,1.087,5.039,5.039,0,0,0,5.6,0,5.388,5.388,0,0,0,1.59,1.744,6.262,6.262,0,0,0,0,6.021,7.457,7.457,0,0,0,1.988,10.9a42.372,42.372,0,0,0,4.974,4.669c.689.587,1.47,1.253,2.282,1.962a1.176,1.176,0,0,0,1.549,0c.811-.709,1.593-1.375,2.282-1.963A42.347,42.347,0,0,0,18.048,10.9a7.456,7.456,0,0,0,1.987-4.881,6.262,6.262,0,0,0-1.589-4.276Zm0,0" transform="translate(0)" fill="#9B9B9B"/>
+        </svg>
+      </a>
+    </div>
+    <product-info class="product-information-container" data-volume-template="{% if template.suffix == "volume-discount" %}true{% else %}false{% endif %}">
+      <div class="product-header">
+        <div style="position:relative;">
+          <h1 class="product-title" data-product-handle="{{ product.handle }}" data-product-id="{{ product.id }}">{{ product.title }}</h1>
+          <div name="secomapp-fg-image-{{ product.id }}" class="lazy-load-parent secomapp-fg-image">
+            <img data-src="{{ 'icon-freegift.png' | asset_url | img_tag: 'FG icon', 'sca-fg-img-collect' }}">
+          </div>
+        </div>
+        <h2 class="product-snack">
+          {% assign prodMf = product.metafields %}
+          {% assign subtitle = prodMf.product_subtitle.subtitle %}
+          {{ subtitle }}
+        </h2>
+      </div>
+      <div class="price-container">
+        {% if product.selected_or_first_available_variant.compare_at_price
+            > product.selected_or_first_available_variant.price
+        %}
+          <p class="main-price">
+            {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
+          </p>
+          <h3 class="product-price-label" style="color: #A5A5A5; font: normal normal 600 20px/25px Mulish;">
+            MRP :
+          </h3>
+          <p class="compared-price">
+            {{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}
+          </p>
+          <p class="price-percentage-off">
+            {{
+              product.selected_or_first_available_variant.compare_at_price
+              |times:1.0
+              | minus: product.selected_or_first_available_variant.price
+              | times: 100
+              | divided_by: product.selected_or_first_available_variant.compare_at_price
+              |round
+            }}
+            % off
+          </p>
+        {% else %}
+          <h3 class="product-price-label" style="color: #D81818; font: normal normal bold 23px/29px Mulish;">
+            MRP :
+          </h3>
+          <p class="main-price">
+            {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
+          </p>
+        {% endif %}
+      </div>
+      <p class="tax-information">(inclusive of all taxes)</p>
+      <div class="testimonial">
+        <div class="Product_reviewNfaq">
+          {%- for block in section.blocks -%}
+            {%- if block.type == '@app' -%}
+              <div class="ReviewStarsArea">
+                <div class="ReviewStrats">
+                  {% render block %}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+          <div class="faq_link">View FAQ's</div>
+        </div>
+        <div class="rewardPointsDisplay">
+          <span class="rewardPointsDisplay_Text">
+            Earn <br>
+            Reward <br>
+            Points
+          </span>
+          {% assign TotalRewardPoints = sca_price | times: RewardPointsPerRs %}
+          <span class="rewardPointsDisplay_Number"> {{ TotalRewardPoints | round }} </span>
+        </div>
+      </div>
+      {% if product.metafields.offer.discount_product_pdp %}
+        {% render 'offer-product' %}
+      {% endif %}
+      <p class="tax-information-mobile">(inclusive of all taxes)</p>
+      <div id="razorpay-affordability-widget" style="margin:10px 0px -10px 0px; display: block !important;"></div>
+        {% comment %} Custom Dinner Set starts {% endcomment %}
+        {% if product.metafields.custom.dinner_set.value %}
+          {% render 'custom-dinner-set' %}
+          {% unless product.tags contains 'dinner-atc-hide' %}
+            <div class="container-or">
+              <div class="line-or"></div>
+              <div class="content-or__text">
+                OR
+              </div>
+              <div class="line-or"></div>
+            </div>
+          {% endunless %}
+        {% endif %}
+        {% comment %} Custom Dinner Set ends {% endcomment %}
+        
+        <div id="zestmoney-widget-control"></div>
+        {% if product.metafields.offer.free_product %}
+            {% render 'product-page-offer', product: product %}
+        {% endif %}
+        {% assign product_array = product.metafields.custom.product_grouping.value %}
+        {% assign product_group_heading = product.metafields.custom.product_grouping_heading.value %}
+
+        {% if product_array %}
+            <div class="product-grouping__container">
+                <div class="product-grouping__heading">{% if product_group_heading %}{{ product_group_heading }}{% else %}Colors{% endif %}</div>
+                <div class="product-grouping__wrapper">
+                    {% for product_item in product_array %}
+                        {% assign active_product = false %}
+                        {% if product_item.handle == product.handle %}
+                            {% assign active_product = true %}
+                        {% endif %}
+                        <div class="product-group__item {% if active_product == true %} active {% endif %}" data-product-handle="{{ product_item.handle }}">
+                            <div class="product-group__unavailable"></div>
+                            <div class="product-group__item-title hidden">{{ product_item.title }}</div>
+                            {% for variant in product_item.variants %}
+                                <input type="hidden" data-variant-title-handle="{{ variant.title | handleize }}" data-variant-available={{ variant.available }}>
+                            {% endfor %}
+                            <div class="product-group__item-image">
+                                <img src="{% if product_item.featured_image %}{{ product_item.featured_image | img_url: '150x' }}{% else %}{{ product_item.featured_image | img_url: '150x' }}{% endif %}"
+                                    loading="lazy"
+                                    width="{{ product_item.featured_image.width }}"
+                                    height="{{ product_item.featured_image.height }}">
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="mm-loader"></div>
+            </div>
+        {% endif %}
+
+        {% assign virtual_product_bundle_array = product.metafields.custom.virtual_bundle_metafield.value %}
+        {% assign products_variants = '' %}
+        {% assign total_price = 0 %}
+        {% assign main_product_url = product.url %}
+
+        {% for tag in product.tags %}
+            {% if tag contains 'bundle-product-discount_' %}
+                {% assign product_discount_tag = tag | split: '_' | last %}
+            {% endif %}
+        {% endfor %}
+        {% assign product_discount_tag =  product_discount_tag | prepend: '0.' %}
+        {% assign virtual_bundle_discount = product_discount_tag | plus: 0 %}
+        
+        {% if virtual_product_bundle_array %}
+            {% for product_item in virtual_product_bundle_array %}
+                {% assign variant_id = product_item.id %}
+                {% assign availability = false %}
+
+                {% if product_item.available %}
+                    {% assign availability = true %}
+                {% else %}
+                    {% assign availability = false %}
+                    {% break %}
+                {% endif %}
+
+                {% if forloop.first %}
+                    {% assign products_variants = variant_id %}
+                {% else %}
+                    {% assign products_variants = products_variants | append: ',' | append: variant_id %}
+                {% endif %}
+            {% endfor %}
+                
+        {% endif %}
+        {% assign products_variants_array = products_variants | split: ',' | join: ',' %}
+        <virtual-product-button>
+            <button class="virtual-bundle-product-atc {% unless availability %} is-disabled{% endunless %}" {% unless availability %} disabled="disabled" {% endunless %}type="button" data-virtual-bundling-variant-ids="{{ products_variants_array }}" data-main-product-url="{{main_product_url}}" data-main-product-id = "{{ product.id }}" data-bundle-discount-percentage = "{{virtual_bundle_discount}}"> {% if availability %} Add to cart {% else %} Sold Out {% endif %}</button>
+            <div class="ProductErrorMessage" style="display:none;">Insufficient Quantity</div>    
+            <span class="product-atc_loader"> </span>
+        </virtual-product-button>
+              {% render 'bulk-form' %}
+              {% render 'clickpost-edd' %}
+        <div class="ProductNotifyOption">
+          <div class="NotifyMessage">Notify When Product Is In Stock</div>
+          <div class="InputToNotify">
+            <input placeholder="xyz@gmail.com" type="email" id="notify_email">
+            <button type="button" id="notify_button">NOTIFY</button>
+          </div>
+        </div>
+        <div class="Notify_error-message"></div>
+
+        <div class="trust-badge-container">
+          {% for block in section.blocks %}
+            {% if block.type == 'blocks' %}
+              {% assign counter = 0 %}
+              {% for tag in product.tags %}
+                {% if tag == block.settings.tag_text %}
+                  {% if block.settings.Icon_image != null %}
+                    {% capture count %}{% increment counter %}{% endcapture %}
+                    {% assign count = count | plus: 0 %}
+                    {% if count < 4 %}
+                      <div class="USP_icons">
+                        <div class="product_badge lazy-load-parent">
+                          <img
+                            data-src="{{ block.settings.Icon_image |img_url: 'original' }}"
+                            class="product_badge_image"
+                            loading="lazy"
+                            width="{{ block.settings.Icon_image.width }}"
+                            height="{{ block.settings.Icon_image.height }}"
+                          >
+                          {% if block.settings.Icon_text != blank %}
+                            <div class="product_badge_text">{{ block.settings.Icon_text }}</div>
+                          {% endif %}
+                        </div>
+                        {% if block.settings.Icon_message != blank %}
+                          <div class="product_badge_description_area">
+                            <div class="product_badge_description">{{ block.settings.Icon_message }}</div>
+                          </div>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endif %}
+          {% endfor %}
+        </div>
+    </product-info>
+  </div>
+
+  {% comment %}
+    when size guide is clicked
+  {% endcomment %}
+
+  <div class="SizeGuide_modal">
+    <div class="SizeGuide_modal-content">
+      <div class="SizeGuide_modal-header">
+        <span class="SizeGuide_close">&times;</span>
+        <h2>Size Guide</h2>
+      </div>
+      <div class="SizeGuide_modal-body">
+        {% assign Size_guide_image = product.metafields.product_size_guide.sizeguide_image %}
+        <img src="{{Size_guide_image | image_url: 'original'}}" class="SizeGuide_image">
+      </div>
+    </div>
+  </div>
+  
+  {% if product.metafields.custom.haptik_tags %}
+    <div class="haptik-tags">
+      {{ product.metafields.custom.haptik_tags.value }}
+    </div>
+  {% endif %}
+</section>
+
+<div class="MainImage_ZoomArea">
+  <product-modal id="ProductModal-{{ section.id }}" class="product-media-modal media-modal">
+    <div
+      class="product-media-modal__dialog"
+      role="dialog"
+      aria-label="{{ 'products.modal.label' | t }}"
+      aria-modal="true"
+      tabindex="-1"
+    >
+      <div
+        class="product-media-modal__content"
+        role="document"
+        aria-label="{{ 'products.modal.label' | t }}"
+        tabindex="0"
+      >
+        {%- liquid
+          if product.selected_or_first_available_variant.featured_media != null
+            assign media = product.selected_or_first_available_variant.featured_media
+            render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: section.settings.hide_variants
+          endif
+        -%}
+
+        {%- for media in product.media -%}
+          {%- liquid
+            if section.settings.hide_variants and variant_images contains media.src
+              assign variant_image = true
+            else
+              assign variant_image = false
+            endif
+
+            unless media.id == product.selected_or_first_available_variant.featured_media.id
+              render 'product-media', media: media, loop: section.settings.enable_video_looping, variant_image: variant_image
+            endunless
+          -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </product-modal>
+</div>
+
+<style>
+  #judgeme_product_reviews .jdgm-rev-widg__summary::before{
+      content: "{{ review_value | round: 1 }}";
+      text-align: left;
+      font: normal normal normal 59px/74px Mulish;
+      letter-spacing: 0px;
+      color: #000000;
+  }
+
+</style>
+{% schema %}
+{
+    "name": "Product Details",
+    "settings": [
+    {
+      "type": "image_picker",
+        "id": "ProductDetail_Image",
+        "label": "select image for your product details",
+        "info": "Image will be place on right bottom of the section"
+    },
+    {
+        "type": "number",
+        "id": "ponits_per_rs",
+        "label": "Points per ₹1",
+        "default": 5
+    },
+    {
+      "type": "checkbox",
+      "id": "show_haptic_text",
+      "label": "Show Haptic Text",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "sample_sheet_link",
+      "label": "Sample Sheet link"
+    }
+    ],
+    "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "virtual-bundle",
+      "name": "Virtual bundle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "bundle-heading",
+          "label": "Bundle heading"
+        }
+        
+      ]
+    },
+    {
+      "type": "blocks",
+      "name": "Product icon",
+      "settings": [
+        {
+           "type": "image_picker",
+           "id": "Icon_image",
+           "label": "Select Icon"
+        },
+        {
+           "type": "text",
+           "id": "Icon_text",
+           "label": "About icon"
+        },
+        {
+           "type": "text",
+           "id": "tag_text",
+           "label": "Tag name to match"
+        },
+        {
+          "type": "textarea",
+          "id": "Icon_message",
+          "label": "Icon description"
+        }
+      ]
+    },
+    {
+      "type": "fontfamily",
+      "name": "Font Family",
+      "limit": 25,
+      "settings": [
+        {
+          "type": "text",
+          "id": "font-family-block",
+          "label": "Font Family"
+        },
+        {
+          "type": "select",
+          "id": "font_weight",
+          "label": "Font Weight",
+          "options": [
+            {
+              "value": "normal",
+              "label": "Normal"
+            },
+            {
+              "value": "bold",
+              "label": "Bold"
+            },
+            {
+              "value": "bolder",
+              "label": "Bolder"
+            }
+          ],
+          "default": "bold"
+        }
+      ]
+    },
+    {
+      "type": "emoji",
+      "name": "Emoji",
+      "settings": [
+        {
+          "type": "html",
+          "id": "emoji-block",
+          "label": "Emoji"
+        }
+      ]
+    },
+    {
+      "type": "categories",
+      "name": "Font Categories",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "font_dimensions",
+          "label": "Font Dimensions",
+          "info": "Max Font-Size is 25px, VFL = Vertical Font Limit, VFS = Vertical Font Size, HFL = Horizontal Font Limit, HFS = Horizontal Font Size, (In px)"
+        }
+        
+      ]
+    }
+    ],
+    "presets": [
+        {
+            "category": "Product page",
+            "name": "Product Details"
+        }
+    ]
+}
+{% endschema %}
+
+{% style %}
+
+  .deals {
+    
+  }
+  .Deals {
+    margin-top: 15px;
+    margin-bottom: -13px;
+    font-weight: 600;
+    border: 1px solid rgba(0,71,120,.5);
+    color: white;
+    width: 55%;
+    border-radius: 6px;
+    padding-left: 5px;
+    background: linear-gradient(270deg, #fbc50a 23.86%, #DFB108 47.06%, #fbc50a 66.05%);
+    animation: flash-animation 1s linear infinite;
+}
+ @keyframes flash-animation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+  
+  .strip-banner-product img {
+      width: 100%;
+      height: 130px;
+  }
+
+  @media only screen and (max-width: 769px)
+      .strip-banner-product img {
+      width: 350px;  
+   }
+  @media only screen and (max-width: 1025px)
+      .strip-banner-product img {
+      width: 350px;  
+   }
+{% endstyle %}

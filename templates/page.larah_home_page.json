@@ -1,0 +1,825 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "daa22e5a-3857-4209-8905-c8331d60d853": {
+      "type": "homepage-slider-banner",
+      "blocks": {
+        "cda256ab-3bab-414d-8d86-c8ae2cfc04e5": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/1_Home-Page-desktop_3a867574-2c00-4cd1-89f6-6187ab4568c9.jpg",
+            "mobile_image": "shopify://shop_images/1_Home-Page-Banner_logo-mobile_0552f14d-f492-486b-9991-d13b2c9fd110.jpg",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/larah",
+            "btn_text": ""
+          }
+        },
+        "843d326b-0c57-441d-8a2e-ded8b68df2f7": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/2_Home-Page-Banner_Dinner-set-Desktop_84c99623-65f3-4469-88a0-d0a981373e00.gif",
+            "mobile_image": "shopify://shop_images/2_Home-Page-Banner_Dinner-set-Mobile_20a654f5-60bd-45d6-8656-9a385a9bcae8.gif",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/dinnersets",
+            "btn_text": ""
+          }
+        },
+        "3066620e-6ae2-4825-8a3f-be36edc20c68": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/3_Home-Page-Banner_TEA-SERIES_Desktop.gif",
+            "mobile_image": "shopify://shop_images/3_Home-Page-Banner_TEA-SERIES-Mobile.gif",
+            "heading": "",
+            "text": "",
+            "btn_link": "https://myborosil.com/collections/opalware-mugs",
+            "btn_text": ""
+          }
+        },
+        "f066260b-c06e-4fa3-a4f0-6df1690c4761": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/4_Home-Page-Banne_Desktop.jpg",
+            "mobile_image": "shopify://shop_images/4_Home-Page-Banner_Mobile.jpg",
+            "heading": "",
+            "text": "",
+            "btn_link": "",
+            "btn_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "cda256ab-3bab-414d-8d86-c8ae2cfc04e5",
+        "843d326b-0c57-441d-8a2e-ded8b68df2f7",
+        "3066620e-6ae2-4825-8a3f-be36edc20c68",
+        "f066260b-c06e-4fa3-a4f0-6df1690c4761"
+      ],
+      "custom_css": [
+
+      ],
+      "settings": {
+      }
+    },
+    "eca880d4-37dd-4cf0-9c46-c5ffd1960d98": {
+      "type": "homepage-collection-slider",
+      "custom_css": [
+        "h2 {padding-top: 0px; margin-top: -20px;}"
+      ],
+      "settings": {
+        "background_color": "#ff8da1",
+        "section_heading": "Best Sellers",
+        "section_heading_color": "#121212",
+        "enable_countdown": false,
+        "countdown_text": "Deal Ends in",
+        "Countdown_endtime": "",
+        "enable_view_button": true,
+        "button_text_color": "#ffffff",
+        "button_border_color": "",
+        "button_background_color": "#5a0035",
+        "arrow_background_color": "#ffffff",
+        "selected_dot_color": "",
+        "collection": "larah-bestseller",
+        "product_limit": 8
+      }
+    },
+    "9c82bfda-2524-4095-9b34-c5b4624f33d5": {
+      "type": "homepage-collection-slider",
+      "custom_css": [
+        "h2 {padding-top: 0px; margin-top: -20px;}"
+      ],
+      "settings": {
+        "background_color": "#5a0035",
+        "section_heading": "New Arrivals",
+        "section_heading_color": "#ff123f",
+        "enable_countdown": false,
+        "countdown_text": "Deal Ends in",
+        "Countdown_endtime": "",
+        "enable_view_button": true,
+        "button_text_color": "#fff6f7",
+        "button_border_color": "#ff123f",
+        "button_background_color": "#ff123f",
+        "arrow_background_color": "#fafafa",
+        "selected_dot_color": "",
+        "collection": "larah-new-arrivals",
+        "product_limit": 8
+      }
+    },
+    "d48db5a8-ab23-481d-89d6-e9a9395e2445": {
+      "type": "homepage-collection-slider",
+      "custom_css": [
+        "h2 {padding-top: 0px; margin-top: -20px;}"
+      ],
+      "settings": {
+        "background_color": "#ff8da1",
+        "section_heading": "Larah Premium",
+        "section_heading_color": "#5a0035",
+        "enable_countdown": false,
+        "countdown_text": "Deal Ends in",
+        "Countdown_endtime": "",
+        "enable_view_button": true,
+        "button_text_color": "#ffffff",
+        "button_border_color": "",
+        "button_background_color": "#5a0035",
+        "arrow_background_color": "#fafafa",
+        "selected_dot_color": "",
+        "collection": "larah-premium",
+        "product_limit": 20
+      }
+    },
+    "84ac7e01-c67e-4ffe-8dab-2590eda804f2": {
+      "type": "homepage-categories-section",
+      "blocks": {
+        "9610ba1b-909b-4e57-a014-1ec2e3422d7a": {
+          "type": "square-category",
+          "settings": {
+            "title": "Dinner Set",
+            "link": "shopify://collections/dinnersets",
+            "category_image": "shopify://shop_images/1_3dc3702a-9b4d-4d99-bc55-835711ceafa8.jpg",
+            "category_image2": "shopify://shop_images/1_3dc3702a-9b4d-4d99-bc55-835711ceafa8.jpg"
+          }
+        },
+        "4e2070e0-9575-4168-af13-160720aed1da": {
+          "type": "square-category",
+          "settings": {
+            "title": "Mug Set",
+            "link": "shopify://collections/mug-set",
+            "category_image": "shopify://shop_images/2_05273d60-35f7-41f5-b175-f26859116977.jpg",
+            "category_image2": "shopify://shop_images/2_05273d60-35f7-41f5-b175-f26859116977.jpg"
+          }
+        },
+        "3d0a0a98-11e6-4691-87a6-bc06db208863": {
+          "type": "square-category",
+          "settings": {
+            "title": "Cup & Saucer Set",
+            "link": "shopify://collections/cup-saucer-set",
+            "category_image": "shopify://shop_images/3_e5778984-34d9-48b9-9c73-f2f6ccbbea53.jpg",
+            "category_image2": "shopify://shop_images/3_e5778984-34d9-48b9-9c73-f2f6ccbbea53.jpg"
+          }
+        },
+        "c5a636a0-a679-4b3f-92a0-83b7523c7af0": {
+          "type": "square-category",
+          "settings": {
+            "title": "Mixing & Serving Bowls",
+            "link": "shopify://collections/larah-mixing-bowl",
+            "category_image": "shopify://shop_images/4_5db2d9bd-6973-4f62-98db-18af6d64c211.jpg",
+            "category_image2": "shopify://shop_images/4_5db2d9bd-6973-4f62-98db-18af6d64c211.jpg"
+          }
+        },
+        "038c85c8-5261-49f3-9358-98c457cdddb1": {
+          "type": "square-category",
+          "settings": {
+            "title": "BreakFast Set",
+            "link": "shopify://collections/breakfast-snack-sets",
+            "category_image": "shopify://shop_images/5_e838d022-f058-4358-8e31-a56abdd53249.jpg",
+            "category_image2": "shopify://shop_images/5_e838d022-f058-4358-8e31-a56abdd53249.jpg"
+          }
+        },
+        "c776912d-deae-4064-b37f-60776f78414c": {
+          "type": "square-category",
+          "settings": {
+            "title": "Bowls & Katoris",
+            "link": "shopify://collections/larah-bowl",
+            "category_image": "shopify://shop_images/6_27e2f093-08b0-4f5e-a087-4b587db7f70c.jpg",
+            "category_image2": "shopify://shop_images/6_27e2f093-08b0-4f5e-a087-4b587db7f70c.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "9610ba1b-909b-4e57-a014-1ec2e3422d7a",
+        "4e2070e0-9575-4168-af13-160720aed1da",
+        "3d0a0a98-11e6-4691-87a6-bc06db208863",
+        "c5a636a0-a679-4b3f-92a0-83b7523c7af0",
+        "038c85c8-5261-49f3-9358-98c457cdddb1",
+        "c776912d-deae-4064-b37f-60776f78414c"
+      ],
+      "custom_css": [
+        "* {color: white; background: #5a0035; margin-bottom: 0px; margin-top: 0px;}",
+        "h6 {padding: 5px 0; background: #ff8da1; color: white; margin: 0px;}"
+      ],
+      "settings": {
+        "heading": "",
+        "para": "Larah products are lightweight, yet extra strong, and can withstand rough usage without chipping or scratching - so they always look as good as new. They are also microwave and dishwasher safe, making them a convenient daily use option. The beautiful designs are perfect both for special occasions, and to make everyday special!",
+        "image": "shopify://shop_images/1_Home-Page-desktop.jpg",
+        "mobile_image": "shopify://shop_images/larah-logo-for-banner-180-H.jpg"
+      }
+    },
+    "78a1eb4e-d317-4755-9662-32261427822c": {
+      "type": "collection-list",
+      "blocks": {
+        "template--15788764266634__78a1eb4e-d317-4755-9662-32261427822c-167393751010938c66-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "shop-under-299"
+          }
+        },
+        "template--15788764266634__78a1eb4e-d317-4755-9662-32261427822c-167393751010938c66-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "shop-under-499"
+          }
+        },
+        "template--15788764266634__78a1eb4e-d317-4755-9662-32261427822c-167393751010938c66-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "shop-under-999"
+          }
+        },
+        "a03c4185-8ae7-4517-a270-004ddd193056": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "shop-above-1000"
+          }
+        }
+      },
+      "block_order": [
+        "template--15788764266634__78a1eb4e-d317-4755-9662-32261427822c-167393751010938c66-0",
+        "template--15788764266634__78a1eb4e-d317-4755-9662-32261427822c-167393751010938c66-1",
+        "template--15788764266634__78a1eb4e-d317-4755-9662-32261427822c-167393751010938c66-2",
+        "a03c4185-8ae7-4517-a270-004ddd193056"
+      ],
+      "custom_css": [
+        "* {background: #ff8da1; color: white; bottom: 10px;}",
+        "h2 {padding-top: 15px; padding-left: 8px; font-size: 30px; font-weight: 700; color: #5a0035; text-transform: uppercase; margin-bottom: 2px; font-family: \"Mulish\";}",
+        "h3 {font-size: 3rem; letter-spacing: 0.06rem; line-height: calc(1 + 0.8 / var(--font-body-scale)); font-style: var(--font-body-style); font-weight: var(--font-body-weight); text-align: left; box-sizing: inherit; font-family: \"Mulish\", sans-serif; padding: 10px 0px; color: white;}"
+      ],
+      "settings": {
+        "title": "BUDGET STORE",
+        "image_ratio": "square",
+        "color_scheme": "background-1",
+        "swipe_on_mobile": true,
+        "image_padding": false,
+        "show_view_all": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "9ab14bc1-433d-48fe-95c7-c897cd05837b": {
+      "type": "homepage-categories-section-2",
+      "blocks": {
+        "0c50c7b7-ba44-4aea-b63e-ccea4909628c": {
+          "type": "Categories",
+          "settings": {
+            "link": "shopify://collections/bowls-katoris",
+            "category_image": "shopify://shop_images/4_Bowls_1024x1024_29422a02-efbf-4369-a4bc-b5c47fab6410.webp",
+            "category_title": "Abstarct Design"
+          }
+        },
+        "b0e5bacd-5249-4b78-af85-b0a9a3947fa2": {
+          "type": "Categories",
+          "settings": {
+            "link": "shopify://collections/coffee-mugs-travel-mugs",
+            "category_image": "shopify://shop_images/11_Mugs_1024x1024_77c53d8b-a708-4472-8002-f754fd6b61ab.webp",
+            "category_title": "Geometric Design"
+          }
+        },
+        "b307cb6e-1151-4f8e-be73-5b3b33950ccb": {
+          "type": "Categories",
+          "settings": {
+            "link": "shopify://collections/tea-cups-tea-sets",
+            "category_image": "shopify://shop_images/11_Mugs_1024x1024_77c53d8b-a708-4472-8002-f754fd6b61ab.webp",
+            "category_title": "Floral Design"
+          }
+        },
+        "a8e3bc57-323e-4d9a-bef7-7d2ad8eee4ed": {
+          "type": "Categories",
+          "settings": {
+            "link": "shopify://collections/breakfast-snack-sets",
+            "category_image": "shopify://shop_images/4_Bowls_1024x1024_29422a02-efbf-4369-a4bc-b5c47fab6410.webp",
+            "category_title": "Whiteware Design"
+          }
+        }
+      },
+      "block_order": [
+        "0c50c7b7-ba44-4aea-b63e-ccea4909628c",
+        "b0e5bacd-5249-4b78-af85-b0a9a3947fa2",
+        "b307cb6e-1151-4f8e-be73-5b3b33950ccb",
+        "a8e3bc57-323e-4d9a-bef7-7d2ad8eee4ed"
+      ],
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "880a4ce3-ed81-44e1-9614-26001924514e": {
+      "type": "homepage-categories-section-2",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "a040cd99-cd60-4edf-b4bc-a39da4eb51a4": {
+      "type": "homepage-collection-slider",
+      "disabled": true,
+      "settings": {
+        "background_color": "#d8dffc",
+        "section_heading": "Larah Premium",
+        "section_heading_color": "#013564",
+        "enable_countdown": true,
+        "countdown_text": "Deal Ends in",
+        "Countdown_endtime": "Jan 13, 2023 18:30:00",
+        "enable_view_button": false,
+        "button_text_color": "",
+        "button_border_color": "",
+        "button_background_color": "",
+        "arrow_background_color": "#ffffff",
+        "selected_dot_color": "",
+        "collection": "larah",
+        "product_limit": 8
+      }
+    },
+    "9895abb2-6c6d-408f-8111-1fbc40b379c5": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15788764266634__9895abb2-6c6d-408f-8111-1fbc40b379c5-167387570269ec36f6-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "BEST BUYS",
+            "heading_size": "h1"
+          }
+        },
+        "template--15788764266634__9895abb2-6c6d-408f-8111-1fbc40b379c5-167387570269ec36f6-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "template--15788764266634__9895abb2-6c6d-408f-8111-1fbc40b379c5-167387570269ec36f6-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Explore Design Pattern",
+            "button_link": "",
+            "button_style_secondary": true
+          }
+        }
+      },
+      "block_order": [
+        "template--15788764266634__9895abb2-6c6d-408f-8111-1fbc40b379c5-167387570269ec36f6-0",
+        "template--15788764266634__9895abb2-6c6d-408f-8111-1fbc40b379c5-167387570269ec36f6-1",
+        "template--15788764266634__9895abb2-6c6d-408f-8111-1fbc40b379c5-167387570269ec36f6-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    },
+    "e35968c5-fd6c-448e-8ffa-1627404dd21f": {
+      "type": "homepage-shop-with-advantage-section",
+      "blocks": {
+        "5342782e-2018-4a3e-80f0-5fd40e7a9cd1": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/11_Mugs_1024x1024_77c53d8b-a708-4472-8002-f754fd6b61ab.webp",
+            "text": "",
+            "advantage_link": ""
+          }
+        },
+        "2f939da7-5328-4948-aad6-5d72631e5f95": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/2_Dinnersets_1024x1024_843f3b8c-f869-4a7d-914a-22ef58aaa52d.webp",
+            "text": "",
+            "advantage_link": ""
+          }
+        },
+        "44a37ac6-8f0e-440a-a840-c08673fc0424": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/4_Bowls_1024x1024_29422a02-efbf-4369-a4bc-b5c47fab6410.webp",
+            "text": "",
+            "advantage_link": ""
+          }
+        },
+        "d47b3ade-2264-4c48-a956-9585e1978632": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/11_Mugs_1024x1024_77c53d8b-a708-4472-8002-f754fd6b61ab.webp",
+            "text": "",
+            "advantage_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "5342782e-2018-4a3e-80f0-5fd40e7a9cd1",
+        "2f939da7-5328-4948-aad6-5d72631e5f95",
+        "44a37ac6-8f0e-440a-a840-c08673fc0424",
+        "d47b3ade-2264-4c48-a956-9585e1978632"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": ""
+      }
+    },
+    "db0fc023-92ee-43d4-ad35-0586fe56fc55": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15788764266634__db0fc023-92ee-43d4-ad35-0586fe56fc55-1673942748dda781c5-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "SERVE BY FAMILY",
+            "heading_size": "h1"
+          }
+        },
+        "template--15788764266634__db0fc023-92ee-43d4-ad35-0586fe56fc55-1673942748dda781c5-1": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "template--15788764266634__db0fc023-92ee-43d4-ad35-0586fe56fc55-1673942748dda781c5-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15788764266634__db0fc023-92ee-43d4-ad35-0586fe56fc55-1673942748dda781c5-0",
+        "template--15788764266634__db0fc023-92ee-43d4-ad35-0586fe56fc55-1673942748dda781c5-1",
+        "template--15788764266634__db0fc023-92ee-43d4-ad35-0586fe56fc55-1673942748dda781c5-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    },
+    "a0d64878-301f-4bda-b750-177e730b45d4": {
+      "type": "homepage-collection-slider",
+      "custom_css": [
+        "h2 {padding-top: 0px; margin-top: -20px;}"
+      ],
+      "settings": {
+        "background_color": "#5a0035",
+        "section_heading": "Recommended for You",
+        "section_heading_color": "#ff123f",
+        "enable_countdown": false,
+        "countdown_text": "Deal Ends in",
+        "Countdown_endtime": "",
+        "enable_view_button": true,
+        "button_text_color": "#fff6f7",
+        "button_border_color": "#ff123f",
+        "button_background_color": "#ff123f",
+        "arrow_background_color": "#ffffff",
+        "selected_dot_color": "rgba(0,0,0,0)",
+        "collection": "larah-recommended",
+        "product_limit": 20
+      }
+    },
+    "1651b0b6-5482-4752-bfcc-af4b4e76b256": {
+      "type": "collection-list",
+      "blocks": {
+        "template--15788764266634__1651b0b6-5482-4752-bfcc-af4b4e76b256-167393751010938c66-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "red"
+          }
+        },
+        "template--15788764266634__1651b0b6-5482-4752-bfcc-af4b4e76b256-167393751010938c66-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "blue"
+          }
+        },
+        "template--15788764266634__1651b0b6-5482-4752-bfcc-af4b4e76b256-167393751010938c66-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "green"
+          }
+        },
+        "fadc80b1-acaa-432b-bbb4-e4d4a7d653bb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "white"
+          }
+        }
+      },
+      "block_order": [
+        "template--15788764266634__1651b0b6-5482-4752-bfcc-af4b4e76b256-167393751010938c66-0",
+        "template--15788764266634__1651b0b6-5482-4752-bfcc-af4b4e76b256-167393751010938c66-1",
+        "template--15788764266634__1651b0b6-5482-4752-bfcc-af4b4e76b256-167393751010938c66-2",
+        "fadc80b1-acaa-432b-bbb4-e4d4a7d653bb"
+      ],
+      "custom_css": [
+        "* {background: #ff8da1; bottom: 10px;}",
+        "h2 {padding-top: 15px; padding-left: 8px; font-size: 30px; font-weight: 700; color: #5a0035; text-transform: uppercase; margin-bottom: 2px; font-family: \"Mulish\";}",
+        "h3 {font-size: 3rem; letter-spacing: 0.06rem; line-height: calc(1 + 0.8 / var(--font-body-scale)); font-style: var(--font-body-style); font-weight: var(--font-body-weight); text-align: left; box-sizing: inherit; font-family: \"Mulish\", sans-serif; padding: 10px 0px; color: white;}"
+      ],
+      "settings": {
+        "title": "SERVE BY FAMILY",
+        "image_ratio": "square",
+        "color_scheme": "background-2",
+        "swipe_on_mobile": true,
+        "image_padding": true,
+        "show_view_all": false
+      }
+    },
+    "d94ae0f5-4a21-4929-8a9f-5af67e6be8a8": {
+      "type": "collection-list",
+      "blocks": {
+        "template--15788764266634__d94ae0f5-4a21-4929-8a9f-5af67e6be8a8-167393751010938c66-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "explore-by-shape-fluted"
+          }
+        },
+        "template--15788764266634__d94ae0f5-4a21-4929-8a9f-5af67e6be8a8-167393751010938c66-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "explore-by-shape-moon"
+          }
+        },
+        "template--15788764266634__d94ae0f5-4a21-4929-8a9f-5af67e6be8a8-167393751010938c66-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "explore-by-shape-tiara"
+          }
+        },
+        "081c5b50-d0c1-4ffe-b632-bbe0fad72cf0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "explore-by-shape-plano"
+          }
+        }
+      },
+      "block_order": [
+        "template--15788764266634__d94ae0f5-4a21-4929-8a9f-5af67e6be8a8-167393751010938c66-0",
+        "template--15788764266634__d94ae0f5-4a21-4929-8a9f-5af67e6be8a8-167393751010938c66-1",
+        "template--15788764266634__d94ae0f5-4a21-4929-8a9f-5af67e6be8a8-167393751010938c66-2",
+        "081c5b50-d0c1-4ffe-b632-bbe0fad72cf0"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "EXPLORE BY SHAPE",
+        "image_ratio": "square",
+        "color_scheme": "background-1",
+        "swipe_on_mobile": false,
+        "image_padding": false,
+        "show_view_all": false
+      }
+    },
+    "1c238f54-1134-4700-800b-3df1a08514ac": {
+      "type": "homepage-shop-with-advantage-section",
+      "blocks": {
+        "1d3b8b27-62cd-4ada-9eb8-3f197bcd44aa": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/kohinoor.gif",
+            "text": "",
+            "advantage_link": "shopify://collections/kohinoor"
+          }
+        },
+        "f549aee9-1753-4fe4-85f5-8d58c0f04c69": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/silk.gif",
+            "text": "",
+            "advantage_link": "shopify://collections/silk"
+          }
+        },
+        "f6d4c600-f3e1-4bb8-8675-c96870b1f61f": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/UTSAV.gif",
+            "text": "",
+            "advantage_link": "shopify://collections/utsav"
+          }
+        },
+        "0f96969a-c37f-4643-af71-aec0149a0557": {
+          "type": "Blocks",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/4_Bowls_1024x1024_29422a02-efbf-4369-a4bc-b5c47fab6410.webp",
+            "text": "",
+            "advantage_link": "shopify://collections/explore-by-shape-tiara"
+          }
+        }
+      },
+      "block_order": [
+        "1d3b8b27-62cd-4ada-9eb8-3f197bcd44aa",
+        "f549aee9-1753-4fe4-85f5-8d58c0f04c69",
+        "f6d4c600-f3e1-4bb8-8675-c96870b1f61f",
+        "0f96969a-c37f-4643-af71-aec0149a0557"
+      ],
+      "settings": {
+        "heading": "EXPLORE LARAH SERIES"
+      }
+    },
+    "efbf917a-19a2-407f-8b57-404e8fe9d6fa": {
+      "type": "homepage-testimonial-section",
+      "blocks": {
+        "f2161f13-8bcf-40c1-b4e9-9d376bf273dd": {
+          "type": "Testimonials",
+          "settings": {
+            "title": "",
+            "testimonial_description": "",
+            "client_name": "",
+            "client_location": ""
+          }
+        }
+      },
+      "block_order": [
+        "f2161f13-8bcf-40c1-b4e9-9d376bf273dd"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "para": ""
+      }
+    },
+    "1130b0b6-dc2a-47aa-a3e4-563b639c4285": {
+      "type": "homepage-shop-with-advantage-section",
+      "blocks": {
+        "d9dfb7d6-c451-47db-93d6-57f14ab874af": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/5_e838d022-f058-4358-8e31-a56abdd53249.jpg",
+            "text": "SHOP UNDER 299",
+            "advantage_link": ""
+          }
+        },
+        "a4896348-b212-49f3-a486-7d218da48c44": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/4_5db2d9bd-6973-4f62-98db-18af6d64c211.jpg",
+            "text": "",
+            "advantage_link": ""
+          }
+        },
+        "e595b7d5-7d47-4648-aa6e-556d90a1ddf2": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify://shop_images/2_05273d60-35f7-41f5-b175-f26859116977.jpg",
+            "text": "",
+            "advantage_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "d9dfb7d6-c451-47db-93d6-57f14ab874af",
+        "a4896348-b212-49f3-a486-7d218da48c44",
+        "e595b7d5-7d47-4648-aa6e-556d90a1ddf2"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": ""
+      }
+    },
+    "3da4f49a-8125-46ea-9500-3af8a035bb31": {
+      "type": "collage",
+      "blocks": {
+        "template--15797328478346__3da4f49a-8125-46ea-9500-3af8a035bb31-1674654667eeced87f-0": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=gxWlhnABCKw&t=12s",
+            "description": "Describe the video",
+            "image_padding": false
+          }
+        },
+        "template--15797328478346__3da4f49a-8125-46ea-9500-3af8a035bb31-1674654667eeced87f-1": {
+          "type": "product",
+          "settings": {
+            "product": "larah-opalware-botanica-dinner-set",
+            "second_image": true,
+            "image_padding": true,
+            "secondary_background": true
+          }
+        },
+        "template--15797328478346__3da4f49a-8125-46ea-9500-3af8a035bb31-1674654667eeced87f-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "larah",
+            "image_padding": false,
+            "color_scheme": "background-1"
+          }
+        }
+      },
+      "block_order": [
+        "template--15797328478346__3da4f49a-8125-46ea-9500-3af8a035bb31-1674654667eeced87f-0",
+        "template--15797328478346__3da4f49a-8125-46ea-9500-3af8a035bb31-1674654667eeced87f-1",
+        "template--15797328478346__3da4f49a-8125-46ea-9500-3af8a035bb31-1674654667eeced87f-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Multimedia collage",
+        "desktop_layout": "left",
+        "mobile_layout": "collage"
+      }
+    },
+    "cb27885d-1d96-4c5b-9d26-2b6a4dd60c45": {
+      "type": "judgeme_carousel_section",
+      "disabled": true,
+      "settings": {
+        "maxwidth": 1760
+      }
+    },
+    "110742bc-94eb-417e-82a2-34a964ce4117": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--15797328478346__110742bc-94eb-417e-82a2-34a964ce4117-1674655041a47dfd47-0": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "template--15797328478346__110742bc-94eb-417e-82a2-34a964ce4117-1674655041a47dfd47-1": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "template--15797328478346__110742bc-94eb-417e-82a2-34a964ce4117-1674655041a47dfd47-2": {
+          "type": "column",
+          "settings": {
+            "title": "Column",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15797328478346__110742bc-94eb-417e-82a2-34a964ce4117-1674655041a47dfd47-0",
+        "template--15797328478346__110742bc-94eb-417e-82a2-34a964ce4117-1674655041a47dfd47-1",
+        "template--15797328478346__110742bc-94eb-417e-82a2-34a964ce4117-1674655041a47dfd47-2"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Multicolumn",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "Button label",
+        "button_link": "",
+        "swipe_on_mobile": false
+      }
+    },
+    "bb04fbdf-27f0-4e0b-bdea-c0fab924ffe8": {
+      "type": "collection-page-product-grid",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "2254d3f8-7b03-48d1-a437-90ba834689a2": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured collection",
+        "collection": "trending-larah",
+        "products_to_show": 8,
+        "show_view_all": true,
+        "swipe_on_mobile": false,
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "add_image_padding": false,
+        "show_image_outline": false,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    }
+  },
+  "order": [
+    "daa22e5a-3857-4209-8905-c8331d60d853",
+    "eca880d4-37dd-4cf0-9c46-c5ffd1960d98",
+    "9c82bfda-2524-4095-9b34-c5b4624f33d5",
+    "d48db5a8-ab23-481d-89d6-e9a9395e2445",
+    "84ac7e01-c67e-4ffe-8dab-2590eda804f2",
+    "78a1eb4e-d317-4755-9662-32261427822c",
+    "main",
+    "9ab14bc1-433d-48fe-95c7-c897cd05837b",
+    "880a4ce3-ed81-44e1-9614-26001924514e",
+    "a040cd99-cd60-4edf-b4bc-a39da4eb51a4",
+    "9895abb2-6c6d-408f-8111-1fbc40b379c5",
+    "e35968c5-fd6c-448e-8ffa-1627404dd21f",
+    "db0fc023-92ee-43d4-ad35-0586fe56fc55",
+    "a0d64878-301f-4bda-b750-177e730b45d4",
+    "1651b0b6-5482-4752-bfcc-af4b4e76b256",
+    "d94ae0f5-4a21-4929-8a9f-5af67e6be8a8",
+    "1c238f54-1134-4700-800b-3df1a08514ac",
+    "efbf917a-19a2-407f-8b57-404e8fe9d6fa",
+    "1130b0b6-dc2a-47aa-a3e4-563b639c4285",
+    "3da4f49a-8125-46ea-9500-3af8a035bb31",
+    "cb27885d-1d96-4c5b-9d26-2b6a4dd60c45",
+    "110742bc-94eb-417e-82a2-34a964ce4117",
+    "bb04fbdf-27f0-4e0b-bdea-c0fab924ffe8",
+    "2254d3f8-7b03-48d1-a437-90ba834689a2"
+  ]
+}

@@ -1,0 +1,102 @@
+{% layout none %}
+<div class="cart-edit cart_product_edit" data-template-cart-edit>
+  {%- assign current_variant = product.selected_or_first_available_variant -%}
+  {% assign variantCount = product.variants | size %}
+  {% form 'product', product, id: "add-to-cart-edit-cart-form", novalidate: 'novalidate' %}
+  <div class="product-edit first hidden" data-cart-edit-id="{{ product.id }}" data-product-handle="{{ product.handle }}">
+    <input type="hidden" name="id" value="{{ current_variant.id }}" />
+    <input type="hidden" id="quantity" name="quantity" value="0">
+  </div>
+  <div class="cart-edit_svg_close">
+    <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.5016 2.88054L12.3731 10.0091L19.4917 17.1376C21.0561 18.6557 18.6358 21.076 17.1177 19.5116L9.99914 12.383L2.88054 19.5016C1.36245 21.0661 -1.05787 18.6425 0.506567 17.1277L7.62517 10.0091L0.506567 2.88054C-1.05787 1.36246 1.36245 -1.05787 2.88054 0.506566L9.99914 7.6351L17.1177 0.5165C18.6375 -1.04959 21.0561 1.37239 19.495 2.88882L19.5016 2.88054Z" fill="black"/></svg>
+  </div>
+
+  <div class="cart-meta--option">
+    {% if product.available %}
+    <div id="product-variants">
+      {% if variantCount > 0  and product.variants[0].title != 'Default Title'  %}
+
+      {% for option in product.options_with_values %}
+      {% if option.name == 'Size' or option.name == 'size' %}
+
+      <div class="ajax-size_variants">
+        {% for variant in product.variants %}
+{% unless variant.metafields.secomapp.freegifts %}
+{% unless variant.title contains '% off)' %}
+
+        {% if variant.available %}
+        <div class="update_size_variant ajax-size_variant" value="{{variant.id}}"> {{variant.title}} </div>
+        {% endif %}
+
+{% endunless %}
+{% endunless %}
+        {% endfor %}
+      </div>
+      {% else %}
+
+      <select id="product-selectors-cart-edit" name="id" style="display: block;">
+        {% for variant in product.variants %}
+{% unless variant.metafields.secomapp.freegifts %}
+{% unless variant.title contains '% off)' %}
+
+        {% if variant.available %}
+        <option {% if variant == current_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+          {{ variant.title }}
+        </option>
+        {% else %}
+        <option disabled="disabled">{{ variant.title }} - Sold Out</option>
+        {% endif %}
+
+{% endunless %}
+{% endunless %}
+        {% endfor %}
+      </select>
+      {% endif %}
+      {% endfor %}
+      {% else %}
+      <input type="hidden" name="id" value="{{ product.variants[0].id }}" />
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="cart--action">
+    <div class="mm-ajaxcart-info-body">Quantity  
+      <div class="mm-ajaxcart-item-quantity">
+        <span class="quantity-minus">−</span>
+        <input class="quantity-input"
+               id="quantity_update"
+               name="quantity"
+               {% if current_variant.inventory_management != null and current_variant.inventory_quantity > 0 %} data-line="{{ current_variant.inventory_quantity }}"{% endif %}
+               type="number" 
+               value="1" 
+               min="1" pattern="[0-9]*">
+        <span class="quantity-plus">+</span>
+      </div>
+    </div>
+    <button data-update-cart-edit type="submit" name="add" class="mm-ajax_update_add cart--action-act btn gen-btn" data-form-id="#add-to-cart-quickview-form" id="product-add-to-cart" >
+      <svg xmlns="http://www.w3.org/2000/svg" width="15.655" height="18.46" viewBox="0 0 15.655 18.46">
+        <defs>
+          <style>.a{fill:none;stroke:#cfdc52;stroke-linecap:square;stroke-width:1.3px;}</style>
+        </defs>
+        <g transform="translate(0.65 0.65)">
+          <rect class="a" width="14.355" height="12.146" rx="2" transform="translate(0 5.014)"></rect>
+          <path class="a" d="M8,7.218a4.218,4.218,0,0,1,8.437,0" transform="translate(-4.973 -3)"></path>
+        </g>
+      </svg>
+      <span data-add-to-cart-text>
+        {% unless current_variant.available %}
+        Sould Out
+        {% else %}
+
+        Add to cart
+        {% endunless %}
+      </span>
+
+    </button>  
+
+  </div>
+
+
+  {% endform %}
+</div>

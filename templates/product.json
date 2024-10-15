@@ -1,0 +1,649 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "1715076284a35ab079": {
+      "type": "apps",
+      "blocks": {
+        "wizzy_search_filters_wizzy_search_box_MD49dB": {
+          "type": "shopify://apps/wizzy-search-filters/blocks/wizzy-search-box/ae8fbc14-43c6-4ce2-b5bc-819d4b1052f6",
+          "disabled": true,
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "wizzy_search_filters_wizzy_search_box_MD49dB"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "blocks_QMa86t": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/Only-Prepaid_1_72f389fa-201f-4671-81d0-ee0328d7cd87.jpg",
+            "Icon_text": "Only Prepaid",
+            "tag_text": "restrict_cod",
+            "Icon_message": "Cash on delivery is not allowed on this product."
+          }
+        },
+        "blocks_tzefTq": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/NO-RETURN-NO-REFUND_60x60_1.png",
+            "Icon_text": "No Refund/Return",
+            "tag_text": "no_return-refund",
+            "Icon_message": "Non acceptance of Personalised orders will not be eligible for refund"
+          }
+        },
+        "55076c02-1f57-4c4c-985c-a44919d48bbf": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/COD.png",
+            "Icon_text": "COD Available",
+            "tag_text": "cod",
+            "Icon_message": "Cash on Delivery is only available for orders below ₹ 2999."
+          }
+        },
+        "9ac68978-f805-470e-9fe5-24b662d41f19": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/Very-fast-Delivery.png",
+            "Icon_text": "Fast Delivery",
+            "tag_text": "fast_delivery",
+            "Icon_message": "Delivery within 3-5 working days."
+          }
+        },
+        "6f49f23e-c106-4e78-a101-d55c7cb9c4fa": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/7-days-return-policy.png",
+            "Icon_text": "7 Day Return Policy",
+            "tag_text": "7days_return_policy",
+            "Icon_message": "1. Returns should be booked within 7 days from the date of delivery.\n2. The item must be returned undamaged with original packaging intact.\n3. Refunds will be processed once the item is picked up by the logistics partner, within 7 days of the receipt of the product at the warehouse."
+          }
+        },
+        "c370288b-cf0a-423d-9304-3dd385538e1d": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/7-days-replacement-policy.png",
+            "Icon_text": "7 Day Replacement Policy",
+            "tag_text": "7day_replacement",
+            "Icon_message": "1. This item is eligible for free replacement within 7 days of delivery, in the unlikely event of a damaged, defective or incorrect item delivered to you. If we are unable to repair or replace the item satisfactorily, the defective / damaged item will be eligible for a refund.\n2. Please keep the item in its original condition, with the undamaged brand outer box, MRP tags attached, user manual, warranty cards, and original accessories.\n3. We may contact you to ascertain the damage or defect in the product prior to issuing refund/replacement.\n4. Please note that any damage caused due to usage will not qualify.\n5. Refunds will be processed once the item is received by the warehouse, within 7 days of the receipt of the product at the warehouse."
+          }
+        },
+        "a869ac70-e624-4e81-996c-5b7be2714db6": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/on-site.png",
+            "Icon_text": "On Site Service",
+            "tag_text": "on_site_service",
+            "Icon_message": "If you are facing a problem with your appliance, you can book a service request and an engineer will visit your site to get your appliance inspected and repaired."
+          }
+        },
+        "96bd8de7-bb40-4493-9678-d68ad83af639": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/Free-Shipping-over-1000.png",
+            "Icon_text": "Free shipping",
+            "tag_text": "free_shipping",
+            "Icon_message": "Free Shipping on all Orders"
+          }
+        },
+        "dce2311a-c5c4-4b7d-8d1f-a2c6134e1b5d": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        },
+        "c7126bec-7355-4896-87eb-59f5afc4b416": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/1-Warranty.png",
+            "Icon_text": "1 Year Warranty",
+            "tag_text": "1year_warranty",
+            "Icon_message": "1 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions."
+          }
+        },
+        "3832b5ee-20be-4756-ae06-d49d4bbfda9f": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/2-Warranty.png",
+            "Icon_text": "2 Year Warranty",
+            "tag_text": "2year_warranty",
+            "Icon_message": "2 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions."
+          }
+        },
+        "89951655-4810-46fc-870a-260e5d4379db": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year Warranty",
+            "tag_text": "5year_warranty",
+            "Icon_message": "5 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions."
+          }
+        },
+        "988a29cb-513a-498c-8e4d-084a8f6db089": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/1-Warranty.png",
+            "Icon_text": "1 Year Warranty on Product",
+            "tag_text": "1yearwarranty_product",
+            "Icon_message": "1 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions. This product is meant for domestic use only, and warranty will not be valid if product is used for commercial purposes or is repaired by any person other than Borosil Authorized Service Center."
+          }
+        },
+        "6bd0eac7-d318-40b0-ab68-1d6ca70b0fc3": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year Warranty on Motor",
+            "tag_text": "5yearwarranty_motor",
+            "Icon_message": "This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions. This product is meant for domestic use only, and warranty will not be valid if product is used for commercial purposes or is repaired by any person other than Borosil Authorized Service Center."
+          }
+        },
+        "64f08eb9-5124-4f6c-926c-10fb70b37605": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year Warranty on Lid",
+            "tag_text": "5yearwarranty_lid",
+            "Icon_message": "5 Year warranty on manufacturing defect of lid."
+          }
+        },
+        "f1fe8f34-c8be-4ce7-af7d-9e344560da24": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/2-Warranty.png",
+            "Icon_text": "2 Year Warranty on Product",
+            "tag_text": "2yearwarranty_product",
+            "Icon_message": "2 year warranty on manufacturing defects. This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions. This product is meant for domestic use only, and warranty will not be valid if product is used for commercial purposes or is repaired by any person other than Borosil Authorized Service Center."
+          }
+        },
+        "3d85daa2-d702-4921-a89c-8a535b3e2be3": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year Warranty on Heating Coil",
+            "tag_text": "5yearwarranty_heatingcoil",
+            "Icon_message": "This warranty does not cover damage caused by accidents, mishandling, misuse or failure to follow usage instructions. This product is meant for domestic use only, and warranty will not be valid if product is used for commercial purposes or is repaired by any person other than Borosil Authorized Service Center."
+          }
+        },
+        "7dacaa04-1bdf-42c1-a5a9-aa717b7f664b": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/5-Warranty.png",
+            "Icon_text": "5 Year warranty on Bottom",
+            "tag_text": "5yearwarranty_bottom",
+            "Icon_message": "5 Year warranty on manufacturing defect of bottom."
+          }
+        },
+        "blocks_am7B7y": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/Very-fast-Delivery.png",
+            "Icon_text": "Delivery Within 7-8 Days",
+            "tag_text": "Deliveryin7to8days",
+            "Icon_message": "The Delivery of this products will take 7-8 working days."
+          }
+        },
+        "8b934cc9-1052-43b4-beae-e93ba1ee20e6": {
+          "type": "categories",
+          "settings": {
+            "font_dimensions": "[\n  {\n    \"tag\": \"dimension1\",\n    \"VFL\": \"7\",\n    \"VFS\": \"10\",\n    \"HFL\": \"5\",\n    \"HFS\": \"8\"\n  },\n  {\n    \"tag\": \"dimension2\",\n    \"VFL\": \"14\",\n    \"VFS\": \"22\",\n    \"HFL\": \"9\",\n    \"HFS\": \"14\"\n  },\n  {\n    \"tag\": \"dimension3\",\n    \"VFL\": \"12\",\n    \"VFS\": \"25\",\n    \"HFL\": \"9\",\n    \"HFS\": \"18\"\n  },\n  {\n    \"tag\": \"dimension4\",\n    \"VFL\": \"13\",\n    \"VFS\": \"22\",\n    \"HFL\": \"15\",\n    \"HFS\": \"24\"\n  }\n]"
+          }
+        },
+        "74f2a479-b9ef-4ef2-9da6-7fbcff7fb378": {
+          "type": "fontfamily",
+          "settings": {
+            "font-family-display": "Aa",
+            "font-family-block": "Arial Black",
+            "font-block-data": "Arial Black",
+            "font_weight": "900"
+          }
+        },
+        "e41616b6-16cf-4b3f-a222-1f4facd0249f": {
+          "type": "fontfamily",
+          "settings": {
+            "font-family-display": "Aa",
+            "font-family-block": "Verlag",
+            "font-block-data": "Verlag Black",
+            "font_weight": "900"
+          }
+        },
+        "6a367fbe-461f-4ed9-9df3-b1823535882a": {
+          "type": "fontfamily",
+          "settings": {
+            "font-family-display": "Aa",
+            "font-family-block": "Verdana",
+            "font-block-data": "Verdana",
+            "font_weight": "400"
+          }
+        },
+        "b350c603-540d-4f4e-9014-7dbd25b75454": {
+          "type": "fontfamily",
+          "settings": {
+            "font-family-display": "Aa",
+            "font-family-block": "Guavine",
+            "font-block-data": "Guavine Demo",
+            "font_weight": "700"
+          }
+        },
+        "1c72144b-becd-44c4-b838-abbf7f746594": {
+          "type": "fontfamily",
+          "settings": {
+            "font-family-display": "Aa",
+            "font-family-block": "cheesycats",
+            "font-block-data": "Cheesy Cats",
+            "font_weight": "700"
+          }
+        },
+        "a29cff2a-5c2a-4848-bb53-c36183b008fb": {
+          "type": "fontfamily",
+          "settings": {
+            "font-family-display": "Aa",
+            "font-family-block": "Lazydog",
+            "font-block-data": "Lazydog",
+            "font_weight": "700"
+          }
+        },
+        "66286f53-f8be-4abc-99b0-1185e23ca266": {
+          "type": "fontfamily",
+          "disabled": true,
+          "settings": {
+            "font-family-display": "Aerial Black",
+            "font-family-block": "cursive",
+            "font-block-data": "",
+            "font_weight": "700"
+          }
+        },
+        "bf37a7cc-659d-437c-80e7-c57aebf159e9": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Travel",
+            "emoji-block": "shopify://shop_images/travel__adventures_await_moon_copy_1.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "emoji_7mgAgh": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Travel",
+            "emoji-block": "shopify://shop_images/stay_wavy_100_x_100.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "03494973-cd30-4682-9846-d92f030bbc75": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Travel",
+            "emoji-block": "shopify://shop_images/travel__adventure_awaits_sun_copy.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "emoji_crRU4M": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Travel",
+            "emoji-block": "shopify://shop_images/travel__fly_away_copy_1.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "emoji_rq6gkm": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Travel",
+            "emoji-block": "shopify://shop_images/ui-10.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "emoji_ktrdPe": {
+          "type": "emoji",
+          "disabled": true,
+          "settings": {
+            "emoji-category": "",
+            "emoji-block": "shopify://shop_images/ui-11.png",
+            "product_tag": ""
+          }
+        },
+        "emoji_VAbkgd": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Travel",
+            "emoji-block": "shopify://shop_images/seas_the_day.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "emoji_U3EcQx": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Sports",
+            "emoji-block": "shopify://shop_images/cricket__bleed_blue.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "emoji_TiD9ee": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Sports",
+            "emoji-block": "shopify://shop_images/cricket__game_on.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "emoji_LRbdp6": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Sports",
+            "emoji-block": "shopify://shop_images/cricket__one_love.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "emoji_nTqCrF": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Sports",
+            "emoji-block": "shopify://shop_images/cricket__10.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "emoji_tiTnyc": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Sports",
+            "emoji-block": "shopify://shop_images/cricket__18.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "emoji_LC6QjC": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Sports",
+            "emoji-block": "shopify://shop_images/cricket__7.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "emoji_qdXCXB": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Daily Essentials",
+            "emoji-block": "shopify://shop_images/Sugar.png",
+            "product_tag": "jar-acce"
+          }
+        },
+        "emoji_XTmxHX": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Daily Essentials",
+            "emoji-block": "shopify://shop_images/Coffee.png",
+            "product_tag": "jar-acce"
+          }
+        },
+        "emoji_yxKLy6": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Daily Essentials",
+            "emoji-block": "shopify://shop_images/Chai.png",
+            "product_tag": "jar-acce"
+          }
+        },
+        "emoji_qUjY6i": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Daily Essentials",
+            "emoji-block": "shopify://shop_images/Dry_Fruits.png",
+            "product_tag": "jar-acce"
+          }
+        },
+        "emoji_yKfhkW": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Daily Essentials",
+            "emoji-block": "shopify://shop_images/Dal.png",
+            "product_tag": "jar-acce"
+          }
+        },
+        "emoji_mRKPRx": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Daily Essentials",
+            "emoji-block": "shopify://shop_images/Besan.png",
+            "product_tag": "jar-acce"
+          }
+        },
+        "emoji_VTizyg": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Daily Essentials",
+            "emoji-block": "shopify://shop_images/Haldi.png",
+            "product_tag": "jar-acce"
+          }
+        },
+        "emoji_EPGTeb": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Daily Essentials",
+            "emoji-block": "shopify://shop_images/Lal_Mirch.png",
+            "product_tag": "jar-acce"
+          }
+        },
+        "emoji_pNNCBm": {
+          "type": "emoji",
+          "settings": {
+            "emoji-category": "Sports",
+            "emoji-block": "shopify://shop_images/shoot_for_the_stars_silver_100px.png",
+            "product_tag": "trek bottle"
+          }
+        },
+        "blocks_d8d8G7": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/NO-RETURN-NO-REFUND_60x60_1.png",
+            "Icon_text": "No Return",
+            "tag_text": "no_cancel_replacement",
+            "Icon_message": "1. This item is only eligible for return or replacement, in the unlikely event of a damaged, defective or incorrect item delivered to you. If we are unable to replace the item satisfactorily, the defective / damaged item will be eligible for a refund.\n2. Please keep the item in its original condition, with the undamaged brand outer box, MRP tags attached, user manual, warranty cards, and original accessories.\n3. We may contact you to ascertain the damage or defect in the product prior to issuing refund/replacement.\n4. Please note that any damage caused due to usage will not qualify."
+          }
+        }
+      },
+      "block_order": [
+        "blocks_QMa86t",
+        "blocks_tzefTq",
+        "55076c02-1f57-4c4c-985c-a44919d48bbf",
+        "9ac68978-f805-470e-9fe5-24b662d41f19",
+        "6f49f23e-c106-4e78-a101-d55c7cb9c4fa",
+        "c370288b-cf0a-423d-9304-3dd385538e1d",
+        "a869ac70-e624-4e81-996c-5b7be2714db6",
+        "96bd8de7-bb40-4493-9678-d68ad83af639",
+        "dce2311a-c5c4-4b7d-8d1f-a2c6134e1b5d",
+        "c7126bec-7355-4896-87eb-59f5afc4b416",
+        "3832b5ee-20be-4756-ae06-d49d4bbfda9f",
+        "89951655-4810-46fc-870a-260e5d4379db",
+        "988a29cb-513a-498c-8e4d-084a8f6db089",
+        "6bd0eac7-d318-40b0-ab68-1d6ca70b0fc3",
+        "64f08eb9-5124-4f6c-926c-10fb70b37605",
+        "f1fe8f34-c8be-4ce7-af7d-9e344560da24",
+        "3d85daa2-d702-4921-a89c-8a535b3e2be3",
+        "7dacaa04-1bdf-42c1-a5a9-aa717b7f664b",
+        "blocks_am7B7y",
+        "8b934cc9-1052-43b4-beae-e93ba1ee20e6",
+        "74f2a479-b9ef-4ef2-9da6-7fbcff7fb378",
+        "e41616b6-16cf-4b3f-a222-1f4facd0249f",
+        "6a367fbe-461f-4ed9-9df3-b1823535882a",
+        "b350c603-540d-4f4e-9014-7dbd25b75454",
+        "1c72144b-becd-44c4-b838-abbf7f746594",
+        "a29cff2a-5c2a-4848-bb53-c36183b008fb",
+        "66286f53-f8be-4abc-99b0-1185e23ca266",
+        "bf37a7cc-659d-437c-80e7-c57aebf159e9",
+        "emoji_7mgAgh",
+        "03494973-cd30-4682-9846-d92f030bbc75",
+        "emoji_crRU4M",
+        "emoji_rq6gkm",
+        "emoji_ktrdPe",
+        "emoji_VAbkgd",
+        "emoji_U3EcQx",
+        "emoji_TiD9ee",
+        "emoji_LRbdp6",
+        "emoji_nTqCrF",
+        "emoji_tiTnyc",
+        "emoji_LC6QjC",
+        "emoji_qdXCXB",
+        "emoji_XTmxHX",
+        "emoji_yxKLy6",
+        "emoji_qUjY6i",
+        "emoji_yKfhkW",
+        "emoji_mRKPRx",
+        "emoji_VTizyg",
+        "emoji_EPGTeb",
+        "emoji_pNNCBm",
+        "blocks_d8d8G7"
+      ],
+      "settings": {
+        "ponits_per_rs": 5,
+        "show_haptic_text": true,
+        "sample_sheet_link": "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ-7H9_2IWnBopas6YEQ74Trad3XdPdgVt-jRp0zfEoWEGDW7NxNY2ftohyaVCRihTGekmWrGVjENeY/pub?output=csv",
+        "personalize-type": "hydra personalisation"
+      }
+    },
+    "1715242185b31e3354": {
+      "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "9914004a-3f14-474a-8356-74f1fd441f19": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "section {background-color: white;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div id='rk-widget-212779' class='rk-bought_together'></div>"
+      }
+    },
+    "1642224864e16e310f": {
+      "type": "main-product-video",
+      "settings": {
+        "video_header": "PRODUCT VIDEOS"
+      }
+    },
+    "1642224884819f503c": {
+      "type": "main-product-tabs",
+      "settings": {
+      }
+    },
+    "164222490252b80669": {
+      "type": "main-product-image",
+      "settings": {
+      }
+    },
+    "1642224926d80cf62a": {
+      "type": "main-products-metafields-card",
+      "settings": {
+        "section_heading": "WHAT MAKES OUR PRODUCTS GREAT?"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "section_heading": "You may also like"
+      }
+    },
+    "1669095887cbc40d26": {
+      "type": "apps",
+      "blocks": {
+        "00934fc4-9a79-4082-9473-3710fef54615": {
+          "type": "shopify://apps/glood-product-recommendations/blocks/app-block/6e79d991-1504-45bb-88e3-1fb55a4f26cd",
+          "settings": {
+            "widget-id": "213743",
+            "padding-top": "",
+            "padding-bottom": "",
+            "class-names": "",
+            "custom-css": "",
+            "add-loader": false,
+            "min-height": "300px",
+            "custom-loader": ""
+          }
+        },
+        "2f97de12-fb51-40c6-bfdb-d67f7d5c6a4b": {
+          "type": "shopify://apps/glood-product-recommendations/blocks/app-block/6e79d991-1504-45bb-88e3-1fb55a4f26cd",
+          "settings": {
+            "widget-id": "214598",
+            "padding-top": "",
+            "padding-bottom": "",
+            "class-names": "",
+            "custom-css": "",
+            "add-loader": false,
+            "min-height": "300px",
+            "custom-loader": ""
+          }
+        }
+      },
+      "block_order": [
+        "00934fc4-9a79-4082-9473-3710fef54615",
+        "2f97de12-fb51-40c6-bfdb-d67f7d5c6a4b"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1642224948e7099789": {
+      "type": "apps",
+      "blocks": {
+        "d0a0c716-fdb7-4e2a-98e3-9cbe56ff4200": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "d0a0c716-fdb7-4e2a-98e3-9cbe56ff4200"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "1642224987b96e1683": {
+      "type": "main-product-faqs",
+      "settings": {
+        "faq_title": "FAQS"
+      }
+    },
+    "16422249906f0d12bf": {
+      "type": "main-product-blogs",
+      "settings": {
+        "heading": "OUR BLOGS",
+        "para": "Check out our blogs for ideas on how to get the most out of your Borosil products!"
+      }
+    },
+    "16422248316051912f": {
+      "type": "mm-recently-viewed-products",
+      "settings": {
+        "title": "PREVIOUSLY VIEWED"
+      }
+    }
+  },
+  "order": [
+    "1715076284a35ab079",
+    "main",
+    "1715242185b31e3354",
+    "9914004a-3f14-474a-8356-74f1fd441f19",
+    "1642224864e16e310f",
+    "1642224884819f503c",
+    "164222490252b80669",
+    "1642224926d80cf62a",
+    "product-recommendations",
+    "1669095887cbc40d26",
+    "1642224948e7099789",
+    "1642224987b96e1683",
+    "16422249906f0d12bf",
+    "16422248316051912f"
+  ]
+}

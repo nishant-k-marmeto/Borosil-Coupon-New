@@ -1,0 +1,74 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "81d7a9a0-e30e-4f93-84d3-05d803a8aae2": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/Image_226.png",
+            "Icon_text": "Very Fast Delivery",
+            "tag_text": "fast_delivery"
+          }
+        },
+        "3a3ce37f-9f5a-4a08-851b-3afc6ecbe034": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/Image_225_172e6a02-6b83-425b-a879-c904a1766994.png",
+            "Icon_text": "Free shipping above 1000",
+            "tag_text": "free_shipping"
+          }
+        },
+        "d0a15ae1-d16b-42f4-8f1e-3607b1f03571": {
+          "type": "blocks",
+          "settings": {
+            "Icon_image": "shopify://shop_images/one_year.png",
+            "Icon_text": "1 year warranty",
+            "tag_text": "1year_warranty"
+          }
+        },
+        "57f24061-6ca4-45ad-bf4b-c232f8d7b165": {
+          "type": "blocks",
+          "settings": {
+            "Icon_text": "",
+            "tag_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "81d7a9a0-e30e-4f93-84d3-05d803a8aae2",
+        "3a3ce37f-9f5a-4a08-851b-3afc6ecbe034",
+        "d0a15ae1-d16b-42f4-8f1e-3607b1f03571",
+        "57f24061-6ca4-45ad-bf4b-c232f8d7b165"
+      ],
+      "settings": {
+      }
+    },
+    "main-product-video": {
+      "type": "main-product-video",
+      "settings": {
+        "video_header": ""
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "section_heading": "You may also like"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "main-product-video",
+    "product-recommendations"
+  ]
+}

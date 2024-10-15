@@ -1,0 +1,45 @@
+{% comment %}
+  ##Hiding payment gateways based on different conditions
+    1. Based on total price
+    2. If value of checkout is greater than or less than the CAP value
+ 
+{% endcomment %}
+<!-- COD variable for Max value CAP -->
+
+<script>
+  {% assign hideCodPrice = settings.hide_cod_price | plus: 0 | times: 100 %}
+  {% assign hideCodPrice_max = settings.hide_cod_price_max | plus: 0 | times: 100 %}
+  const minCodLimit = {{ hideCodPrice }};
+  const maxCodLimit = {{ hideCodPrice_max }};
+
+  $(document).on('page:load page:change', function () {
+
+    const CodGateway = $('[data-select-gateway] .radio__label__primary:contains(Cash)').parents('.radio-wrapper').attr('data-select-gateway');
+    const razorpayGateway = $('[data-select-gateway] .radio__label__primary:contains(Razorpay)').parents('.radio-wrapper').attr('data-select-gateway');
+    window.qcCouponApplied = false;
+    if ($('[data-reduction-form="true"]').length > 0) window.qcCouponApplied = localStorage.getItem('qcCouponApplied');
+  
+    if ($('.payment-due__price').attr('data-checkout-payment-due-target') <= minCodLimit || $('.payment-due__price').attr('data-checkout-payment-due-target') >= maxCodLimit) {
+      $('.radio-wrapper[data-select-gateway="' + CodGateway + '"] .input-radio').prop('checked', false);
+      $('.radio-wrapper[data-select-gateway="' + CodGateway + '"]').hide();
+      $('.radio-wrapper[data-subfields-for-gateway="' + CodGateway + '"]').hide();
+    }
+    else if (window.qcCouponApplied == 'true') {
+      $('.radio-wrapper[data-select-gateway="' + CodGateway + '"] .input-radio').prop('checked', false);
+      $('.radio-wrapper[data-select-gateway="' + CodGateway + '"]').hide();
+      $('.radio-wrapper[data-subfields-for-gateway="' + CodGateway + '"]').hide();
+      $('.radio-wrapper[data-select-gateway="' + razorpayGateway + '"] .input-radio').prop('checked', true);
+      $('.radio-wrapper[data-subfields-for-gateway="' + razorpayGateway + '"]').show();
+    }
+    else if (window.hideCOD) {
+      $('.radio-wrapper[data-select-gateway="' + CodGateway + '"] .input-radio').prop('checked', false);
+      $('.radio-wrapper[data-select-gateway="' + CodGateway + '"]').hide();
+      $('.radio-wrapper[data-subfields-for-gateway="' + CodGateway + '"]').hide();
+    }
+    else {
+      $('.radio-wrapper[data-select-gateway="' + CodGateway + '"] .input-radio').prop('checked', false);
+      $('.radio-wrapper[data-select-gateway="' + CodGateway + '"]').show();
+      $('.radio-wrapper[data-subfields-for-gateway="' + CodGateway + '"]').show();
+    }
+  });
+</script>

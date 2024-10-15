@@ -1,0 +1,20 @@
+<script>
+    const addressInputField = document.getElementById('checkout_shipping_address_address1');
+    if(addressInputField){
+      function validateAddress(){
+        const allowedPattern = /^[a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+        const inputValue = addressInputField.value;
+    
+        if (!allowedPattern.test(inputValue)) {
+          addressInputField.value = inputValue.replace(/[^a-zA-Z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/g, '').replace(/\s+/g,' ').trim();
+          alert('Please enter the address only in English');
+        }
+      }
+      addressInputField.addEventListener('input', (event) => {
+        validateAddress();
+      });
+      document.getElementById('continue_button').addEventListener('click', (event) => {
+        validateAddress();
+      });
+    }
+  </script>

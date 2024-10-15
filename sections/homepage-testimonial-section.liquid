@@ -1,0 +1,119 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+
+  <div class="homepage-testimonial-section">
+    <div class="homepage-testimonial-section-inner">
+      <div class="homepage-testimonial-section-header">
+        <h4>{{ section.settings.heading }}</h4>
+        <p>{{ section.settings.para }}</p>
+      </div>
+
+      <div class="homepage-testimonial-section-slider">
+        {% for block in section.blocks %}  
+        <div class="homepage-testimonial-section-blocks">
+          <div class="homepage-testimonial-section-blocks-image">
+            {% if block.settings.testimonial_image != blank %}
+            <img loading="lazy" src="{{ block.settings.testimonial_image |img_url: 'original' }}" width="{{ block.settings.testimonial_image.width }}" height="{{ block.settings.testimonial_image.height }}" class="homepage-testimonial-section-image">
+            {% endif %}
+          </div>
+
+          <div class="homepage-testimonial-section-blocks-text">
+            {% if block.settings.title != blank %}
+            <h5>{{ block.settings.title }}</h5>
+            {% endif %}
+
+            {% if block.settings.testimonial_description != blank %}
+            <p class="read-more-text">{{ block.settings.testimonial_description | truncate:100 }}</p>
+            <span class="btn-read-more">Read more</span>
+            <p class="read-less-text">{{ block.settings.testimonial_description }}</p>
+            <span class="btn-read-less">Read less</span>
+            {% endif %}
+
+            {%- if block.settings.client_name != blank -%}
+            <h6>{{ block.settings.client_name }}</h6>
+            {%- endif -%}
+
+            {%- if block.settings.client_location != blank -%}
+            <p class="homepage-testimonial-client-location">{{ block.settings.client_location }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+        {% endfor %}
+      </div>  
+    </div>  
+  </div>
+
+{% endif %}       
+      
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+
+{% schema %}
+  {
+  "name": "Client Testimonial",
+  "class": "homepage-testimonial-section",
+  "settings": [
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Add Section Heading"
+    },
+    {
+      "type": "text",
+      "id": "para",
+      "label": "Add Section Description"
+    }
+],
+  "max_blocks": 6,
+  "blocks": [
+	{
+	  "type": "Testimonials",
+      "name": "Add Testimonials",
+      "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Add Testimonial Heading"
+      },
+    {
+      "type": "image_picker",
+      "id": "testimonial_image",
+      "label": "Add Client Image",
+      "info":"Add Jpeg/png Image of Size 180 x 180px"
+    },
+  	{
+      "type": "text",
+      "id": "testimonial_description",
+      "label": "Add Testimonial Description"
+    },
+  	{
+      "type": "text",
+      "id": "client_name",
+      "label": "Add Client Name"
+    },
+	{
+      "type": "text",
+      "id": "client_location",
+      "label": "Add Client Location"
+    }
+  ]
+}],
+  "presets": [
+    {
+      "category": "Custom Solution",
+      "name": "Client Testimonial"
+    }
+  ]
+}
+{% endschema %}
+          
+  
+  

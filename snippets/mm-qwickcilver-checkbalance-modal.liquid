@@ -1,0 +1,65 @@
+
+<script>
+  var qcModelStyle = "{{ 'mm-qwickcilver-checkbalance-modal.css' | asset_url }}";
+  Defer.css(qcModelStyle, 'qc-modal-css', 0, function() {
+  });
+</script>
+<div class="gift-popup-modal">
+  <!-- Modal content -->
+  <div class="gift-popup-modal-content">
+    <div class="gift-popup-modal-content__header">
+      <img src="{{ 'borosil_blue_new.png' | asset_url }}" class="gift-popup-modal-content__img" loading="lazy">
+      <button class="gift-popup-close">&times;</button>
+    </div>
+    <div class="gift-content check is-active">
+      <h2>Check Gift card balance</h2>
+      <form name="CheckBalance" id="check_balance">
+        <input
+          type="text"
+          id="gift-code"
+          class="gift-code-input"
+          name="gift-code"
+          autocomplete="off"
+          placeholder="AGFX-XXXX-XXXX-AHGX"
+          maxlength="16"
+        >
+        <input
+          type="text"
+          id="gift-code-pin"
+          class="gift-code-input"
+          name="gift-code-pin"
+          autocomplete="off"
+          placeholder="Enter your gift card pin"
+          maxlength="6"
+        >
+        <button type="submit" id="check_balance__submit">CHECK BALANCE</button>
+      </form>
+    </div>
+    <div class="gift-content on-sucess ">
+      <div class="gift-card">
+        <img
+          src="https://myborosil.com/cdn/shop/t/277/assets/Borosil-logo-white.png?v=181545771884648499631686559225"
+          class="gift-card--logo"
+          loading="lazy"
+        >
+        <img
+          src="https://myborosil.com/cdn/shop/t/277/assets/Borosil-logo-white.png?v=181545771884648499631686559225"
+          class="gift-card--logo-float"
+          loading="lazy"
+        >
+        <div class="gift-card--code">AGFX-XXXX-XXXX-AHGX</div>
+        <div class="gift-card--balance">
+          <h2>Balance</h2>
+          Rs. 1000
+        </div>
+        <div class="gift-card--expiry-date"><span>Expires on: </span><span>12/22</span></div>
+      </div>
+      <button id="go-to-step1" class="gift-card--close">check another card</button>
+    </div>
+    <div class="gift-content on-error">
+      <h2>Oops</h2>
+      <p id="error-message">There was a error finding this card</p>
+      <button id="go-to-step1" class="gift-card--close">Try again</button>
+    </div>
+  </div>
+</div>

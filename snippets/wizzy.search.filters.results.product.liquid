@@ -1,0 +1,152 @@
+<div
+  class="
+    product-card available-true wizzy-result-product wizzy-product-[[id]]
+    [[#groupId]]has-variations wizzy-group-product-[[groupId]][[/groupId]]
+  "
+  data-id="[[id]]"
+  [[#groupId]]data-groupId="[[groupId]]"
+  [[/groupId]]
+>
+  <style>
+    .wizzy-search-wrapper .jdgm-star.jdgm--on,
+    .wizzy-search-wrapper .jdgm-star.jdgm--half{
+      color: #388e3c !important;
+    }
+  </style>
+  
+  <a href="[[&url]]" class="product-card__link"
+    ><img
+      class="product-card__image"
+      src="[[mainImage]]?v=1677244479"
+      alt="Classic Dinner Set"
+      width="200"
+      height="200"
+      loading="eager"
+      fetchpriority="high"
+    >
+  </a>
+
+  <div class="product-card__info wizzy-result-product-item">
+    <div id="myModal" class="modal modal--{{ section.id }}">
+      <div class="modal-content">
+        <span class="close_error_Box close_error_Box--{{ section.id }}">×</span>
+        <p class="Errormessage Errormessage--{{ section.id }}"></p>
+      </div>
+    </div>
+    <a href="[[&url]]"><h2 class="product-card__title">[[&name]]</h2></a>
+    <p class="product-card__snack">[[subTitle]]</p>
+
+    <div class="Producttitle_full">[[&name]]</div>
+    <div class="product-card__price" data-product_id="[[id]]">
+      <span class="product-card__regularprice">[[#priceWithCurrency]][[&sellingPrice]][[/priceWithCurrency]]</span>
+      <span class="product-card__compareprice">[[#priceWithCurrency]][[&price]][[/priceWithCurrency]]</span>
+      [[#discountPercentage]]<span class="product-card__discountpercentage">[[discountPercentage]]%</span
+      >[[/discountPercentage]]
+    </div>
+
+    <div class="product-card__selectors">
+      <input
+        value="10"
+        type="number"
+        class="quantity-selector-input variant-present"
+        onkeypress="return event.charCode >= 48"
+        min="1"
+
+        style="display: none"
+      >
+      <div style=" " class="product-card__quantity product-card__quantity">
+        <div class="quantity-selector-value">1</div>
+        <div class="product-card__selector-dropdownArrow"></div>
+        <ul class="quantity-selector-list" style="display: none;">
+          <li class="quantity-selector-listitem is-selected" data-value="1">1</li>
+          <li class="quantity-selector-listitem" data-value="2">2</li>
+          <li class="quantity-selector-listitem" data-value="3">3</li>
+          <li class="quantity-selector-listitem" data-value="4">4</li>
+          <li class="quantity-selector-listitem" data-value="5">5</li>
+          <li class="quantity-selector-listitem" data-value="6">6</li>
+          <li class="quantity-selector-listitem" data-value="7">7</li>
+          <li class="quantity-selector-listitem" data-value="8">8</li>
+          <li class="quantity-selector-listitem" data-value="9">9</li>
+          <li class="quantity-selector-listitem" data-value="10">10+</li>
+        </ul>
+      </div>
+
+      <div class="product-card__variants product-card__variants">
+        <div class="variant-selector-value">[[&currentSelectedSwatch]]</div>
+        <div class="product-card__selector-dropdownArrow"></div>
+
+        [[#swatches]]
+        <div class="result-product-item-info variant-selector-list" style="display: none;">
+          <div
+            class="
+              product-item-swatch-group
+              [[#isPrimary]]swatch-group-primary[[/isPrimary]] swatch-group-[[key]]
+            "
+            data-swatchKey="[[key]]"
+          >
+            [[#values]]
+            <div
+              data-variationId="[[variationId]]"
+              title="[[#value]][[value]][[/value]]"
+              class="
+                product-item-swatch-item variant-selector-listitem
+                [[#isSelected]]swatch-selected[[/isSelected]]
+                [[#inStock]]swatch-in-stock[[/inStock]]
+              "
+              style="cursor: pointer; [[^inStock]]background: #e0e0e0!important[[/inStock]]"
+            >
+              <span
+                class="
+                  wizzy-facet-item-swatch-wrapper [[#isVisualSwatch]]facet-visual-swatch[[/isVisualSwatch]]
+                  [[^isVisualSwatch]]facet-text-swatch[[/isVisualSwatch]]
+                "
+              >
+                <span
+                  class="
+                    wizzy-facet-item-swatch [[#isVisualSwatch]]facet-visual-swatch[[/isVisualSwatch]]
+                    [[^isVisualSwatch]]facet-text-swatch[[/isVisualSwatch]]
+                  "
+                  style="
+                    [[#isVisualSwatch]][[#isURLSwatch]]background-image:url([[swatchValue]]);[[/isURLSwatch]]
+                    [[^isURLSwatch]]background-color:[[swatchValue]];[[/isURLSwatch]][[/isVisualSwatch]]
+                  "
+                >
+                  [[^swatchValue]] [[#value]]
+                  <span class="wizzy-facet-swatch-individual-value">[[value]]</span>
+                  [[/value]] [[/swatchValue]] [[^isVisualSwatch]]
+                  <span class="wizzy-facet-swatch-value">[[swatchValue]]</span>
+                  [[/isVisualSwatch]]
+                </span>
+              </span>
+            </div>
+            [[/values]]
+          </div>
+        </div>
+        <!-- ending of product-item-swatch-group -->
+        [[/swatches]]
+      </div>
+    </div>
+    <!-- product-card__addtocart -->
+    [[^personalizeCart]]
+    [[#inStock]]
+    <button class="wizzy-custom-addToCart" type="button">Add to cart</button>
+    [[/inStock]] [[^inStock]]
+    <button class="wizzy-custom-addToCart-soldout" type="button">Sold out</button>
+    [[/inStock]]
+    [[/personalizeCart]]
+
+    [[#personalizeCart]]
+      [[#inStock]]
+      <a href="[[&url]]" class="coll-personalise__button" data-product-handle=""> 
+        Add Personalisation 
+      </a>
+      [[/inStock]]
+      [[^inStock]]
+      <button class="wizzy-custom-addToCart-soldout" type="button">Sold out</button>
+      [[/inStock]]
+    [[/personalizeCart]]
+    
+    <div class="loader loader" style="display: none"></div>
+    <span class="error-quantity" style="display:none;">Insufficient Quantity</span>
+  </div>
+</div>

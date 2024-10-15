@@ -1,0 +1,2208 @@
+/****PLEASE DON'T MAKE CHANGES IN THIS FILE IT'S AFFECT THE CODE IF YOU NEED ANY HELP PLEASE CONTACT TO FLITS TEAM support@getflits.com ****/
+.flits-account-container
+  .flits-menus-list-box
+  .flits-menu-items
+  .flits-menu-divider
+  + .flits-menu-divider {
+  display: none !important;
+}
+.flits-account-container
+  .flits-address-card
+  .flits-triangle-wrapper
+  .flits-triangle {
+  border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgba(249, 0, 0, 0)
+    var(--navigationBGColor);
+}
+.flits-account-container .flits-address-card.flits-new-address-card p {
+  background: var(--navigationBGColor);
+}
+.flits-account-container .flits-address-card.flits-new-address-card svg {
+  fill: var(--navigationBGColor);
+}
+.flits-account-container
+  .flits-address-card
+  .flits-address-card-action
+  ul
+  .flits-action-item.flits-address-default-btn {
+  background: var(--navigationBGColor);
+}
+.filts-wishlist-product-style .flits-wls-button-secondary,
+.filts-wishlist-product-style .flits-wls-button-secondary:visited {
+  height: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Mulish, sans-serif;
+  text-transform: uppercase;
+  width: 100%;
+  border: 1px solid rgba(0, 71, 120, 0.5);
+  border-radius: 0px;
+}
+.filts-wishlist-product-style {
+  margin-top: 10px;
+}
+.auth-container--outer--content-container .flits-social-login-container {
+  margin-top: 20px;
+}
+.flits-social-or {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  font-weight: bold;
+  color: #004778;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.flits-social-or:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 30%;
+  background: #004778;
+  height: 0.5px;
+  top: 11px;
+  opacity: 0.5;
+}
+.flits-social-or:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 30%;
+  background: #004778;
+  height: 0.5px;
+  top: 11px;
+  opacity: 0.5;
+}
+.flits-credit-code-div .flits-cart-drp.flits-select-row select.flits-input {
+  border-radius: 5px;
+  font-size: 14px;
+}
+.flits-credit-code-div {
+  margin: 10px 0;
+}
+#flits_mobile_tab_productRegistration .product-reg-btn a {
+  display: inline-block;
+}
+.flits-wishlist-colection {
+  right: unset;
+  left: 5px;
+  top: 5px;
+  z-index: 2;
+}
+body
+  .flits-wishlist-colection-style
+  .flits-wls-button-secondary
+  .flits-wls-icon-svg-color-blue {
+  fill: none !important;
+  color: #004778 !important;
+}
+body
+  .flits-wishlist-colection-style
+  .flits-wls-button-secondary.flits-wls-active
+  .flits-wls-icon-svg-color-blue {
+  fill: #004778 !important;
+  color: #004778 !important;
+}
+@media (min-width: 1200px) {
+  .flits-account-container {
+    padding-top: 20px;
+  }
+}
+.flits-order-button-grp .flits-cancel-disabled-btn {
+  background: var(--primaryButtonHoverBGColor) !important;
+  border: 1px solid var(--primaryButtonHoverBGColor) !important;
+  color: var(--primaryButtonTextColor) !important;
+  padding: 10px;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  font-style: normal;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  min-height: 14px;
+  outline: 0;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+.flits-wls-snackbar .flits-wls-snackbar-header {
+  background: #004778 !important;
+}
+.flits-wls-snackbar {
+  border: 1px solid #004778 !important;
+}
+
+#flits-order-mobile-list .flits-order-button-grp {
+  display: inline-block !important;
+}
+#flits-order-mobile-list .flits-button,
+#flits-order-mobile-list .flits-cancel-disabled-btn {
+  width: 94% !important;
+}
+.flits_cashback_credit p {
+  font-weight: 600;
+  text-align: center;
+  font-size: 13px !important;
+}
+
+/* ..............................................................REWARD WIDGET.............................................. */
+
+/* div:empty{
+  display:block!important;
+} */
+div#smile-ui-container {
+  display: none !important;
+}
+#smile-ui-lite-launcher-frame-container {
+  display: none !important;
+}
+.flits-credit-popup-button .open-text {
+  display: flex;
+  align-items: center;
+}
+.flits-credit-popup-button .open-text svg {
+  width: 33px;
+  margin-right: 10px;
+}
+.flits-credit-popup-button {
+  position: fixed;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  border: 0px;
+  z-index: 11;
+  padding: 10px 20px;
+  /*   font-weight:600; */
+  left: 15px;
+  bottom: 5px;
+  background: #013564;
+  background: #3d3e81;
+  color: #fff;
+  min-height: 60px;
+}
+.flits-credit-popup-name img.flits-site-logo {
+  max-width: 80px;
+}
+.flits-no-login-welcome-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+.flits-no-login-site-title {
+  font-size: 32px;
+  font-weight: 600;
+}
+.flits-credit-popup-main {
+  width: 375px;
+  position: fixed;
+  z-index: 999999999999;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 10px;
+  left: 20px;
+  bottom: 100px;
+}
+
+.flits-credit-popup-inner {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 0 0 auto;
+  position: relative;
+  clear: both;
+  max-height: calc(94vh - 100px);
+  min-height: calc(94vh - 100px);
+  height: calc(94vh - 100px);
+  background: #fff;
+  transform: translateZ(0);
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://cdn.shopify.com/s/files/1/0551/8009/9722/files/waves-bg.svg?v=1689831595);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0s all linear;
+}
+
+.flits-expanded-header-top {
+  background-color: #013564;
+  background: linear-gradient(
+    135.19deg,
+    hsla(239, 36%, 37%, 1),
+    hsla(239, 46%, 22%, 1)
+  );
+  padding: 20px;
+  padding-bottom: 20px;
+  height: 243px;
+  color: white;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  transform: translate3d(0px, 0px, 0px);
+}
+.flits-not-customer-body-box {
+  background-color: #fff;
+  margin: 0 auto 21px auto;
+  width: 90%;
+  box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.09);
+  border-radius: 14px;
+  text-align: center;
+  color: #637381;
+  padding: 20px;
+  font-size: 12px;
+  position: relative;
+  top: -70px;
+}
+.flits-not-customer-body-box h4 {
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.flits-earn-redeem-group {
+  background-color: #fff;
+  margin: -70px auto 21px;
+  width: 90%;
+  box-shadow: 0 0 13px 0 rgba(0, 0, 0, 0.09);
+  border-radius: 14px;
+  position: relative;
+}
+.flits-credit-popup-main .flits-earn-redeem-group > .flits-front-buttons {
+  margin: 0;
+  width: 100%;
+  box-shadow: none;
+  border-radius: 0;
+  background-color: transparent;
+}
+.flits-credit-popup-main
+  .flits-earn-redeem-group
+  > .flits-front-buttons.how-to-earn-btn {
+  border-bottom: 0.5px solid #e6e6e6;
+}
+.flits-credit-popup-main .flits-referral-link-input-wrap {
+  width: 100%;
+}
+.flits-credit-box-content-with-scroll {
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  padding-top: 240px;
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  transition: 0s all linear;
+}
+.fixed-header + .flits-credit-box-content-with-scroll {
+  z-index: -1;
+}
+.flits-credit-fix-header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all ease;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  padding: 20px;
+}
+.fixed-header .flits-expanded-header-top {
+  transform: translate3d(0px, -170px, 0px);
+}
+.flits-credit-fix-header .flits-credit-fix-header-logo {
+  line-height: 1;
+}
+.flits-credit-fix-header .flits-credit-fix-header-logo img {
+  max-width: 60px;
+}
+.flits-credit-fix-header-points {
+  padding-left: 10px;
+  color: #fff;
+}
+.flits-credit-popup-header-part.fixed-header,
+.flits-credit-popup-header-part.fixed-header-inner {
+  transition: all 0.5s ease;
+}
+.flits-credit-popup-header-part.fixed-header .flits-credit-fix-header,
+.flits-credit-popup-header-part.fixed-header-inner .flits-credit-fix-header {
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+}
+.fixed-header-inner .flits-expanded-header-top {
+  transform: translate3d(0px, -170px, 0px) !important;
+}
+.fixed-header-inner + .flits-credit-box-content-with-scroll {
+  padding-top: 70px;
+  z-index: -1;
+  min-height: calc(94vh - 100px);
+}
+.flits-credit-popup-header-part.fixed-header .flits-credit-header-top,
+.flits-credit-popup-header-part.fixed-header .flits-header-bottom {
+  display: none;
+  transition: all 0.3s ease;
+}
+.flits-credit-popup-header-part.fixed-header-inner .flits-credit-header-top,
+.flits-credit-popup-header-part.fixed-header-inner .flits-header-bottom {
+  display: none;
+  transition: all 0.3s ease;
+}
+.flits-credit-popup-main .flits-copy-btn {
+  background-color: white;
+  color: #013564;
+  cursor: pointer;
+}
+.flits-refer-friend-outside-content-title {
+  color: #000;
+  padding: 10px 0;
+}
+.flits-hide {
+  display: none !important;
+}
+#custom-earning .flits-rule-image,
+#custom-earning .flits-rules-earn-overlay {
+  width: 25px;
+  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
+  margin-left: auto;
+}
+#custom-earning .flits-rules-earn-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  background: #fff;
+  opacity: 0.7;
+}
+#custom-earning .flits-rule-card .flits-rule-footer {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: calc(100% - 30px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.flits-credit-popup-main .flits-refer-friend-div .flits-rule-footer {
+  display: flex;
+  justify-content: space-between;
+}
+#custom-earning .flits-rule-card .flits-rule-footer .flits-rule-image img,
+#custom-earning .flits-rule-card .flits-rule-footer .flits-rule-image svg {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  display: block;
+}
+#custom-earning .flits-rule-card .flits-rule-redirect-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 12px;
+  color: #25d872;
+  margin-top: 5px;
+  cursor: pointer;
+}
+#custom-earning .flits-rule-card .flits-rule-redirect-link svg {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+#custom-earning
+  .flits-rule-card
+  .flits-rule-redirect-link.flits-birthday-redirect {
+  display: none !important;
+}
+.flist-custom span a {
+  color: #000;
+  text-decoration: none !important;
+}
+#custom-earning .flits-rule-card {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 15px;
+  width: 100%;
+  height: auto;
+  min-height: 207px;
+  -webkit-box-shadow: 0 10px 25px 0 rgb(49 49 93 / 10%);
+  margin: 0 10px 10px 0;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-ordinal-group: 2;
+  font-size: 14px;
+}
+.flits-joinnow-btn {
+  background: #000;
+  color: #fff;
+  z-index: 1;
+  padding: 10px;
+  -webkit-box-shadow: 0 10px 25px 0 rgb(49 49 93 / 10%);
+  box-shadow: 0 10px 25px #31315d1a;
+  position: relative;
+}
+.flits-joinnow-btn a {
+  background-color: #fff;
+  color: #000;
+  border-radius: 2px;
+  width: 30%;
+  text-decoration: auto;
+  padding: 4px;
+}
+.flits-joinnow-btn-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+.flits-joinnow-btn-inner > div:not(:last-child) {
+  margin-right: 15px;
+  color: #fff;
+}
+.flits-credit-popup-header {
+  z-index: 1;
+  color: #fff;
+  align-items: center;
+  padding-bottom: 10px !important;
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 19px;
+  flex-direction: column;
+  background: #013564;
+}
+.flits-credit-popup-header .flits-close-credit-popup svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  stroke-width: 1.5px;
+  cursor: pointer;
+}
+.flits-credit-box-content-with-scroll::-webkit-scrollbar,
+.flits-credit-popup-inner::-webkit-scrollbar {
+  width: 0px;
+}
+.flits-credit-box-content-with-scroll::-webkit-scrollbar-track,
+.flits-credit-popup-inner::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+.flits-credit-popup-main .flits-loading-div {
+  border-radius: 10px;
+  background: transparent;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 400px;
+  width: 100%;
+  height: calc(100% + 70px);
+}
+.flits-credit-popup-main .flits-spinner {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-left: 5px solid #cccccc;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: FlitsSpinnerAnimation 1.1s infinite linear;
+  animation: FlitsSpinnerAnimation 1.1s infinite linear;
+  display: block;
+}
+.flits-credit-popup-main
+  .flits-unlock-badge[data-flits-applicable="register-rule-not-applicable"] {
+  opacity: 0 !important;
+}
+.flits-your-activity-div {
+  height: 100%;
+}
+.flits-activity-list {
+  padding: 10px;
+  position: relative;
+  min-height: 100%;
+}
+.flits-activity-list .flits-activity-card {
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  position: relative;
+}
+.flits-activity-list .flits-activity-card {
+  padding: 8px 12px;
+  margin-bottom: 16px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.flits-activity-title {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #333333;
+}
+.flits-activity-credit {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #26275e;
+  margin-top: 2px;
+}
+.flits-activity-credit.flits-activity-debit {
+  color: red;
+}
+.flits-activity-date {
+  margin: 0;
+  flex-shrink: 0;
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: capitalize;
+  color: #637381;
+}
+.flits-activity-list {
+  padding: 10px;
+}
+.flits-activity-card::before {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  content: "";
+  background-color: #26275e26; /* #e6e6e6 */
+}
+.flits-activity-card:last-child::before {
+  display: none;
+}
+.flits-activity-card:last-child {
+  margin-bottom: 0;
+}
+.flits-empty-activity-icon svg {
+  max-width: 50%;
+  margin: 0 auto;
+}
+.flits-no-activity-list {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 40px);
+  background-color: transparent;
+}
+.flits-empty-activity-text .flits-empty-text {
+  font-weight: 600;
+  font-size: 16px;
+}
+@media (max-width: 767px) {
+  #custom-earning .flits-rule-card {
+    background: #fff;
+    padding: 15px 15px 60px;
+    border-radius: 10px;
+    width: calc((100% / 1) - 10px);
+    height: auto;
+    min-height: 180px;
+    -webkit-box-shadow: 0 10px 25px 0 rgb(49 49 93 / 10%);
+    box-shadow: 0 10px 25px #31315d1a;
+    margin: 0 10px 10px 0;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    color: var(--contentTextColor);
+    -webkit-box-ordinal-group: 2;
+  }
+  .flits-joinnow-btn {
+    margin-left: 5% !important;
+    margin-right: 5% !important;
+  }
+  .flits-credit-popup-main {
+    max-width: 100%;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: 100%;
+    left: unset;
+    border-radius: 0;
+  }
+  .flits-credit-popup-inner {
+    min-height: 100%;
+    max-height: 100%;
+    height: 100%;
+  }
+  .flits-credit-popup-button-text {
+    display: none;
+  }
+  .flits-credit-popup-button .open-text svg {
+    margin-right: 0;
+    width: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .flits-account-body.flist-custom {
+    width: 100%;
+  }
+}
+
+#flits_tab_howToEarn p.flits-rule-title {
+  font-weight: bolder;
+  font-style: normal;
+  font-size: 15px;
+}
+#flits_tab_howToEarn p.flits-rule-description {
+  font-style: italic;
+  font-size: 13px;
+}
+.flits-credit-popup-main a.flits-unlock-badge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0 10px;
+  height: 30px;
+  border-radius: 31px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-right: 10px;
+  outline: 0;
+  text-decoration: auto;
+  min-width: 104px;
+  text-align: center;
+  color: #fff;
+  background: #3d3e81;
+}
+.flits-credit-popup-main .flits-rule-image img {
+  filter: brightness(0) saturate(100%) invert(71%) sepia(96%) saturate(1143%)
+    hue-rotate(143deg) brightness(90%) contrast(87%) !important;
+}
+.flits-credit-popup-main .flits-rule-not-applicable img {
+  filter: grayscale(100%);
+}
+.flits-credit-popup-main .flits-rule-not-applicable a.flits-unlock-badge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0 10px;
+  min-height: 25px;
+  border-radius: 31px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-right: 10px;
+  color: #fff;
+  outline: 0;
+  min-width: 104px;
+  text-align: center;
+}
+.flits-credit-box-content-with-scroll .flits-front-buttons button {
+  margin: 10px 10px;
+  height: 50px;
+  align-items: center;
+  border: 0px;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: inherit;
+  color: #020202bf;
+  font-size: 16px;
+  cursor: pointer;
+  width: 70%;
+}
+.flits-credit-box-content-with-scroll .flits-front-buttons {
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  background-color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 14px;
+  margin: 21px auto;
+  width: 90%;
+  align-items: center;
+  box-shadow: 0 0 13px #00000017;
+}
+.flits-credit-box-content-with-scroll .flits-front-buttons.refer {
+  margin-bottom: 58px;
+}
+.flits-credit-popup-main .flits-credit-popup-title img {
+  height: 20px;
+  margin-left: 4px;
+}
+.flits-credit-popup-main .flits-credit-popup-title {
+  align-items: center;
+  display: flex;
+}
+.back {
+  display: contents;
+  cursor: pointer;
+}
+.back svg {
+  margin-right: 6px;
+  color: #ffffff;
+}
+.flits-credit-popup-main .how-to-spend .flits-spend-rule-description {
+  border-radius: 10px;
+  padding: 15px;
+  height: fit-content;
+  box-shadow: 0 10px 25px #31315d1a;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  font-size: 12px;
+  test-align: center;
+  font-weight: 600;
+  text-align: center;
+}
+.flits-credit-popup-main .flits-refer-friend-div img {
+  height: 39px;
+  width: 39px;
+}
+.flits-credit-popup-main .flits-refer-friend-div .flits-rule-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  height: auto;
+  min-height: 100px;
+  -webkit-box-shadow: 0 10px 25px 0 rgb(49 49 93 / 10%);
+  margin: 0 20px 10px 20px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-ordinal-group: 2;
+  font-size: 14px;
+}
+.flits-credit-popup-main
+  .flits-refer-friend-div
+  .flits-rule-card
+  .flits-rule-title {
+  font-weight: bolder;
+  font-style: normal;
+  font-size: 15px;
+}
+.flits-credit-popup-main
+  .flits-refer-friend-div
+  .flits-rule-card
+  .flits-rule-description {
+  font-style: italic;
+  font-size: 13px;
+}
+.flits-credit-popup-main .flits-refer-friend-div {
+  height: inherit;
+  padding: 15px 0px;
+}
+.flits-credit-popup-main #flits_tab_howToEarn {
+  height: inherit;
+}
+.flits-credit-popup-main .sen {
+  font-size: 14px;
+  color: #fff;
+  text-align: initial;
+  margin-right: 10px;
+}
+.flits-credit-popup-main .flits-widget-footer {
+  display: flex;
+  height: 36px;
+  bottom: 89px;
+  z-index: 3;
+  width: 472px;
+  background: white;
+  position: fixed;
+  justify-content: center;
+  padding: 10px;
+  align-items: center;
+  font-style: italic;
+  color: #878787;
+  font-size: 15px;
+  box-shadow: 0 -4px 5px #c8c8c8bf;
+}
+.flits-credit-popup-main .flits-widget-footer img {
+  margin-left: 4px;
+  height: 30px;
+  width: 30px;
+  opacity: 0.6;
+}
+.flits-credit-popup-main .flits-front span {
+  color: #000;
+  border-radius: 11px;
+  padding: 10px 10px 31px;
+  font-size: 12px;
+  text-align: center;
+  width: 70%;
+  margin-top: 15px;
+  background-color: #b8fd42;
+}
+.flits-credit-popup-main .flits-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+}
+.flits-join-now-btn {
+  background-image: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 0;
+  overflow: hidden;
+  padding: 15px 32px;
+  background-color: #2f306b;
+  color: #fff !important;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.flits-btn {
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  font-weight: 600;
+  padding: 10px 15px;
+  width: fit-content;
+  font-size: 14px;
+  bottom: 25px;
+  border: none;
+  background-color: #013564;
+}
+.flits-btn:hover {
+  background-color: #ffffff;
+}
+.flits-credit-popup-main .flits-front button a {
+  text-decoration: none !important;
+  color: #fff;
+}
+
+.btn-text {
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 7px;
+}
+.how-to-earn-btn span:not(.flits-grp span) {
+  font-size: 13px;
+  padding-bottom: 14px;
+}
+.how-to-spent-btn span:not(.flits-grp span) {
+  font-size: 13px;
+  padding-bottom: 14px;
+}
+.how-to-refer-btn span:not(.flits-grp span) {
+  font-size: 13px;
+  padding-bottom: 14px;
+}
+.flits-grp:hover {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.flits-grp {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+}
+.flits-grp svg {
+  width: 20px;
+  height: 20px;
+  color: #8d8d8f;
+}
+.flits-grp svg:first-child {
+  width: 30px;
+  height: 30px;
+}
+.flits-grp span {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 0px 10px;
+}
+#custom-earning .flits-rule-card:last-child {
+  margin-bottom: 30px;
+}
+.flits-credit-header-top {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  font-weight: 600;
+  width: 100%;
+  color: #fff;
+}
+.flits-header-bottom {
+  font-size: 15px;
+}
+.flits-close-credit-popup {
+  position: absolute;
+  right: 20px;
+  width: 23px;
+  top: 20px;
+  z-index: 5;
+}
+.flits-credit-popup-main .flits-refer-friend-div .flits-rule-card:last-child {
+  margin-bottom: 52px;
+}
+.how-to-spend .flits-how-to-spend-inner-container {
+  height: 100%;
+}
+.how-to-spend .flits-spend-rules-range-container {
+  height: auto;
+  align-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+}
+.how-to-spend .flits-cart-range-container .flits-cart-range-note {
+  font-size: 12px;
+  text-align: center;
+  font-weight: 600;
+  padding: 10px;
+  margin: 0 71px 32px;
+
+  border-radius: 15px;
+  top: 17px;
+  position: relative;
+  background-color: #b8fd42;
+}
+.how-to-spend .flits-cart-range-container ul.flits-cart-range-slider {
+  list-style: none;
+  position: relative;
+  padding: 0;
+  height: calc(100% - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  float: left;
+  flex-wrap: wrap;
+  margin: 60px;
+}
+.how-to-spend .flits-cart-range-container ul.flits-cart-range-slider:before {
+  list-style: none;
+  position: relative;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  float: left;
+  margin: 40px;
+}
+.how-to-spend .flits-cart-range-container ul.flits-cart-range-slider:after,
+.how-to-spend .flits-cart-range-container ul.flits-cart-range-slider:before {
+  background: #fff;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px #00000029, 0 2px 10px #0000001f;
+  height: 80%;
+  width: 5px;
+  position: absolute;
+  top: 14px;
+  content: "";
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transition: 0.5s width;
+  transition: 0.5s width;
+  z-index: 0;
+}
+.how-to-spend
+  .flits-cart-range-container
+  ul.flits-cart-range-slider
+  li:first-child {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.how-to-spend .flits-cart-range-container ul.flits-cart-range-slider li {
+  padding-top: 40px;
+  text-align: center;
+  position: relative;
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 12px;
+  color: transparent;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.how-to-spend .flits-divider {
+  margin: 0 3px;
+}
+.how-to-spend .flits-cart-range-container ul.flits-cart-range-slider li:after,
+.how-to-spend .flits-cart-range-container ul.flits-cart-range-slider li:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background: #fff;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+    0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px #00000029, 0 2px 10px #0000001f;
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  margin: auto;
+  z-index: 3;
+}
+.how-to-spend
+  .flits-cart-range-container
+  ul.flits-cart-range-slider
+  li.active:after {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.how-to-spend .flits-cart-range-container ul.flits-cart-range-slider li:after {
+  background: #25d872;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  z-index: 4;
+}
+.flits-credit-popup-main .timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+.flits-credit-popup-main .timeline::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  top: -15px;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+  background: #3d3e81;
+}
+.flits-credit-popup-main .container {
+  padding: 15px 30px;
+  position: relative;
+  background: inherit;
+  width: 50%;
+}
+.flits-credit-popup-main .container.left {
+  left: 0;
+}
+.flits-credit-popup-main .container.right {
+  left: 50%;
+}
+.flits-credit-popup-main .container::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: calc(50% - 8px);
+  right: -8px;
+  background: #b8fd42;
+  border-radius: 16px;
+  z-index: 1;
+}
+.flits-credit-popup-main .container.right::after {
+  left: -8px;
+}
+.flits-credit-popup-main .container::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  top: calc(50% - 1px);
+  right: 8px;
+  z-index: 1;
+}
+.flits-credit-popup-main .container.right::before {
+  left: 8px;
+}
+.flits-credit-popup-main .container .range {
+  position: absolute;
+  display: inline-block;
+  top: calc(50% - 13px);
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+.flits-credit-popup-main .container.left .range {
+  right: -143px;
+  color: #fff;
+}
+.flits-credit-popup-main .container.right .range {
+  left: -143px;
+}
+.flits-credit-popup-main .container .flits-spend-rule-description {
+  background: #fff;
+  position: relative;
+}
+.flits-credit-popup-main #wave {
+  display: block;
+  position: absolute;
+  height: 40px;
+  width: 100%;
+  opacity: 0.65;
+  transform: scale(1);
+  left: -1px;
+  top: 0px;
+  opacity: 0.45;
+}
+.flits-credit-popup-main #wave:before {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  right: -25%;
+  top: 20px;
+}
+.flits-total-credit {
+  position: relative;
+  font-weight: 600;
+}
+.flits-header-bottom svg {
+  position: relative;
+  top: 9px;
+  left: -4px;
+  fill: #fff;
+}
+.flits-credit-popup-main #wave:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 100%;
+  height: 300px;
+  left: -25%;
+  top: -240px;
+  clip-path: ellipse(100% 15% at -15% 100%);
+}
+
+.flits-credit-popup-main a.flits-unlock-badge:hover {
+  color: #fff;
+  padding: 14px;
+}
+.flits-credit-popup-main .not-front {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background: #013564;
+}
+.flits-credit-popup-main .not-front a {
+  font-style: normal;
+  text-decoration: none;
+  color: #fff;
+  width: 50% !important;
+  margin: 16px;
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.flits-credit-popup-main .flits-input-icon-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flits-credit-popup-main .flits-input-icon-group button {
+  margin-top: 10px;
+}
+.flits-credit-popup-main .flits-input[type="text"][readonly] {
+  width: 90% !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 1px solid #e6e6e6;
+  color: #637381;
+  font-family: Proxima Nova, arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  outline: none;
+  padding: 12px 20px;
+}
+.flits-credit-popup-main .flits-share-btn-grp {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+}
+.flits-credit-popup-main .flits-share-btn {
+  align-items: center;
+  display: flex;
+}
+.flits-credit-popup-main .flits-share-btn svg {
+  height: 25px;
+  width: 25px;
+  margin-left: 10px;
+}
+.flits-credit-popup-main .flits-link-share-btn-box {
+  margin: 10px 10px;
+  height: 60px;
+  align-items: center;
+  border: 0px;
+  border-radius: 6px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  font-family: inherit;
+  font-weight: 700;
+  letter-spacing: inherit;
+  color: #020202bf;
+  font-size: 16px;
+  cursor: pointer;
+  width: 90%;
+  box-shadow: 0 4px 15px #0000001a, 0 1px 2px #0000001a, 0 2px #0d99a3 inset;
+}
+.flits-credit-popup-main .flits-link-share-btn-box p {
+  font-size: 15px;
+}
+.flits-credit-popup-main .flits-link-share-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.flits-credit-popup-main .flits-pr-10 {
+  padding-rigth: 10px;
+}
+.flits-credit-popup-main .flits-pb-10 {
+  padding-bottom: 10px !important;
+}
+.flits-credit-popup-main .flits-p-20,
+.flits-credit-popup-main .flits-p-25 {
+  padding: 20px !important;
+}
+.flits-credit-popup-main .flits-flex-wrap {
+  -ms-flex-wrap: wrap !important;
+  flex-wrap: wrap !important;
+}
+.flits-credit-popup-main .flits-d-flex {
+  display: -ms-flexbox !important;
+  display: -webkit-box !important;
+  display: flex !important;
+}
+.flits-credit-popup-button svg {
+  fill: #fff;
+}
+
+.flits-close-credit-popup svg {
+  fill: #fff;
+}
+.flits-close-credit-popup span:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 450px) {
+  .flits-credit-popup-main {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 575.99px) {
+  .flits-credit-popup-button {
+    right: initial;
+    left: 24px;
+    bottom: 74px;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  button.flits-credit-popup-button {
+    display: none !important;
+  }
+}
+
+.collection
+  .flits-wishlist-colection.flits-wishlist-colection-style.flits-wishlist-button-style {
+  left: unset !important;
+  right: 0px !important;
+}
+.product .flits-wishlist-colection {
+  right: 15% !important;
+  left: unset !important;
+}
+.flits-wishlist-colection.flits-wishlist-button-style
+  .flits-wls-button-secondary,
+.flits-wishlist-colection.flits-wishlist-button-style
+  .flits-wls-button-secondary:visited {
+  box-shadow: none !important;
+  border: unset !important;
+  background: transparent !important;
+}
+.flits-expanded-header-top.with-transition {
+  transition: transform 0.3s ease;
+}
+.mm-ajaxcart-subtotal-text.mm-ajaxcart-custom-point-text{
+  font-size: 14px;
+  margin-bottom: -12px;
+  font-weight: 600;
+  color: rgba(var(--color-foreground), 0.75);
+  margin-top: 8px;
+}
+.flits-credit-on-product-tag,
+.flits-credit-earning-on-cart {
+  font-weight: 400;
+  font-size: 16px;
+  margin-top: 10px;
+  line-height: 1.3;
+  border-radius: 10px;
+}
+.flits-credit-earning-on-cart {
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  border: solid 1px #e8ebed;
+  background-color: #eff3f5;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  max-width: calc(100% - 30px);
+  width: calc(100% - 30px);
+  margin: 14px auto 0px auto;
+}
+.flits-credit-on-product-tag span,
+.flits-credit-earning-on-cart span {
+  color: #69b900 !important;
+  font-size: 16px !important;
+}
+
+/* Order tab css start here */
+.flits-order-table-row {
+  display: flex;
+  width: 100%;
+}
+.flits-order-table-row > div {
+  padding: 20px 10px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  background-color: #004778;
+  color: #fff;
+  border-right: 0.01rem solid #f1f1f1;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+#ColumnOrder {
+  width: 11.54%;
+}
+#ColumnDate {
+  width: 12.09%;
+}
+#ColumnPayment {
+  width: 18.12%;
+}
+#ColumnTotal {
+  width: 10.395%;
+}
+#ColumnFulfillment {
+  width: 17.05%;
+}
+.flits-order-table-row > div:last-child {
+  width: 30.813%;
+  border-right: 0;
+}
+.flits-account-container .flits-order-card {
+  box-shadow: none;
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.flits-account-container .flits-order-card .flits-order-details {
+  box-shadow: none;
+  border-radius: 0 !important;
+}
+.flits-account-container .flits-order-card .flits-order-information {
+  padding: 0;
+  border-bottom: 0;
+}
+.flits-account-container .flits-order-card .flits-order-information-row {
+  padding: 0;
+}
+.flits-order-information-row {
+  border-top: 0.01rem solid #f1f1f1;
+}
+.flits-order-information-row > div {
+  padding: 20px 10px;
+  text-align: left;
+  vertical-align: middle;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  color: #000;
+  border-right: 0.01rem solid #f1f1f1;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.flits-order-information-row > div:nth-child(1) {
+  width: 11.54%;
+}
+.flits-order-information-row > div:nth-child(2) {
+  width: 12.09%;
+}
+.flits-order-information-row > div:nth-child(3) {
+  width: 18.12%;
+}
+.flits-order-information-row > div:nth-child(4) {
+  width: 10.395%;
+}
+.flits-order-information-row > div:nth-child(5) {
+  width: 17.05%;
+}
+.flits-order-information-row > div:last-child {
+  width: 30.813%;
+  border-right: 0;
+}
+.flits-order-action-link {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.flits-account-container
+  .flits-order-card
+  .flits-order-information
+  .flits-order-value,
+.flits-account-container
+  .flits-order-card
+  .flits-order-information
+  .flits-order-date {
+  font-size: inherit;
+  font-weight: inherit;
+}
+.flits-account-container .flits-order-card .flits-order-information-row {
+  justify-content: unset;
+  align-items: unset;
+}
+.flits-order-action-link span.separator {
+  display: block;
+  margin: 0 10px;
+  font-size: 18px;
+  color: #d3d3d3 !important;
+  line-height: 1;
+}
+.flits-order-action-link .offtext {
+  opacity: 0.5;
+  font-size: 14px;
+  font-weight: 400;
+  color: #013564 !important;
+}
+.flits-order-action-link button.js-return-exchange {
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  padding: 0 !important;
+  color: #000 !important;
+}
+.flits-order-list-container {
+  box-shadow: 0 0 0 0.1rem #f1f1f1;
+  position: relative;
+}
+.track-button-default {
+  background: #fff;
+  border: 1px solid #013564;
+  padding: 9px 13px;
+  color: #013564 !important;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* css from old account page start here */
+@media screen and (min-width: 750px) {
+}
+.flits-order-detail-group tbody td,
+.flits-order-detail-group thead th {
+  padding: 20px 10px;
+  text-align: left;
+  vertical-align: middle;
+}
+.flits-order-detail-group table td {
+  padding-right: 2.2rem;
+}
+.flits-order-detail-group tbody td .product-boxs .img {
+  width: 50px;
+  margin-right: 14px;
+}
+.flits-order-detail-group h2 ~ p {
+  font-size: 1.4rem;
+  margin-bottom: 0;
+}
+.button.flits-custom-track-button {
+  display: inline-block;
+  width: auto;
+  border: 1px solid #013564;
+  margin-left: 10px;
+  padding: 10px 18px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #013564;
+  text-decoration: none;
+  background-color: #fff;
+  min-height: inherit;
+  height: auto;
+  min-width: inherit;
+  text-align: center;
+}
+.button.flits-custom-track-button:hover {
+  color: #fff;
+  background-color: #013564;
+}
+.textbutton-boxs .text-left {
+  flex: 1 1 auto;
+}
+.textbutton-boxs .button-right {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.flits-order-detail-group {
+  background-color: #fff;
+  padding: 30px;
+  margin-bottom: 15px;
+  position: relative;
+  padding-top: 50px;
+}
+.flits-order-detail-group h2 {
+  display: block;
+  font-size: 24px;
+  color: #013564;
+  line-height: 1;
+  margin: 0 0 23px;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+.flits-order-detail-group p {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+.flits-order-detail-group ul.profile-main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.account a svg,
+.flits-order-detail-group .pagination li:not(:last-child) {
+  margin-right: 0rem;
+}
+
+.flits-order-detail-group ul.profile-main li {
+  display: block;
+  width: 33.33%;
+  margin: 0 15px 25px 0;
+}
+.flits-order-detail-group ul.profile-main li span {
+  display: block;
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 1;
+  margin: 0 0 10px;
+  font-weight: 400;
+}
+.flits-order-detail-group ul.profile-main li p {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #ece4e0;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #000;
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+  padding: 11px 13px;
+}
+.flits-order-detail-group tbody td a.Button:hover,
+.btn-view {
+  background: #013564;
+  color: #fff;
+}
+.button-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 35px 0 20px;
+}
+.btn-view {
+  display: inline-flex;
+  padding: 11px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  border: 1px solid #013564;
+  border-radius: 2px;
+}
+.btn-view:hover {
+  color: #013564;
+  background: 0 0;
+  border: 1px solid #013564;
+}
+.customer-address-main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+}
+.customer-address-main .flits-order-detail-group {
+  margin: 0 12px 25px;
+  width: calc(50% - 24px);
+  padding: 30px;
+}
+.flits-order-detail-group.order
+  .orderdetails-main
+  .customer-address-main
+  .flits-order-detail-group
+  h2 {
+  margin: 0 0 20px;
+}
+.flits-order-detail-group form {
+  margin-top: 4rem;
+}
+.flits-order-detail-group ul {
+  line-height: calc(1 + 0.6 / var(--font-body-scale));
+  padding-left: 30px;
+  padding-top: 10px;
+  text-align: left;
+  margin-bottom: 4rem;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a8a8a8;
+}
+.flits-order-detail-group strong,
+.flits-order-detail-group tbody {
+  color: rgb(var(--color-foreground));
+}
+.flits-order-detail-group ul a {
+  display: inline;
+}
+.flits-order-detail-group strong {
+  font-weight: 400;
+}
+.flits-order-detail-group h2.form__message {
+  font-size: calc(var(--font-heading-scale) * 1.8rem);
+}
+.flits-order-detail-group .field {
+  margin: 18px 0 0;
+}
+.flits-order-detail-group table {
+  table-layout: auto;
+  border-collapse: collapse;
+  border-bottom: 0.01rem solid rgba(var(--color-foreground), 0.08);
+  box-shadow: none;
+  width: 100%;
+  font-size: 1.6rem;
+  position: relative;
+}
+@media screen and (min-width: 750px) {
+  .flits-order-detail-group table {
+    border: none;
+    box-shadow: 0 0 0 0.1rem #f1f1f1;
+  }
+  .flits-order-detail-group table.order-details {
+    border: none;
+    box-shadow: none;
+  }
+}
+.flits-order-detail-group td,
+.flits-order-detail-group th {
+  font-weight: 400;
+  line-height: 1;
+  border: none;
+  padding: 0;
+}
+.flits-order-detail-group thead th {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  background-color: #f7f7f7;
+  color: #000;
+}
+.flits-order-detail-group table.order-details thead th {
+  border-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.flits-order-detail-group table.order-details thead th:first-child {
+  padding-left: 16px;
+}
+.flits-order-detail-group table.order-details tbody td:nth-child(2),
+.flits-order-detail-group table.order-details thead th:nth-child(2) {
+  padding-left: 50px;
+}
+.flits-order-detail-group tbody td {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: #000;
+}
+.flits-order-detail-group dd,
+.flits-order-detail-group table a {
+  line-height: calc(1 + 0.3 / var(--font-body-scale));
+}
+.flits-order-detail-group table.order-details tbody td {
+  border-right: 0;
+  font-size: 16px;
+  color: #4a4a4a;
+  font-weight: 600;
+  padding: 10px 0;
+}
+.login-title,
+.flits-order-detail-group tfoot tr:first-of-type td,
+.flits-order-detail-group tfoot tr:first-of-type th,
+.flits-order-detail-group tfoot tr:last-of-type td,
+.flits-order-detail-group tfoot tr:last-of-type th {
+  font-weight: 700;
+}
+.flits-order-detail-group tbody td:last-child,
+.flits-order-detail-group thead th:last-child {
+  border-right: 0;
+}
+.flits-order-detail-group tbody ul,
+.trackorderdetails-main
+  .customer-group-group
+  table.trackorder-details
+  tbody
+  tr
+  td:last-child {
+  text-align: right;
+}
+.flits-order-detail-group tbody tr {
+  border-top: 0.01rem solid #f1f1f1;
+}
+.flits-order-detail-group tbody td a {
+  font-size: 15px;
+  color: #000;
+  font-weight: 400;
+}
+.flits-order-detail-group tbody td a.Button {
+  background: #fff;
+  border: 1px solid #013564;
+  padding: 9px 13px;
+  color: #013564;
+  font-size: 14px;
+  text-decoration: none;
+}
+.flits-order-detail-group tbody td .actions-link {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.flits-order-detail-group tbody td .actions-link .offtext {
+  opacity: 0.5;
+  font-size: 14px;
+  font-weight: 400;
+  color: #013564;
+}
+.flits-order-detail-group tbody td .actions-link span a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #013564;
+  text-decoration: none;
+}
+.flits-order-detail-group tbody td .actions-link span.separator {
+  display: block;
+  margin: 0 10px;
+  font-size: 18px;
+  color: #d3d3d3;
+}
+.flits-order-detail-group tfoot tr {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ebebeb;
+}
+.flits-order-detail-group tfoot td {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+  align-items: center;
+  text-transform: uppercase;
+}
+/* .flits-order-detail-group tfoot td:nth-child(2), */
+.textbutton-boxs {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flits-order-detail-group tfoot td:nth-child(1) span.texes-text {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: capitalize;
+}
+.flits-order-detail-group tfoot td:nth-child(1) span {
+  margin-left: auto;
+}
+.flits-order-detail-group tfoot::before,
+.flits-order-detail-group thead::after {
+  content: " ";
+  height: 0.1rem;
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  background: rgba(var(--color-foreground), 0.08);
+}
+.flits-order-detail-group tbody td .product-boxs {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.flits-back-button {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.flits-order-number {
+  font-size: 15px;
+  color: #000;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+  text-decoration-thickness: 0.1rem;
+  transition: text-decoration-thickness ease 100ms;
+}
+/* css from old account page end here */
+
+/* css from old account page for track order start here */
+.flits-track-order-data .flits-order-detail-group {
+  padding: 0;
+  padding-top: 20px;
+  margin-bottom: 0;
+}
+.flits-order-detail-group .oder-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+.flits-order-detail-group .oder-list .list-box {
+  display: block;
+  width: 20%;
+}
+.flits-order-detail-group .oder-list .list-box h2 {
+  display: block;
+  font-size: 21px;
+  margin-bottom: 7px;
+}
+.flits-order-detail-group .oder-list .list-box span {
+  display: block;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 1;
+  font-weight: 600;
+}
+.flits-track-order-data table {
+  box-shadow: none;
+}
+.flits-track-order-data table thead tr td {
+  padding: 2rem;
+}
+.flits-track-order-data
+  table.trackorder-details
+  thead
+  tr
+  td
+  .fulfillment-number {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 16px;
+}
+.flits-track-order-data
+  table.trackorder-details
+  thead
+  tr
+  td
+  .fulfillment-number
+  span {
+  font-weight: 700;
+  margin-right: 5px;
+}
+.flits-track-order-data table.trackorder-details tbody tr td {
+  padding: 30px;
+  border: 0;
+  font-size: 16px;
+  color: #4a4a4a;
+}
+.flits-track-order-data
+  table.trackorder-details
+  tbody
+  tr
+  td
+  .product-boxs
+  .img {
+  width: 75px;
+}
+.flits-track-order-data table.trackorder-details tbody tr td .product-boxs h3 {
+  width: calc(100% - 90px);
+}
+/* css from old account page for track order end here */
+
+@media (max-width: 1199px) {
+  .flits-order-information-row > div,
+  .flits-order-table-row > div {
+    padding: 12px 6px;
+  }
+  .flits-account-container .flits-menu-nav {
+    width: 270px;
+  }
+  .flits-account-container .flits-account-body {
+    width: calc(100% - 290px);
+    float: left;
+    margin-left: 20px;
+  }
+  .track-button-default {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+  .flits-order-action-link span.separator {
+    margin: 0 6px;
+  }
+  .flits-order-detail-group .oder-list .list-box {
+    width: 30%;
+  }
+}
+@media (max-width: 1025px) {
+  .flits-account-container .flits-menu-nav {
+    width: 230px;
+  }
+  .flits-account-container .flits-account-body {
+    width: calc(100% - 260px);
+  }
+  .flits-order-table-row > div {
+    white-space: wrap;
+    line-height: 1.3;
+  }
+  .flits-order-list-container {
+    overflow-y: auto;
+  }
+  .flits-order-table-header,
+  .flits-order-list {
+    min-width: 630px;
+  }
+  .flits-order-list-container.flits-active .flits-order-table-header,
+  .flits-order-list-container.flits-active .flits-order-list {
+    min-width: unset;
+  }
+  .flits-order-information-row > div:nth-child(2) {
+    width: 13.09%;
+  }
+  #ColumnDate {
+    width: 13.09%;
+  }
+  #ColumnPayment {
+    width: 13.12%;
+  }
+  .flits-order-information-row > div:nth-child(3) {
+    width: 13.12%;
+  }
+  #ColumnTotal {
+    width: 11.395%;
+  }
+  .flits-order-information-row > div:nth-child(4) {
+    width: 11.395%;
+  }
+  #ColumnOrder {
+    width: 12.54%;
+  }
+  .flits-order-information-row > div:nth-child(1) {
+    width: 12.54%;
+  }
+  .flits-order-table-row > div:last-child,
+  .flits-order-information-row > div:last-child {
+    width: 32.813%;
+  }
+
+  /* css start for full order history */
+  .flits-order-detail-group {
+    padding: 50px 10px 10px;
+  }
+  .flits-back-button {
+    left: 11px;
+    font-size: 14px;
+  }
+  .flits-order-detail-group h2 {
+    font-size: 18px;
+    color: #013564;
+    line-height: 1;
+    margin: 0 0 14px;
+  }
+  .button.flits-custom-track-button {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  .customer-address-main .flits-order-detail-group {
+    padding: 20px;
+  }
+  .flits-order-detail-group tbody td a {
+    font-size: 13px;
+  }
+  .flits-order-detail-group tfoot td,
+  .flits-order-detail-group table.order-details tbody td {
+    font-size: 14px;
+  }
+  .flits-track-order-data table.trackorder-details tbody tr td {
+    padding: 16px;
+  }
+  .flits-track-order-data table.trackorder-details tr td:first-child {
+    width: 70%;
+  }
+  .flits-track-order-data table.trackorder-details tbody tr td {
+    font-size: 14px;
+  }
+}
+@media (max-width: 860px) {
+  .flits-account-container
+    .flits-order-card
+    .flits-order-information-row:first-child
+    div:nth-child(n + 2) {
+    display: flex;
+  }
+}
+@media (max-width: 767px) {
+  .flits-order-information-row > div:not(:last-child)::before {
+    display: block;
+    width: 100%;
+    color: rgba(var(--color-foreground), 0.75);
+    content: attr(data-name);
+    font-size: 10px;
+    text-transform: uppercase;
+    flex-grow: 1;
+    color: #000;
+    line-height: 1;
+    text-align: left;
+    margin: 0 0 10px;
+  }
+  .flits-account-container .flits-order-card .flits-order-information-row {
+    flex-direction: column;
+  }
+  .flits-order-information-row > div {
+    width: 100% !important;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right;
+  }
+  .flits-order-information-row > div:last-child {
+    flex-direction: row;
+  }
+  .flits-order-list-container {
+    overflow-y: unset;
+  }
+  .flits-order-table-header,
+  .flits-order-list {
+    min-width: unset;
+  }
+  .customer-address-main .flits-order-detail-group {
+    padding: 12px 12px 0 12px;
+    margin: 0 12px 5px;
+    width: 100%;
+  }
+  .flits-order-detail-group table.order-details tbody td:nth-child(2),
+  .flits-order-detail-group table.order-details thead th:nth-child(2) {
+    padding-left: 20px;
+  }
+  .flits-order-detail-group thead th {
+    font-size: 12px;
+  }
+  .button.flits-custom-track-button {
+    padding: 7px 7px;
+    font-size: 12px;
+  }
+  .flits-order-detail-group .oder-list .list-box {
+    width: 30%;
+  }
+}
+
+.flits-track-order-data
+  table.trackorder-details
+  tbody
+  tr
+  td[data-label="Quantity"] {
+  width: 50px;
+  padding: 5px;
+}

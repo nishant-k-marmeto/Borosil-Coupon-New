@@ -1,0 +1,86 @@
+{{ 'kart-discount.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'cart-discount.js' | asset_url }}" defer="defer"></script>
+<offer-toggle>
+  <div class="discount-finder-header">
+    <button class="back-button-discount-header">
+    <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/circled-left-2.png" loading="lazy" alt="circled-left-2"/>
+    </button>
+    <h2 class="custom-discount-finder-heading">Offers for you</h2>
+  </div>
+  <div class="custom-cart-discount-wrapper">
+    <div class="cart-discount-trigger">
+      <div class="cart-discount-text">
+        <input type="text" id="custom-discount-text" autocomplete="off" spellcheck="false" maxlength="120" placeholder="Type coupon code here" class="coupon-input-filed" value="" style="border-color: rgb(237, 237, 237);">
+      </div>
+      <div class="cart-discount-apply">
+        <button type="button" id="apply-coupon-btn" onclick="Shopify.CustomDiscountSubmit()">
+          <span>Apply</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="toogle-button-discount">
+    <button class="all-offers-btn selected">All Offers</button>
+    <button class="bank-offers-btn">Bank Offers</button>
+    <button class="other-offers-btn">Other Offers</button>
+  </div>
+
+  <div class="all-offer-combined-container">
+    {% for i in (1..5) %}
+      {%- assign offerImage = 'offer_image_' | append: forloop.index %}
+      {%- assign offer_image = settings[offerImage] %}
+      {%- assign discountHeading = 'discount_heading_' | append: forloop.index %}
+      {%- assign discount_heading = settings[discountHeading] %}
+      {%- assign discountCode = 'discount_code_' | append: forloop.index %}
+      {%- assign discount_code = settings[discountCode] %}
+      {%- assign discountUrl = 'discount_url_' | append: forloop.index %}
+      {%- assign discount_url = settings[discount_url_] %}
+
+      <div class="bank-offer-discount-continer show-discount" data-offer-type="bank">
+        <div class="discount_finder_item">
+          <div class="discount_finder_item_details">
+            <div class="discount_finder_item_icon">
+              <img alt="discount-logo" loading="lazy" src="{{ offer_image | image_url }}" width="30" height="30">
+            </div>
+            <div class="discount_finder_item_content">
+              <h6>{{ discount_heading }}</h6>
+              <div class="discount_finder_view_products_container">
+                <span class="kd_code"><span class="use_code">Use Code:</span> {{ discount_code }}</span>
+                <a href="{{ discount_url }}" class="discount_finder_view_product">View Products</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+    {% for i in (1..5) %}
+      {%- assign OtherOfferImage = 'other_offer_image_' | append: forloop.index %}
+      {%- assign other_offer_image = settings[OtherOfferImage] %}
+      {%- assign OtherDiscountHeading = 'other_discount_heading_' | append: forloop.index %}
+      {%- assign other_discount_heading = settings[OtherDiscountHeading] %}
+      {%- assign OtherDiscountCode = 'other_discount_code_' | append: forloop.index %}
+      {%- assign other_discount_code = settings[OtherDiscountCode] %}
+      {%- assign OtherDiscountUrl = 'other_discount_url_' | append: forloop.index %}
+      {%- assign other_discount_url = settings[OtherDiscountUrl] %}
+
+      <div class="other-offer-disocunt-container show-discount" data-offer-type="other">
+        <div class="discount_finder_item">
+          <div class="discount_finder_item_details">
+            <div class="discount_finder_item_icon">
+              <img alt="discount-logo" loading="lazy" src="{{ other_offer_image | image_url }}" width="30" height="30">
+            </div>
+            <div class="discount_finder_item_content">
+              <h6>{{ other_discount_heading }}</h6>
+              <div class="discount_finder_view_products_container">
+                <span class="kd_code"><span class="use_code">Use Code:</span> {{ other_discount_code }}</span>
+                <a href="{{ other_discount_url }}" class="discount_finder_view_product">View Products</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</offer-toggle>
+

@@ -1,0 +1,214 @@
+{% assign card_image = product.metafields.card_image.Blog_image %}
+{% assign card_tilte = product.metafields.blog_card.card_title %}
+{% assign card_discription = product.metafields.blog_card.blog_description %}
+
+{% assign blog_handles = "borosil-blog" %}
+{% assign handle = blog_handles %}
+
+<div class="productpage-blogs-section">
+  <div class="homepage-blogs-section-inner">
+   
+    <div class="product-blogs-section-header">
+      <div class="h4">{{ section.settings.heading }}</div>
+      	<p>{{ section.settings.para }}</p>
+    </div>
+
+    <div class="productpage-blogs-section-slider">
+    {% for article in blogs[handle].articles %}
+      {% if article.metafields.suggestedProducts.products %}
+        {% if article.metafields.suggestedProducts.products contains product.handle %}
+          <div class="homepage-blogs-section-blocks">
+            <div class="homepage-blogs-section-blocks-image">
+              {% if article.image != blank %}
+                  <img src="{{ article.image | img_url: 'master' }}" class="homepage-blogs-section-image" loading="lazy">
+              {% endif %}
+            </div>
+            <div class="productpage-blogs-section-blocks-text">
+              {% if article.title != blank %}
+                <h5>{{ article.title }}</h5>
+              {% endif %}
+              {% if  article.content != blank %}
+                <p>{{ article.content | truncatewords: 20 }}</p>
+              {% endif %}
+            
+              <a href="{{ article.url }}" class="productpage-blog-read-more"> Read more <span><img src="https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Regular-M_2.svg?v=1637908140" class="homepage-blogs-section-arrow-image"></span></a>
+              <span class="blog_ReadMore_loader"> </span>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    </div>
+    <div class="btn-view-all-container">
+        <a href="/blogs/product-blog" class="btn-view-all">
+            View All  
+        </a>
+        <span class="blog_viewAll_loader"> </span>
+    </div>
+   </div>
+</div>
+
+<style>
+
+.productpage-blogs-section{
+    margin: 0 auto;
+    padding: 20px 50px;
+    background: #D9E255;
+}
+
+.product-blogs-section-header {
+    text-align: center;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.product-blogs-section-header .h4 {
+    font: normal normal bold 30px/38px Mulish;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    color: #013564;
+    margin: 0px auto;
+}
+
+.product-blogs-section-header p {
+    font: normal normal normal 16px/26px Mulish;
+    letter-spacing: 0px;
+    color: #013564;
+    padding: 14px 0 45px;
+}
+
+.productpage-blogs-section-slider .slick-prev {
+    left: -40px;
+}
+
+.productpage-blogs-section-slider .slick-next {
+    right: -40px;
+}
+
+.productpage-blogs-section-slider .slick-prev, .productpage-blogs-section-slider .slick-next {
+    width: 30px;
+    height: 30px;
+}
+
+.productpage-blogs-section-slider .slick-disabled {
+    display: block!important;
+    pointer-events: none;
+    opacity: .5;
+}
+
+.productpage-blogs-section-blocks-text .productpage-blog-read-more{
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #013564;
+  margin-top: 25px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.productpage-blogs-section-blocks-text{
+  padding: 25px 21px;
+  max-height: 216px;
+}
+
+.productpage-blogs-section-blocks-text h5{
+  text-align: left;
+  font: normal normal 600 21px/26px Mulish;
+  letter-spacing: 0px;
+  color: #013564;
+}
+
+.productpage-blogs-section-blocks-text p{
+  text-align: left;
+  min-height: 72px;
+  font: normal normal normal 16px/24px Mulish;
+  letter-spacing: 0px;
+  color: #7C828A;
+  margin-top: 12px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.btn-view-all-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn-view-all {
+    display: inline;
+    border: 1px solid #004778;
+    color: #004778;
+    padding: 13px 22px;
+    font-size: 14px;
+    line-height: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.blog_viewAll_loader{
+    display: none;
+    margin: 13px auto;
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #484949;
+    width: 20px;
+    height: 20px;
+    z-index: 1; /* Sit on top */
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+}
+.blog_ReadMore_loader{
+  display: none;
+  margin: 25px 50px 10px;
+  border: 2px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 2px solid #484949;
+  width: 20px;
+  height: 20px;
+  z-index: 1; /* Sit on top */
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+@media only screen and (max-width: 426px) {
+  .productpage-blogs-section{ padding: 0 }
+  .homepage-blogs-section-inner{ padding: 20px 0 35px; }
+  .product-blogs-section-header{ max-width: 100% }
+  .product-blogs-section-header h4 { font-size:21px; }
+  .product-blogs-section-header p{ margin: 6px 32px; padding: 0 0 15px; font: normal normal normal 14px/24px Mulish;}
+  .productpage-blogs-section-slider { margin-left: 15px;}
+}
+
+</style>
+
+{% schema %}
+  {
+  "name": "Product Blogs Section",
+  "class": "productpage-blogs-section",
+  "settings": [
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Add Section Heading",
+	  "default": "OUR BLOGS"
+    },
+    {
+      "type": "text",
+      "id": "para",
+      "label": "Add Section Description"
+    }
+],
+"presets": [
+    {
+      "category": "Custom Solution",
+      "name": "Product Blogs Section"
+    }
+  ]
+}
+{% endschema %}

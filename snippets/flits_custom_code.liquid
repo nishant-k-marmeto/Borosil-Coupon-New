@@ -1,0 +1,1096 @@
+{% comment %} PLEASE DON'T MAKE CHANGES IN THIS FILE IT'S AFFECT THE CODE IF YOU NEED ANY HELP PLEASE CONTACT TO FLITS TEAM support@getflits.com {% endcomment %}
+{% liquid
+	capture profile_firstNameText
+		render 'flits_capture_code' with 'translation',template:'flits.profile_page.first_name',default_template:'First Name'
+	endcapture
+	capture profile_lastNameText
+		render 'flits_capture_code' with 'translation',template:'flits.profile_page.last_name',default_template:'Last Name'
+	endcapture
+	capture profile_emailText
+		render 'flits_capture_code' with 'translation',template:'flits.profile_page.email',default_template:'Email'
+	endcapture
+	capture profile_contactNoText
+		render 'flits_capture_code' with 'translation',template:'flits.profile_page.contact_number',default_template:'Contact Number'
+	endcapture
+	capture profile_birthdateText
+		render 'flits_capture_code' with 'translation',template:'flits.profile_page.birthdate',default_template:'Birthdate'
+	endcapture
+	capture profile_genderText
+		render 'flits_capture_code' with 'translation',template:'flits.profile_page.gender',default_template:'Gender'
+	endcapture
+	capture profile_maleText
+		render 'flits_capture_code' with 'translation',template:'flits.profile_page.male',default_template:'Male'
+	endcapture
+	capture profile_femaleText
+		render 'flits_capture_code' with 'translation',template:'flits.profile_page.female',default_template:'Female'
+	endcapture
+	capture profile_otherText
+		render 'flits_capture_code' with 'translation',template:'flits.profile_page.other',default_template:'Other'
+	endcapture
+	capture profile_buttonEditText
+		render 'flits_capture_code' with 'translation',template:'flits.profile_page.edit_button',default_template:'Edit'
+	endcapture
+	capture profile_buttonCancelText
+		render 'flits_capture_code' with 'translation',template:'flits.profile_page.cancel_button',default_template:'Cancel'
+	endcapture
+	capture profile_buttonSaveText
+		render 'flits_capture_code' with 'translation',template:'flits.profile_page.save_button',default_template:'Save'
+	endcapture
+
+	capture address_addANewAddressText
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.add_new_address',default_template:'Add New Address'
+	endcapture
+	capture address_firstNameText
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.first_name',default_template:'First Name'
+	endcapture
+	capture address_lastNameText
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.last_name',default_template:'Last Name'
+	endcapture
+	capture address_address1Text
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.address1',default_template:'Address Line 1'
+	endcapture
+	capture address_address2Text
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.address2',default_template:'Address Line 2'
+	endcapture
+	capture address_companyText
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.company',default_template:'Company'
+	endcapture
+	capture address_zipText
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.zip',default_template:'Postal/Zip Code'
+	endcapture
+	capture address_phoneText
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.contact_number',default_template:'Contact Number'
+	endcapture
+	capture address_cityText
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.city',default_template:'City'
+	endcapture
+	capture address_countryText
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.country',default_template:'Country'
+	endcapture
+	capture address_provinceText
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.province',default_template:'Province'
+	endcapture
+	capture address_setAsDefaultAddressText
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.mark_as_default_checkbox',default_template:'Mark as Default Address'
+	endcapture
+	capture address_cancelAddressText
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.cancel_button',default_template:'Cancel'
+	endcapture
+	capture address_saveAddressText
+		render 'flits_capture_code' with 'translation',template:'flits.address_page.save_button',default_template:'Save'
+	endcapture
+
+	capture credit_headerLineText
+		render 'flits_capture_code' with 'translation',template:'flits.credit_page.header_line_html',default_template:"Save Money <strong>Through Rewards</strong>"
+	endcapture
+	capture credit_howToEarnText
+		render 'flits_capture_code' with 'translation',template:'flits.credit_page.how_to_earn',default_template:"How to Earn?"
+	endcapture
+	capture credit_howToSpentText
+		render 'flits_capture_code' with 'translation',template:'flits.credit_page.how_to_spend',default_template:"How to Spend?"
+	endcapture
+	capture credit_noHistoryYetText
+		render 'flits_capture_code' with 'translation',template:'flits.credit_page.blank_screen_line_1_html',default_template:"You are missing out on taking advantage of<br>our Reward Program."
+	endcapture
+	capture credit_marketingLineText
+		render 'flits_capture_code' with 'translation',template:'flits.credit_page.blank_screen_line_2_html',default_template:"So why wait? Start shopping our products to start earning rewards."
+	endcapture
+
+	capture earnCredit_headerLineText
+		render 'flits_capture_code' with 'translation',template:'flits.how_to_earn_credit_page.header_line_html',default_template:'Earn More <strong>Spend More</strong>'
+	endcapture
+	capture earnCredit_noRulesFound
+		render 'flits_capture_code' with 'translation',template:'flits.how_to_earn_credit_page.no_rule_found',default_template:'The store has not set up any rules yet'
+	endcapture
+
+	capture spendCredit_headerLineText
+		render 'flits_capture_code' with 'translation',template:'flits.how_to_spend_credit_page.header_line_html',default_template:'Spend More <strong>Save More</strong>'
+	endcapture
+	capture spendCredit_noRulesFound
+		render 'flits_capture_code' with 'translation',template:'flits.how_to_spend_credit_page.no_rule_found',default_template:'The store has not set up any rules yet'
+	endcapture
+
+	capture fromAdminPage_headerLineText
+		render 'flits_capture_code' with 'translation',template:'flits.from_admin_page.header_line_html',default_template:'From Store Owner'
+	endcapture
+
+	capture refer_noHistoryYetText
+		render 'flits_capture_code' with 'translation',template:'flits.refer_friend_page.blank_screen_line_1_html',default_template:"You have no referrals so far.<br>You can earn rewards by referring our store to your friends.<br>Copy the above link and share it with your friends or"
+	endcapture
+	capture refer_marketingLineText
+		render 'flits_capture_code' with 'translation',template:'flits.refer_friend_page.blank_screen_line_2_html',default_template:"Share the link directly via WhatsApp and Facebook."
+	endcapture
+	capture refer_youAreReferredByText
+		render 'flits_capture_code' with 'translation',template:'flits.refer_friend_page.you_are_referred_by',default_template:'Referred by'
+	endcapture
+	
+	capture order_orderDateFormatText
+		render 'flits_capture_code' with 'translation',template: 'flits.order_page.order_date_format' ,default_template:'%B %d, %Y'
+	endcapture
+	capture order_noOrdersViewText
+		render 'flits_capture_code' with 'translation',template:'flits.order_page.blank_screen_line_1_html',default_template:"You haven't placed any orders yet.<br>We can't wait to have you as a customer."
+	endcapture
+	capture order_marketingLineText
+		render 'flits_capture_code' with 'translation',template:'flits.order_page.blank_screen_line_2_html',default_template:"Take a look at our products here"
+	endcapture
+	
+	capture topOrder_noProductsViewText
+		render 'flits_capture_code' with 'translation',template:'flits.top_ordered_products_page.blank_screen_line_1_html',default_template:"There are no top ordered products to display.<br>We are pretty sure that a few products<br>from our fantastic collection <br>will make it to your top products."
+	endcapture
+	capture topOrder_searchPlaceholderText
+		render 'flits_capture_code' with 'translation',template:'flits.top_ordered_products_page.search_placeholder',default_template:'Search product here'
+	endcapture
+
+	capture wishlist_noWishlistViewText
+		render 'flits_capture_code' with 'translation',template:'flits.wishlisted_product_page.blank_screen_line_1_html',default_template:"Your wish is our command but<br>you haven’t wishlisted any products."
+	endcapture
+	capture wishlist_marketingLineText
+		render 'flits_capture_code' with 'translation',template:'flits.wishlisted_product_page.blank_screen_line_2_html',default_template:"You can wishlist products<br>and buy them later"
+	endcapture
+
+	capture recentlyViewed_noProductsViewText
+		render 'flits_capture_code' with 'translation',template:'flits.recently_viewed_product_page.blank_screen_line_1_html',default_template:"Looks like you haven’t checked out<br>any of our products recently.<br>We have a vast collection of quality products."
+	endcapture
+	capture recentlyViewed_marketingLineText
+		render 'flits_capture_code' with 'translation',template:'flits.recently_viewed_product_page.blank_screen_line_2_html',default_template:"So why wait? Check out our products."
+	endcapture
+
+	capture updatePassword_newPasswordText
+		render 'flits_capture_code' with 'translation',template:'flits.update_password_page.new_password',default_template:'New Password'
+	endcapture
+	capture updatePassword_newPasswordPlaceholderText
+		render 'flits_capture_code' with 'translation',template:'flits.update_password_page.new_password_placeholder',default_template:'Enter New Password'
+	endcapture
+	capture updatePassword_confirmNewPasswordText
+		render 'flits_capture_code' with 'translation',template:'flits.update_password_page.confirm_new_password',default_template:'Confirm New Password'
+	endcapture
+	capture updatePassword_confirmPasswordPlaceholderText
+		render 'flits_capture_code' with 'translation',template:'flits.update_password_page.confirm_password_placeholder',default_template:'Confirm New Password'
+	endcapture
+	capture updatePassword_passwordHintMessageText
+		render 'flits_capture_code' with 'translation',template:'flits.update_password_page.password_hint_message',default_template:'Password must be between 6 to 40 characters'
+	endcapture
+ 
+    capture order_returnAndExchangeText
+      render 'flits_capture_code' with 'translation',template:'flits.order_page.return_exchange_text',default_template:'Return / Exchange'
+    endcapture
+    capture order_trackOrderText
+      render 'flits_capture_code' with 'translation',template:'flits.order_page.track_your_order',default_template:"Track Order"
+    endcapture
+    capture order_cancelText
+      render 'flits_capture_code' with 'translation',template:'flits.order_page.cancel_order',default_template:"Cancel"
+    endcapture
+%}
+{%- case flits_custom_code -%}
+  {%- when 'module_order_list' -%}
+	{% if customer.orders.size != 0 %}
+		{% paginate customer.orders by 3 %}
+			{% for order in customer.orders %}
+				{% assign order_date_month_original = order.created_at | date: '%B' %}
+				{% assign order_date_month_downcase = order.created_at | date: '%B' | downcase %}
+				{% assign order_date_month_text = 'flits.months.' | append:order_date_month_downcase  %}
+				{% liquid
+					capture order_date_month_text
+						render 'flits_capture_code' with 'translation',template: order_date_month_text ,default_template: order_date_month_downcase 
+					endcapture
+				%}
+				{% assign order_date = order.created_at | date:order_orderDateFormatText | replace:order_date_month_original,order_date_month_text | strip %}
+				{% assign order_cancelled_month_original = order.cancelled_at | date: '%B' %}
+				{% assign order_cancelled_month_downcase = order.cancelled_at | date: '%B' | downcase  %}
+				{% assign order_cancelled_month_text = 'flits.months.' | append:order_cancelled_month_downcase  %}
+				{% liquid
+					capture order_cancelled_month_text
+						render 'flits_capture_code' with 'translation',template: order_cancelled_month_text ,default_template: order_cancelled_month_downcase 
+					endcapture
+				%}
+				{% assign order_cancelled_date = order.cancelled_at | date:order_orderDateFormatText | replace:order_cancelled_month_original,order_cancelled_month_text | strip %}
+				{% assign payemntType = '' %}
+				{% if order.transactions[0].gateway %}
+					{% assign payemntType = order.transactions[0].gateway | replace: '_',' ' | capitalize %}
+					{% assign payemntType = '(' | append: payemntType | append: ')' %}
+				{% endif %}
+				{% assign soldCount = 0 %}
+				{% assign notExistCount = 0 %}
+				{% assign countTotal = 0 %}
+				{% assign totalItemQuantity = 0 %}
+				{% assign isDisable = 'disabled' %}
+                {% assign hasTrackingurl = false %}
+                {% assign trackingurl = '' %}
+				{% for item in order.line_items %}
+                    {% if item.fulfillment.tracking_url %}{% assign hasTrackingurl = true %}{% assign trackingurl = item.fulfillment.tracking_url %}{% endif %}
+					{% assign totalItemQuantity = totalItemQuantity | plus: item.quantity %}
+					{% if item.variant.available == false %}
+						{% assign soldCount = soldCount | plus: 1 %}
+					{% endif %}
+					{% unless item.variant.id %}
+						{% assign notExistCount = notExistCount | plus: 1 %}
+					{% endunless %}
+				{% endfor %}
+				{% assign countTotal = soldCount | plus: notExistCount %}
+                <div class="flits-order-card">
+    				<div class="flits-custom-order-card">
+    					<div class="flits-order-details">
+    						<div class="flits-order-information">
+    							<div class="flits-order-information-row">
+    								<div data-name="Order">
+    									<!-- <span class="flits-order-label" data-flits-lang="order_page.order_number" data-flits-lang-default="Order">Order :</span>  -->
+    									<span class="flits-order-number flits-order-value flits-view-order-button" data-view='{{ order.name }}'>{{ order.name | strip }}</span>
+    								</div>
+    								<div data-name="Date">
+    									<span class="flits-order-date">{{ order.created_at | date: '%d %b %y' }}</span>
+    								</div>
+    								<div data-name="Payment status">
+    									<!-- <span class="flits-order-label" data-flits-lang="order_page.payment_status" data-flits-lang-default="Payment">Payment :</span> -->
+    									<span class="flits-order-total-items flits-order-value">{% if order.financial_status_label == 'Pending' %}COD{% else %}Pre - Paid{% endif %}</span>
+    								</div>
+                                    <div data-name="Total">
+                                      <span class="flits-order-value">{{ order.total_price | money }}</span>
+                                    </div>
+                                    <div data-name="ORDER STATUS">
+                                      <a href="javascript:void(0)" class="Button track-button-default flits-view-order-button" data-view='{{ order.name }}'>Track Order</a>
+                                    </div>
+                                    <div class="flits-order-action-link">
+                                      {% assign order_status = order.fulfillment_status %}
+                                      {% assign cancel_status = order.cancelled_at %}
+                                      <span data-order_name="{{order.id}}" data-label="Return/Exchange" class="return__exchange">
+                                        <button class="js-return-exchange {% if order.fulfillment_status == 'unfulfilled' %} disabled{% endif %}" data-order="{{ order.name }}" data-customer="{{ customer.email }}">Return</button>
+                                      </span>
+                                      <span class="separator">|</span>
+                                      {% assign order_status = order.fulfillment_status %} 
+                                      {% assign cancel_status = order.cancelled_at %}
+                                      {% if order_status == 'fulfilled' or cancel_status != null%}
+                                          <span class="offtext">Edit or Cancel</span> 
+                                      {% else %} 
+                                        {% if order.tags contains 'personalise-product' %}
+                                          <span><a onclick="return alert('Cannot cancel a order containing personalisation product.')">Edit or Cancel</a></span>
+                                        {% elsif order.tags contains 'gift_card' %}
+                                          <span><a onclick="return alert('Cannot cancel a order containing Gift Card')">Edit or Cancel</a></span>
+                                        {% elsif order.tags contains 'GST_ORDER' %}
+                                          <span><a onclick="return alert('Cannot cancel a GST involved order')">Edit or Cancel</a></span>
+                                        {% else %}
+                                          <span><a target="_blank" href="https://shopify-order-edit.herokuapp.com/order-editor/my-borosil.myshopify.com/{{order.id}}">Edit or Cancel</a></span>
+                                        {% endif %}
+                                      {% endif %}
+                                      <span class="separator">|</span>
+                                      <span class="flits-view-order-button" data-view='{{ order.name }}'>View</span> 
+                                    </div>
+    								{% comment %}<div>
+    									<span class="flits-order-label" data-flits-lang="order_page.total_items" data-flits-lang-default="Total Items">Total Items :</span>
+    									<span class="flits-order-total-items flits-order-value">{{ totalItemQuantity }}</span>
+    								</div> 
+    								<div class="flits-view-order-button">
+    									<span data-flits-lang="order_page.show_order_details" data-flits-lang-default="View Order">View Order</span>
+    									<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.77 25"><path id="Layer_2" data-name="Layer 2" d="M13.4,11.61,2.16.37A1.26,1.26,0,0,0,.37,2.15L10.72,12.5.37,22.85a1.26,1.26,0,0,0,1.79,1.78L13.4,13.39A1.26,1.26,0,0,0,13.4,11.61Z" transform="translate(0 0)"/></svg>
+    								</div> {% endcomment %}
+    							</div>
+    							{% comment %} <div class="flits-order-information-row">
+    								<div>
+    									<span class="flits-order-label" data-flits-lang="order_page.order_number" data-flits-lang-default="Order">Order :</span> 
+    									
+    									<span class="flits-order-number flits-order-value">{{ order.name | strip }}</span>
+    								</div>
+    								<div>
+    									<span class="flits-order-label" data-flits-lang="order_page.total_items" data-flits-lang-default="Total Items">Total Items :</span>
+    									<span class="flits-order-total-items flits-order-value">{{ totalItemQuantity }}</span>
+    								</div>
+    								<div>
+    									<span class="flits-order-label" data-flits-lang="order_page.payment_status" data-flits-lang-default="Payment">Payment :</span>
+    									<span class="flits-order-total-items flits-order-value">{{ order.financial_status_label | append: payemntType | capitalize }}</span>
+    								</div>
+    							</div> {% endcomment %}
+    						</div>
+    						<div class="flits-order-actions">
+    							<!-- <div class="flits-order-button-grp">
+                                    <span data-order_name="{{order.id}}" data-label="Return" class="return__exchange" style="opacity:0;">
+                                      {% if order.fulfillment_status == 'fulfilled' %}
+                                      <button class="js-return-exchange flits-button flits-primary-btn flits-mx-10 flits-my-10 {% if order.fulfillment_status != 'fulfilled' %} disabled{% endif %}" data-order="{{ order.name }}" data-customer="{{ customer.email }}">{{ order_returnAndExchangeText | strip }}</button>
+                                      {% endif %}
+                                    </span>
+    
+                               {% assign order_status = order.fulfillment_status %} {% assign cancel_status = order.cancelled_at %}
+                                  {% if order_status == 'fulfilled' or cancel_status != null %}
+                                    <span class="flits-cancel-disabled-btn flits-button flits-secondary-btn flits-mx-15 flits-my-10">{{ order_cancelText }}</span>
+                                  {% else %}
+                                    {% if order.tags.size > 0 %}
+                                      {% for tag in order.tags %}
+                                        {% if tag contains 'personalise-product' %}
+                                            <a class="flits-button flits-cancel-disabled-btn flits-secondary-btn flits-mx-15 flits-my-10" onclick="return confirm('Sorry, this being a personalised order is not eligible for cancellation')">Cancel</a>
+                                          {% else %}
+                                          <a href="https://orderease.appsdart.com/order/cancel/{{shop.permanent_domain}}/{{order.id}}" class="flits-button flits-secondary-btn flits-mx-15 flits-my-10 " onclick="return confirm('Are you sure want to cancel this order?')">{{ order_cancelText }}</a>
+                                        {% endif %}
+                                      {% endfor %}
+                                    {% else %}
+                                      <a href="https://orderease.appsdart.com/order/cancel/{{shop.permanent_domain}}/{{order.id}}" onclick="return confirm('Are you sure want to cancel this order?')" class="flits-button flits-secondary-btn flits-mx-15 flits-my-10">Cancel</a>
+                                    {% endif %}
+                                  {% endif %}
+                  
+                                    {% if hasTrackingurl == true  %}
+                                      <a href="{{ trackingurl }}" class="flits-button flits-secondary-btn flits-mx-10 flits-my-10" target="_blank">{{ order_trackOrderText | strip }}</a>
+                                    {% endif %}
+    								{% if shop.metafields.Flits.IS_ORDER_CONTACT_US_ENABLE and shop.metafields.Flits.IS_ORDER_CONTACT_US_ENABLE == 1 %}
+    									{% assign order_number = 'data-flits-order-number="' | append: order.order_number | append : '"'  %}
+    									{% assign order_name = 'data-flits-order-name="' | append: order.name | append : '"'  %}
+    									{% assign order_date =  order.created_at | date: "%d %B %Y, %I:%M %p"  %}
+    									{% assign order_date = 'data-flits-order-date="' | append: order_date | append : '"'  %}
+    									{% assign order_fulfillment_status = 'data-flits-order-fulfillment-status="' | append: order.fulfillment_status_label | append : '"'  %}
+    									{% assign order_payment_status = 'data-flits-order-payment-status="' | append: order.financial_status_label | append : '"'  %}
+    									{% assign order_link = 'data-flits-order-link="https://' | append: shop.domain | append: '/admin/orders/' | append: order.id | append : '"' %}
+    									{% assign customer_link = 'data-flits-customer-link="https://' | append: shop.domain | append: '/admin/customers/' | append: customer.id | append : '"' %}
+    									{% assign data_attribute = order_number  
+    									| append: " " | append: order_name  
+    									| append: " " | append: order_date
+    									| append: " " | append: order_fulfillment_status
+    									| append: " " | append: order_payment_status 
+    									| append: " " | append: order_link 
+    									| append: " " | append: customer_link 
+    									| append: " " | append: 'data-flits-lang="order_contact_us.contact_us_button" data-flits-lang-default="Contact Us"' 
+    									%}
+    									{% render 'flits_capture_code' with 'component',template:'comp_button', text:'Contact Us', class:'flits-secondary-btn flits-mx-10 flits-my-10 flits-contact-us-btn', attr:data_attribute %}
+    								{% endif %}
+    								{% if shop.metafields.Flits.IS_REORDER_ENABLE and shop.metafields.Flits.IS_REORDER_ENABLE == 1 %}
+    									{% if order.line_items.size !=  countTotal  %}
+    										{% assign isDisable = '' %}
+    									{% endif %}
+    									{% assign dataAttr = order.id | prepend: 'data-flits-lang="order_page.reorder" data-flits-lang-default="Re-order" data-flits-target=' | append: " " | append: isDisable  %}
+    									{% render 'flits_capture_code' with 'component',template:'comp_button', text:'Re-order', class:'flits-primary-btn flits-mx-10 flits-my-10 flits-reorder-btn', attr:dataAttr %}
+    								{% endif %}
+    							</div> -->
+    						</div>
+    					</div>
+    				</div>
+                    <div class="flits-collaps-order-details" data-order-view='{{ order.name }}' style="display:none;">
+                          {% assign order_line_item_price = 0 %}
+                          <script>
+                              window.flitsOrder[{{order.id}}] = [];
+                          </script>
+                          {% for item in order.line_items %}
+                            {% assign isProductAvailable = 'true' %}
+                            {% if item.variant.available == false or item.product.published_at == blank %}
+                              {% assign isProductAvailable = 'false' %}
+                            {% endif %}
+                              <script>
+                                  window.flitsOrder[{{order.id}}].push({
+                                      variant_id:'{{ item.variant_id }}',
+                                      quantity:'{{ item.quantity }}',
+                                      available: '{{ isProductAvailable }}',
+                                      inventory_quantity: '{{ item.variant.inventory_quantity }}',
+                                      item_title: '{{ item.title }}',
+                                      item_variant_id: '{{ item.variant.id }}',
+                                      cart: '{{ cart.item[0].quantity }}',
+                                      cartV: '{{ cart.item[0].variant_id }}'
+                                  });
+                              </script>
+                          {% endfor %}
+                          {% comment %} <div class="flits-line-items flits-line-items-slick">
+                              {% for item in order.line_items %}
+                                  <div class="flits-order-item" data-flits-variant-id="{{ item.variant.id }}" data-variant-available="{{ item.variant.available }}">
+                                      <div class="flits-product-image-thumbnail">
+                                          <img src="{{item.image | img_url: 'small'}}" alt="{{ item.title }}">
+                                          <span class="flits-product-quantity-badge flits-badge">{{ item.quantity }}</span>
+                                          {% unless item.variant.id %}
+                                              <span class="flits-product-not-exist" data-flits-lang="order_page.product_unavailable" data-flits-lang-default="Unavailable">Unavailable</span>
+                                          {% endunless %}
+                                          {% if item.variant.available == false %}
+                                              <div class="flits-ribbion-overlay">
+                                                  <span class="flits-bottom-full flits-ribbion flits-red" data-flits-lang="order_page.sold_out" data-flits-lang-default="Sold Out">Sold Out</span>
+                                              </div>
+                                          {% endif %}
+                                          {% unless item.product.published_at %}
+                                            <div class="flits-ribbion-overlay">
+                                              <span class="flits-bottom-full flits-ribbion flits-red" data-flits-lang="order_page.product_unavailable" data-flits-lang-default="Unavailable">Unavailable</span>
+                                            </div>
+                                        {% endunless %}
+                                      </div>
+                                      {% if item.url and item.product.published_at %}
+                                          <a href="{{ item.url }}" data-tippy-content="{{ item.title | strip }}">
+                                              <p class="flits-product-name flits-link flits-text-ellipsis" data-tippy-content="{{ item.title | strip }}">{{ item.title | strip }}</p>
+                                          </a>
+                                      {% else %}
+                                          <p class="flits-product-name flits-link flits-text-ellipsis" data-tippy-content="{{ item.title | strip }}">{{ item.title | strip }}</p>
+                                      {% endif %}
+                                      <p class="flits-product-price">{{ item.price | money }}</p>
+                                  </div>
+                                  {% assign order_line_item_price = order_line_item_price | plus: item.line_price %}
+                              {% endfor %}
+                          </div> {% endcomment %}
+                          <div class="flits-order-detail-group">
+                            <div class="back-to-order flits-back-button">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 19.329 10.914" style="transform: rotate(90deg);margin-right: 5px;">
+                                <g id="Group_2339" data-name="Group 2339" transform="translate(1.768 1.767)">
+                                    <path id="Path_579" data-name="Path 579" d="M475.711-2583.809l7.9,7.9,7.9-7.9" transform="translate(-475.711 2583.809)" fill="none" stroke="#111111" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"></path>
+                                </g></svg>Back</div>
+                            <div class="textbutton-boxs">
+                              <div class="text-left">
+                                <h2>{{ order.name }}</h2>
+                                <p>{{ 'customer.order.date_html' | t }}</p>
+                              </div>
+                              <div class="button-right">
+                                <a href="javascript:void(0)" id="trackorder-button" data-track-order='{{ order.name }}' class="button flits-custom-track-button">Track Order</a>
+                                {%- comment -%}
+                                <a href="#" class="button">Return / Exchange</a>
+                                {%- endcomment -%}
+                                
+                              </div>
+                            </div>
+                            {%- if order.cancelled -%}
+                              <div class="order-cancel-msg">
+                                {%- assign cancelled_at = order.cancelled_at | time_tag: format: "date_at_time" -%}
+                                <p>{{ 'customer.order.cancelled_html' | t: date: cancelled_at }}</p>&nbsp;
+                                <p>{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason_label }}</p>
+                              </div>
+                            {%- endif -%}
+                            
+                            <table role="table" class="order-details">
+                              <caption class="visually-hidden">{{ 'customer.order.title' | t: name: order.name }}</caption>
+                              <thead role="rowgroup">
+                                <tr role="row">
+                                  <th id="ColumnProduct" scope="col" role="columnheader" width="60%">{{ 'customer.order.product' | t }}</th>
+                                  {%- comment -%}
+                                  <th id="ColumnSku" scope="col" role="columnheader">{{ 'customer.order.sku' | t }}</th>
+                                  <th id="ColumnPrice" scope="col" role="columnheader">{{ 'customer.order.price' | t }}</th>
+                                  {%- endcomment -%}
+                                  <th id="ColumnQuantity" scope="col" role="columnheader" width="20%">{{ 'customer.order.quantity' | t }}</th>
+                                  <th id="ColumnTotal" scope="col" role="columnheader" width="20%">{{ 'customer.order.total' | t }}</th>
+                                </tr>
+                              </thead>
+                              <tbody role="rowgroup">
+                                {%- for line_item in order.line_items -%}
+                                  <tr role="row">
+                                    <td
+                                      id="Row{{ line_item.key }}"
+                                      headers="ColumnProduct"
+                                      role="rowheader"
+                                      scope="row"
+                                      data-label="{{ 'customer.order.product' | t }}"
+                                      width="60%"
+                                    >
+                                      <div class="product-boxs">
+                                        {%- if line_item.url != blank -%}
+                                          <div class="img">
+                                            <a href="{{ line_item.url }}">
+                                              <img src="{{ line_item.image | img_url: "50x50" }}">
+                                            </a>
+                                          </div>
+                                          <h3><a href="{{ line_item.url }}">{{ line_item.title }}</a></h3>
+                                        {%- else -%}
+                                          <div class="img">
+                                            <img src="{{ line_item.image | img_url: "50x50" }}">
+                                          </div>
+                                          <h3>{{ line_item.title }}</h3>
+                                        {%- endif -%}
+                                      </div>
+                                    </td>
+                                    <td
+                                      headers="Row{{ line_item.key }} ColumnQuantity"
+                                      role="cell"
+                                      data-label="{{ 'customer.order.quantity' | t }}"
+                                      width="20%"
+                                    >
+                                      X {{ line_item.quantity }}
+                                    </td>
+                                    <td
+                                      headers="Row{{ line_item.key }} ColumnTotal"
+                                      role="cell"
+                                      data-label="{{ 'customer.order.total' | t }}"
+                                      width="20%"
+                                    >
+                                      {%- if line_item.original_line_price != line_item.final_line_price -%}
+                                        <dl>
+                                          <dt>
+                                            <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                          </dt>
+                                          <dd class="regular-price">
+                                            <s>{{ line_item.original_line_price | money }}</s>
+                                          </dd>
+                                          <dt>
+                                            <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+                                          </dt>
+                                          <dd>
+                                            <span>{{ line_item.final_line_price | money }}</span>
+                                          </dd>
+                                        </dl>
+                                      {%- else -%}
+                                        {{ line_item.original_line_price | money }}
+                                      {%- endif -%}
+                                    </td>
+                                  </tr>
+                                {%- endfor -%}
+                              </tbody>
+                              <tfoot role="rowgroup">
+                                <tr role="row">
+                                  <td id="RowSubtotal" role="rowheader" scope="row" colspan="2" align="right" style="text-align:right;">
+                                    {{ 'customer.order.subtotal' | t }} <span>:</span>
+                                  </td>
+                                  <td headers="RowSubtotal" role="cell" data-label="{{ 'customer.order.subtotal' | t }}">{{ order.line_items_subtotal_price | money }}</td>
+                                </tr>
+                                {%- if order.cart_level_discount_applications != blank -%}
+                                  <tr role="row">
+                                    {%- for discount_application in order.cart_level_discount_applications -%}
+                                      <td id="RowDiscount" role="rowheader" scope="row" colspan="2" align="right" style="text-align:right;">
+                                        {{ 'customer.order.discount' | t }}
+                                        <span class="cart-discount">
+                                          {%- comment -%}
+                                          <svg aria-hidden="true" focusable="false" viewBox="0 0 12 12">
+                                            <use href="#icon-discount" />
+                                          </svg>
+                                          {%- endcomment -%}
+                                          ({{- discount_application.title -}})
+                                        </span>
+                                        <span>:</span>
+                                      </td>
+                                      <td headers="RowDiscount" role="cell" data-label="{{ 'customer.order.discount' | t }}">
+                                        <div>
+                                          <span>- {{ discount_application.total_allocated_amount | money }}</span>
+                                          {%- comment -%}
+                                          <span class="cart-discount">
+                                            <svg aria-hidden="true" focusable="false" viewBox="0 0 12 12">
+                                              <use href="#icon-discount" />
+                                            </svg>
+                                            {{- discount_application.title -}}
+                                          </span>
+                                          {%- endcomment -%}
+                                        </div>
+                                      </td>
+                                    {%- endfor -%}
+                                  </tr>
+                                {%- endif -%}
+                                {%- for shipping_method in order.shipping_methods -%}
+                                  <tr role="row">
+                                    <td id="RowShipping" role="rowheader" scope="row" colspan="2" align="right" style="text-align:right;">{{ 'customer.order.shipping' | t }} <span>:</span></td>
+                                    <td headers="RowShipping" role="cell" data-label="{{ 'customer.order.shipping' | t }}">{{ shipping_method.price | money }}</td>
+                                  </tr>
+                                {%- endfor -%}
+                                {%- comment -%}
+                                  {%- for tax_line in order.tax_lines -%}
+                                  <tr role="row">
+                                      <td></td>
+                                      <td id="RowTax" role="rowheader" scope="row">{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}% Included) <span>:</span></td>
+                                      <td headers="RowTax" role="cell" data-label="{{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}% Included)">{{ tax_line.price | money }}</td>
+                                  </tr>
+                                  {%- endfor -%}
+                                {%- endcomment -%}
+                                <tr role="row">
+                                  <td id="RowTotal" role="rowheader" scope="row" colspan="2" align="right" style="text-align:right;">{{ 'customer.order.total' | t }}<span class="texes-text">(Incl. of all taxes)</span> <span>:</span></td>
+                                  <td headers="RowTotal" role="cell" data-label="{{ 'customer.order.total' | t }}">{{ order.total_price | money_with_currency }}</td>
+                                </tr>
+                              </tfoot>
+                            </table>
+                          </div>
+                  
+                          <div class="customer-address-main">
+                            <div class="flits-order-detail-group">
+                              <h2>{{ 'customer.order.billing_address' | t }}</h2>
+                              {{ order.billing_address | format_address }}
+                            </div>
+                            <div class="flits-order-detail-group">
+                              <h2>{{ 'customer.order.shipping_address' | t }}</h2>
+                              {{ order.shipping_address | format_address }}
+                            </div>
+                          </div>
+                          {% comment %} <div class="flits-order-price-breakdown">
+                              <div class="flits-price-row">
+                                  <div>
+                                      <p data-flits-lang="order_page.subtotal" data-flits-lang-default="Sub Total">Sub Total</p>
+                                  </div>
+                                  <p class="flits-strong">{{ order_line_item_price | money }}</p>
+                              </div>
+                              {% for discount in order.discounts %}
+                                  <div class="flits-price-row">
+                                      <div>
+                                          <p data-flits-lang="order_page.discount_code" data-flits-lang-default="Discount">Discount</p>
+                                          <small class="flits-discount-code">{{ discount.code }}</small>
+                                      </div>
+                                      <p class="flits-strong">{{ discount.savings | money }}</p>
+                                  </div>
+                              {% endfor %}
+                              <div class="flits-price-row">
+                                  <div>
+                                      <p data-flits-lang="order_page.shipping_and_handling" data-flits-lang-default="Shipping Cost">Shipping Cost</p>
+                                  </div>
+                                  <p class="flits-strong">{{ order.shipping_price | money }}</p>
+                              </div>
+                              {% for tax_line in order.tax_lines %}
+                                  <div class="flits-price-row">
+                                      <div>
+                                          <p>{{ tax_line.title }} {{ tax_line.rate | times: 100 }}%</p>
+                                      </div>
+                                      <p class="flits-strong">{{ tax_line.price | money }}</p>
+                                  </div>
+                              {% endfor %}
+                          </div> {% endcomment %}
+                    </div>
+                    <div class="flits-track-order-data" data-track-order='{{ order.name }}' style="display:none;">
+                      <div class="flits-order-detail-group">
+                        <div class="back-to-order-detail flits-back-button">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 19.329 10.914" style="transform: rotate(90deg);margin-right: 5px;">
+                                <g id="Group_2339" data-name="Group 2339" transform="translate(1.768 1.767)">
+                                    <path id="Path_579" data-name="Path 579" d="M475.711-2583.809l7.9,7.9,7.9-7.9" transform="translate(-475.711 2583.809)" fill="none" stroke="#111111" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"></path>
+                                </g></svg>Back</div>
+                        <div class="oder-list">
+                          <div class="list-box">
+                            <h2>{{ order.name }}</h2>
+                            <span>{{ 'Order Number' |  }}</span>
+                          </div>
+                          <div class="list-box">
+                            <h2>{{ order.created_at | date: "%d %b %y" }}</h2>
+                            <span>{{ 'Order Date' |  }}</span>
+                          </div>
+                        </div>
+              
+                        {% assign trackingNumbers = '' %}
+                        {% assign trackingUrl = '' %}
+                        {% assign Fulfillment = '' %}
+                        {% assign fulfillmentLineItems = '' %}
+                        
+              
+                        {% for line_item in order.line_items %}
+                          {% if line_item.fulfillment != blank %}
+                            {% assign Fulfillment = line_item.fulfillment %}
+                            {% assign trackingNumber = line_item.fulfillment.tracking_number | append: ',' %}
+                            {% assign trackingNumbers = trackingNumbers | append: trackingNumber %}
+                            {% assign trackingUrl = line_item.fulfillment.tracking_url | append: ',' %}
+                            {% assign trackingUrls = trackingUrl | append: trackingUrl %}
+                            {% assign fulfillmentLineItems = line_item.fulfillment.fulfillment_line_items %}
+                          {% endif %}
+                        {% endfor %}
+              
+                        {% assign trackingNumbersRemove = trackingNumbers | remove_last: "," | split: ',' | uniq %}
+                        {% assign trackingUrlRemove = trackingUrls | remove_last: "," | split: ',' | uniq %}
+                        
+                        {% for tracking in trackingNumbersRemove %}
+                          <table role="table" class="trackorder-details">
+                            <caption class="visually-hidden">{{ 'customer.order.title' | t: name: order.name }}</caption>
+                            <thead>                
+                              <tr>
+                                <td>
+                                  {% if tracking != blank %}
+                                    <p class="fulfillment-number"><span>Tracking number: </span>{{ tracking }}</p>
+                                  {% endif %}
+                                </td>
+                                <td colspan="2" align="right">
+                                  {%- if Fulfillment -%}
+                                    <div class="fulfillment track-order">
+                                      {% if trackingUrlRemove %}
+                                        <a href="{{ trackingUrlRemove }}" target="_blank" class="button flits-custom-track-button">Track Order</a>
+                                      {% endif %}
+                                    </div>
+                                  {%- elsif order.cancelled -%}
+                                    Order has been cancelled
+                                  {% else %}
+                                    Order is getting processed
+                                  {%- endif -%}
+                                </td>
+                              </tr>
+                            </thead>
+                            <tbody role="rowgroup">
+                              {% for line in order.line_items %}
+                                {% if tracking != blank and line.fulfillment.tracking_number == tracking %}
+                                  <tr>
+                                  <td id="Row{{ line.key }}"headers="ColumnProduct"role="rowheader"scope="row"data-label="{{ 'customer.order.product' | t }}">
+                                    <div class="product-boxs">
+                                      {%- if line.url != blank -%}
+                                        <div class="img">
+                                          <a href="{{ line.url }}">
+                                            <img src="{{ line.image | img_url: "75x75" }}">
+                                          </a>
+                                        </div>
+                                        <h3>
+                                          <a href="{{ line.url }}">{{ line.title }} 
+                                            {% comment %}
+                                            <span class="mobile-show"> X {{ line.quantity }}</span>
+                                            {% endcomment %}
+                                          </a>
+                                            {% comment %}
+                                          <span class="price mobile-show">
+                                            {%- if line.original_line_price != line.final_line_price -%}
+                                              <dl>
+                                                <dt>
+                                                  <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                                </dt>
+                                                <dd class="regular-price">
+                                                  <s>{{ line.original_line_price | money }}</s>
+                                                </dd>
+                                                <dt>
+                                                  <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+                                                </dt>
+                                                <dd>
+                                                  <span>{{ line.final_line_price | money }}</span>
+                                                </dd>
+                                              </dl>
+                                            {%- else -%}
+                                              {{ line.original_line_price | money }}
+                                            {%- endif -%}
+                                          </span>
+                                          {% endcomment %}
+                                        </h3>
+                                      {%- else -%}
+                                        <div class="img">
+                                          <img src="{{ line.image | img_url: "75x75" }}">
+                                        </div>
+                                        <h3>
+                                          {{ line.title }} 
+                                          {% comment %}
+                                          <span class="mobile-show"> X {{ line.quantity }}</span>
+                                          <span class="price mobile-show">
+                                            {%- if line.original_line_price != line.final_line_price -%}
+                                              <dl>
+                                                <dt>
+                                                  <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                                </dt>
+                                                <dd class="regular-price">
+                                                  <s>{{ line.original_line_price | money }}</s>
+                                                </dd>
+                                                <dt>
+                                                  <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+                                                </dt>
+                                                <dd>
+                                                  <span>{{ line.final_line_price | money }}</span>
+                                                </dd>
+                                              </dl>
+                                            {%- else -%}
+                                              {{ line.original_line_price | money }}
+                                            {%- endif -%}
+                                          </span>
+                                          {% endcomment %}
+                                        </h3>
+                                      {%- endif -%}
+                                    </div>
+                                  </td>
+                                  <td headers="Row{{ line.key }} ColumnQuantity" role="cell" data-label="{{ 'customer.order.quantity' | t }}">
+                                    X {{ line.quantity }}
+                                  </td>
+                                  <td headers="Row{{ line.key }} ColumnTotal" role="cell" data-label="{{ 'customer.order.total' | t }}">
+                                    {%- if line.original_line_price != line.final_line_price -%}
+                                      <dl>
+                                        <dt>
+                                          <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                        </dt>
+                                        <dd class="regular-price">
+                                          <s>{{ line.original_line_price | money }}</s>
+                                        </dd>
+                                        <dt>
+                                          <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+                                        </dt>
+                                        <dd>
+                                          <span>{{ line.final_line_price | money }}</span>
+                                        </dd>
+                                      </dl>
+                                    {%- else -%}
+                                      {{ line.original_line_price | money }}
+                                    {%- endif -%}
+                                  </td>
+                                </tr>
+                                {% endif %}
+                                
+                              {% endfor %}
+                            </tbody>
+                          </table>
+                        {% endfor %}          
+              
+                        <table role="table" class="trackorder-details">
+                          <caption class="visually-hidden">{{ 'customer.order.title' | t: name: order.name }}</caption>
+              
+                          <thead>                
+                            <tr>
+                              <td colspan="3">
+                                {% assign Fulfillment = '' %}
+                                  {% assign index = 0 %}
+                                {% for line_item in order.line_items %}
+                                  {% assign Fulfillment = line_item.fulfillment.tracking_number %} 
+                                  {% assign index = index | plus: 1 %}
+                                {% endfor %}
+              
+                                {%- if order.cancelled -%}
+                                  <div class="order-cancel-msg">
+                                    {%- assign cancelled_at = order.cancelled_at | time_tag: format: "date_at_time" -%}
+                                    <p>{{ 'customer.order.cancelled_html' | t: date: cancelled_at }}</p>&nbsp;
+                                    <p>{{ 'customer.order.cancelled_reason' | t: reason: order.cancel_reason_label }}</p>
+                                  </div>
+                                {%- else -%}
+                                  {% unless Fulfillment != blank %}
+                                      Items are getting processed
+                                  {% endunless %}
+                                {% endif %}
+                              </td>
+                            </tr>
+                          </thead>
+              
+                          {%- for line_item in order.line_items -%}
+                            {% unless line_item.fulfillment.tracking_number != blank %}
+                              <tr role="row">
+                                <td
+                                  id="Row{{ line_item.key }}"
+                                  headers="ColumnProduct"
+                                  role="rowheader"
+                                  scope="row"
+                                  data-label="{{ 'customer.order.product' | t }}"
+                                >
+                                  <div class="product-boxs">
+                                    {%- if line_item.url != blank -%}
+                                      <div class="img">
+                                        <a href="{{ line_item.url }}">
+                                          <img src="{{ line_item.image | img_url: "75x75" }}">
+                                        </a>
+                                      </div>
+                                      <h3>
+                                        <a href="{{ line_item.url }}">{{ line_item.title }} <span class="mobile-show"> X {{ line_item.quantity }}</span></a>
+                                        <span class="price mobile-show">
+                                          {%- if line_item.original_line_price != line_item.final_line_price -%}
+                                            <dl>
+                                              <dt>
+                                                <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                              </dt>
+                                              <dd class="regular-price">
+                                                <s>{{ line_item.original_line_price | money }}</s>
+                                              </dd>
+                                              <dt>
+                                                <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+                                              </dt>
+                                              <dd>
+                                                <span>{{ line_item.final_line_price | money }}</span>
+                                              </dd>
+                                            </dl>
+                                          {%- else -%}
+                                            {{ line_item.original_line_price | money }}
+                                          {%- endif -%}
+                                        </span>
+                                      </h3>
+                                    {%- else -%}
+                                      <div class="img">
+                                        <img src="{{ line_item.image | img_url: "75x75" }}">
+                                      </div>
+                                      <h3>
+                                        {{ line_item.title }} <span class="mobile-show"> X {{ line_item.quantity }}</span>
+                                        <span class="price mobile-show">
+                                          {%- if line_item.original_line_price != line_item.final_line_price -%}
+                                            <dl>
+                                              <dt>
+                                                <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                              </dt>
+                                              <dd class="regular-price">
+                                                <s>{{ line_item.original_line_price | money }}</s>
+                                              </dd>
+                                              <dt>
+                                                <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+                                              </dt>
+                                              <dd>
+                                                <span>{{ line_item.final_line_price | money }}</span>
+                                              </dd>
+                                            </dl>
+                                          {%- else -%}
+                                            {{ line_item.original_line_price | money }}
+                                          {%- endif -%}
+                                        </span>
+                                      </h3>
+                                    {%- endif -%}
+                                  </div>
+                                </td>
+                                <td
+                                  headers="Row{{ line_item.key }} ColumnQuantity"
+                                  role="cell"
+                                  data-label="{{ 'customer.order.quantity' | t }}"
+                                >
+                                  X {{ line_item.quantity }}
+                                </td>
+                                <td
+                                  headers="Row{{ line_item.key }} ColumnTotal"
+                                  role="cell"
+                                  data-label="{{ 'customer.order.total' | t }}"
+                                >
+                                  {%- if line_item.original_line_price != line_item.final_line_price -%}
+                                    <dl>
+                                      <dt>
+                                        <span class="visually-hidden">{{ 'products.product.price.regular_price' | t }}</span>
+                                      </dt>
+                                      <dd class="regular-price">
+                                        <s>{{ line_item.original_line_price | money }}</s>
+                                      </dd>
+                                      <dt>
+                                        <span class="visually-hidden">{{ 'products.product.price.sale_price' | t }}</span>
+                                      </dt>
+                                      <dd>
+                                        <span>{{ line_item.final_line_price | money }}</span>
+                                      </dd>
+                                    </dl>
+                                  {%- else -%}
+                                    {{ line_item.original_line_price | money }}
+                                  {%- endif -%}
+                                </td>
+              
+                                {% comment %}
+                                <td>
+                                  {%- if line_item.fulfillment -%}
+                                    <div class="fulfillment">
+                                      {% if line_item.fulfillment.tracking_url %}
+                                        <a href="{{ line_item.fulfillment.tracking_url }}" target="_blank">Track Order</a>
+                                      {% endif %}
+                                    </div>
+                                  {%- elsif order.cancelled -%}
+                                    <div class="fulfillment">
+                                      Order has been cancelled
+                                    </div>
+                                  {% else %}
+                                    <div class="fulfillment">
+                                      Order is getting processed
+                                    </div>
+                                  {%- endif -%}
+                                </td>
+                                {% endcomment %}
+                              </tr>
+                            {% endunless %}
+                          {%- endfor -%}
+                        </table>           
+                        
+                      </div>
+                    </div>
+                </div>
+			{% endfor %}
+		{% endpaginate %}
+	{% endif %}
+  {%- when 'module_topOrder_content' -%}
+	<div class="flits-container-box" id="flits-top-order-list">
+		<div class="flits-filter-header flits-hide">
+			<div class="flits-search-fillter">
+				{% render 'flits_capture_code' with 'component',template:'comp_flitsInput',class:'flits-list-search', type:'text', placeholder:topOrder_searchPlaceholderText %} 
+				<span class="flits-search-icon-group flits-search-icon-group-left">
+					<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.67 16.63"><path id="Layer_2" data-name="Layer 2" d="M6.31,0h.47l.46,0,.44.08.43.11L8.53.4l.41.17.39.2L9.71,1l.35.24L8.71,2.58l-.3-.18-.32-.15-.33-.13L7.41,2l-.36-.07-.36-.05-.38,0-.4,0L5.51,2,5.14,2l-.37.13-.36.14-.34.18-.31.21-.3.23-.28.25-.26.28-.23.3-.21.31-.17.34-.15.35L2,5.12,2,5.5l-.06.39V6.7L2,7.09,2,7.47l.12.37.15.35.17.34.21.32.23.29.26.28.27.26.31.23.31.2.34.18.35.15.37.12.38.09.4.05h.8l.4-.05.38-.09.37-.12.35-.15.34-.18.32-.2.3-.23.28-.26.25-.27.23-.3.21-.32.17-.34.16-.35.11-.37.09-.38.06-.39,0-.41V6.08l0-.2L12.3,4.3l.11.38.09.39.07.41,0,.4,0,.41,0,.47-.05.45-.08.45-.11.44-.14.41-.17.41-.2.39-.22.38-.25.35.33.33.24-.24,4.35,4.35.14.15.1.17.07.18,0,.19v.39l0,.19-.07.18-.1.17-.13.16-.15.13L16,16.5l-.18.07-.19,0-.2,0-.19,0-.19,0-.18-.07-.17-.11-.15-.13-4.36-4.35.24-.23-.33-.33-.36.25-.38.23L8.95,12l-.41.17-.42.14-.44.11-.44.08-.46,0-.47,0-.49,0-.48,0-.48-.09L4.4,12.3,4,12.14l-.42-.19-.41-.22-.4-.24-.37-.28L2,10.91l-.33-.33-.3-.34-.28-.37-.25-.4-.22-.4L.45,8.64.29,8.2.17,7.74l-.1-.47L0,6.79v-1l.06-.49.1-.47L.29,4.4.45,4l.19-.42.22-.41.25-.39.28-.37L1.69,2,2,1.69l.34-.31.37-.28.4-.25L3.54.64,4,.45,4.4.29,4.86.16,5.34.08,5.82,0l.49,0Z" style="fill:#797ea7"/></svg>
+				</span>
+				<span class="flits-search-icon-group flits-search-icon-group-right flits-clear-icon flits-hide">
+					<svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+				</span>
+			</div>
+			<div class="flits-dropdown-filter">
+				<div class="flits-filter-select flits-mr-10" data-flits-filter="sort by">
+					<span class="flits-filter-label" data-flits-lang="top_ordered_products_page.sort_by" data-flits-lang-default="Sort By">Sort By</span>
+					<svg id="Layer_1" class="flits-filter-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.02 15"><path id="Layer_2" data-name="Layer 2" d="M7.09,10.55,4.62,13V.58a.58.58,0,0,0-1.16,0V13L1,10.55a.58.58,0,0,0-.81,0,.57.57,0,0,0,0,.81h0l3.46,3.46A.58.58,0,0,0,4,15a.6.6,0,0,0,.41-.17l3.46-3.46A.58.58,0,0,0,7,10.55Zm7.74-6.92L11.37.17a.57.57,0,0,0-.81,0h0L7.09,3.63a.58.58,0,0,0,.82.82L10.38,2V14.42a.58.58,0,0,0,1.16,0V2L14,4.45a.58.58,0,0,0,.9-.73l-.09-.09Z" transform="translate(-0.02 0)" style="fill:#797ea7"/></svg>
+					<div class="flits-select-row">
+						<select class="flits-input"  {{ attr }}>
+							<option value="1" data-flits-type="none" data-flits-sort-type="asc" data-flits-sort="flits-product-quantity-count" data-flits-lang="top_ordered_products_page.none" data-flits-lang-default="None">None</option>
+							<option value="2" data-flits-type="sort" data-flits-sort-type="asc" data-flits-sort="flits-product-price" data-flits-lang="top_ordered_products_page.sort_by_price_low_to_high" data-flits-lang-default="Sort by price (Low to High)">Sort by price (Low to High)</option>
+							<option value="3" data-flits-type="sort" data-flits-sort-type="desc" data-flits-sort="flits-product-price" data-flits-lang="top_ordered_products_page.sort_by_price_high_to_low" data-flits-lang-default="Sort by price (High to Low)">Sort by price (High to Low)</option>
+							<option value="2" data-flits-type="sort" data-flits-sort-type="asc" data-flits-sort="flits-product-quantity-count" data-flits-lang="top_ordered_products_page.number_of_order_low_to_high" data-flits-lang-default="Number of order (Low to High)">Number of order (Low to High)</option>
+							<option value="3" data-flits-type="sort" data-flits-sort-type="desc" data-flits-sort="flits-product-quantity-count" data-flits-lang="top_ordered_products_page.number_of_order_high_to_low" data-flits-lang-default="Number of order (High to Low)">Number of order (High to Low)</option>
+						</select>
+						<div class="flits-select-arrow">
+							<svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision">
+								<path d="M6 9l6 6 6-6"></path>
+							</svg> 
+						</div>
+					</div>
+				</div>
+				<div class="flits-filter-select flits-ml-10" data-flits-filter="filter">
+					<span class="flits-filter-label" data-flits-lang="top_ordered_products_page.filter" data-flits-lang-default="Filter"> Filter </span>
+					<svg xmlns="http://www.w3.org/2000/svg" class="flits-filter-icon" viewBox="0 0 16.15 15"><path d="M14.42,5.77H1.73a.58.58,0,0,1-.58-.58.57.57,0,0,1,.58-.57H14.42a.57.57,0,0,1,.58.57A.58.58,0,0,1,14.42,5.77Zm-1.73,4a.58.58,0,0,0-.57-.58H4a.58.58,0,0,0-.58.58.57.57,0,0,0,.58.57h8.08A.57.57,0,0,0,12.69,9.81Zm-2.31,4.61a.56.56,0,0,0-.57-.57H6.35a.57.57,0,0,0-.58.57.58.58,0,0,0,.58.58H9.81A.57.57,0,0,0,10.38,14.42ZM16.15.58A.57.57,0,0,0,15.58,0H.58A.58.58,0,0,0,0,.58a.57.57,0,0,0,.58.57h15A.56.56,0,0,0,16.15.58Z" style="fill:#112884;opacity:0.3"/></svg>
+					<div class="flits-select-row">
+						<select class="flits-input"  {{ attr }}>
+							<option value="1" data-flits-type="none" data-flits-sort-type="asc" data-flits-sort="flits-product-quantity-count" data-flits-lang="top_ordered_products_page.none" data-flits-lang-default="None">None</option>
+							<option value="4" data-flits-type="days" data-flits-sort="flits-product-days-filter" data-flits-days='30' data-flits-lang="top_ordered_products_page.last_30_days" data-flits-lang-default="Last 30 days">Last 30 days</option>
+							<option value="5" data-flits-type="days" data-flits-sort="flits-product-days-filter" data-flits-days='60' data-flits-lang="top_ordered_products_page.last_60_days" data-flits-lang-default="Last 60 days">Last 60 days</option>
+                            <option value="6" data-flits-type="days" data-flits-sort="flits-product-days-filter" data-flits-days='365' data-flits-lang-default="Last 1 Year">Last 1 Year</option>
+						</select>
+						<div class="flits-select-arrow">
+							<svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision">
+								<path d="M6 9l6 6 6-6"></path>
+							</svg> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="flits-top-order-list-container flits-hide">
+			<div class="flits-top-order-list list">
+			</div>
+			{% render 'flits_capture_code' with 'component',template:'comp_noResultSection', 
+				class:'flits-no-result flits-hide' ,
+				img: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275.53 114.85"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M255.13,56.81c3.42,25.41-79.52,42-150.9,30.42S.09,30.54,34.16,6.47,251.71,31.45,255.13,56.81Z" style="fill:#f2f2f2;opacity:0.26;isolation:isolate"/><path d="M275.53,105.11c0,5.38-61.67,9.74-137.76,9.74S0,110.55,0,105.11c0-2,8-3.78,21.9-5.29-3.73-2.15-4.09-7.22-4.09-13.13h5.6c-1-1.11-2.11-2.19-3.09-3.24-1.39-1.51-2.87-2.94-4.26-4.47a15.2,15.2,0,0,0-4-3.75,25.74,25.74,0,0,1,11.41,9.45c-.26-.59-.52-1.17-.77-1.75-1.07-2.54-2.18-5.06-3.36-7.54a35.48,35.48,0,0,0-1.82-3.52c-.31-.44-1.22-1.24-1.54-1.75a.65.65,0,0,1-.28-.29c.43-.82,5.88,4.51,6.31,5a29.68,29.68,0,0,1,4.23,7l.18.44a16,16,0,0,1,.12-1.69,28.13,28.13,0,0,1,1.88-6.54c.56-1.46,1.16-4.39,3-5.31.16-.08.24.16.27.37-.06-.16-.16-.27-.36-.12-1.13,1.12-1.12,3.63-1.43,5-.41,2-.86,3.91-1.15,5.88a21.76,21.76,0,0,0-.23,3.42c.25-.55.53-1.1.83-1.63l0-.07c2.46-4.21,6.68-7.76,10.57-11.27a15.11,15.11,0,0,0-1.54,2.27l-1.92,3.07a67.2,67.2,0,0,0-3.79,6.45,44,44,0,0,0-1.93,4.47h5.09c0,5.09-.26,9.56-2.73,12.07,25.26-2.08,62.78-3.38,104.67-3.38C213.86,95.38,275.53,99.74,275.53,105.11Z" style="fill:#f2f2f2"/><path d="M192,69.93a1.54,1.54,0,1,1-1.54,1.54A1.53,1.53,0,0,1,192,69.93ZM103.15,87a1.54,1.54,0,1,1-1.54,1.54A1.54,1.54,0,0,1,103.15,87ZM169,14.47A1.54,1.54,0,1,1,167.43,16,1.54,1.54,0,0,1,169,14.47Zm-12,34.59a1.54,1.54,0,1,1-1.54,1.54A1.53,1.53,0,0,1,156.93,49.06ZM67.75,42.84a1.54,1.54,0,1,1-1.53,1.54A1.54,1.54,0,0,1,67.75,42.84Z" style="fill:#1e81ce"/><path d="M206.51,33.31a4.24,4.24,0,1,1-4.23,4.23A4.23,4.23,0,0,1,206.51,33.31Z" style="fill:#9bc9ff"/><path d="M206.51,42.84a5.3,5.3,0,1,1,.07,0Zm0-8.47a3.18,3.18,0,1,0,3.17,3.19v0h0A3.17,3.17,0,0,0,206.51,34.37Z" style="fill:#38a5ff"/><path d="M71,9.66a5.84,5.84,0,1,1-5.84,5.84h0A5.83,5.83,0,0,1,71,9.66Z" style="fill:#9bc9ff"/><path d="M71,22.38a6.9,6.9,0,1,1,6.87-6.91h0A6.9,6.9,0,0,1,71,22.38Zm0-11.66a4.78,4.78,0,1,0,4.76,4.79h0A4.8,4.8,0,0,0,71,10.72Z" style="fill:#64b9ff"/><path d="M147.19,70.53l-2-2-1.74,1.74L139,65.78a32.22,32.22,0,1,0-2.49,2.43L141,72.75l-1.74,1.74,2,2,26.38,26.38,5.94-5.93Zm-31.88-.22a26.22,26.22,0,1,1,26.21-26.22A26.22,26.22,0,0,1,115.31,70.31Zm-8.79-31.64a2.74,2.74,0,1,1-2.74-2.74A2.74,2.74,0,0,1,106.52,38.67Zm19.57-2.74a2.74,2.74,0,1,0,2.74,2.74A2.74,2.74,0,0,0,126.09,35.93ZM123.35,55.8a13,13,0,0,0-15.47,0l.79.95c.26-.21,6.41-5.14,14,0Z" style="fill:#90c7ff"/></g></g></svg>'
+			%}
+			{% render 'flits_capture_code' with 'component',template:'comp_flitsPagination', class:'flits-pull-right flits-mt-15', attr:'data-flits-pagination="flits-top-order"' %}
+		</div>
+		{% render 'flits_capture_code' with 'component',template:'comp_emptySection',
+			text_1:topOrder_noProductsViewText,
+			class:'flits-top-order-empty flits-without-boxshadow flits-hide',
+			img: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.47 74.81"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M166.18,37c2.22,16.55-51.79,27.35-98.29,19.81S.07,19.89,22.25,4.21,164,20.48,166.18,37Z" style="fill:#f2f2f2;opacity:0.26"/><path d="M179.47,68.46c0,3.51-40.18,6.35-89.73,6.35S0,72,0,68.46C0,67.2,5.24,66,14.28,65c-2.45-1.39-2.68-4.7-2.68-8.56h3.69c-.69-.74-1.4-1.46-2-2.15-.91-1-1.86-1.94-2.77-2.92A10.09,10.09,0,0,0,7.87,49a16.72,16.72,0,0,1,7.42,6.19c-.18-.38-.34-.76-.51-1.15-.69-1.64-1.41-3.28-2.19-4.9a21.59,21.59,0,0,0-1.19-2.29c-.19-.29-.78-.81-1-1.14a.35.35,0,0,1-.17-.19c.28-.53,3.83,2.94,4.11,3.29a20,20,0,0,1,2.75,4.56l.11.3a10,10,0,0,1,.09-1.1,18.16,18.16,0,0,1,1.21-4.26c.38-1,.76-2.86,1.94-3.47.15-.07.19.22.19.36,0-.15-.08-.32-.24-.19-.75.73-.74,2.37-.93,3.29-.28,1.27-.57,2.55-.76,3.83a13.81,13.81,0,0,0-.15,2.22,10.4,10.4,0,0,1,.54-1.05c1.6-2.75,4.36-5,6.88-7.35A10,10,0,0,0,25,47.4l-1.28,1.9a41.45,41.45,0,0,0-2.48,4.21,26.41,26.41,0,0,0-1.26,3h3.33c0,3.33-.17,6.24-1.78,7.88C38,63,62.46,62.12,89.74,62.12,139.29,62.12,179.47,65,179.47,68.46Z" style="fill:#f2f2f2"/><path d="M94.32,59.24l.18.07,0,0h0l.11-.3.12-.3h0l0,0-.16-.07Zm-.68-.33.22.11.28-.57-.21-.11Zm.93-.26a.31.31,0,0,0-.41.17.32.32,0,0,0,.16.42Zm-.71.37a.32.32,0,0,0,.43-.14.32.32,0,0,0-.15-.43Zm.07-.68a.32.32,0,0,0-.29.57Zm.63,1a.32.32,0,0,0,.23-.6Z" style="fill:#399ae1"/><path d="M104.57,31v13.9H97.09A3.11,3.11,0,0,0,94,47.85l-.51,8.65A13.05,13.05,0,0,0,98.6,68.1H67.51V31H82.07V44.28H90V31ZM93.49,56.5a13.06,13.06,0,0,0,5.34,11.77l7.67,5.56,7.67-5.56A13,13,0,0,0,119.5,56.5L119,47.85a3.09,3.09,0,0,0-3.09-2.91H97.1A3.11,3.11,0,0,0,94,47.85l-.51,8.65Zm19.29-3.78a1.29,1.29,0,0,0-.92.38l-5.18,5.18-.92-.91a1.29,1.29,0,1,0-1.82,1.83l2.74,2.74,7-7a1.3,1.3,0,0,0,0-1.83A1.29,1.29,0,0,0,112.78,52.72Zm-36-30.28L67.51,31H82.07l7.28-8.6Zm20.52,0L90,31h14.56l9.92-8.6Zm7.28,8.6v13.9h9.92V22.44ZM82.07,44.28H90V31H82.07Z" style="fill:#f6feff"/><path d="M112,56.65a6.2,6.2,0,0,1,.37,2.4,6.05,6.05,0,1,1-1.82-4.61l-3.84,3.84-.92-.91a1.27,1.27,0,0,0-1.82,0,1.25,1.25,0,0,0-.38.91,1.29,1.29,0,0,0,.38.92l.91.91,1.83,1.83,1.83-1.83Z" style="fill:#9bc9ff"/><path d="M97.29,22.44,90,31H82.07l7.28-8.6Z" style="fill:#9bc9ff"/><path d="M119.46,35.67a1,1,0,0,1,0,2,1,1,0,1,1,0-2Zm-5-18.86a1,1,0,1,0,1-1A1,1,0,0,0,114.49,16.81Zm-12.9,1.32a1,1,0,1,0,1-1A1,1,0,0,0,101.59,18.13ZM89.35,73.06a1,1,0,1,0,1-1A1,1,0,0,0,89.35,73.06ZM74.79,15.82a1,1,0,1,0,1-1A1,1,0,0,0,74.79,15.82ZM61.55,46.59a1,1,0,1,0,1-1A1,1,0,0,0,61.55,46.59Z" style="fill:#90c7ff"/><path d="M106.32,65.45a6.68,6.68,0,0,1-6.7-6.92,6.72,6.72,0,0,1,6.64-6.47A6.69,6.69,0,0,1,111,54a.67.67,0,0,1,0,.94.66.66,0,0,1-.94,0,5.36,5.36,0,0,0-3.75-1.53h0a5.38,5.38,0,0,0-3.71,9.23,5.34,5.34,0,0,0,4.09,1.51,5.42,5.42,0,0,0,5-5.1,5.58,5.58,0,0,0-.33-2.14.65.65,0,0,1,.39-.85.67.67,0,0,1,.85.39,6.89,6.89,0,0,1,.41,2.67,6.68,6.68,0,0,1-6.27,6.35Z" style="fill:#90c7ff"/><path d="M67.51,15.16a4.63,4.63,0,1,1-4.64,4.63A4.63,4.63,0,0,1,67.51,15.16Z" style="fill:#9bc9ff"/><path d="M67.51,25.08a5.3,5.3,0,1,1,5.29-5.29A5.3,5.3,0,0,1,67.51,25.08Zm0-9.26a4,4,0,1,0,4,4A4,4,0,0,0,67.51,15.82Z" style="fill:#64b9ff"/><path d="M106.68,62.6a.68.68,0,0,1-.47-.19l-2.74-2.75a2,2,0,0,1,2.76-2.76l.45.45,4.71-4.72a2,2,0,0,1,2.77,0,2,2,0,0,1,0,2.77l-7,7a.7.7,0,0,1-.47.19Zm-1.83-5a.6.6,0,0,0-.44.19.61.61,0,0,0-.19.44.67.67,0,0,0,.18.45L106.68,61l6.54-6.54a.62.62,0,0,0,0-.89.62.62,0,0,0-.89,0l-5.18,5.18a.66.66,0,0,1-.94,0l-.91-.91A.64.64,0,0,0,104.85,57.65Zm15.31-1.2-.51-8.64a3.76,3.76,0,0,0-3.75-3.54h-.74V22.43s0,0,0,0a.48.48,0,0,0,0-.2A.54.54,0,0,0,115,22a.44.44,0,0,0-.14-.13.64.64,0,0,0-.38-.12H76.77a.67.67,0,0,0-.45.18l-9.27,8.6s0,0,0,0a.43.43,0,0,0-.09.1.87.87,0,0,0-.1.24.57.57,0,0,0,0,.13V68.1a.67.67,0,0,0,.67.66H98.39l0,0,7.67,5.57a.69.69,0,0,0,.39.12.71.71,0,0,0,.39-.12l7.67-5.57A13.75,13.75,0,0,0,120.16,56.45ZM112.72,23.1l-8.4,7.28H91.42l6.17-7.28Zm1.11.78V44.27h-8.6V31.34Zm-18-.78L89.7,30.38H83.49l6.16-7.28Zm-6.51,8.6V43.61H82.73V31.7ZM77,23.1H87.92l-6.17,7.28H69.19ZM68.17,67.44V31.7H81.4V44.27a.67.67,0,0,0,.67.67H90a.67.67,0,0,0,.66-.67V31.7H103.9V44.27H97.1a3.77,3.77,0,0,0-3.76,3.54l-.51,8.64a13.61,13.61,0,0,0,4,11Zm45.61.29L106.5,73l-7.29-5.28L99,67.57l0,0a12.33,12.33,0,0,1-4.82-11,0,0,0,0,1,0,0l.5-8.65a2.44,2.44,0,0,1,2.43-2.29H115.9a2.43,2.43,0,0,1,2.43,2.29l.51,8.65v0A12.42,12.42,0,0,1,113.78,67.73Z" style="fill:#64b9ff"/></g></g></svg>' 
+		%}
+		{% render 'flits_capture_code' with 'component',template:'comp_loadingSection', class:'flits-top-order-loader flits-without-boxshadow' %}
+	</div>
+
+{%- when 'module_mobile_topOrder' -%}
+	<div class="flits-mobile-account-box flits-top-order-div" id="{{ id }}"></div>
+{%- when 'module_mobile_topOrder_content' -%}
+	<div id="flits-top-order-mobile-list">
+		<div class="flits-navigation-header flits-with-boxshadow">
+			{% render 'flits_capture_code' with 'component',template:'comp_mobile_logutButton' %}
+			<div class="flits-user-avatar" data-flits-name="{{ customer.first_name | slice: 0 | strip }}{{ customer.last_name | slice: 0 | strip }}">
+			</div>
+			<div class="flits-user-box flits-skeleton-user-box">
+				<p class="flits-h4 flits-greeting-title flits-skeleton-box flits-skeleton-greeting-mobile"></p>
+				<span class="flits-user-name flits-skeleton-box flits-skeleton-user-name-mobile" data-tippy-content="{{ customer.first_name | strip }}">{{ customer.first_name | strip }}</span>
+			</div>
+		</div>
+		<div class="flits-mobile-box-card flits-header-title flits-hide">
+			<div class="flits-search-fillter">
+				{% render 'flits_capture_code' with 'component',template:'comp_flitsInput',class:'flits-list-search', type:'text', placeholder:topOrder_searchPlaceholderText %} 
+				<span class="flits-search-icon-group flits-search-icon-group-left">
+					<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.67 16.63"><path id="Layer_2" data-name="Layer 2" d="M6.31,0h.47l.46,0,.44.08.43.11L8.53.4l.41.17.39.2L9.71,1l.35.24L8.71,2.58l-.3-.18-.32-.15-.33-.13L7.41,2l-.36-.07-.36-.05-.38,0-.4,0L5.51,2,5.14,2l-.37.13-.36.14-.34.18-.31.21-.3.23-.28.25-.26.28-.23.3-.21.31-.17.34-.15.35L2,5.12,2,5.5l-.06.39V6.7L2,7.09,2,7.47l.12.37.15.35.17.34.21.32.23.29.26.28.27.26.31.23.31.2.34.18.35.15.37.12.38.09.4.05h.8l.4-.05.38-.09.37-.12.35-.15.34-.18.32-.2.3-.23.28-.26.25-.27.23-.3.21-.32.17-.34.16-.35.11-.37.09-.38.06-.39,0-.41V6.08l0-.2L12.3,4.3l.11.38.09.39.07.41,0,.4,0,.41,0,.47-.05.45-.08.45-.11.44-.14.41-.17.41-.2.39-.22.38-.25.35.33.33.24-.24,4.35,4.35.14.15.1.17.07.18,0,.19v.39l0,.19-.07.18-.1.17-.13.16-.15.13L16,16.5l-.18.07-.19,0-.2,0-.19,0-.19,0-.18-.07-.17-.11-.15-.13-4.36-4.35.24-.23-.33-.33-.36.25-.38.23L8.95,12l-.41.17-.42.14-.44.11-.44.08-.46,0-.47,0-.49,0-.48,0-.48-.09L4.4,12.3,4,12.14l-.42-.19-.41-.22-.4-.24-.37-.28L2,10.91l-.33-.33-.3-.34-.28-.37-.25-.4-.22-.4L.45,8.64.29,8.2.17,7.74l-.1-.47L0,6.79v-1l.06-.49.1-.47L.29,4.4.45,4l.19-.42.22-.41.25-.39.28-.37L1.69,2,2,1.69l.34-.31.37-.28.4-.25L3.54.64,4,.45,4.4.29,4.86.16,5.34.08,5.82,0l.49,0Z" style="fill:#797ea7"/></svg>
+				</span>
+				<span class="flits-search-icon-group flits-search-icon-group-right flits-clear-icon flits-hide">
+					<svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+				</span>
+			</div>
+		</div>
+		<div class="flits-dropdown-filter flits-hide">
+			<div class="flits-filter-select flits-mr-10" data-flits-filter="sort by">
+				<span class="flits-filter-label" data-flits-lang="top_ordered_products_page.sort_by" data-flits-lang-default="Sort By">Sort By</span>
+				<svg id="Layer_1" class="flits-filter-icon" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.02 15"><path id="Layer_2" data-name="Layer 2" d="M7.09,10.55,4.62,13V.58a.58.58,0,0,0-1.16,0V13L1,10.55a.58.58,0,0,0-.81,0,.57.57,0,0,0,0,.81h0l3.46,3.46A.58.58,0,0,0,4,15a.6.6,0,0,0,.41-.17l3.46-3.46A.58.58,0,0,0,7,10.55Zm7.74-6.92L11.37.17a.57.57,0,0,0-.81,0h0L7.09,3.63a.58.58,0,0,0,.82.82L10.38,2V14.42a.58.58,0,0,0,1.16,0V2L14,4.45a.58.58,0,0,0,.9-.73l-.09-.09Z" transform="translate(-0.02 0)" style="fill:#797ea7"/></svg>
+				<div class="flits-select-row">
+					<select class="flits-input"  {{ attr }}>
+						<option value="1" data-flits-type="none" data-flits-sort-type="asc" data-flits-sort="flits-product-quantity-count" data-flits-lang="top_ordered_products_page.none" data-flits-lang-default="None">None</option>
+						<option value="2" data-flits-type="sort" data-flits-sort-type="asc" data-flits-sort="flits-product-price" data-flits-lang="top_ordered_products_page.sort_by_price_low_to_high" data-flits-lang-default="Sort by price (Low to High)">Sort by price (Low to High)</option>
+						<option value="3" data-flits-type="sort" data-flits-sort-type="desc" data-flits-sort="flits-product-price" data-flits-lang="top_ordered_products_page.sort_by_price_high_to_low" data-flits-lang-default="Sort by price (High to Low)">Sort by price (High to Low)</option>
+						<option value="2" data-flits-type="sort" data-flits-sort-type="asc" data-flits-sort="flits-product-quantity-count" data-flits-lang="top_ordered_products_page.number_of_order_low_to_high" data-flits-lang-default="Number of order (Low to High)">Number of order (Low to High)</option>
+						<option value="3" data-flits-type="sort" data-flits-sort-type="desc" data-flits-sort="flits-product-quantity-count" data-flits-lang="top_ordered_products_page.number_of_order_high_to_low" data-flits-lang-default="Number of order (High to Low)">Number of order (High to Low)</option>
+					</select>
+					<div class="flits-select-arrow">
+						<svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision">
+							<path d="M6 9l6 6 6-6"></path>
+						</svg> 
+					</div>
+				</div>
+			</div>
+			<div class="flits-filter-select flits-ml-10" data-flits-filter="filter">
+				<span class="flits-filter-label" data-flits-lang="top_ordered_products_page.filter" data-flits-lang-default="Filter"> Filter </span>
+				<svg xmlns="http://www.w3.org/2000/svg" class="flits-filter-icon" viewBox="0 0 16.15 15"><path d="M14.42,5.77H1.73a.58.58,0,0,1-.58-.58.57.57,0,0,1,.58-.57H14.42a.57.57,0,0,1,.58.57A.58.58,0,0,1,14.42,5.77Zm-1.73,4a.58.58,0,0,0-.57-.58H4a.58.58,0,0,0-.58.58.57.57,0,0,0,.58.57h8.08A.57.57,0,0,0,12.69,9.81Zm-2.31,4.61a.56.56,0,0,0-.57-.57H6.35a.57.57,0,0,0-.58.57.58.58,0,0,0,.58.58H9.81A.57.57,0,0,0,10.38,14.42ZM16.15.58A.57.57,0,0,0,15.58,0H.58A.58.58,0,0,0,0,.58a.57.57,0,0,0,.58.57h15A.56.56,0,0,0,16.15.58Z" style="fill:#112884;opacity:0.3"/></svg>
+				<div class="flits-select-row">
+					<select class="flits-input"  {{ attr }}>
+						<option value="1" data-flits-type="none" data-flits-sort-type="asc" data-flits-sort="flits-product-quantity-count" data-flits-lang="top_ordered_products_page.none" data-flits-lang-default="None">None</option>
+						<option value="4" data-flits-type="days" data-flits-sort="flits-product-days-filter" data-flits-days='30' data-flits-lang="top_ordered_products_page.last_30_days" data-flits-lang-default="Last 30 days">Last 30 days</option>
+						<option value="5" data-flits-type="days" data-flits-sort="flits-product-days-filter" data-flits-days='60' data-flits-lang="top_ordered_products_page.last_60_days" data-flits-lang-default="Last 60 days">Last 60 days</option>
+                        <option value="6" data-flits-type="days" data-flits-sort="flits-product-days-filter" data-flits-days='365' data-flits-lang-default="Last 1 Year">Last 1 Year</option>
+					</select>
+					<div class="flits-select-arrow">
+						<svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none" shape-rendering="geometricPrecision">
+							<path d="M6 9l6 6 6-6"></path>
+						</svg> 
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="flits-mobile-container-box">
+			<div class="flits-top-order-list-container flits-hide" >
+				<div class="flits-top-order-mobile-list list">
+				</div>
+				{% render 'flits_capture_code' with 'component',template:'comp_noResultSection', 
+					class:'flits-no-result-mobile flits-hide',
+					img: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275.53 114.85"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M255.13,56.81c3.42,25.41-79.52,42-150.9,30.42S.09,30.54,34.16,6.47,251.71,31.45,255.13,56.81Z" style="fill:#f2f2f2;opacity:0.26;isolation:isolate"/><path d="M275.53,105.11c0,5.38-61.67,9.74-137.76,9.74S0,110.55,0,105.11c0-2,8-3.78,21.9-5.29-3.73-2.15-4.09-7.22-4.09-13.13h5.6c-1-1.11-2.11-2.19-3.09-3.24-1.39-1.51-2.87-2.94-4.26-4.47a15.2,15.2,0,0,0-4-3.75,25.74,25.74,0,0,1,11.41,9.45c-.26-.59-.52-1.17-.77-1.75-1.07-2.54-2.18-5.06-3.36-7.54a35.48,35.48,0,0,0-1.82-3.52c-.31-.44-1.22-1.24-1.54-1.75a.65.65,0,0,1-.28-.29c.43-.82,5.88,4.51,6.31,5a29.68,29.68,0,0,1,4.23,7l.18.44a16,16,0,0,1,.12-1.69,28.13,28.13,0,0,1,1.88-6.54c.56-1.46,1.16-4.39,3-5.31.16-.08.24.16.27.37-.06-.16-.16-.27-.36-.12-1.13,1.12-1.12,3.63-1.43,5-.41,2-.86,3.91-1.15,5.88a21.76,21.76,0,0,0-.23,3.42c.25-.55.53-1.1.83-1.63l0-.07c2.46-4.21,6.68-7.76,10.57-11.27a15.11,15.11,0,0,0-1.54,2.27l-1.92,3.07a67.2,67.2,0,0,0-3.79,6.45,44,44,0,0,0-1.93,4.47h5.09c0,5.09-.26,9.56-2.73,12.07,25.26-2.08,62.78-3.38,104.67-3.38C213.86,95.38,275.53,99.74,275.53,105.11Z" style="fill:#f2f2f2"/><path d="M192,69.93a1.54,1.54,0,1,1-1.54,1.54A1.53,1.53,0,0,1,192,69.93ZM103.15,87a1.54,1.54,0,1,1-1.54,1.54A1.54,1.54,0,0,1,103.15,87ZM169,14.47A1.54,1.54,0,1,1,167.43,16,1.54,1.54,0,0,1,169,14.47Zm-12,34.59a1.54,1.54,0,1,1-1.54,1.54A1.53,1.53,0,0,1,156.93,49.06ZM67.75,42.84a1.54,1.54,0,1,1-1.53,1.54A1.54,1.54,0,0,1,67.75,42.84Z" style="fill:#1e81ce"/><path d="M206.51,33.31a4.24,4.24,0,1,1-4.23,4.23A4.23,4.23,0,0,1,206.51,33.31Z" style="fill:#9bc9ff"/><path d="M206.51,42.84a5.3,5.3,0,1,1,.07,0Zm0-8.47a3.18,3.18,0,1,0,3.17,3.19v0h0A3.17,3.17,0,0,0,206.51,34.37Z" style="fill:#38a5ff"/><path d="M71,9.66a5.84,5.84,0,1,1-5.84,5.84h0A5.83,5.83,0,0,1,71,9.66Z" style="fill:#9bc9ff"/><path d="M71,22.38a6.9,6.9,0,1,1,6.87-6.91h0A6.9,6.9,0,0,1,71,22.38Zm0-11.66a4.78,4.78,0,1,0,4.76,4.79h0A4.8,4.8,0,0,0,71,10.72Z" style="fill:#64b9ff"/><path d="M147.19,70.53l-2-2-1.74,1.74L139,65.78a32.22,32.22,0,1,0-2.49,2.43L141,72.75l-1.74,1.74,2,2,26.38,26.38,5.94-5.93Zm-31.88-.22a26.22,26.22,0,1,1,26.21-26.22A26.22,26.22,0,0,1,115.31,70.31Zm-8.79-31.64a2.74,2.74,0,1,1-2.74-2.74A2.74,2.74,0,0,1,106.52,38.67Zm19.57-2.74a2.74,2.74,0,1,0,2.74,2.74A2.74,2.74,0,0,0,126.09,35.93ZM123.35,55.8a13,13,0,0,0-15.47,0l.79.95c.26-.21,6.41-5.14,14,0Z" style="fill:#90c7ff"/></g></g></svg>' 
+				%}
+				{% render 'flits_capture_code' with 'component',template:'comp_flitsPagination', class:'flits-pull-right flits-mt-15', attr:'data-flits-pagination="flits-top-order-mobile"' %}
+			</div>
+			{% render 'flits_capture_code' with 'component',template:'comp_emptySection',
+				text_1:topOrder_noProductsViewText,
+				class:'flits-top-order-empty flits-hide',
+				img: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 179.47 74.81"><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M166.18,37c2.22,16.55-51.79,27.35-98.29,19.81S.07,19.89,22.25,4.21,164,20.48,166.18,37Z" style="fill:#f2f2f2;opacity:0.26"/><path d="M179.47,68.46c0,3.51-40.18,6.35-89.73,6.35S0,72,0,68.46C0,67.2,5.24,66,14.28,65c-2.45-1.39-2.68-4.7-2.68-8.56h3.69c-.69-.74-1.4-1.46-2-2.15-.91-1-1.86-1.94-2.77-2.92A10.09,10.09,0,0,0,7.87,49a16.72,16.72,0,0,1,7.42,6.19c-.18-.38-.34-.76-.51-1.15-.69-1.64-1.41-3.28-2.19-4.9a21.59,21.59,0,0,0-1.19-2.29c-.19-.29-.78-.81-1-1.14a.35.35,0,0,1-.17-.19c.28-.53,3.83,2.94,4.11,3.29a20,20,0,0,1,2.75,4.56l.11.3a10,10,0,0,1,.09-1.1,18.16,18.16,0,0,1,1.21-4.26c.38-1,.76-2.86,1.94-3.47.15-.07.19.22.19.36,0-.15-.08-.32-.24-.19-.75.73-.74,2.37-.93,3.29-.28,1.27-.57,2.55-.76,3.83a13.81,13.81,0,0,0-.15,2.22,10.4,10.4,0,0,1,.54-1.05c1.6-2.75,4.36-5,6.88-7.35A10,10,0,0,0,25,47.4l-1.28,1.9a41.45,41.45,0,0,0-2.48,4.21,26.41,26.41,0,0,0-1.26,3h3.33c0,3.33-.17,6.24-1.78,7.88C38,63,62.46,62.12,89.74,62.12,139.29,62.12,179.47,65,179.47,68.46Z" style="fill:#f2f2f2"/><path d="M94.32,59.24l.18.07,0,0h0l.11-.3.12-.3h0l0,0-.16-.07Zm-.68-.33.22.11.28-.57-.21-.11Zm.93-.26a.31.31,0,0,0-.41.17.32.32,0,0,0,.16.42Zm-.71.37a.32.32,0,0,0,.43-.14.32.32,0,0,0-.15-.43Zm.07-.68a.32.32,0,0,0-.29.57Zm.63,1a.32.32,0,0,0,.23-.6Z" style="fill:#399ae1"/><path d="M104.57,31v13.9H97.09A3.11,3.11,0,0,0,94,47.85l-.51,8.65A13.05,13.05,0,0,0,98.6,68.1H67.51V31H82.07V44.28H90V31ZM93.49,56.5a13.06,13.06,0,0,0,5.34,11.77l7.67,5.56,7.67-5.56A13,13,0,0,0,119.5,56.5L119,47.85a3.09,3.09,0,0,0-3.09-2.91H97.1A3.11,3.11,0,0,0,94,47.85l-.51,8.65Zm19.29-3.78a1.29,1.29,0,0,0-.92.38l-5.18,5.18-.92-.91a1.29,1.29,0,1,0-1.82,1.83l2.74,2.74,7-7a1.3,1.3,0,0,0,0-1.83A1.29,1.29,0,0,0,112.78,52.72Zm-36-30.28L67.51,31H82.07l7.28-8.6Zm20.52,0L90,31h14.56l9.92-8.6Zm7.28,8.6v13.9h9.92V22.44ZM82.07,44.28H90V31H82.07Z" style="fill:#f6feff"/><path d="M112,56.65a6.2,6.2,0,0,1,.37,2.4,6.05,6.05,0,1,1-1.82-4.61l-3.84,3.84-.92-.91a1.27,1.27,0,0,0-1.82,0,1.25,1.25,0,0,0-.38.91,1.29,1.29,0,0,0,.38.92l.91.91,1.83,1.83,1.83-1.83Z" style="fill:#9bc9ff"/><path d="M97.29,22.44,90,31H82.07l7.28-8.6Z" style="fill:#9bc9ff"/><path d="M119.46,35.67a1,1,0,0,1,0,2,1,1,0,1,1,0-2Zm-5-18.86a1,1,0,1,0,1-1A1,1,0,0,0,114.49,16.81Zm-12.9,1.32a1,1,0,1,0,1-1A1,1,0,0,0,101.59,18.13ZM89.35,73.06a1,1,0,1,0,1-1A1,1,0,0,0,89.35,73.06ZM74.79,15.82a1,1,0,1,0,1-1A1,1,0,0,0,74.79,15.82ZM61.55,46.59a1,1,0,1,0,1-1A1,1,0,0,0,61.55,46.59Z" style="fill:#90c7ff"/><path d="M106.32,65.45a6.68,6.68,0,0,1-6.7-6.92,6.72,6.72,0,0,1,6.64-6.47A6.69,6.69,0,0,1,111,54a.67.67,0,0,1,0,.94.66.66,0,0,1-.94,0,5.36,5.36,0,0,0-3.75-1.53h0a5.38,5.38,0,0,0-3.71,9.23,5.34,5.34,0,0,0,4.09,1.51,5.42,5.42,0,0,0,5-5.1,5.58,5.58,0,0,0-.33-2.14.65.65,0,0,1,.39-.85.67.67,0,0,1,.85.39,6.89,6.89,0,0,1,.41,2.67,6.68,6.68,0,0,1-6.27,6.35Z" style="fill:#90c7ff"/><path d="M67.51,15.16a4.63,4.63,0,1,1-4.64,4.63A4.63,4.63,0,0,1,67.51,15.16Z" style="fill:#9bc9ff"/><path d="M67.51,25.08a5.3,5.3,0,1,1,5.29-5.29A5.3,5.3,0,0,1,67.51,25.08Zm0-9.26a4,4,0,1,0,4,4A4,4,0,0,0,67.51,15.82Z" style="fill:#64b9ff"/><path d="M106.68,62.6a.68.68,0,0,1-.47-.19l-2.74-2.75a2,2,0,0,1,2.76-2.76l.45.45,4.71-4.72a2,2,0,0,1,2.77,0,2,2,0,0,1,0,2.77l-7,7a.7.7,0,0,1-.47.19Zm-1.83-5a.6.6,0,0,0-.44.19.61.61,0,0,0-.19.44.67.67,0,0,0,.18.45L106.68,61l6.54-6.54a.62.62,0,0,0,0-.89.62.62,0,0,0-.89,0l-5.18,5.18a.66.66,0,0,1-.94,0l-.91-.91A.64.64,0,0,0,104.85,57.65Zm15.31-1.2-.51-8.64a3.76,3.76,0,0,0-3.75-3.54h-.74V22.43s0,0,0,0a.48.48,0,0,0,0-.2A.54.54,0,0,0,115,22a.44.44,0,0,0-.14-.13.64.64,0,0,0-.38-.12H76.77a.67.67,0,0,0-.45.18l-9.27,8.6s0,0,0,0a.43.43,0,0,0-.09.1.87.87,0,0,0-.1.24.57.57,0,0,0,0,.13V68.1a.67.67,0,0,0,.67.66H98.39l0,0,7.67,5.57a.69.69,0,0,0,.39.12.71.71,0,0,0,.39-.12l7.67-5.57A13.75,13.75,0,0,0,120.16,56.45ZM112.72,23.1l-8.4,7.28H91.42l6.17-7.28Zm1.11.78V44.27h-8.6V31.34Zm-18-.78L89.7,30.38H83.49l6.16-7.28Zm-6.51,8.6V43.61H82.73V31.7ZM77,23.1H87.92l-6.17,7.28H69.19ZM68.17,67.44V31.7H81.4V44.27a.67.67,0,0,0,.67.67H90a.67.67,0,0,0,.66-.67V31.7H103.9V44.27H97.1a3.77,3.77,0,0,0-3.76,3.54l-.51,8.64a13.61,13.61,0,0,0,4,11Zm45.61.29L106.5,73l-7.29-5.28L99,67.57l0,0a12.33,12.33,0,0,1-4.82-11,0,0,0,0,1,0,0l.5-8.65a2.44,2.44,0,0,1,2.43-2.29H115.9a2.43,2.43,0,0,1,2.43,2.29l.51,8.65v0A12.42,12.42,0,0,1,113.78,67.73Z" style="fill:#64b9ff"/></g></g></svg>' 
+			%}
+			{% render 'flits_capture_code' with 'component',template:'comp_loadingSection', class:'flits-top-order-loader' %}
+		</div>
+	</div>
+{% endcase %}

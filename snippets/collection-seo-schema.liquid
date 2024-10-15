@@ -1,0 +1,104 @@
+{% comment %} BreadcrumbsList Schema {% endcomment %}
+{% if collection %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": {
+          "@id": "https://myborosil.com"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{{ collection.all_types | first}}",
+        "item": {
+          "@id": "{{ 'https://myborosil.com/collections/all' }}"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "{{ collection.title }}",
+        "item": {
+          "@id": "{{ collection.url | prepend: 'https://myborosil.com/' }}"
+        }
+      }
+    ]
+  }  
+  </script>
+  {% comment %} End BreadcrumsList Schema {% endcomment %}
+
+  {% comment %} FAQ Schema Start {% endcomment %}
+  <script type="application/ld+json">
+  {% assign faq_questionsanswers = collection.metafields.faq.QuestionAndAnswer %}
+  {% assign total_faq = faq_questionsanswers.size | minus: 1 %}
+    
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "title": "FAQs",
+      "description": "Explore frequently asked questions about Borosil.",
+      "mainEntity": [
+        {% if faq_questionsanswers.size > 0 %}
+          {% for i in (0..total_faq) %}
+            {%- if faq_questionsanswers[i] contains '__split__' -%}
+              {%- assign faq_Question = faq_questionsanswers[i] | split: '__split__' -%}
+        {
+          "@type": "Question",
+          {%- for faq in faq_Question -%}
+            {%- if forloop.index0 == 0 -%}
+          "name": "{{ faq | strip_html }}",
+            {% endif %}
+          {% endfor %}
+          "acceptedAnswer": {
+          {%- for faq2 in faq_Question -%}
+            {%- if forloop.last == true  -%}
+            "@type": "Answer",
+            "text": "{{ faq2 | strip_html}}"
+                
+            {% endif %}
+          {% endfor %}
+          }
+        }{% unless forloop.last %},{% endunless %}
+        {% endif %}
+        {% endfor %}
+      {% endif %}
+      ],
+    
+      "keywords": {{- collection.all_tags |  split: ',' |  join: ','  -}}
+    }
+    
+  </script>
+
+  {% comment %} End FAQ Schema {% endcomment %}
+  {% comment %} Itemlist Schema {% endcomment %}
+  <script type="application/ld+json">
+  
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "{{ collection.title }}",
+      "description": "{{ collection.description }}",
+      "numberOfItems": {{ collection.all_products_count }},
+      "itemListElement": [
+        {% for product in collections[collection.handle].products %}
+        {
+          "@type": "ListItem",
+          "position": {{ forloop.index }},
+          "url": "{{ product.handle | prepend: 'https://myborosil.com/products/' }}",
+          "name": "{{ product.title }}",
+          "image": "{{ product.featured_image |  prepend: 'https://myborosil.com/cdn/shop/' }}"
+        }{% unless forloop.last %},{% endunless %}    
+      {% endfor %} 
+      ]
+    }
+  
+  </script>
+{% endif %}
+{% comment %} End Itemlist Schema {% endcomment %}

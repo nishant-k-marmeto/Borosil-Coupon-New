@@ -1,0 +1,100 @@
+{% comment %} Article Schema {% endcomment %}
+{% if request.path contains '/blogs/' %}
+    <script type="application/ld+json">
+     {% for article in blog.articles %}
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ article.title }}",
+        "image": [
+            "{{ article.image |  prepend: 'https://myborosil.com/cdn/shop/'  }}",
+        ],
+        "datePublished": "{{ article.published_at | date: "%Y %b %d" }}",
+        "dateModified": "{{ article.updated_at | date: "%Y %b %d" }}",
+        "author": [
+            {
+            "@type": "Person",
+            "name": "{{ article.author }}",
+            "url": "{{ article.url |  prepend: 'https://myborosil.com/' }}"
+            }
+        ]
+    }
+     {% endfor %}
+    </script>
+{% endif %}
+
+{% comment %} Article Schema End {% endcomment %}
+
+{% comment %} BreadcrumbsList Schema {% endcomment %}
+{% if request.path contains '/blogs/borosil-blog/' %}
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{ article.title }}",
+        "image": [
+            "{{ article.image |  prepend: 'https://myborosil.com/cdn/shop/'  }}"
+        ],
+        "datePublished": "{{ article.published_at | date: "%Y %b %d" }}",
+        "dateModified": "{{ article.updated_at | date: "%Y %b %d" }}",
+        "author": [
+            {
+            "@type": "Person",
+            "name": "{{ article.author }}",
+            "url": "{{ article.url |  prepend: 'https://myborosil.com/' }}"
+            }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": {
+                "@id": "https://myborosil.com/"
+            }
+            },
+            {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blogs",
+            "item": {
+                "@id": "https://myborosil.com/blogs/borosil-blog/tagged/receipe"
+            }
+            },
+            {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ article.title }}",
+            "item": {
+                "@id": "{{ article.url |  prepend: 'https://myborosil.com' }}"
+            }
+            }
+        ]
+    }
+    </script>
+{% comment %} End BreadcrumbsList Schema {% endcomment %}
+
+{% comment %}  {% endcomment %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Make a Cup of Coffee",
+        "description": "{{ article.content | strip_html | truncate: 500  }}",
+        "step": [
+        {
+            "@type": "HowToStep",
+            "text": "{{ article.metafields.receipe.method | strip_html | truncate: 500 }}"
+        }
+        ]
+    }
+    </script>
+{% endif %}

@@ -1,0 +1,171 @@
+<section>
+    <div class="collection-content">
+        <div class="filter">
+            <div class="filter-heading">
+                <span class="title-filter">Filter</span>
+                <span class="title-reset-all">reset all</span>
+            </div>
+            <div class="filter-price--container">
+                <div class="filter-price--accordion">
+                    <div class="filter-price--heading">
+                        <span>Price</span>
+                        <!-- use after for down arrow -->
+                    </div>
+                    <div class="filter-price--price-brackets">
+                        <input type="checkbox" name="price-bracket1">
+                        <label for="price-bracket1">Rs 500 - Rs 1000</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-products-grid">
+            <div class="products-grid">
+                <div class="products-grid--header">
+                    <span class="grid-header">{{collection.title}}</span>
+                    <div class="sort-by--container">
+                        <label class="label--sort-by" for="sort-by">Sort by:
+                        </label>
+                        <select class="sort-by" id="sort-by">
+                            {% for option in collection.sort_options %}
+                                <option value="{{ option.value }}" {% if option.value == collection.sort_by %} selected {% endif %}>{{ option.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                <div class="products-grid--content"></div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<script>
+    $('.filter-price--heading span::after')
+</script>
+
+
+<style>
+
+    .collection-products-grid{
+        max-width: 1253px;
+        margin: auto;
+    }
+
+    .filter{
+        width: 253px;
+        height: 617px;
+        border: 1px solid #E1E3E4
+    }
+    filter span{
+        margin: 0 20px;
+    }
+    .title-filter{
+        color: #004778;
+        font-size: 18px;
+        font-family: 'Mulish',sans-serif;
+        font-weight: 600;
+        text-transform: capitalize
+    }
+    .title-reset-all{
+        color: #D9E255;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize
+    }
+    .collection-content{
+        display: flex;
+    }
+    .collection-content .filter-heading{
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        border-bottom: 1px solid #E1E3E4;
+    }
+    .collection-content .container-products-grid{
+        width: 1000px;
+        padding-top: 27px;
+        padding-left: 35px;
+        border-top: 1px solid #E1E3E4;
+    }
+    .products-grid{
+        height: 100%;
+    }
+    .products-grid--header {
+        display: flex;
+        justify-content: space-between;
+    }
+    .products-grid--header .grid-header{
+        font-size: 21px;
+        color: #000;
+        font-family: 'Mulish', sans-serif;
+        font-weight: 600;
+    }
+    .products-grid--header .sort-by--container{
+        display: flex;
+        align-items: center;
+    }
+    .products-grid--header .sort-by--container .label--sort-by{
+        size: 14px;
+        color: inherit;
+        font-weight: 400;
+        font-family: 'Mulish', sans-serif;
+        margin-right: 8px;
+    }
+    .products-grid--header .sort-by--container .sort-by{
+        outline: none;
+        box-shadow: none;
+        overflow: hidden;
+    }
+    .container-products-grid .products-grid--content{
+        margin-top: 26px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 26px;
+        height: 100vh
+    }
+    .filter-price--container{
+        padding: 25px 20px;
+        border-bottom: 1px solid #E1E3E4;
+    }
+    .filter-price--heading{
+        position: relative;
+    }
+    .filter-price--heading span {
+        color: #004778;
+        size: 14px;
+        font-family: 'Mulish', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;  
+        
+    }
+    .filter-price--heading span::after {
+        content: '+';
+        position: absolute;
+        right: 0;
+    }
+    .filter-price--price-brackets{
+        padding-top: 12px;
+    }
+
+</style>
+
+{% schema %}
+{
+  "name": "Collection Product grid",
+  "class":"collection-products-grid",
+  "settings": [
+    {
+        "type": "image_picker",
+        "id": "banner_collection",
+        "label": "Collection Image"
+    }
+],
+  "presets": [
+    {
+      "category": "collection",
+      "name": "Collection Products"
+    }
+  ]
+}
+{% endschema %}

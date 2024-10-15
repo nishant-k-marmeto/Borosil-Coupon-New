@@ -1,0 +1,28 @@
+<script>
+    window.validPincode = true;
+    window.updateContinueButtonStatus = function() { 
+        if(Shopify.Checkout.step == 'contact_information'){
+            const gst = getCookie('gst');
+            const gstNumber = getCookie('gst_number');
+            const paymentAnchor = $('a.breadcrumb__link:contains("Payment")');
+            const GSTchecked = $("#GSTIN_yes").prop("checked");
+            const paymentContinueButton = $('#continue_button');
+            if(!window.validPincode) {
+                paymentContinueButton.attr('disabled','disabled');
+                paymentContinueButton.css('opacity','0.6');
+                paymentAnchor.css('pointer-events','none'); 
+            }
+            else if(GSTchecked && gst == 'yes' && gstNumber !== "no" && gstNumber !== "yes" ) {
+                paymentContinueButton.attr('disabled','disabled');
+                paymentContinueButton.css('opacity','0.6');
+                paymentAnchor.css('pointer-events','none');
+            }
+            else {
+                paymentContinueButton.removeAttr('disabled');
+                paymentContinueButton.css('opacity','1');
+                paymentAnchor.css('pointer-events','');
+            }
+        }
+        
+    };
+</script>

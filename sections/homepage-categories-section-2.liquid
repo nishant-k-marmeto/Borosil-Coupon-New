@@ -1,0 +1,66 @@
+<div class="category-2">
+    <div class="all-collections">
+        <a href="/collection">Shop All</a>
+    </div>
+    <div class="homepage-categories-section-2">
+        <div class="homepage-categories-section-inner-2">
+            <div class="homepage-categories-section-main-2">
+                {% for block in section.blocks %}
+                    <div class="homepage-categories-section-blocks-2">
+                        {% if block.settings.link != blank %}
+                            <a href="{{ block.settings.link }}">
+                                <div class="homepage-categories-section-blocks-image-2">
+                                    {% if block.settings.category_image != blank %}
+                                        <img  src="{{ block.settings.category_image |img_url: 'original' }}" width="{{ block.settings.category_image.width }}" height="{{ block.settings.category_image.height }}" loading="lazy" class="homepage-categories-image">
+                                    {% endif %}
+                                </div>
+                                <div class="homepage-categories-section-blocks-text-2">
+                                    {% if block.settings.category_title != blank %}
+                                        <h6>{{ block.settings.category_title }}</h6>
+                                    {% endif %}
+                                </div>
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+
+{
+    "name": "Homepage Categories (2)",
+    "max_blocks": 10,
+    "blocks": [
+        {
+            "type": "Categories",
+            "name": "Add Categories",
+            "settings": [
+                {
+                    "type": "url",
+                    "id": "link",
+                    "label": "Add Link for Category"
+                }, {
+                    "type": "image_picker",
+                    "id": "category_image",
+                    "label": "Add Image for Category",
+                    "info": "Add Jpeg/png Image of Size 600 x 400px"
+                }, {
+                    "type": "text",
+                    "id": "category_title",
+                    "label": "Add Heading for Category"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "category": "Custom Solution",
+            "name": "Two Column Categories Section"
+        }
+    ]
+}
+
+{% endschema %} 

@@ -1,0 +1,75 @@
+{% assign enable_tag_filter = section.settings.enable_tag_filter %}
+
+<div class="blogs-filter-sidebar">
+    <div class="filter-sidebar__header">
+        <div class="filter-sidebar__title">Filters</div>
+        <span class="title-reset-all clear-all">reset all</span>
+      </div>
+      <div class="filter-sidebar__content">
+          {% if enable_tag_filter %}
+              {% if section.blocks.size > 0 %}
+                  {% for block in section.blocks %}
+                    {% if block.type == 'tag_filters' %}
+                        {% assign filter_name = block.settings.filter_name %}
+                        {% assign filter_tags = block.settings.filter_tags | split: ',' | uniq %} 
+                        {{ collection.all_tags }}
+                        {% if filter_tags.size > 0 %}
+                            <div class="filter-group and show-{{ block.settings.filter_tab_name }}" data-tag="Tag">
+                                <button class="filter-group__heading js-accordion-heading">		  
+                                    <span class="heading--text">{{ filter_name }}</span>
+                                    <span class="heading--icon"></span>
+                                </button>
+                                <ul class="filter-content js-accordion-content">
+                                    {% for tag in filter_tags %}
+                                        <li class="or filter-item" data-tag="{{ tag | strip | downcase }}">                     
+                                            <span class="filter-item-checkbox"></span>
+                                            <span class="filter-item-name">{{ tag | strip | capitalize }}</span> 
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                  {% endfor %}
+              {% endif %}
+          {% endif %}
+      </div> 
+      <div class="filter-sidebar__footer">
+        <div class="filter-sidebar__button clear-all" data-action="close-filter">Close</div>
+        <div class="filter-sidebar__button" data-action="close-filter">Apply filter</div>
+      </div>  
+</div>
+
+<style>
+    .or.filter-item .filter-item-checkbox{
+        height: 15px;
+        width: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        position: relative;
+        border: 1px solid #013564;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+
+      .or.filter-item.filter-selected .filter-item-checkbox{
+        background: #013564;
+        position: relative;
+      }
+      .or.filter-item.filter-selected .filter-item-checkbox::after{
+        content: '';
+        width: 9px;
+        height: 5px;
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        border: 2px solid #fff;
+        border-top: none;
+        border-right: none;
+        background: 0 0;
+        transform: rotate(-50deg);
+        border-radius: 0;
+        box-sizing: border-box;
+      }
+</style>

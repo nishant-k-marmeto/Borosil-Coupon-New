@@ -1,0 +1,92 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+
+  <div class="homepage-shop-with-advantage-section">
+    <div class="homepage-shop-with-advantage-section-inner">
+      
+      <div class="homepage-shop-with-advantage-section-header">
+        <h4>{{ section.settings.heading }}</h4>
+      </div>
+      
+      
+      <div id="shopwithadvantage" class="homepage-shop-with-advantage-section-inner-block-main">
+      {% for block in section.blocks %}
+      <div class="homepage-shop-with-advantage-section-inner-block">
+          {% if block.settings.image != blank %}
+              <a href="{{block.settings.advantage_link}}">
+                  <img loading="lazy" src="{{ block.settings.image |img_url: 'original' }}" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}" class="shop-with-advantage-image">
+              </a>
+              {% endif %}
+          <div class="homepage-shop-with-advantage-section-inner-block-text">
+              {% if block.settings.text != blank %}
+                  <p>{{ block.settings.text }}</p>
+              {% endif %}
+          </div>  
+          </div>
+      
+      {% endfor %}
+      </div>
+        
+    </div>  
+  </div>
+
+{% endif %}       
+      
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+
+ 
+{% schema %}
+  {
+  "name": "Shop With Advantage",
+  "class": "homepage-shop-with-advantage-section",
+  "settings": [
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Add Section Heading"
+    }
+],
+  "max_blocks": 6,
+  "blocks": [
+	{
+	  "type": "Blocks",
+      "name": "Add Image Blocks",
+      "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Add Image",
+      "info":"Add Jpeg/png Image of Size 400 x 300px"
+    },
+	{
+      "type": "text",
+      "id": "text",
+      "label": "Add Text"
+    },
+   {
+       "type": "url",
+       "id": "advantage_link",
+       "label": "Link"
+   }
+  ]
+}],
+  "presets": [
+    {
+      "category": "Custom Solution",
+      "name": "Shop With Advantage"
+    }
+  ]
+}
+{% endschema %}
+          
+  
+  

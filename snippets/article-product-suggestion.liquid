@@ -1,0 +1,12 @@
+{% assign products_handles = article.metafields.suggestedProducts.products %}
+{% if products_handles.size > 0 %}
+    <div class="article-product-outer-container">
+        <div class="product-suggestion-header">SHOP PRODUCTS FROM THIS ARTICLE</div>
+        <div class="article-products-container collection-slider collection-slider__wrapper" id="article-products-container">
+            {% for product_handle in products_handles %}
+                {% assign product = all_products[product_handle] %}
+                {% render 'main-product-card', product: product %} 
+            {% endfor %}  
+        </div>
+    </div>
+{% endif %}

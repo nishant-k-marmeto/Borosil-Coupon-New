@@ -1,0 +1,631 @@
+offer-toggle{
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+}
+
+/* Cart Discount*/
+.mm-bottom-giv-gst-price{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.new-gst-div-etc{
+  padding: 5px 10px;
+  font-weight: 900;
+}
+.flex-prop{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 20px;
+}
+.discount-main-conatiner{
+  width: 100%;
+  display: none;
+  padding: 5px;
+}
+.cart_tax_info{
+  font-size: 10px;
+}
+.mm-bottom-consolidated{
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999;
+  position: relative;
+}
+#proceed-checkout-button{
+  margin:10px;
+  width: 50%;
+}
+.svg-up-arrow{
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border: none;
+  width: 55px;
+  height: 55px;
+}
+.mm-ajaxcart-button{
+  background-color: #eff3f5;
+  width: -webkit-fill-available;
+  height: auto;
+  opacity: 1;
+  transition: opacity 0.3s ease, height 0.7s ease;
+}
+
+.disocunt-cart-main-container{
+  width: 100%;
+  background: #f0fff3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.coupon-card{
+  background: linear-gradient(135deg, #7158fe, #9d4de6);
+  color: #fff;
+  text-align: center;
+  padding: 0px 80px;
+  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.15);
+  position: relative;
+
+}
+.logo-discount{
+  width: 40px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-top: 20px;
+
+}
+.coupon-card h3{
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+
+}
+.coupon-card p{
+  font-size: 14px;
+
+}
+.coupon-row{
+  display: flex;
+  align-items: center;
+  margin: 25px auto;
+  width: fit-content;
+
+}
+#cpnCode{
+  border: 1px dashed #fff;
+  padding: 10px 20px;
+  border-right: 0;
+
+}
+#cpnBtn{
+  border: 1px solid #fff;
+  background: #fff;
+  padding: 10px 20px;
+  color: #7158fe;
+  cursor: pointer;
+}
+.circle1, .circle2{
+  background: #f0fff3;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+}
+.circle1{
+  left: -25px;
+}
+.circle2{
+  right: -25px;
+}
+
+.discount_coupon_field_container {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  
+}
+.custom_kartdiscount_container {
+  cursor: pointer;;
+  padding: 10px ;
+  z-index: 999;
+  border-radius: 11px;
+  border: solid 1px #e5e7e8;
+  background-color: #eff3f5;
+  position: relative;
+  margin: 12px 10px;
+  border-radius: 5px;
+}
+
+.af_txtbtn_holder{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px;
+  width: -webkit-fill-available;
+}
+.discount-svg{
+  display: flex;
+  align-items: center;
+}
+
+.new-price-subtotal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  color: black;
+  font-weight: 900 ;
+}
+  .toogle-button-discount {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 10px;
+    background: #F6F6F8;
+  }
+
+  .all-offer-combined-container {
+    padding: 20px 0px;
+    background: #F6F6F8;
+    overflow-y: scroll;
+    height: 60rem;
+  }
+
+  .bank-offer-discount-continer,
+  .other-offer-disocunt-container {
+    display: none;
+  }
+
+  .show-discount {
+    display: block ;
+  }
+  .toogle-button-discount button{
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    font-weight: 900;
+  }
+
+  .selected {
+    padding: 10px;
+    border: none;
+    background-color: #3D3E81;
+    font-weight: bold;
+    border-radius: 20px;
+    font-weight: 900;
+    color: white;
+  }
+  .cart-discount-trigger {
+  display: flex;
+  justify-content: center;
+  margin: 13px 14px 19px;
+  height: 44px;
+  align-items: center;
+  border-radius: 21px;
+  box-shadow: 0 4px 4px #c4c4c426;
+  border: solid 1px #d6dee2;
+  background-color: #eff3f5;
+  overflow: hidden;
+}
+.cart-discount-text {
+  width: 100%;
+  padding-left: 20px;
+}
+input#custom-discount-text {
+  background-color: #eff3f5;
+  width: 100%;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.67;
+  color: #000;
+  box-shadow: none;
+  border-color: rgb(237, 237, 237);
+}
+input#custom-discount-text:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+input#custom-discount-text::placeholder {
+  color: #9CA7AC;
+  font-size: 12px;
+}
+button#apply-coupon-btn {
+  border: none;
+  color: #9ca7ac;
+  font-size: 12px ;
+  font-weight: 600 ;
+  padding: 0 12px;
+  height: 44px;
+  width: 70px;
+  text-transform: uppercase;
+}
+
+.discount-finder-header {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: row;
+  gap: 30%;
+  align-items: center;
+  padding: 0px 10px;
+}
+.back-button-discount-header{
+  cursor: pointer;
+  background: white;
+  border: none;
+  width: 35px;
+  height: 35px;
+}
+.cart-discount-trigger:focus-within .cart-discount-apply #apply-coupon-btn {
+  background-color: #3D3E81;
+  color: white;
+}
+#af_tagged_discounts {
+  display: none;
+}
+#af_cart_page {
+  width: calc(100% - 20px);
+  max-width: calc(100% - 20px);
+  margin: 0 auto;
+}
+.afcd_modal-content {
+  width: 89vw;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  max-width: 420px;
+  margin: 0 ;
+  left: unset ;
+}
+.afcd_close {
+  left: 0;
+}
+#af_cart_page {
+  width: calc(100% - 30px) ;
+  max-width: calc(100% - 30px) ;
+  margin: 5px 15px ;
+}
+#af_custom_apply_coupon_trigger, .discountCode__remove_btn {
+  background: #1b2024;
+  min-height: 28px;
+  border-radius: 5px;
+  background-color: #1b2024;
+  width: 69px;
+  max-height: 28px;
+  padding: 0;
+  margin-left: 10px;
+  color: #fff;
+  font-size: 12px ;
+  text-align: center;
+}
+.discountCode_details_container {
+  display: none;
+}
+.discountCode_details_container.show {
+  display: block ;
+}
+#af_custom_coupon_text {
+  min-height: 28px ;
+  max-height: 28px ;
+  border-radius: 5px ;
+  font-size: 12px ;
+}
+.discountCode_txtbx_holder {
+  width: calc(100% - 80px) ;
+}
+.discountCode_details, .discount_finder_item_content h6 {
+  margin: 0 ;
+  font-weight: 600 ;
+  letter-spacing: 0 ;
+  font-size: 12px ;
+}
+.discountCode, .discount_finder_item_content p {
+  color: #69808c ;
+  font-weight: 700 ;
+  line-height: 20px;
+  font-size: 12px ;
+  display: block ;
+}
+.discount_finder_item_content p {
+  color: #000 ;
+  margin-bottom: 9px;
+}
+.discount_finder_item_cta_btn {
+  display: flex;
+  justify-content: center;
+  border-top: solid 1px #d6dbde;
+  background-color: #f7f9fa;
+  border-radius: 0px 0px 10px 10px;
+  overflow:hidden;
+}
+.discount_finder_item_cta_btn button {
+  font-size: 11px;
+  font-weight: 600;
+  font-stretch: normal;
+  line-height: 1.82;
+  padding: 8px 0 7px;
+  text-align: center;
+  display: block;
+  width: 100%;
+  border-radius: 0 ;
+  background: #EFF4F7;
+  color: #2F5B96;
+}
+.discount_finder_item_cta_btn button[disabled] {
+  background: transparent;
+  color: rgb(0 0 0 / 20%);
+}
+.af_coupon_text.af_discount_amt {
+  display: none ;
+}
+.af_coupon_text.af_coupon_code {
+  visibility: visible ;
+  position: unset ;
+}
+
+.discount_finder_item {
+  margin: 9px 14px 0;
+  border-radius: 10px;
+  border: solid 1px #d6dbde;
+  background-color: #fff;
+  order: 3;
+}
+.discount_finder_item_details {
+  padding: 13px 11px 9px;
+  display: flex;
+}
+.discount_finder_item_content span.use_code {
+  font-size:9px;
+  font-weight:600;
+  color: #848484;
+}
+.discount_finder_item_content span.kd_code {
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 6px;
+  background-color: #fff;
+  display: block;
+  width: max-content;
+  line-height: 1.82;
+  text-align: center;
+  color: #1b2024;
+}
+.af_btn_holder {
+  text-align: right ;
+}
+.af_popup_trigger .discount_finder_viewAll {
+  text-align: center;
+  line-height: 20px;
+  padding-top: 5px;
+  border-top: 1px solid #dfe0e1;
+  margin-top: 8px;
+}
+.discount_finder_apply_coupon {
+  display: block;
+  text-align: left;
+  margin-bottom: 10px;
+  position: relative;
+}
+.discount_finder_apply_coupon svg {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.af_opens_popup {
+  color: #000 ;
+  font-weight: 600 ;
+}
+#af_discount_response {
+  display: none ;
+}
+.af_after_loading {
+  font-size: 12px ;
+}
+.discount_error {
+  color: red;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.af_tagged_discounts .af_error_text {
+  background: transparent ;
+  color: #ff4343 ;
+  padding: 0;
+  position: unset;
+  font-size: 12px;
+  font-weight: 500;
+  width: 100% ;
+}
+#af_kd_tagged_discounts {
+  margin: 0 ;
+}
+.discountCode_details_container.show~#af_custom_coupon_text {
+  display: none;
+}
+.custom_kartdiscount_container .af_btn_holder , .custom_kartdiscount_container .discount_finder_viewAll , .custom_kartdiscount_container.discount_added .discount_finder_apply_coupon {
+  display: none;
+}
+.custom_kartdiscount_container.discount_added .af_btn_holder , .custom_kartdiscount_container.discount_added .discount_finder_viewAll {
+  display: block;
+}
+.custom_kartdiscount_container.discount_added {
+  padding-left: 13px ;
+}
+.af_money.af_new_price {
+  padding: 0;
+  font-size: 18px;
+  font-family: 'Metropolis';
+  font-weight: 700;
+}
+.af_money.af_striked_out_price {
+  font-size: 12px;
+  display: block;
+}
+.custom_discount_filder_container {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
+.custom_discount_filder_container[open_finder] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 9;
+  visibility: visible;
+  opacity: 1;
+  height: 100%;
+}
+
+.cart_total_wrapper .cart-total-text.total-price {
+  font-size: 16px ;
+  font-weight: 600 ;
+}
+.discount_finder_body {
+  height: calc(100vh - 10rem);
+  background-color: #F6F6F8;
+  padding-top: 9px;
+  margin-top: 0;
+  overflow-y: auto;
+  padding-bottom: 8rem;
+  display: flex;
+  flex-direction: column;
+}
+.discount_finder_coupon_holder {
+  display: flex;
+  justify-content: center;
+  margin: 13px 14px 19px;
+  height: 44px;
+  align-items: center;
+  border-radius: 21px;
+  box-shadow: 0 4px 4px #c4c4c426;
+  border: solid 1px #d6dee2;
+  background-color: #eff3f5;
+  overflow: hidden;
+}
+.custom-discount-finder {
+  height: 100%;
+}
+.discount_finder_coupon_holder {
+  display: flex;
+  justify-content: center;
+}
+.finder_discountCode_txtbx_holder button, .finder_discountCode_txtbx_holder input {
+  background-color: #eff3f5;
+  border: none;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.67;
+  color: #9ca7ac;
+}
+.discount_finder_item_icon svg {
+  width: 17px;
+  height: 17px;
+}
+.discount_finder_item_icon {
+  padding-right: 11px;
+}
+.discount_finder_btn_holder button {
+  color: #9ca7ac;
+  font-size: 12px ;
+  font-weight: 600 ;
+  padding: 0 12px;
+  height: 44px;
+  width: 60px;
+}
+.finder_discountCode_txtbx_holder {
+  width: 100%;
+  padding-left: 20px;
+}
+.custom-discount-finder-heading {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  text-align: center;
+  color: #000;
+}
+.discount-finder-close {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  width: 20px;
+  height: 20px;
+}
+.discountCode__remove_btn {
+  background: transparent ;
+  color: #2f5b96 ;
+}
+.discount_finder_header_field_details {
+  padding: 0 14px;
+}
+
+.discount_finder_offer_icon {
+  position: absolute;
+  top: 0;
+  left: 13px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+.discount_finder_offer_icon svg {
+  width: 17px;
+  height: 17px;
+}
+.custom_kartdiscount_container.discount_added .discount_finder_offer_icon {
+  align-items: flex-start;
+  top: 16px;
+}
+.af_error_text:nth-child(2) {
+  display: none;
+}
+.coupon_applied {
+  color: #12B985;
+  pointer-events: none;
+}
+.custom_discount_filder_container .custom-discount-finder {
+    display: none;
+}
+.custom_discount_filder_container[open_finder] .custom-discount-finder {
+    display: block ;
+}
+.custom_kartdiscount_container .af_cd_shake {
+  border: none ;
+}
+.custom_kartdiscount_container.discount_added .discount_finder_offer_icon {
+  display: none;
+}
+.discountCode_details_inner_container svg {
+  margin-right: 10px;
+  width: 17px;
+  height: 17px;
+}
+.discountCode_details_inner_container {
+  display: flex;
+}
+.discountCode {
+  margin-left: 27px;
+}
+.discount_finder_item_cta_btn button.coupon_applied span {
+    position: relative;
+}
+

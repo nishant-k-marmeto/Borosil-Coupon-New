@@ -1,0 +1,463 @@
+{% assign sca_product = product %}{% assign sca_product_id_text = "," | append : sca_product.id | append : "," %}{% assign sca_price = sca_product.price %}{% assign sca_price_min = sca_product.price_min %}{% assign sca_price_max = sca_product.price_max %}{% assign sca_compare_at_price = sca_product.compare_at_price %}{% assign sca_compare_at_price_min = sca_product.compare_at_price_min %}{% assign sca_compare_at_price_max = sca_product.compare_at_price_max %}{% assign sca_product_available = sca_product.available %}{% assign sca_product_variantCount = sca_product.variants.size %}{% assign sca_compare_at_price_varies = sca_product.compare_at_price_varies %}{% assign sca_price_varies = sca_product.price_varies %}{% assign sca_has_only_default_variant = false %}{% capture sca_product_variants_json %}{{sca_product.variants | json }}{% endcapture %} {% capture sca_product_json %}{ {% if sca_all_gift_products_ids == null or sca_all_gift_products_ids contains sca_product_id_text %}{% assign sca_product_available = false %}{% assign sca_product_variantCount = 0 %}{% assign sca_has_only_default_variant = true %}{% assign sca_is_first_variant = true %}{% capture sca_variants_json %} [{% for variant in sca_product.variants %}{% unless variant.metafields.secomapp.freegifts %}{% unless variant.title contains '(Freegifts)' %}{% unless variant.title contains '% Off' %}{% unless variant.metafields.shappify_qb.qb_hide == "1" %}{% unless variant.metafields.shappify_bundle.is_bundle == "true" %}{% unless variant.metafields.brodev_scn.hide == "true" %}{% unless variant.metafields.wholesaler2.wholesale %}{% unless variant.metafields.Wholesaler.level %}{% unless variant.title contains '(Wholesale' %}{% if sca_is_first_variant%} {{ variant | json }}{% assign sca_price = variant.price %} {% assign sca_price_min = variant.price %} {% assign sca_price_max = variant.price %} {% assign sca_compare_at_price = variant.compare_at_price %} {% assign sca_compare_at_price_min = variant.compare_at_price %} {% assign sca_compare_at_price_max = variant.compare_at_price %} {% assign sca_product_available = variant.available %} {% assign sca_product_variantCount = 1 %} {% assign sca_is_first_variant = false%}{% else %},{{variant | json }} {% if sca_price_min >= variant.price %} {% assign sca_price_min = variant.price %} {% assign sca_price = variant.price %}{% endif %} {% if sca_price_max <= variant.price %} {% assign sca_price_max = variant.price %} {% endif %} {% if variant.compare_at_price %} {% if sca_compare_at_price_min==null or sca_compare_at_price_min >= variant.compare_at_price %} {% assign sca_compare_at_price_min = variant.compare_at_price %} {% assign sca_compare_at_price = variant.compare_at_price %} {% endif %} {% if sca_compare_at_price_max==null or sca_compare_at_price_max < variant.compare_at_price %} {% assign sca_compare_at_price_max = variant.compare_at_price %} {% endif %} {% endif %} {% if variant.available == true %} {% assign sca_product_available = true %} {% endif %} {% assign sca_product_variantCount = sca_product_variantCount | plus: 1 %}{% endif %}{% endunless %}{% endunless %}{% endunless %}{% endunless %}{% endunless %}{% endunless %}{% endunless %}{% endunless %}{% endunless %}{%endfor%} ]{% endcapture %}{% if sca_price_min < sca_price_max %}{% assign sca_price_varies = true %}{% else %}{% assign sca_price_varies = false %}{% endif %}{% if sca_compare_at_price_min < sca_compare_at_price_max %}{% assign sca_compare_at_price_varies = true %}{% else %}{% assign sca_compare_at_price_varies = false %}{% endif %}{% if sca_product_variantCount > 1 %}{% assign sca_has_only_default_variant = false %}{% endif %}{% if sca_product_variantCount == sca_product.variants.size %} "variants":{{ sca_product.variants }},{% else %}{%assign sca_product_variants_json = sca_variants_json %} "variants":{{ sca_variants_json }},{% endif %}{% else %} "variants":{{ sca_product_variants_json }},{% endif %} "id": {{sca_product.id}}, "title": {{sca_product.title | json}}, "handle": {{sca_product.handle | json}}, "description": {{sca_product.description | json}}, "published_at": "{{sca_product.published_at | date: "%Y-%m-%dT%H-%M-%S%:z" }}", "created_at": "{{sca_product.created_at | date: "%Y-%m-%dT%H-%M-%S%:z" }}", "vendor": {{sca_product.vendor | json}}, "type": {{sca_product.type | json}}, "tags": {{sca_product.tags | json}}, "price": {{sca_price}}, "price_min": {{sca_price_min}}, "price_max": {{sca_price_max}}, "available": {{sca_product.available}}, "price_varies": {{sca_price_varies}}, "compare_at_price": {{sca_compare_at_price}}, "compare_at_price_min": {{sca_compare_at_price_min}}, "compare_at_price_max": {{sca_compare_at_price_max}}, "compare_at_price_varies": {{sca_compare_at_price_varies}}, "images": {{sca_product.images | json}}, "featured_image": {{sca_product.featured_image | json }}, "options": {{sca_product.options | json}}, "media": {{sca_product.media | json }}, "content": {{sca_product.content | json }}} {% endcapture sca_product_json %}
+
+<link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-product-grid.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'product-page-slider.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'homepage.css' | asset_url }}" media="print" onload="this.media='all'">
+{% capture section_settings %}
+{
+  "SelectedProduct": []
+}
+{% endcapture %}
+
+<product-recommendations class="product-recommendations" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=8">
+  <div class="product_page_slider_container" data-section-settings='{{ section_settings }}'>
+  
+    <div class="product_page_slider_container_header">
+      <h2 class="product_page_slider_container__heading"> {{ section.settings.section_heading | truncate: 20, ""}} </h2>
+    </div>
+
+
+    <div class="product-recommendations-slider">
+      {% for product in recommendations.products %}
+        
+
+        <div class="product-card">
+          <a href="/products/{{ product.handle }}" class="product-card__link">
+            <img class="product-card__image" src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}"/>
+          </a>
+          <div class="product-card__info">
+
+            
+            
+            <a class="product-card__title"> {{ product.title }} </a>
+            <div class="Producttitle_full">{{ product.title }}</div>
+            
+            {% assign metafields = product.metafields.product_subtitle.subtitle %}
+            {% assign totalsubtitles = metafields.size | minus: 1 %}
+            
+            <div class="Product_meatfields">
+              {% for i in (0..totalsubtitles) %}
+                  {{ metafields[i] }}{% if i < totalsubtitles %}, {% endif %}
+              {% endfor %}
+            </div>
+            <div class="product-card__price">
+              <span class="product-card__regularprice">{{ product.price  | money }}</span>
+              {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+                {% assign discountPercentage =  product.selected_or_first_available_variant.compare_at_price | minus:product.selected_or_first_available_variant.price | times:100 | divided_by:product.selected_or_first_available_variant.compare_at_price %}
+                <span class="product-card__compareprice"> {{ product.selected_or_first_available_variant.compare_at_price | money }}</span>
+                <span class="product-card__discountpercentage">{{ discountPercentage }}% off</span>
+              {% endif %}
+            </div>
+
+            <div class="product-card__selectors">
+              <input type="hidden" class="TotalQuantity" value="{{ product.variants[0].inventory_quantity }}" />
+              {% if product.has_only_default_variant %}
+                <input type="number" class="quantity-selector-input" onkeypress="return event.charCode >= 48" min="1">
+                <div class="product-card__quantity product-card__quantity--{{ section.id }}">
+                <div class="quantity-selector-value">1</div>
+                <div class="product-card__selector-dropdownArrow"> </div>
+                <ul class="quantity-selector-list">
+                  <li class="quantity-selector-listitem is-selected" data-value="1">1</li>
+                  <li class="quantity-selector-listitem" data-value="2">2</li>
+                  <li class="quantity-selector-listitem" data-value="3">3</li>
+                  <li class="quantity-selector-listitem" data-value="4">4</li>
+                  <li class="quantity-selector-listitem" data-value="5">5</li>
+                  <li class="quantity-selector-listitem" data-value="6">6</li>
+                  <li class="quantity-selector-listitem" data-value="7">7</li>
+                  <li class="quantity-selector-listitem" data-value="8">8</li>
+                  <li class="quantity-selector-listitem" data-value="9">9</li>
+                  <li class="quantity-selector-listitem" data-value="10">10+</li>
+                </ul>
+                </div>
+                <input type="hidden" class="variant-selector-listitem is-selected" data-variant={{ product.variants[0].id }} data-variant-available={{ product.variants[0].available }} data-variant-quantity="{{ product.variants[0].inventory_quantity }}" />
+              {% else %}
+                <input type="number" value="10" class="quantity-selector-input variant-present" onkeypress="return event.charCode >= 48" min="1">
+                <div class="product-card__quantity product-card__quantity--{{ section.id }}">
+                <div class="quantity-selector-value">1</div>
+                <div class="product-card__selector-dropdownArrow"> </div>
+                <ul class="quantity-selector-list">
+                  <li class="quantity-selector-listitem is-selected" data-value="1">1</li>
+                  <li class="quantity-selector-listitem" data-value="2">2</li>
+                  <li class="quantity-selector-listitem" data-value="3">3</li>
+                  <li class="quantity-selector-listitem" data-value="4">4</li>
+                  <li class="quantity-selector-listitem" data-value="5">5</li>
+                  <li class="quantity-selector-listitem" data-value="6">6</li>
+                  <li class="quantity-selector-listitem" data-value="7">7</li>
+                  <li class="quantity-selector-listitem" data-value="8">8</li>
+                  <li class="quantity-selector-listitem" data-value="9">9</li>
+                  <li class="quantity-selector-listitem" data-value="10">10+</li>
+                </ul>
+                </div>
+                <div class="product-card__variants product-card__variants--{{ section.id }}">
+                <div class="variant-selector-value">{{ product.first_available_variant.title }}</div>
+                <div class="product-card__selector-dropdownArrow"> </div>
+                <ul class="variant-selector-list">
+                {% for variant in product.variants %}
+{% unless variant.metafields.secomapp.freegifts %}
+{% unless variant.title contains '% off)' %}
+
+                  {% assign selectedClass = '' %}
+                  {% if variant.id == product.first_available_variant.id  %}
+                    {% assign selectedClass = ' is-selected' %}
+                  {% endif %}
+                  <li class="variant-selector-listitem {{ selectedClass }}" data-variant="{{ variant.id }}" data-variant-title="{{ variant.title }}" data-variant-price="{{ variant.price }}" data-variant-priceToprint="{{ variant.price | money }}" data-variant-Maxprice="{{ variant.compare_at_price }}" data-variant-MaxpriceToprint="{{ variant.compare_at_price | money }}" data-variant-available="{{ variant.available }}" data-variant-quantity="{{ variant.inventory_quantity }}">
+                    <div class="variant-selector-listitemContent">
+                      <span class="variant-selector-title">{{ variant.title }}</span>
+                      <span class="variant-selector-prices">
+                      <div class="varaint-sellingPrice"> {{ variant.price | money }} </div>
+                      
+                      <span class="varaint-originalPrice"> {{ variant.compare_at_price | money }}</span>
+                      
+                      </span>
+                    </div>
+                  </li>
+
+{% endunless %}
+{% endunless %}
+                {% endfor %}
+                </ul>
+                </div>
+              {% endif %}
+
+            </div>
+
+            {% if product.first_available_variant.available %}
+              <button class="product-card__addtocart" type="button"> Add to cart </button>
+              <div class="loader loader--{{ section.id }}"> </div>
+              <div class="error-quantity" style="display:none;">Insufficient Quantity</div>
+            {% else %}
+              <button class="product-card__addtocart is-disabled" type="button"> Sold out </button>
+            {% endif %}
+            
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</product-recommendations>
+
+<script>
+
+
+function initSlider(){
+ 
+    $('.product-recommendations-slider').slick(
+      {
+        dots: false,
+        arrows: true,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        prevArrow: '<button class="slick-arrow slick-prev arrow-bg--{{ section.id }}"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left fa-w-14" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg></button>',
+        nextArrow: '<button class="slick-arrow slick-next arrow-bg--{{ section.id }}"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg></button>',
+        responsive: [
+          {
+            breakpoint: 1441,
+            settings: {
+              arrows: true,
+              slidesToShow: 4,
+              slidesToScroll: 1,
+            }
+          },
+          {
+            breakpoint: 1023,
+            settings: {
+              arrows: false,
+              slidesToShow: 3,
+              slidesToScroll: 1,
+            }
+          },
+          {
+            breakpoint: 767,
+            settings: {
+              arrows: false,
+              slidesToShow: 1.1,
+              slidesToScroll: 1,
+              centerMode: true,
+              centerPadding: '90px'	
+            }
+          }
+        ]
+      }
+    );
+  
+}
+
+function attachEventListners(){
+
+  //when user clicks anywhere on window
+
+  $(document).on("click", function(event){
+      var $triggerQuantitySelector = $(".product-card__quantity");
+      var $triggerVariantSelector = $(".product-card__variants");
+      if($triggerQuantitySelector !== event.target && !$triggerQuantitySelector.has(event.target).length){
+          $(".quantity-selector-list").removeClass('dropdown-open');
+          $('.quantity-selector-list').css("display", "none");
+      }    
+      if($triggerVariantSelector !== event.target && !$triggerVariantSelector.has(event.target).length){
+          $(".variant-selector-list").removeClass('dropdown-open');
+          $('.variant-selector-list').css("display", "none");
+      }         
+  });
+
+  //Quantity selector dropdown
+
+
+  $(document).on('click', '.product-card__quantity--{{ section.id }}', function() {
+
+    var selectedQuantity = $(this).parents('.product-card__selectors').find('.quantity-selector-list');
+    
+    if(selectedQuantity.hasClass('dropdown-open')){
+      selectedQuantity.removeClass('dropdown-open');
+      selectedQuantity.css("display", "none");
+    }
+    else{
+      $(".quantity-selector-list").removeClass('dropdown-open');
+      $('.quantity-selector-list').css("display", "none");
+      selectedQuantity.addClass('dropdown-open');
+      selectedQuantity.css("display", "inline");
+    }
+  });
+
+  //Variant selector dropdown
+  $(document).on('click', '.product-card__variants--{{ section.id }}', function() {
+    var selectedVariant = $(this).parents('.product-card__selectors').find('.variant-selector-list');
+    if(selectedVariant.hasClass('dropdown-open')){
+      selectedVariant.removeClass('dropdown-open');
+      selectedVariant.css("display", "none");
+    }
+    else{
+      $(".variant-selector-list").removeClass('dropdown-open');
+      $('.variant-selector-list').css("display", "none");
+      selectedVariant.addClass('dropdown-open');
+      selectedVariant.css("display", "block");
+    }
+  });
+
+  //quantity selector
+  $(document).on('click', '.quantity-selector-listitem', function() {
+    if($(this).hasClass('is-selected')) {
+      return;
+    }	
+    
+    $(this).parents('.quantity-selector-list').find('.quantity-selector-listitem').removeClass('is-selected');
+    $(this).addClass('is-selected');
+    
+    AvailableQuantity = parseInt($(this).parents('.product-card__selectors').find('.TotalQuantity').val());
+    //console.log(AvailableQuantity);
+
+    var selectedQuantityValue = $(this).attr('data-value');
+    
+     if(selectedQuantityValue > AvailableQuantity){
+       $(this).parents('.product-card__info').find('.error-quantity').css("display", "block");
+       $(this).parents('.product-card__info').find('.error-quantity').html("Quantity exceeds more than "+ AvailableQuantity);
+       $(this).parents('.product-card').find('.product-card__addtocart').addClass('is-disabled');
+     }
+     else if(selectedQuantityValue >= 10){
+      $(this).parents('.product-card__quantity').css("display", "none");
+      $(this).parents('.product-card__selectors').find('.quantity-selector-input').css("display", "inline");
+      $(this).parents('.product-card__selectors').find('.quantity-selector-input').val(10);
+      $(this).parents('.product-card__selectors').find('.quantity-selector-input').focus();
+     }
+     else{
+       $(this).parents('.product-card__info').find('.error-quantity').css("display", "none");
+       $(this).parents('.product-card__quantity').find('.quantity-selector-value').html(selectedQuantityValue);
+       $(this).parents('.product-card').find('.product-card__addtocart').removeClass('is-disabled');
+     }
+
+/*
+    if(selectedQuantityValue >= 10){
+      $(this).parents('.product-card__quantity').css("display", "none");
+      $(this).parents('.product-card__selectors').find('.quantity-selector-input').css("display", "inline");
+      $(this).parents('.product-card__selectors').find('.quantity-selector-input').val(10);
+      $(this).parents('.product-card__selectors').find('.quantity-selector-input').focus();
+    }
+    else{
+      $(this).parents('.product-card__quantity').find('.quantity-selector-value').html(selectedQuantityValue);
+    }
+*/
+  });
+
+  //Variant Selection
+  $(document).on('click', '.variant-selector-listitem', function() {
+    if($(this).hasClass('is-selected')) {
+      return;
+    }	
+    
+    $(this).parents('.variant-selector-list').find('.variant-selector-listitem').removeClass('is-selected');
+    $(this).addClass('is-selected');
+    
+    var selectedVariantTitle = $(this).attr('data-variant-title');
+    $(this).parents('.product-card__variants').find('.variant-selector-value').html(selectedVariantTitle);
+  
+    if($(this).attr('data-variant-available') == 'true') {
+      $(this).parents('.product-card').find('.product-card__addtocart').removeClass('is-disabled');
+      $(this).parents('.product-card').find('.product-card__addtocart').html('Add to cart');
+    }
+    else {
+      $(this).parents('.product-card').find('.product-card__addtocart').addClass('is-disabled');
+      $(this).parents('.product-card').find('.product-card__addtocart').html('Sold out');
+    }
+
+    //change the price
+    var selectedQuantityPrice = $(this).attr('data-variant-price');
+    var selectedQuantityMaxPrice = $(this).attr('data-variant-Maxprice');
+    var selectedQuantityPriceToPrint = $(this).attr('data-variant-priceToPrint');
+    var selectedQuantityMaxPriceToPrint = $(this).attr('data-variant-MaxpriceToPrint');
+    
+    $(this).parents('.product-card').find('.product-card__regularprice').html(selectedQuantityPriceToPrint);
+    if( parseInt(selectedQuantityMaxPrice) > parseInt(selectedQuantityPrice)){
+      $(this).parents('.product-card').find('.product-card__compareprice').html(selectedQuantityMaxPriceToPrint);
+      var SelectedVariantDiscount = parseInt((selectedQuantityMaxPrice - selectedQuantityPrice) / selectedQuantityMaxPrice * 100);
+      $(this).parents('.product-card').find('.product-card__discountpercentage').html(SelectedVariantDiscount+"% off");
+    }
+
+    //change the variant available quantity
+    var variantQuantity = $(this).attr('data-variant-quantity');
+    $(this).parents('.product-card__selectors').find('.TotalQuantity').val(variantQuantity);
+    //console.log($(this).parents('.product-card__selectors').find('.TotalQuantity').val());
+  });
+
+  // when the quantity is entered in input field
+
+  $(document).on('keyup','.quantity-selector-input',function(ev) {
+    //console.log($(this).val()  +'' +  AvailableQuantity);
+    if($(this).val() > AvailableQuantity){
+      $(this).parents('.product-card__info').find('.error-quantity').css("display", "block");
+      $(this).parents('.product-card__info').find('.error-quantity').html("Quantity exceeds more than "+ AvailableQuantity);
+      $(this).parents('.product-card').find('.product-card__addtocart').addClass('is-disabled');
+    }
+    else if($(this).val() == 0){
+        $(this).parents('.product-card').find('.product-card__addtocart').addClass('is-disabled');
+    }
+    else{
+       $(this).parents('.product-card__info').find('.error-quantity').css("display", "none");
+       $(this).parents('.product-card').find('.product-card__addtocart').removeClass('is-disabled');
+    }
+  });
+
+  //Add To Cart
+  $(document).on('click', '.product-card__addtocart', function(ev) {
+    ev.preventDefault();
+    
+    if($(this).hasClass('is-disabled')) {
+      return;
+    }
+    
+    var selectedVariant = $(this).parents('.product-card').find('.variant-selector-listitem.is-selected');
+    var variantId = selectedVariant.attr('data-variant');
+    //inventory quantity
+    var variantQuantity = selectedVariant.attr('data-variant-quantity');
+    
+    //var quantity = $(this).parents('.product-card').find('.quantity-selector-listitem.is-selected').attr('data-value');
+    var quantity = '';
+    if($(this).parents('.product-card').find('.product-card__quantity').css('display') == 'none'){
+      quantity = $(this).parents('.product-card').find('.quantity-selector-input').val();
+      //console.log($(this).parents('.product-card').find('.quantity-selector-input').val())
+    }
+    else{
+      quantity = $(this).parents('.product-card').find('.quantity-selector-listitem.is-selected').attr('data-value');
+    }
+
+    if(parseInt(quantity) > 0 && parseInt(quantity) <= parseInt(variantQuantity)){
+      
+        const $parentCard = $(this).parents('.product-card')
+        $parentCard.find('.loader').show();
+        $parentCard.find('.product-card__addtocart').hide();
+      $.ajax({
+        method: 'POST',
+        url: '/cart/add.js',
+        dataType: 'json',
+        cache: false,
+        data: {
+          id: parseInt(variantId),
+          quantity: parseInt(quantity)
+        },
+        success: function() {
+        // document.location.href = '/cart';
+        mmajaxcart.AjaxcartRender();
+        mmajaxcart.AjaxcartOpen();
+        $parentCard.find('.loader').hide();
+        $parentCard.find('.product-card__addtocart').show();
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          alert("Error while adding to cart");          
+        }
+      })
+    }
+    else{ 
+      if(parseInt(quantity) < 1) alert("Add quantity")
+      if(parseInt(quantity) > variantQuantity)  alert("Cannot add more than "+variantQuantity)
+      //console.log(variant_quantity);
+    }
+  })
+
+  $(document).on('click', '.close_error_Box--{{ section.id }}', function() {
+    $(this).parents('.product-card').find('.modal--{{ section.id }}').css("display", "none");
+  });
+
+}
+
+class ProductRecommendations extends HTMLElement {
+ 
+  constructor() {
+    super();
+   
+    const handleIntersection = (entries, observer) => {
+      if (!entries[0].isIntersecting) return;
+      observer.unobserve(this);
+      fetch(this.dataset.url)
+        
+        .then(response => response.text())
+        .then(text => {
+          const html = document.createElement('div');
+          html.innerHTML = text;
+          const recommendations = html.querySelector('product-recommendations');
+          if (recommendations && recommendations.innerHTML.trim().length) {
+            this.innerHTML = recommendations.innerHTML;
+            initSlider();
+          }
+        })
+        .catch(e => {
+          console.error(e); 
+        });
+    }
+    //observer.observe(this);
+    new IntersectionObserver(handleIntersection.bind(this), {rootMargin: '0px'}).observe(this);
+  }
+}
+
+  customElements.define('product-recommendations', ProductRecommendations);
+  attachEventListners();
+
+</script>
+
+
+
+
+{% schema %}
+{
+  "name": "Recommended Products",
+  "settings": [
+	{
+	  "type": "header",
+	  "content": "Heading settings"
+	},
+	{
+	  "type": "text",
+    "id": "section_heading",
+    "label": "Heading text",
+	  "default": "You may also like",
+    "info": "Max limit: 20 char"
+	}
+  ],
+  "presets": [
+    {
+      "name": "Recommended Products"
+    }
+  ]
+}
+{% endschema %}

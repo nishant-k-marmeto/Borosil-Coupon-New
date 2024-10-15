@@ -1,0 +1,22 @@
+
+
+{% for line_item in checkout.line_items %}
+    {% if line_item.product.type == 'qwikcilver_gift_card' %}
+        <style>
+            .order-summary__section.order-summary__section--discount {
+                display: none !important;
+            }
+            .order-summary__section~.order-summary__section {
+                border-top: none !important;
+            }
+        </style>
+        <script>
+            $(document).on('page:load page:change', function() {
+                if ($('[data-reduction-form="true"]').length > 0){
+                    $('.order-summary__section--discount [data-reduction-form="true"] .tag__wrapper [class="tag__button"]').click();
+                }
+            })
+        </script>
+        {% break %}
+    {% endif %}
+{% endfor %}

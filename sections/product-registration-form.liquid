@@ -1,0 +1,87 @@
+<script src="{{ 'product-registration-form.js' | asset_url }}" defer></script>
+<div class="custom-customer-login" data-customer-id="{{customer.id}}">
+    <div class="custom-customer-header">
+       <p>REGISTRATION FORM</p>
+    </div>
+    <div class="custom-customer-container">
+       <div class="custom-customer-container-form">
+          <div class="search-header search" >
+             <div class="product-reg-search">
+                <span class="reg-search-title">Enter Bar Code / SKU Code / Product Name</span>
+                <div class="product-reg-search-bar">
+                   <div class="product-reg-search-input">
+                      <input type="hidden" name="type" value="product">
+                      <input class="search-header__input search__input"
+                         type="search"
+                         name="q"           		
+                         aria-label="search">
+                   </div>
+                   <div class="product-reg-search-btn">
+                      <button type="button" id="fetchdata">    
+                      <span>Search</span>
+                      </button>
+                   </div>
+                </div>
+                <span class="product-search-error">Please enter the product name or SKU or Bar code</span>
+             </div>
+             <div class="selection-container">
+                <div id="product-selector">
+                   <p class="prod-select-text">Name of Product</p>
+                   <div class="mm-reg-dropdown" id="mm-reg-arrowdown">
+                      <select name="product-reg-search" id="mm-reg-product-fetched">
+                         <!-- Dynamic data inserted -->
+                      </select>
+                      <div class="prod-capacity">
+                         <div data-value="1">
+                            <p class="prod-select-text">Select Capacity/Variant</p>
+                            <select id="variant-selector-dropdown">
+                               <option value="">None</option>
+                            </select>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+                <div class="reg-file-upload">
+                   <p class="prod-select-text">Upload Bill / Invoice Copy</p>
+                   <div class="file-upload-container">
+                      <label for="input-upload-image">
+                         <div class="file-upload-div">
+                            <img src="https://cdn.shopify.com/s/files/1/0551/8009/9722/files/upload-icon.jpg?v=1643897452"> 
+                            <p>Drag and Drop an Image</p>
+                         </div>
+                         <input type="file" id="input-upload-image" name="input-upload-image" style="display:block">
+                      </label>
+                   </div>
+                </div>
+                <div class="submit-to-register">               
+                   <input type="submit" value="SUBMIT TO REGISTER"> 
+                   <div class="loader"> </div>
+                </div>
+          </div>
+          </div>                        
+       </div>
+    </div>
+    <div class="registration-output-container">
+        <div class="registration-output-success">
+            <div class="success-img-text">
+                <div class="success-img">
+                    <img src="{{ 'gift-box-image.png' | asset_url}}" alt="registration">
+                </div>
+                <div class="success-text">
+                    <div class="sucess-title">Thank You for Registering Your Product!</div>
+                    <div class="sucess-desc">Thank You for Registering Your Product! GET ₹250/- off on your first purchase with minimum order value of ₹500/- on <a href="/">myborosil.com</a> </div>
+                    <div class="sucess-coupon">Coupon Code : WELCOME250</div>
+                    <div class="success-button">
+                        <a href="/pages/product-registration-form" class="regd-button btn-regd-another">Register another product</a>
+                        <a href="/" class="regd-button btn-take-shopping">Take me shopping</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="registration-output-error">
+            <div class="error-title">Error Registering Your Product!</div>
+            <div class="error-desc"> Something went wrong. Please <a href="/pages/product-registration-form"> Try again</a>  or reach customer support. </div>
+        </div> 
+    </div>
+ </div>
+ </div>      

@@ -1,0 +1,239 @@
+.auth-container-outer{
+    max-width: 1386px;
+    max-height: 649px;
+    display: flex;
+    margin: auto;
+    background: #F5F5F5;
+}
+.auth-container-outer--image-container {
+    width: 50%;
+}
+.auth-container-outer--image-container img{
+    width: 100%;
+    height: 100%;
+}
+.auth-container--outer--content-container{
+    margin: auto;
+    width: 423px;
+}
+.auth-title{
+    font: normal normal bold 28px/35px Mulish;
+    color: #1A2034;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.auth-title.title-otp{
+    margin-bottom: 10px;
+}
+.mobile-input-container {
+    max-width: 100%;
+    background: #fff;
+    padding: 10px;
+    display: flex;
+    border: 1px solid #E2E2E2;
+}
+.country-code{
+    border-right: 2px solid #F5F5F5;
+    padding: 5px;
+}
+.phone-number{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    padding: 0 20px;
+    width: 100%;
+}
+.checkbox-container {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+.bottom-checkbox-container{
+    display: none;
+}
+#promotion-check{
+    background-color: #004778;
+    width: 18px;
+    height: 18px;
+}
+.check-box-text {
+    font: normal normal normal 13px/22px Mulish;
+    margin-left: 10px;
+    line-height: 20px;
+    color: #838383;
+}
+.action-button {
+    width: 100%;
+    padding: 15px;
+    border-radius: unset;
+    border: unset;
+    background-color: #004778;
+    color: #fff;
+    text-transform: uppercase;
+    font: normal normal 400 18px/23px Mulish;
+    cursor: pointer;
+}
+.action-button:hover {
+    transition: color 500ms;
+    background-color: #D9E255
+}
+
+.bottom-text{
+    padding-top: 17px;
+    text-align: center;
+    font-size: 14px;
+    color: #656977;
+}
+.signup-link{
+    text-decoration: none;
+    color: #004778;
+    font-weight: 700;
+}
+
+.invalid-phone-error, .signup-error {
+    visibility: hidden;
+    font: 14px/22px Mulish;
+    color: #013564;
+    padding: 10px 0;
+}
+.signup-error {
+  font: 14px/22px Mulish;
+}
+
+/* :: OTP page */
+.otp-verification-container {
+    min-width: 423px;
+}
+.otp-text{
+    font: normal normal normal 14px/22px Mulish;
+    text-align: center;
+    margin-top: 15px;
+    color: #505050
+}
+#reenter-phone{
+    text-align: center
+}
+
+#reenter-phone:hover{
+    color: #1A2034;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.otp-container{
+    margin-top: 40px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    max-width: 284px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.resend-otp-text{
+    margin-top: 20px;
+    font: normal normal normal 14px/22px Mulish;
+    text-align: center;
+}
+.resend-otp-link{
+    display: none;
+    cursor: pointer;
+}
+.resend-otp-link:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+.otp-timer{
+    font: normal normal 600 14px/22px Mulish;
+    color: #004778;
+}
+.otp-input{
+    height: 71px;
+    width: 57px;
+    border: 1px solid #E2E2E2;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: none;
+    padding: 18px;
+    font: normal normal bold 31px/39px Mulish;
+
+}
+.otp-error{
+    text-align: center;
+    color: #FF0C0C;
+    padding-bottom: 20px;
+    display: none;
+}
+
+.user-input {
+  padding: 15px;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #000;
+  box-shadow: none;
+  border: 1px solid #E0E0E0;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.added-mobile-number {
+  margin-bottom: 20px;
+}
+
+.user-input:hover {
+  border: 1px solid #000000;
+  box-shadow: none;
+}
+.d-signup-flex {
+    display: flex;
+    gap: 20px;
+}
+@media screen and (max-width:875px){
+    .auth-container-outer--image-container {
+        display: none;
+    }
+    .auth-container--outer--content-container{
+        width: 100%;
+    }
+    .auth-container-outer {
+        padding: 20px;
+    }
+    .step-window{
+        margin-bottom: 200px;
+    }
+    .invalid-phone-error, .signup-error  {
+        visibility: hidden;
+    }
+    .bottom-text {
+        margin-top: 17px;
+        border: 1px solid #E2E2E2;
+        padding: 10px;
+        border-left: none;
+        border-right: none;
+    }
+    .check-box-text {
+        font: normal normal normal 12px/22px Mulish;
+    }
+    .top-checkbox-container{
+        display: none;
+    }
+    .bottom-checkbox-container{
+        display: flex;
+    }
+    .invalid-phone-error, .signup-error  {
+        padding: 4px 0;
+    }
+
+    /* :: OTP */
+    .otp-verification-container{
+        min-width: 330px;
+    }
+    .title-otp, .title-signup{
+        margin-bottom: 15px;
+    }
+    .otp-container {
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+}

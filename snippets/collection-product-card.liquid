@@ -1,0 +1,122 @@
+<div class="product-card available-true dope">
+  <a href="{{ product.url }}" class="product-card__link">
+    <img
+        srcset="{%- if product.featured_media.width >= 165 -%}{{ product.featured_media | img_url: '165x' }} 165w,{%- endif -%}
+        {%- if product.featured_media.width >= 360 -%}{{ product.featured_media | img_url: '360x' }} 360w,{%- endif -%}
+        {%- if product.featured_media.width >= 533 -%}{{ product.featured_media | img_url: '533x' }} 533w,{%- endif -%}
+        {%- if product.featured_media.width >= 720 -%}{{ product.featured_media | img_url: '720x' }} 720w,{%- endif -%}
+        {%- if product.featured_media.width >= 940 -%}{{ product.featured_media | img_url: '940x' }} 940w,{%- endif -%}
+        {%- if product.featured_media.width >= 1066 -%}{{ product.featured_media | img_url: '1066x' }} 1066w,{%- endif -%}
+        {{ product.featured_media | img_url: 'master' }} {{ product.featured_media.width }}w"
+        src="{{ product.featured_media | img_url: '533x' }}"
+        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+        alt="{{ product.featured_media.alt | escape }}"
+        loading="eager"
+        class="product-card__image"
+        width="{{ product.featured_media.width }}"
+        height="{{ product.featured_media.height }}"
+        fetchpriority="high"
+      >
+  </a>
+  <div class="product-card__info" item_name = "{{ product.title }}" data-product-id="{{ product.id }}" item_category= "{% for collection in product.collections %}{% if forloop.index == 1 %}{{ collection.title }}{% endif %}{% endfor %}" price="{{product.price | divided_by : 100 }}" item_stock="{{ product.selected_or_first_available_variant.inventory_quantity }}">
+    <div id="myModal" class="modal modal--{{ section.id }}">
+      <div class="modal-content">
+        <span class="close_error_Box close_error_Box--{{ section.id }}">×</span>
+        <p class="Errormessage Errormessage--{{ section.id }}"></p>
+      </div>
+    </div>
+    <a href="{{ product.url }}" class="product-card__title product-card__title-container">{{ product.title }}</a>
+    <p class="product-card__snack">{{ product.metafields.product_subtitle.subtitle }}</p>
+    <div class="Producttitle_full">Carafe w Inbuilt Strainer</div>
+    <div class="product-card__price">
+      <span class="product-card__regularprice">
+        {% if product.selected_or_first_available_variant.price %}
+          {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
+        {% else %}
+          {{ product.price | money_without_trailing_zeros  }} 
+        {% endif %}
+        </span>
+      {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+        <span class="product-card__compareprice">
+          {{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}
+        </span>
+        <span class="product-card__discountpercentage">
+          {{ product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100 | divided_by: product.selected_or_first_available_variant.compare_at_price }}% off
+        </span>
+      {% endif %}
+    </div>
+    <div class="product-card__selectors">
+      <input value="10" type="number" class="quantity-selector-input variant-present" onkeypress="return event.charCode >= 48" min="1">
+      <div style=" " class="product-card__quantity product-card__quantity">
+        <div class="quantity-selector-value">1</div>
+        <div class="product-card__selector-dropdownArrow"></div>
+        <ul class="quantity-selector-list">
+          <li class="quantity-selector-listitem is-selected" data-value="1">1</li>
+          <li class="quantity-selector-listitem" data-value="2">2</li>
+          <li class="quantity-selector-listitem" data-value="3">3</li>
+          <li class="quantity-selector-listitem" data-value="4">4</li>
+          <li class="quantity-selector-listitem" data-value="5">5</li>
+          <li class="quantity-selector-listitem" data-value="6">6</li>
+          <li class="quantity-selector-listitem" data-value="7">7</li>
+          <li class="quantity-selector-listitem" data-value="8">8</li>
+          <li class="quantity-selector-listitem" data-value="9">9</li>
+          <li class="quantity-selector-listitem" data-value="10">10+</li>
+        </ul>
+      </div>
+      <div class="product-card__variants product-card__variants">
+        <div class="variant-selector-value">650 ml</div>
+        <div class="product-card__selector-dropdownArrow"></div>
+        <ul class="variant-selector-list">
+          <li class="variant-selector-listitem" data-variant="40807600881802" data-variantavl="0" data-product_id="6788009459850" data-variant-title="350 ml" data-variant-price="49100" data-variant-maxprice="54500" data-variant-pricetoprint="₹ 491" data-variant-maxpricetoprint="₹ 545" data-variant-quantity="0" data-variant-available="false">
+            <div class="variant-selector-listitemContent">
+              <span class="variant-selector-title">350 ml</span>
+              <span class="variant-selector-prices">
+                <div class="varaint-sellingPrice">₹ 491</div>
+                <div class="varaint-originalPrice"> ₹ 545</div>
+              </span>
+            </div>
+          </li>
+          <li class="variant-selector-listitem is-selected" data-variant="40807600914570" data-variantavl="71" data-product_id="6788009459850" data-variant-title="650 ml" data-variant-price="56300" data-variant-maxprice="62500" data-variant-pricetoprint="₹ 563" data-variant-maxpricetoprint="₹ 625" data-variant-quantity="71" data-variant-available="true">
+            <div class="variant-selector-listitemContent">
+              <span class="variant-selector-title">650 ml</span>
+              <span class="variant-selector-prices">
+                <div class="varaint-sellingPrice">₹ 563</div>
+                <div class="varaint-originalPrice"> ₹ 625</div>
+              </span>
+            </div>
+          </li>
+          <li class="variant-selector-listitem" data-variant="40807600947338" data-variantavl="118" data-product_id="6788009459850" data-variant-title="1 L" data-variant-price="74300" data-variant-maxprice="82500" data-variant-pricetoprint="₹ 743" data-variant-maxpricetoprint="₹ 825" data-variant-quantity="118" data-variant-available="true">
+            <div class="variant-selector-listitemContent">
+              <span class="variant-selector-title">1 L</span>
+              <span class="variant-selector-prices">
+                <div class="varaint-sellingPrice">₹ 743</div>
+                <div class="varaint-originalPrice"> ₹ 825</div>
+              </span>
+            </div>
+          </li>
+          <li class="variant-selector-listitem" data-variant="40807600980106" data-variantavl="0" data-product_id="6788009459850" data-variant-title="1.2 L" data-variant-price="78800" data-variant-maxprice="87500" data-variant-pricetoprint="₹ 788" data-variant-maxpricetoprint="₹ 875" data-variant-quantity="0" data-variant-available="false">
+            <div class="variant-selector-listitemContent">
+              <span class="variant-selector-title">1.2 L</span>
+              <span class="variant-selector-prices">
+                <div class="varaint-sellingPrice">₹ 788</div>
+                <div class="varaint-originalPrice"> ₹ 875</div>
+              </span>
+            </div>
+          </li>
+          <li class="variant-selector-listitem" data-variant="40807601012874" data-variantavl="0" data-product_id="6788009459850" data-variant-title="1.5 L" data-variant-price="89600" data-variant-maxprice="99500" data-variant-pricetoprint="₹ 896" data-variant-maxpricetoprint="₹ 995" data-variant-quantity="0" data-variant-available="false">
+            <div class="variant-selector-listitemContent">
+              <span class="variant-selector-title">1.5 L</span>
+              <span class="variant-selector-prices">
+                <div class="varaint-sellingPrice">₹ 896</div>
+                <div class="varaint-originalPrice"> ₹ 995</div>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button class="product-card__addtocart" type="button"> Add to cart </button>
+    <div class="loader loader"></div>
+    <span class="error-quantity" style="display:none;">Insufficient Quantity</span>
+  </div>
+</div>

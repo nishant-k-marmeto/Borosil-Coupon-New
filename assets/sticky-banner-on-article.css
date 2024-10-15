@@ -1,0 +1,199 @@
+/* sticky-banner-on article-page-css */
+.sticky-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20vh; /* Height relative to viewport */
+    background-image: url('https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Blog_Sticky_Banner.png?v=1718613739'); /* Change to your image URL */
+    background-size: cover; /* Adjust background to cover the entire banner */
+    background-position: center; /* Center the background image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 1vh 2vw; /* Adjust padding relative to viewport */
+    box-sizing: border-box; /* Ensure padding is included in height */
+}
+
+.close-btn {
+    position: absolute;
+    top: 0.1vh;
+    right: 2vw;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.banner-content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-btn {
+    position: absolute;
+    top: 0.6vh;
+    left: 55%; /* Position the button at 60% from the left */
+    transform: translateX(-50%); /* Center the button at the 60% position */
+    background-color: #0056b3; /* Blue background */
+    color: white; /* White text */
+    border: none;
+    padding: 0.5vh 1vw; /* Adjust padding relative to viewport */
+    font-size: 2.5vh; /* Adjust font size relative to viewport */
+    cursor: pointer;
+    border-radius: 2vh; /* Round edges */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    font-weight: bold;
+}
+
+.order-btn:hover {
+    background-color: #007bff ; /* Darker blue on hover */
+}
+@media screen and (max-width:1024px) {
+.sticky-banner {
+      height: 6.8vh; /* Increase height slightly for smaller screens */
+      padding: 0; /* Adjust padding for smaller screens */
+      background-image: url('https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Blog_Sticky_Banner.png?v=1718613739');
+      background-size: contain;
+      background-position:bottom;
+      /* background-size: 85vh 15vh; */
+      /* background-size: 100% 100%: */
+      background-repeat: no-repeat;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .order-btn {
+      top :0 ;
+      left: 57%; /* Center the button more on smaller screens */
+      transform: translateX(-60%); /* Center the button at the 50% position */
+      padding: 3px 5px; /* Adjust padding */
+      font-size: 1.3vh; /* Adjust font size */
+      border-radius: 7px;
+  }
+
+  .close-btn {
+      top: 2vh; /* Adjust position */
+      right: 4vw; /* Adjust position */
+      font-size: 2.5rem; /* Adjust font size */
+  }
+}
+@media screen and (max-width:762px) {
+.sticky-banner {
+      bottom: 2rem;
+      height: 15vh; /* Increase height slightly for smaller screens */
+      padding: 0vh 1vw; /* Adjust padding for smaller screens */
+      background-image: url('https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Blog_Sticky_Banner_Mobile.png?v=1718790109');
+      /* background-size: cover; */
+      background-size: contain; /* Ensure entire background image fits within the banner */
+      background-repeat: no-repeat;
+      background-position: center;
+      /* box-shadow: 0 0 0 rgba(0, 0, 0, 0.2); */
+  }
+
+  .order-btn {
+      top : 8px;
+      left: 46.5%; /* Center the button more on smaller screens */
+      transform: translateX(-60%); /* Center the button at the 50% position */
+      padding: 3px 3px; /* Adjust padding */
+      font-size: 1vh; /* Adjust font size */
+      border-radius: 6px;
+  }
+
+  .close-btn {
+      top: 2vh; /* Adjust position */
+      right: 4vw; /* Adjust position */
+      font-size: 2.5rem; /* Adjust font size */
+  }
+}
+@media screen and (max-width:425px) {
+.sticky-banner {
+      bottom: 2.3rem;
+      height: 15vh; /* Increase height slightly for smaller screens */
+      padding: 0vh 1vw; /* Adjust padding for smaller screens */
+      background-image: url('https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Blog_Sticky_Banner_Mobile.png?v=1718790109');
+      /* background-size: cover; */
+      background-size: contain; /* Ensure entire background image fits within the banner */
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .order-btn {
+      top : 8px;
+      left: 46.5%; /* Center the button more on smaller screens */
+      transform: translateX(-60%); /* Center the button at the 50% position */
+      padding: 3px 3px; /* Adjust padding */
+      font-size: 1vh; /* Adjust font size */
+      border-radius: 6px;
+  }
+
+  .close-btn {
+      top: 2vh; /* Adjust position */
+      right: 4vw; /* Adjust position */
+      font-size: 2.5rem; /* Adjust font size */
+  }
+}
+@media screen and (max-width:376px) {
+.sticky-banner {
+      bottom:3.5rem;
+      height: 15vh; /* Increase height slightly for smaller screens */
+      padding: 0 0; /* Adjust padding for smaller screens */
+      background-image: url('https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Blog_Sticky_Banner_Mobile.png?v=1718790109');
+      /* background-size: cover; */
+      background-size: contain; /* Ensure entire background image fits within the banner */
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .order-btn {
+      top : 8px;
+      left: 46.5%; /* Center the button more on smaller screens */
+      transform: translateX(-60%); /* Center the button at the 50% position */
+      padding: 3px 3px; /* Adjust padding */
+      font-size: 1vh; /* Adjust font size */
+      border-radius: 6px;
+  }
+
+  .close-btn {
+      top: 2vh; /* Adjust position */
+      right: 4vw; /* Adjust position */
+      font-size: 2.5rem; /* Adjust font size */
+  }
+}
+@media screen and (max-width:360px) {
+.sticky-banner {
+      bottom:2.5rem;
+      height: 15vh; /* Increase height slightly for smaller screens */
+      padding: 0 0; /* Adjust padding for smaller screens */
+      background-image: url('https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Blog_Sticky_Banner_Mobile.png?v=1718790109');
+      /* background-size: cover; */
+      background-size: contain; /* Ensure entire background image fits within the banner */
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+  }
+
+  .order-btn {
+      top : 8px;
+      left: 46.5%; /* Center the button more on smaller screens */
+      transform: translateX(-60%); /* Center the button at the 50% position */
+      padding: 3px 3px; /* Adjust padding */
+      font-size: 1vh; /* Adjust font size */
+      border-radius: 6px;
+  }
+
+  .close-btn {
+      top: 2vh; /* Adjust position */
+      right: 4vw; /* Adjust position */
+      font-size: 2.5rem; /* Adjust font size */
+  }
+}
+

@@ -1,0 +1,153 @@
+{% assign price_filter = section.settings.enable_price_filter %}
+{% assign price_ranges = section.settings.price_ranges %}
+{% assign enable_tag_filter = section.settings.enable_tag_filter %}
+{% if section.settings.price_filter_heading != blank %}
+  {% assign price_heading = section.settings.price_filter_heading %}
+{% else %}
+  {% assign price_heading = 'Price' %}
+{% endif %}
+{% if price_filter %}
+  {% assign prs = '' %}
+  {% if price_ranges != blank %}
+    {% assign prs = price_ranges | split: ',' | uniq %}
+  {% endif %}
+{% endif %}
+
+<div id="sidebar-filter" class="filter-sidebar">
+    <div class="filter-sidebar__header">
+      <h2 class="filter-sidebar__title">Filters</h2>
+      <span class="title-reset-all clear-all">reset all</span>
+    </div>
+    
+    <div class="filter-sidebar__content">    
+      {%- for filter in collection.filters -%}
+      {{ filter.active_values}}
+        {% case filter.type %}
+        {% when 'list' %}
+          <div class="filter-group and" data-tag="{{ filter.label | handleize | replace: '-', '' }}">
+            <button class="filter-group__heading js-accordion-heading">		  
+              <span class="heading--text">{{ filter.label | escape }}</span>
+              <span class="heading--icon"></span>
+            </button>
+            <div class="filter-group__content js-accordion-content">
+              <ul class="filter-group__list" role="list">
+                {%- for value in filter.values -%}
+                  <li class="filter-group__listitem filter-item or" data-tag="{{ value.label | handleize }}">
+                    <span class="filter-checkbox"></span>
+                    
+                    {%- if filter.label == 'Color' -%}
+                      <span class="filter-colorswatch" style="background: {{ value.label | handleize }};"></span>
+                    {%- endif -%}
+                    
+                    <span>{{ value.label | escape }}</span>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          </div>
+        {% when 'price_range' %}
+            {% if price_filter %}
+                <div class="filter-group and" data-tag="Price">
+                    <button class="filter-group__heading js-accordion-heading">		  
+                    <h3 class="heading--text">{{ price_heading }}</h3>
+                    <span class="heading--icon"></span>
+                    </button>
+                    <div class="filter-group__content js-accordion-content">
+                        <div class="filter-option filter-option-price">          
+                            <div class="and filter-list" data-tag="Price">
+                            <div class="filter-option-heading">
+                            </div>      
+                            <ul class="filter-content">
+                                {% for pr in prs %}
+                                {% assign lpr = pr | split: '-' | first | append: '00' %}
+                                {% assign hpr = pr | split: '-' | last | append: '00' %}
+                                {% assign lpr = lpr | money_without_trailing_zeros %}
+                                {% assign hpr = hpr | money_without_trailing_zeros %}
+                                <li class="or filter-item" data-tag="{{ pr }}">
+                                <span class="filter-item-checkbox"></span>
+                                <span class="filter-item-name">{{ lpr }} - {{ hpr }}</span>            
+                                </li>
+                                {% endfor %}               
+                            </ul>       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %} 
+        {% endcase %}
+        {%- endfor -%}
+        
+        {% if enable_tag_filter %}
+        {% if section.blocks.size > 0 %}
+          {% for block in section.blocks %}
+            {% if block.type == 'tag_filters' %}
+            {% assign filter_name = block.settings.filter_name %}
+            {% assign filter_tags = block.settings.filter_tags | split: ',' | uniq %} 
+            {% if filter_tags.size > 0%}
+                <div class="filter-group and" data-tag="Tag">
+                    <button class="filter-group__heading js-accordion-heading">		  
+                        <h3 class="heading--text">{{ filter_name }}</h3>
+                        <span class="heading--icon"></span>
+                    </button>
+                <ul class="filter-content js-accordion-content">
+                    {% for tag in filter_tags %}
+                    {% for collection_tags in collection.all_tags %}                 
+                        {% assign collection_formatted_tags = collection_tags | strip | handle %}
+                        {% assign filter_formatted_tags = tag | strip | handle %}
+                        {% if filter_formatted_tags == collection_formatted_tags %}
+                        <li class="or filter-item" data-tag="{{ tag | strip | downcase }}">                     
+                            <span class="filter-item-checkbox"></span>
+                            <span class="filter-item-name">{{ tag | strip | capitalize }}</span> 
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% endfor %}
+                </ul>
+                </div>
+            {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+    </div>
+    
+    <div class="filter-sidebar__footer">
+      <div class="filter-sidebar__button clear-all" data-action="close-filter">Close</div>
+      <div class="filter-sidebar__button" data-action="close-filter">Apply filter</div>
+    </div>
+  </div>
+
+  <style>
+      .or.filter-item .filter-item-checkbox{
+        height: 15px;
+        width: 15px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        position: relative;
+        border: 1px solid #013564;
+        border-radius: 2px;
+      }
+
+      .or.filter-item.filter-selected .filter-item-checkbox{
+        background: #013564;
+        position: relative;
+      }
+      .or.filter-item.filter-selected .filter-item-checkbox::after{
+        content: '';
+        width: 9px;
+        height: 5px;
+        position: absolute;
+        top: 3px;
+        left: 2px;
+        border: 2px solid #fff;
+        border-top: none;
+        border-right: none;
+        background: 0 0;
+        transform: rotate(-50deg);
+        border-radius: 0;
+        box-sizing: border-box;
+      }
+
+      
+  </style>

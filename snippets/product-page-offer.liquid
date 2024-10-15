@@ -1,0 +1,112 @@
+{%- assign offerProductswithVariant = '' -%}
+{%- assign offerProductswithVariant = product.metafields.offer.free_product | split: ',' -%}
+{%- assign offerProductsarray = offerProductswithVariant -%}
+
+{% assign itemArray = '' | split: '' %}
+{% assign itemArrayVariants = '' | split: '' %}
+
+{%- for operation in offerProductsarray -%}
+  {% assign arrItem = operation | split: '|' | first | split: ',' %}
+  {% assign arrItemVariant = operation | split: '|' | last | split: ',' %}
+  {% assign itemArray = itemArray | concat: arrItem %}
+  {% assign itemArrayVariants = itemArrayVariants | concat: arrItemVariant %}
+{% endfor %}
+
+{% assign offerProducts = itemArray %}  
+
+{% assign atLeastOneProductAvailable = false %}
+
+{%- for handle in offerProducts -%}
+{% assign temp = all_products[handle] %}
+  {%- for variant in temp.variants -%}
+    {%- for item in itemArrayVariants -%}
+      {% assign temper = variant.id | times: 1 %}
+      {% assign noItem = item | times: 1 %} 
+      {% if temper == noItem %} 
+        {% if variant.available %}{% assign atLeastOneProductAvailable = true %}{% break %}{% endif %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}      
+
+{% if atLeastOneProductAvailable %}
+  <section class="offer-products-section" data-featured-products>
+      <div class="widget-title not-before">
+          <h3 class="box-title">
+              <span class="title" style="text-transform: none;">Get the below item free with the prepaid order </span><span class="validity"></span> 
+          </h3>
+      </div>
+      
+      {%- for handle in offerProducts -%}
+          {% assign product = all_products[handle] %}
+          {%- liquid
+          assign on_sale = false
+          if product.compare_at_price_min > product.price_min
+            assign on_sale = true
+          endif
+          assign sold_out = true
+          if product.available
+            assign sold_out = false
+          endif
+          if sectionId == blank 
+            assign sectionId = section.id
+          endif
+        -%}
+  
+        {%- for variant in product.variants -%}
+          {%- for item in itemArrayVariants -%}
+            {% assign temper = variant.id | times: 1 %}
+            {% assign noItem = item | times: 1 %} 
+            {% if temper == noItem %} 
+              {% if product != blank and variant.available %}
+                  {% assign seen_variants ='' %}
+                      <div class="related-product__card">
+                        <div class="related-product__contents">
+                          <a href="{{ product.url }}" class="related-product__image-container">
+                            <img src="{% if product.featured_image %}{{ product.featured_image | img_url: '150x' }}{% else %}{{ product.featured_image | img_url: '150x' }}{% endif %}">
+                          </a>
+                          <div class="related-product__details">
+                            <a href="{{ product.url }}"><p class="related-product__title">{{ product.title }}</p></a>
+                            <div class="price-box">
+                              <div class="price-sale">
+                                <span class="special-price">
+                                  Free
+                                </span>
+                                <span class="old-price">{{ variant.price | money }}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="related-products__selector">
+                          <input type="checkbox" name="offer-product" data-variant-id="{{ variant.id }}">
+                        </div>
+                    </div>
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+      {% endfor %}
+  </section>
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

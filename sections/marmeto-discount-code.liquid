@@ -1,0 +1,335 @@
+{% if section.settings.enable_section and section.blocks.size > 0 %}
+<style>
+  #discount-wrapper{
+    display: none !important;
+  }
+  
+  @media(max-width: 1000px){
+    .discount__cards .checkout_discount_slider {
+      display: flex;
+      align-items: center;
+      overflow-y: hidden;
+      overflow-x: scroll; }
+
+    .discount__cards .js-discount-card {
+      flex: 0 0 80%;
+      align-self: stretch;
+    }
+  }
+  
+/*   .discount__cards .field {
+    max-width: 288px;
+} */
+  .discount__cards .card__header{
+    background: white;
+    border-radius:4px;
+    height: 100%;
+    padding:.9285714286em .7857142857em;
+    position: relative;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 8%);
+  }
+  .card__header--svg{
+    margin-bottom:auto
+  }
+  .card__header--title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    margin-right: auto;
+}
+  .card__header--title .card__header--svg svg{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  .card__header--title span{
+    color: black;
+    font-weight:600;
+    font-size:.85rem
+  }
+  .toggle--button{
+    line-height:1.2;
+    cursor:pointer;
+    font-size:.7rem;
+    padding-top:.3rem
+  }
+  .card__header--button{
+    cursor:pointer
+  }
+  .card__header--button .button--text {
+    font: normal normal 600 12px/22px Segoe UI;
+    letter-spacing: 0px;
+}
+  .card__header--button .button--icon{
+    width:100%;
+    min-width:40px;
+    display:none;
+    text-align:center
+  }
+  .discount__cards .card__content{
+    display:none;
+    border-radius:4px;
+    background:#ebebeb;
+    border-top:1px solid #fff;
+    padding:.9285714286em .7857142857em
+  }
+  .discount__cards .content--title{
+    font-weight:600;
+    padding-bottom:.5rem
+  }
+  .discount__cards .content--text{
+    padding-left:1.5rem;
+    font-size:.7rem
+  }
+  .discount__cards_btn_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 .5rem;
+  }
+  .discount__cards_subtext_wrapper {
+    padding: 0.5rem;
+    padding-bottom: 5px;
+}
+  .discount__cards_subtext_wrapper .discount__cards_subtext {
+    text-align: left;
+    font: normal normal normal 13px/18px Segoe UI;
+    letter-spacing: 0px;
+    color: #6a6a6a;
+}
+  .card__header-svg-title {
+    display: flex;
+}
+  @media(max-width:1200px){
+    .discount__cards .field{
+      max-width:100%
+    }
+  }
+  .disabled-discount{
+    pointer-events: none;
+  }
+  .disabled-discount .button--text{
+    color: #aeaeae !important;
+  }
+  .applied-discount{
+    pointer-events: none;
+  }
+  .applied-discount .button--text{
+    display: none;
+  }
+  .applied-discount .button--icon{
+    display:block;
+  }
+  .circle {
+    width: 20px;
+    height: 20px;
+    background: #fafafa;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+  }
+  .circle_left{
+    left: 0;
+    transform: translate(-50%, -50%);
+    box-shadow: -3px 0px 4px -4px grey inset;
+  }
+  .circle_right{
+    right: 0;
+    transform: translate(50%, -50%);
+    box-shadow: 3px 0px 4px -4px grey inset;
+  }
+
+</style>
+
+<div id="discount-wrapper">
+  <div class="discount__cards">
+    <div class="fieldset checkout_discount_slider">
+      {%- for block in section.blocks -%}
+      <div class="field js-discount-card">
+        <div class="card__header">
+          <div class="circle circle_left"></div>
+          <div class="circle circle_right"></div>
+          <div class="card__header--title">
+            <div class="card__header-svg-title">
+            <div class="card__header--svg">
+              <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.34826 9.40987C3.27939 9.40981 3.21207 9.38893 3.15482 9.34986C3.09756 9.31079 3.05293 9.25528 3.02656 9.19034C3.00019 9.1254 2.99326 9.05395 3.00665 8.98499C3.02004 8.91604 3.05315 8.85267 3.10179 8.80291L8.67671 3.11262C8.70865 3.0778 8.74713 3.04989 8.78985 3.03055C8.83258 3.01121 8.87868 3.00084 8.92541 3.00005C8.97214 2.99926 9.01855 3.00808 9.06188 3.02597C9.1052 3.04386 9.14456 3.07046 9.17761 3.10419C9.21066 3.13792 9.23672 3.17809 9.25425 3.22231C9.27178 3.26653 9.28042 3.3139 9.27964 3.36159C9.27887 3.40929 9.26871 3.45634 9.24976 3.49995C9.23081 3.54355 9.20347 3.58282 9.16934 3.61542L3.59442 9.30571C3.56215 9.33878 3.52379 9.36502 3.48154 9.3829C3.4393 9.40077 3.394 9.40994 3.34826 9.40987V9.40987Z" fill="#CCDC2B"/><path d="M4.65248 6.08257C4.37681 6.08257 4.10733 5.99914 3.87812 5.84282C3.64891 5.68651 3.47026 5.46433 3.36476 5.20439C3.25927 4.94445 3.23167 4.65842 3.28545 4.38247C3.33923 4.10652 3.47198 3.85304 3.6669 3.65409C3.86183 3.45514 4.11019 3.31965 4.38056 3.26476C4.65093 3.20987 4.93118 3.23804 5.18587 3.34571C5.44055 3.45338 5.65824 3.63572 5.81139 3.86966C5.96454 4.1036 6.04629 4.37864 6.04629 4.66C6.04586 5.03715 5.89888 5.39874 5.63758 5.66543C5.37628 5.93212 5.02201 6.08214 4.65248 6.08257V6.08257ZM4.65248 3.94888C4.51467 3.94888 4.37997 3.99058 4.26539 4.06872C4.15081 4.14686 4.06151 4.25792 4.00877 4.38786C3.95604 4.51781 3.94224 4.66079 3.96912 4.79873C3.99601 4.93668 4.06236 5.06339 4.15981 5.16284C4.25725 5.26229 4.3814 5.33002 4.51655 5.35746C4.65171 5.3849 4.7918 5.37081 4.91911 5.31699C5.04642 5.26317 5.15524 5.17202 5.2318 5.05508C5.30836 4.93813 5.34922 4.80064 5.34922 4.66C5.34905 4.47142 5.2756 4.29061 5.14498 4.15724C5.01436 4.02386 4.83724 3.94881 4.65248 3.94855V3.94888Z" fill="#CCDC2B"/><path d="M7.61885 9.1812C7.34318 9.1812 7.0737 9.09777 6.84449 8.94146C6.61528 8.78514 6.43663 8.56297 6.33113 8.30303C6.22564 8.04308 6.19804 7.75705 6.25182 7.4811C6.3056 7.20515 6.43835 6.95167 6.63327 6.75272C6.8282 6.55377 7.07656 6.41828 7.34693 6.36339C7.6173 6.3085 7.89755 6.33668 8.15224 6.44435C8.40692 6.55202 8.62461 6.73435 8.77776 6.96829C8.93091 7.20223 9.01266 7.47727 9.01266 7.75863C9.01223 8.13579 8.86525 8.49737 8.60395 8.76406C8.34265 9.03075 7.98838 9.18077 7.61885 9.1812ZM7.61885 7.04751C7.48104 7.04751 7.34634 7.08922 7.23176 7.16736C7.11718 7.24549 7.02787 7.35656 6.97514 7.4865C6.9224 7.61644 6.90861 7.75942 6.93549 7.89736C6.96237 8.03531 7.02873 8.16202 7.12618 8.26147C7.22362 8.36092 7.34777 8.42865 7.48292 8.45609C7.61808 8.48353 7.75817 8.46945 7.88548 8.41562C8.01279 8.3618 8.12161 8.27065 8.19817 8.15371C8.27473 8.03677 8.31559 7.89928 8.31559 7.75863C8.31542 7.57005 8.24197 7.38924 8.11135 7.25587C7.98073 7.12249 7.80361 7.04744 7.61885 7.04718V7.04751Z" fill="#CCDC2B"/><path d="M5.99955 13.0003C5.87826 13.0001 5.75837 12.9737 5.64776 12.9229C5.53715 12.8721 5.4383 12.798 5.35769 12.7055L4.69592 11.962C4.59891 11.8683 4.48289 11.7976 4.3561 11.7549C4.2293 11.7122 4.09485 11.6984 3.96227 11.7147L3.00557 11.9112C2.88693 11.9369 2.76429 11.9366 2.64578 11.9103C2.52726 11.884 2.41558 11.8323 2.31813 11.7586C2.21964 11.6841 2.13741 11.5895 2.07663 11.4808C2.01586 11.3722 1.97788 11.2518 1.96511 11.1274L1.85085 10.1221C1.82549 9.9873 1.77186 9.85969 1.69364 9.74803C1.61542 9.63637 1.51447 9.54329 1.3977 9.47518L0.511922 9.05198C0.400845 8.99976 0.301693 8.92442 0.220834 8.83078C0.139975 8.73714 0.0791953 8.62727 0.0423976 8.50824C0.00500175 8.38871 -0.00785762 8.26259 0.00462148 8.13776C0.0171006 8.01293 0.0546506 7.89207 0.114929 7.78271L0.591835 6.89831C0.647821 6.7726 0.676788 6.63612 0.676788 6.49804C0.676788 6.35995 0.647821 6.22347 0.591835 6.09776L0.114929 5.21337C0.0547052 5.10398 0.0171863 4.98312 0.0047081 4.8583C-0.0077701 4.73348 0.00505929 4.60737 0.0423976 4.48783C0.0793122 4.36898 0.140145 4.25931 0.220998 4.16584C0.301852 4.07238 0.400943 3.99718 0.511922 3.94507L1.3977 3.5258C1.51457 3.45763 1.61561 3.36445 1.69389 3.25268C1.77216 3.1409 1.82582 3.01316 1.85118 2.87823L1.96543 1.87296C1.97824 1.74853 2.01624 1.62818 2.077 1.51953C2.13777 1.41087 2.21999 1.31629 2.31845 1.24176C2.41594 1.16813 2.52762 1.11646 2.64612 1.09015C2.76462 1.06383 2.88725 1.06348 3.00589 1.08912L3.96227 1.28565C4.09485 1.30202 4.22934 1.28834 4.35615 1.24559C4.48296 1.20285 4.59897 1.13209 4.69592 1.03835L5.35769 0.294799C5.43827 0.202258 5.53711 0.128153 5.64773 0.0773474C5.75835 0.0265413 5.87825 0.000182348 5.99955 0C6.12085 0.000244349 6.24072 0.026631 6.35133 0.0774329C6.46195 0.128235 6.5608 0.202307 6.64142 0.294799L7.30286 1.03999C7.39981 1.13372 7.51583 1.20449 7.64264 1.24723C7.76945 1.28998 7.90393 1.30366 8.03651 1.28729L8.99289 1.09076C9.11154 1.06519 9.23415 1.06557 9.35264 1.09188C9.47113 1.11819 9.58282 1.16983 9.68033 1.2434C9.77878 1.31794 9.86099 1.41253 9.92175 1.52118C9.98252 1.62983 10.0205 1.75018 10.0334 1.8746L10.1473 2.87986C10.1726 3.0148 10.2263 3.14254 10.3046 3.25431C10.3829 3.36609 10.4839 3.45926 10.6008 3.52744L11.4869 3.95064C11.5976 4.00262 11.6966 4.07758 11.7774 4.17075C11.8583 4.26391 11.9192 4.37324 11.9564 4.49176C11.9938 4.61129 12.0067 4.73741 11.9942 4.86224C11.9817 4.98707 11.9442 5.10794 11.8839 5.2173L11.4066 6.10006C11.3508 6.2258 11.3219 6.36227 11.3219 6.50033C11.3219 6.63839 11.3508 6.77486 11.4066 6.9006L11.8835 7.78303C11.9438 7.89233 11.9814 8.01313 11.9939 8.1379C12.0064 8.26267 11.9937 8.38873 11.9564 8.50824C11.9195 8.62712 11.8587 8.73682 11.7779 8.83029C11.697 8.92376 11.5979 8.99894 11.4869 9.051L10.6004 9.4742C10.4836 9.54239 10.3826 9.63557 10.3043 9.74734C10.226 9.85912 10.1723 9.98685 10.147 10.1218L10.0337 11.1287C10.0209 11.2532 9.98288 11.3736 9.92211 11.4823C9.86134 11.591 9.77912 11.6856 9.68065 11.7602C9.58319 11.8339 9.4715 11.8855 9.35298 11.9118C9.23446 11.9381 9.11183 11.9383 8.99321 11.9125L8.03683 11.716C7.90425 11.6996 7.76975 11.7132 7.64293 11.7559C7.51611 11.7987 7.4001 11.8695 7.30318 11.9633L6.64142 12.7068C6.56073 12.7992 6.46184 12.873 6.35122 12.9236C6.24061 12.9742 6.12076 13.0003 5.99955 13.0003ZM4.07396 11.0655C4.274 11.0666 4.47186 11.108 4.65615 11.1875C4.84044 11.2669 5.00753 11.3827 5.1478 11.5283L5.80956 12.2718C5.8335 12.3 5.86307 12.3227 5.89627 12.3383C5.92948 12.3539 5.96557 12.362 6.00212 12.3623C6.0387 12.362 6.0748 12.3538 6.10801 12.3381C6.14122 12.3225 6.17077 12.2998 6.19468 12.2715L6.85356 11.5286C7.0209 11.3541 7.22676 11.2231 7.4539 11.1465C7.68105 11.0699 7.92287 11.05 8.15911 11.0884L9.11549 11.2849C9.15088 11.293 9.18754 11.2933 9.22305 11.2858C9.25856 11.2784 9.29213 11.2633 9.32153 11.2417C9.35073 11.2191 9.37499 11.1905 9.39279 11.1578C9.41058 11.1251 9.4215 11.089 9.42487 11.0517L9.5388 10.0464C9.57537 9.80326 9.66745 9.57226 9.8076 9.37209C9.94775 9.17192 10.1321 9.00818 10.3456 8.8941L11.232 8.4709C11.2654 8.45567 11.2953 8.4335 11.3198 8.4058C11.3442 8.37811 11.3628 8.3455 11.3742 8.31007C11.385 8.27423 11.3884 8.23651 11.3843 8.19925C11.3802 8.162 11.3685 8.12601 11.3501 8.09356L10.8716 7.21276C10.7635 6.99161 10.7072 6.74782 10.7072 6.50066C10.7072 6.25349 10.7635 6.0097 10.8716 5.78855L11.3489 4.90415C11.3672 4.87169 11.3789 4.83571 11.383 4.79845C11.3871 4.7612 11.3837 4.72348 11.3729 4.68764C11.3615 4.65224 11.343 4.61967 11.3185 4.59203C11.294 4.56438 11.2641 4.54228 11.2308 4.52714L10.3447 4.10394C10.1311 3.98985 9.94679 3.82612 9.80664 3.62595C9.66648 3.42578 9.57441 3.19478 9.53784 2.9516L9.42391 1.94633C9.42048 1.90909 9.40953 1.87299 9.39174 1.84029C9.37396 1.80759 9.34972 1.77901 9.32057 1.75635C9.2912 1.73475 9.25769 1.71973 9.22224 1.71228C9.18678 1.70483 9.15019 1.70511 9.11485 1.71311L8.15847 1.90965C7.92256 1.94816 7.68105 1.92857 7.45406 1.8525C7.22707 1.77644 7.02118 1.6461 6.85356 1.47236L6.19179 0.72881C6.16771 0.701414 6.13825 0.679502 6.10532 0.664502C6.07239 0.649501 6.03674 0.641749 6.00068 0.641749C5.96462 0.641749 5.92896 0.649501 5.89603 0.664502C5.8631 0.679502 5.83364 0.701414 5.80956 0.72881L5.1478 1.47236C4.98043 1.6467 4.77462 1.77763 4.54755 1.85421C4.32048 1.9308 4.07876 1.95082 3.84256 1.91259L2.88618 1.71606C2.8508 1.70801 2.81414 1.7077 2.77863 1.71515C2.74311 1.72261 2.70955 1.73765 2.68014 1.7593C2.65099 1.78195 2.62675 1.81054 2.60897 1.84323C2.59118 1.87593 2.58023 1.91204 2.5768 1.94928L2.46255 2.95455C2.42566 3.19758 2.3333 3.42835 2.19292 3.62824C2.05255 3.82812 1.86809 3.99152 1.65444 4.10525L0.76899 4.52845C0.73565 4.54362 0.705783 4.56574 0.681301 4.59338C0.656819 4.62102 0.638261 4.65357 0.626816 4.68895C0.616078 4.7248 0.612673 4.76251 0.616813 4.79976C0.620954 4.837 0.632552 4.87298 0.650886 4.90546L1.12779 5.78986C1.23602 6.01105 1.29236 6.2549 1.29236 6.50213C1.29236 6.74936 1.23602 6.99321 1.12779 7.2144L0.650886 8.09552C0.632552 8.128 0.620954 8.16398 0.616813 8.20123C0.612673 8.23847 0.616078 8.27619 0.626816 8.31204C0.638223 8.34748 0.656763 8.38009 0.681247 8.40779C0.705731 8.43548 0.735618 8.45765 0.76899 8.47286L1.65444 8.89606C1.86805 9.00998 2.0524 9.17358 2.19261 9.37364C2.33283 9.57371 2.42497 9.80463 2.46159 10.0477L2.57584 11.053C2.57923 11.0903 2.59016 11.1264 2.60795 11.1591C2.62574 11.1918 2.65 11.2204 2.67918 11.243C2.70859 11.2646 2.74215 11.2797 2.77766 11.2871C2.81318 11.2946 2.84983 11.2943 2.88522 11.2862L3.84192 11.0897C3.91807 11.0738 3.99624 11.0655 4.07396 11.0655Z" fill="#CCDC2B"/></svg>
+            </div>
+            <span>
+              {% if block.settings.discount_label != blank %} {{ block.settings.discount_code }} - {{ block.settings.discount_label }}{% endif %}
+            </span>
+            </div>
+            <div class="card__header--button {{ block.settings.discount_code | handleize }}">
+              <div class="js-apply-discount" data-discount-code="{{ block.settings.discount_code }}">
+                <span class="button--text" style="color: {{ section.settings.discount_cta_color }};">Apply</span>
+                <span class="button--icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="19.13" height="13.018" viewBox="0 0 19.13 13.018"><defs><style>.tick-a{fill:#ccdc2b;}</style></defs><g transform="translate(-15.876 -21.316)"><g transform="translate(15.876 21.316)"><path class="tick-a" d="M141.879,165.829a1.49,1.49,0,0,0-2.107-.056l-9.516,9.025-4.539-4.66a1.491,1.491,0,0,0-2.136,2.08l5.565,5.714a1.491,1.491,0,0,0,2.094.042l10.583-10.037A1.49,1.49,0,0,0,141.879,165.829Z" transform="translate(-123.158 -165.364)"/></g></g></svg>
+                </span>
+              </div>
+            </div>
+          </div>
+           {% if block.settings.discount_sub_text != blank %}
+          <div class="discount__cards_subtext_wrapper">
+            <p class="discount__cards_subtext"> {{ block.settings.discount_sub_text }}</p>
+          </div>
+          {% endif %}
+
+          <div class="discount__cards_btn_wrapper">
+            {% if block.settings.discount_details_title != blank %}
+            <div class="js-open-info toggle--button" style="color: {{ section.settings.discount_cta_color }};">
+              {% if block.settings.discount_details_btn_text != blank %}
+              {{block.settings.discount_details_btn_text}} >
+              {% else %}
+              Show details >
+              {% endif %}
+            </div>
+            {% endif %}
+            <span></span>
+
+          </div>
+        </div>
+
+        {% if block.settings.discount_details_title != blank %}
+        <div class="card__content js-card-content">
+          <h5 class="content--title">{{ block.settings.discount_details_title }}</h5>
+          <div class="content--text">
+            {{ block.settings.discount_details }}
+
+            <div class="toggle--button js-close-info" style="color: {{ section.settings.discount_cta_color }};">Hide details</div>
+          </div>                
+        </div>
+        {% endif %}
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<script>
+  window.$ = Checkout.$;
+
+  $(document).on('page:load page:change', function() {
+    var discountHtml = $("#discount-wrapper").html();    
+    $('.order-summary__section--discount').append(discountHtml);
+
+    //Apply discount button
+    $(document).on("click", ".js-apply-discount", function(){
+      var discountCode = $(this).data('discount-code');
+      $('[name="checkout[reduction_code]"]').val(discountCode);
+      $('[name="checkout[reduction_code]"]').closest('form').submit();
+    });
+
+    //Show hide details
+    $(document).on("click", ".js-open-info", function(){
+      $(this).hide();
+      $(this).parents('.js-discount-card').find('.js-card-content').slideToggle();
+    });
+    $(document).on("click", ".js-close-info", function(){
+      $(this).parents('.js-discount-card').find('.js-open-info').show();
+      $(this).parents('.js-discount-card').find('.js-card-content').slideToggle();
+    });
+
+    function checkDiscountApplied(){
+      $('.tags-list .tag').each(function(){
+        var discountCode = $(this).find(".reduction-code__text").text();
+        //Need to find a better regex for handleize
+        discountCode = discountCode.toLowerCase().replace(/ /g, '-'); 
+        $('.' + discountCode).addClass('applied-discount');
+      });
+      $('.js-discount-card').each(function(){
+        var isDiscountApplied = $(this).find(".card__header--button").hasClass('applied-discount');
+        if(!isDiscountApplied){
+          $(this).find('.card__header--button').addClass('disabled-discount');
+        }
+      });
+    }
+
+    var appliedDiscount = $(".tags-list .tag").length;
+    if(appliedDiscount){
+      checkDiscountApplied();
+    }
+
+    $('.tags-list .tag__wrapper .tag__button').on('click', function(e) {
+      e.preventDefault();    
+      var formTag = $(this).closest('form');
+      var tagUrl = $(formTag).attr("action");
+
+      $('[data-reduction-form] button[type="submit"]').addClass("btn--loading");
+      $.ajax({
+        url: tagUrl,
+        type: 'post',
+        data: formTag.serialize(),
+        success: function(response) {
+          location.reload();
+        }
+      })
+    });
+  });
+  
+  
+</script>
+{% endif %}
+
+
+
+{% schema %}
+  {
+    "name": "Marmeto - Discount Codes",
+    "settings": [
+	  {
+        "type": "checkbox",
+        "id": "enable_section",
+        "label": "Enable section",
+		"default": true
+      },
+	  {
+		"type": "color",
+		"id": "discount_cta_color",
+		"label": "CTA Color",
+		"default": "#1878b9"
+	  }
+	],
+	"blocks": [
+      {
+        "type": "text",
+        "name": "Discount",
+        "settings": [
+          {
+            "type": "text",
+            "id": "discount_code",
+            "label": "Discount code"
+          },
+		  {
+            "type": "text",
+            "id": "discount_label",
+            "label": "Discount label",
+			"info": "Eg: CODE - 10% off"
+          },
+{
+            "type": "text",
+            "id": "discount_sub_text",
+            "label": "Discount Sub Text",
+			"info": "Eg: 10% off on all products"
+          },
+		{
+            "type": "text",
+            "id": "discount_details_btn_text",
+            "label": "Discount info button text",
+			"info": "Eg: View T&C's"
+          },
+		  {
+			"type": "text",
+            "id": "discount_details_title",
+            "label": "Discount details title",
+			"default":"Terms & Conditions"
+		  },
+		  {
+            "type": "html",
+            "id": "discount_details",
+            "label": "Discount details"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

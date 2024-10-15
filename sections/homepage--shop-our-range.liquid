@@ -1,0 +1,145 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+
+  <section id="section--{{section.id}}">
+    <div class="range-heading">
+      <span>{{ section.settings.heading }}</span>
+    </div>
+    <div class="wrapper" id="shop-our-range-wrapper">
+      <picture>
+        <source width="{{ section.settings.range_image_desktop.width }}" height= "{{ section.settings.range_image_desktop.height }}" srcset="{{ section.settings.range_image_desktop | img_url: 'master' }}" media="(min-width: 601px)">
+        <source width="{{ section.settings.range_image_mobile.width }}" height= "{{ section.settings.range_image_mobile.height }}" srcset="{{ section.settings.range_image_mobile| img_url: 'master' }}" media="(max-width: 600px)">
+        <img data-index="{{forloop.index}}" data-lazy="{{ block.settings.desktop_image |img_url: 'original' }}" width="{{ block.settings.desktop_image.width }}" height="{{ section.settings.range_image_desktop | img_url: 'master' }}" loading="eager">
+      </picture>
+      <div class="hotspots">
+        {% for block in section.blocks %}
+        <div class="hotspot-item hotspot-item-{{forloop.index}}">
+          <a class="hotspot-white tooltip-1" href="{{block.settings.product_link}}" title="{{block.settings.title}}">
+            <span></span>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>  
+
+  <style>
+    {% for block in section.blocks %}
+    .hotspot-item-{{forloop.index}} {
+      position: absolute;
+      left: {{block.settings.desktop_x_percent}}%;
+      top: {{block.settings.desktop_y_percent}}%;
+    }
+    {% endfor %}
+
+    @media screen and (max-width:600px) {
+      {% for block in section.blocks %}
+      .hotspot-item-{{forloop.index}} {
+        position: absolute;
+        left: {{block.settings.mobile_x_percent}}%;
+        top: {{block.settings.mobile_y_percent}}%;
+      }
+      {% endfor %}
+
+      .range-heading{
+        font-size: 21px;
+        margin: 30px auto;
+      }
+    }
+    
+    
+  </style>
+
+{% endif %}       
+      
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Shop Our Range",
+    "class": "section-shop-our-range",
+    "settings": [
+      {
+          "label":"Heading",
+          "id":"heading",
+          "type": "text"
+      },
+      {
+          "type": "image_picker",
+          "id": "range_image_desktop",
+          "label": "Image for desktop",
+          "info": "Desktop and mobile images are required for this section to show"
+      },
+      {
+          "type": "image_picker",
+          "id": "range_image_mobile",
+          "label": "Image for mobile"
+      }
+    ],
+    "blocks": [
+	{
+	  "type": "Blocks",
+      "name": "Add Blocks",
+      "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "info": "Add product name"
+        },
+        {
+            "type": "url",
+            "id": "product_link",
+            "label": "Add Product link"
+        },
+        {
+            "type": "number",
+            "id": "desktop_x_percent",
+            "label": "Position X (Desktop)",
+            "info": "Enter position from left in percentage without % sign",
+            "default": 0,
+            "placeholder": "50"
+        },
+        {
+            "type": "number",
+            "id": "desktop_y_percent",
+            "label": "Position Y (Desktop)",
+            "info": "Enter position from top in percentage without % sign",
+            "default": 0,
+            "placeholder": "50"
+        },
+        {
+            "type": "number",
+            "id": "mobile_x_percent",
+            "label": "Position X (Mobile)",
+            "info": "Enter position from left in percentage without % sign",
+            "default": 0,
+            "placeholder": "50"
+        },
+        {
+            "type": "number",
+            "id": "mobile_y_percent",
+            "label": "Position Y (Mobile)",
+            "info": "Enter position from top in percentage without % sign",
+            "default": 0,
+            "placeholder": "50"
+        }
+  ]
+}],
+    "presets": [
+        {
+            "category": "Banner",
+            "name":"Shop our range"
+        }
+    ]
+}
+{% endschema %}

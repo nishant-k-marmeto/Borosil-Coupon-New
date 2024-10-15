@@ -1,0 +1,93 @@
+{% comment %}
+** Mega menu - homepage partial **
+- Static section
+- Uses blocks
+- Must be enabled through general settings
+{% endcomment %}
+
+{% if section.blocks.size > 0 %}
+    {% include 'mm_mega__menu', menu_name : "mega-menu-3"%}
+{% endif %}
+
+{% style %}
+.bg-color-{{section.settings.parent | handleize }} {
+        background-color: {{ section.settings.mobile_menu_color_picker }};
+    }
+{% endstyle %}
+
+<script>
+    $('.nav-item-{{section.settings.parent | handleize }}').parent('.mobile-megamenu--listitem').addClass('bg-color-{{section.settings.parent | handleize }}')
+</script>
+
+{% schema %}
+  {
+    "name": "Mega menu 3",
+    "class": "mega-menu-section",
+    "max_blocks": 8,
+    "settings": [
+      {
+        "type": "text",
+        "id": "parent",
+        "label": "Link title",
+        "info": "The mega menu will appear below this parent link"
+      },
+	  {
+        "type": "header",
+        "content": "Image Settings"
+      },
+	  {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image",
+        "info": "Recommended size: 450px w x 300px h"
+      },
+	  {
+        "type": "image_picker",
+        "id": "mobile_image",
+        "label": "Mobile Image",
+        "info": "Recommended size: 130px w x 93px h"
+      },
+	  {
+        "type": "text",
+        "id": "image_title",
+        "label": "Image overlay text"
+      },
+	  {
+        "type": "url",
+        "id": "image_button_link",
+        "label": "Image overlay text link"
+      },
+      {
+          "type": "color",
+          "id": "mobile_menu_color_picker",
+          "label": "Mobile Menu background",
+          "info": "Set background color of Mobile Menus"
+      }
+    ],
+    "blocks": [
+    {
+        "type": "menu-with-image",
+        "name": "Menu",
+        "settings": [
+          {
+            "type": "text",
+            "id": "menu_title",
+            "label": "Title"
+          },
+          {
+            "type": "url",
+            "id": "menu_link",
+            "label": "Link"
+          },
+          {
+            "type": "link_list",
+            "id": "linklist",
+            "label": "Menu",
+            "default": "main-menu"
+          }
+        ]
+      }
+    ]
+  }
+  
+  {% endschema %}

@@ -1,0 +1,52 @@
+<style>
+    .product-main-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .lazyload {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .lazyload.loaded {
+      opacity: 1;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('.lazyload');
+
+      const loadImage = (image) => {
+        const src = image.getAttribute('data-src');
+        const index = image.getAttribute('data-index');
+        const eager = image.getAttribute('data-eager') === 'true';
+
+        if (!src || eager) {
+          return;
+        }
+
+        image.src = src;
+        image.classList.add('loaded');
+      };
+
+      const handleIntersection = (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const image = entry.target;
+            loadImage(image);
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(handleIntersection, {
+        threshold: 0.5,
+      });
+
+      images.forEach((image) => {
+        observer.observe(image);
+        loadImage(image);
+      });
+    });
+  </script>

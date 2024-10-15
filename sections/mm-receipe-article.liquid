@@ -1,0 +1,268 @@
+{{ 'blog-article-slider-sentiment.css' | asset_url | stylesheet_tag }}
+{{ 'mm-receipe-article.css' | asset_url | stylesheet_tag }}
+{{ 'sticky-banner-on-article.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'blog-sentiment.js' | asset_url }}" defer></script>
+<div class="bread-crumbs article__breadcrumb">
+	{% include 'breadcrumbs' %}
+</div>
+<div class="sticky-banner" id="stickyBanner">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <div class="banner-content">
+            <a href="https://bit.ly/4b4Wg7Y" class="order-btn">Order Now!</a>
+        </div>
+</div>
+<script>
+  document.getElementById('closeBtn').addEventListener('click', function() {
+      document.getElementById('stickyBanner').style.display = 'none';
+  });
+</script>
+<div class="recipe-article-container">
+  <div class="receipe-article-inner-container">
+      <!---------------------article-section---starts-------------------->
+      <div class="receipe-content">
+            <div class="receipe-content--image">
+                <img src="{{ article.image | img_url: 'master'}}" alt="{{ article.title }}">
+            </div>
+            <div class="receipe-content--text">
+                <div class="article-body-container--article-body">
+                    <h1 class="article-body--title">{{ article.title }}</h1>
+                    <div class="date-share-container">
+                        <div class="posted-date">Posted on {{ article.published_at | date: format: 'abbreviated_date'}}</div>
+                        <div class="share-options">
+                            <a href="#"><img src="{{ "share_twitter.svg" | asset_url}}" class="social-icon share_twitter"></a>
+                            <a href="#"><img src="{{ "share_linkedin.svg" | asset_url}}" class="social-icon share_linkedin"></a>
+                            <a href="#"><img src="{{ "share_facebook.svg" | asset_url}}" class="social-icon share_facebook"></a>
+                        </div>
+                    </div>
+                    <div class="article-content">
+                        <p>{{ article.content }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ingredient-method-container">
+          <div class="ingredient">
+            <div class="ingredient-content">
+                {{ article.metafields.receipe.ingredient }}
+            </div>
+          </div>
+          <div class="method">
+            <div class="method-content">
+                {{ article.metafields.receipe.method }}
+            </div>
+          </div>
+        </div>
+      <!---------------------article-section---ends-------------------->
+      <!---------------------comment-section---starts---------------------->
+      {%- if blog.comments_enabled? -%}
+        <div id="comments" class="page-width comments {% if customer %}add-padding{% endif %}">
+        {%- if article.comments_count > 0 -%}
+          <div class="slider-content__heading">Let's Discuss!</div>
+          {%- assign anchorId = '#Comments-' | append: article.id -%}
+          {% paginate article.comments by 5 %}
+            <div class="article-template__comments">
+              {%- for comment in article.comments -%}
+                {%- if comment.status == 'published' and comment.content -%}
+                  <div id="{{ comment.id }}" class="article-comment__wrapper">
+                    <div class="article-comment__header">
+                      <div class="header-inner__left">
+                        <div class="article-comment__badge">
+                          <svg id="Component_4_1" data-name="Component 4 – 1" xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68"><circle id="Ellipse_17" data-name="Ellipse 17" cx="34" cy="34" r="34" fill="#e9e9e9"/><circle id="Ellipse_18" data-name="Ellipse 18" cx="9" cy="9" r="9" transform="translate(45 48)" fill="#013564"/><path id="Path_53" data-name="Path 53" d="M3367.28,2968l3.252,3.252,5.508-5.507" transform="translate(-3317.78 -2911.245)" fill="none" stroke="#fff" stroke-width="1"/></svg>
+                          <div class="article-comment__badge-name">{{ comment.author | split: ' ' | first | split: '' | first }}</div>
+                        </div>
+                      </div>
+                      <div class="header-inner__right">
+                        <div class="header-inner__right-top">
+                          <span class="article-comment__verified">Verified</span>
+                          <span class="article-comment__author">{{ comment.author }}</span>
+                          <span class="article-comment__place"></span>
+                        </div>
+                        <div class="header-inner__right-bottom">
+                          {% comment %}
+                          <span class="article-comment__stars"><svg xmlns="http://www.w3.org/2000/svg" width="73.8" height="12.102" viewBox="0 0 73.8 12.102"><g id="Group_123" data-name="Group 123" transform="translate(-210 -2913)"><path id="star" d="M10.887,14.535,6.94,16.6l.753-4.378L4.5,9.123l4.413-.639L10.887,4.5l1.974,3.983,4.413.639-3.194,3.1.753,4.378Z" transform="translate(205.5 2908.5)" fill="#ffb717"/><path id="star-2" data-name="star" d="M10.887,14.535,6.94,16.6l.753-4.378L4.5,9.123l4.413-.639L10.887,4.5l1.974,3.983,4.413.639-3.194,3.1.753,4.378Z" transform="translate(220.756 2908.5)" fill="#ffb717"/><path id="star-3" data-name="star" d="M10.887,14.535,6.94,16.6l.753-4.378L4.5,9.123l4.413-.639L10.887,4.5l1.974,3.983,4.413.639-3.194,3.1.753,4.378Z" transform="translate(236.013 2908.5)" fill="#ffb717"/><path id="star-4" data-name="star" d="M10.887,14.535,6.94,16.6l.753-4.378L4.5,9.123l4.413-.639L10.887,4.5l1.974,3.983,4.413.639-3.194,3.1.753,4.378Z" transform="translate(251.269 2908.5)" fill="#ffb717"/><path id="star-5" data-name="star" d="M10.887,14.535,6.94,16.6l.753-4.378L4.5,9.123l4.413-.639L10.887,4.5l1.974,3.983,4.413.639-3.194,3.1.753,4.378Z" transform="translate(266.525 2908.5)" fill="#ffb717"/></g></svg></span>
+                          {% endcomment %}
+                          <span class="article-comment__date">{{ comment.created_at | time_tag:  '%d/%m/%Y' }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  <div id="{{ comment.id }}" class="article-comment__content">{{ comment.content }}</div>
+                  </div>
+                {% endif %}
+              {%- endfor -%}
+              {% render 'pagination', paginate: paginate, anchor: anchorId %}
+            </div>
+          {% endpaginate %}
+        {%- endif -%}
+      
+        {% if customer %}
+          {% form 'new_comment', article %}
+            {%- liquid
+              assign post_message = 'blogs.article.success'
+              if blog.moderated? and comment.status == 'unapproved'
+                assign post_message = 'blogs.article.success_moderated'
+              endif
+            -%}
+            <h2>{{ 'blogs.article.comment_form_title' | t }}</h2>
+            {%- if form.errors -%}
+              <div class="form__message" role="alert">
+                <h3 class="form-status caption-large text-body" tabindex="-1" autofocus>
+                  {% render 'icon-error' %} {{ 'templates.contact.form.error_heading' | t }}
+                </h3>
+              </div>
+              <ul class="form-status-list caption-large">
+                {%- for field in form.errors -%}
+                  <li>
+                    <a href="#CommentForm-{{ field }}" class="link">
+                      {%- if form.errors.translated_fields[field] contains 'author' -%}
+                        {{ 'blogs.article.name' | t }}
+                      {%- elsif form.errors.translated_fields[field] contains 'body'-%}
+                       {{ 'blogs.article.message' | t }}
+                      {%- else -%}
+                        {{ form.errors.translated_fields[field] }}
+                      {%- endif -%}
+                      {{ form.errors.messages[field] }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- elsif form.posted_successfully? -%}
+              <div class="form-status-list form__message" role="status">
+                <h3 class="form-status" tabindex="-1" autofocus>{% render 'icon-success' %} {{ post_message | t }}</h3>
+              </div>
+            {%- endif -%}
+          
+            <div{% if blog.moderated? == false %} class="article-template__comments-fields"{% endif %}>
+              <div class="article-template__comment-fields">
+                <div class="field field--with-error">
+                  <input
+                    type="text"
+                    name="comment[author]"
+                    id="CommentForm-author"
+                    class="field__input"
+                    autocomplete="name"
+                    value="{{ form.author }}"
+                    aria-required="true"
+                    required
+                    {% if form.errors contains 'author' %}
+                      aria-invalid="true"
+                      aria-describedby="CommentForm-author-error"
+                    {% endif %}
+                    placeholder="{{ 'blogs.article.name' | t }}"
+                  >
+                  <label class="field__label" for="CommentForm-author">{{ 'blogs.article.name' | t }} <span aria-hidden="true">*</span></label>
+                  {%- if form.errors contains 'author' -%}
+                    <small id="CommentForm-author-error">
+                      <span class="form__message">{% render 'icon-error' %}{{ 'blogs.article.name' | t }} {{ form.errors.messages['author'] }}.</span>
+                    </small>
+                  {%- endif -%}
+                </div>
+                <div class="field field--with-error">
+                  <input
+                    type="email"
+                    name="comment[email]"
+                    id="CommentForm-email"
+                    autocomplete="email"
+                    class="field__input"
+                    value="{{ form.email }}"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    aria-required="true"
+                    required
+                    {% if form.errors contains 'email' %}
+                      aria-invalid="true"
+                      aria-describedby="CommentForm-email-error"
+                    {% endif %}
+                    placeholder="{{ 'blogs.article.email' | t }}"
+                  >
+                  <label class="field__label" for="CommentForm-email">{{ 'blogs.article.email' | t }} <span aria-hidden="true">*</span></label>
+                  {%- if form.errors contains 'email' -%}
+                    <small id="CommentForm-email-error">
+                      <span class="form__message">{% render 'icon-error' %}{{ 'blogs.article.email' | t }} {{ form.errors.messages['email'] }}.</span>
+                    </small>
+                  {%- endif -%}
+                </div>
+              </div>
+              <div class="field field--with-error">
+                <textarea
+                  rows="5"
+                  name="comment[body]"
+                  id="CommentForm-body"
+                  class="text-area field__input"
+                  aria-required="true"
+                  required
+                  {% if form.errors contains 'body' %}
+                    aria-invalid="true"
+                    aria-describedby="CommentForm-body-error"
+                  {% endif %}
+                  placeholder="{{ 'blogs.article.message' | t }}"
+                >{{ form.body }}</textarea>
+                  <label class="form__label field__label" for="CommentForm-body">{{ 'blogs.article.message' | t }} <span aria-hidden="true">*</span></label>
+              </div>
+              {%- if form.errors contains 'body' -%}
+                <small id="CommentForm-body-error">
+                  <span class="form__message">{% render 'icon-error' %}{{ 'blogs.article.message' | t }} {{ form.errors.messages['body'] }}.</span>
+                </small>
+              {%- endif -%}
+            </div>
+            {%- if blog.moderated? -%}
+              <p class="article-template__comment-warning caption">{{ 'blogs.article.moderated' | t }}</p>
+            {%- endif -%}
+            <input type="submit" class="button" value="{{ 'blogs.article.post' | t }}">
+          {% endform %}
+        {% endif %}
+        </div>
+      {%- endif -%}
+      <!---------------------comment-section---ends---------------------->
+      <!---------------------sentiment-section---starts---------------------->
+      <div class="sentiment-section">
+        <div class="sentiment-wrapper" {% if customer %}data-customer-id="{{ customer.id }}"{% endif %} data-article-id="{{ article.id }}">
+          <div class="sentiment-heading slider-content__heading">How Do You Feel About This Article?</div>
+          <div class="sentiment-radio__wrap">
+            <div class="sentiment-radio">
+              <input type="radio" id="love" name="fav_language" value="love">
+              <label class="sentiment-label" for="love">
+                <div class="sentiment-image__container">
+                  <img class="sentiment-image" src="https://cdn.shopify.com/s/files/1/0551/8009/9722/files/heart-removebg-preview.png?v=1679311129">
+                </div>
+                  <div class="sentiment-radio__text">Love</div>
+                <div class="sentiment-radio__count" data-love>9</div>
+              </label>
+            </div>
+            <div class="sentiment-radio">
+              <input type="radio" id="impress" name="fav_language" value="impress">
+              <label class="sentiment-label" for="impress">
+                <div class="sentiment-image__container">
+                  <img class="sentiment-image" src="https://cdn.shopify.com/s/files/1/0551/8009/9722/files/thumbs-up-removebg-preview.png?v=1679311129">
+                </div>
+                  <div class="sentiment-radio__text">Impressed</div>
+                <div class="sentiment-radio__count" data-impress>7</div>
+              </label>
+            </div>
+            <div class="sentiment-radio">
+              <input type="radio" id="surprise" name="fav_language" value="surprise">
+              <label class="sentiment-label" for="surprise">
+                <div class="sentiment-image__container sentiment-image__container-surprised">
+                  <img class="sentiment-image" src="https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Component_4___1-removebg-preview.png?v=1679311129">
+                </div>
+                <div class="sentiment-radio__text">Surprised</div>
+                <div class="sentiment-radio__count" data-surprise>5</div>
+              </label>
+            </div>
+            <div class="sentiment-radio">
+              <input type="radio" id="angry" name="fav_language" value="angry">
+              <label class="sentiment-label" for="angry">
+                <div class="sentiment-image__container">
+                  <img class="sentiment-image" src="https://cdn.shopify.com/s/files/1/0551/8009/9722/files/miniangry-removebg-preview.png?v=1679311129">
+                </div>
+                  <div class="sentiment-radio__text">Angry</div>
+                <div class="sentiment-radio__count" data-angry>0</div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>   
+      <!---------------------sentiment-section---ends---------------------->
+    </div>
+    {% render 'article-product-suggestion', article:article %}
+</div>
+

@@ -1,0 +1,475 @@
+<div class="collection-slider collection-slider-recently__viewed">
+  <div class="homepage-container">
+      <div class="collection-slider__header">
+        <div class="collection-slider__heading_count">
+            <h2 class="collection-slider__heading heading--{{ section.id }}">Recently viewed</h2>
+        </div>
+      </div> 
+      <div id="collection-slider-recently__viewed" class="collection-slider__wrapper collection-slider__wrapper-recently__viewed">
+    </div>
+  </div>
+</div>
+
+<script>
+    let lazyNumber =0;
+    let products = JSON.parse(localStorage.getItem("productArray"));
+
+    // Create a helper object to track unique IDs
+    let uniqueIds = {};
+    
+    
+    if(products){
+      // Filter the duplicate products from the product Array
+      let uniqueArr = products.filter(item => {
+        if (!uniqueIds[item.id]) {
+          uniqueIds[item.id] = true;
+          return true;
+        }
+        return false;
+      });
+    
+      if(uniqueArr && uniqueArr.length > 0){
+        let reversedArray = uniqueArr.reverse().slice(0, 15);
+        generateHtml(reversedArray);
+        localStorage.setItem("productArray", JSON.stringify(uniqueArr));
+      }
+      else {
+        $('.collection-slider-recently__viewed').hide();
+      }
+    }
+    else {
+      $('.collection-slider-recently__viewed').hide();
+    }
+
+    function generateHtml(products) { 
+
+        var html = "";
+        var moneyFormat = '₹ {{amount_no_decimals}}';
+        let product = products;
+        let productSectionID = "recently__viewed";
+        console.log(productSectionID)
+      
+        for (let i = 0; i < products.length; i++) {
+          product = products[i];
+          let hasBadge = false;
+          let sectionHeading = $(".collection-slider__header")
+            .find(`.heading--${productSectionID}`)
+            .text();
+          let lazyText = 'lazy';
+          if(lazyNumber<4) lazyText = 'eager';
+          lazyNumber++;
+      
+          var hidelist = product.tags;
+                  let hidetag = '';
+      
+                  hidelist.forEach((element) => {
+                    if (element.includes('hide')){ 
+                      hidetag = element             	
+                    }
+                  });
+          
+          html += '<div class="product-card '+hidetag+'">';
+          $(".hide").hide();
+          html +=
+            '<a href="/products/' + product.handle + '" class="product-card__link">';
+          html +=
+            '<img class="product-card__image" width="300px" height="400px" loading="'+lazyText+'" src="' +
+            products[i].featureImgResponsive +
+            '" alt="' +
+            product.title +
+            '">';
+      
+          for (var tag of product.tags) {
+            if (tag.includes("label__")) {
+              hasBadge = true;
+              break;
+            }
+          }
+      
+          if (product.tags && product.tags != "" && hasBadge) {
+            var tagsToDisplay = [];
+            html += '<div class="product-card__badges">';
+            for (var j = 0; j < product.tags.length; j++) {
+              if (product.tags[j].includes("label__")) {
+                var badgeText = product.tags[j].split("__")[1];
+                tagsToDisplay[j] = badgeText;
+                var badgeNameToCompare = badgeText.toUpperCase().split(" ").join("");
+                var HeaderToCompare = sectionHeading
+                  .toUpperCase()
+                  .split(" ")
+                  .join("");
+      
+                if (HeaderToCompare.includes(badgeNameToCompare)) {
+                  tagsToDisplay.unshift(badgeText);
+                }
+              }
+            }
+            tagsToDisplay = tagsToDisplay.filter(function (item, index, inputArray) {
+              return inputArray.indexOf(item) == index;
+            });
+            var TotalTagsTodisplayOnImage = 2;
+            for (var l = 0; l < tagsToDisplay.length; l++) {
+              if (l < TotalTagsTodisplayOnImage) {
+                html +=
+                  '<span class="product-card__badge">' +
+                  tagsToDisplay[l] +
+                  "</span><br/>";
+              } else {
+                break;
+              }
+            }
+            html += "</div>";
+          }
+      
+          html += "</a>";
+          html += '<div class="product-card__info">';
+      
+          html += `<div id="myModal" class="modal modal--${productSectionID}">`;
+      
+          html += '<div class="modal-content">';
+          html += `<span class="close_error_Box close_error_Box--${productSectionID}">&times;</span>`;
+          html += `<p class="Errormessage Errormessage--${productSectionID}"> </p>`;
+          html += "</div>";
+      
+          html += "</div>";
+      
+          html +=
+            '<a href="/products/' +
+            product.handle +
+            '" class="product-card__title">' +
+            product.title +
+            "</a>";
+      
+          html += '<div class="product-card__reviews">';
+          let review = '';
+          if(product.review_rating){
+            let r_count = Math.round(product.review_rating * 10) / 10;
+              review += '<span class="product-card__review-wrap">';
+              review += '<span class="jdgm-prev-badge__text product-card__review">' + r_count + "</span>";
+              review += '<span class="jdgm-star jdgm--on product-card__review-stars"></span>';
+              review += "</span>";
+              review += '<span class="product-card__review-count">(' + product.review_count + ")</span>";
+          }
+          html += ( product.review_rating ? ( review ) : "" );
+          html += "</div>";
+          
+          let e = product;
+          
+          html += `<p class="product-card__snack">${(e.metafield !== undefined) ?e.metafields.product_subtitle.subtitle && Object.prototype.toString.call(e.metafields.product_subtitle.subtitle) == '[object Array]' ? e.metafields.product_subtitle.subtitle.join(", ") : e.metafields.product_subtitle.subtitle && typeof e.metafields.product_subtitle.subtitle === "string" ? e.metafields.product_subtitle.subtitle : "":""}</p>`;
+          html += '<div class="Producttitle_full">' + product.title + "</div>";
+          html += '<div class="product-card__price">';
+          html +=
+            '<span class="product-card__regularprice">' +
+            moneyFormattor(product.first_var_price?product.first_var_price : product.price, moneyFormat) +
+            "</span>";
+      
+          if (product.compare_at_price > product.price) {
+            var discountPercentage = parseInt(
+              ((product.compare_at_price - product.price) /
+                product.compare_at_price) *
+                100
+            );
+      
+            html +=
+              '<span class="product-card__compareprice">' +
+              moneyFormattor(product.compare_at_price, moneyFormat) +
+              "</span>";
+            html +=
+              '<span class="product-card__discountpercentage">' +
+              discountPercentage +
+              "% off</span>";
+          }
+      
+          html += "</div>";
+          html += '<div class="product-card__selectors">';
+      
+          var productVariants = product.variants.filter(function (a) {
+            return a.title !== "Default Title";
+          });
+      
+          if (productVariants.length > 0) {
+            html +=
+              '<input type="number" value="10" class="quantity-selector-input variant-present" onkeypress="return event.charCode >= 48" min="1" >';
+            html += `<div style=${
+              product.available ? ' " " ' : "pointer-events:none"
+            } class='product-card__quantity product-card__quantity--${
+              productSectionID
+            }'>`;
+            html += '<div class="quantity-selector-value">1</div>';
+            html += '<div class="product-card__selector-dropdownArrow"> </div>';
+            html += '<ul class="quantity-selector-list">';
+            html +=
+              '<li class="quantity-selector-listitem is-selected" data-value="1">1</li>';
+            html += '<li class="quantity-selector-listitem" data-value="2">2</li>';
+            html += '<li class="quantity-selector-listitem" data-value="3">3</li>';
+            html += '<li class="quantity-selector-listitem" data-value="4">4</li>';
+            html += '<li class="quantity-selector-listitem" data-value="5">5</li>';
+            html += '<li class="quantity-selector-listitem" data-value="6">6</li>';
+            html += '<li class="quantity-selector-listitem" data-value="7">7</li>';
+            html += '<li class="quantity-selector-listitem" data-value="8">8</li>';
+            html += '<li class="quantity-selector-listitem" data-value="9">9</li>';
+            html += '<li class="quantity-selector-listitem" data-value="10">10+</li>';
+            html += "</ul>";
+            html += "</div>";
+            if (product.available) {
+              html += `<div class="product-card__variants product-card__variant product-card__variants--${productSectionID}">`;
+              html +=
+                '<div class="variant-selector-value">' +
+                product.selectedVariant.title +
+                "</div>";
+              html += '<div class="product-card__selector-dropdownArrow">  </div>';
+              html += '<ul class="variant-selector-list">';
+      
+              for (var v = 0; v < product.variants.length; v++) {
+                var variant = product.variants[v];
+                var selectedClass = "";
+                const availVariants = product.variant_inventory[variant.id];
+                if (variant.id === product.selectedVariant.id) {
+                  selectedClass = " is-selected";
+                }
+      
+                //html += '<li class="variant-selector-listitem'+ selectedClass +'" data-variant="'+ variant.id +'" data-variant-title="'+ variant.title +'" data-variant-available="'+ variant.available +'">'+ variant.title +'</li>';
+                html +=
+                  '<li class="variant-selector-listitem' +
+                  selectedClass +
+                  '" data-variant="' +
+                  variant.id +
+                  `" data-variantAvl=${availVariants}` +
+                  ' data-variant-title="' +
+                  variant.title +
+                  '" data-variant-price="' +
+                  variant.price +
+                  '" data-variant-Maxprice="' +
+                  variant.compare_at_price +
+                  '" data-variant-priceToprint="' +
+                  moneyFormattor(variant.price, moneyFormat) +
+                  '" data-variant-MaxpriceToprint="' +
+                  moneyFormattor(variant.compare_at_price, moneyFormat) +
+                  '" data-variant-quantity="' +
+                  product.variant_inventory[variant.id] +
+                  '" data-variant-available="' +
+                  variant.available +
+                  '">';
+                html += '<div class="variant-selector-listitemContent">';
+                html +=
+                  '<span class="variant-selector-title">' + variant.title + "</span>";
+                html += '<span class="variant-selector-prices">';
+                html +=
+                  '<div class="varaint-sellingPrice">' +
+                  moneyFormattor(variant.price, moneyFormat) +
+                  "</div>";
+                if (variant.compare_at_price > 0) {
+                  html +=
+                    '<div class="varaint-originalPrice"> ' +
+                    moneyFormattor(variant.compare_at_price, moneyFormat) +
+                    "</div>";
+                }
+                html += "</span>";
+                html += "</div>";
+                html += "</li>";
+              }
+      
+              html += "</ul>";
+              html += "</div>";
+            }
+          } else {
+            const availVariants = product.variant_inventory[product.variants[0].id];
+            html +=
+              '<input type="number" value="10" class="single-variant quantity-selector-input" onkeypress="return event.charCode >= 48" min="1" >';
+            html += `<div class="product-card__quantity product-card__quantity--${productSectionID}">`;
+            html += '<div class="quantity-selector-value">1</div>';
+            html += '<div class="product-card__selector-dropdownArrow"> </div>';
+            html += '<ul class="quantity-selector-list">';
+            html +=
+              '<li class="quantity-selector-listitem is-selected" data-value="1">1</li>';
+            html += '<li class="quantity-selector-listitem" data-value="2">2</li>';
+            html += '<li class="quantity-selector-listitem" data-value="3">3</li>';
+            html += '<li class="quantity-selector-listitem" data-value="4">4</li>';
+            html += '<li class="quantity-selector-listitem" data-value="5">5</li>';
+            html += '<li class="quantity-selector-listitem" data-value="6">6</li>';
+            html += '<li class="quantity-selector-listitem" data-value="7">7</li>';
+            html += '<li class="quantity-selector-listitem" data-value="8">8</li>';
+            html += '<li class="quantity-selector-listitem" data-value="9">9</li>';
+            html += '<li class="quantity-selector-listitem" data-value="10">10+</li>';
+            html += "</ul>";
+            html += "</div>";
+            html +=
+              '<input type="hidden" ' +
+              `data-variantAvl="${availVariants}"` +
+              ' class="variant-selector-listitem is-selected" data-variant="' +
+              product.variants[0].id +
+              '" data-variant-available="' +
+              product.variants[0].available +
+              '" />';
+          }
+      
+          html += "</div>";
+      
+          if (product.selectedVariant.available) {
+            html += `<button class="product-card__addtocart homepage-product-card__addtocart product-card__addtocart--${productSectionID}" type="button"> Add to cart </button>`;
+            html += `<div class="loader loader--${productSectionID}"> </div>`;
+          } else {
+            html +=
+              '<button class="product-card__addtocart homepage-product-card__addtocart is-disabled" type="button"> Sold out </button>';
+          }
+          html +=
+            '<span class="error-quantity" style="display:none;">Insufficient Quantity</span>';
+      
+          html += "</div>";
+          html += "</div>";
+        }
+      
+        $(`#collection-slider-${productSectionID}`)
+          .html(html)
+          .ready(function () {
+            $(`#collection-slider-${productSectionID}`).not('.slick-initialized').slick({
+              dots: true,
+              arrows: true,
+              lazyLoad: "ondemand",
+              infinite: true,
+              slidesToShow: 5,
+              slidesToScroll: 1,
+              prevArrow: `<button class="slick-arrow slick-prev arrow-bg"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left fa-w-14" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg></button>`,
+              nextArrow: `<button class="slick-arrow slick-next arrow-bg"><svg width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right fa-w-14" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg></button>`,
+              responsive: [
+                {
+                  breakpoint: 1441,
+                  settings: {
+                    dots: true,
+                    arrows: true,
+                    slidesToShow: 4,
+                    slidesToScroll: 1,
+                  },
+                },
+                {
+                  breakpoint: 1134,
+                  settings: {
+                    dots: true,
+                    arrows: false,
+                    slidesToShow: 3,
+                  },
+                },
+                {
+                  breakpoint: 872,
+                  settings: {
+                    slidesToShow: 2,
+                    dots: false,
+                    arrows: false,
+                  },
+                },
+                {
+                  breakpoint: 767,
+                  settings: {
+                    dots: false,
+                    arrows: false,
+                    slidesToShow: 1.1,
+                    slidesToScroll: 1,
+                    centerMode: true,
+                    centerPadding: "90px",
+                  },
+                },
+              ],
+            });
+          });
+      }
+
+
+    
+</script>
+
+{% style %}
+  .collection-slider.collection-slider-recently__viewed {
+    background: {{section.settings.background_color}};
+  }
+  .collection-slider__heading.heading-recently__viewed {
+    color: {{section.settings.section_heading_color}};
+  }
+  .countdown-recently__viewed {
+    color: {{section.settings.section_heading_color}};
+  }
+  .button-recently__viewed {
+    color: {{section.settings.button_text_color}};
+    background: {{section.settings.button_background_color}};
+    border-color: {{section.settings.button_border_color}};
+  }
+  .collection-slider-recently__viewed .arrow-bg {
+    background: {{section.settings.arrow_background_color}} !important;
+    color: {{section.settings.background_color}} !important;
+  }
+
+  .collection-slider-recently__viewed .arrow-bg:hover,
+  .collection-slider-recently__viewed .arrow-bg:focus {
+    background: {{section.settings.arrow_background_color}};
+    color: {{section.settings.background_color}};
+  }
+
+  .collection-slider__wrapper-recently__viewed .slick-dots li.slick-active button:before {
+    color: {{section.settings.selected_dot_color}};
+    border-bottom: 10px solid {{section.settings.selected_dot_color}};
+  }
+
+  #shopify-section-recently__viewed .slick-dotted .slick-slider {
+    margin-bottom: 21px;
+  }
+
+  button .slick-arrow{
+    color: transparent !important;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Recently Viewed",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "header",
+      "content": "Heading settings"
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Heading text",
+      "default": "New Arrivals",
+      "info": "Max limit: 20 char"
+    },
+    {
+      "type": "color",
+      "id": "section_heading_color",
+      "label": "Heading text color"
+    },
+    {
+      "type": "header",
+      "content": "Slider settings"
+    },
+    {
+      "type": "color",
+      "id": "arrow_background_color",
+      "label": "Arrow background color"
+    },
+    {
+      "type": "color",
+      "id": "selected_dot_color",
+      "label": "Selected dot color"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "label": "Product limit",
+      "default": 8
+    }
+  ],
+  "presets": [
+    {
+      "name": "Recently Viewed"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,321 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+
+    {% comment %} {% assign Tab_head = product.metafields.product_tab_section.Tab_Head %}
+    {% assign Tab_headcontent = product.metafields.product_tab_section.tab_content %} {% endcomment %}
+
+    {% assign Tab_features_heading = product.metafields.product_tabs.tab_features_heading %}
+    {% assign Tab_features_content = product.metafields.product_tab.tab_feature_content %}
+    {% assign Tab_PackNSize_heading = product.metafields.product_packNsize.packNsize_heading %}
+    {% assign Tab_PackNSize_content = product.metafields.product_packNsize.packNsize_content %}
+    {% assign Tab_UseNCare_heading = product.metafields.product_useNcare.useNcare_heading %}
+    {% assign Tab_UseNCare_content = product.metafields.product_useNcare.useNcare_content %}
+    {% assign Tab_TechSpecs_heading = product.metafields.product_techspecs.techspecs_heading %}
+    {% assign Tab_TechSpecs_content = product.metafields.product_techspecs.techspecs_content %}
+    <script src="{{ 'product-page-tabs.js' | asset_url }}" defer="defer"></script>
+    <div id="section--product-tabs">
+        <div class="tab-containers">
+            <ul class="tabs">
+            {% if product.description != blank %}
+            <li><h2 class="tab tab-header tab_about active">About</h2></li>
+            {% endif %}
+            {% if Tab_features_heading != blank %}
+            <li><h2 class="tab tab-header tab_features"> {{ Tab_features_heading }} </h2></li>
+            {% endif %}
+            {% if Tab_PackNSize_heading != blank %}
+            <li><h2 class="tab tab-header tab_PackNSize">{{ Tab_PackNSize_heading }} </h2></li>
+            {% endif %}
+            {% if Tab_UseNCare_heading != blank %}
+            <li><h2 class="tab tab-header tab_UseNCare"> {{ Tab_UseNCare_heading }}</h2></li>
+            {% endif %}
+            {% if Tab_TechSpecs_heading != blank %}
+            <li><h2 class="tab tab-header tab_TechSpecs"> {{ Tab_TechSpecs_heading }} </h2></li>
+            {% endif %}
+            </ul>
+
+
+            <div class="tab-content-container">
+                <div class="tab-content">
+                    <div class="tab-body  tab_about active" data-tab-content> {{ product.description }} </div>
+                    <div class="tab-body tab_features" data-tab-content>{{ Tab_features_content }}</div>
+                    <div class="tab-body tab_PackNSize" data-tab-content>{{ Tab_PackNSize_content }}</div>
+                    <div class="tab-body tab_UseNCare" data-tab-content>{{ Tab_UseNCare_content }}</div>
+                    <div class="tab-body tab_TechSpecs" data-tab-content>{{ Tab_TechSpecs_content }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-container-mobile">
+            {% if product.description != blank %}
+            <div class="accordion">
+                <div class="header lazy-load-parent">
+                    <h3>About</h3>
+                    <img class="arrowdown" src="{{ "arrow-down.svg" | asset_url }}" alt="Arrow down" width="20" height="10">
+                    <img class="arrowup" src="{{ "arrow-down.svg" | asset_url }}" alt="Arrow down" width="20" height="10">
+                </div>
+                <div class="content">
+                    {{ product.description }}
+                </div>
+            </div>
+            {% endif %}
+            {% if Tab_features_content != blank %}
+            <div class="accordion">  
+                <div class="header lazy-load-parent">
+                    <h3>{{ Tab_features_heading }}</h3>
+                    <img class="arrowdown" src="{{ "arrow-down.svg" | asset_url }}" alt="Arrow down">
+                    <img class="arrowup" src="{{ "arrow-down.svg" | asset_url }}" alt="Arrow down">
+                </div>
+                <div class="content">
+                    {{ Tab_features_content }}
+                </div>
+            </div>
+            {% endif %}
+            {% if Tab_PackNSize_content != blank %}
+            <div class="accordion">
+                <div class="header lazy-load-parent">
+                    <h3>{{  Tab_PackNSize_heading }}</h3>
+                    <img class="arrowdown" src="{{ "arrow-down.svg" | asset_url }}" alt="Arrow down">
+                    <img class="arrowup" src="{{ "arrow-down.svg" | asset_url }}" alt="Arrow down">
+                </div>
+                <div class="content">
+                    {{ Tab_PackNSize_content }}
+                </div>
+            </div>
+            {% endif %}
+            {% if Tab_UseNCare_content != blank %}
+            <div class="accordion">
+                <div class="header lazy-load-parent">
+                    <h3>{{ Tab_UseNCare_heading }}</h3>
+                    <img class="arrowdown" src="{{ "arrow-down.svg" | asset_url }}" alt="Arrow down">
+                    <img class="arrowup" src="{{ "arrow-down.svg" | asset_url }}" alt="Arrow down">
+                </div>
+                <div class="content">
+                    {{ Tab_UseNCare_content }}
+                </div>
+            </div>
+            {% endif %}
+            {% if Tab_TechSpecs_content != blank %}
+            <div class="accordion">
+                <div class="header lazy-load-parent">
+                    <h3>{{ Tab_TechSpecs_heading }}</h3>
+                    <img class="arrowdown" src="{{ "arrow-down.svg" | asset_url }}" alt="Arrow down">
+                    <img class="arrowup" src="{{ "arrow-down.svg" | asset_url }}" alt="Arrow down">
+                </div>
+                <div class="content">
+                {{ Tab_TechSpecs_content }}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <style>
+        .section--product-tabs{
+            width: 100%;
+            background-color: #FFFFFF;
+        }
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            margin: 0;
+            padding: 30px 220px 0;	
+            margin: auto;  
+        }
+
+        .tab {
+            cursor: pointer;
+            padding-bottom: 15px;
+            font-family: 'Mulish', sans-serif;
+            font-size: 21px;
+            font-weight: 600;
+            margin-right: 30px;
+        }
+
+        .tab:hover {
+        }
+
+        .tab-content-container{
+            width: 100%;
+            border-top: 1px solid rgb(233, 233, 233);
+            border-bottom: 1px solid rgb(233, 233, 233);
+        }
+
+        .tab-content {
+        margin: 0 200px;
+        }
+
+        .tab-containers{
+            margin: 0 auto;
+        }
+
+        .tab-body{
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+            
+        .tab-header{
+            font-family: 'Mulish', sans-serif;
+            font-size: 21px;
+            font-weight: 600;
+            color: #000;
+            line-height: 20px;
+            letter-spacing: 0px;
+        }
+        .tab-body p{
+            font-family: 'Mulish',sans-serif;
+            font-size: 18px;
+            color: #343434;
+            font-weight: normal;
+            letter-spacing: 0px;
+            margin-left: -10px;
+            line-height: 1.5;
+        }
+        
+        .tab-body span{
+            font-family: 'Mulish',sans-serif;
+            font-size: 18px;
+            color: #000;
+            font-weight: 600;
+            letter-spacing: 0px;
+            margin-left: -10px;
+            line-height: 1.4;
+        }
+
+        .tab-body ul{
+            margin-left: 10px;
+        }
+
+        .tab-body li{
+            list-style-type: disc;
+            color: #343434;
+            font-family: 'Mulish',sans-serif;
+            font-size: 18px;
+            letter-spacing: 0px;
+            font-weight: normal;
+            max-width: 968;
+            margin: auto;
+            line-height: 1.5em;
+            padding-bottom: 4px;
+        }
+
+        /* Mobile Accordion*/
+
+        .tab-container-mobile{
+            width: 100%;
+            margin: auto;
+            display: none;
+        }
+
+        .arrowup{
+            display: none;
+            transform: rotate(180deg);
+        }
+
+        .tab-container-mobile .header {
+            padding: 20px;
+            border-top: 1px solid rgb(230, 229, 229);
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Mulish', sans-serif;
+            letter-spacing: 0px;
+        }
+        
+        .tab-container-mobile .header h3{
+            font-family: 'Mulish', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            color: #000;
+            letter-spacing: 0px;
+        }
+
+        .tab-container-mobile .content{
+            padding: 0 20px 40px;
+        }
+
+        .tab-container-mobile .content p{
+            font-size: 14px;
+            font-weight: 600;
+            font-family: 'Mulish',sans-serif;
+            margin-bottom: 10px;
+            color: #343434;
+            letter-spacing: 0px;
+            line-height: 1.4em;
+        }
+
+        .tab-container-mobile .content ul {
+            margin-left: 10px
+        }
+
+        .tab-container-mobile .content li{
+            list-style-type: disc;
+            color: #000;
+            font-family: 'Mulish',sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0px;
+            line-height: 1.5em;
+            padding-bottom: 5px;
+        }
+
+
+        /* :: MEDIA QUERIES :: */
+
+        @media screen and (max-width:600px) {
+            .tab-containers{
+                display: none;
+            }
+
+            .tab-container-mobile{
+                display: block;
+            }
+        }
+
+        .active[tab-body] {
+            display: block;
+        }
+
+        .tab.active {
+            border-bottom: 5px solid #D9E255;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            color: #013564;
+        }
+
+        [data-tab-content] {
+            display: none;
+        }
+
+        .active[data-tab-content] {
+            display: block;
+        }
+    </style>
+{% endif %}       
+      
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Product Tabs",
+    "presets": [
+        {
+            "category": "Description",
+            "name":"Product Tabs"
+        }
+    ]
+}
+{% endschema %}

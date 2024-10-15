@@ -1,0 +1,55 @@
+<script>
+    {% assign persoanlise_product = false %}
+    {% for line_item in checkout.line_items %}
+        {% if line_item.properties.Name and line_item.properties.Image %}
+            {% assign persoanlise_product = true %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+    let existingAttributes = '';
+    {% for attribute in checkout.attributes %}
+        existingAttributes += `<input type=hidden name="checkout[attributes][{{ attribute.first }}]" value="{{ attribute.last }}">`;
+    {% endfor %}
+
+    if(Shopify.Checkout.step == 'payment_method'){
+        {% if persoanlise_product %}
+            $(document).on('page:load page:change', function() {
+                if(!$('[data-payment-form] #personalise_product').length > 0){
+                    $('[data-payment-form]').append(`${existingAttributes}<input class="input-checkbox" type="hidden" value="personalise" name="checkout[attributes][order_type]" id="personalise_product">`);
+                }
+            });
+        {% elsif checkout.attributes.order_type  %} 
+            $(document).on('page:load', function() {
+                if($('[data-payment-form] #personalise_product').length > 0) $('[data-payment-form] #personalise_product').remove();
+                fetch('/cart/update.js', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        attributes: {
+                            'order_type': ''
+                        }
+                    })
+                })
+                .then(response => {
+                    if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                    }
+                    return response.json(); 
+                })
+                .then(data => {
+                    if (window.OrderSummaryUpdater) {
+                        OrderSummaryUpdater.prototype.refresh();
+                    }
+                })
+                .catch(error => {
+                    console.log('error', error);
+                });
+            });
+            $(document).on('page:change', function() {
+                if($('[data-payment-form] #personalise_product').length > 0) $('[data-payment-form] #personalise_product').remove();
+            });
+        {% endif %}
+    }
+    </script>

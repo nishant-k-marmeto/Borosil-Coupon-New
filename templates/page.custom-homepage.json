@@ -1,0 +1,744 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "1638522153b85bba8c": {
+      "type": "homepage--shop-our-range",
+      "blocks": {
+        "f51ed12c-defe-446a-b71b-dfd62f43f5b6": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Mixer Grinder",
+            "product_link": "shopify:\/\/collections\/mixer-grinders",
+            "desktop_x_percent": 52,
+            "desktop_y_percent": 42,
+            "mobile_x_percent": 80,
+            "mobile_y_percent": 49
+          }
+        },
+        "aca99e1c-133e-463a-aa6b-2e8b4c31a5de": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Mixing Bowl",
+            "product_link": "shopify:\/\/collections\/mixing-serving-bowls",
+            "desktop_x_percent": 20,
+            "desktop_y_percent": 67,
+            "mobile_x_percent": 50,
+            "mobile_y_percent": 67
+          }
+        },
+        "cf970b2f-5d75-4853-aa0d-6b650ed141ce": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Oil Dispensers",
+            "product_link": "shopify:\/\/collections\/oil-dispensers",
+            "desktop_x_percent": 47,
+            "desktop_y_percent": 14,
+            "mobile_x_percent": 64,
+            "mobile_y_percent": 17
+          }
+        },
+        "269ae267-0b74-499e-8177-baedfb40ef56": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Pressure Cooker",
+            "product_link": "shopify:\/\/collections\/pressure-cookers",
+            "desktop_x_percent": 40,
+            "desktop_y_percent": 39,
+            "mobile_x_percent": 39,
+            "mobile_y_percent": 44
+          }
+        },
+        "fc48ff07-60ea-4d20-bab9-6bccd8d56893": {
+          "type": "Blocks",
+          "settings": {
+            "title": "OTG",
+            "product_link": "shopify:\/\/collections\/oven-toaster-griller",
+            "desktop_x_percent": 66,
+            "desktop_y_percent": 40,
+            "mobile_x_percent": -10,
+            "mobile_y_percent": -10
+          }
+        },
+        "9e3a0411-4cfb-48f9-aef7-0680de44d2d3": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Spin n Store",
+            "product_link": "https:\/\/myborosil.com\/products\/spin-store-tray-airtight-glass-jars-classic4",
+            "desktop_x_percent": 11,
+            "desktop_y_percent": 49,
+            "mobile_x_percent": -10,
+            "mobile_y_percent": -10
+          }
+        },
+        "0d1b9b84-649f-490b-aa05-d795e9c901cc": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Tawa",
+            "product_link": "shopify:\/\/collections\/tawa",
+            "desktop_x_percent": 19,
+            "desktop_y_percent": 40,
+            "mobile_x_percent": -10,
+            "mobile_y_percent": -10
+          }
+        },
+        "4835cfbf-7c0a-4034-a935-ae842266ef38": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Kadhai",
+            "product_link": "shopify:\/\/collections\/casseroles-kadhais",
+            "desktop_x_percent": 32.5,
+            "desktop_y_percent": 41,
+            "mobile_x_percent": 14,
+            "mobile_y_percent": 47
+          }
+        },
+        "134af03d-eeec-4915-9c39-e0b1c207568c": {
+          "type": "Blocks",
+          "settings": {
+            "title": "NutriFresh",
+            "product_link": "https:\/\/myborosil.com\/products\/nutrifresh-pb31",
+            "desktop_x_percent": 16,
+            "desktop_y_percent": 43,
+            "mobile_x_percent": -10,
+            "mobile_y_percent": -10
+          }
+        },
+        "c98960d9-b177-4653-b3f3-37dcdfcc1275": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Storage Jar",
+            "product_link": "shopify:\/\/collections\/storage-jars",
+            "desktop_x_percent": 51.8,
+            "desktop_y_percent": 14,
+            "mobile_x_percent": 80,
+            "mobile_y_percent": 17
+          }
+        },
+        "2d7cff47-a1e7-4568-8e45-4c692fddc1f1": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Water & Juice Jugs",
+            "product_link": "shopify:\/\/collections\/water-juice-jugs",
+            "desktop_x_percent": 2,
+            "desktop_y_percent": 47,
+            "mobile_x_percent": -10,
+            "mobile_y_percent": -10
+          }
+        },
+        "42ab5be3-9c0d-403d-a9ba-5ef2cedb04ea": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Storage Containers",
+            "product_link": "shopify:\/\/collections\/storage-containers",
+            "desktop_x_percent": 81,
+            "desktop_y_percent": 37,
+            "mobile_x_percent": -10,
+            "mobile_y_percent": -14
+          }
+        },
+        "66c08b4f-d051-48b3-8eb8-dd90fe829b18": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Baking Dishes",
+            "product_link": "shopify:\/\/collections\/baking-dishes",
+            "desktop_x_percent": 30,
+            "desktop_y_percent": 66,
+            "mobile_x_percent": 10,
+            "mobile_y_percent": 75
+          }
+        },
+        "b3d880ad-3d82-47a1-ae92-17162180ab63": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Dinner Set",
+            "product_link": "shopify:\/\/collections\/dinnersets",
+            "desktop_x_percent": 48,
+            "desktop_y_percent": 72,
+            "mobile_x_percent": 68,
+            "mobile_y_percent": 78
+          }
+        },
+        "d6b39c5b-f170-448d-abfb-5bb6d5052bd4": {
+          "type": "Blocks",
+          "settings": {
+            "title": "Gas Stove",
+            "product_link": "shopify:\/\/collections\/gas-stove",
+            "desktop_x_percent": 35,
+            "desktop_y_percent": 48,
+            "mobile_x_percent": 22,
+            "mobile_y_percent": 52
+          }
+        }
+      },
+      "block_order": [
+        "f51ed12c-defe-446a-b71b-dfd62f43f5b6",
+        "aca99e1c-133e-463a-aa6b-2e8b4c31a5de",
+        "cf970b2f-5d75-4853-aa0d-6b650ed141ce",
+        "269ae267-0b74-499e-8177-baedfb40ef56",
+        "fc48ff07-60ea-4d20-bab9-6bccd8d56893",
+        "9e3a0411-4cfb-48f9-aef7-0680de44d2d3",
+        "0d1b9b84-649f-490b-aa05-d795e9c901cc",
+        "4835cfbf-7c0a-4034-a935-ae842266ef38",
+        "134af03d-eeec-4915-9c39-e0b1c207568c",
+        "c98960d9-b177-4653-b3f3-37dcdfcc1275",
+        "2d7cff47-a1e7-4568-8e45-4c692fddc1f1",
+        "42ab5be3-9c0d-403d-a9ba-5ef2cedb04ea",
+        "66c08b4f-d051-48b3-8eb8-dd90fe829b18",
+        "b3d880ad-3d82-47a1-ae92-17162180ab63",
+        "d6b39c5b-f170-448d-abfb-5bb6d5052bd4"
+      ],
+      "settings": {
+        "heading": "Shop our range",
+        "range_image_desktop": "shopify:\/\/shop_images\/Borosil_Kitchen_Desktop_Image_-_1386_px_x_696_px.jpg",
+        "range_image_mobile": "shopify:\/\/shop_images\/Borosil_Kitchen_Mobile_Image_-_375_px_x_667_px_b.jpg"
+      }
+    },
+    "16386126438de35bd2": {
+      "type": "homepage-collection-slider",
+      "settings": {
+        "background_color": "#e31c79",
+        "section_heading": "Trending",
+        "section_heading_color": "#013564",
+        "enable_countdown": false,
+        "countdown_text": "",
+        "Countdown_endtime": "",
+        "enable_view_button": true,
+        "button_text_color": "#013564",
+        "button_border_color": "",
+        "button_background_color": "",
+        "arrow_background_color": "#d5dbe3",
+        "selected_dot_color": "#ffffff",
+        "collection": "trending",
+        "product_limit": 10
+      }
+    },
+    "163861265321cb14b8": {
+      "type": "homepage-collection-slider",
+      "settings": {
+        "background_color": "#ffffff",
+        "section_heading": "RECOMMENDED PRODUCTS",
+        "section_heading_color": "#004778",
+        "enable_countdown": false,
+        "countdown_text": "Deal Ends in",
+        "Countdown_endtime": "",
+        "enable_view_button": true,
+        "button_text_color": "#013564",
+        "button_border_color": "",
+        "button_background_color": "",
+        "arrow_background_color": "#d5dbe3",
+        "selected_dot_color": "#004778",
+        "collection": "recommended",
+        "product_limit": 8
+      }
+    },
+    "165477982610a26c3c": {
+      "type": "homepage-collection-slider",
+      "settings": {
+        "background_color": "#ffffff",
+        "section_heading": "Hydra Range",
+        "section_heading_color": "#004778",
+        "enable_countdown": false,
+        "countdown_text": "Deal Ends in",
+        "Countdown_endtime": "",
+        "enable_view_button": true,
+        "button_text_color": "#013564",
+        "button_border_color": "",
+        "button_background_color": "",
+        "arrow_background_color": "#d5dbe3",
+        "selected_dot_color": "#004778",
+        "collection": "hydra",
+        "product_limit": 10
+      }
+    },
+    "1654778245fdc69f90": {
+      "type": "homepage-collection-slider",
+      "settings": {
+        "background_color": "#e3e3e3",
+        "section_heading": "Our Larah Range",
+        "section_heading_color": "#013564",
+        "enable_countdown": false,
+        "countdown_text": "Deal Ends in",
+        "Countdown_endtime": "",
+        "enable_view_button": true,
+        "button_text_color": "#013564",
+        "button_border_color": "#013564",
+        "button_background_color": "",
+        "arrow_background_color": "#9a9a9b",
+        "selected_dot_color": "#013564",
+        "collection": "larah",
+        "product_limit": 8
+      }
+    },
+    "163818469028fd59a2": {
+      "type": "homepage-blogs-section",
+      "blocks": {
+        "99c61488-db76-45bf-b04b-34c55c2805d4": {
+          "type": "Blogs",
+          "settings": {
+            "title": "Chocolate no bake dough nuts",
+            "image_1": "shopify:\/\/shop_images\/Chocolate_no_bake_dough_nuts.jpg",
+            "card_description": "Lorem ipsum dolor sit amet, consectetur eiusmod temporsit amet, consectetur eiusmod tempor",
+            "read_more": "Read more"
+          }
+        },
+        "72148473-a589-496d-9ab7-01157fe86432": {
+          "type": "Blogs",
+          "settings": {
+            "title": "Easy Walnut Pesto",
+            "image_1": "shopify:\/\/shop_images\/Easy_walnut_pesto.jpg",
+            "card_description": "Lorem ipsum dolor sit amet, consectetur eiusmod temporsit amet, consectetur eiusmod tempor",
+            "read_more": "Read more"
+          }
+        },
+        "4e0a757c-96b6-438e-95cd-f4e84fd8709f": {
+          "type": "Blogs",
+          "settings": {
+            "title": "Probiotic Power Smoothie",
+            "image_1": "shopify:\/\/shop_images\/mango.jpg",
+            "card_description": "Lorem ipsum dolor sit amet, consectetur eiusmod temporsit amet, consectetur eiusmod tempor",
+            "read_more": "Read more"
+          }
+        },
+        "37aea47d-cb14-46d6-b2c2-dcb2998d8332": {
+          "type": "Blogs",
+          "settings": {
+            "title": "Pronto SS Pressure Cooker",
+            "image_1": "shopify:\/\/shop_images\/Pronto-SS-Pressure-Cooker-3-L_sticker.jpg",
+            "card_description": "Lorem ipsum dolor sit amet, consectetur eiusmod temporsit amet, consectetur eiusmod tempor",
+            "read_more": "Read more"
+          }
+        },
+        "ef5dd9ac-c387-4f17-8ace-3aa9678663bf": {
+          "type": "Blogs",
+          "settings": {
+            "title": "Strawberry Dessert Sauce",
+            "image_1": "shopify:\/\/shop_images\/Strawberry_dessert_sauce.jpg",
+            "card_description": "Lorem ipsum dolor sit amet, consectetur eiusmod temporsit amet, consectetur eiusmod tempor",
+            "read_more": "Read more"
+          }
+        },
+        "1fb6960c-5494-41e0-9740-d13cabb85380": {
+          "type": "Blogs",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "image_1": "shopify:\/\/shop_images\/Rectangle_45_93c83169-372a-4324-93e3-9982609fafb5.png",
+            "card_description": "Lorem ipsum dolor sit amet, consectetur eiusmod temporsit amet, consectetur eiusmod tempor",
+            "read_more": "Read more"
+          }
+        }
+      },
+      "block_order": [
+        "99c61488-db76-45bf-b04b-34c55c2805d4",
+        "72148473-a589-496d-9ab7-01157fe86432",
+        "4e0a757c-96b6-438e-95cd-f4e84fd8709f",
+        "37aea47d-cb14-46d6-b2c2-dcb2998d8332",
+        "ef5dd9ac-c387-4f17-8ace-3aa9678663bf",
+        "1fb6960c-5494-41e0-9740-d13cabb85380"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "OUR BLOGS",
+        "para": "From delicious recipe ideas to the best tableware tips and everything in between, read our expertly curated articles for a daily dose of inspiration",
+        "url_view_all": "\/"
+      }
+    },
+    "1638522237ddea3de6": {
+      "type": "video",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "cover_image": "shopify:\/\/shop_images\/Group_1101.png",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false
+      }
+    },
+    "163852224145bf3573": {
+      "type": "homepage-categories-section",
+      "blocks": {
+        "07bbf2d1-a87f-403e-8ef7-54ffb133632b": {
+          "type": "square-category",
+          "settings": {
+            "title": "Serveware",
+            "link": "shopify:\/\/collections\/serveware",
+            "category_image": "shopify:\/\/shop_images\/2_50d6504b-1c13-4e8f-a909-f96931f499da.png",
+            "category_image2": "shopify:\/\/shop_images\/2_50d6504b-1c13-4e8f-a909-f96931f499da.png"
+          }
+        },
+        "7c6fcc1d-4389-45e9-9335-28fa82b49d72": {
+          "type": "square-category",
+          "settings": {
+            "title": "Dinnersets",
+            "link": "shopify:\/\/collections\/dinnersets",
+            "category_image": "shopify:\/\/shop_images\/2_eb6ba7a9-5cda-436a-9dad-6c5c7adca514.png"
+          }
+        },
+        "3aaa3e96-f034-47aa-a174-34dd93dc9835": {
+          "type": "square-category",
+          "settings": {
+            "title": "Storage",
+            "link": "shopify:\/\/collections\/storage-containers",
+            "category_image": "shopify:\/\/shop_images\/3_2032ea50-8e30-45cd-8212-a16b986b8be5.png",
+            "category_image2": "shopify:\/\/shop_images\/3_2032ea50-8e30-45cd-8212-a16b986b8be5.png"
+          }
+        },
+        "09b87617-d10b-4eb0-af87-9dc3469e30c1": {
+          "type": "square-category",
+          "settings": {
+            "title": "Bottles",
+            "link": "shopify:\/\/collections\/borosilicate-glass-bottles",
+            "category_image": "shopify:\/\/shop_images\/7_Bottles.jpg"
+          }
+        },
+        "791950d9-e938-4d6e-adf6-e77f5e1521f6": {
+          "type": "square-category",
+          "settings": {
+            "title": "Tea & Coffee",
+            "link": "shopify:\/\/collections\/tea-kettles",
+            "category_image": "shopify:\/\/shop_images\/Carafe.png"
+          }
+        },
+        "0a9e7997-4b3a-40d9-a2fa-50fa066c4648": {
+          "type": "square-category",
+          "settings": {
+            "title": "Drinkware",
+            "link": "shopify:\/\/collections\/glass-tumblers",
+            "category_image": "shopify:\/\/shop_images\/5_Drinkware.jpg"
+          }
+        },
+        "c6eecaa5-d344-4724-a88e-f60d5c16e808": {
+          "type": "square-category",
+          "settings": {
+            "title": "Storage Jars",
+            "link": "shopify:\/\/collections\/storage-jars",
+            "category_image": "shopify:\/\/shop_images\/8_Storage_Jars.jpg"
+          }
+        },
+        "c4c05487-cdbd-4460-a48c-5cac3ad87ad4": {
+          "type": "square-category",
+          "settings": {
+            "title": "Cookware",
+            "link": "shopify:\/\/collections\/cookware",
+            "category_image": "shopify:\/\/shop_images\/12_Cookware.jpg"
+          }
+        },
+        "6afc1d2b-1158-429a-af04-8c76fb74d507": {
+          "type": "square-category",
+          "settings": {
+            "title": "Kitchen Appliances",
+            "link": "shopify:\/\/collections\/kitchen-appliances",
+            "category_image": "shopify:\/\/shop_images\/14_Kitchen_Appliances.jpg"
+          }
+        },
+        "8ed24969-c187-4f6e-a1d4-b736e2ec3c23": {
+          "type": "square-category",
+          "settings": {
+            "title": "Mugs",
+            "link": "shopify:\/\/collections\/coffee-mugs-travel-mugs",
+            "category_image": "shopify:\/\/shop_images\/11_Mugs.jpg"
+          }
+        },
+        "99dae8fc-149e-4fd5-b489-975fb89e8925": {
+          "type": "square-category",
+          "settings": {
+            "title": "Home Appliances",
+            "link": "shopify:\/\/collections\/home-care",
+            "category_image": "shopify:\/\/shop_images\/13_Home_Appliances.jpg"
+          }
+        },
+        "a659e1cc-ab1c-407a-9e6c-4e326365551c": {
+          "type": "square-category",
+          "settings": {
+            "title": "Diyas",
+            "link": "shopify:\/\/collections\/akhand-diyas",
+            "category_image": "shopify:\/\/shop_images\/1_49c6ae92-fdf7-4449-92ac-d977515d9e3e.png",
+            "category_image2": "shopify:\/\/shop_images\/1_49c6ae92-fdf7-4449-92ac-d977515d9e3e.png"
+          }
+        },
+        "8a23064c-af68-4b6f-acaf-a6547d7fcfdb": {
+          "type": "square-category",
+          "settings": {
+            "title": "Lunchboxes",
+            "link": "shopify:\/\/collections\/glass-lunchboxes",
+            "category_image": "shopify:\/\/shop_images\/1_8c5f3d00-55e0-4ce0-8397-ba9bddddf03b.png",
+            "category_image2": "shopify:\/\/shop_images\/1_8c5f3d00-55e0-4ce0-8397-ba9bddddf03b.png"
+          }
+        },
+        "79a9afd7-ed19-448a-a66d-69ec7608175b": {
+          "type": "square-category",
+          "settings": {
+            "title": "Bowls",
+            "link": "shopify:\/\/collections\/mixing-serving-bowls",
+            "category_image": "shopify:\/\/shop_images\/4_Bowls.jpg",
+            "category_image2": "shopify:\/\/shop_images\/4_Bowls_256x256_a6a35b68-69d7-4894-bafc-0c5dc600e1f2.webp"
+          }
+        }
+      },
+      "block_order": [
+        "07bbf2d1-a87f-403e-8ef7-54ffb133632b",
+        "7c6fcc1d-4389-45e9-9335-28fa82b49d72",
+        "3aaa3e96-f034-47aa-a174-34dd93dc9835",
+        "09b87617-d10b-4eb0-af87-9dc3469e30c1",
+        "791950d9-e938-4d6e-adf6-e77f5e1521f6",
+        "0a9e7997-4b3a-40d9-a2fa-50fa066c4648",
+        "c6eecaa5-d344-4724-a88e-f60d5c16e808",
+        "c4c05487-cdbd-4460-a48c-5cac3ad87ad4",
+        "6afc1d2b-1158-429a-af04-8c76fb74d507",
+        "8ed24969-c187-4f6e-a1d4-b736e2ec3c23",
+        "99dae8fc-149e-4fd5-b489-975fb89e8925",
+        "a659e1cc-ab1c-407a-9e6c-4e326365551c",
+        "8a23064c-af68-4b6f-acaf-a6547d7fcfdb",
+        "79a9afd7-ed19-448a-a66d-69ec7608175b"
+      ],
+      "settings": {
+        "heading": "CATEGORIES",
+        "para": "We reimagined the tedious process of finding high quality kitchen and tableware. Shop from a wide range of high quality products to find what is best suited for your home.",
+        "image": "shopify:\/\/shop_images\/865-x-400px-Desktop.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/375-x-240px-Mobile.jpg"
+      }
+    },
+    "1638522284e55aeb10": {
+      "type": "homepage-why-choose-borosil-section",
+      "blocks": {
+        "b63f2259-025d-4477-baa2-d15f359fd4cd": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icons-1.png"
+          }
+        },
+        "54a6578d-7eb1-47cc-bb1a-3141c6c6a2b0": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icons-3.png"
+          }
+        },
+        "79a2dee1-43c2-43fb-bc94-889d23b42840": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icons-2.png"
+          }
+        },
+        "fc914b7e-03db-4f77-877d-42779fec3200": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icons-4.png"
+          }
+        },
+        "dc479690-42cd-4795-ace8-e41c9ea00119": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Icons-5.png"
+          }
+        },
+        "dc96f382-adb9-4b01-9df5-82c83178c12f": {
+          "type": "Blocks",
+          "disabled": true,
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Image_156.png"
+          }
+        }
+      },
+      "block_order": [
+        "b63f2259-025d-4477-baa2-d15f359fd4cd",
+        "54a6578d-7eb1-47cc-bb1a-3141c6c6a2b0",
+        "79a2dee1-43c2-43fb-bc94-889d23b42840",
+        "fc914b7e-03db-4f77-877d-42779fec3200",
+        "dc479690-42cd-4795-ace8-e41c9ea00119",
+        "dc96f382-adb9-4b01-9df5-82c83178c12f"
+      ],
+      "settings": {
+        "heading": "WHY CHOOSE BOROSIL?",
+        "para": ""
+      }
+    },
+    "163852229481918231": {
+      "type": "homepage-testimonial-section",
+      "blocks": {
+        "a4daacb3-b49f-4731-9cdc-aa904d598c65": {
+          "type": "Testimonials",
+          "settings": {
+            "title": "\"Most Trusted Brand\"",
+            "testimonial_image":"shopify:\/\/shop_images\/borosil-prod-2.webp",
+            "testimonial_description": "I have been using Borosil dishes for the last 30 years and before that my mother too was using the same. They used to come in distinctive red packaging. I have square , rectangular, round and oval shaped dishes, some deep and some shallow. Basically coming from an Army background there was a lot of entertaining and Borosil bake and serve dishes were used to the fullest. I never used any other for this purpose. It is brand I always trusted and now I value it much more.",
+            "client_name": "Minni Aurora",
+            "client_location": "India"
+          }
+        },
+        "1439d278-a037-44d5-8760-f0783316d486": {
+          "type": "Testimonials",
+          "settings": {
+            "title": "\"Easy Returns Policy\"",
+            "testimonial_image":"shopify:\/\/shop_images\/image-prod-1.jpg",
+            "testimonial_description": "\"I PURCHASED A BOROSYL PRODUCT – 1.0L CARAFE WITH STRAINER IN LID-BLACK SOMETIME BACK . I REALIZED SOME DAYS AFTER THAT THE HANDLE GOT BROKEN AND THE CARAFE BECAME UNUSEFUL. I ENQUIRED ABOUT THE HANDLE AT LOCAL SHOPS , HOWEVER THE SAME WAS NOT AVAILLABLE . THEN I APPROACHED MY BOROSIL @BOROSIL.COM FOR THE SUPPLY. I DID RECEIVE POSITIVE FEEDBACK PROMPTLY .  \"",
+            "client_name": "Dr. Kunda Dandare",
+            "client_location": "India"
+          }
+        },
+        "a6263040-71f6-42ab-91bf-d123bf544524": {
+          "type": "Testimonials",
+          "settings": {
+            "title": "\"Prompt Customer Support\"",
+            "testimonial_image":"shopify:\/\/shop_images\/borosil-prod-3.jpg",
+            "testimonial_description": "\"I have been gifted a beautiful elegant Borosil glass lunch box, which can even be used for warming food in the microwave. One of the glass container broke accidently. I emailed Borosil, informing them that I required a new glass container. I am extremely grateful to Borosil for their prompt reply and for having couriered me a new Borosil glass container immediately , free of cost . Thank you Borosil , once again for your generous gesture. \"",
+            "client_name": "Divya Dhamija",
+            "client_location": "India"
+          }
+        },
+        "b8076dad-a59b-4e71-92a7-f10da89916ee": {
+          "type": "Testimonials",
+          "disabled": true,
+          "settings": {
+            "title": "\"Best Quality tiffin box\"",
+            "testimonial_image":"shopify:\/\/shop_images\/borosil-prod-3.jpg",
+            "testimonial_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+            "client_name": "Jaya Diwan",
+            "client_location": "Karnataka, Bangalore"
+          }
+        }
+      },
+      "block_order": [
+        "a4daacb3-b49f-4731-9cdc-aa904d598c65",
+        "1439d278-a037-44d5-8760-f0783316d486",
+        "a6263040-71f6-42ab-91bf-d123bf544524",
+        "b8076dad-a59b-4e71-92a7-f10da89916ee"
+      ],
+      "settings": {
+        "heading": "TRUSTED BY MILLIONS OF HAPPY CUSTOMERS",
+        "para": "Lovely experiences shared by our happy customers."
+      }
+    },
+    "1638522306d9d07961": {
+      "type": "homepage-shop-with-advantage-section",
+      "blocks": {
+        "b733f22c-b950-4f63-a34e-99ff93c875b5": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1102.png",
+            "text": "Free shipping",
+            "advantage_link": ""
+          }
+        },
+        "4274c970-359c-4712-8f27-eefc5cae2dd3": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_419.png",
+            "text": "Cash on Delivery",
+            "advantage_link": ""
+          }
+        },
+        "73ea9af9-c156-4d76-84b6-a03831d9cfa9": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_420.png",
+            "text": "Easy Return",
+            "advantage_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "b733f22c-b950-4f63-a34e-99ff93c875b5",
+        "4274c970-359c-4712-8f27-eefc5cae2dd3",
+        "73ea9af9-c156-4d76-84b6-a03831d9cfa9"
+      ],
+      "settings": {
+        "heading": "SHOP WITH ADVANTAGE"
+      }
+    },
+    "1640245457a95d5330": {
+      "type": "homepage--shop-our-range",
+      "disabled": true,
+      "settings": {
+        "heading": ""
+      }
+    },
+    "1640245473f4e2f6c5": {
+      "type": "homepage-shop-with-advantage-section",
+      "blocks": {
+        "4e1b5176-be34-46ae-90d0-c5110fe6b9fa": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_419.png",
+            "text": "",
+            "advantage_link": ""
+          }
+        },
+        "476fca08-d8c3-4ac9-97ac-fd11a04cb48a": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_420.png",
+            "text": "",
+            "advantage_link": ""
+          }
+        },
+        "de293b8a-8a3c-4aee-b48a-5083e997e928": {
+          "type": "Blocks",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_419.png",
+            "text": "",
+            "advantage_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "4e1b5176-be34-46ae-90d0-c5110fe6b9fa",
+        "476fca08-d8c3-4ac9-97ac-fd11a04cb48a",
+        "de293b8a-8a3c-4aee-b48a-5083e997e928"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "XYZ"
+      }
+    },
+    "166748820931f8c1bb": {
+      "type": "apps",
+      "blocks": {
+        "2499f2a6-1c76-464a-9491-ed198bde191a": {
+          "type": "shopify:\/\/apps\/glood-product-recommendations\/blocks\/app-block\/6e79d991-1504-45bb-88e3-1fb55a4f26cd",
+          "settings": {
+            "widget-id": "",
+            "padding-top": "",
+            "padding-bottom": "",
+            "class-names": "",
+            "custom-css": "",
+            "add-loader": false,
+            "min-height": "300px",
+            "custom-loader": ""
+          }
+        }
+      },
+      "block_order": [
+        "2499f2a6-1c76-464a-9491-ed198bde191a"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    }
+  },
+  "order": [
+    "1638522153b85bba8c",
+    "16386126438de35bd2",
+    "163861265321cb14b8",
+    "165477982610a26c3c",
+    "1654778245fdc69f90",
+    "163818469028fd59a2",
+    "1638522237ddea3de6",
+    "163852224145bf3573",
+    "1638522284e55aeb10",
+    "163852229481918231",
+    "1638522306d9d07961",
+    "1640245457a95d5330",
+    "1640245473f4e2f6c5",
+    "166748820931f8c1bb"
+  ],
+  "wrapper": "div#index-lazyload_sections",
+  "layout": "theme.custom"
+}

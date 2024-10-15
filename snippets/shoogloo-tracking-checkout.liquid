@@ -1,0 +1,12 @@
+<script src='https://static-cdn.trackier.com/js/trackier-web-sdk.js'></script>
+<script>window.TrackierWebSDK.init();</script>
+<script src="https://static-cdn.trackier.com/rtg/655dd4be6e4e265db2159231.js"></script>
+<script src='https://static-cdn.trackier.com/js/trackier-web-sdk.js'></script>
+<script>
+  if(Shopify.Checkout.step == 'thank_you') { 
+    window.TrackierWebSDK.trackConvForBrand('tsm.s3g6.com', '655dd487a6d830482f446f01', {"is_camp":true,"txn_id":"{{ checkout.order_number }}","sale_amount":"{{ checkout.total_price | times: 1.00 | divided_by: 100 }}"});
+  }
+</script>
+
+
+

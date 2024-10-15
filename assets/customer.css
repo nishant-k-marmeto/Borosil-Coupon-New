@@ -1,0 +1,1760 @@
+.customer tbody td,
+.customer thead th {
+  border-right: .01rem solid #f1f1f1;
+  letter-spacing: 0
+}
+Body.noScroll {
+  overflow: hidden
+}
+#recover,
+#recover + div,
+#recover:target ~ #login,
+#recover:target ~ #login + div,
+#ui-id-7,
+.addresses [aria-expanded=false] ~ div[id],
+.customer table.order-details thead::after,
+.customer tbody.RegisterProductData td.mobile-show,
+.mobile-show,
+.ui-tooltip {
+  display: none
+}
+.customer-main {
+  display: block;
+  background: #f1f1f1;
+  position: relative;
+  padding: 20px 0 25px
+}
+.customer-main .customer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start
+}
+.customer-main .customer .customer-left {
+  position: sticky;
+  top: 95px;
+  width: 267px
+}
+.customer-main .customer .customer-left .customer-menu {
+  width: 100%;
+  background-color: #fff
+}
+.customer-main .username-boxs {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 26px 22px;
+  align-items: center;
+  font-size: 21px;
+  line-height: 1;
+  font-weight: 700;
+  color: #013564
+}
+.customer-main .username-boxs svg {
+  width: 22px;
+  height: 22px;
+  fill: #013564;
+  display: block;
+  margin-right: 16px
+}
+.customer-main ul.menu {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none
+}
+#recover:target,
+#recover:target + div,
+.addresses [aria-expanded=true] ~ div[id],
+.customer .checkbox > input:checked + label span svg,
+.customer-main ul.menu li,
+.order .fulfillment span {
+  display: block
+}
+.customer-main ul.menu li a {
+  display: block;
+  line-height: 1;
+  padding: 14px 0 14px 18px;
+  position: relative;
+  text-decoration: none;
+  font-size: 16px;
+  color: #4a4a4a;
+  font-weight: 400;
+  text-align: left
+}
+.customer-main ul.menu li a::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: transparent
+}
+.customer-main ul.menu li:last-child {
+  border-top: 1px solid #f0f0f0;
+  margin-top: 55px
+}
+.customer-main ul.menu li:last-child a {
+  padding: 16px 0 16px 18px
+}
+.customer-main ul.menu li a.active,
+.customer-main ul.menu li a:hover {
+  background-color: rgba(1, 53, 100, .07);
+  color: #013564
+}
+.customer-main ul.menu li a.active::before,
+.customer-main ul.menu li a:hover::before {
+  background-color: #013564
+}
+.customer-main .customer .customer-right {
+  width: calc(100% - 267px - 18px);
+  margin-left: auto
+}
+.customer-main .customer-group {
+  background-color: #fff;
+  padding: 30px;
+  margin-bottom: 15px
+}
+.customer-main .customer-group h2 {
+  display: block;
+  font-size: 24px;
+  color: #013564;
+  line-height: 1;
+  margin: 0 0 23px;
+  letter-spacing: 0;
+  font-weight: 700
+}
+.customer-main .customer-group p {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4a4a4a;
+  line-height: 1.6
+}
+.customer-main .customer-group ul.profile-main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+.account a svg,
+.customer .pagination li:not(:last-child) {
+  margin-right: 0rem
+}
+.customer-main .customer-group ul.profile-main li {
+  display: block;
+  width: 33.33%;
+  margin: 0 15px 25px 0
+}
+.customer-main .customer-group ul.profile-main li span {
+  display: block;
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 1;
+  margin: 0 0 10px;
+  font-weight: 400
+}
+.customer-main .customer-group ul.profile-main li p {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #ece4e0;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #000;
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+  padding: 11px 13px
+}
+.customer tbody td a.Button:hover,
+.customer-main .btn-view {
+  background: #013564;
+  color: #fff
+}
+.customer-main .button-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin: 35px 0 20px
+}
+.customer-main .btn-view {
+  display: inline-flex;
+  padding: 11px 25px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  border: 1px solid #013564;
+  border-radius: 2px
+}
+.customer-main .btn-view:hover {
+  color: #013564;
+  background: 0 0;
+  border: 1px solid #013564
+}
+.customer-address-main {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px
+}
+.customer-address-main .customer-group {
+  margin: 0 12px 25px;
+  width: calc(50% - 24px)
+}
+.customer-main .customer.order .orderdetails-main .customer-address-main .customer-group h2 {
+  margin: 0 0 20px
+}
+.customer:not(.account):not(.order) {
+  margin: 0 auto;
+  max-width: 1250px;
+  padding: 0 15px
+}
+.customer form {
+  margin-top: 4rem
+}
+.customer ul {
+  line-height: calc(1 + .6 / var(--font-body-scale));
+  padding-left: 30px;
+  padding-top: 10px;
+  text-align: left;
+  margin-bottom: 4rem;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a8a8a8
+}
+.customer strong,
+.customer tbody {
+  color: rgb(var(--color-foreground))
+}
+.customer ul a {
+  display: inline
+}
+.customer strong {
+  font-weight: 400
+}
+.customer h2.form__message {
+  font-size: calc(var(--font-heading-scale) * 1.8rem)
+}
+.customer .field {
+  margin: 18px 0 0
+}
+#customer_login_guest button,
+.addresses form button + button,
+.addresses li > button + button,
+.customer .field:first-of-type,
+.customer-reset-form form,
+.register form {
+  margin-top: 0
+}
+.customer table {
+  table-layout: auto;
+  border-collapse: collapse;
+  border-bottom: .01rem solid rgba(var(--color-foreground), .08);
+  box-shadow: none;
+  width: 100%;
+  font-size: 1.6rem;
+  position: relative
+}
+@media screen and (min-width:750px) {
+  .customer table {
+    border: none;
+    box-shadow: 0 0 0 .1rem #f1f1f1
+  }
+  .customer table.order-details {
+    border: none;
+    box-shadow: none
+  }
+}
+.customer td,
+.customer th {
+  font-weight: 400;
+  line-height: 1;
+  border: none;
+  padding: 0
+}
+.customer thead th {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  background-color: #f7f7f7;
+  color: #000
+}
+.customer table.order-details thead th {
+  border-right: 0;
+  padding-left: 0;
+  padding-right: 0
+}
+.customer table.order-details thead th:first-child {
+  padding-left: 16px
+}
+.customer table.order-details tbody td:nth-child(2),
+.customer table.order-details thead th:nth-child(2) {
+  padding-left: 50px
+}
+.customer tbody td {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: #000
+}
+.order dd,
+.order table a {
+  line-height: calc(1 + .3 / var(--font-body-scale))
+}
+.customer table.order-details tbody td {
+  border-right: 0;
+  font-size: 16px;
+  color: #4a4a4a;
+  font-weight: 600;
+  padding: 10px 0
+}
+.login-title,
+.order tfoot tr:first-of-type td,
+.order tfoot tr:first-of-type th,
+.order tfoot tr:last-of-type td,
+.order tfoot tr:last-of-type th {
+  font-weight: 700
+}
+.customer tbody td:last-child,
+.customer thead th:last-child {
+  border-right: 0
+}
+.order tbody ul,
+.trackorderdetails-main .customer-group table.trackorder-details tbody tr td:last-child {
+  text-align: right
+}
+.customer tbody tr {
+  border-top: .01rem solid #f1f1f1
+}
+.customer tbody td a {
+  font-size: 15px;
+  color: #000;
+  font-weight: 400
+}
+.customer tbody td a.Button {
+  background: #fff;
+  border: 1px solid #013564;
+  padding: 9px 13px;
+  color: #013564;
+  font-size: 14px;
+  text-decoration: none
+}
+.customer tbody td .actions-link {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center
+}
+.customer tbody td .actions-link .offtext {
+  opacity: .5;
+  font-size: 14px;
+  font-weight: 400;
+  color: #013564
+}
+.customer tbody td .actions-link span a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #013564;
+  text-decoration: none
+}
+.customer tbody td .actions-link span.separator {
+  display: block;
+  margin: 0 10px;
+  font-size: 18px;
+  color: #d3d3d3
+}
+.customer tfoot tr {
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ebebeb
+}
+.customer tfoot td {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+  align-items: center;
+  text-transform: uppercase
+}
+.customer tfoot td:nth-child(2),
+.textbutton-boxs {
+  display: flex;
+  flex-wrap: wrap
+}
+.customer tfoot td:nth-child(2) span.texes-text {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(0, 0, 0, .5);
+  text-transform: capitalize
+}
+.customer tfoot td:nth-child(2) span {
+  margin-left: auto
+}
+.customer tfoot::before,
+.customer thead::after {
+  content: ' ';
+  height: .1rem;
+  width: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  background: rgba(var(--color-foreground), .08)
+}
+@media screen and (forced-colors:active) {
+  .customer table {
+    border-top: .1rem solid transparent;
+    border-bottom: .1rem solid transparent
+  }
+  .customer tfoot::before,
+  .customer thead::after {
+    background: CanvasText
+  }
+}
+@media screen and (max-width:749px) {
+  .customer tfoot td:first-of-type,
+  .customer th,
+  .customer thead {
+    display: none
+  }
+  .customer td {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: right
+  }
+  .customer td::before {
+    display: block;
+    width: 100%;
+    color: rgba(var(--color-foreground), .75);
+    content: attr(data-label);
+    font-size: 10px;
+    text-transform: uppercase;
+    flex-grow: 1;
+    color: #000;
+    line-height: 1;
+    text-align: left;
+    margin: 0 0 10px
+  }
+  .customer tr {
+    width: 100%
+  }
+  .trackorderdetails-main .customer-group table.trackorder-details thead {
+    display: block
+  }
+  .customer tbody td a.Button {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px
+  }
+}
+.customer .pagination {
+  margin-top: 35px
+}
+.customer .pagination ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0
+}
+.customer .pagination li {
+  flex: 1 1;
+  max-width: 4rem
+}
+.customer .pagination li span:first-child {
+  background-color: #fff;
+  border: 1px solid #004778;
+  color: #004778;
+  border-radius: 50%
+}
+.customer .pagination li :first-child {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 4rem;
+  width: 100%;
+  padding: 0;
+  text-decoration: none;
+  font-size: 15px;
+  color: #3f3f3f;
+  font-weight: 400
+}
+.order .fulfillment a:hover,
+.textbutton-boxs .button-right .button:hover,
+.textbutton-boxs .button-right button:hover {
+  color: #fff;
+  background-color: #013564
+}
+.customer .pagination li :first-child svg {
+  height: .7rem
+}
+.customer .pagination li:first-of-type svg {
+  margin-left: -.2rem;
+  transform: rotate(90deg)
+}
+.customer .pagination li:last-of-type svg {
+  margin-right: -.2rem;
+  transform: rotate(-90deg)
+}
+.customer .pagination li [aria-current]::after {
+  content: '';
+  display: block;
+  width: 2rem;
+  height: .01rem;
+  position: absolute;
+  bottom: .08rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: currentColor
+}
+.login a {
+  display: block;
+  margin: 0 auto;
+  width: fit-content
+}
+.login a[href='#recover'] {
+  margin: 0 auto;
+  text-decoration: none;
+  letter-spacing: 0;
+  color: #004778;
+  font-size: 14px;
+  font-weight: 700;
+  padding-bottom: 10px
+}
+.login .field + a {
+  margin-top: 1rem
+}
+.login p {
+  margin: 1.5rem 0
+}
+.login h3 {
+  margin-top: 1.5rem;
+  text-align: left;
+  font-size: calc(var(--font-heading-scale) * 1.6rem)
+}
+#login,
+#recover {
+  scroll-margin-top: 20rem
+}
+#recover,
+.addresses ul p,
+.customer.addresses .textbutton-boxs,
+.order table p,
+.order > div:nth-of-type(2) > div:first-of-type h2,
+.order > div:nth-of-type(2) > div:last-of-type h2 + p {
+  margin-bottom: 0
+}
+.activate button[name=decline],
+.addresses form button[type],
+.addresses li > button {
+  background-color: transparent;
+  box-shadow: 0 0 0 .1rem rgb(var(--color-link));
+  color: rgb(var(--color-link))
+}
+.activate button[name=decline]:hover,
+.addresses form button[type]:hover,
+.addresses li > button:hover {
+  box-shadow: 0 0 0 .2rem rgb(var(--color-link))
+}
+:is(.account, .order):not(body.account) {
+  margin: 0 auto;
+  max-width: 1250px;
+  padding: 0
+}
+@media screen and (min-width:750px) and (max-width:989px) {
+  .order > div:nth-of-type(2) > div:last-of-type {
+    display: flex
+  }
+  .order > div:nth-of-type(2) > div:last-of-type div {
+    padding-right: 3.2rem
+  }
+}
+.account h1 + a {
+  display: inline-flex;
+  align-items: center
+}
+.order-cancel-msg {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+  padding: 0 10px
+}
+.textbutton-boxs .text-left {
+  flex: 1 1 auto
+}
+.textbutton-boxs .button-right {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-start
+}
+.textbutton-boxs .button-right .button,
+.textbutton-boxs .button-right button {
+  display: block;
+  width: auto;
+  border: 1px solid #013564;
+  margin-left: 10px;
+  padding: 10px 18px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #013564;
+  text-decoration: none;
+  background-color: #fff;
+  min-height: inherit;
+  height: auto;
+  min-width: inherit
+}
+.order .item-props > span,
+.order .properties span,
+.order .unit-price {
+  line-height: calc(1 + .2 / var(--font-body-scale))
+}
+.order td:first-of-type {
+  align-items: initial
+}
+.order tfoot tr:last-of-type td:before {
+  font-size: 2.2rem
+}
+.order > div:nth-of-type(2) > div:first-of-type h2 ~ p {
+  margin-bottom: 0;
+  font-size: 1.4rem
+}
+.order .item-props {
+  font-size: 1.4rem;
+  margin-top: .05px;
+  display: flex;
+  flex-direction: column
+}
+.order .item-props > span {
+  word-break: break-all
+}
+.order .fulfillment {
+  width: fit-content;
+  margin-top: 0;
+  text-align: left
+}
+.order .fulfillment a {
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #013564;
+  border: .01rem solid #013564;
+  text-decoration: none
+}
+.order .fulfillment a:hover {
+  border: .01rem solid #013564
+}
+.order .cart-discount {
+  display: block;
+  margin-left: 0 !important;
+  font-size: 16px;
+  color: #000
+}
+.order .unit-price,
+.order dd s {
+  color: rgba(var(--color-foreground), .7)
+}
+.order tbody ul {
+  list-style: none;
+  font-size: 1.2rem;
+  padding-left: 0;
+  margin-top: 1rem;
+  margin-bottom: 0
+}
+.order tbody tr:first-of-type td:first-of-type > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start
+}
+.customer tbody td .product-boxs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center
+}
+.customer tbody td .product-boxs .img {
+  width: 50px;
+  margin-right: 14px
+}
+.customer tbody td .product-boxs h3 {
+  width: calc(100% - 64px)
+}
+.customer tbody td .product-boxs h3 a {
+  display: block;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 1;
+  text-decoration: none
+}
+.order .properties {
+  font-size: 1.4rem;
+  margin-top: 1rem
+}
+.order .properties span {
+  display: block
+}
+.order svg {
+  width: 1.1rem;
+  color: rgb(var(--color-base-accent-2));
+  margin-right: .5rem
+}
+.order dl {
+  margin: 0
+}
+.order dd {
+  margin-left: 0
+}
+.order .unit-price {
+  font-size: 1.1rem;
+  letter-spacing: .07rem;
+  margin-top: .2rem;
+  text-transform: uppercase
+}
+.order .regular-price {
+  font-size: 1.3rem
+}
+.addresses li > button {
+  margin-left: .5rem;
+  margin-right: .5rem
+}
+@media screen and (min-width:750px) {
+  .customer td {
+    padding-right: 2.2rem
+  }
+  .customer tbody td,
+  .customer thead th {
+    padding: 20px 16px;
+    text-align: left;
+    vertical-align: middle
+  }
+  .order tbody ul {
+    text-align: left
+  }
+  .order tbody tr:first-of-type td:first-of-type > div {
+    align-items: center
+  }
+  .addresses li > button:first-of-type {
+    margin-top: 3rem
+  }
+}
+label[for=AddressCountryNew],
+label[for=AddressProvinceNew] {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: .6rem
+}
+.addresses form {
+  display: flex;
+  flex-flow: row wrap
+}
+.addresses form > div {
+  width: 100%;
+  text-align: left
+}
+.addresses ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left
+}
+li[data-address] {
+  padding: 30px 0;
+  border-bottom: 1px solid #e9e9e9;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start
+}
+.custom-sign-in-btn a,
+.customer button {
+  display: inline-block;
+  padding: 8px 0;
+  letter-spacing: .72px;
+  text-transform: uppercase;
+  background: #004778;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  width: 100%
+}
+li[data-address]:last-child {
+  border: 0
+}
+.addresses ul li > .content {
+  flex: 1 1 auto;
+  text-align: left
+}
+.addresses ul li > .content h2 {
+  background: #f2f2f2;
+  border-radius: 15px;
+  padding: 5px 13px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  color: #013564;
+  display: inline-flex;
+  margin: 0 0 10px
+}
+.addresses ul li > .content p {
+  display: block;
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+  line-height: 26px
+}
+.addresses ul li > .buttons {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end
+}
+.addresses ul li > .buttons button {
+  background-color: transparent;
+  width: 22px;
+  height: 22px;
+  border: 0;
+  box-shadow: none;
+  min-height: inherit;
+  min-width: inherit;
+  margin: 0 15px 0 0;
+  padding: 0
+}
+.addresses ul li > .buttons button svg {
+  display: block;
+  width: 22px;
+  height: 22px
+}
+.addresses ul li > .buttons button.edit-icon svg {
+  fill: #004778
+}
+.addresses ul li > .buttons button.delete-icon svg {
+  fill: none;
+  stroke: #004778;
+  stroke-linecap: round;
+  stroke-linejoin: round
+}
+.addresses h2 {
+  text-align: left
+}
+.btn-update-address-container {
+  margin-top: 10px
+}
+.btn-update-address-container .btn-address-edit {
+  width: 100% !important;
+  color: #fff !important;
+  background: #004778 !important;
+  padding: 10px !important;
+  height: unset !important
+}
+.social-login-app-reg:before,
+.social-login-app:after {
+  margin-right: -30px;
+  font-size: 16px;
+  background: #fff;
+  color: #1a2034;
+  box-sizing: border-box;
+  content: "OR";
+  text-align: center
+}
+li[data-address] > h2 {
+  text-align: center;
+  font-size: calc(var(--font-heading-scale) * 1.8rem);
+  margin-bottom: 0
+}
+.addresses input[type=checkbox] {
+  margin-top: 2rem;
+  margin-left: 0
+}
+@media only screen and (min-width:750px) {
+  .customer h2.form__message,
+  li[data-address] > h2 {
+    font-size: calc(var(--font-heading-scale) * 2.2rem)
+  }
+  .activate button[name=decline] {
+    margin-top: inherit;
+    margin-left: 1rem
+  }
+  .addresses form > div:nth-of-type(3),
+  .addresses form > div:nth-of-type(5) {
+    padding-right: 2rem
+  }
+  .addresses form > div:nth-of-type(3),
+  .addresses form > div:nth-of-type(4),
+  .addresses form > div:nth-of-type(5),
+  .addresses form > div:nth-of-type(6) {
+    flex-basis: 50%;
+    box-sizing: border-box
+  }
+}
+.mm-customer-login-container {
+  background: no-repeat padding-box #f5f5f5;
+  opacity: 1;
+  max-width: 100%;
+  padding-bottom: 60px !important
+}
+@media(max-width:767px) {
+  .mm-customer-login-container {
+    padding-bottom: 90px !important
+  }
+}
+.customer-login-card {
+  max-width: 477px;
+  background: no-repeat padding-box #fff;
+  box-shadow: 0 0 6px #00000029;
+  opacity: 1;
+  margin: 0 auto
+}
+.customer-login-card-layout {
+  padding: 27px 27px 0
+}
+.login-title {
+  font-size: 28px;
+  color: #1a2034;
+  letter-spacing: 0;
+  margin-bottom: 27px
+}
+.social-login-app {
+  position: relative;
+  border-bottom: 1px solid #00000029;
+  padding-bottom: 15px
+}
+.social-login-app:after {
+  position: absolute;
+  right: 50%;
+  top: 100%;
+  margin-top: -35px;
+  padding: 22px 0;
+  width: 45px;
+  height: 65px
+}
+.custom-sign-in-btn {
+  margin: 30px auto
+}
+.custom-sign-in-btn a {
+  transition: .2s ease-in-out;
+  -webkit-transition: .2s ease-in-out
+}
+.custom-sign-in-btn a:hover {
+  background: #d6e35a;
+  color: #fff
+}
+.customer button {
+  margin: 0 auto;
+  border: none;
+  box-shadow: none;
+  transition: .2s ease-in-out;
+  -webkit-transition: .2s ease-in-out
+}
+.customer button:hover {
+  background: #d6e35a;
+  color: #fff;
+  box-shadow: none
+}
+.custom-sign-up-btn {
+  border-top: 1px solid #e5e5e5;
+  padding: 12px 0;
+  display: flex;
+  justify-content: center;
+  align-items: end
+}
+.custom-sign-up-btn a,
+.custom-sign-up-btn-2 a {
+  text-decoration: none;
+  font-size: 14px
+}
+.custom-sign-up-btn-2 {
+  padding: 0 0 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.sign-up-btn-1 {
+  color: #656977;
+  margin-right: 10px
+}
+.login a[href="#recover"]:hover,
+.sign-up-btn-2 a:hover {
+  color: #121212
+}
+.cust-customer-login-form .field input {
+  border: 1px solid #e8e8e8;
+  box-shadow: none
+}
+.cust-customer-login-form .field label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #a8a8a8
+}
+.customer .field input:focus,
+.customer .field input:hover,
+.customer .field textarea:focus,
+.customer .field textarea:hover,
+.customer select:focus,
+.customer select:hover,
+.field__input:focus,
+.field__input:hover,
+.localization-form__select:focus,
+.localization-form__select:hover,
+.select__select:focus,
+.select__select:hover {
+  border: 1px solid #000;
+  box-shadow: none
+}
+.customer .field input,
+.customer .field textarea,
+.customer select,
+.field__input,
+.select__select {
+  box-shadow: none;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #000
+}
+.customer .field label {
+  position: relative;
+  left: 0;
+  top: 0;
+  margin: 0 0 9px;
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0
+}
+.customer .field input::-webkit-input-placeholder {
+  opacity: .14;
+  color: #000
+}
+.customer .field input:-ms-input-placeholder {
+  opacity: .14;
+  color: #000
+}
+.customer .field input::placeholder {
+  opacity: .14;
+  color: #000
+}
+.customer .field input:-webkit-autofill,
+.customer .field input:focus,
+.customer .field input:not(:placeholder-shown) {
+  padding: 15px
+}
+.customer .field textarea {
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+  height: 74px
+}
+.customer .field textarea:focus-visible {
+  outline: 0
+}
+.customer .select select + svg {
+  fill: transparent;
+  stroke: #000000;
+  stroke-linecap: round;
+  stroke-linejoin: round
+}
+.customer .checkbox {
+  display: block;
+  position: relative;
+  margin-top: 25px
+}
+.customer .checkbox > input {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer
+}
+.customer .checkbox > input + label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: #42210b
+}
+.customer .checkbox > input + label span {
+  width: 16px;
+  height: 16px;
+  display: block;
+  border: 1px solid rgba(66, 33, 11, .3);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px
+}
+.customer .checkbox > input + label span svg {
+  display: none;
+  width: 11px;
+  height: 9px;
+  fill: #E14B25
+}
+.customer .popup-boxs .button--full-width {
+  display: block;
+  margin-top: 25px
+}
+.customer .popup-boxs .button--full-width button {
+  display: block;
+  margin: 0;
+  background-color: #002a50;
+  border-color: #013564;
+  font-size: 16px;
+  color: #fff;
+  width: 100%;
+  text-transform: capitalize;
+  padding: 15px 0;
+  height: auto
+}
+.customer .popup-boxs .button--full-width button:hover {
+  background-color: #d9e255;
+  color: #013564;
+  border-color: #d9e255
+}
+.cust-customer-login-form .field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url("https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Group_2470.svg?v=1642705886") 92% 18px no-repeat #fff
+}
+.register-custom-two-blocks {
+  display: flex;
+  justify-content: center;
+  align-items: end
+}
+.register-custom-two-blocks .field:first-child {
+  margin-right: 8px
+}
+.register-custom-two-blocks .field:nth-child(2) {
+  margin-left: 8px
+}
+.register-checkbox {
+  display: flex;
+  align-items: baseline;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 600;
+  color: #a8a8a8;
+  padding-top: 20px
+}
+.register-checkbox input {
+  margin-right: 5px
+}
+.register-checkbox input:checked ~ .checkmark {
+  background: red
+}
+.ui-tooltip-content {
+  display: none;
+  opacity: 0;
+  z-index: -100
+}
+.social-login-app-reg {
+  position: relative;
+  padding-top: 43px;
+  padding-bottom: 27px;
+  border-top: 1px solid #00000029
+}
+.social-login-app-reg:before {
+  position: absolute;
+  left: 45%;
+  top: 20px;
+  margin-top: -35px;
+  padding: 0 10px
+}
+.custom-reset-password {
+  margin-bottom: 15px
+}
+.custom-cancel-btn {
+  margin-bottom: 80px
+}
+.custom-cancel-btn a {
+  font-size: 14px;
+  color: #656977
+}
+.cust-login-subtitle p {
+  margin: 10px auto 0;
+  color: #656977
+}
+.customer a,
+.form__message,
+.underlined-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #a8a8a8
+}
+.sign-up-btn-2 a {
+  color: #004778;
+  font-weight: 700;
+  font-size: 14px
+}
+.popup-main {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .3);
+  z-index: 99
+}
+.popup-main .popup-boxs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  max-width: 467px;
+  padding: 25px
+}
+.popup-main .popup-boxs h2 {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  color: #013564;
+  margin: 0 0 40px;
+  text-align: center
+}
+.popup-main .popup-boxs button[type=reset] {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 16px;
+  height: 16px;
+  display: block;
+  background-color: transparent;
+  min-width: inherit;
+  min-height: inherit;
+  padding: 0;
+  margin: 0;
+  border: 0
+}
+.popup-main .popup-boxs button[type=reset] svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: #013564;
+  stroke: #013564;
+  stroke-width: .5
+}
+.trackorderdetails-main .customer-group,
+.trackorderdetails-main .customer-group table.trackorder-details thead tr td .fulfillment {
+  padding: 0
+}
+.trackorderdetails-main .customer-group .oder-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px
+}
+.trackorderdetails-main .customer-group .oder-list .list-box {
+  display: block;
+  width: 20%
+}
+.trackorderdetails-main .customer-group .oder-list .list-box h2 {
+  display: block;
+  font-size: 21px;
+  margin-bottom: 7px
+}
+.trackorderdetails-main .customer-group .oder-list .list-box span {
+  display: block;
+  font-size: 16px;
+  color: #4a4a4a;
+  line-height: 1;
+  font-weight: 600
+}
+.trackorderdetails-main .customer-group table.trackorder-details {
+  box-shadow: none
+}
+.trackorderdetails-main .customer-group table.trackorder-details thead tr td {
+  padding: 2rem
+}
+.trackorderdetails-main .customer-group table.trackorder-details thead tr td .fulfillment-number {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 16px
+}
+.trackorderdetails-main .customer-group table.trackorder-details thead tr td .fulfillment-number span {
+  font-weight: 700;
+  margin-right: 5px
+}
+.trackorderdetails-main .customer-group table.trackorder-details tbody tr td {
+  padding: 30px;
+  border: 0;
+  font-size: 16px;
+  color: #4a4a4a
+}
+.trackorderdetails-main .customer-group table.trackorder-details tbody tr td .product-boxs .img {
+  width: 75px
+}
+.trackorderdetails-main .customer-group table.trackorder-details tbody tr td .product-boxs h3 {
+  width: calc(100% - 90px)
+}
+.customer tbody.RegisterProductData td img {
+  width: 80px;
+  height: 80px;
+  display: block
+}
+@media (max-width:1199px) {
+  .customer-main .customer .customer-left {
+    top: 50px;
+    width: 200px
+  }
+  .customer-main .username-boxs {
+    padding: 20px 22px;
+    font-size: 18px
+  }
+  .customer-main .customer .customer-right {
+    width: calc(100% - 215px)
+  }
+  .customer-main .customer-group,
+  .trackorderdetails-main .customer-group table.trackorder-details tbody tr td {
+    padding: 20px
+  }
+  .customer tbody td,
+  .customer thead th {
+    padding: 10px 6px
+  }
+  .customer tbody td .actions-link span.separator {
+    margin: 0 7px
+  }
+  .customer-main .button-main {
+    margin: 25px 0 0
+  }
+  .customer tbody td a.Button {
+    padding: 8px 10px
+  }
+  .textbutton-boxs .button-right .button {
+    padding: 10px
+  }
+  .customer-main .trackorderdetails-main .customer-group {
+    padding: 0
+  }
+  .trackorderdetails-main .customer-group .oder-list .list-box {
+    width: 30%
+  }
+  .customer-group {
+    overflow-x: auto
+  }
+}
+@media (max-width:991px) {
+  .customer-main .customer .customer-left .username-boxs,
+  .customer-main .customer-group ul.profile-main li span,
+  .customer-main .customer-group ul.profile-main li:first-child,
+  .customer-main ul.menu li:last-child {
+    display: none
+  }
+  .mobile-hide {
+    display: none !important
+  }
+  .mobile-show {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center
+  }
+  .customer-main {
+    padding: 0 0 25px
+  }
+  .customer-main .customer,
+  .customer-main .username-boxs,
+  .customer:not(.account):not(.order) {
+    padding: 0
+  }
+  .customer-main .customer .customer-left {
+    width: 100%;
+    top: 40px;
+    margin-bottom: 12px;
+    z-index: 1
+  }
+  .customer-main .customer .customer-left .customer-menu {
+    overflow: auto;
+    box-shadow: 0 1px 6px rgb(0 0 0 / 15%)
+  }
+  .customer-main .customer .customer-left .customer-menu::-webkit-scrollbar {
+    display: none
+  }
+  .customer-main ul.menu {
+    display: flex;
+    width: 120%
+  }
+  .customer-main ul.menu li {
+    margin: 0 12px
+  }
+  .customer-main ul.menu li a {
+    padding: 18px 0;
+    font-size: 14px
+  }
+  .customer-main ul.menu li a::before {
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    height: 3px
+  }
+  .customer-main ul.menu li a.active,
+  .customer-main ul.menu li a:hover {
+    background-color: transparent
+  }
+  .customer-main .logout-text {
+    margin-left: auto;
+    font-size: 16px;
+    color: #4a4a4a;
+    line-height: 1;
+    letter-spacing: 0;
+    text-decoration: none
+  }
+  .customer-main .customer-group ul.profile-main {
+    margin-top: 16px
+  }
+  .customer-main .customer-group ul.profile-main li {
+    display: block;
+    width: 100%;
+    margin: 0
+  }
+  .customer-main .customer-group ul.profile-main li p {
+    padding: 0;
+    border: 0;
+    line-height: 1.6;
+    font-weight: 400
+  }
+  .customer-main .customer .customer-right {
+    width: 100%
+  }
+  .customer-address-main {
+    margin: 0
+  }
+  .customer-address-main .customer-group {
+    width: 100%;
+    margin: 0 0 10px
+  }
+  .customer.addresses .textbutton-boxs {
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9e9e9
+  }
+  .customer-main .customer-group h2 {
+    margin: 0 0 20px
+  }
+  .addresses ul li > .content {
+    width: calc(100% - 35%)
+  }
+  .addresses ul li > .buttons {
+    width: 35%
+  }
+  .customer-main .trackorderdetails-main .customer-group {
+    padding: 0 !important;
+    width: 100%
+  }
+}
+@media screen and (max-width:600px) {
+  .customer-main ul.menu {
+    width: 170%
+  }
+  .customer-main .customer-group h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: left
+  }
+  .customer table,
+  .customer tfoot tr:last-child {
+    border: 0
+  }
+  .customer tbody tr {
+    margin-bottom: 15px;
+    padding: 20px;
+    border: .01rem solid #e0e0e0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap
+  }
+  .customer tbody td {
+    border: 0;
+    padding: 0;
+    width: 50%;
+    text-align: left;
+    margin-bottom: 30px;
+    display: block;
+    font-size: 20px;
+    color: #000
+  }
+  .customer tbody td:nth-child(5),
+  .customer tbody td:nth-child(6) {
+    width: 100%;
+    margin-bottom: 20px
+  }
+  .customer tbody td:nth-child(6),
+  .customer-main .button-main {
+    margin: 0
+  }
+  .customer table.order-details tbody tr td::before,
+  .customer tbody td .actions-link span.separator,
+  .customer tbody td:nth-child(5)::before,
+  .customer tbody td:nth-child(6)::before,
+  .customer tbody.RegisterProductData td:before,
+  .customer tbody.RegisterProductData td:first-child,
+  .customer tfoot td::before,
+  .customer tfoot::before,
+  .trackorderdetails-main .customer-group table.trackorder-details tbody tr td::before,
+  .trackorderdetails-main .customer-group table.trackorder-details tbody tr td:nth-child(2),
+  .trackorderdetails-main .customer-group table.trackorder-details tbody tr td:nth-child(3),
+  .trackorderdetails-main .customer-group table.trackorder-details thead tr td:before {
+    display: none
+  }
+  .customer tbody td a {
+    font-size: 20px;
+    color: #013564
+  }
+  .customer tbody td .actions-link {
+    justify-content: space-between
+  }
+  .customer tbody td .actions-link span a {
+    text-decoration: underline
+  }
+  .customer .pagination {
+    margin-top: 25px
+  }
+  .customer .pagination li {
+    max-width: 3rem
+  }
+  .customer .pagination li :first-child {
+    height: 3rem
+  }
+  .textbutton-boxs .text-left {
+    margin-bottom: 18px
+  }
+  .textbutton-boxs .button-right {
+    justify-content: flex-start
+  }
+  .textbutton-boxs .button-right .button {
+    margin-left: 0;
+    margin-right: 10px
+  }
+  .customer-main .customer.order .customer-right .customer-group:first-child,
+  li[data-address] {
+    padding: 20px 0
+  }
+  .customer-main .customer.order .customer-right .customer-group:first-child .textbutton-boxs {
+    padding: 0 20px
+  }
+  .customer table.order-details thead,
+  .customer table.order-details thead th {
+    display: flex;
+    flex-wrap: wrap
+  }
+  .customer table.order-details thead th {
+    width: 25%;
+    font-size: 12px;
+    padding: 15px 12px;
+    border-right: .01rem solid #e0e0e0
+  }
+  .customer table.order-details tbody tr td:first-child,
+  .customer table.order-details thead th:first-child {
+    width: 60%
+  }
+  .customer table.order-details thead th:nth-child(2) {
+    justify-content: center;
+    width: 15%;
+    padding-left: 12px
+  }
+  .customer table.order-details tbody tr td:last-child,
+  .customer table.order-details thead th:last-child {
+    border-right: 0
+  }
+  .customer table.order-details tbody tr {
+    padding: 0;
+    border: 0;
+    border-bottom: .01rem solid #e0e0e0;
+    margin: 0
+  }
+  .customer table.order-details tbody tr:last-child {
+    border-bottom: 0
+  }
+  .customer table.order-details tbody tr td {
+    width: 25%;
+    margin: 0;
+    font-size: 14px;
+    padding: 10px 12px;
+    border-right: .01rem solid #e0e0e0;
+    line-height: 1
+  }
+  .customer table.order-details tbody tr td:nth-child(2) {
+    text-align: center;
+    width: 15%;
+    padding-left: 12px
+  }
+  .customer tbody td .product-boxs {
+    align-items: flex-start
+  }
+  .cust-customer-login-form .field label,
+  .customer tbody td .product-boxs h3 a,
+  .trackorderdetails-main .customer-group table.trackorder-details thead tr td .fulfillment-number {
+    font-size: 14px
+  }
+  .customer tfoot tr {
+    width: calc(100% - 30px);
+    margin: 0 15px
+  }
+  .customer tfoot td {
+    width: 70%;
+    padding: 18px 0 18px 18px;
+    text-align: left;
+    font-size: 14px
+  }
+  .customer tfoot td:last-child {
+    justify-content: right;
+    width: 30%;
+    padding: 18px
+  }
+  .order .cart-discount {
+    font-size: 14px;
+    margin: 0 !important
+  }
+  .customer-main .customer.order .customer-right .customer-address-main .customer-group:first-child {
+    padding: 20px
+  }
+  .customer-login-card {
+    max-width: 100%;
+    padding: 26px 19px 65px;
+    background: no-repeat padding-box #f5f5f5
+  }
+  .customer-login-card-layout {
+    padding: 0
+  }
+  .social-login-app-reg:before,
+  .social-login-app:after {
+    background: #f5f5f5
+  }
+  .custom-sign-in-btn a {
+    font-size: 16px;
+    letter-spacing: .64px
+  }
+  .cust-customer-login-form .field input {
+    background: #fff
+  }
+  .customer.addresses .textbutton-boxs .text-left,
+  .customer.addresses .textbutton-boxs .text-left h2 {
+    margin-bottom: 0
+  }
+  .customer.addresses .textbutton-boxs .button-right {
+    justify-content: flex-end
+  }
+  .addresses ul li > .content p {
+    font-size: 14px;
+    line-height: 22px
+  }
+  .addresses ul li > .buttons button {
+    margin: 0 0 0 10px
+  }
+  .popup-main {
+    overflow: auto
+  }
+  .popup-main .popup-boxs {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    position: relative;
+    top: 25%;
+    transform: translate(0, 0);
+    left: 0
+  }
+  .customer form {
+    margin-top: 0
+  }
+  .trackorderdetails-main .customer-group .oder-list {
+    padding: 20px 15px
+  }
+  .trackorderdetails-main .customer-group .oder-list .list-box {
+    width: 50%
+  }
+  .trackorderdetails-main .customer-group .oder-list .list-box h2 {
+    font-size: 18px
+  }
+  .trackorderdetails-main .customer-group .oder-list .list-box span {
+    font-size: 12px
+  }
+  .trackorderdetails-main .customer-group table.trackorder-details thead tr td {
+    padding: 1rem
+  }
+  .trackorderdetails-main .customer-group table.trackorder-details thead tr td:last-child {
+    width: auto;
+    margin-left: auto
+  }
+  .trackorderdetails-main .customer-group table.trackorder-details tbody tr {
+    margin: 0;
+    padding: 20px 15px
+  }
+  .trackorderdetails-main .customer-group table.trackorder-details tbody tr td {
+    width: 100%;
+    padding: 0;
+    margin: 0
+  }
+  .trackorderdetails-main .customer-group table.trackorder-details tbody tr td:last-child {
+    margin-top: 20px
+  }
+  .trackorderdetails-main .customer-group table.trackorder-details tbody tr td .mobile-show {
+    display: inline-block
+  }
+  .trackorderdetails-main .customer-group table.trackorder-details tbody tr td .price.mobile-show {
+    display: block;
+    margin-top: 8px;
+    color: #4a4a4a;
+    font-size: 14px
+  }
+  .order .fulfillment {
+    width: 100%
+  }
+  .order .fulfillment a {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    padding: 8px 15px
+  }
+  .customer tbody.RegisterProductData td {
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 16px
+  }
+  .customer tbody.RegisterProductData td img {
+    width: 100%;
+    height: auto
+  }
+  .customer tbody.RegisterProductData td.mobile-show {
+    display: block
+  }
+}
+.customer #address_form_new .field label {
+  position: relative;
+  left: 0;
+  top: 0;
+  margin: 0 0 9px;
+  font-size: 14px;
+  color: #4a4a4a;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.swym-wishlist-grid .swym-wishlist-item .swym-add-to-cart-btn {
+  text-decoration: none;
+}
+button#swym-custom-add-toCartBtn {
+  display: none;
+  visibility: hidden;
+  cursor: not-allowed;
+  pointer-events: none;
+}

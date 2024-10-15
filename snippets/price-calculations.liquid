@@ -1,0 +1,93 @@
+<script>
+    function moneyFormattor(number){
+      number = parseFloat(number);
+      return number.toLocaleString('en-IN', {
+        maximumFractionDigits: 2,
+        style: 'currency',
+        currency: 'INR'
+      });
+    }
+    //get the discount percentage
+    {% assign totalDiscountValue = 0.00 %}
+    {% for discount in checkout.discount_applications %}
+      {% assign totalDiscountValue = totalDiscountValue | plus: discount.total_allocated_amount %}
+    {% endfor %}
+
+    //get the compared price of all the line items
+    {% assign totalMrp = 0 %}
+    {% assign totalSp = 0 %}
+    {% for line_item in checkout.line_items %}
+      {% assign qtyPrice = line_item.variant.price | times: line_item.quantity %}
+      {% assign totalSp = totalSp | plus: qtyPrice %}
+      {% if line_item.variant.compare_at_price %}	
+        {% assign qtyComPrice = line_item.variant.compare_at_price | times: line_item.quantity %}
+        {% assign totalMrp = totalMrp | plus: qtyComPrice %}
+      {% else %}
+        {% assign qtyComPrice = line_item.variant.price | times: line_item.quantity %}
+        {% assign totalMrp = totalMrp | plus: qtyComPrice %}
+      {% endif %}
+    {% endfor %}
+
+    //append total discounted price amount after total amount
+    $(document).on('page:load', function() {
+      let tempDisc = '{{ totalDiscountValue }}';
+      let discountedPriceTotal = '{{ totalDiscountValue | divided_by: 100 }}';
+      let totalMrp = '{{ totalMrp | divided_by: 100 }}';
+      let totalSp = '{{ totalSp | divided_by: 100 }}';
+      let diffAmt = totalMrp - totalSp;
+      if(tempDisc) {
+        diffAmt += tempDisc/100;
+      }
+      if(parseInt(totalMrp) > parseInt(totalSp)){
+        $('.total-line-table__footer').append(`<tr class="total-line total-line--shipping">
+          <th class="total-line__name" scope="row">
+              <span>
+                You Save
+              </span>
+          </th>
+          <td class="total-line__price">
+            <span class="skeleton-while-loading order-summary__emphasis">
+              ${moneyFormattor(diffAmt)}
+            </span>
+          </td>
+        </tr>`)
+      }
+      else if(parseInt(tempDisc) > 0){
+        $('.total-line-table__footer').append(`<tr class="total-line total-line--shipping">
+          <th class="total-line__name" scope="row">
+              <span>
+                You Save
+              </span>
+          </th>
+          <td class="total-line__price">
+            <span class="skeleton-while-loading order-summary__emphasis">
+              ${moneyFormattor(discountedPriceTotal)}
+            </span>
+          </td>
+        </tr>`)
+      }
+    });
+
+    //append the MRP and discount price before total calculation
+    $(document).on('page:load page:change', function() {
+      let comparedPrice = '{{ totalMrp | divided_by: 100 }}';
+      let totalSp = '{{ totalSp | divided_by: 100  }}';
+      let diffAmount = '{{ totalMrp | minus: totalSp | divided_by: 100 }}';
+        $('.total-line--subtotal').before(`<tr class="total-line total-line--comparedtotal">
+          <th class="total-line__name" scope="row">Total MRP</th>
+          <td class="total-line__price">
+            <span class="order-summary__emphasis skeleton-while-loading" data-checkout-subtotal-price-target="2284200">
+              ${moneyFormattor(comparedPrice)}
+            </span>
+          </td>
+        </tr>`)
+        $('.total-line--subtotal').before(`<tr class="total-line total-line--difftotal">
+          <th class="total-line__name" scope="row">Saving on MRP</th>
+          <td class="total-line__price">
+            <span class="order-summary__emphasis skeleton-while-loading" data-checkout-subtotal-price-target="2284200">
+              -${moneyFormattor(diffAmount)}
+            </span>
+          </td>
+        </tr>`)
+    });
+  </script>

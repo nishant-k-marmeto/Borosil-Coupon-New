@@ -1,0 +1,63 @@
+{% comment %} This is a footer navbar, the script and css are in global files {% endcomment %}
+<div class="fixed_nav fixed_nav_mobile hidden-tablet-and-up">
+  <div class="row row-nav" style="justify-content: space-evenly;">
+    <div class="col-2 fixed-nav-item">
+      <div class="item--box boat_icon_footer">
+        <a class="fixed_nav--link bottom-rewards" id="custom-reward-button" href="/">
+          {% render 'reward-svg' %}
+          <span class="nav-icon_name"> Rewards </span>
+        </a>
+      </div>
+    </div>
+    <div class="col-2 fixed-nav-item">
+      <div class="item--box">
+        <a class="fixed_nav--link" href="{{ settings.sale_link }}">
+          {% render 'sale-svg' %}
+          <span class="nav-icon_name"> Sale </span>
+        </a>
+      </div>
+    </div>
+    <div class="col-2 fixed-nav-item">
+      <div class="item--box">
+          <a class="fixed_nav--link open-hamburger">
+            {% render 'category-svg' %}
+            <span class="nav-icon_name"> Categories </span>
+          </a>
+      </div>
+    </div>
+    <div class="col-2 fixed-nav-item">
+      <div class="item--box mobile-custom-account-icon {% if request.page_type == 'account' %} active_url{% endif %}">
+        <div class="fixed_nav--link">
+          {% if customer %}
+            <div class="header-submenu-bottom logged-in-user account-icon">
+              {% render 'customer-svg' %}
+              <ul class="icons-list-bottom account-icon__list">
+                <li class="login-button"><a href="/account/logout" class="mob-link" id="customer_logout_link">Log out</a></li>
+                <li><a class="mob-link" data-balance-modal="open-check-balance-modal">My Gift Card</a></li>
+                <li><a class="mob-link" href="#swym-wishlist">My favorites</a></li>
+                <li><a href="/pages/orders" class="mob-link">My orders</a></li>
+                <li><a href="/account#profile" class="mob-link">My details</a></li>
+                <li class="firts-name-item"><a class="mob-link first-name">{% if customer.first_name %}Hi, {{ customer.first_name | truncate: 15 }}{% endif %}</a></li>
+              </ul>
+            </div>
+            <span class="nav-icon_name" alt="account"> Me </span>
+          {% else %}
+            <a href="/account" class="header-submenu-bottom account-icon">
+              {% render 'customer-svg' %}
+            </a>
+            <span class="nav-icon_name" > Login </span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="col-2 fixed-nav-item">
+      <div class="item--box">
+        <a class="fixed_nav--link" target="_blank" href="https://wa.me/917208487334?text=Hi">
+          {% render 'whatsapp-svg' %}
+          <span class="nav-icon_name" > Chat </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+   

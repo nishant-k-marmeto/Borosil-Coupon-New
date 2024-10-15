@@ -1,0 +1,116 @@
+#countdown{
+  display: none;
+  font-size: 10px;
+}
+.pincode-input{
+  margin-left:0 !important;
+  width:100%;
+}
+.clickpost-edd__container {
+  position: relative;
+  /* height: 115px; */
+}
+.clickpost-edd__container .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 4px solid #ddd;
+  border-top-color: #333;
+  animation: spin 1s linear infinite;
+}
+.clickpost-edd__form {
+  display: grid;
+  grid-template-columns: 150px auto;
+  justify-items:start;
+}
+.clickpost-edd__drop_pincode-input {
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 100%;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+}
+.pincode-input button{
+  color: #fff !important;
+  min-width:80px;
+}
+.clickpost-edd__submit-button {
+  position: absolute;
+  /* width: 76px; */
+  height: 36px;
+  padding: 0 1.2rem;
+  right: 0px;
+  background: #263238;
+  border-radius: 4px;
+  color: #fff !important;
+  cursor: pointer;
+}
+.clickpost-edd__submit-button:active {
+  background: #2632385d;
+}
+.clickpost-edd__container .button--loading span {
+  visibility: hidden;
+  opacity: 0;
+}
+.clickpost-edd__container .button--loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #b2b2b2;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+.clickpost-edd__form:focus-visible {
+  outline: 0;
+  outline-offset: 0;
+  box-shadow: none;
+}
+.clickpost-edd__drop_pincode-input:focus-visible {
+  outline: 0;
+  outline-offset: 0;
+  box-shadow: none;
+  border: 1px solid #a6a6a6;
+}
+.clickpost-edd__container .response {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  padding-top: 4px;
+  line-height: 16px;
+  color: #263238;
+}
+.clickpost-edd__container #response-success {
+  display: none;
+  text-decoration:none !important;
+}
+.clickpost-edd__container #response-error {
+  display: flex;
+  color: red;
+}
+.clickpost-edd__heading {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #263238;
+}

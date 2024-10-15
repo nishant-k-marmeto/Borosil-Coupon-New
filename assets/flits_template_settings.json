@@ -1,0 +1,26 @@
+{
+  "accountSettings": {
+    "template": 2,
+    "isCustomized": false,
+    "colorSettings": {
+      "navigationBGColor": "rgb(0, 71, 120)",
+      "navigationTextColor": "rgb(255, 255, 255)",
+      "navigationBorderColor": "rgb(0, 71, 120)",
+      "contentBGColor": "rgb(255, 255, 255, 0)",
+      "contentTextColor": "rgb(0, 0, 0)",
+      "primaryButtonBGColor": "rgb(12, 33, 84)",
+      "primaryButtonTextColor": "rgb(255, 255, 255)",
+      "secondaryButtonBGColor": "rgb(12, 33, 84)",
+      "secondaryButtonTextColor": "rgb(12, 33, 84)",
+      "badgeBGColor": "rgb(12, 33, 84)",
+      "badgeTextColor": "rgb(255, 255, 255)",
+      "linkColor": "rgb(12, 33, 84)"
+    },
+    "isAccountPageInJSON": false,
+    "sections": [
+
+    ],
+    "codeVersion": "2.2.0",
+    "themeStoreId": null
+  }
+}

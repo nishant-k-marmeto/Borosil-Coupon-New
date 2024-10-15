@@ -1,0 +1,236 @@
+<div class='cod_verify'>
+  <div id="otpModal" class="new-modal">
+    <div class="otp-content">
+      <div class="mm-wrapper" id="otp_modal">
+        <div class="cod_modal">
+          <div class="modal-header">
+            <div id="close_modal" class="modal-close" class="close">×</div>
+            <div class="mm-logo">
+              <img src="https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Logo_square.png?v=1649760293" alt="{{ shop.name }}" />
+            </div>
+            <div class="inner-head">
+              <div class="brand-name">VERIFY MOBILE NUMBER</div>
+              <div class="mm-amount">
+                <span class="original-amount">An OTP has been sent to your number.</span> 
+              </div>
+            </div>
+          </div>
+          <div class="form-wrapper">
+            <div class="inner-form">
+              <div class="contact-block">
+                <div class="element-wrap resend-wrapper">
+                  <div class="resend">
+                    <div class="inner-resend">
+                      <span class="count">60</span>
+                      <span class="pulse"></span>
+                    </div>
+                    <button id="resend__otp" class="resend-text" disabled>RESEND OTP</button>
+                  </div>
+                </div>
+
+                <div class="element-wrap">
+                  <div class="contact-form">
+                    <a href="/checkout?step=contact_information#checkout_shipping_address_phone">
+                      <i class="contact-icon">
+                        <img class="edit-icon" src="https://cdn.shopify.com/s/files/1/1232/6200/files/edit_1.png?v=1584449592" />
+                      </i>
+                    </a>
+                    <label class="contact-label">Phone</label>
+                    <input class="input" id="contact_input" name="contact" type="tel" value="{{checkout.shipping_address.phone}}" disabled>
+                  </div>
+                </div>
+                <div class="element-wrap">
+                  <div class="contact-form"> 
+                    <i class="contact-icon">
+                      <img class="otp-icon" src="https://cdn.shopify.com/s/files/1/0012/0658/3356/files/group-155.png?55840" />
+                    </i>
+                    <label class="contact-label">OTP</label>
+                    <input class="input" id="otp_input" name="otp" type="tel" placeholder="Enter OTP" value="" autocomplete="off"  autofocus>
+                  </div>
+                </div>
+                <div class="otp-error">
+                  <span id="otp_msg"></span>
+                  <span id="success_msg"></span>
+                </div>
+                <div class="submit-btn">
+                  <button type="button" id="verify_otp" class="btn"><span class="verify_otp_btn_text">Complete Order</span><span class="verify_otp_btn_gif"><img src="https://cdn.shopify.com/s/files/1/0551/8009/9722/files/89_1.gif?v=1650875453"></span></button>
+                </div>     
+              </div>    
+            </div>                        
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .verify_otp_btn_gif {
+  	display: none;
+  }
+  
+  .verify_otp_btn_gif img {
+  	width: 34px;
+  }  
+</style>
+
+<script>
+  if(Shopify.Checkout.step == 'contact_information'){
+
+    let sendOtpUrl = "https://borosilotp.marmeto.com/api/checkout/otp";
+    let verifyOtpUrl= "https://borosilotp.marmeto.com/api/checkout/otp/verify";
+
+    var storeDomain = "{{shop.permanent_domain}}";
+    var otpVerified = false;
+    var get_num = 0;
+    var contact_num = 0;
+    let email = '';
+
+    function TimerFunction(){
+      var time = 60;
+      var i = 1;
+      $('.resend-text').attr("disabled",true);
+      window.interval = setInterval(function() {
+        $('.mm-wrapper .count').text(time-i);
+        if (i == time) {
+          clearInterval(window.interval);
+          $('.resend-text').removeAttr("disabled");
+        }
+        i++;  
+      }, 1000);
+    }
+      
+      // Example POST method implementation:
+      async function postOTPData(url = '', data = {}) {
+        // Default options are marked with *
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+         
+          body: JSON.stringify(data) // body data type must match "Content-Type" header
+        });
+        return response.json(); // parses JSON response into native JavaScript objects
+      }
+
+    function sendotp(contact_num) {
+      postOTPData(sendOtpUrl, { "phoneNumber": contact_num })
+      .then(data => {
+        console.log(data); // JSON data parsed by `data.json()` call
+        if(data.status == "SUCCESS"){
+          console.log(data.status)
+          $('#otp_msg').html('');
+           $('#otpModal').show();
+
+        }else {
+          console.log(data.status)
+          //$('#otp_msg').html('Service unavailable. Please click on Skip OTP.');
+          $('.step__footer__continue-btn').removeAttr("disabled", "disabled");
+          $('.step__footer__continue-btn').removeClass('btn--loading');
+        }
+      })
+      .catch(err => {
+        console.log(err)
+        $('#otp_msg').html('There might be some error while sending the otp. Please try again.');
+      })
+    };
+
+      // Example POST method implementation:
+      async function postOTPVerification(url = '', data = {}) {
+        // Default options are marked with *
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          
+          body: JSON.stringify(data) // body data type must match "Content-Type" header
+        });
+        return response.json(); // parses JSON response into native JavaScript objects
+      }
+    
+    $(document).on('click', '#verify_otp', function(){
+      var inputOtp = $("#otp_input").val();
+      contact_num = $('#contact_input').val().trim();
+      contact_email = $('#checkout_email').val();
+      
+        postOTPVerification(verifyOtpUrl, { "phoneNumber": contact_num, "email": contact_email, "otp": inputOtp })
+        .then(data => {
+          console.log(data); 
+          
+          if(data.status == "SUCCESS"){
+            console.log(data.status)
+            document.querySelector('.verify_otp_btn_text').style.display = "none"
+            document.querySelector('.verify_otp_btn_gif').style.display = "block"
+            $('#otpModal').hide()
+            sessionStorage.setItem("Verified_number", contact_num );
+            sessionStorage.setItem("Verified_email", $('[name="checkout[email]"]').val() );
+            $('form[data-customer-information-form]').submit();
+          }else if(data.status == "OTP_INVALID"){
+            console.log(data.status)
+            $('#otp_msg').html('Invalid OTP! Please re-enter the correct OTP.');
+            
+          }else if(data.status == "ALREADY_REGISTERED"){
+          	window.location.href = '/account/login';
+            $('#otp_msg').html('Email/Phone Number already registered, redirecting to login page.');
+            
+          }
+          
+          else{
+            //$('#otp_msg').html('Service unavailable. Please click on Skip OTP.');
+          }
+        })
+        .catch(err => {
+        	console.log(err)
+            $('#otp_msg').html('Invalid OTP! Please re-enter the correct OTP.');
+        })
+    }); 
+
+    $(document).on('click', '#close_modal', function(){
+      clearInterval(window.interval);
+      $('#otp_msg').html('');
+      $('#otpModal').hide();
+      $('#otp_input').val("");
+      $('#continue_button').removeClass('btn--loading').attr('aria-busy','false').removeAttr('disabled');
+    });
+
+
+    $(document).on('click', '#resend__otp', function(){
+      let contact_num = $('#checkout_shipping_address_alternative-phone').val().trim();
+      clearInterval(window.interval);
+      sendotp(contact_num);
+      TimerFunction();
+    });
+
+  
+    $(document).on('submit', 'form[data-customer-information-form]', function(e){
+      if(sessionStorage.getItem('Verified_number') !== $('#checkout_shipping_address_alternative-phone').val().trim() || sessionStorage.getItem('Verified_email') !== $('[name="checkout[email]"]').val().trim() ){
+      if(otpVerified == false){ 
+        e.preventDefault();
+        console.log('continue_button');
+        let contact_num = $('#checkout_shipping_address_alternative-phone').val().trim();
+        sendotp(contact_num);
+        $('#contact_input').val(contact_num);
+        TimerFunction();
+      }
+      }
+      if($('.field--error').length > 0){
+        $('#continue_button').removeClass('btn--loading');  
+      }
+    });
+
+    $(document).on('input', function(){
+      if($('.field--error').length == 0){
+        $('#continue_button').removeClass('btn--loading').attr('aria-busy','false').removeAttr('disabled');
+      }
+    });
+
+    $(document).on('click', '.skip-otp', function(){
+      otpVerified= true;
+    });
+
+  }
+
+
+</script>

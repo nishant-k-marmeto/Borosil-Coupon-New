@@ -1,0 +1,116 @@
+<script defer type="text/template" id="wizzy-autocomplete-topproducts-new">
+  {% render 'wizzy.search.filters.autocomplete.topproducts' %}
+</script>
+
+<script defer type="text/template" id="wizzy-search-results-product-new">
+  {% render 'wizzy.search.filters.results.product' %}
+</script>
+
+<script defer type="text/template" id="wizzy-search-results-new">
+  {% render 'wizzy.search.filters.results' %}
+</script>       
+
+{% if settings.wizzy_is_lazy_init == "true" %}
+    <script type="text/javascript" data-wizzy-lazy-init="{{ settings.wizzy_is_lazy_init }}" data-page-handle="{{ request.path }}"  data-product-id="{{ product.id }}" data-collection-id="{{ collection.id }}" defer>
+
+      window.wizzyLazyAssets = window.wizzyLazyAssets ? window.wizzyLazyAssets : [];
+      window.wizzyLazyAssets.push('{{ 'wizzyCustom.js' | asset_url  }}','scripts');
+      window.wizzyLazyAssets.push('{{ 'wizzyCustom.css' | asset_url  }}','styles');
+      const wizzyLazyAssetUtils = {
+          wizzyStore : JSON.parse(window.localStorage.getItem('wizzy_store'))??false,
+          isWizzyLazyLoaded: false,
+          isWizzyLazyInterval: null,
+          productId: document.querySelector("[data-product-id]")?.getAttribute("data-product-id")??false,
+          pageHandle: document.querySelector("[data-page-handle]")?.getAttribute("data-page-handle")??false,
+          enableWizzyAssets(targetEle = null) {
+            this.isWizzyLazyLoaded=true
+            window.wizzyLazyAssets.load();
+          },
+          currentEle: null,
+          handleInitClick(e) {
+            var self = wizzyLazyAssetUtils;
+            let targetEle = e.target;
+            if (
+              targetEle.getAttribute("name") == "st" &&
+              targetEle.getAttribute("type") == "search" &&
+              !window.isWizzyLazyLoaded
+            ) {
+              self.currentEle = targetEle;
+              self.enableWizzyAssets(targetEle);
+              
+              document.removeEventListener("click", self.handleInitClick);
+            }
+          },
+          attachEvents() {
+            let self = this;
+            document.addEventListener("click", self.handleInitClick);
+            document.addEventListener("keydown", self.handleInitKeyDown);
+            window.addEventListener("onWizzyScriptLoaded", () => {
+              window.wizzySearchInit();
+            });
+          
+            window.addEventListener("onWizzyInit", () => {
+              if (self.currentEle) {
+                setTimeout(() => {
+                  self.currentEle.click();
+                }, 10);
+              }
+        
+              document.removeEventListener("click", self.handleInitClick);
+            });
+          },
+              handleInitKeyDown(e){
+                var self = wizzyLazyAssetUtils;
+                let targetEle = e.target;
+                if (self.keyDownCondition(targetEle)
+                    &&
+                    !window.isWizzyLazyLoaded
+                ) {
+                    self.currentEle = targetEle;
+                    self.enableWizzyAssets(targetEle);
+                    document.removeEventListener("keydown", self.handleInitKeyDown);
+                }
+        
+            },
+            isOnValidaProductPage(){
+              let self = wizzyLazyAssetUtils;
+          
+             return (self.wizzyStore
+                      && typeof self.wizzyStore == 'object'
+                      && self.wizzyStore.hasOwnProperty('CLICKED_PRODUCTS')
+                      && typeof self.wizzyStore['CLICKED_PRODUCTS'] == 'object'
+                      && self.wizzyStore['CLICKED_PRODUCTS'].hasOwnProperty(self.productId))
+                  ;
+          },
+            isNeedToAutoInitWizzy(){
+                var self = wizzyLazyAssetUtils;
+              console.log("isOnValidaProductPage=======>",self.isOnValidaProductPage());
+                return self.pageHandle == "/pages/search" || self.isOnValidaProductPage();
+            },
+          init() {
+            var self = wizzyLazyAssetUtils;
+        
+            this.attachEvents();
+            if (!window.wizzyConfigUpdated) {
+              let wizzyCategoryPageInterval = setInterval(() => {
+                if (window.wizzyConfigUpdated) {
+                  clearInterval(wizzyCategoryPageInterval);
+                  if (self.isNeedToAutoInitWizzy()) {
+                    self.enableWizzyAssets();
+                  }
+                }
+              }, 10);
+            } else {
+              if (self.isNeedToAutoInitWizzy()) {
+                self.enableWizzyAssets();
+              }
+            }
+          },
+        };
+
+      wizzyLazyAssetUtils.init();
+    
+    </script>
+{% else %}
+    <script type="text/javascript" src="{{ 'wizzyCustom.js' | asset_url  }}" defer></script>
+{% endif %}

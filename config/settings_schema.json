@@ -1,0 +1,1384 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Dawn",
+    "theme_version": "2.3.0",
+    "theme_author": "Shopify",
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes\/os20\/themes-by-shopify\/dawn",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
+  },
+  {
+    "name": "Preload Hero Banner",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "preload_image_desktop",
+            "label": "Image(Desktop)"
+        },
+        {
+            "type": "image_picker",
+            "id": "preload_image_mobile",
+            "label": "Image(Mobile)"
+        }
+    ]
+  },
+  {
+    "name": "Lazy Load Sections",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_lazy_loading_sections",
+        "label": "Enable lazy loading sections",
+        "info": "This will enable lazy loading of sections. Can improve performance.",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "hp_eager_section_count",
+        "label": "Home page eager section count",
+        "default": 3,
+        "info": "Specify the number of sections to load beforehand from the top on the home page. This excludes the header and footer sections by default."
+      },
+      {
+        "type": "number",
+        "id": "pdp_eager_section_count",
+        "label": "Product page eager section count",
+        "default": 2,
+        "info": "Specify the number of sections to load beforehand from the top on the product page. This excludes the header and footer sections by default."
+      },
+      {
+        "type": "number",
+        "id": "plp_eager_section_count",
+        "label": "Collection page eager section count",
+        "default": 2,
+        "info": "Specify the number of sections to load beforehand from the top on the collection page. This excludes the header and footer sections by default."
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_lazy_loading_header_sections",
+        "label": "Enable lazy loadinbeowg Header Sections",
+        "info": "This option allows you to enable lazy loading of header sections, which can be useful for lazy loading mega menu item sections. Can improve performance.",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "header_eager_section_count",
+        "label": "Header eager section count",
+        "default": 2,
+        "info": "Specify how many sections to load in advance from the top in header. Be careful not to include sections that are 'mega menu items' in the count."
+      }
+    ]
+  },
+  {
+    "name": "Volume Discount Settings",
+    "settings": [
+      {
+        "type": "text",
+        "id": "qty_rule",
+        "label": "Quantity Rules",
+        "default": "Quick links"
+      }
+    ]
+  },
+  {
+    "name": "Marmeto - Pincode Checker",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Pincode Checker"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_pincode_check",
+        "default": true,
+        "label": "Enable Pincode Check"
+      },
+      {
+        "type": "text",
+        "id": "unserviceable_error",
+        "label": "Unserviceable Error"
+      },
+      {
+        "type": "text",
+        "id": "cod_error",
+        "label": "COD Error"
+      }
+    ]
+  },
+  {
+    "name": "Qwikcilver : Checkout",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_qwikcilver",
+        "label": "Show redeem bar",
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": "GST Checkout",
+    "settings": [
+      {
+        "type": "header",
+        "content": "GST Validation on Checkout"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_gst_validation",
+        "default": true,
+        "label": "Enable GST Validation"
+      },
+      {
+        "type": "text",
+        "id": "gst_info",
+        "label": "GST Info",
+        "default": "Billing name and billing address on invoice will be the name and principal place of business address registered with GST portal. Shipping name and shipping address can be changed to your choice."
+      }
+    ]
+  },
+  {
+    "name": "Mega menus",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "mega_menu_1",
+        "label": "Enable mega menu 1"
+      },
+      {
+        "type": "checkbox",
+        "id": "mega_menu_2",
+        "label": "Enable mega menu 2"
+      },
+      {
+        "type": "checkbox",
+        "id": "mega_menu_3",
+        "label": "Enable mega menu 3"
+      },
+      {
+        "type": "checkbox",
+        "id": "mega_menu_4",
+        "label": "Enable mega menu 4"
+      },
+      {
+        "type": "checkbox",
+        "id": "mega_menu_5",
+        "label": "Enable mega menu 5"
+      },
+      {
+        "type": "checkbox",
+        "id": "mega_menu_6",
+        "label": "Enable mega menu 6"
+      },
+      {
+        "type": "checkbox",
+        "id": "mega_menu_7",
+        "label": "Enable mega menu 7"
+      },
+      {
+        "type": "checkbox",
+        "id": "mega_menu_8",
+        "label": "Enable mega menu 8"
+      },
+      {
+        "type": "checkbox",
+        "id": "mega_menu_9",
+        "label": "Enable mega menu 9"
+      },
+      {
+        "type": "checkbox",
+        "id": "mega_menu_10",
+        "label": "Enable mega menu 10"
+      },
+      {
+        "type": "checkbox",
+        "id": "mega_menu_11",
+        "label": "Enable mega menu 11"
+      }
+    ]
+  },
+  {
+    "name": "Sticky Footer",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Footer Nav Links"
+      },
+      {
+        "type": "url",
+        "id": "sale_link",
+        "label": "Sale link"
+      },
+      {
+        "type": "html",
+        "id": "sale_svg",
+        "label": "Sale SVG"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.colors.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.colors.settings.header__1.content"
+      },
+      {
+        "type": "color",
+        "id": "colors_solid_button_labels",
+        "default": "#FFFFFF",
+        "label": "t:settings_schema.colors.settings.colors_solid_button_labels.label",
+        "info": "t:settings_schema.colors.settings.colors_solid_button_labels.info"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_1",
+        "default": "#121212",
+        "label": "t:settings_schema.colors.settings.colors_accent_1.label",
+        "info": "t:settings_schema.colors.settings.colors_accent_1.info"
+      },
+      {
+        "id": "gradient_accent_1",
+        "type": "color_background",
+        "label": "t:settings_schema.colors.settings.gradient_accent_1.label"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_2",
+        "default": "#334FB4",
+        "label": "t:settings_schema.colors.settings.colors_accent_2.label"
+      },
+      {
+        "id": "gradient_accent_2",
+        "type": "color_background",
+        "label": "t:settings_schema.colors.settings.gradient_accent_2.label"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.colors.settings.header__2.content"
+      },
+      {
+        "type": "color",
+        "id": "colors_text",
+        "default": "#121212",
+        "label": "t:settings_schema.colors.settings.colors_text.label",
+        "info": "t:settings_schema.colors.settings.colors_text.info"
+      },
+      {
+        "type": "color",
+        "id": "colors_outline_button_labels",
+        "default": "#121212",
+        "label": "t:settings_schema.colors.settings.colors_outline_button_labels.label",
+        "info": "t:settings_schema.colors.settings.colors_outline_button_labels.info"
+      },
+      {
+        "type": "color",
+        "id": "colors_background_1",
+        "default": "#FFFFFF",
+        "label": "t:settings_schema.colors.settings.colors_background_1.label"
+      },
+      {
+        "id": "gradient_background_1",
+        "type": "color_background",
+        "label": "t:settings_schema.colors.settings.gradient_background_1.label"
+      },
+      {
+        "type": "color",
+        "id": "colors_background_2",
+        "default": "#F3F3F3",
+        "label": "t:settings_schema.colors.settings.colors_background_2.label"
+      },
+      {
+        "id": "gradient_background_2",
+        "type": "color_background",
+        "label": "t:settings_schema.colors.settings.gradient_background_2.label"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.typography.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.typography.settings.header__1.content"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "default": "assistant_n4",
+        "label": "t:settings_schema.typography.settings.type_header_font.label",
+        "info": "t:settings_schema.typography.settings.type_header_font.info"
+      },
+      {
+        "type": "range",
+        "id": "heading_scale",
+        "min": 100,
+        "max": 150,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.typography.settings.heading_scale.label",
+        "default": 100
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.typography.settings.header__2.content"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "default": "assistant_n4",
+        "label": "t:settings_schema.typography.settings.type_body_font.label",
+        "info": "t:settings_schema.typography.settings.type_body_font.info"
+      },
+      {
+        "type": "range",
+        "id": "body_scale",
+        "min": 100,
+        "max": 130,
+        "step": 5,
+        "unit": "%",
+        "label": "t:settings_schema.typography.settings.body_scale.label",
+        "default": 100
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.styles.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.styles.settings.header__1.content"
+      },
+      {
+        "type": "select",
+        "id": "sale_badge_color_scheme",
+        "options": [
+          {
+            "value": "accent-1",
+            "label": "t:settings_schema.styles.settings.sale_badge_color_scheme.options__2.label"
+          },
+          {
+            "value": "accent-2",
+            "label": "t:settings_schema.styles.settings.sale_badge_color_scheme.options__3.label"
+          },
+          {
+            "value": "background-2",
+            "label": "t:settings_schema.styles.settings.sale_badge_color_scheme.options__1.label"
+          }
+        ],
+        "default": "accent-2",
+        "label": "t:settings_schema.styles.settings.sale_badge_color_scheme.label"
+      },
+      {
+        "type": "select",
+        "id": "sold_out_badge_color_scheme",
+        "options": [
+          {
+            "value": "background-1",
+            "label": "t:settings_schema.styles.settings.sold_out_badge_color_scheme.options__1.label"
+          },
+          {
+            "value": "inverse",
+            "label": "t:settings_schema.styles.settings.sold_out_badge_color_scheme.options__2.label"
+          }
+        ],
+        "default": "inverse",
+        "label": "t:settings_schema.styles.settings.sold_out_badge_color_scheme.label"
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.styles.settings.header__2.content"
+      },
+      {
+        "type": "select",
+        "id": "accent_icons",
+        "options": [
+          {
+            "value": "accent-1",
+            "label": "t:settings_schema.styles.settings.accent_icons.options__1.label"
+          },
+          {
+            "value": "accent-2",
+            "label": "t:settings_schema.styles.settings.accent_icons.options__2.label"
+          },
+          {
+            "value": "outline-button",
+            "label": "t:settings_schema.styles.settings.accent_icons.options__3.label"
+          },
+          {
+            "value": "text",
+            "label": "t:settings_schema.styles.settings.accent_icons.options__4.label"
+          }
+        ],
+        "default": "text",
+        "label": "t:settings_schema.styles.settings.accent_icons.label"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.layout.name",
+    "settings": [
+      {
+        "type": "select",
+        "id": "page_width",
+        "options": [
+          {
+            "value": "1200",
+            "label": "t:settings_schema.layout.settings.page_width.options__1.label"
+          },
+          {
+            "value": "1600",
+            "label": "t:settings_schema.layout.settings.page_width.options__2.label"
+          }
+        ],
+        "default": "1600",
+        "label": "t:settings_schema.layout.settings.page_width.label"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.social-media.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.social-media.settings.header.content"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "t:settings_schema.social-media.settings.social_twitter_link.label",
+        "info": "t:settings_schema.social-media.settings.social_twitter_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "t:settings_schema.social-media.settings.social_facebook_link.label",
+        "info": "t:settings_schema.social-media.settings.social_facebook_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_link",
+        "label": "t:settings_schema.social-media.settings.social_pinterest_link.label",
+        "info": "t:settings_schema.social-media.settings.social_pinterest_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "t:settings_schema.social-media.settings.social_instagram_link.label",
+        "info": "t:settings_schema.social-media.settings.social_instagram_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube_link",
+        "label": "t:settings_schema.social-media.settings.social_youtube_link.label",
+        "info": "t:settings_schema.social-media.settings.social_youtube_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_telegram_link",
+        "label": "Telegram",
+        "info": "https:\/\/www.telegram.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "Linkedin",
+        "info": "https:\/\/www.linkedin.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_link",
+        "label": "t:settings_schema.social-media.settings.social_tiktok_link.label",
+        "info": "t:settings_schema.social-media.settings.social_tiktok_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr_link",
+        "label": "t:settings_schema.social-media.settings.social_tumblr_link.label",
+        "info": "t:settings_schema.social-media.settings.social_tumblr_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_snapchat_link",
+        "label": "t:settings_schema.social-media.settings.social_snapchat_link.label",
+        "info": "t:settings_schema.social-media.settings.social_snapchat_link.info"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo_link",
+        "label": "t:settings_schema.social-media.settings.social_vimeo_link.label",
+        "info": "t:settings_schema.social-media.settings.social_vimeo_link.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.search_input.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.search_input.settings.header.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_search_enabled",
+        "default": true,
+        "label": "t:settings_schema.search_input.settings.predictive_search_enabled.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_search_show_vendor",
+        "default": false,
+        "label": "t:settings_schema.search_input.settings.predictive_search_show_vendor.label",
+        "info": "t:settings_schema.search_input.settings.predictive_search_show_vendor.info"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_search_show_price",
+        "default": true,
+        "label": "t:settings_schema.search_input.settings.predictive_search_show_price.label",
+        "info": "t:settings_schema.search_input.settings.predictive_search_show_price.info"
+      }
+    ]
+  },
+  {
+    "name": "Marmeto - Hide COD",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Hiding COD Gateway"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_hide_cod",
+        "label": "Enable Hide COD",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Conditions"
+      },
+      {
+        "type": "text",
+        "id": "hide_cod_price",
+        "label": "Minimum Price",
+        "info": "Enter the minimum price to hide COD below that"
+      },
+      {
+        "type": "text",
+        "id": "hide_cod_price_max",
+        "label": "Maximum Price",
+        "info": "Enter the maximum price to hide COD above that"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.favicon.name",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "t:settings_schema.favicon.settings.favicon.label",
+        "info": "t:settings_schema.favicon.settings.favicon.info"
+      }
+    ]
+  },
+  {
+    "name": "t:settings_schema.currency_format.name",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:settings_schema.currency_format.settings.content"
+      },
+      {
+        "type": "paragraph",
+        "content": "t:settings_schema.currency_format.settings.paragraph"
+      },
+      {
+        "type": "checkbox",
+        "id": "currency_code_enabled",
+        "label": "t:settings_schema.currency_format.settings.currency_code_enabled.label",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Ajax Cart",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Free Shipping Threshold bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_shipping_bar",
+        "label": "Show Shipping Bar",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "free_shipping_price",
+        "label": "Free Shipping Price ",
+        "default": 599
+      },
+      {
+        "type": "number",
+        "id": "discount_1_price",
+        "label": "Threshold 1 ",
+        "default": 1000
+      },
+      {
+        "type": "text",
+        "id": "discount_1_off",
+        "label": "Discount 1",
+        "default": "10%"
+      },
+      {
+        "type": "number",
+        "id": "discount_2_price",
+        "label": "Threshold 2",
+        "default": 2000
+      },
+      {
+        "type": "text",
+        "id": "discount_2_off",
+        "label": "Discount 2",
+        "default": "20%"
+      },
+      {
+        "type": "textarea",
+        "id": "before-free-shipping",
+        "label": "Before Free Shipping Eligible Message",
+        "default": "Add goodies worth [price] to get free shipping!",
+        "info": "[price] will be dynamically change with the remaining price"
+      },
+      {
+        "type": "textarea",
+        "id": "before-discount-1",
+        "label": "Before Discount 1 Eligible Message",
+        "default": "Add goodies worth [price] to get flat ₹ [off] off in checkout!",
+        "info": "[price] and [off] will be dynamically change"
+      },
+      {
+        "type": "textarea",
+        "id": "before-discount-2",
+        "label": "Before Discount 2 Eligible Message",
+        "default": "Add goodies worth [price] to get flat ₹ [off] off in checkout!",
+        "info": "[price] and [off] will be dynamically change"
+      },
+      {
+        "type": "textarea",
+        "id": "after-free-shipping",
+        "label": "After Free Discount Eligible Message",
+        "default": "Congrats, you will get free shipping and ₹ [off] off at checkout!"
+      },
+      {
+        "type": "header",
+        "content": "Upselling"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_upselling",
+        "label": "Enable Upselling",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "upsell-title",
+        "label": "Upsell Heading",
+        "default": "You might also like"
+      },
+      {
+        "type": "header",
+        "content": "Cross selling"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_cross_selling",
+        "label": "Enable Cross Selling",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "cross_sell_title",
+        "label": "Cross Sell Heading",
+        "default": "Quick Add these items"
+      },
+      {
+        "type": "header",
+        "content": "Empty Cart"
+      },
+      {
+        "type": "text",
+        "id": "empty_cart_svg",
+        "label": "Empty Cart Svg",
+        "info": "Input svg code"
+      },
+      {
+        "type": "text",
+        "id": "empty_cart_text",
+        "label": "Empty Cart Text",
+        "default": "UH OH!"
+      },
+      {
+        "type": "text",
+        "id": "empty_cart_subtext",
+        "label": "Empty Cart Sub Text",
+        "default": "You have no items in your cart.<br>Let's change that."
+      },
+      {
+        "type": "url",
+        "id": "empty_cart_continue_shopping_url",
+        "label": "Empty Cart Button Link"
+      },
+      {
+        "type": "text",
+        "id": "empty_cart_continue_shopping_text",
+        "label": "Empty Cart Button Text",
+        "default": "CONTINUE SHOPPING"
+      },
+      {
+        "type": "image_picker",
+        "id": "empty_cart_col_image1",
+        "label": "Empty cart collection image 1"
+      },
+      {
+        "type": "url",
+        "id": "empty_cart_col_url1",
+        "label": "Empty cart collection link 1"
+      },
+      {
+        "type": "text",
+        "id": "empty_cart_col_text1",
+        "label": "Empty cart collection text 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "empty_cart_col_image2",
+        "label": "Empty cart collection image 2"
+      },
+      {
+        "type": "url",
+        "id": "empty_cart_col_url2",
+        "label": "Empty cart collection link 2"
+      },
+      {
+        "type": "text",
+        "id": "empty_cart_col_text2",
+        "label": "Empty cart collection text 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "empty_cart_col_image3",
+        "label": "Empty cart collection image 3"
+      },
+      {
+        "type": "url",
+        "id": "empty_cart_col_url3",
+        "label": "Empty cart collection link 3"
+      },
+      {
+        "type": "text",
+        "id": "empty_cart_col_text3",
+        "label": "Empty cart collection text 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "empty_cart_col_image4",
+        "label": "Empty cart collection image 4"
+      },
+      {
+        "type": "url",
+        "id": "empty_cart_col_url4",
+        "label": "Empty cart collection link 4"
+      },
+      {
+        "type": "text",
+        "id": "empty_cart_col_text4",
+        "label": "Empty cart collection text 4"
+      },
+      {
+        "type": "image_picker",
+        "id": "empty_cart_col_image5",
+        "label": "Empty cart collection image 5"
+      },
+      {
+        "type": "url",
+        "id": "empty_cart_col_url5",
+        "label": "Empty cart collection link 5"
+      },
+      {
+        "type": "text",
+        "id": "empty_cart_col_text5",
+        "label": "Empty cart collection text 5"
+      },
+      {
+        "type": "image_picker",
+        "id": "empty_cart_col_image6",
+        "label": "Empty cart collection image 6"
+      },
+      {
+        "type": "url",
+        "id": "empty_cart_col_url6",
+        "label": "Empty cart collection link 6"
+      },
+      {
+        "type": "text",
+        "id": "empty_cart_col_text6",
+        "label": "Empty cart collection text 6"
+      }
+    ]
+  },
+  {
+    "name": "Cart Discount Bank Offer",
+    "settings": [
+        {
+          "type": "image_picker",
+          "label": "Offer Image",
+          "id": "offer_image_1",
+          "info": "Upload only 40*40 image"
+        },
+        {
+          "type": "text",
+          "label": "Discount Heading",
+          "id": "discount_heading_1",
+          "default": "Upto 11% cashback for min txn of ₹111",
+          "placeholder": "Enter Discount Heading"
+        },
+        {
+          "type": "text",
+          "label": "Discount validity",
+          "id": "discount_valid_till_1",
+          "default": "Oct 12 2024",
+          "placeholder": "Enter Discout validity"
+        },
+        {
+          "type": "text",
+          "label": "Discount Code",
+          "id": "discount_code_1",
+          "default": "BOROSIL1000",
+          "info": "Enter the Coupon Code",
+          "placeholder": "BOROSIL100"
+        },
+        {
+          "type": "url",
+          "label": "Discount URL",
+          "id": "discount_url_1",
+          "info": "Please Enter the redirect to view the offer"
+        },
+        {
+          "type": "image_picker",
+          "label": "Offer Image",
+          "id": "offer_image_2",
+          "info": "Upload only 40*40 image"
+        },
+        {
+          "type": "text",
+          "label": "Discount Heading",
+          "id": "discount_heading_2",
+          "default": "Upto 11% cashback for min txn of ₹111",
+          "placeholder": "Enter Discount Heading"
+        },
+        {
+          "type": "text",
+          "label": "Discount validity",
+          "id": "discount_valid_till_2",
+          "default": "Oct 12 2024",
+          "placeholder": "Enter Discout validity"
+        },
+        {
+          "type": "text",
+          "label": "Discount Code",
+          "id": "discount_code_2",
+          "default": "BOROSIL1000",
+          "info": "Enter the Coupon Code",
+          "placeholder": "BOROSIL100"
+        },
+        {
+          "type": "url",
+          "label": "Discount URL",
+          "id": "discount_url_2",
+          "info": "Please Enter the redirect to view the offer"
+        },
+        {
+          "type": "image_picker",
+          "label": "Offer Image",
+          "id": "offer_image_3",
+          "info": "Upload only 40*40 image"
+        },
+        {
+          "type": "text",
+          "label": "Discount Heading",
+          "id": "discount_heading_3",
+          "default": "Upto 11% cashback for min txn of ₹111",
+          "placeholder": "Enter Discount Heading"
+        },
+        {
+          "type": "text",
+          "label": "Discount validity",
+          "id": "discount_valid_till_3",
+          "default": "Oct 12 2024",
+          "placeholder": "Enter Discout validity"
+        },
+        {
+          "type": "text",
+          "label": "Discount Code",
+          "id": "discount_code_3",
+          "default": "BOROSIL1000",
+          "info": "Enter the Coupon Code",
+          "placeholder": "BOROSIL100"
+        },
+        {
+          "type": "url",
+          "label": "Discount URL",
+          "id": "discount_url_3",
+          "info": "Please Enter the redirect to view the offer"
+        },
+        {
+          "type": "image_picker",
+          "label": "Offer Image",
+          "id": "offer_image_4",
+          "info": "Upload only 40*40 image"
+        },
+        {
+          "type": "text",
+          "label": "Discount Heading",
+          "id": "discount_heading_4",
+          "default": "Upto 11% cashback for min txn of ₹111",
+          "placeholder": "Enter Discount Heading"
+        },
+        {
+          "type": "text",
+          "label": "Discount validity",
+          "id": "discount_valid_till_4",
+          "default": "Oct 12 2024",
+          "placeholder": "Enter Discout validity"
+        },
+        {
+          "type": "text",
+          "label": "Discount Code",
+          "id": "discount_code_4",
+          "default": "BOROSIL1000",
+          "info": "Enter the Coupon Code",
+          "placeholder": "BOROSIL100"
+        },
+        {
+          "type": "url",
+          "label": "Discount URL",
+          "id": "discount_url_4",
+          "info": "Please Enter the redirect to view the offer"
+        },
+        {
+          "type": "image_picker",
+          "label": "Offer Image",
+          "id": "offer_image_5",
+          "info": "Upload only 40*40 image"
+        },
+        {
+          "type": "text",
+          "label": "Discount Heading",
+          "id": "discount_heading_5",
+          "default": "Upto 11% cashback for min txn of ₹111",
+          "placeholder": "Enter Discount Heading"
+        },
+        {
+          "type": "text",
+          "label": "Discount validity",
+          "id": "discount_valid_till_5",
+          "default": "Oct 12 2024",
+          "placeholder": "Enter Discout validity"
+        },
+        {
+          "type": "text",
+          "label": "Discount Code",
+          "id": "discount_code_5",
+          "default": "BOROSIL1000",
+          "info": "Enter the Coupon Code",
+          "placeholder": "BOROSIL100"
+        },
+        {
+          "type": "url",
+          "label": "Discount URL",
+          "id": "discount_url_5",
+          "info": "Please Enter the redirect to view the offer"
+        }
+    ]
+  },
+  {
+    "name": "Cart Discount Other Offer",
+    "settings": [
+      {
+        "type": "image_picker",
+        "label": "Offer Image",
+        "id": "other_offer_image_1",
+        "info": "Upload only 40*40 image"
+      },
+      {
+        "type": "text",
+        "label": "Discount Heading",
+        "id": "other_discount_heading_1",
+        "default": "Upto 11% cashback for min txn of ₹111",
+        "placeholder": "Enter Discount Heading"
+      },
+      {
+        "type": "text",
+        "label": "Discount validity",
+        "id": "other_discount_valid_till_1",
+        "default": "Oct 12 2024",
+        "placeholder": "Enter Discout validity"
+      },
+      {
+        "type": "text",
+        "label": "Discount Code",
+        "id": "other_discount_code_1",
+        "default": "BOROSIL1000",
+        "info": "Enter the Coupon Code",
+        "placeholder": "BOROSIL100"
+      },
+      {
+        "type": "url",
+        "label": "Discount URL",
+        "id": "other_discount_url_1",
+        "info": "Please Enter the redirect to view the offer"
+      },
+      {
+        "type": "image_picker",
+        "label": "Offer Image",
+        "id": "other_offer_image_2",
+        "info": "Upload only 40*40 image"
+      },
+      {
+        "type": "text",
+        "label": "Discount Heading",
+        "id": "other_discount_heading_2",
+        "default": "Upto 11% cashback for min txn of ₹111",
+        "placeholder": "Enter Discount Heading"
+      },
+      {
+        "type": "text",
+        "label": "Discount validity",
+        "id": "other_discount_valid_till_2",
+        "default": "Oct 12 2024",
+        "placeholder": "Enter Discout validity"
+      },
+      {
+        "type": "text",
+        "label": "Discount Code",
+        "id": "other_discount_code_2",
+        "default": "BOROSIL1000",
+        "info": "Enter the Coupon Code",
+        "placeholder": "BOROSIL100"
+      },
+      {
+        "type": "url",
+        "label": "Discount URL",
+        "id": "other_discount_url_2",
+        "info": "Please Enter the redirect to view the offer"
+      },
+      {
+        "type": "image_picker",
+        "label": "Offer Image",
+        "id": "other_offer_image_3",
+        "info": "Upload only 40*40 image"
+      },
+      {
+        "type": "text",
+        "label": "Discount Heading",
+        "id": "other_discount_heading_3",
+        "default": "Upto 11% cashback for min txn of ₹111",
+        "placeholder": "Enter Discount Heading"
+      },
+      {
+        "type": "text",
+        "label": "Discount validity",
+        "id": "other_discount_valid_till_3",
+        "default": "Oct 12 2024",
+        "placeholder": "Enter Discout validity"
+      },
+      {
+        "type": "text",
+        "label": "Discount Code",
+        "id": "other_discount_code_3",
+        "default": "BOROSIL1000",
+        "info": "Enter the Coupon Code",
+        "placeholder": "BOROSIL100"
+      },
+      {
+        "type": "url",
+        "label": "Discount URL",
+        "id": "other_discount_url_3",
+        "info": "Please Enter the redirect to view the offer"
+      },
+      {
+        "type": "image_picker",
+        "label": "Offer Image",
+        "id": "other_offer_image_4",
+        "info": "Upload only 40*40 image"
+      },
+      {
+        "type": "text",
+        "label": "Discount Heading",
+        "id": "other_discount_heading_4",
+        "default": "Upto 11% cashback for min txn of ₹111",
+        "placeholder": "Enter Discount Heading"
+      },
+      {
+        "type": "text",
+        "label": "Discount validity",
+        "id": "other_discount_valid_till_4",
+        "default": "Oct 12 2024",
+        "placeholder": "Enter Discout validity"
+      },
+      {
+        "type": "text",
+        "label": "Discount Code",
+        "id": "other_discount_code_4",
+        "default": "BOROSIL1000",
+        "info": "Enter the Coupon Code",
+        "placeholder": "BOROSIL100"
+      },
+      {
+        "type": "url",
+        "label": "Discount URL",
+        "id": "other_discount_url_4",
+        "info": "Please Enter the redirect to view the offer"
+      },
+      {
+        "type": "image_picker",
+        "label": "Offer Image",
+        "id": "other_offer_image_5",
+        "info": "Upload only 40*40 image"
+      },
+      {
+        "type": "text",
+        "label": "Discount Heading",
+        "id": "other_discount_heading_5",
+        "default": "Upto 11% cashback for min txn of ₹111",
+        "placeholder": "Enter Discount Heading"
+      },
+      {
+        "type": "text",
+        "label": "Discount validity",
+        "id": "other_discount_valid_till_5",
+        "default": "Oct 12 2024",
+        "placeholder": "Enter Discout validity"
+      },
+      {
+        "type": "text",
+        "label": "Discount Code",
+        "id": "other_discount_code_5",
+        "default": "BOROSIL1000",
+        "info": "Enter the Coupon Code",
+        "placeholder": "BOROSIL100"
+      },
+      {
+        "type": "url",
+        "label": "Discount URL",
+        "id": "other_discount_url_5",
+        "info": "Please Enter the redirect to view the offer"
+      },
+    ]
+  },
+  {
+    "name": "Cart Drawer Annoncement Slider",
+    "settings": [
+      {
+        "type": "text",
+        "id": "annoncement_text_1",
+        "label": "Annoncement text 1"
+      },
+      {
+        "type": "text",
+        "id": "annoncement_code_1",
+        "label": "Annoncement code 1"
+      },
+      {
+        "type": "url",
+        "id": "annoncement_code_1_link",
+        "label": "Annoncement code 1 link"
+      },
+      {
+        "type": "text",
+        "id": "annoncement_text_2",
+        "label": "Annoncement text 2"
+      },
+      {
+        "type": "text",
+        "id": "annoncement_code_2",
+        "label": "Annoncement code 2"
+      },
+      {
+        "type": "url",
+        "id": "annoncement_code_2_link",
+        "label": "Annoncement code 2 link"
+      },
+      {
+        "type": "text",
+        "id": "annoncement_text_3",
+        "label": "Annoncement text 3"
+      },
+      {
+        "type": "text",
+        "id": "annoncement_code_3",
+        "label": "Annoncement code 3"
+      },
+      {
+        "type": "url",
+        "id": "annoncement_code_3_link",
+        "label": "Annoncement code 3 link"
+      },
+      {
+        "type": "text",
+        "id": "annoncement_text_4",
+        "label": "Annoncement text 4"
+      },
+      {
+        "type": "text",
+        "id": "annoncement_code_4",
+        "label": "Annoncement code 4"
+      },
+      {
+        "type": "url",
+        "id": "annoncement_code_4_link",
+        "label": "Annoncement code 4 link"
+      },
+      {
+        "type": "text",
+        "id": "annoncement_text_5",
+        "label": "Annoncement text 5"
+      },
+      {
+        "type": "text",
+        "id": "annoncement_code_5",
+        "label": "Annoncement code 5"
+      },
+      {
+        "type": "url",
+        "id": "annoncement_code_5_link",
+        "label": "Annoncement code 5 link"
+      },
+      {
+        "type": "color",
+        "id": "annoncement_background",
+        "label": "Annoncement background"
+      },
+      {
+        "type": "color",
+        "id": "annoncement_text_color",
+        "label": "Annoncement text color"
+      },
+      {
+        "type": "color",
+        "id": "annoncement_code_color",
+        "label": "Annoncement code color",
+        "default": "#FF0C0C"
+      }
+    ]
+  },
+  {
+    "name": "Customize Product",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Name Personalization"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_Personalization",
+        "label": "Show Personalization",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_badge",
+        "label": "Show Badge",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "badge_color",
+        "label": "Badge and Button Color",
+        "default": "#FBC50A"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_emoji",
+        "label": "Show Emoji's",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "badge_text",
+        "label": "Badge Text"
+      },
+      {
+        "type": "text",
+        "id": "not_available",
+        "label": "Message when not available"
+      },
+      {
+        "type": "text",
+        "id": "curated_text",
+        "label": "Curated Text"
+      },
+      {
+        "type": "text",
+        "id": "disclaimer_text",
+        "label": "Disclaimer Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "custom_image1",
+        "label": "Prepaid icon image"
+      },
+      {
+        "type": "image_picker",
+        "id": "custom_image2",
+        "label": "No return image"
+      },
+      {
+        "type": "image_picker",
+        "id": "custom_image3",
+        "label": "Image 3"
+      },
+      {
+        "type": "image_picker",
+        "id": "custom_image4",
+        "label": "Image 4"
+      }
+    ]
+  },
+  {
+    "name": "Marmeto - Checkout API",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Customer API"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_customer_api",
+        "label": "Enable Customer API",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Optimisation - Image links",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Home Page"
+      },
+      {
+        "type": "url",
+        "id": "desktop_homepage_link",
+        "label": "Homepage Desktop link"
+      },
+      {
+        "type": "url",
+        "id": "mobile_homepage_link",
+        "label": "Homepage Mobile link"
+      }
+    ]
+  }
+]

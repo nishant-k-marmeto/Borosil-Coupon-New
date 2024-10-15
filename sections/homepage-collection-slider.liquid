@@ -1,0 +1,374 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+  {% # DATA SECTION SETTINGS ATTRIBUTE IS COMMENTED ON LINE 53 SO THAT BEST SELLER SECTION IN HOMEPAGE DOES NOT BREAK %}
+  {%- capture section_settings -%}
+{
+"sectionID": "{{ section.id }}",
+"productLimit":{{- section.settings.product_limit -}},
+"filterTags": "{{ section.settings.filter_tags }}",
+"countdownFlag": {{- section.settings.enable_countdown -}},
+"endCountdown": "{{- section.settings.Countdown_endtime -}}",
+"products": [
+{%- for product in section.settings.collection.products limit:section.settings.product_limit -%}
+{%- assign productJson = product | json -%}
+{%- assign size = productJson | size | minus: 1 -%}
+{%- assign productJson = productJson | slice: 0, size -%}
+{{- productJson -}},
+"sectionID": "{{ section.id }}",
+{%- if product.first_available_variant -%}
+"selectedVariant": {"title": "{{- product.first_available_variant.title -}}","id": {{ product.first_available_variant.id }},"available": {{- product.first_available_variant.available -}}},
+{%- else -%}
+"selectedVariant": {"title": "{{- product.first_available_variant.title -}}","id": 0,"available": false},
+{%- endif -%}
+{%- if product.featured_image -%}"featureImgResponsive": "{{- product.featured_image | image_url: width: 300, height: 300 -}}",{% endif %}
+"metafields_subtitle": {{- product.metafields.product_subtitle | json -}},
+"variant_inventory":{
+{%- for variant in product.variants -%}
+"{{variant.id}}":"{{- variant.inventory_quantity -}}"{%- unless forloop.last -%},{%- endunless -%}
+{%- endfor -%}}}{%- unless forloop.last -%},{%- endunless -%}
+{%- endfor -%}]}
+{%- endcapture -%}
+
+  <script id="carousel-{{ section.id }}" class="slider-data" type="application/json">
+    {{ section_settings }}
+  </script>
+
+  <div class="collection-slider {% if section.settings.enable_countdown %} flash-sale {% endif %} collection-slider--{{ section.id }}">
+    <div class="homepage-container {% if section.settings.enable_countdown %} flash-sale {% endif %}">
+      {% if section.settings.section_heading != blank or section.settings.enable_view_button %}
+        <div class="collection-slider__header">
+          <div class="collection-slider__heading_count">
+            {% if section.settings.section_heading != blank %}
+              <h2 class="collection-slider__heading heading--{{ section.id }}">
+                {{ section.settings.section_heading | truncate: 20, '' }}
+              </h2>
+            {% endif %}
+          </div>
+          {% if section.settings.enable_view_button and section.settings.collection != blank %}
+            <a
+              href="{{ section.settings.collection.url }}"
+              class="collection-slider__button button--{{ section.id }}"
+              data-category-name="{{ section.settings.section_heading }}"
+            >
+              View All
+            </a>
+            <div class="ViewAllButton_Loader ViewAllButton_Loader--{{ section.id }}"></div>
+          {% endif %}
+        </div>
+        {% if section.settings.enable_countdown %}
+          <div class="collection-slider__countdown {% if section.settings.enable_countdown %} flash-sale {% endif %} countdown--{{ section.id }}">
+            {% if section.settings.countdown_text != blank %}
+              <span class="collection-slider__countdownText flash-sale-text-{{section.id}}">
+                {{- section.settings.countdown_text }}&nbsp
+              </span>
+            {% endif %}
+            <span class="collection-slider__countdownTime countdown">
+              <span class="countdownTime_days countdownTime_days--{{ section.id }}"></span>
+              <span class="countdownTime_hours countdownTime_hours--{{ section.id }}"></span>
+              <span class="countdownTime_mins countdownTime_mins--{{ section.id }}"></span>
+              <span class="countdownTime_sec countdownTime_sec--{{ section.id }}"></span>
+            </span>
+          </div>
+        {% endif %}
+      {% endif %}
+      <div
+        id="collection-slider-{{ section.id }}"
+        class="collection-slider__wrapper collection-slider__wrapper-{{ section.id }}"
+      >
+        {% assign no_of_products = 0 %}
+
+        {%- for product in section.settings.collection.products -%}
+          {% if no_of_products < section.settings.product_limit %}
+            {% unless product.tags contains 'Personalise-hide' %}
+              {% assign no_of_products = no_of_products | plus: 1 %}
+              {% render 'main-product-card', product: product %}
+            {% endunless %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <script>
+    sessionStorage.setItem("section_settings-{{ section.id }}", JSON.stringify({{ section_settings }}) );
+
+    var sectionSettings = sessionStorage.getItem("section_settings-{{ section.id }}");
+    sectionSettings = JSON.parse(sectionSettings);
+
+    //for timer
+    if(sectionSettings.countdownFlag){
+
+      // Set the date we're counting down to
+      var countDownDate = new Date(sectionSettings.endCountdown).getTime();
+
+      // Update the count down every 1 second
+      setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var saleTimeLeft = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(saleTimeLeft / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((saleTimeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((saleTimeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((saleTimeLeft % (1000 * 60)) / 1000);
+        
+        // Format the time components to always show two digits
+        days = days < 10 ? '0' + days : days;
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        // Display the result
+        $('.countdownTime_days').html(`${days}<span class="date-text date-counter-timer-text-{{section.id}}">Days<span class="colon">:</span></span>`);
+        $('.countdownTime_hours--{{ section.id }}').html(`${hours}<span class="date-text date-counter-timer-text-{{section.id}}">Hours<span class="colon">:</span></span>`);
+        $('.countdownTime_mins--{{ section.id }}').html(`${minutes}<span class="date-text date-counter-timer-text-{{section.id}}">Mins<span class="colon">:</span></span>`); 
+        $('.countdownTime_sec--{{ section.id }}').html(`${seconds}<span class="date-text date-counter-timer-text-{{section.id}}">Sec</span>`);
+
+        // If the count down is over, write some text 
+        if (saleTimeLeft < 0) {
+          //hide the collection
+          $('.collection-slider--{{ section.id }}').css("display", "none");
+        }
+      }, 1000);
+    }
+  </script>
+
+  {% style %}
+     .flash-sale-text-{{section.id}}{
+       color: {{ section.settings.flash_sale_text_color }};
+     }
+
+
+     @media screen and (min-width: 768px) {
+       .collection-slider.collection-slider--{{section.id}} {
+         background-size: cover;
+         background-repeat: no-repeat;
+       }
+
+       .collection-slider__countdown.countdown--{{ section.id }}{
+         background-image: url('{{ section.settings.background_image_desktop | img_url: 'master' }}')!important;
+         background-size: cover;
+         background-repeat: no-repeat;
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+         border-radius: 10px;
+         margin-bottom: 20px;
+       }
+     }
+    @media screen and (max-width: 768px) {
+       .collection-slider__countdown.countdown--{{ section.id }}{
+         background-image: url('{{ section.settings.background_image_mobile | img_url: 'master' }}')!important;
+         margin-left: -50px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+         margin-bottom: 20px;
+         min-height: 100px;
+       }
+     }
+
+     @media screen and (min-width:768px) and (max-width: 1024px) {
+      .collection-slider__countdown.countdown--{{ section.id }}{
+         flex-direction: column;
+      }
+     }
+
+
+     .collection-slider__heading.heading--{{section.id}}{
+       color: {{section.settings.section_heading_color}};
+     }
+     .countdown--{{section.id}}{
+       color: {{section.settings.section_heading_color}};
+     }
+     .button--{{section.id}}{
+       color: {{section.settings.button_text_color}};
+       background: {{section.settings.button_background_color}};
+       border-color: {{section.settings.button_border_color}};
+     }
+     .collection-slider--{{ section.id }} .arrow-bg {
+       background: {{section.settings.arrow_background_color}} !important;
+       color: {{section.settings.background_color}} !important;
+     }
+
+     .collection-slider--{{ section.id }} .arrow-bg:hover,
+     .collection-slider--{{ section.id }} .arrow-bg:focus {
+       background: {{section.settings.arrow_background_color}};
+       color: {{section.settings.background_color}};
+     }
+
+     .collection-slider__wrapper-{{section.id}} .slick-dots li.slick-active button:before {
+       color: {{section.settings.selected_dot_color}};
+       border-bottom: 10px solid {{section.settings.selected_dot_color}};
+     }
+
+     #shopify-section-{{section.id}} .slick-dotted .slick-slider {
+       margin-bottom: 21px;
+     }
+
+     button .slick-arrow{
+       color: transparent !important;
+     }
+
+     .date-counter-timer-text-{{section.id}},
+     .countdownTime_days--{{ section.id }},
+     .countdownTime_hours--{{ section.id }},
+     .countdownTime_mins--{{ section.id }},
+     .countdownTime_sec--{{ section.id }}{
+       color: {{section.settings.count_down_timer_color}};
+     }
+  {% endstyle %}
+{% endif %}
+
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Collection Slider",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "header",
+      "content": "Heading settings"
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Heading text",
+      "default": "New Arrivals",
+      "info": "Max limit: 20 char"
+    },
+    {
+      "type": "color",
+      "id": "section_heading_color",
+      "label": "Heading text color"
+    },
+    {
+      "type": "header",
+      "content": "Countdown settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_countdown",
+      "label": "Enable Countdown"
+    },
+    {
+      "type": "text",
+      "id": "countdown_text",
+      "label": "Countdown message",
+      "default": "Deal Ends in",
+      "info": "Max limit: 13 char"
+    },
+    {
+      "type": "textarea",
+      "id": "Countdown_endtime",
+      "label": "End countdown",
+      "info": "Enter the Date and time in this format - Mon DD, YYYY HH:MM:SS Ex: Jan 01, 2022 18:00:00"
+    },
+    {
+      "type": "header",
+      "content": "Button settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_view_button",
+      "label": "Show view all button"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Button border color"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background color"
+    },
+    {
+      "type": "header",
+      "content": "Slider settings"
+    },
+    {
+      "type": "color",
+      "id": "arrow_background_color",
+      "label": "Arrow background color"
+    },
+    {
+      "type": "color",
+      "id": "selected_dot_color",
+      "label": "Selected dot color"
+    },
+    {
+      "type": "header",
+      "content": "Collection settings"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Choose collection"
+    },
+    {
+      "type": "range",
+      "id": "product_limit",
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "label": "Product limit",
+      "default": 8
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_desktop",
+      "label": "Background Image (Desktop)",
+      "info":"Add Jpeg/png Image of Size 1519 x 677px"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background Image (Mobile)",
+      "info":"Add Jpeg/png Image of Size 375 x 600px"
+    },
+    {
+      "type": "color",
+      "id": "count_down_timer_color",
+      "label": "Timer text color",
+      "default" : "#000000"
+    },
+    {
+      "type": "color",
+      "id": "flash_sale_text_color",
+      "label": "Flash sale text color",
+      "default" : "#000000"
+    },
+  ],
+  "presets": [
+    {
+      "name": "Collection Slider"
+    }
+  ]
+}
+{% endschema %}

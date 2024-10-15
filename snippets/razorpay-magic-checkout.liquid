@@ -1,0 +1,34 @@
+{% comment %}https://magic-plugins.razorpay.com/shopify/magic-shopify.js
+<!--
+  <div id="magic-checkout-data-container"><script src="https://magic-plugins.razorpay.com/shopify/magic-shopify.js" crossorigin="anonymous" defer></script><script id="RazorpayMagicCheckoutConfig" type="application/json">{"oneClickCheckoutEnabled":"{{shop.metafields.magic_checkout.oneClickCheckoutEnabled}}","buyNowEnabled":"{{shop.metafields.magic_checkout.buyNowEnabled}}","config":{{shop.metafields.magic_checkout.config}},"email":"{{customer.email}}","phone":"{{customer.phone}}"}</script></div>
+  <!--  -->
+  <!-- https://magic-plugins.np.razorpay.in/branch-builds/temp/borosil-disable-ct-purchase/shopify/magic-shopify.js -->
+  <!-- https://magic-plugins.np.razorpay.in/commit-builds/b55430f28456dc439bbd4819d53a01b2918f99a6/shopify/magic-shopify.js -->
+-->{% endcomment %}
+
+
+<!-- normal flow -- magic plugins prod -- and --- checkout prod -->
+<!-- <div id="magic-checkout-data-container">
+  <script
+    type="lazy-script"
+    src="https://magic-plugins.razorpay.com/shopify/magic-shopify.js"
+    crossorigin="anonymous"
+    defer
+  ></script>
+  <script id="RazorpayMagicCheckoutConfig" type="application/json">
+    {"oneClickCheckoutEnabled":"{{shop.metafields.magic_checkout.oneClickCheckoutEnabled}}","buyNowEnabled":"{{shop.metafields.magic_checkout.buyNowEnabled}}","config":{{shop.metafields.magic_checkout.config}},"email":"{{customer.email}}","phone":"{{customer.phone}}"}
+  </script>
+</div> -->
+
+<!-- normal flow -- magic plugins betacdn -- and --- checkout betacdn with flits true -->
+<div id="magic-checkout-data-container">
+  <script
+    src="https://magic-plugins.razorpay.com/shopify/magic-shopify.js"
+    crossorigin="anonymous"
+    defer
+  ></script>
+  <script id="RazorpayMagicCheckoutConfig" type="application/json">
+    {"oneClickCheckoutEnabled":"{{shop.metafields.magic_checkout.oneClickCheckoutEnabled}}","buyNowEnabled":"{{shop.metafields.magic_checkout.buyNowEnabled}}","config":{{shop.metafields.magic_checkout.config}},"email":"{{customer.email}}","phone":"{{customer.phone}}"}
+  </script>
+</div>
+

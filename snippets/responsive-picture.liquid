@@ -1,0 +1,91 @@
+{% comment %}
+  Render an responsive image.
+
+  Accepts:
+  - class: {String} Class to add to the picture tag.
+  - img_class: {String} Class to add to the image tag.
+  - id: {String} ID to add to the image.
+  - mobile_image: {Object} Image object for mobile
+  - mobile_size: {String} Size of the mobile image to occupy on mobile screen
+  - desktop_image: {Object} Image object for desktop
+  - desktop_size: {String} Size of the desktop image to occupy on desktop screen
+  - forloop: {Object} Forloop object to lazy load image (Optional)
+
+  Usage:
+  {% render 'responsive-picture' 
+    forloop: forloop,
+    desktop_image: block.settings.image_desktop, 
+    mobile_image: block.settings.image_mobile,
+    img_class: 'tw-w-full tw-max-h-[60rem]',
+    desktop_size: '50vw',
+    mobile_size: '100vw'
+  %}
+{% endcomment %}
+
+{%- liquid
+  assign loading = "lazy"
+  assign fetchpriority = "auto"
+  assign forloop_index = forloop.index | default: 1
+
+  case template.name
+    when 'index'
+        assign section_lcp_index = 1
+    when 'product'
+        assign section_lcp_index = 1
+    when 'collection'
+        assign section_lcp_index = 1
+  endcase
+
+  # You can hint to the browser as to which resources are most important via the fetchpriority attribute.
+  # You can use fetchpriority="low" to lower the priority of above-the-fold images that may not be important for example in an image carousel.
+  # Deprioritizing certain resources can afford more bandwidth to resources that need it more.
+  if section.location == 'template' and section.index == section_lcp_index and forloop_index == 1
+    assign fetchpriority = "high"
+    assign loading = "eager"
+  elsif section.index == section_lcp_index and forloop_index > 1
+    assign fetchpriority = "low"
+  elsif section.location == 'template' and section.index < 3
+    assign loading = "eager"
+  endif
+-%}
+
+<picture class="{{ class }}" {% if id != blank %}id="{{id}}"{% endif %}>
+    {% if mobile_image %}
+    <source
+      media="(max-width: 767px)"
+      srcset="{%- if mobile_image.width >= 375 -%}{{ mobile_image | image_url: width: 375 }} 375w,{%- endif -%}
+        {%- if mobile_image.width >= 550 -%}{{ mobile_image | image_url: width: 550 }} 550w,{%- endif -%}
+        {%- if mobile_image.width >= 750 -%}{{ mobile_image | image_url: width: 750 }} 750w,{%- endif -%}
+        {%- if mobile_image.width >= 1100 -%}{{ mobile_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+        {%- if mobile_image.width >= 1500 -%}{{ mobile_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+        {%- if mobile_image.width >= 1780 -%}{{ mobile_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+        {%- if mobile_image.width >= 2000 -%}{{ mobile_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+        {%- if mobile_image.width >= 3000 -%}{{ mobile_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+        {%- if mobile_image.width >= 3840 -%}{{ mobile_image | image_url: width: 3840 }} 3840w,{%- endif -%}
+        {{ mobile_image | image_url }} {{ mobile_image.width }}w"
+      sizes="{{ mobile_size | default: '100vw' }}"
+    >
+    {% endif %}
+    <source
+      {% if mobile_image %} media="(min-width: 768px)"{% endif %}
+      srcset="{%- if desktop_image.width >= 375 -%}{{ desktop_image | image_url: width: 375 }} 375w,{%- endif -%}
+        {%- if desktop_image.width >= 550 -%}{{ desktop_image | image_url: width: 550 }} 550w,{%- endif -%}
+        {%- if desktop_image.width >= 750 -%}{{ desktop_image | image_url: width: 750 }} 750w,{%- endif -%}
+        {%- if desktop_image.width >= 1100 -%}{{ desktop_image | image_url: width: 1100 }} 1100w,{%- endif -%}
+        {%- if desktop_image.width >= 1500 -%}{{ desktop_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+        {%- if desktop_image.width >= 1780 -%}{{ desktop_image | image_url: width: 1780 }} 1780w,{%- endif -%}
+        {%- if desktop_image.width >= 2000 -%}{{ desktop_image | image_url: width: 2000 }} 2000w,{%- endif -%}
+        {%- if desktop_image.width >= 3000 -%}{{ desktop_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+        {%- if desktop_image.width >= 3840 -%}{{ desktop_image | image_url: width: 3840 }} 3840w,{%- endif -%}
+        {{ desktop_image | image_url }} {{ desktop_image.width }}w"
+      sizes="{{ desktop_size | default: '100vw' }}"
+    >
+    <img src="{{ desktop_image | image_url: width: 1500 }}"
+      loading="{{ loading }}"
+      fetchpriority="{{ fetchpriority }}"
+      class="{{ img_class }}"
+      width="{{ desktop_image.width }}"
+      height="{{ desktop_image.width | divided_by: desktop_image.aspect_ratio | round }}"
+      alt="{{ alt | default: desktop_image.alt | escape }}"
+    >
+  </picture>

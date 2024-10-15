@@ -1,0 +1,87 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+
+  <div class="homepage-top-sections-desktop">
+      <div class="homepage-top-sections-inner homepage-top-sections-slider hide-scroll-bar"> 
+        {% for block in section.blocks %}
+        <div class="homepage-top-sections-inner-body" data-category-name="{{ block.settings.text }}">
+          {% if block.settings.image != blank %}  
+          <a href="{{ block.settings.link }}">			                      				      
+            <div class="homepage-top-sections-inner-body-image">
+              {% if block.settings.image != blank %}
+                  <img loading="eager" width="{{ block.settings.image.width }}" height="{{ block.settings.image.height }}" src="{{ block.settings.image |img_url: 'original' }}">
+              {% endif %}
+            </div>
+            <div class="homepage-top-sections-inner-body-text">
+              {% if block.settings.text != blank %}
+                <p>{{ block.settings.text }}</p>
+              {% endif %}
+            </div>  
+            </a>  
+            {% endif %}
+          </div>
+        {% endfor %} 
+    </div>  
+  </div>
+
+{% endif %}       
+      
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+
+
+{% schema %}
+  {
+  "name": "Homepage Top Sections",
+  "class": "homepage-product-preview",
+  "max_blocks": 10,
+  "blocks": [
+	{
+	  "type": "Blocks",
+      "name": "Add Blocks",
+      "settings": [
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Add Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Add Image",
+      "info":"Recommended png/jpeg Image of Size 80 x 80px"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Add Text",
+      "info": "Maximum allowed characters: 10"
+    }
+  ]
+}],
+  "presets": [
+    {
+      "category": "Custom Solution",
+      "name": "Homepage Top Sections"
+    }
+  ]
+}
+{% endschema %}
+
+ 
+  
+  
+  
+  
+  
+  
+  
+  

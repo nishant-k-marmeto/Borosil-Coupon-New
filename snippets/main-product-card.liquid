@@ -1,0 +1,110 @@
+<div class="product-card">
+    <a href="{{ product.url }}" class="product-card__link lazy-load-parent" tabindex="-1">
+      <img
+        srcset="{%- if product.featured_image.width >= 165 -%}{{ product.featured_image | img_url: '165x' }} 165w,{%- endif -%}
+        {%- if product.featured_image.width >= 330 -%}{{ product.featured_image | img_url: '330x' }} 330w,{%- endif -%}
+        {%- if product.featured_image.width >= 535 -%}{{ product.featured_image | img_url: '535x' }} 535w,{%- endif -%}
+        {%- if product.featured_image.width >= 750 -%}{{ product.featured_image | img_url: '750x' }} 750w,{%- endif -%}
+        {%- if product.featured_image.width >= 1000 -%}{{ product.featured_image | img_url: '1000x' }} 1000w,{%- endif -%}
+        {%- if product.featured_image.width >= 1500 -%}{{ product.featured_image | img_url: '1500x' }} 1500w,{%- endif -%}
+        {%- if product.featured_image.width >= 3000 -%}{{ product.featured_image | img_url: '3000x' }} 3000w,{%- endif -%}
+        {{ product.featured_image | img_url: 'master' }} {{ product.featured_image.width }}w"
+        data-src="{{ product.featured_image | img_url: 'master' }}"
+        alt="{{ product.title | escape }}"
+        height="{{ product.featured_image.height }}"
+        width="{{ product.featured_image.width }}"
+        loading="lazy"
+        class="product-card__image"
+        fetchpriority="high"
+      >
+    </a>
+    <div class="product-card__info" item_name = "{{ product.title }}" data-product-id="{{ product.id }}" item_category= "{% for collection in product.collections %}{% if forloop.index == 1 %}{{ collection.title }}{% endif %}{% endfor %}" price="{{product.price | divided_by : 100 }}" item_stock="{{ product.selected_or_first_available_variant.inventory_quantity }}">
+      <div id="" class="modal modal--{{ section.id }}">
+        <div class="modal-content">
+          <span class="close_error_Box close_error_Box--{{ section.id }}">×</span>
+          <p class="Errormessage Errormessage--{{ section.id }}"> </p>
+        </div>
+      </div>
+      <a href="{{ product.url}}" class="product-card__title" tabindex="-1">{{ product.title }}</a>
+      <div class="Producttitle_full">{{ product.title }}</div>
+      <div class="product-card__price">
+        <span class="product-card__regularprice">
+          {% if product.selected_or_first_available_variant.price %}
+            {{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}
+          {% else %}
+            {{ product.price | money_without_trailing_zeros  }} 
+          {% endif %}
+          </span>
+        {% if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}
+          <span class="product-card__compareprice">
+            {{ product.selected_or_first_available_variant.compare_at_price | money_without_trailing_zeros }}
+          </span>
+          <span class="product-card__discountpercentage">
+            {{ product.selected_or_first_available_variant.compare_at_price | minus: product.selected_or_first_available_variant.price | times: 100 | divided_by: product.selected_or_first_available_variant.compare_at_price }}% off
+          </span>
+        {% endif %}
+      </div>
+      <div class="product-card__selectors">
+        {%- if product.variants.size > 0 and product.variants[0].title != 'Default Title' -%}
+          <input type="number" value="10" class="quantity-selector-input variant-present" onkeypress="return event.charCode >= 48" min="1" tabindex="-1">
+          <div style=" " class="product-card__quantity product-card__quantity--{{ section.id }}">
+            <div class="quantity-selector-value">1</div>
+            <div class="product-card__selector-dropdownArrow"></div>
+            <ul class="quantity-selector-list">
+              {% for i in (1..10) %}
+                <li class="quantity-selector-listitem {% if forloop.index == 1%}is-selected{% endif %}" data-value="{{i}}">
+                  {{ i }}{% if forloop.last %}+{% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="product-card__variants product-card__variant product-card__variants--{{ section.id }}">
+            <div class="variant-selector-value">{{ product.selected_or_first_available_variant.title }}</div>
+            <div class="product-card__selector-dropdownArrow"></div>
+            <ul class="variant-selector-list">
+              {% assign selected = true %}
+              {% for variant in product.variants %}
+                <li class="variant-selector-listitem {% if variant.available and selected %}is-selected{% assign selected = false %}{% endif %}" 
+                  data-variant="{{ variant.id }}" 
+                  data-variantavl="{{ variant.inventory_quantity }}" 
+                  data-variant-title="{{ variant.title }}" 
+                  data-variant-price="{{ variant.price }}" 
+                  data-variant-maxprice="{{ variant.compare_at_price }}" 
+                  data-variant-pricetoprint="{{ variant.price | money_without_trailing_zeros }}" 
+                  data-variant-maxpricetoprint="{{ variant.compare_at_price | money_without_trailing_zeros }}" 
+                  data-variant-quantity="{{ variant.inventory_quantity }}" 
+                  data-variant-available="{{ variant.available }}">
+                  <div class="variant-selector-listitemContent">
+                    <span class="variant-selector-title">{{ variant.title }}</span>
+                    <span class="variant-selector-prices">
+                        <div class="varaint-sellingPrice">{{ variant.price | money_without_trailing_zeros }}</div>
+                        <div class="varaint-originalPrice">{{ variant.compare_at_price | money_without_trailing_zeros }}</div>
+                    </span>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {%- else -%}
+          <input type="number" value="10" class="single-variant quantity-selector-input" onkeypress="return event.charCode >= 48" min="1" tabindex="0">
+          <div class="product-card__quantity product-card__quantity--{{ section.id }}">
+            <div class="quantity-selector-value">1</div>
+            <div class="product-card__selector-dropdownArrow"> </div>
+            <ul class="quantity-selector-list">
+              {% for i in (1..10) %}
+                <li class="quantity-selector-listitem {% if forloop.index == 1%}is-selected{% endif %}" data-value="{{i}}">
+                  {{ i }}{% if forloop.last %}+{% endif %}
+                </li>
+              {% endfor %}</ul>
+          </div>
+          <input type="hidden" data-variantavl="{{ product.selected_or_first_available_variant.inventory_quantity }}" 
+            class="variant-selector-listitem is-selected" 
+            data-variant="{{ product.selected_or_first_available_variant.id }}" 
+            data-variant-available="{{ product.variants[0].available }}" tabindex="0">
+        {%- endif -%}
+      </div>
+      <button class="product-card__addtocart homepage-product-card__addtocart product-card__addtocart--{{ section.id }} {% if product.selected_or_first_available_variant.inventory_quantity < 1 %} is-disabled {% endif %}" type="button" tabindex="-1"> {% if product.selected_or_first_available_variant.inventory_quantity < 1 %} Sold out {% else %} Add to cart {% endif %} </button>
+      <div class="loader loader--{{ section.id }}"> </div>
+      <span class="error-quantity" style="display:none;">Insufficient Quantity</span>
+    </div>
+  </div>

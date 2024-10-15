@@ -1,0 +1,20 @@
+
+<div class="cd-product-viewer-wrapper" data-frame="16" data-friction="0.33">
+	<div>
+		<figure class="product-viewer">
+			<img src="{{ product.metafields.custom.threesixty_image_place_holder.value }}" alt="Product Preview">
+			<div class="product-sprite" data-image="{{ image.src | img_url: 'master' }}"></div>
+		</figure> <!-- .product-viewer -->
+        <div class="">
+			360° View - Drag to Rotate
+		</div>
+		<div class="cd-product-viewer-handle">
+			<span class="fill"></span>
+			<span class="handle">Handle</span>
+		</div>
+{% render '360-product-image-assets', image: image %}
+	</div> <!-- .cd-product-viewer-handle -->
+</div> <!-- .cd-product-viewer-wrapper -->
+
+
+

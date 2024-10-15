@@ -1,0 +1,105 @@
+<script>
+  console.log('mm-customer-api.js');
+//   let inputFieldChanged = false;
+  
+  function ValidateEmail(email) {
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (email.match(validRegex)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  function removeError() {
+   $('.api-error-message').remove();
+   $('.error-border').removeClass('error-border');
+  }
+  
+  const emailInput = document.querySelector('[data-backup="customer_email"]');
+//   emailInput.addEventListener('change', ()=>{inputFieldChanged = true});
+  emailInput.addEventListener('keydown', removeError);
+
+  setTimeout(()=>{
+    const phoneInput = document.getElementById('checkout_shipping_address_alternative-phone');
+//     phoneInput.addEventListener('change', ()=>{inputFieldChanged = true})
+    phoneInput.addEventListener('keydown', removeError);
+  },400);
+
+  $(document).on('click', '#continue_button', function(e){
+    e.preventDefault();
+    $('.api-error-message').remove();
+    
+    const emailInput = document.querySelector('[data-backup="customer_email"]');
+    const phoneInput = document.getElementById('checkout_shipping_address_alternative-phone');
+
+    function printError(el,msg) {
+      const errorMsgEl = document.createElement('div');
+      errorMsgEl.classList.add('api-error-message');
+      errorMsgEl.textContent = msg;
+      el.parentElement.appendChild(errorMsgEl);
+      el.parentElement.querySelector('input').classList.add('error-border');
+      document.getElementById('main-header').scrollIntoView({behavior: 'smooth'});
+    }
+//     if(inputFieldChanged){
+      let customerEmail = emailInput.value;
+      let customerPhone = phoneInput.value;
+      if(customerPhone === ''&& customerEmail === '' ){
+        printError(phoneInput,"Please enter EmailId and Phone Number")
+      } else if(customerEmail === ''){
+        printError(emailInput,"Please enter EmailId")
+      } else if(customerPhone === ''){
+        printError(phoneInput,"Please enter Phone number")
+//       } else if (!ValidateEmail(customerEmail)){
+//         printError(emailInput,"Please enter valid EmailId")
+      } else if(customerPhone.length < 10){
+        printError(phoneInput,"Please enter a valid Phone number")
+      } else {
+        console.log("API CALLED");
+        fetch('https://borosilotp.marmeto.com/api/checkout/customer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({email:customerEmail, phoneNumber:customerPhone})
+        })
+        .then(response => {
+          return response.json();
+        })
+        .then(res=> {
+          let status = res.status;
+
+          if(status === undefined){
+            let key = res.key;
+            if(key === 'phoneNumber'){
+              printError(phoneInput,res.message);
+            } else if (key === 'email') {
+              printError(emailInput,res.message);
+            }
+          } else if ( status === 'ALREADY_REGISTERED') {
+            printError(phoneInput,res.message);
+          } else if ( status === 'SUCCESS' ) {
+            $('form[data-customer-information-form]').submit();
+          } else if(status === 422){
+            printError(emailInput,"Please enter valid EmailId");
+          }
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        }); 
+      }
+//     } else if(emailInput.value === ''|| phoneInput.value === '' ) {
+// //       console.log('both fields empty');
+//       printError(phoneInput,"Please enter vaild EmailId and Phone Number")
+//     } else {
+//       $('form[data-customer-information-form]').submit();
+//     }
+  })
+
+</script>
+<style>
+  input.error-border{
+    border-color: #e22120;
+    -webkit-box-shadow: 0 0 0 1px #e22120;
+    box-shadow: 0 0 0 1px #e22120;
+  }
+</style>

@@ -1,0 +1,38 @@
+{% if product.type contains 'qwikcilver_gift_card' %}
+  <p class="error"></p>
+  <div class="line_item_properties">
+    <div class="gift-name">
+      <div class="recipient-name">
+        <label for="rname">Recipient's Name*</label>
+        <input type="text" id="rname" name="properties[_recipient_name]" required>
+      </div>
+      <div class="recipient-email">
+        <label for="semail">Recipient's Email*</label>
+        <input type="email" id="semail" name="properties[_Gift to Email]" required>
+      </div>
+    </div>
+    <div class="gift-name">
+      <div class="sender-name">
+        <label for="sname">Sender's Name*</label>
+        <input type="text" id="sname" name="properties[_sender_name]" required>
+      </div>
+      <div class="email">
+        <label for="email">Sender's Email*</label>
+        <input type="email" id="email" name="properties[_sender_email]" required>
+      </div>
+    </div>
+    <label for="message" style="margin-top:10px"
+      >Message<i class="fa fa-chevron-down" style="margin-left:5px;vertical-align:2px;font-size:10px;"></i
+    ></label>
+    <textarea
+      class="hide"
+      placeholder="Optional"
+      id="message"
+      name="properties[_QC Message]"
+      style="width: 100%"
+      rows="4"
+      cols="50"
+    ></textarea>
+  </div>
+  <br>
+{% endif %}

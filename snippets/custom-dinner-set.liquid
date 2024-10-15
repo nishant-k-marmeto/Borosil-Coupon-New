@@ -1,0 +1,42 @@
+{{ 'custom-dinner-set.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'custom-dinner-set.js' | asset_url }}" defer></script>
+
+<div class="custom-dinner-set">
+  <button class="dinner-set__pop-button" data-open-dinner-set>Build Your Own Dinner Set</button>
+
+  <div class="dinner-set__modal">
+    <div class="dinner-set__modal-content">
+      <div class="dinner-top__wrapper">
+        <div class="dinner-modal__heading">Build Your Own Dinner Set</div>
+        <div class="close-dnr__modal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20.121" height="20.121" viewBox="0 0 20.121 20.121">
+            <g id="Group_23" data-name="Group 23" transform="translate(1.061 1.061)"><line id="Line_1" data-name="Line 1" x2="18" y2="18" fill="none" stroke="#fff" stroke-width="3"/><line id="Line_2" data-name="Line 2" x1="18" y2="18" fill="none" stroke="#fff" stroke-width="3"/></g>
+          </svg>
+        </div>
+      </div>
+      <div class="dinner-modal__body">
+        <div class="dinner-modal__body-inner">
+          <div class="dinner-cards__wrapper">
+            {% for variant in product.metafields.custom.dinner_set.value %}
+              {% if variant.available %}
+                {% render 'dinner-product-card', variant: variant, product: variant.product, mainProduct: product %}
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="dinner-bottom__wrapper">
+            <div class="dinner-selection">
+              Dinner Set consists of
+              <span class="dnr-x-pcs">0</span> Pcs and costs
+              <span class="dnr-y-rs">₹ 0.00</span>
+            </div>
+            <div class="dinner-min__value-error">Minimum Order Value is ₹ 599</div>
+            <div class="dinner-atc__wrapper">
+              <button class="dinner-atc disabled">ADD TO CART</button>
+              <span class="dinner-atc_loader"> </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

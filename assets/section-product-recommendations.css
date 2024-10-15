@@ -1,0 +1,219 @@
+.product-page-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 50px;
+}
+
+
+
+@media(min-width: 1500px) {
+  .product-page-container {
+    min-width: 90%;
+  }
+}
+
+@media(min-width: 768px) {
+  .product-page-container {
+      max-width: 1300px;
+  }
+}
+
+.product-recommendations {
+  display: block;
+}
+
+.product-recommendations__heading {
+  margin: 0;
+  margin-bottom: 3rem;
+  margin-top: 3em;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #013564;
+}
+
+.product-card {
+  margin: 0 8px;
+  background: #ffffff;
+  box-shadow: 0px 0px 8px #0000001C;
+  margin-bottom: 73px;
+}
+
+.product-card__link {
+  display: block;
+  position: relative;
+  padding-bottom: 100%;
+}
+
+.product-card__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card__info {
+  padding: 15px;
+  text-align: center;
+}
+
+.product-card__title {
+  font-size: 16px;
+  color: #070707;
+  font-weight: bold;
+  text-decoration: none;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.product-card__price{
+  font-weight: bold;
+  margin-bottom: 15px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.product-card__regularprice {
+  color: #D81818;
+  font-size: 16px;
+}
+.product-card__compareprice {
+  color: #8795A4;
+  font-size: 14px;
+  margin-left: 10px;
+  text-decoration: line-through;
+}
+.product-card__discountpercentage {
+  color: #69B900;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.product-card__addtocart {
+  width: 100%;
+  background: #004778;
+  font-size: 16px;
+  color: #FFFFFF;
+  border: 0;
+  cursor: pointer;
+  font-weight: normal;
+  padding: 15px 0;
+  text-transform: uppercase;
+}
+.is-disabled{
+  width: 100%;
+  background: #D5DBE3;
+  font-size: 16px;
+  color: #FFFFFF;
+  border: 0;
+  cursor: pointer;
+  font-weight: normal;
+  padding: 15px 0;
+  text-transform: uppercase;
+  cursor: not-allowed;
+}
+
+.product-page-container .slick-prev,
+.product-page-container .slick-next
+{
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background: #D5DBE3;
+  color: #FFFF;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  display: flex; /* or inline-flex */
+  align-items: center; 
+  justify-content: center;
+}
+
+  .product-page-container .slick-prev:hover,
+  .product-page-container .slick-prev:focus,
+  .product-page-container .slick-next:hover,
+  .product-page-container .slick-next:focus
+  {
+      outline: none;
+  }
+  .product-page-container .slick-prev:hover:before,
+  .product-page-container .slick-prev:focus:before,
+  .product-page-container .slick-next:hover:before,
+  .product-page-container .slick-next:focus:before
+  {
+      opacity: 1;
+  }
+  
+  .product-page-container .slick-disabled {
+    display: block;
+    pointer-events: none;
+    opacity: .5;
+  }
+  .product-page-container .slick-prev:before,
+  .product-page-container .slick-next:before
+  {
+      font-family: 'slick';
+      font-size: 20px;
+      line-height: 1;
+      opacity: .75;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+  }
+
+  .product-page-container .slick-prev
+  {
+      left: -35px;
+  }
+
+  .product-page-container .slick-prev:before
+  {
+      content: unset;
+  }
+
+  .product-page-container .slick-next
+  {
+      right: -35px;
+  }
+
+  .product-page-container .slick-next:before
+  {
+      content: unset;
+  }
+
+  @media only screen and (max-width: 430px) {
+    .product-page-container .slick-list {
+      margin-left: calc(-70px - 12px);
+    }
+    .product-page-container .slick-dots {
+      padding-right: 20px;
+      padding-left: -20px;
+      margin-left: -35px;
+    }
+    .product-page-container{
+      padding-right: 0;
+      padding-left: 0;
+    }
+    .product-recommendations{
+      padding-right: 0;
+    }
+    .product-recommendations__heading { 
+      font-size: 21px;
+    }
+  }

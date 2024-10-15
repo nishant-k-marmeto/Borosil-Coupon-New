@@ -1,0 +1,110 @@
+<div class="homepage-blogs-section">
+  <div class="homepage-blogs-section-inner">
+    
+    <div class="homepage-blogs-section-header">
+		<h4>{{ section.settings.heading }}</h4>
+      	<p>{{ section.settings.para }}</p>
+	</div>
+    
+      <div class="homepage-blogs-section-slider">
+        
+      {% for block in section.blocks %}  
+      <div class="homepage-blogs-section-blocks">
+      	<div class="homepage-blogs-section-blocks-image">
+          	{% if block.settings.image_1 != blank %}
+        	<img loading="lazy" src="{{ block.settings.image_1 |img_url: 'original' }}" width="{{ block.settings.image_1.width }}" height="{{ block.settings.image_1.height }}" class="homepage-blogs-section-image">
+            {% endif %}
+        </div>
+        
+        <div class="homepage-blogs-section-blocks-text">
+            {% if block.settings.title != blank %}
+        	<h5>{{ block.settings.title }}</h5>
+          	{% endif %}
+          
+          	{% if block.settings.card_description != blank %}
+      		<p>{{ block.settings.card_description }}</p>
+          	{% endif %}
+          
+          	{% if block.settings.read_more != blank or block.settings.arrow != blank %}
+          	<p class="homepage-blog-read-more">{{ block.settings.read_more }}<span><img loading="lazy" src="https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Regular-M_2.svg?v=1637908140" class="homepage-blogs-section-arrow-image"></span></p>
+            {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div> 
+    
+    <div class="btn-view-all-container">
+        <a href="{{section.settings.url_view_all}}" class="btn-view-all">
+            View All  
+        </a>
+    </div>
+    
+
+</div>  
+            
+    
+</div>
+  
+
+{% schema %}
+  {
+  "name": "Homepage Blogs Section",
+  "class": "homepage-blogs-section",
+  "settings": [
+     {
+      "type": "text",
+      "id": "heading",
+      "label": "Add Section Heading"
+    },
+    {
+      "type": "text",
+      "id": "para",
+      "label": "Add Section Description"
+    },
+    {
+      "type": "url",
+      "id": "url_view_all",
+      "label": "View all URL",
+      "default": "/"
+    }
+],
+  "max_blocks": 6,
+  "blocks": [
+	{
+	  "type": "Blogs",
+      "name": "Add Blogs",
+      "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Add Heading for Card"
+      },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Add Image for Card",
+      "info":"Add Jpeg/png Image of Size 400 x 270px"
+    },
+  	{
+      "type": "text",
+      "id": "card_description",
+      "label": "Add Description for Card"
+    },
+  	{
+      "type": "text",
+      "id": "read_more",
+      "label": "Add Read More Text"
+    }
+  ]
+}],
+  "presets": [
+    {
+      "category": "Custom Solution",
+      "name": "Homepage Blogs Section"
+    }
+  ]
+}
+{% endschema %}
+          
+  
+  

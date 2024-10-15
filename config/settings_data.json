@@ -1,0 +1,925 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "preload_image_desktop": "shopify://shop_images/AM_PM_Bottles_Desktop_Banner.png",
+    "preload_image_mobile": "shopify://shop_images/AM_PM_Bottles_Mobile_Banner_5.png",
+    "hp_eager_section_count": 3,
+    "pdp_eager_section_count": 2,
+    "plp_eager_section_count": 2,
+    "enable_lazy_loading_header_sections": false,
+    "qty_rule": "[{\"qty\": 2, \"discount\": 10},{\"qty\": 3, \"discount\": 15},{\"qty\": 4, \"discount\": 20}]",
+    "unserviceable_error": "Oops! We currently do not service in your area. Please try again with another address.",
+    "cod_error": "Unfortunately, Cash on Delivery (COD) is not available for your pincode!",
+    "show_qwikcilver": true,
+    "enable_gst_validation": true,
+    "mega_menu_1": true,
+    "mega_menu_2": true,
+    "mega_menu_3": true,
+    "mega_menu_4": true,
+    "mega_menu_5": true,
+    "mega_menu_6": true,
+    "mega_menu_7": true,
+    "mega_menu_8": true,
+    "mega_menu_9": true,
+    "mega_menu_10": true,
+    "mega_menu_11": true,
+    "sale_link": "https://myborosil.com/collections/deals",
+    "sale_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"28\" height=\"28\" viewbox=\"0 0 28 28\"> \n              <g id=\"Group_334290\" data-name=\"Group 334290\" transform=\"translate(7899 572)\">\n                <rect id=\"Rectangle_114329\" data-name=\"Rectangle 114329\" width=\"28\" height=\"28\" transform=\"translate(-7899 -572)\" fill=\"none\"></rect>\n                <path id=\"Union_39\" data-name=\"Union 39\" d=\"M1254.15-20139.615l-.511-.6a1.267,1.267,0,0,0-1.245-.4l-.764.182a2.748,2.748,0,0,1-3.38-2.453l-.061-.785a1.243,1.243,0,0,0-.769-1.053l-.724-.3a2.748,2.748,0,0,1-1.29-3.973l.41-.674a1.259,1.259,0,0,0,0-1.3l-.41-.668a2.747,2.747,0,0,1,1.29-3.973l.724-.3a1.244,1.244,0,0,0,.769-1.059l.061-.783a2.755,2.755,0,0,1,3.38-2.455l.764.182a1.256,1.256,0,0,0,1.245-.4l.511-.6a2.747,2.747,0,0,1,4.18,0l.506.6a1.259,1.259,0,0,0,1.245.4l.764-.182a2.755,2.755,0,0,1,3.38,2.455l.061.783a1.244,1.244,0,0,0,.769,1.059l.724.3a2.747,2.747,0,0,1,1.29,3.973l-.41.668a1.259,1.259,0,0,0,0,1.3l.41.674a2.748,2.748,0,0,1-1.29,3.973l-.724.3a1.243,1.243,0,0,0-.769,1.053l-.061.785a2.748,2.748,0,0,1-3.38,2.453l-.764-.182a1.271,1.271,0,0,0-1.245.4l-.506.6a2.735,2.735,0,0,1-2.09.963A2.736,2.736,0,0,1,1254.15-20139.615Zm.627-1.574.511.6a1.244,1.244,0,0,0,1.9,0l.511-.6a2.756,2.756,0,0,1,2.732-.885l.764.182a1.245,1.245,0,0,0,1.533-1.113l.066-.785a2.738,2.738,0,0,1,1.685-2.322l.724-.3a1.246,1.246,0,0,0,.587-1.807l-.41-.668a2.759,2.759,0,0,1,0-2.869l.41-.674a1.248,1.248,0,0,0-.587-1.807l-.724-.3a2.753,2.753,0,0,1-1.685-2.324l-.066-.783a1.252,1.252,0,0,0-1.533-1.119l-.764.188a2.759,2.759,0,0,1-2.732-.891l-.511-.6a1.249,1.249,0,0,0-1.9,0l-.511.6a2.754,2.754,0,0,1-2.727.891l-.764-.187a1.254,1.254,0,0,0-1.538,1.119l-.061.783a2.777,2.777,0,0,1-1.69,2.324l-.724.3a1.251,1.251,0,0,0-.587,1.807l.41.674a2.759,2.759,0,0,1,0,2.869l-.41.668a1.25,1.25,0,0,0,.587,1.807l.724.3a2.761,2.761,0,0,1,1.69,2.322l.061.785a1.247,1.247,0,0,0,1.538,1.113l.764-.182a2.733,2.733,0,0,1,.638-.076A2.752,2.752,0,0,1,1254.777-20141.189Zm-2.07-5.607a.744.744,0,0,1,0-1.057l6-6a.746.746,0,0,1,1.058,0,.746.746,0,0,1,0,1.059l-6,6a.73.73,0,0,1-.527.221A.742.742,0,0,1,1252.708-20146.8Zm5.677-1.031a1,1,0,0,1,1-1,1,1,0,0,1,1,1,1,1,0,0,1-1,1A1,1,0,0,1,1258.385-20147.828Zm-6-5a1,1,0,0,1,1-1,1,1,0,0,1,1,1,1,1,0,0,1-1,1A1,1,0,0,1,1252.384-20152.828Z\" transform=\"translate(-9141.001 19591.826)\" fill=\"#fff\" stroke=\"#fff\" stroke-miterlimit=\"10\" stroke-width=\"0.5\"></path>\n              </g>\n            </svg>",
+    "sale_badge_color_scheme": "accent-2",
+    "page_width": "1200",
+    "social_twitter_link": "https://twitter.com/borosilandyou",
+    "social_facebook_link": "https://www.facebook.com/borosilandyou/",
+    "social_instagram_link": "https://www.instagram.com/borosilandyou/",
+    "social_youtube_link": "https://www.youtube.com/channel/UCwvJukI_hr0Zl-NZbl4VPpg",
+    "social_telegram_link": "https://t.me/myborosil",
+    "social_linkedin_link": "https://www.linkedin.com/company/borosillimited/mycompany/verification/",
+    "enable_hide_cod": true,
+    "hide_cod_price": "0",
+    "hide_cod_price_max": "2999",
+    "favicon": "shopify://shop_images/logo-1000px.jpg",
+    "enable_shipping_bar": true,
+    "free_shipping_price": 299,
+    "discount_1_price": 1999,
+    "discount_1_off": "Rs. 200",
+    "discount_2_price": 0,
+    "discount_2_off": "",
+    "before-free-shipping": "Get Fee Shipping on orders above ₹299/-",
+    "before-discount-1": "",
+    "before-discount-2": "",
+    "after-free-shipping": "",
+    "enable_upselling": true,
+    "upsell-title": "You might also like :",
+    "enable_cross_selling": false,
+    "empty_cart_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"118.52\" height=\"180.485\" viewbox=\"0 0 118.52 180.485\">   <g id=\"empty-cart\" transform=\"translate(-367.423 -287.165)\">     <g id=\"Ñëîé_2\" transform=\"translate(367.423 287.165)\">       <g id=\"Group_2380\" data-name=\"Group 2380\" transform=\"translate(24.358 0)\">         <path id=\"Path_3050\" data-name=\"Path 3050\" d=\"M524.546,344.546c0-11.225.478-22.691-1.386-33.809-1.344-8.024-4.441-16.367-11.977-20.466a28.942,28.942,0,0,0-13.3-3.094,34.048,34.048,0,0,0-13.983,2.274c-7.649,3.236-11.544,10.407-13.234,18.2-2.61,12.039-1.692,24.784-1.686,37.01,0,.811,1.579.575,1.579-.123,0-10.572-.507-21.28.814-31.8.966-7.7,3.207-16.147,10.042-20.7,3.747-2.494,8.292-3.437,12.723-3.682a31.943,31.943,0,0,1,14.177,2c7.652,3.243,11.244,10.776,12.856,18.505,2.435,11.677,1.8,23.938,1.793,35.793,0,.811,1.579.575,1.579-.12Z\" transform=\"translate(-468.82 -287.165)\" fill=\"#818182\"></path>       </g>       <path id=\"Path_3051\" data-name=\"Path 3051\" d=\"M396.07,542.807V414.84h14.59v13.967L405.3,551.328l-2.6-6.163Z\" transform=\"translate(-395.211 -373.6)\" fill=\"#dbdbdb\"></path>       <path id=\"Path_3052\" data-name=\"Path 3052\" d=\"M404.07,536.919V421a6.15,6.15,0,0,1,6.15-6.15h5.856v13.6l-5.055,119.333-1.492-6-3.094-1.3A3.861,3.861,0,0,1,404.07,536.919Z\" transform=\"translate(-400.627 -373.607)\" fill=\"#efefef\"></path>       <g id=\"Group_2381\" data-name=\"Group 2381\" transform=\"translate(0 40.943)\">         <path id=\"Path_3053\" data-name=\"Path 3053\" d=\"M395.048,541.974V415.961a6.724,6.724,0,0,0,0-1.728.884.884,0,0,1,0-.226l-1.292.5h12.429c.53,0,1.076.039,1.6,0a1.271,1.271,0,0,1,.413,0c.32.126-.174-.284-.123-.048a14.166,14.166,0,0,1,0,2.842v5.223c0,1.961.045,3.928,0,5.885-.145,6.331-.556,12.668-.83,19q-.882,20.151-1.764,40.305-.9,20.6-1.8,41.2-.32,7.277-.636,14.555-.1,2.34-.2,4.677a12.443,12.443,0,0,0-.107,2.445,1.78,1.78,0,0,1-.013.32l1.56-.417q-.678-1.613-1.36-3.227c-.326-.772-.656-2.406-1.282-2.984s-2.355-.837-3.165-1.124l-3.466-1.231c-.423-.152-1.55.488-1.476.513l3.165,1.124c.753.268,1.505.533,2.255.8a4.222,4.222,0,0,1,1.192.423c.53.481.959,2.3,1.276,3.04l1.3,3.082c.129.307,1.547-.091,1.56-.417l.649-14.871q.756-17.263,1.508-34.527.853-19.521,1.709-39.042.62-14.211,1.244-28.422c.258-5.879.249-11.728.249-17.617v-2.006c0-.084-.245-.087-.268-.087H394.78c-.252,0-1.292.136-1.292.5V540.436a5.737,5.737,0,0,0,0,1.728.757.757,0,0,1,0,.226C393.488,542.588,395.048,542.384,395.048,541.974Z\" transform=\"translate(-393.41 -413.92)\" fill=\"#818182\"></path>       </g>       <path id=\"Path_3056\" data-name=\"Path 3056\" d=\"M424.65,458.08c42.078,9.193,110.34,1.951,107.546,0V580.6s-35.725,5.365-107.546,0Z\" transform=\"translate(-414.559 -402.873)\" fill=\"#e3e3e3\"></path>       <path id=\"Path_3057\" data-name=\"Path 3057\" d=\"M439.562,458.775c59.86,6.9,98.964-.675,98.964-.675V573.592a4.344,4.344,0,0,1-4,4.332c-12.9,1.03-54.76,3.854-92.1.53A9.271,9.271,0,0,1,434,569.215V463.724A4.985,4.985,0,0,1,439.562,458.775Z\" transform=\"translate(-420.889 -402.886)\" fill=\"#fff\"></path>       <g id=\"Group_2385\" data-name=\"Group 2385\" transform=\"translate(9.246 54.811)\">         <path id=\"Path_3058\" data-name=\"Path 3058\" d=\"M422.389,457.62c19.009,2.778,38.348,3.4,57.538,3.35,14.774-.042,29.7-.317,44.4-1.987a37.755,37.755,0,0,0,5.278-.827c.255-.068,2.271-.652,1.554-1.2-.336-.255-1.509-.013-1.509.494v120.66a5.48,5.48,0,0,0,0,1.641.712.712,0,0,1,0,.22c.3-.191.6-.381.9-.575-9.813,1.47-19.881,1.793-29.778,2.1-12.42.385-24.856.333-37.275-.016q-12.331-.344-24.649-1.069-6.783-.392-13.557-.888c-.32-.023-1.544.091-1.631-.068-.045-.084.023-.258,0-.352a17.9,17.9,0,0,1,0-3.857V468.9c0-3.74.268-7.6,0-11.331-.013-.178,0-.358,0-.536,0-.375-1.56-.116-1.56.417v120.66a6.068,6.068,0,0,0,0,1.641.833.833,0,0,1,0,.22c0,.107.229.162.291.165,22.517,1.673,45.112,2.629,67.7,2.345,11.67-.148,23.367-.575,34.985-1.741,1.747-.174,3.5-.352,5.233-.611.271-.042.9-.2.9-.575V458.89a6.343,6.343,0,0,0,0-1.641.834.834,0,0,1,0-.22l-1.508.494c-.032-.023.333-.119.084-.113-.09,0-.756.191-1.085.255-1.677.326-3.385.507-5.081.688-5.882.623-11.8.962-17.7,1.237-17.475.814-35.021.879-52.5.026-10.046-.491-20.091-1.3-30.046-2.752C422.951,456.813,421.556,457.5,422.389,457.62Z\" transform=\"translate(-422.036 -456.852)\" fill=\"#818182\"></path>       </g>       <path id=\"Path_3059\" data-name=\"Path 3059\" d=\"M512.841,426.052l-24.287-9.736,14.235-4.228s-45.27-2.965-106.729,0l14.59,4.826-5.359,9.141C466.35,434.1,512.841,426.052,512.841,426.052Z\" transform=\"translate(-395.204 -370.844)\" fill=\"#e3e3e3\"></path>       <g id=\"Group_2386\" data-name=\"Group 2386\" transform=\"translate(0.086 39.467)\">         <path id=\"Path_3060\" data-name=\"Path 3060\" d=\"M511.848,424.706q-12.142-4.869-24.287-9.736c-.171.262-.342.523-.51.785q7.117-2.112,14.235-4.228c.5-.149,1.056-.8.194-.856-6.35-.414-12.72-.633-19.08-.83q-25.117-.775-50.257-.352-18.8.286-37.589,1.192c-.41.019-1.357.617-.578.875l14.59,4.826-.252-.455q-2.679,4.569-5.359,9.141a.3.3,0,0,0,.252.455,424.622,424.622,0,0,0,63.052,3.527,363.951,363.951,0,0,0,38.341-2.587c2.18-.271,4.361-.552,6.528-.927.749-.129,1.282-1.072.207-.888-6.321,1.092-12.756,1.693-19.142,2.226a408.761,408.761,0,0,1-50.044,1.011q-19.056-.751-37.989-3.224l.252.455q2.679-4.569,5.359-9.141c.145-.249-.032-.381-.252-.456l-14.59-4.826c-.194.291-.384.585-.578.875q31.377-1.507,62.813-1.279c12.517.09,25.033.365,37.537.956,2.061.1,4.125.2,6.182.333.065-.284.129-.568.194-.856q-7.117,2.113-14.235,4.228c-.2.061-1.082.556-.51.785q12.142,4.869,24.287,9.736C511.086,425.665,512.5,424.967,511.848,424.706Z\" transform=\"translate(-393.678 -409.35)\" fill=\"#818182\"></path>       </g>       <g id=\"Group_2388\" data-name=\"Group 2388\" transform=\"translate(92.58 40.709)\">         <path id=\"Path_3061\" data-name=\"Path 3061\" d=\"M696.645,414.84l-14.235,4.231,14.235,5.72Z\" transform=\"translate(-681.641 -414.309)\" fill=\"#efefef\"></path>         <g id=\"Group_2387\" data-name=\"Group 2387\">           <path id=\"Path_3062\" data-name=\"Path 3062\" d=\"M694.906,413.248q-7.117,2.112-14.235,4.228c-.455.136-1,.7-.333.966q7.117,2.863,14.235,5.724c.339.136,1.247-.084,1.247-.562v-9.952c0-.756-1.573-.481-1.573.149v9.952l1.247-.562q-7.117-2.863-14.235-5.724c-.11.323-.223.646-.333.966q7.117-2.112,14.235-4.228C696.1,413.93,695.859,412.964,694.906,413.248Z\" transform=\"translate(-680.028 -413.195)\" fill=\"#818182\"></path>         </g>       </g>       <g id=\"Group_2392\" data-name=\"Group 2392\" transform=\"translate(32.127 13.245)\">         <g id=\"Group_2389\" data-name=\"Group 2389\" transform=\"translate(2.323)\">           <path id=\"Path_3063\" data-name=\"Path 3063\" d=\"M555.76,385.152c0-11.289.5-22.843-1.437-34.016-1.4-8.056-4.619-16.315-12.323-20.211a29.937,29.937,0,0,0-13.508-2.755,34.326,34.326,0,0,0-13.473,2.39c-7.678,3.272-11.532,10.4-13.179,18.26-2.51,11.977-1.631,24.6-1.628,36.749,0,.249,1.56.029,1.56-.417,0-10.572-.507-21.28.814-31.8.972-7.736,3.269-16.3,10.133-20.879,3.9-2.6,8.6-3.482,13.208-3.644,4.794-.168,9.807.329,14.187,2.419,7.4,3.53,10.808,11.06,12.355,18.722,2.345,11.628,1.735,23.8,1.731,35.6,0,.249,1.56.029,1.56-.417Z\" transform=\"translate(-500.061 -328.17)\" fill=\"#818182\"></path>         </g>         <g id=\"Group_2390\" data-name=\"Group 2390\" transform=\"translate(0 56.828)\">           <path id=\"Path_3064\" data-name=\"Path 3064\" d=\"M497.728,507.039c-.048.911-.6,2.051-1.7,1.835a2.1,2.1,0,0,1-1.583-2.071c0-1,.749-2.054,1.851-1.718a2.169,2.169,0,0,1,1.428,2.077c.029.552,1.6.223,1.56-.417-.207-3.841-6.418-3.295-6.418.359,0,3.883,6.224,3.379,6.418-.236C499.33,506.179,497.76,506.47,497.728,507.039Z\" transform=\"translate(-492.87 -504.103)\" fill=\"#818182\"></path>         </g>         <g id=\"Group_2391\" data-name=\"Group 2391\" transform=\"translate(54.046 56.867)\">           <path id=\"Path_3065\" data-name=\"Path 3065\" d=\"M665.045,507.132c-.048.924-.578,2.067-1.689,1.857a2.153,2.153,0,0,1-1.592-2.112c0-1,.727-2.109,1.844-1.744a2.229,2.229,0,0,1,1.437,2.109c.026.478,1.592.165,1.56-.417-.2-3.808-6.4-3.224-6.415.365-.013,3.847,6.221,3.295,6.415-.258C666.634,506.315,665.071,506.628,665.045,507.132Z\" transform=\"translate(-660.19 -504.222)\" fill=\"#818182\"></path>         </g>       </g>       <g id=\"Group_2395\" data-name=\"Group 2395\" transform=\"translate(37.845 103.054)\">         <circle id=\"Ellipse_228\" data-name=\"Ellipse 228\" cx=\"3.304\" cy=\"3.304\" r=\"3.304\" transform=\"translate(0 8.296) rotate(-76.774)\" fill=\"#818182\"></circle>         <circle id=\"Ellipse_229\" data-name=\"Ellipse 229\" cx=\"3.304\" cy=\"3.304\" r=\"3.304\" transform=\"matrix(0.266, -0.964, 0.964, 0.266, 44.643, 6.371)\" fill=\"#818182\"></circle>         <g id=\"XMLID_198_\" transform=\"translate(3.432 24.389)\">           <path id=\"Path_3068\" data-name=\"Path 3068\" d=\"M522.7,691.583a28.845,28.845,0,0,1,12.74-7.729,32.5,32.5,0,0,1,25.569,3.094,23.129,23.129,0,0,1,4.49,3.224c.355.342,1.818-.233,1.457-.585-4.015-3.876-9.878-6.234-15.259-7.265a34.33,34.33,0,0,0-25.628,5.259,25.8,25.8,0,0,0-4.806,4.018c-.407.456,1.131.326,1.437-.016Z\" transform=\"translate(-521.199 -681.714)\" fill=\"#818182\"></path>         </g>       </g>       <g id=\"Group_2396\" data-name=\"Group 2396\" transform=\"translate(27.488 116.466)\">         <ellipse id=\"Ellipse_230\" data-name=\"Ellipse 230\" cx=\"4.412\" cy=\"6.076\" rx=\"4.412\" ry=\"6.076\" transform=\"translate(0 1.618)\" fill=\"#c1bcbc\"></ellipse>         <ellipse id=\"Ellipse_231\" data-name=\"Ellipse 231\" cx=\"4.412\" cy=\"6.076\" rx=\"4.412\" ry=\"6.076\" transform=\"translate(64.78)\" fill=\"#c1bcbc\"></ellipse>       </g>       <path id=\"Path_3069\" data-name=\"Path 3069\" d=\"M648.368,631.494a1.6,1.6,0,1,1-3.2,0c0-.882,1.6-3.724,1.6-3.724S648.368,630.612,648.368,631.494Z\" transform=\"translate(-563.849 -517.751)\" fill=\"#c1bcbc\"></path>     </g>   </g> </svg>",
+    "empty_cart_text": "Your Cart Looks A Little Empty!",
+    "empty_cart_subtext": "Start Shopping with Borosil",
+    "empty_cart_continue_shopping_text": "",
+    "empty_cart_col_image1": "shopify://shop_images/Home-page-circle-7.jpg",
+    "empty_cart_col_url1": "shopify://collections/stainless-steel-bottles",
+    "empty_cart_col_text1": "Steel Bottles",
+    "empty_cart_col_image2": "shopify://shop_images/Home-page-circle-6.jpg",
+    "empty_cart_col_url2": "shopify://collections/dinnersets",
+    "empty_cart_col_text2": "Dinner Set",
+    "empty_cart_col_image3": "shopify://shop_images/Home-page-circle-5.jpg",
+    "empty_cart_col_url3": "shopify://collections/lunchboxes",
+    "empty_cart_col_text3": "Lunch Boxes",
+    "empty_cart_col_image4": "shopify://shop_images/Home-page-circle-4.jpg",
+    "empty_cart_col_url4": "shopify://collections/deals",
+    "empty_cart_col_text4": "Deals",
+    "empty_cart_col_image5": "shopify://shop_images/Home-page-circle-3.jpg",
+    "empty_cart_col_url5": "shopify://collections/bowls-katoris",
+    "empty_cart_col_text5": "Bowls",
+    "empty_cart_col_image6": "shopify://shop_images/Home-page-circle-1.jpg",
+    "empty_cart_col_text6": "Gifting",
+    "offer_image_1": "shopify://shop_images/hdfc_logo.png",
+    "discount_code_1": "NISHANT1000",
+    "offer_image_2": "shopify://shop_images/industand.jpg",
+    "discount_code_2": "INDUS500",
+    "offer_image_3": "shopify://shop_images/mobikiwik.png",
+    "discount_code_3": "MOBI300",
+    "offer_image_4": "shopify://shop_images/uber.png",
+    "discount_code_4": "UBER100",
+    "offer_image_5": "shopify://shop_images/hdfc_logo.png",
+    "discount_code_5": "HDFC800",
+    "other_offer_image_1": "shopify://shop_images/mobikiwik.png",
+    "other_offer_image_2": "shopify://shop_images/uber.png",
+    "other_offer_image_3": "shopify://shop_images/industand.jpg",
+    "other_discount_code_3": "INDUS900",
+    "other_offer_image_4": "shopify://shop_images/hdfc_logo.png",
+    "other_discount_code_4": "HDFC400",
+    "other_offer_image_5": "shopify://shop_images/images.png",
+    "other_discount_code_5": "MOBIKWIK200",
+    "annoncement_text_1": "",
+    "annoncement_code_1": "",
+    "annoncement_code_1_link": "",
+    "annoncement_text_2": "",
+    "annoncement_code_2": "",
+    "annoncement_code_2_link": "",
+    "annoncement_text_3": "",
+    "annoncement_code_3": "",
+    "annoncement_code_3_link": "",
+    "annoncement_text_4": "Save up to 30% + Extra 5% on Appliances over ₹3000/-",
+    "annoncement_code_4": "",
+    "annoncement_code_4_link": "",
+    "annoncement_text_5": "Up to 25% Off + ₹500 Extra on Cookware Purchases Over ₹5000/-",
+    "annoncement_code_5": "",
+    "annoncement_code_5_link": "",
+    "annoncement_background": "#d9e255",
+    "annoncement_text_color": "#013564",
+    "annoncement_code_color": "#FF0C0C",
+    "show_Personalization": true,
+    "badge_color": "#fbc50a",
+    "enable_emoji": true,
+    "badge_text": "Personalise your bottle",
+    "not_available": "Sorry this item is not in stock currently, please try with another variant of this item.",
+    "curated_text": "",
+    "disclaimer_text": "Images on the website of a personalised bottle are only for reference purposes. Actual personalised product may differ.",
+    "custom_image1": "shopify://shop_images/Only-Prepaid.jpg",
+    "custom_image2": "shopify://shop_images/DELIVERY-WITHIN-7-8.jpg",
+    "custom_image3": "shopify://shop_images/NO-Cancellation.jpg",
+    "custom_image4": "shopify://shop_images/NO-RETURN-NO-REFUND.jpg",
+    "enable_customer_api": false,
+    "desktop_homepage_link": "https://myborosil.com/cdn/shop/files/Holi-2024-Desktop-Banner.gif?v=1710506105&width=1500",
+    "mobile_homepage_link": "https://myborosil.com/cdn/shop/files/Holi-2024-Mobile-Banner.gif?v=1710506153&width=550",
+    "checkout_header_image": "shopify://shop_images/checkout-page_5c72a02c-584a-486d-87c7-02b6f4bef8ae.jpg",
+    "checkout_logo_image": "shopify://shop_images/Rectangle_276.png",
+    "checkout_accent_color": "#013564",
+    "checkout_button_color": "#013564",
+    "enable_emojis_category": true,
+    "mid": "19g6il4fcd5rm",
+    "envType": "production",
+    "fbpixel": "518865122796969",
+    "priClr": "#013564",
+    "secClr": "#FFFFFF",
+    "goEnable": true,
+    "main-titile": "Checkout",
+    "sub-titile": "₹15  Discount on Prepaid Orders",
+    "goBuynowEnable": false,
+    "wizzy_is_lazy_init": "true",
+    "categories_link": "/",
+    "categories_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"28\" height=\"28\" viewbox=\"0 0 28 28\">\n              <g id=\"Group_334289\" data-name=\"Group 334289\" transform=\"translate(7827 572)\">\n                <rect id=\"Rectangle_114330\" data-name=\"Rectangle 114330\" width=\"28\" height=\"28\" transform=\"translate(-7827 -572)\" fill=\"none\"></rect>\n                <path id=\"Vector\" d=\"M2.75,1.5h4V0h-4ZM8,2.75v4H9.5v-4ZM6.75,8h-4V9.5h4ZM1.5,6.75v-4H0v4ZM2.75,8A1.25,1.25,0,0,1,1.5,6.75H0A2.75,2.75,0,0,0,2.75,9.5ZM8,6.75A1.25,1.25,0,0,1,6.75,8V9.5A2.75,2.75,0,0,0,9.5,6.75ZM6.75,1.5A1.25,1.25,0,0,1,8,2.75H9.5A2.75,2.75,0,0,0,6.75,0ZM2.75,0A2.75,2.75,0,0,0,0,2.75H1.5A1.25,1.25,0,0,1,2.75,1.5ZM20,4.75A3.25,3.25,0,0,1,16.75,8V9.5A4.75,4.75,0,0,0,21.5,4.75ZM16.75,8A3.25,3.25,0,0,1,13.5,4.75H12A4.75,4.75,0,0,0,16.75,9.5ZM13.5,4.75A3.25,3.25,0,0,1,16.75,1.5V0A4.75,4.75,0,0,0,12,4.75ZM16.75,1.5A3.25,3.25,0,0,1,20,4.75h1.5A4.75,4.75,0,0,0,16.75,0ZM8,16.75A3.25,3.25,0,0,1,4.75,20v1.5A4.75,4.75,0,0,0,9.5,16.75ZM4.75,20A3.25,3.25,0,0,1,1.5,16.75H0A4.75,4.75,0,0,0,4.75,21.5ZM1.5,16.75A3.25,3.25,0,0,1,4.75,13.5V12A4.75,4.75,0,0,0,0,16.75ZM4.75,13.5A3.25,3.25,0,0,1,8,16.75H9.5A4.75,4.75,0,0,0,4.75,12Zm10,0h4V12h-4ZM20,14.75v4h1.5v-4ZM18.75,20h-4v1.5h4ZM13.5,18.75v-4H12v4ZM14.75,20a1.25,1.25,0,0,1-1.25-1.25H12a2.75,2.75,0,0,0,2.75,2.75ZM20,18.75A1.25,1.25,0,0,1,18.75,20v1.5a2.75,2.75,0,0,0,2.75-2.75ZM18.75,13.5A1.25,1.25,0,0,1,20,14.75h1.5A2.75,2.75,0,0,0,18.75,12Zm-4-1.5A2.75,2.75,0,0,0,12,14.75h1.5a1.25,1.25,0,0,1,1.25-1.25Z\" transform=\"translate(-7824 -569.25)\" fill=\"#fff\" stroke=\"#fff\" stroke-width=\"0.4\"></path>\n              </g>\n            </svg>",
+    "prepaid_image": "shopify://shop_images/2_1.jpg",
+    "noreturn_image": "shopify://shop_images/1_1.jpg",
+    "wizzy_theme": "Default",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "f1cc79d7-43e3-4efa-a4d2-b62f3a972443": {
+            "type": "announcement",
+            "settings": {
+              "text": "",
+              "color_scheme": "accent-2",
+              "link": "https://myborosil.com/pages/payment-policy"
+            }
+          }
+        },
+        "block_order": [
+          "f1cc79d7-43e3-4efa-a4d2-b62f3a972443"
+        ],
+        "settings": {
+        }
+      },
+      "header": {
+        "type": "header",
+        "custom_css": [
+
+        ],
+        "settings": {
+          "offer_announcement": "Save ₹100 on 1st purchase with code GETFIRST! Min. order: ₹1299",
+          "offer_announcement_url": "",
+          "offer_announcement2": "",
+          "offer_announcement2_url": "shopify://collections/deals",
+          "offer_announcement3": "",
+          "offer_announcement3_url": "#",
+          "menu": "navigation-menu",
+          "language_switcher": "languages",
+          "support": "support",
+          "accounts": "account",
+          "wishlist_url": "https://google.com"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "5de35336-5e32-417e-8679-c10145d0bef9": {
+            "type": "footer_item",
+            "settings": {
+              "menulist_heading1": "Help & Info",
+              "link_list": "help-info",
+              "menulist_heading2": "",
+              "link_list2": "",
+              "subheading": "",
+              "description1": "",
+              "description2": "",
+              "social_icons": false
+            }
+          },
+          "f6e480f2-a44d-4001-8621-49f05fb04a37": {
+            "type": "footer_item",
+            "settings": {
+              "menulist_heading1": "Support & Service",
+              "link_list": "support-and-service",
+              "menulist_heading2": "",
+              "link_list2": "",
+              "subheading": "",
+              "description1": "",
+              "description2": "",
+              "social_icons": false
+            }
+          },
+          "a3bb9852-67a1-4d43-aa55-a4ee41895819": {
+            "type": "footer_item",
+            "settings": {
+              "menulist_heading1": "Contact Us",
+              "link_list": "",
+              "menulist_heading2": "",
+              "link_list2": "",
+              "subheading": "",
+              "description1": "<p>Borosil Limited<br/>1101, Parinee Crescenzo, G Block, BKC,  Bandra Kurla Complex, Bandra East, Mumbai, Maharashtra 400051<br/>CIN Number : L36100MH2010PLC292722</p>",
+              "description2": "<p>For any customer complaints please connect with us ;</p><p>Call: <strong>18002106520</strong><br/>Email: myborosil@borosil.com<br/>WhatsApp Chat: 7208487334<br/>Mon-Sun(9:30am - 6:30pm)</p>",
+              "social_icons": false
+            }
+          },
+          "f62695e4-fbc0-4b59-8271-ee5adb829f8d": {
+            "type": "footer_item",
+            "settings": {
+              "menulist_heading1": "CONNECT WITH US",
+              "link_list": "",
+              "menulist_heading2": "ABOUT US",
+              "link_list2": "about-us",
+              "subheading": "",
+              "description1": "",
+              "description2": "",
+              "social_icons": true
+            }
+          },
+          "79026c12-4d14-43fd-88cf-4d46be7f7f15": {
+            "type": "footer_item",
+            "settings": {
+              "menulist_heading1": "Top Categories",
+              "link_list": "top-categories",
+              "menulist_heading2": "",
+              "link_list2": "",
+              "subheading": "",
+              "description1": "",
+              "description2": "",
+              "social_icons": false
+            }
+          }
+        },
+        "block_order": [
+          "5de35336-5e32-417e-8679-c10145d0bef9",
+          "f6e480f2-a44d-4001-8621-49f05fb04a37",
+          "a3bb9852-67a1-4d43-aa55-a4ee41895819",
+          "f62695e4-fbc0-4b59-8271-ee5adb829f8d",
+          "79026c12-4d14-43fd-88cf-4d46be7f7f15"
+        ],
+        "custom_css": [
+
+        ],
+        "settings": {
+          "caution_text": "",
+          "copyrights_text": "Copyright © 2011 - 2024 myborosil.com All rights reserved."
+        }
+      },
+      "megamenu-1": {
+        "type": "megamenu-1",
+        "blocks": {
+          "4f86d70d-2e3e-4624-8ce6-83f42ca225ba": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Kitchen Appliances",
+              "menu_link": "shopify://collections/kitchen-appliances",
+              "linklist": "kitchen-appliances"
+            }
+          },
+          "a36d80ee-b350-4140-890d-8fcdecc9c028": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Cooktops",
+              "menu_link": "shopify://collections/cooktops",
+              "linklist": "cooktops"
+            }
+          },
+          "2c1591e8-f193-4982-a8b2-bfba9229d2c2": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Home Care",
+              "menu_link": "shopify://collections/home-care",
+              "linklist": "home-care-appliances"
+            }
+          }
+        },
+        "block_order": [
+          "4f86d70d-2e3e-4624-8ce6-83f42ca225ba",
+          "a36d80ee-b350-4140-890d-8fcdecc9c028",
+          "2c1591e8-f193-4982-a8b2-bfba9229d2c2"
+        ],
+        "settings": {
+          "parent": "APPLIANCES",
+          "image": "shopify://shop_images/Applinces_8cece6a0-4eb2-4704-8de4-e6c710ef91ad.jpg",
+          "mobile_image": "shopify://shop_images/Appliances_5904f725-76b9-4250-93d2-a61a4e8f861f.jpg",
+          "image_title": "SHOP ALL APPLIANCES",
+          "image_button_link": "shopify://collections/appliances",
+          "mobile_menu_color_picker": "#811b31"
+        }
+      },
+      "megamenu-2": {
+        "type": "megamenu-2",
+        "blocks": {
+          "2cee1f82-0579-43f7-85bd-e55159b62400": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Shop Sets",
+              "menu_link": "shopify://collections/shop-sets",
+              "linklist": "shop-sets"
+            }
+          },
+          "7f0c21e4-bddf-4146-9f7f-47b374a2515c": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Shop by Usage",
+              "menu_link": "shopify://collections/shop-by-usage",
+              "linklist": "shop-by-usage"
+            }
+          }
+        },
+        "block_order": [
+          "2cee1f82-0579-43f7-85bd-e55159b62400",
+          "7f0c21e4-bddf-4146-9f7f-47b374a2515c"
+        ],
+        "settings": {
+          "parent": "DINNERWARE",
+          "image": "shopify://shop_images/Larah_menu_banner_website.png",
+          "mobile_image": "shopify://shop_images/Dinnerset-130-x-93_Mobile.jpg",
+          "image_title": "Shop All Dinnerware",
+          "image_button_link": "https://myborosil.com/collections/shop-sets",
+          "mobile_menu_color_picker": "#9293d3"
+        }
+      },
+      "megamenu-3": {
+        "type": "megamenu-3",
+        "blocks": {
+          "569268e3-2a5c-4124-83cd-7ca6c13b1c60": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Shop by Type",
+              "menu_link": "shopify://collections/serveware-type",
+              "linklist": "serveware-type"
+            }
+          },
+          "b009ed3c-1c96-4fa2-b90e-b1904d154b9e": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Shop by Usage",
+              "menu_link": "shopify://collections/shop-by-usage-1",
+              "linklist": "shop-by-usage-1"
+            }
+          }
+        },
+        "block_order": [
+          "569268e3-2a5c-4124-83cd-7ca6c13b1c60",
+          "b009ed3c-1c96-4fa2-b90e-b1904d154b9e"
+        ],
+        "settings": {
+          "parent": "SERVEWARE",
+          "image": "shopify://shop_images/Serveware_ec5b5c69-29e2-4393-8e85-b816bf9624d2.jpg",
+          "mobile_image": "shopify://shop_images/Serveware_2.jpg",
+          "image_title": "SHOP ALL SERVEWARE",
+          "image_button_link": "https://myborosil.com/collections/serveware-type",
+          "mobile_menu_color_picker": "#b6d700"
+        }
+      },
+      "megamenu-4": {
+        "type": "megamenu-4",
+        "blocks": {
+          "02d066ac-84a5-41fc-ac90-69f7ab6bef35": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Shop By Type",
+              "menu_link": "shopify://collections/storage-type",
+              "linklist": "storage-type"
+            }
+          },
+          "974250b7-dc19-46c5-9350-913755b0ec5c": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Shop by Collection",
+              "menu_link": "shopify://collections/shop-by-collection-storage",
+              "linklist": "shop-by-collection-2"
+            }
+          }
+        },
+        "block_order": [
+          "02d066ac-84a5-41fc-ac90-69f7ab6bef35",
+          "974250b7-dc19-46c5-9350-913755b0ec5c"
+        ],
+        "settings": {
+          "parent": "storage",
+          "image": "shopify://shop_images/Storage_1e8f7ce7-198e-4813-890f-e19080dec286.jpg",
+          "mobile_image": "shopify://shop_images/Storage_6fcfe239-4f8b-4ccd-9598-8d514660f397.jpg",
+          "image_title": "Shop All Storage Containers",
+          "image_button_link": "shopify://collections/storage-type",
+          "mobile_menu_color_picker": "#cc67a9"
+        }
+      },
+      "megamenu-5": {
+        "type": "megamenu-5",
+        "blocks": {
+          "f683d429-016d-4acc-adaf-c5231286d92e": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Tumblers & Jugs",
+              "menu_link": "shopify://collections/tumblers-jugs",
+              "linklist": "tumblers-jugs"
+            }
+          },
+          "4d26c412-61b0-4a7a-9d00-33dc982878c4": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Tea & Coffee",
+              "menu_link": "shopify://collections/tea-coffee",
+              "linklist": "tea-coffee"
+            }
+          },
+          "0fcdb251-bad0-4611-93a0-4e07320ec715": {
+            "type": "menu-with-image",
+            "disabled": true,
+            "settings": {
+              "menu_title": "Bottles",
+              "menu_link": "shopify://collections/shop-by-type-1",
+              "linklist": "shop-by-type-bottle"
+            }
+          }
+        },
+        "block_order": [
+          "f683d429-016d-4acc-adaf-c5231286d92e",
+          "4d26c412-61b0-4a7a-9d00-33dc982878c4",
+          "0fcdb251-bad0-4611-93a0-4e07320ec715"
+        ],
+        "settings": {
+          "parent": "Drinkware",
+          "image": "shopify://shop_images/Drinkware_c7370eb4-bb1c-4536-be1e-18e77117d2c6.jpg",
+          "mobile_image": "shopify://shop_images/Glassware.png",
+          "image_title": "Shop All Drinkware",
+          "image_button_link": "shopify://collections/drinkware",
+          "mobile_menu_color_picker": "#e13925"
+        }
+      },
+      "megamenu-6": {
+        "type": "megamenu-6",
+        "blocks": {
+          "48be703e-ce1d-476e-8f19-9c9d7edbf971": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "",
+              "menu_link": "shopify://collections/shop-by-type-1",
+              "linklist": "shop-by-type-bottle"
+            }
+          },
+          "486041f4-e963-4f13-b195-9cfa5c98884c": {
+            "type": "menu-with-image",
+            "disabled": true,
+            "settings": {
+              "menu_title": "Shop by Type",
+              "menu_link": "shopify://collections/shop-by-type-bottles",
+              "linklist": "shop-by-type-bottle-1"
+            }
+          }
+        },
+        "block_order": [
+          "48be703e-ce1d-476e-8f19-9c9d7edbf971",
+          "486041f4-e963-4f13-b195-9cfa5c98884c"
+        ],
+        "settings": {
+          "parent": "bottles",
+          "image": "shopify://shop_images/Bottles_bb15b385-fa3d-41dd-8ef0-28e7e0344d36.jpg",
+          "mobile_image": "shopify://shop_images/Bottles_5e54e4a0-5fba-4302-9bad-a0741ff43259.jpg",
+          "image_title": "SHOP ALL BOTTLES",
+          "image_button_link": "https://myborosil.com/collections/shop-by-type-1",
+          "mobile_menu_color_picker": "#06b5c4"
+        }
+      },
+      "megamenu-7": {
+        "type": "megamenu-7",
+        "blocks": {
+          "ae0f6f2c-9712-4b03-bc58-74083d0c81ad": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Shop by Material",
+              "menu_link": "shopify://collections/lunchboxes",
+              "linklist": "lunchboxes-type"
+            }
+          },
+          "376793c5-2e80-4cc9-a2f5-ed8453357c62": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Shop by Collection",
+              "menu_link": "shopify://collections/shop-by-collection-1",
+              "linklist": "shop-by-collection-1"
+            }
+          },
+          "67491964-88d5-42da-ba71-48b82d5e00d8": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Shop by Type",
+              "menu_link": "shopify://collections/shop-by-type-2",
+              "linklist": "shop-by-type-1"
+            }
+          }
+        },
+        "block_order": [
+          "ae0f6f2c-9712-4b03-bc58-74083d0c81ad",
+          "376793c5-2e80-4cc9-a2f5-ed8453357c62",
+          "67491964-88d5-42da-ba71-48b82d5e00d8"
+        ],
+        "settings": {
+          "parent": "lunchboxes",
+          "image": "shopify://shop_images/lunchboxes_6097ebbb-43c7-4e53-ada5-c0f39c1a02ae.jpg",
+          "mobile_image": "shopify://shop_images/Lunchboxes_d75efe04-6ccd-4c3b-972c-dfff784b6bf4.jpg",
+          "image_title": "SHOP ALL LUNCHBOXES",
+          "image_button_link": "https://myborosil.com/collections/shop-by-collection-1",
+          "mobile_menu_color_picker": "#f90078"
+        }
+      },
+      "megamenu-8": {
+        "type": "megamenu-8",
+        "blocks": {
+          "8765d818-7905-45f1-837e-ead79a412e1b": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Shop by Type",
+              "menu_link": "shopify://collections/shop-by-type",
+              "linklist": "shop-by-type"
+            }
+          },
+          "37665cd3-6afb-45b9-a475-6d45fea1ccab": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Shop by Material",
+              "menu_link": "shopify://collections/shop-by-material",
+              "linklist": "shop-by-material"
+            }
+          },
+          "ec399116-601a-4352-82c2-39cda1001411": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Shop by Collection",
+              "menu_link": "shopify://collections/shop-by-collection",
+              "linklist": "shop-by-collection"
+            }
+          }
+        },
+        "block_order": [
+          "8765d818-7905-45f1-837e-ead79a412e1b",
+          "37665cd3-6afb-45b9-a475-6d45fea1ccab",
+          "ec399116-601a-4352-82c2-39cda1001411"
+        ],
+        "settings": {
+          "parent": "cookware",
+          "image": "shopify://shop_images/Coockware-Desktop.png",
+          "mobile_image": "shopify://shop_images/Coockware-Mobile_1.png",
+          "image_title": "",
+          "image_button_link": "",
+          "mobile_menu_color_picker": "#ffd700"
+        }
+      },
+      "megamenu-9": {
+        "type": "megamenu-9",
+        "blocks": {
+          "840355f7-6915-4057-8b0a-18487f2c6dea": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "Diyas",
+              "menu_link": "shopify://collections/diya-diffusers",
+              "linklist": "diya-diffusers"
+            }
+          },
+          "71643002-ce36-405b-9f7e-8b35df93e3ce": {
+            "type": "menu-with-image",
+            "settings": {
+              "menu_title": "",
+              "menu_link": "shopify://collections/vases",
+              "linklist": "vases"
+            }
+          }
+        },
+        "block_order": [
+          "840355f7-6915-4057-8b0a-18487f2c6dea",
+          "71643002-ce36-405b-9f7e-8b35df93e3ce"
+        ],
+        "settings": {
+          "parent": "Home Decor",
+          "image": "shopify://shop_images/Home-Decor_ba6d7315-1e3a-40cc-bfa5-495886c6fb08.jpg",
+          "mobile_image": "shopify://shop_images/Diya.png",
+          "image_title": "",
+          "image_button_link": "",
+          "mobile_menu_color_picker": "#f57d23"
+        }
+      },
+      "megamenu-10": {
+        "type": "megamenu-10",
+        "settings": {
+          "parent": "Blogs",
+          "image_title": "",
+          "image_button_link": "",
+          "mobile_menu_color_picker": "#1e63b3"
+        }
+      },
+      "product-registration-block": {
+        "type": "product-registration-block",
+        "blocks": {
+          "24e8290e-62c1-4f90-b81e-f31bdabc92e8": {
+            "type": "Blocks",
+            "settings": {
+              "image": "shopify://shop_images/product-registration-3_1024x1024_028832a1-4ffd-4da1-b2a3-08cb3eda364c.jpg",
+              "title": "Get Reward Points!",
+              "description": "By registering your Borosil product, you will receive reward points that can be redeemed towards a purchase on <a class=\"product-reg-email\">www.myborosil.com</a>"
+            }
+          },
+          "684faab8-8545-49d4-9d1e-7f859ee39dc8": {
+            "type": "Blocks",
+            "settings": {
+              "image": "shopify://shop_images/product-registration-2_1024x1024_0ac23343-0c65-467c-93d9-12f3fb4c11df.jpg",
+              "title": "Get Special Offers!",
+              "description": "Registered members get access to sneak previews and special deals on new product launches, and you even get a birthday surprise!"
+            }
+          },
+          "8b470c6f-aaa2-4c9e-a05b-e0225a70945c": {
+            "type": "Blocks",
+            "settings": {
+              "image": "shopify://shop_images/product-registration-3_1024x1024_028832a1-4ffd-4da1-b2a3-08cb3eda364c.jpg",
+              "title": "Faster Support & Service!",
+              "description": "Registering your product will allow you to avail of customer service easier and faster."
+            }
+          }
+        },
+        "block_order": [
+          "24e8290e-62c1-4f90-b81e-f31bdabc92e8",
+          "684faab8-8545-49d4-9d1e-7f859ee39dc8",
+          "8b470c6f-aaa2-4c9e-a05b-e0225a70945c"
+        ],
+        "settings": {
+          "heading": "PRODUCT REGISTRATION",
+          "description": "If you have bought your product from our website, it is already registered with us! If you shopped offline or bought it off another website, please register your product here in 1 simple step for online warranty and other benefits",
+          "reg_btn_txt": "REGISTER YOUR PRODUCT"
+        }
+      },
+      "product-registration-form": {
+        "type": "product-registration-form",
+        "settings": {
+        }
+      },
+      "marmeto-discount-code": {
+        "type": "marmeto-discount-code",
+        "blocks": {
+          "d61522cf-701e-4f1c-b86c-d42eb547c034": {
+            "type": "text",
+            "disabled": true,
+            "settings": {
+              "discount_code": "EXTRA50",
+              "discount_label": "Flat ₹50 Off",
+              "discount_sub_text": "Use Code EXTRA50 &amp; Get additional ₹150 Off on minimum purchase of Rs. 1499/-",
+              "discount_details_btn_text": "",
+              "discount_details_title": "",
+              "discount_details": ""
+            }
+          },
+          "14e42bf3-0aae-48f0-858c-2a5cd059e973": {
+            "type": "text",
+            "disabled": true,
+            "settings": {
+              "discount_code": "EXTRA100",
+              "discount_label": "Flat ₹100 Off",
+              "discount_sub_text": "Use Code EXTRA100 &amp; Get additional ₹100 Off on minimum purchase of ₹2499/-",
+              "discount_details_btn_text": "",
+              "discount_details_title": "",
+              "discount_details": ""
+            }
+          },
+          "98e30cca-e178-4252-8c39-3e5582246c3e": {
+            "type": "text",
+            "disabled": true,
+            "settings": {
+              "discount_code": "EXTRA150",
+              "discount_label": "Flat ₹150 Off",
+              "discount_sub_text": "Use Code EXTRA150 &amp; Get additional ₹150 Off on minimum purchase of ₹2999/-",
+              "discount_details_btn_text": "",
+              "discount_details_title": "",
+              "discount_details": ""
+            }
+          },
+          "c854ebf4-48e7-44af-8b19-7ebcfd2a6d33": {
+            "type": "text",
+            "disabled": true,
+            "settings": {
+              "discount_code": "EXTRA200",
+              "discount_label": "Flat ₹200 Off",
+              "discount_sub_text": "Use Code EXTRA200 &amp; Get additional ₹200 Off on minimum purchase of ₹3999/-",
+              "discount_details_btn_text": "",
+              "discount_details_title": "",
+              "discount_details": ""
+            }
+          },
+          "a8ce8e50-535a-4f3b-a55b-71cf60ed506e": {
+            "type": "text",
+            "disabled": true,
+            "settings": {
+              "discount_code": "EXTRA300",
+              "discount_label": "Get ₹300 Off",
+              "discount_sub_text": "Use Code EXTRA300 &amp; Get additional ₹300 Off on minimum purchase of ₹4999/-",
+              "discount_details_btn_text": "",
+              "discount_details_title": "",
+              "discount_details": ""
+            }
+          }
+        },
+        "block_order": [
+          "d61522cf-701e-4f1c-b86c-d42eb547c034",
+          "14e42bf3-0aae-48f0-858c-2a5cd059e973",
+          "98e30cca-e178-4252-8c39-3e5582246c3e",
+          "c854ebf4-48e7-44af-8b19-7ebcfd2a6d33",
+          "a8ce8e50-535a-4f3b-a55b-71cf60ed506e"
+        ],
+        "settings": {
+          "enable_section": true,
+          "discount_cta_color": "#d9e255"
+        }
+      },
+      "megamenu-11": {
+        "type": "megamenu-11",
+        "settings": {
+          "parent": "Deals",
+          "image_title": "",
+          "image_button_link": "shopify://collections/deals",
+          "mobile_menu_color_picker": "#ffffff"
+        }
+      },
+      "homepage-product-preview": {
+        "type": "homepage-product-preview",
+        "blocks": {
+          "90fdd7b3-923d-42c7-ad85-16aeb9429e40": {
+            "type": "Blocks",
+            "settings": {
+              "link": "https://myborosil.com/collections/make-your-own-dinner-set?utm_source=homepage&utm_medium=banner&utm_campaign=mmods&utm_id=stripbanner",
+              "image": "shopify://shop_images/Dinner-Set-Icon.png",
+              "text": "Build Your Dinnerset"
+            }
+          },
+          "c62c6f0e-d827-4142-804f-bf73d114103b": {
+            "type": "Blocks",
+            "settings": {
+              "link": "shopify://collections/deals",
+              "image": "shopify://shop_images/Super-deals-Icon.png",
+              "text": "Super Deals"
+            }
+          },
+          "4945f42f-d4ad-4ebd-9dfd-854b452acddf": {
+            "type": "Blocks",
+            "settings": {
+              "link": "shopify://collections/personalise-bottles",
+              "image": "shopify://shop_images/Trek-Black_2.gif",
+              "text": "Personalised Bottles"
+            }
+          },
+          "134558be-e932-4009-aa31-73fdff72fd9b": {
+            "type": "Blocks",
+            "settings": {
+              "link": "shopify://collections/glass-personalise",
+              "image": "shopify://shop_images/glass_personalisation.png",
+              "text": "Personalise Jars & Glass"
+            }
+          },
+          "f7ab9b27-5dd9-4892-86e0-2f3c1b201928": {
+            "type": "Blocks",
+            "settings": {
+              "link": "https://myborosil.com/pages/larah-page",
+              "image": "shopify://shop_images/logo-80-x-80-px_7f550d1d-bc20-4f7c-90a8-2883e12e8670.jpg",
+              "text": "Opalware"
+            }
+          },
+          "fe870b47-8f52-47e9-90e1-b876c2a5084f": {
+            "type": "Blocks",
+            "settings": {
+              "link": "shopify://collections/exclusive",
+              "image": "shopify://shop_images/Screenshot_2022-11-04_135450.png",
+              "text": "MyBorosil Exclusive"
+            }
+          },
+          "474519f8-1b98-4491-bc47-2b8eb416b779": {
+            "type": "Blocks",
+            "disabled": true,
+            "settings": {
+              "link": "shopify://collections/gift-card",
+              "image": "shopify://shop_images/Gift-card-Icon.png",
+              "text": "Gift Card"
+            }
+          },
+          "dd7812d4-cb8c-4885-b2ad-55f0d008adaa": {
+            "type": "Blocks",
+            "disabled": true,
+            "settings": {
+              "link": "shopify://pages/bundle",
+              "image": "shopify://shop_images/icon-3_3.png",
+              "text": "Combo"
+            }
+          },
+          "8f2b6d2e-f7c0-4c41-a924-6d73b995c274": {
+            "type": "Blocks",
+            "disabled": true,
+            "settings": {
+              "link": "shopify://collections/fathers-day-1",
+              "image": "shopify://shop_images/Fathers-day-icon-1.png",
+              "text": "Father's Day"
+            }
+          },
+          "86aaa779-7551-4b62-8604-eed3c0abe4f0": {
+            "type": "Blocks",
+            "settings": {
+              "link": "shopify://blogs/product-blog",
+              "image": "shopify://shop_images/blogs.jpg",
+              "text": "Blogs"
+            }
+          }
+        },
+        "block_order": [
+          "90fdd7b3-923d-42c7-ad85-16aeb9429e40",
+          "c62c6f0e-d827-4142-804f-bf73d114103b",
+          "4945f42f-d4ad-4ebd-9dfd-854b452acddf",
+          "134558be-e932-4009-aa31-73fdff72fd9b",
+          "f7ab9b27-5dd9-4892-86e0-2f3c1b201928",
+          "fe870b47-8f52-47e9-90e1-b876c2a5084f",
+          "474519f8-1b98-4491-bc47-2b8eb416b779",
+          "dd7812d4-cb8c-4885-b2ad-55f0d008adaa",
+          "8f2b6d2e-f7c0-4c41-a924-6d73b995c274",
+          "86aaa779-7551-4b62-8604-eed3c0abe4f0"
+        ],
+        "custom_css": [
+          "img {width: 60px; height: 60px; box-shadow: 0px 1.5px 2.2px 1px rgba(0, 3, 0, 0.5);}",
+          "* {border: none; margin-top: 5px; padding-right: 0px; padding-left: 0px; padding-top: 0px; padding-bottom: 0px; font-size: 13px;}"
+        ],
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ],
+    "blocks": {
+      "12120936241911852800": {
+        "type": "shopify://apps/judge-me-product-reviews/blocks/reviews_tab/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {
+          "position": "right"
+        }
+      },
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-product-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "7496264633453945898": {
+        "type": "shopify://apps/wizzy-search-filters/blocks/wizzy-head-assets/ae8fbc14-43c6-4ce2-b5bc-819d4b1052f6",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "14254450603262595132": {
+        "type": "shopify://apps/wizzy-search-filters/blocks/wizzy-body-assets/ae8fbc14-43c6-4ce2-b5bc-819d4b1052f6",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "15683396631634586217": {
+        "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
+        "disabled": true,
+        "settings": {
+          "button_color": "#000000",
+          "button_icon": "chat_bubble",
+          "button_text": "chat_with_us",
+          "button_horizontal_position": "bottom_right",
+          "button_vertical_position": "lowest",
+          "greeting_message": "👋 Hi, message us with any questions. We're happy to help!"
+        }
+      },
+      "18281310450600262962": {
+        "type": "shopify://apps/clevertap/blocks/app-embed/2566991a-cd89-49d8-997d-74717582b9ed",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "11905432258600982856": {
+        "type": "shopify://apps/quinn-shoppable-videos/blocks/app-embed/150d2781-732b-4020-a9fb-1368e974e6bb",
+        "disabled": false,
+        "settings": {
+          "custom_swatch_code": "<script></script>"
+        }
+      },
+      "4862092811054642477": {
+        "type": "shopify://apps/wizzy-search-filters/blocks/wizzy-featuredstoryview-assets/ae8fbc14-43c6-4ce2-b5bc-819d4b1052f6",
+        "disabled": true,
+        "settings": {
+        }
+      },
+      "13182238052301688732": {
+        "type": "shopify://apps/glood-product-recommendations/blocks/app-embed/6e79d991-1504-45bb-88e3-1fb55a4f26cd",
+        "disabled": false,
+        "settings": {
+          "disable-rk-styles": false,
+          "add-glide-init-timeouts": false,
+          "enable-design-mode-preview": false
+        }
+      }
+    }
+  }
+}

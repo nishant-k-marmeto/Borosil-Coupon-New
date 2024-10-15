@@ -1,0 +1,243 @@
+<style>
+  .field__input[name="checkout[shipping_address][zip]"]:read-only{
+    background: #efefef;
+    cursor: not-allowed;
+  }
+  .field__input[readonly]{
+    background: #efefef;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  
+  
+  
+  
+  
+
+$( document ).ready(function() {
+$('#checkout_shipping_address_zip').attr('type','number');
+
+/*====================Retrieving Sheet Data=====================*/
+  var sheetData = undefined;
+
+  $.ajax({
+    url: "https://sheets.googleapis.com/v4/spreadsheets/1NxFz8SGVicsxUKS15RA0PWftbswIeAq41NaPpes-zUk/values/B2C_LM_Pincodes?key=AIzaSyDB0ZzJ4T9SHPsFoddOHkRdr7sXG9LyK7s",
+    dataType: "json",
+    success: function(data){
+      sheetData = data.values;
+      $('body').trigger('sheet_ready');        
+    }
+  });
+
+ /*====================Checking Pin In Sheet===================*/
+
+  function checkInSheet(pincode) {  
+    let result = "NA";
+    let availability = "";
+    for(let i=0; i<sheetData.length; i++){
+      if(!sheetData[i] || !sheetData[i].length) {
+        continue;
+      }
+      
+      else if(sheetData[i]) {
+       
+        let Available_pincode = sheetData[i][0];
+        if(Available_pincode.indexOf(pincode) != -1){
+          result = "OP";
+          availability = "Yes";
+          break; 
+        }
+
+        if(availability) {
+          availability = availability;
+        } else {
+          availability = "";
+        }
+      }
+    }    
+    return {result: result, availability: availability};  
+  }
+
+//Checking Pincode in Product Page
+
+    var $input = $('#checkout_shipping_address_zip');
+    var $inputValue, 
+        $cod, 
+        $date,
+        $fromDate,
+        $toDate,
+        $sellFromDate,
+        $sellToDate,
+        $deliverDate, 
+        $addDays,
+        $currentTime;
+
+    //Allow only number
+      $input.keyup(function(){
+        var $self = $(this);
+        var $removedText = $self.val().replace(/\D/, '').slice(0, 6);
+        $self.val($removedText);                 
+      });
+
+      //Restrict Paste
+      $input.on("paste",function(e) {
+        e.preventDefault();
+      });
+  
+
+      $input.on('change', function() {
+        $('#error-for-zip').show(); 
+        $DeliveryText = $('#error-for-zip');        
+        $inputValue = $input.val();
+
+        if($inputValue.length == 6) {
+            let $response = checkInSheet($inputValue);
+            let $result = $response.result;
+            let $days = $response.availability;
+            if($days){
+              $('#error-for-zip').hide(); 
+              localStorage.setItem("store_Pincode", $inputValue);
+            }
+            else {
+              $('#error-for-zip').show(); 
+              $('#error-for-zip').html("We do not ship to your pincode");
+              localStorage.setItem("store_Pincode", '');
+            }
+        }
+        else{
+          $('#error-for-zip').show(); 
+           $('#error-for-zip').html('Enter a valid PIN code');
+        }
+      });
+
+});
+  
+    
+  
+  $(document).on('page:load page:change', function() {    
+    if(Shopify.Checkout.step == 'contact_information' ){
+      let UserPin = localStorage.getItem('store_Pincode');
+      if(!UserPin == null){
+        let PincodeApi = 'https://api.postalpincode.in/pincode/' + UserPin;
+        $('#checkout_shipping_address_zip').val(UserPin);
+
+        $.ajax({
+          url: PincodeApi,
+          type: "GET",
+          success: function(data) {          
+            if(data[0].Status == 'Success') {
+              let Address = data[0].PostOffice;   
+              for(let i=0; i < 1; i++) {
+                let City = Address[i].District,
+                    State = Address[i].State.toLowerCase(),
+                    Country = Address[i].Country;
+                $('#checkout_shipping_address_city').val(City);
+                $('#checkout_shipping_address_country').val(Country);
+                $('#checkout_shipping_address_province option').each(function(){
+                  if(State == "pondicherry"){
+                    if($(this).html().toLowerCase().indexOf('puducherry') != -1) {
+                      $(this).prop("selected", true);
+                    }
+                  }else if(State == "chattisgarh"){
+                    if($(this).html().toLowerCase().indexOf('chhattisgarh') != -1) {
+                      $(this).prop("selected", true)
+                    }
+                  }else if(State == "dadra & nagar haveli"){
+                    if($(this).html().toLowerCase().indexOf('dadra and nagar haveli') != -1) {
+                      $(this).prop("selected", true)
+                    }
+                  }else if(State == "daman & diu"){
+                    if($(this).html().toLowerCase().indexOf('daman and diu') != -1) {
+                      $(this).prop("selected", true)
+                    }
+                  }else if(State == "jammu & kashmir"){
+                    if($(this).html().toLowerCase().indexOf('jammu and kashmir') != -1) {
+                      $(this).prop("selected", true)
+                    }
+                  }else{
+                    if($(this).html().toLowerCase().indexOf(State) != -1) {
+                      $(this).prop("selected", true)
+                    }
+                  }
+                });
+              }
+              $("#checkout_shipping_address_city,#checkout_shipping_address_country,#checkout_shipping_address_province").attr('readonly',true);
+            }else{
+              $("#checkout_shipping_address_city,#checkout_shipping_address_country,#checkout_shipping_address_province").removeAttr('readonly');
+            }
+          },
+          error: function(error) {
+            console.log(error);
+            $("#checkout_shipping_address_city,#checkout_shipping_address_country,#checkout_shipping_address_province").removeAttr('readonly');
+          }
+        });
+      }
+    }  
+
+    $('#checkout_shipping_address_zip').on('keyup', function(e){
+      let getPin = $(this).val();
+      if(getPin.length>5){
+        let ApiUrl = 'https://api.postalpincode.in/pincode/' + getPin;
+        $.ajax({
+          url: ApiUrl,
+          type: "GET",
+          success: function(data) {          
+            if(data[0].Status == 'Success') {
+              let Address = data[0].PostOffice;   
+              for(let i=0; i < 1; i++) {
+                let City = Address[i].District,
+                    State = Address[i].State.toLowerCase(),
+                    Country = Address[i].Country;
+                $('#checkout_shipping_address_city').val(City);
+                $('#checkout_shipping_address_country').val(Country);
+
+                $('#checkout_shipping_address_province option').each(function(){
+                  if(State == "pondicherry"){
+                    if($(this).html().toLowerCase().indexOf('puducherry') != -1) {
+                      $(this).prop("selected", true);
+                    }
+                  }else if(State == "chattisgarh"){
+                    if($(this).html().toLowerCase().indexOf('chhattisgarh') != -1) {
+                      $(this).prop("selected", true)
+                    }
+                  }else if(State == "dadra & nagar haveli"){
+                    if($(this).html().toLowerCase().indexOf('dadra and nagar haveli') != -1) {
+                      $(this).prop("selected", true)
+                    }
+                  }else if(State == "daman & diu"){
+                    if($(this).html().toLowerCase().indexOf('daman and diu') != -1) {
+                      $(this).prop("selected", true)
+                    }
+                  }else if(State == "jammu & kashmir"){
+                    if($(this).html().toLowerCase().indexOf('jammu and kashmir') != -1) {
+                      $(this).prop("selected", true)
+                    }
+                  }else if(getPin == "194104"){
+                    if($(this).html().toLowerCase().indexOf('ladakh') != -1) {
+                      $(this).prop("selected", true)
+                    }
+                  }else{
+                    if($(this).html().toLowerCase().indexOf(State) != -1) {
+                      $(this).prop("selected", true)
+                    }
+                  }
+                });
+              }
+              $("#checkout_shipping_address_city,#checkout_shipping_address_country,#checkout_shipping_address_province").attr('readonly',true);
+              localStorage.setItem("UserPin",getPin);
+            }else{
+              $("#checkout_shipping_address_city,#checkout_shipping_address_country,#checkout_shipping_address_province").removeAttr('readonly');
+            }
+          },
+          error: function(error) {
+            console.log(error);
+            $("#checkout_shipping_address_city,#checkout_shipping_address_country,#checkout_shipping_address_province").removeAttr('readonly');
+          }
+        });
+      }
+    });
+  });  
+</script>

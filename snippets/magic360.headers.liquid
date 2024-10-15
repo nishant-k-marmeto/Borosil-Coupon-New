@@ -1,0 +1,41 @@
+
+    {% if template contains 'product' %}
+    {{ 'magic360.js' | asset_url | script_tag }}
+    {{ 'magic360.css' | asset_url | stylesheet_tag }}
+    {{ 'magic360.additional.css' | asset_url | stylesheet_tag }}
+    <script type="text/javascript">
+    Magic360.options = {
+		'autospin-direction':'alternate-clockwise',
+		'columns':72,
+		'rows':1,
+		'magnify':true,
+		'magnifier-width':'60%',
+		'magnifier-shape':'square',
+		'fullscreen':true,
+		'spin':'drag',
+		'speed':50,
+		'mousewheel-step':1,
+		'autospin-speed':5000,
+		'smoothing':true,
+		'autospin':'off',
+		'autospin-start':'load,hover',
+		'autospin-stop':'click',
+		'initialize-on':'load',
+		'start-column':1,
+		'start-row':'auto',
+		'loop-column':true,
+		'loop-row':false,
+		'reverse-column':false,
+		'reverse-row':false,
+		'column-increment':1,
+		'row-increment':1,
+		'hint':true
+    }
+    Magic360.lang = {
+		'loading-text':'Loading...',
+		'fullscreen-loading-text':'Loading large spin...',
+		'hint-text':'Drag to spin',
+		'mobile-hint-text':'Swipe to spin'
+    }
+    </script>
+    {% endif %}

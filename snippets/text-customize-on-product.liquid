@@ -1,0 +1,919 @@
+{{ 'text-customize-on-product.css' | asset_url | stylesheet_tag }}
+
+{% if product.tags contains 'personalise' %}
+  {% unless product.tags contains 'personalise_glass' %}
+    {% assign productType = 'hydra' %}
+  {% endunless %}
+  {% if product.tags contains 'personalise_glass' %}
+    {% assign productType = 'glass' %}
+  {% endif %}
+
+  {% assign emoji_product_tag = '' %}
+  {% assign emoji_bg_color = '' %}
+  {% for tag in product.tags %}
+    {% if tag contains 'emoji_personalise-' %}
+      {% assign emoji_product_tag = tag | split: '-' | last | handleize %}
+    {% endif %}
+    {% if tag contains 'personalise_color-' %}
+      {% assign emoji_bg_color = tag | split: '-' | last %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+<style>
+  .category-emojis-container.empty{
+    display:none!important;
+  }
+</style>
+<div id="customizer-Modal" class="customizer_modal">
+  <!-- Modal content -->
+  <div class="customizer_modal-content">
+    <div class="modal---head">
+      <p class="modal-head_text">Give your stainless steel bottle a personal touch!</p>
+      <span class="customizer_close">&times;</span>
+    </div>
+
+    {% assign images = product.media %}
+    <div class="modal---body">
+      <div class="customize-image-container">
+        <div class="image-text">Preview</div>
+        <canvas id="customizer" width="468" height="468"></canvas>
+
+        <div class="input-text curated-text">{{ settings.curated_text }}</div>
+      </div>
+      <div class="modal-customize-body">
+        <div class="tab-container {% if product.tags contains 'emoji_personalise' %}emoji-available{% endif %}">
+          <button class="tab-button active" id="text-tab">Name</button>
+          <button class="tab-button" id="emoji-required" js-onClick>Icons</button>
+        </div>
+        <div class="text-content active">
+          <div class="input-text">ENTER YOUR TEXT</div>
+          <div
+            id="dimension-element"
+            {% for block in section.blocks %}
+              {% if block.type == 'categories' %}
+                {% assign jsonString = block.settings.font_dimensions | strip %}
+                data-all-dimensions='{{ jsonString }}'
+              {% endif %}
+            {% endfor %}
+            {% for tag in product.tags %}
+              {% if tag contains 'dimension' %}
+                data-dimension="{{ tag }}"
+              {% endif %}
+            {% endfor %}
+          ></div>
+          <div class="field" data-ver-size="" data-hor-size="" data-ver-limit="" data-hor-limit="">
+            <input type="text" name="customized_Text" id="customized_Text" maxlength="9" required>
+          </div>
+          <div class="info-text">Type the word you want engraved on your bottle.</div>
+          <div class="info--text vertical-limit">(Vertical max X characters)</div>
+          <div class="info--text horizontal-limit">(Horizontal max Y characters)</div>
+          <div class="input-text text-placement no-margin-top">Placement</div>
+          <div class="placement-buttos">
+            {% if product.tags contains 'hide-vertical' %}
+              <input
+                type="radio"
+                class="placement-child"
+                id="horizontal"
+                name="placement"
+                value="horizontal"
+                checked="checked"
+              >
+              <label class="checkLabel checked" for="horizontal">Horizontal</label>
+            {% elsif product.tags contains 'hide-horizontal' %}
+              <input
+                type="radio"
+                class="placement-child"
+                id="vertical"
+                name="placement"
+                value="vertical"
+                checked="checked"
+              >
+              <label class="checkLabel checked" for="vertical">
+                <div class="vertical">Vertical</div>
+              </label>
+            {% else %}
+              <input
+                type="radio"
+                class="placement-child"
+                id="vertical"
+                name="placement"
+                value="vertical"
+                checked="checked"
+              >
+              <label class="checkLabel" for="vertical">
+                <div class="vertical">Vertical</div>
+              </label>
+              <input type="radio" class="placement-child" id="horizontal" name="placement" value="horizontal">
+              <label class="checkLabel checked" for="horizontal">Horizontal</label>
+            {% endif %}
+          </div>
+          <p class="vertical-alignment-error-message">For emoticons, vertical alignment is not available</p>
+
+          <div class="input-text text-placement">SELECT FONT STYLE </div>
+          
+          {% assign product_tag_type = section.settings.personalize-type %}  
+          {% assign count = 0 %}
+          {% assign limit = 3 %}
+
+          {% if product.tags contains product_tag_type %}
+            {% assign limit = 7 %}
+          {% endif %}
+    
+          <div id="font-family">        
+            <select size="25" id="selecth1FontFamily" {{ product_tag_type }} name="selectFontFamily" onchange="runCustomization();">
+              {% assign select = true %}
+              {% for block in section.blocks %}
+                {% if block.type == 'fontfamily' %}
+                  {% if count < limit %}
+                    <option
+                      value="{{ block.settings.font-family-block }}"
+                      data-id="{{ block.settings['font-family-block'] }}"
+                      data-attr= "{{ block.settings.font-block-data }}"
+                      data-wght="{{ block.settings.font_weight }}"
+                      style="font-family: {{ block.settings.font-family-block }};font-weight: {{ block.settings.font_weight }};"
+                      {% if select %}
+                        selected{% assign select = false -%}
+                      {% endif %}
+                    >
+                      {{ block.settings['font-family-display'] }}
+                    </option>
+                    {% assign count = count | plus: 1 %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            </select>
+          </div>
+
+          <div size="25" name="selectFontFamily" class="mobile-font__container">
+            {% assign product_tag_type = section.settings.personalize-type %}  
+            {% assign count = 0 %}
+            {% assign limit = 3 %}
+
+            {% if product.tags contains product_tag_type %}
+              {% assign limit = 7 %}
+            {% endif %}
+              {% assign select = true %}
+              {% for block in section.blocks %}
+                {% if block.type == 'fontfamily' %}
+                  {% if count < limit %}
+                    <input
+                      type="radio"
+                      id="{{ block.settings['font-family-block'] | handleize }}"
+                      name="custom_font"
+                      value="{{ block.settings.font-family-block }}"
+                      data-attr= "{{ block.settings.font-block-data }}"
+                      {% if select %}
+                        checked{% assign select = false -%}
+                      {% endif %}
+                    >
+                    <label
+                      class="mobile-font_radio"
+                      for="{{ block.settings['font-family-block'] | handleize }}"
+                      style="font-family: {{ block.settings.font-family-block }};font-weight: {{ block.settings.font_weight }};"
+                    >
+                      {{ block.settings['font-family-display'] }}
+                    </label>
+                    {% assign count = count | plus: 1 %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+          </div>
+        </div>
+
+        {% if settings.enable_emoji %}
+          {% if product.tags contains 'emoji_personalise' %}
+            <div class="emoji-personalisation-container">
+              <div class="emoji-container">
+                {% assign emoji_categories = '' %}
+                {% for block in section.blocks %}
+                  {% assign settings_product_tag = 'empty' %}
+                  {% if block.settings.product_tag != blank %}
+                    {% assign settings_product_tag = block.settings.product_tag | handleize %}
+                  {% endif %}
+                  {% if block.type == 'emoji' and settings_product_tag == emoji_product_tag %}
+                    {% assign emoji_categories = emoji_categories
+                      | append: block.settings['emoji-category']
+                      | append: ','
+                    %}
+                  {% endif %}
+                {% endfor %}
+                {% assign categories = emoji_categories | split: ',' | uniq %}
+
+                <div class="emoji-category-title-container">
+                  {% for emoji_category in categories %}
+                    <div class="emoji-category-title {{ emoji_category }}">
+                      {{ emoji_category }}
+                    </div>
+                  {% endfor %}
+                </div>
+                <div class="category-emojis-container {% if categories == blank %} empty {% endif %}">
+                  <div
+                    class="emoji-category-emoji-container"
+                    style="background-color: {% if emoji_bg_color != blank %}{{ emoji_bg_color }}{% else %} #013564 {% endif %}"
+                  >
+                    {% for emoji_category in categories %}
+                      <div class="emoji-category-emojis {{ emoji_category }}">
+                        {% for block in section.blocks %}
+                          {% assign settings_product_tag = 'empty' %}
+                          {% if block.settings.product_tag != blank %}
+                            {% assign settings_product_tag = block.settings.product_tag | handleize %}
+                          {% endif %}
+                          {% if block.type == 'emoji'
+                            and block.settings['emoji-category'] == emoji_category
+                            and settings_product_tag == emoji_product_tag
+                          %}
+                            <div class="emoji-item">
+                              <li class="emoji-child" id="emoji-{{ forloop.index }}" name="emoji">
+                                <img
+                                  src="{{ block.settings['emoji-block'] | image_url }}"
+                                  width="60"
+                                  height="60"
+                                  loading="lazy"
+                                >
+                              </li>
+                            </div>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
+
+        <div class="modal-customizer-button-container">
+          <button id="modal-customizer-button" class="modal-customize-button" type="button">ADD PERSONALISATION</button>
+        </div>
+        <a id="modal-bulk-customizer-button" class="modal-bulk-customize-button" type="button">BULK PERSONALISATION</a>
+      </div>
+      <div class="modal-atc-body">
+        <div class="personalized-message">
+          Your Personalised Borosil product will be shipped as soon as it is ready.
+        </div>
+
+        <div class="checkout-icons">
+          <div class="checkout-icon__inner">
+            {% if settings.custom_image1 != blank %}
+              <img
+                class="prepaid-image"
+                src="{{ settings.custom_image1 | img_url: 'master' }}"
+                height="60"
+                width="60"
+                loading="lazy"
+              >
+            {% endif %}
+          </div>
+          <div class="checkout-icon__inner">
+            {% if settings.custom_image2 != blank %}
+              <img
+                class="noreturn-image"
+                src="{{ settings.custom_image2 | img_url: 'master' }}"
+                height="60"
+                width="60"
+                loading="lazy"
+              >
+            {% endif %}
+          </div>
+          <div class="checkout-icon__inner">
+            {% if settings.custom_image3 != blank %}
+              <img
+                class="noreturn-image"
+                src="{{ settings.custom_image3 | img_url: 'master' }}"
+                height="60"
+                width="60"
+                loading="lazy"
+              >
+            {% endif %}
+          </div>
+          <div class="checkout-icon__inner">
+            {% if settings.custom_image4 != blank %}
+              <img
+                class="noreturn-image"
+                src="{{ settings.custom_image4 | img_url: 'master' }}"
+                height="60"
+                width="60"
+                loading="lazy"
+              >
+            {% endif %}
+          </div>
+        </div>
+
+        {% if settings.disclaimer_text %}
+          <div class="disclaimer-text">{{ settings.disclaimer_text }}</div>
+        {% endif %}
+
+        {%- form 'product',
+          product,
+          id: product_form_id,
+          class: 'form',
+          novalidate: 'novalidate',
+          data-type: 'add-to-cart-form-custom'
+        -%}
+          <input type="hidden" name="id">
+          <button
+            type="submit"
+            name="add"
+            class="product-form__submit button button--full-width customize-atc"
+            data-product-type="{{ productType }}"
+          >
+            Add to cart
+          </button>
+          <div class="custom-atc-loader__outer">
+            <span class="product-atc_loader custom-atc-loader"> </span>
+          </div>
+        {%- endform -%}
+        <div class="not-available">{{ settings.not_available }}</div>
+        <button id="customizer-change-button" class="customize-change-button" type="button">
+          CHANGE PERSONALISATION
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $("#customized_Text").on("input", function() {
+      $(this).val(function(index, value) {
+        return value.replace(/ {2,}/g, " ").replace(/[^A-Za-z# ]/g, "");
+      });
+    });
+    
+    $('input[name="custom_font"]').change(function() {
+      var selectedValue = $('input[name="custom_font"]:checked').val();
+        $('#selecth1FontFamily').val(`${selectedValue}`);
+        runCustomization();
+    });
+  });
+
+  // the below code is used to check the emoji is selected or not, to change the popup to add to the cart popup.
+    
+  $('#modal-customizer-button').click(function() {
+    if (document.querySelector('.tab-container button#emoji-required')){
+        if (isEmojiButtonClicked) {
+            $('.modal-customize-body').hide();
+            $('.modal-atc-body').show();
+            
+        } else {
+            $('.modal-customize-body').show();
+            $('.modal-atc-body').hide();  
+        }
+      }else{
+        $('.modal-customize-body').hide();
+        $('.modal-atc-body').show();
+      }
+  })
+  
+
+  // the below code is used to check the text is given or not, to change the popup to add to the cart popup.
+  $('#modal-customizer-button').click(function() {
+    if (document.querySelector('.modal-customize-body #customized_Text').value != '' && document.querySelector('.modal-customize-body #customized_Text').value != ' ') {
+          $('.modal-customize-body').hide();
+          $('.modal-atc-body').show();
+    }
+    else{
+        $('.modal-customize-body').hide();
+        $('.modal-atc-body').show();
+      }
+    });
+
+  // change button
+  $('#customizer-change-button').click(function() {
+    $('.modal-customize-body').show();
+    $('.modal-atc-body').hide();
+  });
+
+  //function for radio buttons
+  $(document).on("click", 'input.placement-child', function () {
+    if ($(this).is(":checked")){
+      $('label.checked').removeClass('checked');
+      $(this).next("label.checkLabel").addClass("checked");
+    }
+  });
+
+  {% for value in product.metafields.custom.axis_values.value.horizontal %}
+    {% assign HheightAxis =  value.height %}{% assign HwidthAxis = value.width %}
+  {% endfor %}
+
+  {% for value in product.metafields.custom.axis_values.value.vertical %}
+    {% assign VheightAxis =  value.width %}{% assign VwidthAxis = value.height %}
+  {% endfor %}
+
+  {% if product.metafields.custom.emoticon_axisvalues != blank %}
+    {% for value in product.metafields.custom.emoticon_axisvalues.value.horizontal %}
+      {% assign emojiheightaxis =  value.height %}{% assign emojiwidthaxis = value.width %}
+    {% endfor %}
+  {% else %}
+    {% assign emojiheightaxis = 0 %}{% assign emojiwidthaxis = 0 %}
+  {% endif %}
+
+  {% if product.metafields.custom.emoticon_axisvalues != blank %}
+    {% for value in product.metafields.custom.emoticon_axisvalues.value.emojiSize %}
+      {% assign emojiheightsize =  value.height %}{% assign emojiwidthsize = value.width %}
+    {% endfor %}
+  {% else %}
+    {% assign emojiheightsize =  0 %}{% assign emojiwidthsize = 0 %}
+  {% endif %}
+  
+
+  {% assign color = "white" %}
+    {% if product.metafields.custom.color != blank %}
+      {% assign color = product.metafields.custom.color %}
+    {% endif %}
+
+  {% assign mainImage =  images[0] | img_url: 'master'  %}
+    {% if product.metafields.custom.personalize_image != blank %}
+      {% assign mainImage =  product.metafields.custom.personalize_image | img_url: 'master'  %}
+    {% endif %}
+
+    document.addEventListener("DOMContentLoaded", function() {
+      let verLimit, verSize, horLimit, horSize, currentFontSize;
+      getDimensionsData();
+      runCustomization(event);
+    });
+
+    function checkForm(){
+      if ($('#customized_Text').val().length > 0 && document.querySelector('#customized_Text').value != ' ' || isEmojiButtonClicked){
+        $('#modal-customizer-button').removeAttr('disabled');
+        $('#modal-customizer-button').css("cursor", "pointer");
+      }
+      else{
+          $('#modal-customizer-button').attr("disabled", "disabled");
+          $('#modal-customizer-button').css("cursor","not-allowed");
+      }
+    }
+
+      let image = "";
+      function dataURItoBlob(dataURI) {
+        // convert base64/URLEncoded data component to raw binary data held in a string
+        var byteString;
+        if (dataURI.split(',')[0].indexOf('base64') >= 0)
+          byteString = atob(dataURI.split(',')[1]);
+        else
+          byteString = unescape(dataURI.split(',')[1]);
+
+        // separate out the mime component
+        var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
+
+        // write the bytes of the string to a typed array
+        var ia = new Uint8Array(byteString.length);
+        for (var i = 0; i < byteString.length; i++) {
+          ia[i] = byteString.charCodeAt(i);
+        }
+        return new Blob([ia], {type:mimeString});
+      }
+      function getDimensionsData() {
+        let stringJson = JSON.parse($('#dimension-element').attr("data-all-dimensions"));
+        let dimensionTag = $('#dimension-element').attr("data-dimension");
+          for(var i=0; i< stringJson.length; i++){
+              if(stringJson[i]['tag'] == dimensionTag){
+                  verLimit = stringJson[i]['VFL'];
+                  verSize = stringJson[i]['VFS'];
+                  horLimit = stringJson[i]['HFL'];
+                  horSize = stringJson[i]['HFS'];
+                  currentFontSize = verSize;
+          }
+        }
+        $('#customized_Text').attr("maxlength", verLimit);
+          $(".horizontal-limit").text($(".horizontal-limit").text().replace("Y", horLimit));
+          $(".vertical-limit").text($(".vertical-limit").text().replace("X", verLimit));
+      }
+      var emojiSrc;
+      let emojiHeight = 0;
+      let emojiwidth = 0;
+      let emojiHeightSize = {{ emojiheightsize | times: 1 }}
+      let emojiWidthSize = {{ emojiwidthsize | times: 1 }}
+      let imageHeightToRender = 468;
+      let imageWidthToRender = 468;
+      emojiHeight = imageHeightToRender*({{ emojiheightaxis }}/100);
+      emojiwidth = imageWidthToRender*({{ emojiwidthaxis }}/100);
+      var ele = document.getElementsByName('emoji');
+      let emojiMainCanvas = document.getElementById("customizer");
+  
+      ele.forEach(item => {
+        item.addEventListener('click', function() {
+          // Remove 'checked' class from all labels
+          ele.forEach(li => {
+                if (li) {
+                    li.classList.remove('checked');
+                }
+            });
+          
+            this.classList.add('checked');
+
+            const emojiSrc = this.querySelector('img');
+           
+            // Custom code to handle canvas drawing
+            const imageContext = emojiMainCanvas.getContext("2d");
+            runCustomization(event, isEmojiButtonClicked);
+            imageContext.drawImage(emojiSrc, emojiwidth, emojiHeight, emojiWidthSize, emojiHeightSize);
+            
+            checkForm(isEmojiButtonClicked);      
+        });
+      });
+
+      var textBox = document.getElementById('customized_Text');
+
+      function runCustomization(event, isEmojiButtonClicked){
+        if(!isEmojiButtonClicked){
+          checkForm();
+          make_base();
+        };
+        
+  
+        if (isEmojiButtonClicked) {
+          textBox.value = '';
+        } else {
+          textBox.value = textBox.value;
+        }
+        renderCanvas(base_image, textBox.value)
+        let message = document.getElementById('customized_Text').value;
+
+        let family = "Serif";
+
+        //for FontFamily
+        function getFont(currentFontSize) {
+          let mainCanvas = document.getElementById("customizer");
+          let fontBase = 400;                   // selected default width for canvas
+
+          var selector = document.getElementById('selecth1FontFamily');
+          var family = selector.options[selector.selectedIndex].value;   //.dataset.rc
+          var weight = selector.options[selector.selectedIndex].dataset.wght;
+          $('.proto-text').css("font-weight",weight);
+          $('.proto-text').css("font-family",family);  
+          $('.proto-text').css("font-size", parseInt(currentFontSize));
+          return weight +' '+(currentFontSize) + 'px '+family; // set font
+        }
+
+        let emojiDirection = false;
+
+        function make_base() {
+          window.base_image = new Image();
+          base_image.crossOrigin = 'Anonymous';
+          base_image.src ="{{ mainImage }}";
+          base_image.onload = function() {
+            if (canvasMode && canvasMode.text === true){
+              renderCanvas(base_image, message);
+            }
+
+            var formElement = document.getElementById("customized_Text");
+            formElement.addEventListener('keyup', textBoxChanged, false);
+
+            var vertical = document.getElementById("vertical");
+            if(vertical){
+              vertical.addEventListener('click',AlignmentVer);
+            }
+
+            var horizontal = document.getElementById("horizontal");
+            if(horizontal){
+              horizontal.addEventListener('click', AlignmentHor);
+            }
+          };
+        }
+
+        // For Alignment
+        function AlignmentVer(){ 
+          $('#customized_Text').attr("maxlength", verLimit);
+          currentFontSize = verSize;
+          message = $('#customized_Text').val();
+          renderCanvas(window.base_image,message);
+        }
+
+        function AlignmentHor(isEmojiButtonClicked){
+          
+           $('#customized_Text').attr("maxlength", horLimit);
+            let letsRemove = message.length - horLimit;
+            let laterText = message.substring(0, message.length - letsRemove);
+            $('#customized_Text').val(laterText);
+             currentFontSize = horSize;
+             message = $('#customized_Text').val();
+            if(canvasMode.text){
+              renderCanvas(window.base_image,message);
+            }    
+         }
+
+        function textBoxChanged(e){
+          checkForm();
+          let target = e.target;
+          message = target.value;
+          renderCanvas(window.base_image,message);
+        }
+
+        function renderCanvas(base_image, message= "Borosil") { 
+          let mainCanvas = document.getElementById("customizer");
+          let textRotation = document.querySelector('[name="placement"]:checked').value;
+          let canheight = base_image.naturalHeight;
+          let canwidth = base_image.naturalWidth;
+          let rotation = 0;
+          let height=0;
+          let width=0;
+          let messageLength = $('#customized_Text').val().length;
+          
+          let protoWidth = $('.proto-text').width();
+          $('.proto-text').html(message);
+          $('.proto-text').css('font-size',`${currentFontSize}+px`);
+
+          let context = mainCanvas.getContext("2d");
+          context.fillStyle = "blue";
+          context.font = "bold 16px Arial";
+          context.fillText("", 240, 380);
+
+          context.drawImage(base_image, 0, 0, canwidth, canheight, 0, 0, imageWidthToRender, imageHeightToRender);
+          context.save();
+
+          if(textRotation == 'horizontal'){
+            rotation = 0;
+            height = imageHeightToRender*({{ HheightAxis}}/100);
+            width = imageWidthToRender*({{ HwidthAxis}}/100);                                        
+          } else {
+            rotation = -90;
+
+            let afterFont; 
+            if(parseInt(verSize) > 20){
+              afterFont = {{VheightAxis}}  + 1;
+            }
+            else{
+              afterFont = {{VheightAxis}};
+            }
+            height = imageHeightToRender*(afterFont/100);
+            width = -imageWidthToRender*({{ VwidthAxis}}/100);
+          }
+          
+          context.fillStyle = "{{ color }}";
+          context.rotate(rotation * Math.PI / 180);
+          context.font = getFont(currentFontSize);
+          context.textAlign = 'center';
+          message = message;
+          sessionStorage.setItem("message", message);
+          context.fillText(message, width, height);
+
+          context.beginPath();
+          var path = new Path2D(image);
+          context.strokeStyle = "#fff";
+
+          if(textRotation == 'horizontal'){
+          context.setTransform(1, 0, 0, 1,emojiwidth-10,emojiHeight); 
+          } else {   
+            verSize = parseInt(verSize);
+            messageLength = parseInt(messageLength);
+            let vwAxis = {{ VwidthAxis}};
+            vwAxis = vwAxis-6;
+            let newWidth = (imageWidthToRender - protoWidth) * (vwAxis/100);
+            context.setTransform(0, 1, 1, 0,height-17,newWidth);
+          }
+          context.fill(path);
+          context.restore();
+        };
+     }
+
+    
+    document.querySelector("[data-type='add-to-cart-form-custom']").addEventListener("submit", function(e){
+      var name = document.getElementById("customized_Text").value || sessionStorage.getItem("message");
+      var familyBox = document.getElementById('selecth1FontFamily');
+      var fontFamily = familyBox.options[familyBox.selectedIndex].dataset.attr;
+      var selectedVariant = $('.variant-options-listItem.is-selected');
+      let textRotation = document.querySelector('[name="placement"]:checked').value;
+      let emoticonImageUrl;
+      let fileName;
+      
+      // Cache the image element to avoid querying the DOM multiple times
+      const imgElement = document.querySelector('li.emoji-child.checked img');
+      
+      if (imgElement) {
+        emoticonImageUrl = imgElement.src ? imgElement.src : '-';
+        const urlParts = emoticonImageUrl.split('/');
+        const fileNameWithQuery = urlParts[urlParts.length - 1];
+        fileName = fileNameWithQuery.split('?')[0];
+      } else {
+        emoticonImageUrl = "-";
+        fileName = emoticonImageUrl;
+      }
+      
+     
+     let product_type = document.querySelector('.customize-atc').getAttribute('data-product-type');
+     var varianttitle = selectedVariant.attr('data-variant-title');
+     let productCategory = selectedVariant.attr('data-product-type');
+     let productTitle = selectedVariant.attr('data-product-title');
+     let productVariantTitle = productTitle.concat(' ', varianttitle);
+     var variantId = 0;
+     var eleTitle = [];
+      
+      
+        e.preventDefault();
+
+        {% assign customProductHandle = product.handle %}
+        let myproduct = {{ product.variants | json }}
+        if(myproduct.length == 0 ){
+          $(".not-available").show();
+              $(".customize-atc").css("background","rgb(212, 212, 212)");
+              setTimeout(function(){
+                $(".not-available").hide();
+                $(".customize-atc").css("background","#B4D241");
+              },2000);
+        } else {
+          myproduct.forEach(element => {
+            eleTitle.push(element.title);
+            if(element.title == varianttitle){
+              if(element.available){
+                variantId = element.id;
+                let mainCanvas = document.getElementById("customizer");
+                let dataURL = mainCanvas.toDataURL('image/jpeg', 0.5);
+                let blob = dataURItoBlob(dataURL);
+                let emptyName = '-';
+                
+                var formData = new FormData(document.querySelector('[data-type="add-to-cart-form-custom"]'));
+                formData.append("id",variantId);
+                formData.append("properties[Placement]",textRotation);
+                formData.append("properties[Name]",name);
+                formData.append("properties[Font]",fontFamily);
+                formData.append("properties[Customise-charge]","{{ product.metafields.custom.personalize_price }}");
+                formData.append("properties[Product-Type]",product_type);
+
+                if(canvasMode && canvasMode.text){
+                  formData.append("properties[Name]",name);
+                }
+                else{
+                  let emojiUrlParent = document.querySelector('.emoji-child.checked img');
+                  let emojiUrl = 'https:' + emojiUrlParent.getAttribute('src');
+                  formData.append("properties[emoji_url]",emojiUrl)
+                  formData.append("properties[Name]",emptyName);
+                }
+                
+                formData.append("properties[Image]", blob, 'custom_image2.jpeg');
+                
+                const config = fetchConfig('javascript');
+                config.headers['X-Requested-With'] = 'XMLHttpRequest';
+                delete config.headers['Content-Type'];
+                config['body'] = formData;
+                
+                
+                $('.customize-atc').hide();
+                $('.custom-atc-loader').show();
+                fetch(window.Shopify.routes.root + 'cart/add.js', config)
+                .then(response => {
+                  return response.json();
+                })
+                .then(response => {
+                  mmajaxcart.CartCountHandler();
+                  mmajaxcart.AjaxcartRender();
+                  document.getElementById("customizer-Modal").style.display = "none";
+                  setTimeout(function(){
+                    mmajaxcart.AjaxcartOpen();
+                  },1000);
+                  $('.customize-atc').show();
+                  $('.custom-atc-loader').hide();
+                  textBox.value = ''
+                  runCustomization();
+                })
+                .catch((error) => {
+                  console.error('Error:', error);
+                  $('.customize-atc').show();
+                  $('.custom-atc-loader').hide();
+                  textBox.value = textBox.value;
+                  runCustomization();
+                })
+                .finally(()=>{
+                  Shopify.analytics.publish("personalisation_added", { product_name : productVariantTitle, product_category : productCategory, user_text : name, font : fontFamily });
+                });
+              } else {
+                $(".not-available").show();
+                $(".customize-atc").css("background","rgb(212, 212, 212)");
+                setTimeout(function(){
+                  $(".not-available").hide();
+                  $(".customize-atc").css("background","#B4D241");
+                },2000);
+              }
+            }
+          });
+        }
+        if(!eleTitle.includes(varianttitle)){
+        $(".not-available").show();
+              $(".customize-atc").css("background","rgb(212, 212, 212)");
+              setTimeout(function(){
+                $(".not-available").hide();
+                $(".customize-atc").css("background","#B4D241");
+              },2000);
+        }
+    });
+
+    let isEmojiButtonClicked = false;
+    let isTextButtonClicked = false;
+    let canvasMode = {
+      text: true
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+    let emojisCategories = document.querySelectorAll(".emoji-category-title");
+    let emojisMainContainer = document.querySelector(".category-emojis-container");
+    let verticalRadioButton = document.getElementById("vertical");
+    let horizontalRadioButton = document.getElementById("horizontal");
+    let inputText = document.getElementById("customized_Text");
+    let emojisMainTitleAndCategoryContainer = document.querySelector('.emoji-container');
+    let emojiContainers = document.querySelectorAll(".emoji-category-emojis");
+    
+    const textTab = document.getElementById('text-tab');
+    const emojiTab = document.getElementById('emoji-required');
+    const textContent = document.querySelector('.text-content');
+    const emojiContent = document.querySelector('.emoji-personalisation-container');
+
+    
+
+    function selectFirstEmoji() {
+      const firstEmojiInput = emojiContainers[0].querySelector('.emoji-item li.emoji-child');
+      
+      if (firstEmojiInput) {
+          firstEmojiInput.click();
+          firstEmojiInput.classList.add('checked')
+          let emojiSrc = firstEmojiInput.querySelector('img');
+          const imageContext = emojiMainCanvas.getContext("2d");
+          runCustomization(event, isEmojiButtonClicked);
+          imageContext.drawImage(emojiSrc, emojiwidth, emojiHeight, emojiWidthSize, emojiHeightSize);
+          
+          checkForm(isEmojiButtonClicked);
+      }
+    }
+
+    // Event listener for text tab
+    textTab?.addEventListener('click', (event) => {
+        canvasMode.text = true;
+        isTextButtonClicked = true;
+        isEmojiButtonClicked = false;
+        emojiSrc = '';
+        textTab.classList.add('active');
+        emojiTab.classList.remove('active');
+        textContent.classList.add('active');
+        emojiContent.classList.remove('active');
+        runCustomization(event, isEmojiButtonClicked);
+    });
+
+    // Event listener for emoji tab
+    emojiTab?.addEventListener('click', (event) => {
+        canvasMode.text = false;
+        isEmojiButtonClicked = true;
+        isTextButtonClicked = false;
+        textBox.value = '';
+        runCustomization();
+        emojiTab.classList.add('active');
+        textTab.classList.remove('active');
+        emojiContent.classList.add('active');
+        textContent.classList.remove('active');
+        if (isEmojiButtonClicked) {
+          emojisMainContainer.style.display = "block";
+          emojisCategories.forEach(category => category.classList.remove("category-active"));
+          emojisCategories[0].classList.add('category-active');
+          emojiContainers.forEach(container => container.style.display = "none");
+          emojiContainers[0].style.display = 'flex';
+
+          checkForm();
+          setTimeout(selectFirstEmoji, 500);
+  
+        } else {
+            emojisMainTitleAndCategoryContainer.classList.add('hidden');
+            emojisMainContainer.style.display = "none";
+            emojisCategories.forEach(category => category.classList.remove("category-active"));
+            emojiContainers[0].style.display = 'none';
+            
+            runCustomization(event, isEmojiButtonClicked);
+            checkForm();
+            if(horizontalRadioButton){
+              horizontalRadioButton.removeAttribute('checked');
+            }
+            if(verticalRadioButton){
+              verticalRadioButton.click();
+            }
+            emojisCategories.forEach(category => category.classList.remove("category-active"));
+        }
+    });
+
+    // Function to handle category click
+    function handleCategoryClick(event) {
+      emojisCategories.forEach(category => category.classList.remove("category-active"));
+      this.classList.add("category-active");
+      if(verticalRadioButton){
+        verticalRadioButton.removeAttribute('checked');
+      }
+      if(horizontalRadioButton){
+        horizontalRadioButton.click();
+      }
+
+      let categoryClass = this.classList[1];
+      emojiContainers.forEach(container => container.style.display = "none");
+      let emojisContainer = document.querySelector(".emoji-category-emojis." + categoryClass);
+      if (emojisContainer) {
+          emojisMainContainer.style.display = "block";
+          emojisContainer.style.display = "flex";
+      }
+
+    }
+
+    // Add event listeners for category clicks
+    emojisCategories.forEach(category => category?.addEventListener("click", handleCategoryClick));
+
+    // Set the default checked state to vertical radio button
+    if(verticalRadioButton){  
+      verticalRadioButton.checked = true;
+    }
+  });
+</script>

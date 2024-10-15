@@ -1,0 +1,394 @@
+<style>
+  .gst__section{margin-top:3rem}
+  .gst__header--flex span{display:block;color:#000;font-size:.8rem; margin-bottom: 5px;}
+  .gst__header--flex h2{ margin-bottom: 5px; }
+  #GSTIN_capture input {text-transform: uppercase;}
+  .gst__content--hidden{float:none;display:none;margin-top:.5rem}.gst__content--flex{display:flex;align-items:center}.gst__content--flex .flex-item{width:50%;display:flex}.gst__content--flex input{outline:0;min-width:18px;margin-right:.5rem}.gst__content--flex label{cursor:pointer}.gst__section--footer{display:none;border-radius:0;margin-top:20px;background:#faf7dd;padding:1rem 1.2rem;border-top:4px solid #ffea9c}.gst__footer--text{font-size:.86rem}@media(max-width:749px){.gst__header--flex span{margin-left:0;margin-top:.3rem;font-size:.71rem}}
+</style>
+
+<script>
+  //GST Validation and billing address auto filling
+
+
+
+  //small library to get set and delete the Cookies
+  function setCookie(e,t,o){var n=new Date;n.setTime(n.getTime()+24*o*60*60*1e3);var i="expires="+n.toGMTString();document.cookie=e+"="+t+";"+i+";path=/"}
+  function getCookie(e){for(var t=e+"=",o=decodeURIComponent(document.cookie).split(";"),n=0;n<o.length;n++){for(var i=o[n];" "==i.charAt(0);)i=i.substring(1);if(0==i.indexOf(t))return i.substring(t.length,i.length)}return""}
+  function deleteCookie(e){document.cookie=e+"=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;"}
+
+        
+  $(document).on('page:load page:change', function() {
+
+    function GSTValidation(){
+      //generating the GST section HTML
+      let html = '';
+      let states = ['JK', 'HP', 'PB', 'CH', 'UK', 'HR', 'DL', 'RJ', 'UP', 'BR', 'SK', 'AR', 'NL', 'MN', 'MZ', 'TR', 'ML', 'AS', 'WB', 'JH', 'OR', 'CG', 'MP', 'GJ', 'DD', 'DN', 'MH', 'AP', 'KA', 'GA', 'LD', 'KL', 'TN', 'PY', 'AN', 'TS', 'AP'];
+      html += '<div class="gst__section">';
+      html += '<div class="gst__section--header">';
+      html += '<div class="gst__header--flex">';
+      html += '<h2>GST details:</h2>';
+      html += '<span>Is your organisation registered under GST ACT in India?</span>';
+      html += '</div>';
+      html += '</div>';
+      html += '<div class="gst__section--content">';
+      html += '<div class="gst__content--flex">';
+      html += '<div class="flex-item">';
+      html += '<input class="input-radio" id="GSTIN_yes" type="radio" name="attributes[has_GSTIN]" value="Yes">';
+      html += '<label for="GSTIN_yes">Yes, registered under GST ACT</label>';
+      html += '</div>';
+      html += '<div class="flex-item field">';
+      html += '<input class="input-radio" id="GSTIN_no" checked="checked" type="radio" name="attributes[has_GSTIN]" value="No">';
+      html += '<label for="GSTIN_no">No, not registered under GST ACT.</label>';
+      html += '</div>';
+      html += '</div>';
+      html += '<div class="gst__content--hidden" id="Bname_capture">';
+      html += '<div class="field__input-wrapper">';
+      html += '<label class="field__label field__label--visible">Organisation Name</label>';
+      html += '<input type="text" name="checkout[attributes][Company]" class="field__input" placeholder="Organisation Name" disabled>';
+      html += '</div>';
+      html += '<p class="field__message field__message--error" id="error-for-organisation">Enter a valid Organisation Name</p>';
+      html += '</div>';
+      html += '<div class="gst__content--hidden" id="GSTIN_capture">';
+      html += '<div class="field__input-wrapper">';
+      html += '<label class="field__label field__label--visible">GSTIN Number</label>';
+      html += '<input type="text" class="field__input" name="checkout[attributes][CustomerGSTIN]" placeholder="GSTIN Number" disabled maxlength="15" minlength="15" pattern="[0-9]{2}[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}[0-9]{1}[A-Za-z]{1}[A-Za-z0-9]{1}">';
+      html += '</div>';
+      html += '<p class="field__message field__message--error" id="error-for-GSTIN">Enter a valid GSTIN number</p>';
+      html += '</div>';
+      html += '</div>';
+      html += '<div class="gst__section--footer notice_bar">';
+      html += '<div class="gst__footer--text">Note: Please ensure that you enter the correct details to avail the GST credit. Tax Invoice will not be revised for Incorrect GSTIN, Incorrect Address etc.<br>GST order will not be Cancelled.</div>';
+      html += '</div>';
+      html += '</div>';
+
+      if($('.gst__section').length<1) $(".section.section--shipping-address").before(html);
+
+      //validating the GST number and error handling
+      async function gstbind() { 
+
+        let GSTIN_validate = (RegExp('[0-9]{2}[A-Za-z]{5}[0-9]{4}[A-Za-z]{1}[0-9]{1}(Z|z)[A-Za-z0-9]').test($('#GSTIN_capture input').val()));
+        let GSTINCompany = $('#Bname_capture input').val().trim().toLowerCase().replace(/\s+/g, ' ');
+        let GSTINCompanyRaw = $('#Bname_capture input').val();
+        let GSTIN_validated = false;
+        let GSTINCompany_validated = false;
+        let gst_address = "";
+        let gst_pincode = "";
+
+        if (GSTIN_validate) {
+          let inputGST = $('#GSTIN_capture input').val().toUpperCase();
+          let GSTResponse = await validateGST(inputGST); 
+          let GSTCompanyname = '';
+          let requiredResponseData = GSTResponse.lstAppSCommonSearchTPResponse[0];
+          if(requiredResponseData){ 
+            GSTCompanyname = requiredResponseData.tradeNam.replace(/\s+/g, ' ');
+            GSTCompanyname = GSTCompanyname.trim().toLowerCase();
+
+            if(requiredResponseData.pradr.addr){
+              if(requiredResponseData.pradr.addr.pncd != ""){
+                gst_pincode += requiredResponseData.pradr.addr.pncd;
+              }
+              const addressComponents = [
+                requiredResponseData.pradr.addr.flno,
+                requiredResponseData.pradr.addr.bno,
+                requiredResponseData.pradr.addr.st,
+                requiredResponseData.pradr.addr.loc,
+                requiredResponseData.pradr.addr.stcd
+              ];
+              gst_address = addressComponents.filter(value => value != "").join(', ');
+              gst_address = gst_address.replace(/^,\s*/, '').replace(/,+/g, ',');
+            }
+          }
+
+          if(GSTResponse.Status == 1) {
+            GSTIN_validated = true;
+            $('#error-for-GSTIN').hide();
+            $('#GSTIN_capture').removeClass("field--error");
+            if(GSTINCompany.length > 0 && GSTINCompany == GSTCompanyname) {
+              GSTINCompany_validated = true;
+              $(`[name="checkout[attributes][Company]"]`).val(GSTINCompanyRaw);
+              $(`[name="checkout[attributes][CustomerGSTIN]"]`).val(inputGST);
+              $('#error-for-organisation').hide();
+              $('#Bname_capture').removeClass("field--error");
+            } else {
+            GSTINCompany_validated = false;
+            $('#error-for-organisation').show();
+            $('#Bname_capture').addClass("field--error");
+            }
+          } else {
+            GSTIN_validated = false;
+            $('#error-for-GSTIN').show();
+            $('#GSTIN_capture').addClass("field--error");
+          }
+        }
+        else {
+          if(!$('[name="checkout[attributes][CustomerGSTIN]"]').val().length<=0)
+          $('#error-for-GSTIN').show(),
+          $('#GSTIN_capture').addClass("field--error");
+        }
+
+        if(GSTIN_validated && GSTINCompany_validated){
+          $('#continue_button').removeAttr('disabled');
+          $('#continue_button').css('opacity','1');
+          setCookie("gst_pincode", gst_pincode, 7);
+          setCookie("gst_address", gst_address, 7);
+          setCookie("gst_number", 'yes', 7);
+          window.updateContinueButtonStatus();
+        }
+        else {
+          setCookie("gst_number", 'hold', 7);
+          $('#continue_button').attr('disabled','disabled');
+          $('#continue_button').css('opacity','0.6');
+          window.validGST = false;
+          window.updateContinueButtonStatus();
+        }
+      }
+
+      //to get the GST data from GST number entered
+      async function validateGST(gstNumber) {
+        let userData = {
+          "AppSCommonSearchTPItem": [{"GSTIN": gstNumber}]
+        }
+        let url = 'https://www.ewaybills.com/MVEWBAuthenticate/MVAppSCommonSearchTP';
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            "MVApiKey": "jhoGPNuDDErSLmC",
+            "MVSecretKey": "vbIzTG5uG3/Pr6SYtJ48ew==",
+            "GSTIN": "27AACCH5367G1ZH",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(userData)
+        })
+        const data = await response.json();
+        return data;
+      }
+
+      $("#GSTIN_capture input, #Bname_capture input").bind("keyup", function() {
+        gstbind();
+      });
+
+      //on click of GST YES radio handle errors 
+      $("#GSTIN_yes").bind("click", function() {
+        $('#continue_button').attr('disabled','disabled');
+        $('#continue_button').css('opacity','0.6');
+        setCookie("gst", "yes", 7);
+        setCookie("gst_number", "no", 7);
+        $('#GSTIN_capture').show();
+        $('#Bname_capture').show();
+        $('.notice_bar').show();
+        gstbind();
+        $("#checkout_billing_address_province").attr("disabled", "disabled");
+        $("#checkout_billing_address_country").attr("disabled", "disabled");
+        $('[name="checkout[attributes][Company]"]').removeAttr("disabled");
+        $('[name="checkout[attributes][CustomerGSTIN]"]').removeAttr("disabled");
+      });
+
+      //on click of GST NO radio handle errors
+      $("#GSTIN_no").bind("click", function() {
+        deleteCookie("gst");
+        setCookie("gst_number", "no", 7);
+        $('#GSTIN_capture').hide();
+        $('#Bname_capture').hide();
+        $('.notice_bar').hide();
+        $('#error-for-GSTIN').hide();
+        $('#GSTIN_capture').removeClass("field--error");
+        $('#Bname_capture').removeClass("field--error");
+        $("#checkout_billing_address_province").removeAttr("disabled");
+        $("#checkout_billing_address_country").removeAttr("disabled");
+        $('#continue_button').css('opacity','1');
+        //removing the GST attributes
+        $('[name="checkout[attributes][Company]"]').attr("disabled", "disabled");
+        $('[name="checkout[attributes][CustomerGSTIN]"]').attr("disabled", "disabled");
+        removeGSTAttributes();
+        window.updateContinueButtonStatus();
+      });
+
+      // Transform the input value to uppercase
+      $(document).on('keyup', '[name="checkout[attributes][CustomerGSTIN]"]', function() {
+        const start = this.selectionStart;
+        const end = this.selectionEnd;
+        this.value = this.value.toUpperCase();
+        this.setSelectionRange(start, end);
+      });
+
+      //storing the user data to be appended in the billing address
+      function catchUserData() {
+        const originalString = $('#Bname_capture input').val().trim();
+        const firstSpaceIndex = originalString.indexOf(' ');
+        let firstName = '';
+        let lastName = '.';
+
+        if (firstSpaceIndex !== -1) {
+          const firstPart = originalString.substring(0, firstSpaceIndex);
+          const restPart = originalString.substring(firstSpaceIndex + 1);
+          firstName = firstPart;
+          lastName = restPart;
+        } else {
+          firstName = originalString;
+        }
+
+        let phoneNumber = $('#checkout_shipping_address_alternative-phone').val() || '{{ customer.phone }}';
+        if(firstName){
+          setCookie("firstName", firstName, 7);
+          setCookie("lastName", lastName, 7);
+          setCookie("phoneNumber", phoneNumber, 7);
+        }
+        let inputGSTValue = $('[name="checkout[attributes][CustomerGSTIN]"]').val();
+        $('[name="checkout[attributes][CustomerGSTIN]"]').val(inputGSTValue.toUpperCase());
+      }
+
+      function removeGSTAttributes(){
+        fetch('/cart/update.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            attributes: {
+              'Company': '',
+              'CustomerGSTIN': ''
+            }
+          })
+        })
+        .catch(error => {
+          console.log('error', error);
+        });
+      }
+
+      //hide COD
+      function hideCOD(){ 
+        const CodGateway = $('[data-select-gateway] .radio__label__primary:contains(Cash)').parents('.radio-wrapper').attr('data-select-gateway');
+        $('.radio-wrapper[data-select-gateway="' + CodGateway + '"] .input-radio').prop('checked', false);
+        $('.radio-wrapper[data-select-gateway="' + CodGateway + '"]').hide();
+        $('.radio-wrapper[data-subfields-for-gateway="' + CodGateway + '"]').hide();
+      }
+      function billAddressDisable(){
+        $('#checkout_billing_address_id').css('pointer-events', 'none'); 
+        $('#checkout_billing_address_first_name').css('pointer-events', 'none'); 
+        $('#checkout_billing_address_last_name').css('pointer-events', 'none'); 
+        $('#checkout_billing_address_phone').css('pointer-events', 'none'); 
+        $('#checkout_billing_address_address1').css('pointer-events', 'none');
+        $('#checkout_billing_address_zip').css('pointer-events', 'none');
+        $('#checkout_billing_address_city').css('pointer-events', 'none');
+        $('#checkout_billing_address_province').css('pointer-events', 'none');
+        $('#checkout_billing_address_country').css('pointer-events', 'none'); 
+        $('#checkout_different_billing_address_false').css('pointer-events', 'none');
+        $('#checkout_different_billing_address_false').closest('.radio-wrapper.content-box__row').css('pointer-events', 'none');
+
+      }
+      if(Shopify.Checkout.step == "contact_information"){
+        $("#continue_button").bind("click", catchUserData);
+      }
+
+      //the GST API response is not accurate to give the city and state address feilds. 
+      //So, we are getting these details from postalpincode API from the GST API response pincode
+      function autoFillCityState(){
+        let billingPincode = $('#checkout_billing_address_zip').val();
+        if(billingPincode != null){
+          let pincodeAPI = 'https://api.postalpincode.in/pincode/' + billingPincode;
+          $.ajax({
+            url: pincodeAPI,
+            type: "GET",
+            success: function(data) {      
+              if(data[0].Status == 'Success') {
+                let Address = data[0].PostOffice;   
+                for(let i=0; i < 1; i++) {
+                  let City = Address[i].District,
+                      State = Address[i].State.toLowerCase(),
+                      Country = Address[i].Country;
+                  $('#checkout_billing_address_city').val(City);
+                  $('#checkout_billing_address_country').val(Country);
+                  $('#checkout_billing_address_province option').each(function(){
+                    if(State == "pondicherry"){
+                      if($(this).html().toLowerCase().indexOf('puducherry') != -1) {
+                        $(this).prop("selected", true);
+                      }
+                    }else if(State == "chattisgarh"){
+                      if($(this).html().toLowerCase().indexOf('chhattisgarh') != -1) {
+                        $(this).prop("selected", true)
+                      }
+                    }else if(State == "dadra & nagar haveli"){
+                      if($(this).html().toLowerCase().indexOf('dadra and nagar haveli') != -1) {
+                        $(this).prop("selected", true)
+                      }
+                    }else if(State == "daman & diu"){
+                      if($(this).html().toLowerCase().indexOf('daman and diu') != -1) {
+                        $(this).prop("selected", true)
+                      }
+                    }else if(State == "jammu & kashmir"){
+                      if($(this).html().toLowerCase().indexOf('jammu and kashmir') != -1) {
+                        $(this).prop("selected", true)
+                      }
+                    }else{
+                      if($(this).html().toLowerCase().indexOf(State) != -1) {
+                        $(this).prop("selected", true)
+                      }
+                    }
+                  });
+                }
+              }
+            },
+            error: function(error) {
+              alert("Failed to fetch the pincode data. Please enter City and State manually.");
+              console.log(error);
+            }
+          });
+        } 
+      }
+
+      //GST validating in info page and auto fill billing address in payment page
+      {% if checkout.attributes.CustomerGSTIN %}
+        if(Shopify.Checkout.step == "contact_information"){
+          $("#GSTIN_yes").prop("checked", true);
+          $("#GSTIN_yes").click();
+          $('#GSTIN_capture input').val("{{checkout.attributes.CustomerGSTIN}}");
+          $('#Bname_capture input').val("{{checkout.attributes.Company}}");
+          $('#GSTIN_capture').show();
+          $('#Bname_capture').show();
+          $('.notice_bar').show();
+          gstbind();
+        }
+        else if(Shopify.Checkout.step == 'payment_method' && getCookie("gst") == "yes"){ 
+          const billAddress = getCookie("gst_address");
+          const billPincode = getCookie("gst_pincode");
+          const billFirstName = getCookie("firstName");
+          const billLastName = getCookie("lastName");
+          const billPhoneNumber = getCookie("phoneNumber");
+          function billingAddressfilling(){
+            $("#checkout_different_billing_address_true").prop("checked", true);
+            $("#section--billing-address__different").removeClass("hidden");
+            $("#checkout_billing_address_address1").val(billAddress);
+            $("#checkout_billing_address_zip").val(billPincode);
+            $('[data-address-fields] input').removeAttr('disabled');
+            $('[data-address-fields] select').removeAttr('disabled');
+            if(billFirstName){
+              $('#checkout_billing_address_first_name').val(billFirstName);
+            }
+            if(billLastName){
+              $('#checkout_billing_address_last_name').val(billLastName);
+            }
+            if(billPhoneNumber){
+              $('#checkout_billing_address_phone').val(billPhoneNumber);
+            }
+          }
+          if(billPincode){
+            billingAddressfilling();
+            autoFillCityState();
+            billAddressDisable();
+            
+          }
+          window.hideCOD = true;
+          hideCOD();
+        }
+      {% endif %}
+
+      function hideContinueShopping(){
+        const continueShoppingButton = $("a.btn:contains('Continue Shopping')");
+        continueShoppingButton.css("display", "none");
+      }
+      hideContinueShopping();
+    }
+    GSTValidation();
+  });
+
+</script>

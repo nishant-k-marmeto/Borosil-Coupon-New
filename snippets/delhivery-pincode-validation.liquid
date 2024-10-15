@@ -1,0 +1,135 @@
+<style>
+  .pin_error,.cod_error, .invalid_error{
+    display:none;
+    color:red;
+  }
+  .main .field__input.input-error {
+    border-color: #e40000;
+    -webkit-box-shadow: 0 0 0 1px #e40000;
+    box-shadow: 0 0 0 1px #e40000;
+  }
+  .pincode-error__payment{
+    color:red;
+  }
+  .products__error{
+    color: red;
+  }
+</style>
+
+<script>
+  //Validate the pincode in information or in payment page on pageload
+  $(document).on('page:load page:change',function(){
+    var errorMessage = '{{ settings.unserviceable_error }}';
+    
+    if($('.pin_error').length <= 0){
+      $('.step__sections .section--shipping-address').after('<p class="pin_error">'+ errorMessage +'</p>');
+    }
+    if($('.invalid_error').length <= 0){
+      $('.step__sections .section--shipping-address').after('<p class="invalid_error">Please enter a valid pincode</p>');
+    }
+    if(Shopify.Checkout.step == "contact_information"){
+      if($('#checkout_shipping_address_zip').val().length > 0){
+        validateData();
+      }
+    }
+    else if(Shopify.Checkout.step == "payment_method"){
+      {%- if checkout.shipping_address -%}
+        let pincode_entered = "{{checkout.shipping_address.zip}}";
+        checkIfServiceable(pincode_entered)
+      {%- elsif checkout.billing_address -%}
+        let pincode_entered = "{{checkout.billing_address.zip}}"; 
+        checkIfServiceable(pincode_entered)
+      {%- endif -%}
+    }
+    $("#checkout_shipping_address_zip").on('keyup', function(event) {
+      $('.pin_error').hide();
+      $('.cod_error').hide();
+      $('.invalid_error').hide();
+      if($(this).val().length == 6) {
+        validateData();
+      }
+    });
+  
+    $("#checkout_shipping_address_zip").on('change', function(event) {
+      validateData();
+    });
+    
+  });
+
+
+  //Error handling for Serviceability in information page
+  function serviceError(bool){
+    if(Shopify.Checkout.step == "contact_information"){
+      if(bool){
+        $('.pin_error').attr('style', 'display: inline-block');
+        $('[data-address-field="zip"] input').addClass('input-error');
+        $('.step__footer__continue-btn').addClass("btn--disabled").attr("disabled",true);
+        window.validPincode = false;
+        window.updateContinueButtonStatus();
+        return false;
+      } 
+      else{
+        $('[data-address-field="zip"] input').removeClass('input-error');
+        $('.step__footer__continue-btn').removeClass("btn--disabled").attr("disabled",false);
+        window.validPincode = true;
+        window.updateContinueButtonStatus();
+      }
+    }
+    else{
+      $('.pin_error').attr('style', 'display: inline-block');
+    }
+  }
+
+  //Error handling for Serviceability in payment page
+  function servicePaymentPageError(){
+    $('.section.section--billing-address').append('<div class="pincode-error__payment">Oops! We currently do not service in your area. Please try again with another pincode.</div>')
+    $('#continue_button.step__footer__continue-btn').addClass("btn--disabled").attr("disabled",true);
+  }
+
+  //One function for both information and Payment page to check the serviceability
+  async function checkIfServiceable(pincode) {
+    
+    const promise = await fetch('https://pincode.myborosil.com/api/getpincode?pincode=' + pincode); 
+    let responseRaw = await promise.json();
+    var responseData = responseRaw.response;
+
+    //information page check
+    if(Shopify.Checkout.step == "contact_information"){
+      if(responseData != 'error' && responseData.pre_paid == 'Y' && responseData.cod == 'Y') {
+        serviceError(false)
+      }
+      else{
+        serviceError(true);
+      }
+    }
+    //payment page check
+    else if(Shopify.Checkout.step == "payment_method"){
+      if(responseData != 'error' && responseData.pre_paid == 'Y' && responseData.cod == 'Y') {
+        return true;
+      }
+      else{
+        servicePaymentPageError()
+        return false;
+      }
+    }
+  }
+
+  //validate the pincode
+  function validateData() {
+    if(Shopify.Checkout.step == "contact_information"){
+      if ($('.section--shipping-address').length > 0){
+        var pincode_entered = $('#checkout_shipping_address_zip').val();
+      }
+      else{
+        var pincode_entered = $('#checkout_billing_address_zip').val();
+      }
+    }
+    if(pincode_entered.length == 6){ 
+      checkIfServiceable(pincode_entered);
+    }
+  }
+  
+</script>
+
+
+

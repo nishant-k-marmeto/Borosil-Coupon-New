@@ -1,0 +1,50 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+
+  {% assign Desktop_image = product.metafields.Aplus.desktop_image %}
+  {% assign Mobile_image = product.metafields.Aplus.mobile_image %}
+  {% if Desktop_image.size > 0 %}
+  <div class="ProductRelatedImage_container">
+    {% assign total_images = Desktop_image.size | minus: 1 %}
+    {% for i in (0..total_images) limit:4 %}
+      {% if Desktop_image[i] != blank %}
+        <div class="lazy-load-parent">
+          <img class="ProductRelatedImage lazy-load-img"  loading="lazy" src="{{ Desktop_image[i] | image_url: 'original' }}">
+        </div>
+      {% endif %}
+      
+      {% if Mobile_image[i] != blank %}
+        <div class="lazy-load-parent">
+          <img class="ProductRelatedImage_mobile lazy-load-img" loading="lazy" src="{{ Mobile_image[i] | image_url: 'original' }}">
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+{% endif %}       
+      
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+
+{% schema %}
+{
+    "name": "Product Image",
+    "settings": [
+    ],
+    "presets": [
+        {
+            "category": "Image",
+            "name":"Product Image"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,152 @@
+{%- capture lazy_load_section %}
+  {%- render 'lazy-load-section-validations' -%}
+{%- endcapture -%}
+
+{% if lazy_load_section != blank %}
+  <lazy-section>
+{% endif %}
+
+{% if lazy_load_section == blank %}
+
+    {% assign card_titles = product.metafields.product_great.title %}
+    {% assign card_discription = product.metafields.product_great.description %}
+    {% assign card_Image = product.metafields.product_great.image %}
+    <script>
+        /*--------main-product-metafileds-card-starts----------*/
+function metafieldCardsFunctionality() {
+    $(".Product_metafields_cards_slider").slick({
+      infinite: false,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      prevArrow: ".arrow-left2",
+      nextArrow: ".arrow-right2",
+      responsive: [
+        {
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 850,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1.2,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
+  
+    let max = 115;
+  
+    $(".Product_metafields_card_info p").each(function () {
+      let str = $(this).text();
+      if ($.trim(str).length > max) {
+        $(this)
+          .parents(".Product_metafields_card")
+          .find(".Product_metafields_card_readmore")
+          .css("display", "block");
+      }
+    });
+  
+    $(".Product_metafields_card_readmore").click((e) => {
+      let $target = $(e.target);
+      $target
+        .closest(".Product_metafields_card")
+        .find(".Product_metafields_card_cutText")
+        .hide();
+      $target
+        .closest(".Product_metafields_card")
+        .find(".Product_metafields_card_fullText")
+        .show();
+    });
+  
+    $(".Product_metafields_card_readless").click((e) => {
+      let $target = $(e.target);
+      $target
+        .closest(".Product_metafields_card")
+        .find(".Product_metafields_card_cutText")
+        .show();
+      $target
+        .closest(".Product_metafields_card")
+        .find(".Product_metafields_card_fullText")
+        .hide();
+    });
+  }
+  $(() => {
+    metafieldCardsFunctionality(".Product_metafields_cards_slider", true, false, 767);
+  })
+  // This piece of code for blog card "Read more and Read less text"
+  $(".Product_metafields_custom_readmore").click(function () {
+    $(this).text($(this).text() == "Read less" ? "Read more" : "Read less");
+    $(this)
+      .parent()
+      .find(".Product_metafields_card_info p")
+      .toggleClass("active");
+  });
+    </script>
+    {% if card_titles.size > 0 %}
+    <div class="Product_metafields_cards_section">
+        <div class="Product_metafields_cards_heading">
+            {% if section.settings.section_heading != blank %}
+                <div class="h1"> {{ section.settings.section_heading }} </div>
+            {% endif %}
+            {% if card_titles.size > 3 %}
+                <div class="Product_metafields_cards_slider_arrows lazy-load-parent {% if card_titles.size < 5 %} custom-remove-arrows {% endif %}">
+                    <img class="arrow-left2" data-src="{{"circle_arrow_right.png" | asset_url}}" alt="circle left">
+                    <img class="arrow-right2" data-src="{{"circle_arrow_right.png" | asset_url}}" alt="circle right">
+                </div>
+            {% endif %}
+        </div>
+        <div class="Product_metafields_cards_slider">      
+            {% assign total_cards = card_titles.size | minus: 1 %}
+            {% for i in (0..total_cards) %}
+                <div class="Product_metafields_card lazy-load-parent {% if card_titles.size > 3 %} custom-width {% endif %}">
+                    <img src="{{ card_Image[i] | image_url: 'master' }}" loading="lazy" width="534px">
+                    <div class="Product_metafields_card_cutText">
+                        <div class="Product_metafields_card_info">
+                            <h3 class="product_card_title"> {{ card_titles[i] }} </h3>
+                            <p class="product_card_description product_card_title_desc{{ i }}"> {{ card_discription[i] }} </p>
+                        </div>
+                        <a class="Product_metafields_custom_readmore product_read_more{{ i }}">
+                        <span class="Product_metafields_custom_readmore_toggle_text">Read more</span>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+    {% endif %}
+{% endif %}       
+      
+{% if lazy_load_section != blank %}
+  </lazy-section>
+{% endif %}
+{% schema %}
+{
+  "name": "Product Metafield Cards",
+  "settings": [
+      {
+        "type": "text",
+        "id": "section_heading",
+        "label": "Heading text",
+	    "default": "WHAT MAKES OUR PRODUCTS GREAT?",
+        "info": "Max limit: 20 char"
+      }
+  ],
+  "presets": [
+    {
+      "name": "Product Metafield Cards"
+    }
+  ]
+}
+{% endschema %}

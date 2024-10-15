@@ -1,0 +1,1708 @@
+/*--------------font-css-starts--------- */
+/*! CSS Used fontfaces */
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joiaqRXBA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joraqRXBA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jogaqRXBA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2johaqRXBA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jovaqQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joiaqRXBA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joraqRXBA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jogaqRXBA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2johaqRXBA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jovaqQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joiaqRXBA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joraqRXBA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jogaqRXBA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2johaqRXBA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jovaqQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joiaqRXBA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joraqRXBA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jogaqRXBA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2johaqRXBA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jovaqQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joiaqRXBA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joraqRXBA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jogaqRXBA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2johaqRXBA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jovaqQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0gotcqA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk2wotcqA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0AotcqA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0QotcqA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk3wot.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0gotcqA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk2wotcqA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0AotcqA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0QotcqA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk3wot.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0gotcqA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk2wotcqA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0AotcqA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0QotcqA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk3wot.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0gotcqA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk2wotcqA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0AotcqA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0QotcqA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk3wot.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0gotcqA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk2wotcqA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0AotcqA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0QotcqA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk3wot.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joiaqRXBA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joraqRXBA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jogaqRXBA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2johaqRXBA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jovaqQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joiaqRXBA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joraqRXBA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jogaqRXBA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2johaqRXBA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jovaqQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joiaqRXBA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joraqRXBA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jogaqRXBA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2johaqRXBA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jovaqQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joiaqRXBA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joraqRXBA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jogaqRXBA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2johaqRXBA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jovaqQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joiaqRXBA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2joraqRXBA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jogaqRXBA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2johaqRXBA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Pttg83HX_SGhgqk2jovaqQ.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0gotcqA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk2wotcqA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0AotcqA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0QotcqA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk3wot.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0gotcqA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk2wotcqA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0AotcqA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0QotcqA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk3wot.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0gotcqA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk2wotcqA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0AotcqA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0QotcqA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk3wot.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0gotcqA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk2wotcqA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0AotcqA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0QotcqA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk3wot.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0gotcqA.woff2) format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk2wotcqA.woff2) format("woff2");
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0AotcqA.woff2) format("woff2");
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk0QotcqA.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Mulish";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/mulish/v12/1Ptvg83HX_SGhgqk3wot.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/*--------------font-css-ends--------- */
+/*--------------header-css-starts--------- */
+*,*::before,*::after{box-sizing:inherit;}
+ul{padding:0;margin:0;}
+.offer{display:none;}
+*{font-family:Mulish,sans-serif;font-display:swap;}
+header{margin:auto;}
+.header-container{margin:auto;background-color:#fff;box-shadow:1px -4px 13px 2px #0003;}
+.brand-bar{background:#013564;width:100%;display:flex;justify-content:space-between;align-items:center;height:45px;}
+.logo{display:flex;align-items:flex-end;height:100%;margin-left:-20px;}
+.logo a{line-height:0;}
+.offer{height:100%;background:#d9e255;width:40%;font:14px/26px Mulish;letter-spacing:-.34px;color:#013564;align-items:center;justify-content:center;}
+.offer a{color:#000;font-size:13px;font-family:Mulish,Courier,monospace;font-weight:400;letter-spacing:-.34px;text-transform:uppercase;text-align:center;text-decoration:none;line-height:17px;}
+.header-icon{margin-left:20px;}
+.navbar{height:74px;margin:auto;}
+.nav-container{display:flex;height:100%;align-items:center;justify-content:space-between;}
+.search-cart-container{display:flex;align-items:center;margin-right:15px;}
+.navlinks{width:100%;}
+.navlinks .parent{display:flex;color:#000;list-style:none;justify-content:space-evenly;}
+.navlinks .parent li a{text-decoration:none;font-size:14px;text-align:left;font:700 14px/26px Nobel;font-family:Mulish,sans-serif;letter-spacing:-.35px;color:#013564;opacity:1;text-transform:uppercase;}
+.selection-indicator:hover .header-menu-top{font-weight:800!important;}
+.search-container{border:1px solid rgb(226,221,221);display:flex;justify-content:center;align-items:center;height:36px;width:156px;overflow:hidden;}
+.search-input{border:none;outline:none;box-shadow:none;padding:0 10px;width:130px;}
+.search-input::placeholder{font-size:12px;}
+#search-icon{margin-right:10px;}
+.search-container form{display:flex;justify-content:center;align-items:center;}
+.cart{padding:0 10px;position:relative;}
+.cart-icon{margin-left:15px;margin-top:5px;}
+.cart-counter{top:-2px;right:2px;height:17px;width:17px;position:absolute;background-color:#ff0c0c;color:#fff;border-radius:50%;font-size:10px;text-align:center;}
+.cart-counter.bigger-cart-count{width:22px;}
+.mobile-search-cart-container,.hamburger-icon,.mobile-navbar{display:none;}
+.nav-item-deals{color:red!important;}
+@media screen and (min-width: 990px){
+.mobile-search-cart-container{display:none;}
+}
+@media screen and (max-width: 1024px){
+.header-container{width:100%;position:relative;}
+.brand-bar{justify-content:space-between;}
+.logo-and-hamburger{display:flex;align-items:center;}
+.navbar{display:none;}
+.mobile-search-cart-container{display:flex;margin:0 10px;align-items:center;padding-right:15px;gap:1rem;}
+.header-search-icon{height:25px;width:25px;}
+.header-cart{display:flex;justify-content:center;}
+.header-cart-counter{top:5.5px;right:16px;height:17px;width:17px;position:absolute;background-color:#ff0c0c;color:#fff;border-radius:50%;font-size:10px;text-align:center;}
+.header-cart-counter.bigger-cart-count{width:22px;}
+.header-cart a{line-height:1.6;}
+.hamburger-icon{display:block;margin:0 17px;width:22px;height:17px;}
+.mobile-navbar{display:flex;background-color:#fff;width:100%;position:absolute;flex-direction:column;justify-content:center;top:0;transform:translate(-100%);transition:transform .5s cubic-bezier(.4,0,.2,1);}
+.mobile-navbar ul li{list-style:none;font-family:Mulish,Courier,monospace;}
+.mobile-offer{display:flex!important;align-items:center;background-color:#d9e255;color:#fff;text-align:center;font-size:10px;margin:0;padding-right:1rem;padding-left:1rem;}
+.mobile-offer a{text-decoration:none;margin:0;padding:3px 7px;font-weight:400;color:#013564;letter-spacing:-.3px;font-size:12px;line-height:15px;text-transform:uppercase;}
+.mobile-offer .slick-track{display:flex!important;align-items:center!important;}
+.mobile-offer .slick-slide{height:inherit!important;}
+}
+.mobile-megamenu--header{display:none;}
+@media screen and (max-width: 425px){
+.header-cart .header-icon{margin-left:unset;padding-top:2px;}
+}
+.cart{position:relative;display:block;}
+.header-search-icon{cursor:pointer;}
+@media only screen and (max-width: 767px){
+.mobile-search-cart-container .header-search-icon{height:24px;width:24px;margin-top:-3px;}
+.hamburger-icon{margin-top:-2px;}
+}
+@media only screen and (min-width: 767px){
+.logo{margin-left:36px;margin-top:0;}
+}
+.logo-desktop{display:block;}
+.logo-mobile{display:none;}
+@media only screen and (max-width: 767px){
+.logo-desktop{display:none;}
+.logo-mobile{display:block;}
+.mobile-offer a{text-decoration:none;margin:0;padding:3px 7px;font-weight:400;color:#013564;letter-spacing:-0.3px;font-size:12px;line-height:15px;text-transform:uppercase;}
+}
+@media only screen and (min-width: 767px){
+.mobile-offer{display:none;}
+}
+@media screen and (max-width: 1024px){
+.logo{display:flex;margin-top:-3px;justify-content:center;align-items:center;overflow:hidden;max-height:32px;max-width:140px;margin-left:-5px;}
+}
+@media only screen and (max-width: 768px){
+.header-container{max-height:45px;overflow:hidden;}
+}
+@media screen and (max-width: 425px){
+.header-cart .header-icon{margin-left:unset;padding-top:2px;}
+}
+@media screen and (max-width: 425px){
+.header-cart .header-icon{margin-left:unset;padding-top:2px;}
+}
+*{font-family:"Mulish", sans-serif;}
+li{list-style:none;}
+ul{margin:0;padding:0;}
+a{background-color:transparent;}
+img{border-style:none;}
+input{font-family:inherit;font-size:100%;line-height:1.15;margin:0;}
+input{overflow:visible;}
+[type="search"]{-webkit-appearance:textfield;outline-offset:-2px;}
+::selection{background-color:rgba(var(--color-foreground), 0.2);}
+a:empty,ul:empty,div:empty{display:none;}
+*:focus{outline:0;box-shadow:none;}
+.title{margin:3rem 0 2rem;}
+@media screen and (min-width: 990px){
+.title{margin:5rem 0 3rem;}
+}
+#shopify-section-header{z-index:3;}
+.mm_dropdown.container{background:#fff;position:absolute;width:100%;left:50%;top:120px;visibility:hidden;opacity:0;transform:translateX(-50%);transition:opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;}
+.mm_mega-menu:hover .mm_dropdown.container{visibility:visible;opacity:1;background-color:transparent;}
+.mm_dropdown_contentWrapper{margin:auto;width:96%;background-color:#fff;}
+.header_navigation--item.mm_mega-menu{position:unset;}
+.header_navigation--item{padding:16px 0;border:5px solid transparent;}
+.mm_mega-menu:hover.selection-indicator{border-bottom:5px solid #d9e255;border-radius:5px;font-weight:800;}
+.mm-megamenu--image .title{margin:0px;color:#fff;font:normal normal 400 15px/35px Mulish;letter-spacing:2.04px;}
+.mm-megamenu--content{display:flex;justify-content:center;}
+.mm-megamenu--content .dropdown_menu-wrapper{display:flex;max-width:750px;}
+.dropdown__menus:nth-child(odd){background-color:#f9f9f9;}
+.dropdown_menu-wrapper .dropdown__menus{padding-left:30px;padding-right:30px;padding-top:20px;padding-bottom:40px;min-width:250px;max-width:260px;overflow:hidden;}
+.dropdown_content .dropdown__menu-title{font-size:15px;}
+.dropdown_content .dropdown__menu-title:hover{color:#d9e255;}
+.dropdown__menu-list{padding:3px 0;}
+.dropdown__menu-list span{text-transform:none;font-weight:400;font-size:15px;}
+.dropdown__menu-subtitle:hover{color:#013564;font-weight:700;}
+.mm-megamenu--image{width:450px;display:flex;align-items:center;justify-content:center;margin:30px;position:relative;}
+.mm-megamenu--image-overlay{position:absolute;bottom:-3px;}
+.mm-megamenu--image img{width:450px;height:300px;object-fit:cover;}
+.slick-slider{position:relative;display:block;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none;-khtml-user-select:none;-ms-touch-action:pan-y;touch-action:pan-y;-webkit-tap-highlight-color:transparent;}
+.slick-list{position:relative;display:block;overflow:hidden;margin:0;padding:0;}
+.slick-list:focus{outline:0;}
+.slick-slider .slick-list,.slick-slider .slick-track{-webkit-transform:translate3d(0, 0, 0);-moz-transform:translate3d(0, 0, 0);-ms-transform:translate3d(0, 0, 0);-o-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}
+.slick-track{position:relative;top:0;left:0;display:block;margin-left:auto;margin-right:auto;}
+.slick-track:after,.slick-track:before{display:table;content:"";}
+.slick-track:after{clear:both;}
+.slick-slide{display:none;float:left;height:100%;min-height:1px;}
+.slick-initialized .slick-slide{display:block;}
+.mobile-megamenu-container{height:100vh;overflow:scroll;position:relative;}
+.mobile-megamenu--header{background-color:#013564;display:flex;justify-content:space-between;padding:17px;position:relative;}
+.mobile-megamenu--header img{width:125px;height:25px;}
+.close-button{position:fixed!important;top:9px;z-index:99999;right:13px;}
+.mobile-megamenu--header .close{width:40px;height:40px;background:#013564;border-radius:50%;border:2px solid #013564;padding:8px;z-index:99999;}
+.mobile-megamenu--listitem img{width:100%;height:auto;}
+.mobile-megamenu--listitem{min-height:110px;display:flex;align-items:center;position:relative;}
+.mmlg{position:absolute;right:25px;width:130px;height:93px;overflow:hidden;}
+.mobile-megamenu--listitem .mlink{margin-left:17px;font-size:24px;font-family:"Mulish", sans-serif;font-weight:600;color:#fff;text-decoration:none;width:fit-content;}
+.mm-right-arrow{border:1px solid #fff;width:10px;height:10px;border-left:none;border-bottom:none;transform:rotate(135deg);transition:transform 400ms ease-in-out;margin:7px;margin-top:5px;margin-left:10px;}
+.mobile-header-link-container{padding:28px 20px;}
+.shop-all-link{display:flex;justify-content:center;padding:10px 0;color:#013564;font:normal normal normal 15px/38px Mulish;}
+.mobile-header-link-container:nth-child(odd){background-color:#f9f9f9;}
+.mm-m-c{transition:max-height 600ms;max-height:0;visibility:hidden;position:relative;}
+.mm-m-c::before{content:"";width:5px;border:8px solid #fff;padding:0px;position:absolute;display:inline-block;transform:rotate(45deg);left:25px;top:-6px;height:5px;}
+.mm-m-c-dropdown__menu-title{text-decoration:none;font-family:Mulish, sans-serif;font-size:15px;font-weight:800;color:#013564;text-transform:uppercase;letter-spacing:-0.5px;}
+.mm-m-c-dropdown-links{display:flex;flex-direction:column;padding-top:10px;}
+.mm-m-c-dropdown__menu-link{text-decoration:none;font-weight:500;color:#013564;position:relative;}
+.mm-m-c-dropdown__menu-link::after{content:"";border:1px solid #a9a9a9;width:8px;height:8px;border-left:none;border-bottom:none;transform:rotate(45deg);display:inline-block;position:absolute;right:10px;margin:10px;}
+.mobile-menu-header-foot{display:flex;flex-direction:column;background:#013564;}
+.mobile-menu-header-foot-1,.mobile-menu-header-foot-2{display:flex;border-bottom:1px solid #ffffff52;margin-top:30px;}
+.mob-title{font:normal normal 600 16px/38px Mulish;text-decoration:none;color:#fff;text-transform:uppercase;letter-spacing:0;}
+.mob-links{margin:10px 10px 30px;width:100%;line-height:initial;}
+.mob-link{text-decoration:none;font-size:16px;font-weight:500;color:#fff;opacity:0.7;text-transform:uppercase;line-height:40px;letter-spacing:0;}
+.mob-links--lists{position:relative;}
+.mob-links--lists::after{content:"";padding:6px;border:1px solid #cacaca;border-left:none;border-bottom:none;transform:rotate(45deg);display:inline-block;position:absolute;right:20px;top:10px;}
+.mob-img{width:19px;height:21px;margin:15px;margin-right:10px;margin-top:18px;}
+.heading-login-container{display:flex;justify-content:space-between;}
+.mob-login{color:#fff;padding-right:10px;font-size:12px;font-weight:400;margin:auto 0;}
+.header-icons{position:relative;display:flex;margin-right:20px;align-items:center;}
+#navbar-container{width:100%;}
+.header-submenu{position:relative;cursor:pointer;line-height:5;margin-top:16px;}
+.icons-list{position:absolute;visibility:hidden;opacity:0;top:45px;background-color:#013564;transition:opacity 0.5s ease-in-out;color:#fff;left:-130px;z-index:10;}
+.header-submenu:hover .icons-list{visibility:visible;opacity:1;}
+.icons-list li{list-style:none;width:165px;text-align:center;margin:0 10px;padding:7px 10px;line-height:22px;}
+.icons-list a{color:#fff;font-size:14px;font-family:"Mulish", sans-serif;text-decoration:none;list-style-type:none;width:150px;}
+.icons-list a:hover{color:#d9e255;}
+.login-button a{background-color:#b6c95e;padding:5px 20px;border-radius:2px;text-transform:uppercase;margin:0;font-weight:700;font-family:"Mulish";}
+.login-button a:hover{color:unset;}
+.mobile-search-container{display:none;padding:7px 0;}
+.mobile-search-container form{display:flex;justify-content:space-around;align-items:center;outline:none;}
+.mobile-search-input{padding:7px 20px;width:80%;border:none;outline:none;overflow:hidden;}
+.mobile-search-icon{height:24px;width:24px;}
+@media screen and (max-width: 1024px){
+.header-icons{display:none;}
+}
+.dropdown-view_all{display:none;}
+@media screen and (max-width: 1025px){
+.mm-m-c-dropdown__menu-title{display:flex;}
+.dropdown-view_all{display:block;margin-left:auto;text-decoration:underline;text-transform:capitalize;}
+}
+@media screen and (min-width: 1025px) and (max-width: 1279px){
+.mm-megamenu--image{width:250px;margin:30px 20px 30px 0px;}
+.mm-megamenu--image img{width:210px;height:auto;object-fit:fill;}
+.mm-megamenu--image .title{font:normal normal 400 12px/0px Mulish;}
+}
+.mobile-megamenu--content{z-index:5!important;}
+@media screen and (max-width: 767px){
+.mobile-search-cart-container .header-icon{margin-left:10px;margin-top:1px;}
+}
+@media screen and (max-width: 350px){
+.mobile-search-cart-container .header-icon{margin-left:0px;}
+}
+.dropdown-view_all{display:none;}
+@media screen and (max-width: 1025px){
+.mm-m-c-dropdown__menu-title{display:flex;}
+.dropdown-view_all{display:block;margin-left:auto;text-decoration:underline;text-transform:capitalize;}
+}
+.header-icon:hover,.header-search-icon:hover{opacity:0.7;}
+.hamburger-icon{cursor:pointer;}
+.header-container{max-height:unset;overflow:unset;}
+img{pointer-events:none;}
+a img{cursor:pointer;}
+.mobile-menu-header-foot-2{padding-bottom:100px;}
+.mob-links--lists.lang-parent::after{transform:rotate(140deg);}
+.lang-child{display:none;}
+.lang-child .mob-link{padding-left:15px;font-size:14px;}
+@media only screen and (max-width: 767px){
+.brand-bar{background:#FFF;}
+.header-search-icon path{stroke:#013564;fill:#013564;}
+.mm-ajaxcart-open svg path{stroke:#013564;fill:#013564;}
+.hamburger-icon rect{fill:#013564;}
+}
+.bg-color-appliances{background-color:#811b31;}
+.bg-color-appliances{background-color:#811b31;}
+.bg-color-dinnerware{background-color:#9293d3;}
+.bg-color-dinnerware{background-color:#9293d3;}
+.bg-color-serveware{background-color:#b6d700;}
+.bg-color-serveware{background-color:#b6d700;}
+.bg-color-storage{background-color:#cc67a9;}
+.bg-color-storage{background-color:#cc67a9;}
+.bg-color-drinkware{background-color:#e13925;}
+.bg-color-drinkware{background-color:#e13925;}
+.bg-color-bottles{background-color:#06b5c4;}
+.bg-color-bottles{background-color:#06b5c4;}
+.bg-color-lunchboxes{background-color:#f90078;}
+.bg-color-lunchboxes{background-color:#f90078;}
+.bg-color-cookware{background-color:#ffd700;}
+.bg-color-cookware{background-color:#ffd700;}
+.bg-color-home-decor{background-color:#f57d23;}
+.bg-color-deals{background-color:#ffffff;}
+
+/*--------------header-css-ends--------- */
+/*--------------collection-grid-css-starts---------------- */
+/*! CSS Used from: Embedded */
+.swym-button.swym-add-to-wishlist-view-product{background:none;font-family:"swym-font";font-size:inherit;font-weight:inherit;color:#ff4500;line-height:100%;box-shadow:none;-webkit-appearance:none;min-width:0px;max-width:60px;margin:0;padding:0;border:0;vertical-align:baseline;box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-webkit-box-sizing:border-box;outline:none;display:inline-block;height:auto;overflow:visible;}
+.swym-button.swym-add-to-wishlist-view-product.swym-added{opacity:.7;}
+.swym-button.swym-add-to-wishlist-view-product:after{content:"";}
+.swym-button.swym-add-to-wishlist-view-product.swym-added:after{content:"";}
+.swym-button.swym-add-to-wishlist-view-product.swym-heart:after{content:"";}
+.swym-button.swym-add-to-wishlist-view-product.swym-heart.swym-added:after{content:"";}
+button.swym-button{margin:0;border:none;font:inherit;line-height:normal;height:40px;display:block;color:#fff;padding:0 20px;text-transform:uppercase;font-size:14px;text-align:center;overflow:hidden;position:relative;cursor:pointer;}
+button.swym-button:disabled{opacity:.4;}
+button.swym-button:disabled:hover{opacity:.4;}
+button.swym-button:hover{opacity:.9;}
+/*! CSS Used from: Embedded */
+*{font-family:'Mulish',sans-serif;font-display:swap;}
+.Producttitle_full{display:none;height:auto;top:20%;left:0;right:0;margin:0 5px;position:absolute;z-index:999!important;text-align:center;padding:0 5px;background-color:#FAF28D;font-size:11px;border-radius:3px;}
+.Producttitle_full::after{content:"";position:absolute;bottom:100%;left:50%;margin-left:-5px;border-width:5px;border-style:solid;border-color:transparent transparent #FAF28D transparent;}
+.product-card__selectors{display:flex;margin-bottom:15px;}
+.product-card__selectors input{padding:10px;}
+.quantity-selector-input{flex-grow:1;display:none;height:39px;border:0.5px solid #b3b3b3;outline:none;box-shadow:none;}
+.variant-present{width:63px;}
+.product-card__quantity{flex-grow:1;position:relative;display:flex;height:39px;border:0.5px solid #b3b3b3;text-align:left;font-size:14px;color:#3C3C3C;font-weight:normal;}
+.quantity-selector-value{padding:7px 12px;flex-grow:1;font-weight:400;}
+.quantity-selector-list{display:none;position:absolute;width:100%;height:226px;z-index:1;bottom:100%;max-height:150px;flex-grow:1;background:#FFFFFF;border:0.5px solid #111111;list-style-type:none;margin-top:0;padding:0;overflow-y:scroll;overflow-x:hidden;}
+.error-quantity{display:block;position:absolute;font-size:10px;font-family:'Mulish';padding-top:5px;color:red;left:0;right:0;bottom:-7px;font-weight:700;}
+.quantity-selector-list::-webkit-scrollbar{width:5px;}
+.quantity-selector-list::-webkit-scrollbar-track{background:#f1f1f1;}
+.quantity-selector-list::-webkit-scrollbar-thumb{background:#888;}
+.quantity-selector-listitem{width:100%;height:46px;display:flex;align-items:center;justify-content:center;font:#676767;font-size:14px;font-weight:bold;}
+.product-card__variants{width:186px;position:relative;display:flex;height:39px;border:0.5px solid #b3b3b3;margin-left:9px;text-align:left;font-size:14px;color:#3C3C3C;font-weight:normal;}
+.variant-selector-value{padding:7px 12px;overflow:hidden;flex:1;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;font-weight:400;}
+.variant-selector-list{display:none;position:absolute;width:100%;bottom:100%;max-height:150px;background:#FFFFFF;border:0.5px solid #111111;list-style-type:none;padding-left:0;margin-top:0;overflow-y:scroll;overflow-x:hidden;z-index:1;}
+.variant-selector-list::-webkit-scrollbar{width:5px;}
+.variant-selector-list::-webkit-scrollbar-track{background:#f1f1f1;}
+.variant-selector-list::-webkit-scrollbar-thumb{background:#888;}
+.variant-selector-listitemContent{display:flex;width:100%;height:46px;align-items:center;overflow:hidden;}
+.variant-selector-title{color:#676767;font-size:12px;text-align:left;margin-left:5px;width:93px;overflow:hidden;letter-spacing:0px;font-weight:bold;}
+.variant-selector-prices{margin-left:auto;margin-right:2px;letter-spacing:0px;text-align:center;overflow:hidden;}
+.varaint-sellingPrice{color:#D81818;font-size:11px;font-weight:bold;}
+.varaint-originalPrice{color:#8795A4;font-size:10px;text-decoration:line-through;}
+.product-card__selector-dropdownArrow{margin-left:auto;margin-top:10px;width:22px;height:20px;background:url(https://cdn.shopify.com/s/files/1/0551/8009/9722/files/down-arrow.png?v=1655381023) no-repeat;opacity:0.65;}
+.product-card{margin:0 8px;background:#ffffff;box-shadow:0px 0px 8px #0000001C;margin-bottom:25px;}
+.product-card__link{display:block;position:relative;padding-bottom:100%;}
+.product-card__image{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;}
+.product-card__info{padding:15px;text-align:center;position:relative;margin-bottom:10px;}
+.product-card__title{width:100%;display:inline-block;font-size:16px;color:#070707;font-weight:bold;text-decoration:none;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.Producttitle_full{display:none;height:auto;top:20%;left:0;right:0;margin:0 5px;position:absolute;z-index:999!important;text-align:center;padding:0 5px;background-color:#FAF28D;font-size:11px;border-radius:3px;}
+.loader{display:none;margin:20px auto;border:2px solid #f3f3f3;border-radius:50%;border-top:2px solid #484949;width:25px;height:25px;z-index:1;-webkit-animation:spin 2s linear infinite;animation:spin 2s linear infinite;}
+@media only screen and (max-width:600px){
+.product-card__addtocart{font-size:14px;padding:12px 50px;}
+}
+.modal{display:none;position:absolute;z-index:1;text-align:center;left:0;top:0;padding:30px 20px;width:100%;height:100%;overflow:auto;background-color:rgb(0,0,0);background-color:rgba(0,0,0,0.4);}
+.modal-content{background-color:#fefefe;color:red;font-weight:bold;margin:0 auto;padding:10px;border:1px solid #888;width:auto;}
+.close_error_Box{color:#aaaaaa;float:right;font-size:28px;font-weight:bold;}
+.quantity-selector-input[type=number]{-moz-appearance:textfield;}
+@media only screen and (max-width:430px){
+.loader{margin:12px auto;}
+.variant-selector-title{font-size:10px;width:67%;}
+.variant-selector-prices{line-height:1rem;}
+.varaint-sellingPrice{font-size:8px;}
+.varaint-originalPrice{font-size:8px;}
+.variant-selector-value{padding:10px 12px;font-size:12px;align-self:center;}
+.quantity-selector-value{font-size:12px;align-self:center;}
+}
+@media screen and (max-width: 1024px){
+@media screen and (max-width: 767px){
+.swym-button.swym-add-to-wishlist-view-product:after{content:"";}
+}
+@media screen and (max-width: 767px){
+.collection-top-filters{padding-left:15px;margin-bottom:18px;margin-top:25px;}
+}
+}
+.mmc-loop .product-card{position: relative;}
+.product-card_badge{position:absolute;top:0;left:0;background:#d9e255;padding:0 7px;color:#013564;font-weight:600;}
+/*! CSS Used from: Embedded */
+*,*::before,*::after{box-sizing:inherit;}
+ul{padding:0;margin:0;}
+@media all{
+.mmc-container{max-width:1253px;margin:0 auto;}
+.mmc-breadcrumb{margin:1.5rem 0;font-size:12px;}
+.mmc-breadcrumb a{font-family:Mulish,sans-serif;text-decoration:none;color:#959595;}
+.mmc-main{display:flex;flex-wrap:wrap;}
+.mmc-main__filter,.mmc-main__wrapper{width:100%;padding:0 15px;}
+.mmc-main__wrapper{border-top:1px solid lightgrey;padding-right:unset;}
+.mmc-main__filter{padding:unset;}
+.swym-wishlist-button-bar{position:absolute;color:#c6c6c6;display:flex;top:10px;right:10px;background-color:#fff;border-radius:50%;padding:10px;text-align:center;cursor:pointer;justify-content:center;}
+.filter-sidebar__header{display:flex;align-items:center;justify-content:space-between;padding:15px 15px 0;border-bottom:none;border:1px solid lightgrey;}
+.title-reset-all{color:#d9e255;font-size:14px;display:flex;align-items:center;text-transform:capitalize;margin-bottom:10px;cursor:pointer;}
+.filter-sidebar__title{font-size:18px;font-weight:700;}
+.filter-group{padding:15px;}
+.filter-group:not(:last-child){border-bottom:1px solid #e1e3e4;}
+.filter-group__heading{border:0;padding:0 0 10px;width:100%;background:none;display:flex;font-size:14px;font-family:Mulish,sans-serif;font-weight:600;color:#004778;position:relative;letter-spacing:.5px;align-items:center;text-transform:uppercase;justify-content:space-between;}
+.heading--icon{width:8px;height:8px;position:relative;border:1px solid grey;border-right:none;border-bottom:none;transform:rotate(45deg);transition:.3s ease;}
+.filter-sidebar__footer{display:none;}
+.filter-sidebar__button{width:100%;font-size:15px;padding:10px;margin:0 5px;cursor:pointer;letter-spacing:.05rem;border:1px solid #000;text-align:center;font-weight:600;}
+.filter-sidebar__button:last-child{background:#004778;color:#fff;}
+.mmc-toolbar{display:flex;margin:30px 0;align-items:center;justify-content:space-between;}
+.mmc-toolbar--title{font-family:Mulish,sans-serif;font-weight:600;color:#000;font-size:21px;}
+.mmc-sort-desktop{position:relative;cursor:pointer;display:flex;align-items:center;gap:10px;}
+.mmc-sort-header{font-size:14px;min-width:250px;padding:5px 15px;border:1px solid #e1e3e4;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='10' fill='none'%3E%3Cpath d='M1 1l8 8 8-8' stroke='%23000' stroke-width='1.25'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:94% center;background-size:15px;}
+.mmc-sort-header span{font-weight:600;}
+.mmc-sort-list{top:100%;left:69px;opacity:0;z-index:2;width:78%;font-size:14px;visibility:hidden;position:absolute;background:#ffffff;border:1px solid #e1e3e4;border-top:0;}
+.mmc-sort-list li{padding:8px 15px;}
+.mmc-sort-list li:hover{background:#f4f4f5;}
+.mmc-sort-desktop:hover .mmc-sort-list{opacity:1;visibility:visible;}
+.mmc-pagination{text-align:center;padding-bottom:50px;padding-top:30px;}
+.mmc-pagination a{margin:0 4px;font-size:12px;padding:10px 15px;border:1px solid #dddddd;display:inline-block;text-decoration:none;color:#004778;border-radius:6px;}
+.mmc-pagination span{margin:0 4px;font-size:12px;padding:10px 15px;background:#004778;border:1px solid #e2e7e8;color:#fff;border-radius:6px;display:inline-block;}
+.mmc-pagination svg{max-width:17px;vertical-align:middle;}
+.no-border{border:none!important;font-size:16px!important;}
+.mmc-sort-mobile{width:100%;position:fixed;left:0;right:0;bottom:0;padding:20px;background:#ffffff;z-index:1000;visibility:hidden;transform:translateY(100%);transition:transform .5s cubic-bezier(.645,.045,.355,1),visibility .5s cubic-bezier(.645,.045,.355,1);border-top:1px solid #dddddd;}
+.mmc-sort-mobile ul li{line-height:2.5;}
+.filter-item-name{font-size:13px;font-weight:400;color:#6f6f6f;font-family:Mulish,sans-serif;}
+.mmc-loop{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:10px;margin:20px auto auto;}
+.mmc-loop .product-card__addtocart{width:100%;background:#fff;font-size:16px;color:#004778;box-shadow:0 0 1px .3px #004778;cursor:pointer;font-weight:400;padding:5px 0;text-transform:uppercase;border:0;line-height:inherit;}
+.mmc-loop .product-card__addtocart:not(.is-disabled):hover{background:#004778;color:#fff;}
+.product-card__snack{margin:0;display:block!important;font-size:13px;line-height:15px;color:#636363;font-weight:400;font-family:Mulish,sans-serif;letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mmc-loop .product-card__price{margin-bottom:6px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;}
+.mmc-loop .product-card__regularprice{color:#d81818;font-size:16px;font-weight:700;}
+.mmc-loop .product-card__compareprice{color:#8795a4;font-size:14px;margin-left:10px;text-decoration:line-through;}
+.mmc-loop .product-card__discountpercentage{font-weight:700;color:#69b900;font-size:16px;margin-left:10px;}
+.mmc-buttons{position:fixed;bottom:49px;left:0;width:100%;z-index:9;padding:10px;display:flex;align-items:center;background:#ffffff;box-shadow:0 -5px 5px #0000000a;-webkit-box-shadow:0 -5px 5px 0 rgba(0,0,0,.04);-moz-box-shadow:0 -5px 5px 0 rgba(0,0,0,.04);}
+.mmc-buttons .mmc-button-divider{display:block;}
+.mmc-button{width:100%;display:flex;align-items:center;justify-content:center;font-size:15px;padding:5px 0;font-weight:700;cursor:pointer;letter-spacing:.05rem;}
+.mmc-button svg{max-width:18px;margin-right:10px;}
+.mmc-button-divider{width:2px;height:18px;background:#888888;}
+@media screen and (max-width: 1023px){
+.mmc-main__filter{position:fixed;top:0;left:0;height:100%;background:#fff;z-index:1002;max-width:400px;visibility:hidden;transform:translateY(100%);transition:transform .5s cubic-bezier(.645,.045,.355,1),visibility .5s cubic-bezier(.645,.045,.355,1);}
+.filter-group,.filter-sidebar__header{padding:15px 0;}
+.filter-sidebar__header{padding:15px;}
+.filter-sidebar__header{display:flex;align-items:center;justify-content:space-between;}
+.filter-group:first-child{padding-top:0;}
+.filter-sidebar__content{overflow:auto;position:relative;height:calc(100vh - 145px);padding:20px;}
+.filter-sidebar__footer{display:flex;align-items:center;justify-content:space-between;padding:10px 0;max-height:70px;position:fixed;bottom:0;left:0;width:100%;margin:0;background:white;}
+.mmc-sort-desktop{display:none;}
+}
+@media screen and (max-width: 768px){
+.mmc-container{padding:0 20px;overflow:hidden;}
+.mmc-main__filter,.mmc-main__wrapper{width:100%;padding:0!important;}
+.mmc-loop{grid-template-columns:1fr 1fr;gap:15px 0px;margin:0!important;}
+.mmc-loop .product-card__price{margin-bottom:6px;margin-top:2px;}
+}
+@media screen and (max-width: 425px){
+.mmc-container{padding:0 20px;}
+}
+@media screen and (min-width: 1024px){
+.mmc-main{flex-wrap:nowrap;}
+.mmc-main__filter{max-width:250px;max-height:400px;position:sticky;overflow-y:auto;top:140px;padding-right:0;}
+.mmc-main__filter::-webkit-scrollbar{width:5px;}
+.mmc-main__filter::-webkit-scrollbar-track{box-shadow:inset 0 0 5px #dad8d8;border-radius:10px;}
+.mmc-main__filter::-webkit-scrollbar-thumb{background:rgb(187,187,187);border-radius:10px;}
+.filter-sidebar__title{margin-bottom:10px;}
+.filter-sidebar__content{border:1px solid #e1e3e4;border-top:unset;}
+.filter-sidebar__content ::-webkit-scrollbar{display:none;}
+.mmc-buttons{display:none;}
+}
+.collection-banner{position:relative;}
+.collection-banner picture img{width:100%;max-height:215px;object-fit:initial;}
+.collection-banner p{position:absolute;margin:0;padding:0;top:50%;left:72px;font-family:Mulish;font-weight:700;font-size:35px;text-transform:uppercase;color:#000;transform:translateY(-50%);visibility:hidden;}
+.collection-top-filters{display: flex;margin-top:25px;margin-bottom:50px;}
+.top-filter-container{margin-right:25px;}
+.top-filter-container--image{width:152px;height:152px;padding:5px;border-radius:50%;cursor:pointer;margin:auto;}
+.top-filter-container--title{font-family:Mulish,sans-serif;font-size:16px;color:#959595;text-align:center;margin:0;line-height:20px;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis;overflow:hidden;}
+.collection-top-filters .slick-track{margin-left:0;}
+@media screen and (max-width: 768px){
+.mmc-loop{grid-template-columns:50% 50%;gap:15px 0px;margin:20px 8px auto;}
+}
+@media screen and (max-width: 425px){
+.mmc-container{padding:unset;}
+.mmc-main__wrapper{border:unset;}
+.mmc-breadcrumb{padding-left:15px;}
+.collection-banner picture img{height:100%;}
+.collection-banner p{font-size:17px;left:15px;visibility:hidden;}
+.collection-top-filters{padding-left:15px;margin-bottom:unset;}
+.mmc-toolbar{display:none;}
+.mmc-loop{grid-template-columns:1fr 1fr;gap:15px 5px;}
+.product-card{min-width:174px;margin:0 5px;}
+.product-card__addtocart{padding:10px 20px;}
+.mmc-main__filter{padding:unset!important;}
+.top-filter-container--title{font-size:14px;}
+.top-filter-container--image{height:82px;width:82px;}
+.filter-sidebar__header{padding:20px;box-shadow:1px 1px 7px #e1e3e4;}
+.filter-sidebar__content{margin:0;border:1px solid #e1e3e4;padding:20px;}
+.filter-sidebar__footer{margin:0;padding:10px;box-shadow:0 0 7px #c3c3c3;}
+.mmc-loop .product-card__info{padding:5px 11px;}
+.mmc-loop .variant-selector-prices{padding-right:8px;letter-spacing:0px;}
+.mmc-loop .variant-selector-title{color:#676767;font-size:8px;margin-left:5px;letter-spacing:0px;font-weight:700;}
+.mmc-loop .varaint-sellingPrice,.mmc-loop .varaint-originalPrice{font-size:8px;white-space:nowrap;}
+.mmc-loop .variant-selector-prices{padding:15px;}
+.mmc-loop .variant-selector-value{padding:7px 9px;}
+.product-card__snack{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px;}
+.mmc-loop .product-card__addtocart{font-size:12px;padding:10px 0;}
+.mmc-loop .product-card__regularprice{color:#d81818;font-size:12px;font-weight:700;}
+.mmc-loop .product-card__compareprice{font-size:10px;margin-left:7px;}
+.mmc-loop .product-card__discountpercentage{font-size:11px;margin-left:7px;}
+.product-card__title{font-size:12px;font-family:Mulish,sans-serif;}
+.mmc-pagination{margin-top:20px;}
+}
+.filter-group__heading h3{font-size:14px;font-family:Mulish,sans-serif;font-weight:600;color:#004778;}
+@media screen and (max-width: 767px){
+.mmc-loop .product-card__quantity .product-card__selector-dropdownArrow{margin-top:10px;margin-left:-5px;margin-right:0;}
+}
+.mmc-loop .product-card__title{line-height:15px;}
+.mmc-loop .product-card__title{max-height:30px;min-height:30px;}
+.mmc-loop .product-card__info .product-card__title-container{width:100%;display:block;height:auto;line-height:15px;}
+.mmc-loop .product-card__price{line-height:18px;}
+@media screen and (max-width: 400px){
+.product-card{min-width:50%;}
+}
+}
+.product-card{margin:0 8px;background:#ffffff;box-shadow:0px 0px 8px #0000001c;margin-bottom:73px;}
+.product-card__link{display:block;position:relative;padding-bottom:100%;}
+.product-card__image{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;}
+.product-card__info{padding:15px;text-align:center;position:relative;}
+.product-card__title{width:100%;display:inline-block;font-size:16px;font-family:"Mulish", sans-serif;color:#070707;font-weight:bold;text-decoration:none;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;letter-spacing:0px;}
+.Producttitle_full{display:none;height:auto;top:20%;left:0;right:0;margin:0 5px;position:absolute;z-index:999!important;text-align:center;padding:0 5px;background-color:#faf28d;font-size:11px;font-family:"Mulish", sans-serif;border-radius:3px;letter-spacing:0px;}
+.Producttitle_full::after{content:"";position:absolute;bottom:100%;left:50%;margin-left:-5px;border-width:5px;border-style:solid;border-color:transparent transparent #faf28d transparent;}
+.product-card__price{font-weight:bold;margin:5px 0;overflow:hidden;letter-spacing:0px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;}
+.product-card__regularprice{font:normal normal bold 16px/20px Mulish;letter-spacing:0px;color:#d81818;}
+.product-card__compareprice{font:normal normal 600 14px/18px Mulish;letter-spacing:0px;color:#8795a4;margin-left:7px;text-decoration:line-through;}
+.product-card__discountpercentage{font:normal normal bold 14px/18px Mulish;color:#69b900;letter-spacing:0px;margin-left:7px;}
+.product-card__addtocart{width:100%;background:#ffffff;font-size:16px;color:#004778;cursor:pointer;font-weight:normal;padding:11px 0;text-transform:uppercase;border:1px solid rgba(0, 71, 120, 0.5);}
+.product-card__addtocart:hover{background:#004778;color:#ffffff;border:0;}
+@media only screen and (max-width: 430px){
+.product-card{margin-bottom:40px;}
+}
+*{font-family:"Mulish", sans-serif;font-display:swap;}
+.product-card__title{max-height:34px;min-height:34px;}
+.product-card__link{display:block;position:relative;padding-bottom:100%;}
+.product-card__info{padding:15px;text-align:center;position:relative;margin-bottom:10px;}
+h1,h2,h3{margin:0;padding:0;box-sizing:border-box;}
+*{font-family:"Mulish", sans-serif;}
+li{list-style:none;}
+ul{margin:0;padding:0;}
+h1{font-size:2em;margin:0.67em 0;}
+a{background-color:transparent;}
+img{border-style:none;}
+button,input{font-family:inherit;font-size:100%;line-height:1.15;margin:0;}
+button,input{overflow:visible;}
+button{text-transform:none;}
+button,[type="button"]{-webkit-appearance:button;}
+::selection{background-color:rgba(var(--color-foreground), 0.2);}
+h1,h2,h3{font-family:var(--font-heading-family);font-style:var(--font-heading-style);font-weight:var(--font-heading-weight);letter-spacing:calc(var(--font-heading-scale) * 0.06rem);color:rgb(var(--color-foreground));line-height:calc(1 + 0.3 / max(1, var(--font-heading-scale)));}
+h1{font-size:calc(var(--font-heading-scale) * 3rem);}
+@media only screen and (min-width: 750px){
+h1{font-size:calc(var(--font-heading-scale) * 4rem);}
+}
+h2{font-size:calc(var(--font-heading-scale) * 2rem);}
+@media only screen and (min-width: 750px){
+h2{font-size:calc(var(--font-heading-scale) * 2.4rem);}
+}
+h3{font-size:calc(var(--font-heading-scale) * 1.7rem);}
+@media only screen and (min-width: 750px){
+h3{font-size:calc(var(--font-heading-scale) * 1.8rem);}
+}
+a:empty,ul:empty,div:empty,section:empty,p:empty,h1:empty,h2:empty,h3:empty{display:none;}
+*:focus{outline:0;box-shadow:none;}
+.slick-slider{position:relative;display:block;box-sizing:border-box;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none;-khtml-user-select:none;-ms-touch-action:pan-y;touch-action:pan-y;-webkit-tap-highlight-color:transparent;}
+.slick-list{position:relative;display:block;overflow:hidden;margin:0;padding:0;}
+.slick-list:focus{outline:0;}
+.slick-slider .slick-list,.slick-slider .slick-track{-webkit-transform:translate3d(0, 0, 0);-moz-transform:translate3d(0, 0, 0);-ms-transform:translate3d(0, 0, 0);-o-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0);}
+.slick-track{position:relative;top:0;left:0;display:block;margin-left:auto;margin-right:auto;}
+.slick-track:after,.slick-track:before{display:table;content:"";}
+.slick-track:after{clear:both;}
+.slick-slide{display:none;float:left;height:100%;min-height:1px;}
+.slick-slide img{display:block;}
+.slick-initialized .slick-slide{display:block;}
+.Producttitle_full{display:none;height:auto;top:20%;left:0;right:0;margin:0 5px;position:absolute;z-index:999!important;text-align:center;padding:0 5px;background-color:#faf28d;font-size:11px;border-radius:3px;}
+.Producttitle_full::after{content:"";position:absolute;bottom:100%;left:50%;margin-left:-5px;border-width:5px;border-style:solid;border-color:transparent transparent #faf28d transparent;}
+.product-card__selectors{display:flex;margin-bottom:7px;}
+.product-card__selectors input{padding:10px;}
+.quantity-selector-input{flex-grow:1;display:none;height:39px;border:0.5px solid #b3b3b3;outline:none;box-shadow:none;}
+.variant-present{width:50px;}
+@media screen and (max-width: 767px){
+.variant-present{width:40px;}
+}
+.product-card__quantity{flex-grow:1;position:relative;display:flex;height:39px;border:0.5px solid #b3b3b3;text-align:left;font-size:14px;color:#3c3c3c;font-weight:normal;}
+.quantity-selector-value{padding:7px 6px!important;flex-grow:1;font-weight:400;cursor:pointer;}
+.quantity-selector-list{display:none;position:absolute;width:100%;height:226px;z-index:1;bottom:100%;max-height:150px;flex-grow:1;background:#ffffff;border:0.5px solid #111111;list-style-type:none;margin-top:0;padding:0;overflow-y:scroll;overflow-x:hidden;}
+.error-quantity{display:block;position:absolute;font-size:10px;font-family:"Mulish";padding-top:5px;color:red;left:0;right:0;bottom:-3px;font-weight:700;}
+@media screen and (max-width: 767px){
+.error-quantity{bottom:-2px;}
+}
+.quantity-selector-list::-webkit-scrollbar{width:5px;}
+.quantity-selector-list::-webkit-scrollbar-track{background:#f1f1f1;}
+.quantity-selector-list::-webkit-scrollbar-thumb{background:#888;}
+.quantity-selector-list::-webkit-scrollbar-thumb:hover{background:#555;}
+.quantity-selector-list > li{cursor:pointer;}
+.quantity-selector-list li:hover{background:#d9e2552e;}
+.quantity-selector-listitem{width:100%;height:46px;display:flex;align-items:center;justify-content:center;font:#676767;font-size:14px;font-weight:bold;}
+.product-card__variants{width:210px;position:relative;display:flex;height:39px;border:0.5px solid #b3b3b3;margin-left:9px;text-align:left;font-size:14px;color:#3c3c3c;font-weight:normal;}
+.variant-selector-value{padding:7px 12px;overflow:hidden;flex:1;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;font-weight:400;cursor:pointer;white-space:nowrap;margin-right:5px;}
+.variant-selector-list{display:none;position:absolute;width:100%;bottom:100%;max-height:150px;background:#ffffff;border:0.5px solid #111111;list-style-type:none;padding-left:0;margin-top:0;overflow-y:scroll;overflow-x:hidden;z-index:1;}
+.variant-selector-list::-webkit-scrollbar{width:5px;}
+.variant-selector-list::-webkit-scrollbar-track{background:#f1f1f1;}
+.variant-selector-list::-webkit-scrollbar-thumb{background:#888;}
+.variant-selector-list::-webkit-scrollbar-thumb:hover{background:#555;}
+.variant-selector-list > li{cursor:pointer;}
+.variant-selector-list li:hover{background:#d9e2552e;}
+.variant-selector-listitemContent{display:flex;width:100%;height:46px;align-items:center;overflow:hidden;}
+.variant-selector-title{color:#676767;font-size:12px;text-align:left;margin-left:5px;width:93px;overflow:hidden;letter-spacing:0px;font-weight:bold;}
+.variant-selector-prices{margin-left:auto;margin-right:2px;letter-spacing:0px;text-align:center;overflow:hidden;}
+.varaint-sellingPrice{color:#d81818;font-size:11px;font-weight:bold;}
+.varaint-originalPrice{color:#8795a4;font-size:10px;text-decoration:line-through;}
+.product-card__variants .product-card__selector-dropdownArrow{margin-left:auto;margin-top:10px;width:22px;height:20px;background:url(https://myborosil.com/cdn/shop/files/down-arrow.png?v=1655381023) no-repeat;opacity:0.65;display:block;}
+.product-card__selector-dropdownArrow:hover{cursor:pointer;}
+.product-card{margin:0 8px;background:#ffffff;box-shadow:0px 0px 8px #0000001c;margin-bottom:25px;}
+.product-card__title{width:100%;display:inline-block;font-size:13px;color:#070707;font-weight:bold;text-decoration:none;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;text-wrap:balance;}
+.Producttitle_full{display:none;height:auto;top:20%;left:0;right:0;margin:0 5px;position:absolute;z-index:999!important;text-align:center;padding:0 5px;background-color:#faf28d;font-size:11px;border-radius:3px;}
+.loader{display:none;margin:20px auto;border:2px solid #f3f3f3;border-radius:50%;border-top:2px solid #484949;width:25px;height:25px;z-index:1;-webkit-animation:spin 2s linear infinite;animation:spin 2s linear infinite;}
+.product-card__info .loader{margin:11px auto;}
+@media only screen and (max-width: 600px){
+.product-card__addtocart{font-size:14px;padding:5px 10px;}
+}
+.modal{display:none;position:absolute;z-index:1;text-align:center;left:0;top:0;padding:30px 20px;width:100%;height:100%;overflow:auto;background-color:rgb(0, 0, 0);background-color:rgba(0, 0, 0, 0.4);}
+.modal-content{background-color:#fefefe;color:red;font-weight:bold;margin:0 auto;padding:10px;border:1px solid #888;width:auto;}
+.close_error_Box{color:#aaaaaa;float:right;font-size:28px;font-weight:bold;}
+.close_error_Box:hover,.close_error_Box:focus{color:#000;text-decoration:none;cursor:pointer;}
+.quantity-selector-input[type="number"]{-moz-appearance:textfield;}
+@media only screen and (max-width: 430px){
+.loader{margin:12px auto;}
+.variant-selector-title{font-size:10px;width:67%;}
+.variant-selector-prices{line-height:1rem;}
+.varaint-sellingPrice{font-size:8px;}
+.varaint-originalPrice{font-size:8px;}
+.variant-selector-value{padding:10px 12px;font-size:12px;align-self:center;}
+.quantity-selector-value{font-size:12px;align-self:center;}
+}
+@media screen and (min-width: 1140px) and (max-width: 1360px){
+.collection-top-filters{max-width:95%;margin-left:auto;margin-right:auto;}
+}
+@media screen and (min-width: 1140px){
+.mm-collection-style-updated .slick-track{margin:0 auto;display:flex;}
+}
+@media screen and (min-width: 992px) and (max-width: 1140px){
+.mm-collection-style-updated .slick-track{margin:0 auto;}
+.product-card__quantity{width:100%;max-width:22%!important;}
+}
+.top-filter-container--title{color:#121212bf;}
+.variant-selector-listitemContent .variant-selector-title{line-height:14px;}
+.product-card__quantity{width:100%;min-width:16%;}
+.product-card__variants{width:100%;min-width:calc(80% - 9px);}
+@media screen and (max-width: 992px){
+.product-card__quantity{min-width:14%;}
+}
+@media screen and (max-width: 767px){
+.product-card__title{margin-bottom:2px;}
+.collection-top-filters{margin-bottom:18px;}
+.top-filter-container--title{line-height:16px;}
+.product-card__quantity{height:35px;}
+.product-card__addtocart{height:35px;}
+.product-card__variants{height:35px;min-width:calc(80% - 9px);}
+.mmc-loop .product-card__addtocart{font-size:12px;padding:7px 0px;}
+.variant-selector-listitemContent .variant-selector-title{line-height:12px;}
+.collection-banner{position:relative;margin:20px 0px;}
+.product-card__quantity{min-width:20%;}
+.product-card__selector-dropdownArrow{margin-top:9px;margin-left:-1px;margin-right:2px;width:22px;background-size:14px 14px;}
+}
+@media screen and (max-width: 350px){
+.product-card__title{margin-bottom:5px;}
+.collection-top-filters{margin-bottom:18px;}
+.product-card__selector-dropdownArrow{margin-left:-2px;}
+}
+img{pointer-events:none;}
+a img{cursor:pointer;}
+.top-filter-container--image{pointer-events:unset;}
+.mmc-loop .swym-wishlist-button-bar{right:15px;}
+.mmc-loop .swym-wishlist-button-bar{position:absolute;color:#c6c6c6;display:flex;text-align:center;top:3px;right:3px;width:26px;height:26px;background-color:white;border-radius:50%;padding:6px;cursor:pointer;}
+.product-card__selector-dropdownArrow{display:block!important;}
+.mmc-loop .swym-wishlist-button-bar{background-color:#fff!important;}
+/*! CSS Used from: Embedded */
+.or.filter-item .filter-item-checkbox{height:15px;width:15px;display:inline-block;vertical-align:middle;margin-right:10px;position:relative;border:1px solid #013564;border-radius:2px;}
+@media all{
+.mmc-container{max-width:1253px;margin:0 auto;}
+.mmc-breadcrumb{margin:1.5rem 0;font-size:12px;}
+.mmc-breadcrumb a{font-family:Mulish,sans-serif;text-decoration:none;color:#959595;}
+.mmc-main{display:flex;flex-wrap:wrap;}
+.mmc-main__filter,.mmc-main__wrapper{width:100%;padding:0 15px;}
+.mmc-main__wrapper{border-top:1px solid lightgrey;padding-right:unset;}
+.mmc-main__filter{padding:unset;}
+.swym-wishlist-button-bar{position:absolute;color:#c6c6c6;display:flex;top:10px;right:10px;background-color:#fff;border-radius:50%;padding:10px;text-align:center;cursor:pointer;justify-content:center;}
+.filter-sidebar__header{display:flex;align-items:center;justify-content:space-between;padding:15px 15px 0;border-bottom:none;border:1px solid lightgrey;}
+.title-reset-all{color:#d9e255;font-size:14px;display:flex;align-items:center;text-transform:capitalize;margin-bottom:10px;cursor:pointer;}
+.filter-sidebar__title{font-size:18px;font-weight:700;}
+.filter-group{padding:15px;}
+.filter-group:not(:last-child){border-bottom:1px solid #e1e3e4;}
+.filter-group__heading{border:0;padding:0 0 10px;width:100%;background:none;display:flex;font-size:14px;font-family:Mulish,sans-serif;font-weight:600;color:#004778;position:relative;letter-spacing:.5px;align-items:center;text-transform:uppercase;justify-content:space-between;}
+.heading--icon{width:8px;height:8px;position:relative;border:1px solid grey;border-right:none;border-bottom:none;transform:rotate(45deg);transition:.3s ease;}
+.filter-sidebar__footer{display:none;}
+.filter-sidebar__button{width:100%;font-size:15px;padding:10px;margin:0 5px;cursor:pointer;letter-spacing:.05rem;border:1px solid #000;text-align:center;font-weight:600;}
+.filter-sidebar__button:last-child{background:#004778;color:#fff;}
+.mmc-toolbar{display:flex;margin:30px 0;align-items:center;justify-content:space-between;}
+.mmc-toolbar--title{font-family:Mulish,sans-serif;font-weight:600;color:#000;font-size:21px;}
+.mmc-sort-desktop{position:relative;cursor:pointer;display:flex;align-items:center;gap:10px;}
+.mmc-sort-header{font-size:14px;min-width:250px;padding:5px 15px;border:1px solid #e1e3e4;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='10' fill='none'%3E%3Cpath d='M1 1l8 8 8-8' stroke='%23000' stroke-width='1.25'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:94% center;background-size:15px;}
+.mmc-sort-header span{font-weight:600;}
+.mmc-sort-list{top:100%;left:69px;opacity:0;z-index:2;width:78%;font-size:14px;visibility:hidden;position:absolute;background:#ffffff;border:1px solid #e1e3e4;border-top:0;}
+.mmc-sort-list li{padding:8px 15px;}
+.mmc-sort-list li:hover{background:#f4f4f5;}
+.mmc-sort-desktop:hover .mmc-sort-list{opacity:1;visibility:visible;}
+.mmc-pagination{text-align:center;padding-bottom:50px;padding-top:30px;}
+.mmc-pagination a{margin:0 4px;font-size:12px;padding:10px 15px;border:1px solid #dddddd;display:inline-block;text-decoration:none;color:#004778;border-radius:6px;}
+.mmc-pagination span{margin:0 4px;font-size:12px;padding:10px 15px;background:#004778;border:1px solid #e2e7e8;color:#fff;border-radius:6px;display:inline-block;}
+.mmc-pagination svg{max-width:17px;vertical-align:middle;}
+.no-border{border:none!important;font-size:16px!important;}
+.mmc-sort-mobile{width:100%;position:fixed;left:0;right:0;bottom:0;padding:20px;background:#ffffff;z-index:1000;visibility:hidden;transform:translateY(100%);transition:transform .5s cubic-bezier(.645,.045,.355,1),visibility .5s cubic-bezier(.645,.045,.355,1);border-top:1px solid #dddddd;}
+.mmc-sort-mobile ul li{line-height:2.5;}
+.filter-item-name{font-size:13px;font-weight:400;color:#6f6f6f;font-family:Mulish,sans-serif;}
+.mmc-loop{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:10px;margin:20px auto auto;}
+.mmc-loop .product-card__addtocart{width:100%;background:#fff;font-size:16px;color:#004778;box-shadow:0 0 1px .3px #004778;cursor:pointer;font-weight:400;padding:5px 0;text-transform:uppercase;border:0;line-height:inherit;}
+.mmc-loop .product-card__addtocart:not(.is-disabled):hover{background:#004778;color:#fff;}
+.product-card__snack{margin:0;display:block!important;font-size:13px;line-height:15px;color:#636363;font-weight:400;font-family:Mulish,sans-serif;letter-spacing:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.mmc-loop .product-card__price{margin-bottom:6px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;}
+.mmc-loop .product-card__regularprice{color:#d81818;font-size:16px;font-weight:700;}
+.mmc-loop .product-card__compareprice{color:#8795a4;font-size:14px;margin-left:10px;text-decoration:line-through;}
+.mmc-loop .product-card__discountpercentage{font-weight:700;color:#69b900;font-size:16px;margin-left:10px;}
+.mmc-buttons{position:fixed;bottom:49px;left:0;width:100%;z-index:9;padding:10px;display:flex;align-items:center;background:#ffffff;box-shadow:0 -5px 5px #0000000a;-webkit-box-shadow:0 -5px 5px 0 rgba(0,0,0,.04);-moz-box-shadow:0 -5px 5px 0 rgba(0,0,0,.04);}
+.mmc-buttons .mmc-button-divider{display:block;}
+.mmc-button{width:100%;display:flex;align-items:center;justify-content:center;font-size:15px;padding:5px 0;font-weight:700;cursor:pointer;letter-spacing:.05rem;}
+.mmc-button svg{max-width:18px;margin-right:10px;}
+.mmc-button-divider{width:2px;height:18px;background:#888888;}
+@media screen and (max-width: 1023px){
+.mmc-main__filter{position:fixed;top:0;left:0;height:100%;background:#fff;z-index:1002;max-width:400px;visibility:hidden;transform:translateY(100%);transition:transform .5s cubic-bezier(.645,.045,.355,1),visibility .5s cubic-bezier(.645,.045,.355,1);}
+.filter-group,.filter-sidebar__header{padding:15px 0;}
+.filter-sidebar__header{padding:15px;}
+.filter-sidebar__header{display:flex;align-items:center;justify-content:space-between;}
+.filter-group:first-child{padding-top:0;}
+.filter-sidebar__content{overflow:auto;position:relative;height:calc(100vh - 145px);padding:20px;}
+.filter-sidebar__footer{display:flex;align-items:center;justify-content:space-between;padding:10px 0;max-height:70px;position:fixed;bottom:0;left:0;width:100%;margin:0;background:white;}
+.mmc-sort-desktop{display:none;}
+}
+@media screen and (max-width: 768px){
+.mmc-container{padding:0 20px;overflow:hidden;}
+.mmc-main__filter,.mmc-main__wrapper{width:100%;padding:0!important;}
+.mmc-loop{grid-template-columns:1fr 1fr;gap:15px 0px;margin:0!important;}
+.mmc-loop .product-card__price{margin-bottom:6px;margin-top:2px;}
+}
+@media screen and (max-width: 425px){
+.mmc-container{padding:0 20px;}
+}
+@media screen and (min-width: 1024px){
+.mmc-main{flex-wrap:nowrap;}
+.mmc-main__filter{max-width:250px;max-height:400px;position:sticky;overflow-y:auto;top:140px;padding-right:0;}
+.mmc-main__filter::-webkit-scrollbar{width:5px;}
+.mmc-main__filter::-webkit-scrollbar-track{box-shadow:inset 0 0 5px #dad8d8;border-radius:10px;}
+.mmc-main__filter::-webkit-scrollbar-thumb{background:rgb(187,187,187);border-radius:10px;}
+.filter-sidebar__title{margin-bottom:10px;}
+.filter-sidebar__content{border:1px solid #e1e3e4;border-top:unset;}
+.filter-sidebar__content ::-webkit-scrollbar{display:none;}
+.mmc-buttons{display:none;}
+}
+.collection-banner{position:relative;}
+.collection-banner picture img{width:100%;max-height:215px;object-fit:initial;}
+.collection-banner p{position:absolute;margin:0;padding:0;top:50%;left:72px;font-family:Mulish;font-weight:700;font-size:35px;text-transform:uppercase;color:#000;transform:translateY(-50%);visibility:hidden;}
+.collection-top-filters{margin-top:25px;margin-bottom:50px;}
+.top-filter-container{margin-right:25px;}
+.top-filter-container--image{width:152px;height:152px;padding:5px;border-radius:50%;cursor:pointer;margin:auto;}
+.top-filter-container--title{font-family:Mulish,sans-serif;font-size:16px;color:#959595;text-align:center;margin:0;line-height:20px;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis;overflow:hidden;}
+.collection-top-filters .slick-track{margin-left:0;}
+@media screen and (max-width: 768px){
+.mmc-loop{grid-template-columns:50% 50%;gap:15px 0px;margin:20px 8px auto;}
+}
+@media screen and (max-width: 425px){
+.mmc-container{padding:unset;}
+.mmc-main__wrapper{border:unset;}
+.mmc-breadcrumb{padding-left:15px;}
+.collection-banner picture img{height:100%;}
+.collection-banner p{font-size:17px;left:15px;visibility:hidden;}
+.collection-top-filters{padding-left:15px;margin-bottom:unset;}
+.mmc-toolbar{display:none;}
+.mmc-loop{grid-template-columns:1fr 1fr;gap:15px 5px;}
+.product-card{min-width:174px;margin:0 5px;}
+.product-card__addtocart{padding:10px 20px;}
+.mmc-main__filter{padding:unset!important;}
+.top-filter-container--title{font-size:14px;}
+.top-filter-container--image{height:82px;width:82px;}
+.filter-sidebar__header{padding:20px;box-shadow:1px 1px 7px #e1e3e4;}
+.filter-sidebar__content{margin:0;border:1px solid #e1e3e4;padding:20px;}
+.filter-sidebar__footer{margin:0;padding:10px;box-shadow:0 0 7px #c3c3c3;}
+.mmc-loop .product-card__info{padding:5px 11px;}
+.mmc-loop .variant-selector-prices{padding-right:8px;letter-spacing:0px;}
+.mmc-loop .variant-selector-title{color:#676767;font-size:8px;margin-left:5px;letter-spacing:0px;font-weight:700;}
+.mmc-loop .varaint-sellingPrice,.mmc-loop .varaint-originalPrice{font-size:8px;white-space:nowrap;}
+.mmc-loop .variant-selector-prices{padding:15px;}
+.mmc-loop .variant-selector-value{padding:7px 9px;}
+.product-card__snack{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px;}
+.mmc-loop .product-card__addtocart{font-size:12px;padding:10px 0;}
+.mmc-loop .product-card__regularprice{color:#d81818;font-size:12px;font-weight:700;}
+.mmc-loop .product-card__compareprice{font-size:10px;margin-left:7px;}
+.mmc-loop .product-card__discountpercentage{font-size:11px;margin-left:7px;}
+.product-card__title{font-size:12px;font-family:Mulish,sans-serif;}
+.mmc-pagination{margin-top:20px;}
+}
+.filter-group__heading h3{font-size:14px;font-family:Mulish,sans-serif;font-weight:600;color:#004778;}
+@media screen and (max-width: 767px){
+.mmc-loop .product-card__quantity .product-card__selector-dropdownArrow{margin-top:10px;margin-left:-5px;margin-right:0;}
+}
+.mmc-loop .product-card__title{line-height:15px;}
+.mmc-loop .product-card__title{max-height:30px;min-height:30px;}
+.mmc-loop .product-card__info .product-card__title-container{width:100%;display:block;height:auto;line-height:15px;}
+.mmc-loop .product-card__price{line-height:18px;}
+@media screen and (max-width: 400px){
+.product-card{min-width:50%;}
+}
+}
+.coll-personalise__button{width:100%;background:#fff;font-size:16px;color:#000;box-shadow:0 0 1px .3px #004778;cursor:pointer;font-weight:400;padding:5px 0;text-transform:uppercase;border:0;line-height:inherit;display:block;text-decoration:none;background:linear-gradient(270deg,#fbc50a 23.86%,#dfb108 47.06%,#fbc50a 66.05%);}
+.coll-personalise__button{font-size:16px;padding:5px 0;}
+@media screen and (max-width: 767px){
+.coll-personalise__button{font-size:12px;padding:6px 0;}
+}
+@media screen and (max-width: 425px){
+.coll-personalise__button{font-size:11px;padding:4px 0;line-height:26px;}
+}
+.mmc-loop .coll-personalise__button{color:#013564;box-shadow:0 0 1px .3px #d9e255;background:#d9e255;font-weight:500;border:1px solid #d9e255;}
+@media screen and (max-width: 400px){
+.coll-personalise__button{font-size:9px;}
+}
+.icons-list-bottom.account-icon__list{display:none;}
+.icons-list-bottom.account-icon__list.is-active{display:block;}
+
+/*! CSS Used from: Embedded */
+.swym-add-to-wishlist-view-product:after{color:#C6C6C6!important;}
+.swym-added.swym-add-to-wishlist-view-product:after{color:#ff000b!important;}
+/*! CSS Used from: Embedded */
+.swym-wishlist-button-bar{background-color:#013564!important;}
+/*! CSS Used keyframes */
+@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);}}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+@-webkit-keyframes spin{0%{-webkit-transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);}}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+/*--------------collection-grid-css-ends---------------- */
+/*--------------stickey-footer-css-starts---------------- */
+/*! CSS Used from: Embedded */
+.fixed_nav{position:fixed;bottom:0;width:100%;left:0;right:0;box-shadow:0 0 18px 0 rgba(0, 0, 0, 0.09);background-color:#fff;text-align:center;z-index:9;}
+.row-nav{margin:0;padding:5px 10px;display:flex;justify-content:space-around!important;align-items:center;background:#fff;}
+.fixed_nav--link{display:flex;align-items:center;flex-direction:column;position:relative;opacity:1;text-decoration:none;}
+.fixed_nav--link:hover,.fixed_nav--link:focus{color:white;}
+.fixed_nav_mobile .nav-icon_name{font-weight:700;font-size:10px;line-height:12px;color:#013564;margin-top:4px;font-weight:500;}
+.boat_icon_footer{position:relative;}
+.header-submenu-bottom{position:relative;cursor:pointer;line-height:1;}
+.fixed_nav{display:none;}
+@media only screen and (max-width: 767px){
+.fixed_nav{display:block;}
+}
+.fixed_nav{position:fixed;bottom:0;width:100%;left:0;right:0;box-shadow:0 0 18px 0 rgba(0, 0, 0, 0.09);background-color:#fff;text-align:center;z-index:9;}
+.row-nav{margin:0;padding:3px 10px;display:flex;justify-content:space-around!important;align-items:center;background:#fff;}
+.fixed_nav--link{display:flex;align-items:center;flex-direction:column;position:relative;opacity:1;text-decoration:none;}
+.fixed_nav--link:hover,.fixed_nav--link:focus{color:white;}
+.fixed_nav_mobile .nav-icon_name{font-weight:700;font-size:10px;line-height:12px;color:#013564;margin-top:4px;font-weight:500;}
+.boat_icon_footer{position:relative;}
+.header-submenu-bottom{position:relative;cursor:pointer;line-height:1;}
+.fixed_nav{display:none;}
+@media only screen and (max-width: 767px){
+.fixed_nav{display:block;}
+}
+/*--------------stickey-footer-css-ends------------------ */
+/*---------------footer-css-starts------------------ */
+/*! CSS Used from: Embedded */
+*{font-family:'Mulish',sans-serif;font-display:swap;}
+/*! CSS Used from: Embedded */
+*,*::before,*::after{box-sizing:inherit;}
+ul{padding:0;margin:0;}
+@media all{
+.footer-links__wrapper a{color:#000;padding:0;text-decoration:none;font-size:14px;line-height:16px;}
+.footer-links__wrapper .pipe{padding:2px 5px;}
+.footer-links__wrapper div{display:inline-flex;}
+.footer-links__wrapper .h2{font-weight:600;color:#000;font-size:16px;line-height:18px;margin:15px 0;}
+.footer-links__wrapper a:hover{color:red;}
+.footer-links__container{padding:50px 50px 70px;}
+.footer-links__wrapper .pipe{font-size:18px;line-height:18px;}
+@media only screen and (max-width: 767px){
+.footer-links__container{padding:20px 20px 70px;}
+.footer-links__wrapper .h2{margin:10px 0;font-size:14px;line-height:16px;}
+.footer-links__wrapper .pipe{font-size:16px;line-height:18px;}
+.footer-links__wrapper a{font-size:10px;line-height:12px;}
+}
+.footer-links__container{display:none;}
+}
+*{font-family:"Mulish", sans-serif;font-display:swap;}
+.copyright{display:flex;justify-content:center;grid-column:1 / span 5;padding:10px;color:#fff;margin-top:20px;opacity:0.7;}
+*{font-family:"Mulish", sans-serif;}
+li{list-style:none;}
+footer{padding:50px;background-color:#004778;font-size:14px;overflow:clip;padding-bottom:unset;}
+footer a,.description p{color:#c3c3c3;font-size:16px;text-decoration:none;}
+.footer-links{background-color:#004778;max-width:1386px;margin:auto;display:grid;}
+.heading{margin-bottom:16px;text-transform:uppercase;}
+.opacity{font-size:14px;font-family:Mulish, sans-serif;font-weight:300;}
+.heading,.contact-us-descriptions{color:#fff;}
+.social{padding:3px;}
+.connect-social{padding-top:15px;display:flex;}
+.description p a{color:#e3e3e3;text-decoration:underline;}
+.contact-us-descriptions div{margin-bottom:40px;}
+.contact-us-descriptions div p{padding:0;margin:0;}
+.menu-item--about-us{margin-top:40px;}
+@media screen and (max-width: 768px){
+footer{padding:50px;padding-bottom:unset;}
+.heading{font-size:15px;white-space:nowrap;}
+.description{align-self:flex-start;}
+.description p{font-size:14px;}
+.footer-links{grid-template-columns:1fr 1fr;padding:10px;grid-row-gap:50px;grid-column-gap:15px;}
+footer a{font-size:14px;}
+.footer-brand{margin-left:0;margin-bottom:20px;grid-column:1 / span 5;}
+.footer-brand img{width:174px;height:32px;}
+.menu-link--support-service{grid-column:2 / 3;}
+.menu-link--contact-us{grid-column:1 / span 2;}
+.copyright{grid-column:1 / span 2;}
+.menu-item{font-size:10px;}
+.menu-item--contact-us{font-size:10px;grid-column:1 / span 2;}
+.contact-us-descriptions{display:grid;grid-template-columns:1fr 1fr;grid-column-gap:15px;}
+.connect-social{padding:0;padding-top:15px;margin:0;display:flex;}
+.menu-link--connect-with-us{grid-column:1 / 3;display:grid;grid-template-columns:1fr 1fr;grid-column-gap:15px;}
+.menu-item--about-us{margin-top:0;}
+.copyright{margin-top:20px;display:flex;flex-direction:column;grid:1 / span 2;text-align:center;font-size:10px;}
+}
+@media screen and (max-width: 425px){
+footer{padding:20px;padding-bottom:unset;}
+.contact-us-descriptions div{margin-bottom:unset;}
+.copyright{font-size:12px;padding:unset;}
+}
+ul{margin:0;padding:0;}
+a{background-color:transparent;}
+img{border-style:none;}
+::selection{background-color:rgba(var(--color-foreground), 0.2);}
+.h2{font-family:var(--font-heading-family);font-style:var(--font-heading-style);font-weight:var(--font-heading-weight);letter-spacing:calc(var(--font-heading-scale) * 0.06rem);color:rgb(var(--color-foreground));line-height:calc(1 + 0.3 / max(1, var(--font-heading-scale)));}
+.h2{font-size:calc(var(--font-heading-scale) * 2rem);}
+@media only screen and (min-width: 750px){
+.h2{font-size:calc(var(--font-heading-scale) * 2.4rem);}
+}
+a:empty,ul:empty,div:empty,p:empty{display:none;}
+*:focus{outline:0;box-shadow:none;}
+img{pointer-events:none;}
+@media only screen and (max-width: 767px){
+.menu-link--top-categories{grid-column:1 / 3;display:grid;grid-template-columns:1fr 1fr;grid-column-gap:15px;}
+}
+.social-linkedin,.social-youtube,.social-telegram{max-width:34px;}
+.menu-link--top-categories{display:flex;justify-content:flex-start;grid-column:1 / span 5;}
+.menu-link--top-categories ul li{display:inline-flex;margin-right:10px;}
+.copyright{padding-bottom:80px;}
+@media all{
+.footer-links__wrapper a{color:#000;padding:0;text-decoration:none;font-size:14px;line-height:16px;}
+.footer-links__wrapper .pipe{padding:2px 5px;}
+.footer-links__wrapper div{display:inline-flex;}
+.footer-links__wrapper .h2{font-weight:600;color:#000;font-size:16px;line-height:18px;margin:15px 0;}
+.footer-links__wrapper a:hover{color:red;}
+.footer-links__container{padding:50px 50px 70px;}
+.footer-links__wrapper .pipe{font-size:18px;line-height:18px;}
+@media only screen and (max-width: 767px){
+.footer-links__container{padding:20px 20px 70px;}
+.footer-links__wrapper .h2{margin:10px 0;font-size:14px;line-height:16px;}
+.footer-links__wrapper .pipe{font-size:16px;line-height:18px;}
+.footer-links__wrapper a{font-size:10px;line-height:12px;}
+}
+.footer-links__container{display:none;}
+}
+.gift-popup-modal {display: none;}
+/*---------------footer-css-ends------------------ */
+
+@media (max-width:767px){
+  div#haptik-xdk-wrapper.haptik-xdk .haptik-xdk-container iframe{
+    display:none;
+  }
+}
+.product-card__addtocart.bundle-ATC {
+    display: block;
+    text-decoration: unset;
+}
+.product-card.bundle-product .product-card__selectors {
+    display: none;
+}

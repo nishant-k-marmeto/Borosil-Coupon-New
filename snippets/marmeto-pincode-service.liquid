@@ -1,0 +1,133 @@
+<script>
+/*====================Checking Pin In API===================*/
+  function pincodeFunctionality() {
+    
+    async function checkIfServiceable (pincode) {
+      const response = await fetch('https://pincode.myborosil.com/api/getpincode?pincode=' + pincode);
+      const data = await response.json();
+      var $response = data.response;
+      if($response != 'error' && $response.pre_paid == 'Y' && $response.cod == 'Y') {
+        //store the pincodevar 
+        store_Pincode = $inputValue;
+        localStorage.setItem("store_Pincode", store_Pincode);
+        
+        $('.pincode-input').hide(); 
+        $('.pincode-output').css("display", "flex");
+        $('.delivery-text').css("color", "#000000");
+        $('.delivery-text').html("Delivery available to : ");
+        $('.DeliveryPinIfavailable').html($inputValue);
+        $('.product-atc').removeClass('is-disabled');
+        $('.ProductErrorMessage').hide();
+        $('.product-atc').hover(function(){
+        $('.ProductErrorMessage').hide();
+        }, function(){
+        $('.ProductErrorMessage').hide();
+
+        });
+      }
+      else {
+        $('.pincode-input').hide(); 
+        $('.pincode-output').css("display", "flex");
+        $('.delivery-text').css("color", "red");
+        $('.delivery-text').html("We do not ship to your pincode : ");
+        $('.DeliveryPinIfavailable').html($inputValue);
+        $('.product-atc').addClass('is-disabled');
+  
+        $('.product-atc').hover(function(){
+          $('.ProductErrorMessage').show();
+          $('.ProductErrorMessage').html("Please enter correct delivery code");
+          }, function(){
+          $('.ProductErrorMessage').hide();
+        });
+        
+        localStorage.setItem("store_Pincode", null);
+       
+      }
+    }
+  
+    //Checking Pincode in Product Page  
+    var $input = $('#pincodeInput');
+    var $submitBtn = $('#pinSubmit');
+    var $inputValue, 
+        $cod, 
+        $date,
+        $fromDate,
+        $toDate,
+        $sellFromDate,
+        $sellToDate,
+        $deliverDate, 
+        $addDays,
+        $currentTime;
+
+    //Allow only number
+    $input.keydown(function(){
+      var $self = $(this);
+      var $removedText = $self.val().replace(/\D/, '');
+      $self.val($removedText);                 
+    });
+
+    //Restrict Paste
+    $input.on("paste",function(e) {
+      e.preventDefault();
+    });
+    
+    //when 6 digit number is entered
+    $input.keyup(function(){
+      if( $input.val().length == 6){
+          $('.pincode-input button').css("color", "#013564");
+      $('.pincode-button').html("Check");
+          $('.pincode-button').hover(function(){
+            $('.pincode-input button').css("color", "#013564");
+        $('.pincode-button').html("Check");
+          }, function(){
+            $('.pincode-input button').css("color", "#013564");
+        $('.pincode-button').html("Check");
+        });
+      } 
+      else{
+        $('.pincode-button').hover(function(){
+          $('.pincode-button').css("color", "red");
+          $('.pincode-button').html("Add valid pincode");
+        }, function(){
+          $('.pincode-button').css("color", "#B2B2B2");
+          $('.pincode-button').html("Check");
+        });
+      }
+    }); 
+
+    $submitBtn.on('click', function() {
+      $DeliveryText = $('.delivery-text');        
+      $inputValue = $input.val();
+
+      if($inputValue.length == 6) {
+          checkIfServiceable($inputValue);
+      }
+      else{
+        $('.pincode-button').css("color", "red");
+        $('.pincode-button').css("font-size", "12px");
+        $('.pincode-button').html("Add your pincode");
+      }
+    });
+
+    $('.DeveryPenIfavailable').on('click', function() {
+      $('.delivery-text').css("color", "#000000");
+      $('.delivery-text').html("Check Delivery");
+      $('.pincode-input').show(); 
+      $('.pincode-output').hide();
+      $('.DeliveryPinIfavailable').html(null);
+      localStorage.setItem("store_Pincode", null);
+
+      if( $input.val().length == 6){
+          $('.pincode-input button').css("color", "#013564");
+      } 
+      else{
+        $('.pincode-input button').css("color", "#B2B2B2"); 
+      }
+
+    });
+  }
+  
+  $(() => {
+    pincodeFunctionality();
+  });
+  </script>

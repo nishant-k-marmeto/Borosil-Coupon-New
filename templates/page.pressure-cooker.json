@@ -1,0 +1,66 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [
+        "h2 {margin-right: -100px; margin-left: -100px;}"
+      ],
+      "settings": {
+      }
+    },
+    "120e0147-7f04-4b7b-9668-fe390e7398da": {
+      "type": "homepage-slider-banner",
+      "blocks": {
+        "5702f084-1d9d-4e0d-a48a-a1fcb7f5656b": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Triply-Inner-lid-Pressure-Cooker-1.jpg",
+            "mobile_image": "shopify://shop_images/Triply-Inner-lid-Pressure-Cooker-01.jpg",
+            "heading": "",
+            "text": "",
+            "btn_link": "",
+            "btn_text": ""
+          }
+        },
+        "1839207a-c21d-42b7-a413-efe3ce4adf5b": {
+          "type": "Blocks",
+          "settings": {
+            "desktop_image": "shopify://shop_images/Triply-Inner-lid-Pressure-Cooker-4.jpg",
+            "mobile_image": "shopify://shop_images/Triply-Inner-lid-Pressure-Cooker-4_ecbd0a75-27c8-48da-bc3b-375b9432b852.jpg",
+            "heading": "",
+            "text": "",
+            "btn_link": "",
+            "btn_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "5702f084-1d9d-4e0d-a48a-a1fcb7f5656b",
+        "1839207a-c21d-42b7-a413-efe3ce4adf5b"
+      ],
+      "settings": {
+      }
+    },
+    "d1f83435-85f8-45dc-bdc9-12a0de601e0e": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "120e0147-7f04-4b7b-9668-fe390e7398da",
+    "d1f83435-85f8-45dc-bdc9-12a0de601e0e"
+  ]
+}

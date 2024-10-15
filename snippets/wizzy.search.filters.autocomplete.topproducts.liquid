@@ -1,0 +1,45 @@
+<div class="wizzy-autocomplete-top-products" > 
+  <p class="top-products-title">[[topProductsTitle]]</p>
+  <ul class="mmc-loop">
+    [[#products]]
+    <div class="product-card available-true wizzy-result-product wizzy-product-[[id]]
+    [[#groupId]]has-variations wizzy-group-product-[[groupId]][[/groupId]]
+  "
+  data-id="[[id]]"
+  [[#groupId]]data-groupId="[[groupId]]"
+  [[/groupId]]>
+      <a href="[[&url]]" class="product-card__link"
+        ><img
+          class="product-card__image"
+          src="[[mainImage]]?v=1677244479"
+          alt="Classic Dinner Set"
+          width="200"
+          height="200"
+          loading="eager"
+          fetchpriority="high"
+        >
+      </a>
+      <div class="product-card__info">
+        <div id="myModal" class="modal modal--{{ section.id }}">
+          <div class="modal-content">
+            <span class="close_error_Box close_error_Box--{{ section.id }}">×</span>
+            <p class="Errormessage Errormessage--{{ section.id }}"></p>
+          </div>
+        </div>
+        <a href="[[&url]]"><h2 class="product-card__title">[[&name]]</h2></a>
+        <p class="product-card__snack">[[subTitle]]</p>
+        <div class="Producttitle_full">[[&name]]</div>
+        <div class="product-card__price" data-product_id="[[id]]">
+          <span class="product-card__regularprice">[[#priceWithCurrency]][[&sellingPrice]][[/priceWithCurrency]]</span>
+          <span class="product-card__compareprice">[[#priceWithCurrency]][[&price]][[/priceWithCurrency]]</span>
+          [[#discountPercentage]]<span class="product-card__discountpercentage">[[discountPercentage]]%</span
+          >[[/discountPercentage]]
+        </div>
+      </div>
+    </div>
+
+    [[/products]]
+  </ul>
+  <!-- ending of autocomplete-top-products -->
+</div>
+<!-- ending of top-products -->

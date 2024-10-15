@@ -1,0 +1,72 @@
+{%- assign offerProductswithVariant = '' -%}
+{%- assign offerProductswithVariant = product.metafields.offer.discount_product | split: ',' -%}
+{%- assign offerProductsarray = offerProductswithVariant -%}
+{%- assign ProductItem = product -%}
+
+{% assign itemArray = '' | split: '' %}
+{% assign itemArrayVariants = '' | split: '' %}
+
+{%- for operation in offerProductsarray -%}
+  {% assign arrItem = operation | split: '|' | first | split: ',' %} 
+  {% assign wwarrItemVariant = operation | split: '|' | last  %}
+  {% assign arrItemVariant = wwarrItemVariant | split: '--' | first | split: ',' %}
+  {% assign itemArray = itemArray | concat: arrItem %}
+  {% assign itemArrayVariants = itemArrayVariants | concat: arrItemVariant %}
+{% endfor %}
+
+{% assign offerProducts = itemArray %}
+{% assign cartOfferItems = offerProducts.size %}
+
+{%- for handle in offerProducts -%}
+  {% assign product = all_products[handle] %}
+  {% for item in cart.items %}
+    {% if item.product.handle == product.handle %}
+      {% assign cartOfferItems = cartOfferItems | minus: 1 %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+
+
+
+{% if cartOfferItems > 0 %}
+  <h6 class="mm_upsell-title offerProductTitle">BUY IT WITH UPTO 50% OFF</h6>
+  <ul class="mm-upsell-list offerProductList upsell_slider">
+    {%- for handle in offerProducts -%}
+    {% assign product = all_products[handle] %}
+    {% assign skipLoop = false %}  
+    {% for item in cart.items %}
+      {% if item.product.handle == product.handle %}
+        {% assign skipLoop = true %} 
+      {% endif %}
+    {% endfor %}
+
+    {% if skipLoop %}
+      {% continue %}
+    {% endif %}
+      {%- for variant in product.variants -%}
+        {%- for item in itemArrayVariants -%}
+          {% assign temper = variant.id | times: 1 %}
+          {% assign noItem = item | times: 1 %} 
+            {% if temper == noItem %} 
+              {% if product != blank and variant.available %}
+                <li class="upsell-list-item custom-featured-collection" data-product="{{ variant.id }}">
+                    {% render 'cart-offer-product-card',
+                      product_card_product: product,
+                      ProductItem: ProductItem,
+                      variantID: variant,
+                      media_size: 'adapt',
+                      show_secondary_image: false,
+                      add_image_padding: false,
+                      show_vendor: false,
+                      show_image_outline: false,
+                      show_rating: false %}
+                    {% break %} 
+                </li>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+    {% endfor %}
+  </ul>
+{% endif %}

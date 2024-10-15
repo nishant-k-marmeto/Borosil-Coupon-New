@@ -1,0 +1,92 @@
+
+<script>
+    //onclick of checkout button
+    function triggerCheckout(compareatprice, ProductIds) {
+      let productNames = [];
+      let quantities = [];
+      let variantIDs = [];
+      let totalCheckoutPrice = 0;
+      let totalCompareAtPrice = 0;
+      let savingOnMRP = 0;
+
+      fetch('/cart.js')
+          .then(response => response.json())
+          .then(cart => {
+              cart.items.forEach(item => {
+                  productNames.push(item.title);
+                  variantIDs.push(item.variant_id);
+                  quantities.push(item.quantity);
+                  totalCompareAtPrice += ((item.final_price/100) * item.quantity);
+              });
+                totalCheckoutPrice = cart.total_price/100;
+                savingOnMRP = compareatprice - totalCheckoutPrice;
+
+
+              Shopify.analytics.publish("custom_checkout_started", {
+                  product_names: productNames,
+                  quantities: quantities,
+                  product_ids: Array.from(ProductIds.split(","),Number),
+                  variant_ids: variantIDs,
+                  total_checkout_price: totalCheckoutPrice,
+                  saving_on_mrp: savingOnMRP
+              });
+          })
+          .catch(error => console.error('Error fetching cart data:', error));
+  }
+
+    // category click event
+    let categoriesElement = document.querySelectorAll('.homepage-top-sections-inner-body');
+    categoriesElement.forEach((event)=>{
+      event.addEventListener("click", (e) => {
+        let categoryName = event.getAttribute("data-category-name");
+        Shopify.analytics.publish("promoted_categories_clicked", { category_name : categoryName });
+      })
+    })
+
+    // banner click event
+    let bannerElement = document.querySelectorAll('.homepage-slider-banner-section-inner-body');
+    bannerElement.forEach((event)=>{
+      event.addEventListener("click", (e) => {
+        let bannerName = event.getAttribute("data-banner-name");
+        let bannerUrl = event.getAttribute("data-banner-url");
+        let bannerRedirectionPage = event.getAttribute('data-banner-redirection-page');
+        let bannerType = event.getAttribute("data-banner-type");
+        Shopify.analytics.publish("banner_clicked", { banner_Name : bannerName, banner_Url : bannerUrl, banner_redirection_page : bannerRedirectionPage, banner_Type : bannerType});
+      })
+    })
+
+    // explore blocks click event
+    let exploreBlockElement = document.querySelectorAll('a.category-block__content');
+    exploreBlockElement.forEach((event)=>{
+      event.addEventListener("click", (e) => {
+        let blockName = event.getAttribute("data-banner-name");
+        let blockUrl = event.getAttribute("data-banner-url");
+        let blockRedirectionPage = event.getAttribute('data-banner-redirection-page');
+        let blockType = event.getAttribute("data-banner-type");
+        Shopify.analytics.publish("best_offers_clicked", { banner_Name : blockName, banner_Url : blockUrl, banner_redirection_page : blockRedirectionPage, banner_Type : blockType});
+      })
+    })
+
+    // View all clicked event
+    let viewAllBtnElement = document.querySelectorAll('a.collection-slider__button');
+    viewAllBtnElement.forEach((event)=>{
+      event.addEventListener("click", (e) => {
+        let categoryName = event.getAttribute("data-category-name");
+        Shopify.analytics.publish("view_all_clicked", { category_name : categoryName });
+      })
+    })
+
+    let logoutElement = document.querySelectorAll('#customer_logout_link');
+    logoutElement.forEach((event)=>{
+      event.addEventListener("click", (e) => {
+       Shopify.analytics.publish("logged_out", { logged_out : 'User Logged Out' });
+      })
+    })
+
+    let trackOrderElement = document.querySelector('.trackorder-details .track-order');
+    let trackingNumber = document.querySelector('.trackorder-details .fulfillment-number')?.innerHTML.split('</span>')[1];
+    trackOrderElement.addEventListener("click", (trackElement) => {
+      Shopify.analytics.publish("tracked_order", { tracking_id : trackingNumber });
+    });
+</script>
+

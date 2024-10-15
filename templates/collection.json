@@ -1,0 +1,165 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "product-grid": {
+      "type": "marmeto-collection-template",
+      "blocks": {
+        "7ce48c6d-2b44-4bf0-858a-0befa2219f94": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Type",
+            "filter_tags": "Plain Glasses,Whiskey Glasses,Glass with Etching,Printed Glasses,Dinner Sets,Plate Sets,Mixing Bowls,Only Cups,Cup + Saucer,Tea Sets,Coffee Flasks & Travel Mugs,Glass Mugs,Opalware Mugs,Insulated SS Kettles,Flame Proof Glass Kettles,Katori w Lid,Snack Bowl w Cover,Mixing Bowl w Lid,Double Wall Glasses,Cutlery,Breakfast & Snack Sets"
+          }
+        },
+        "tag_filters_PMLcXY": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Accessories Type",
+            "filter_tags": "Pressure Cooker Accessories,Lunchbox Accessories,Cookware Accessories,hydra spare"
+          }
+        },
+        "9d3a8d95-1f2e-4e26-a849-1db28fb719fe": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Serves",
+            "filter_tags": "Serves 2,Serves 4,Serves 6,Serves 8"
+          }
+        },
+        "81f96fdd-fbf3-47ad-b0ea-22c5ca6d129f": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Shape",
+            "filter_tags": "Round,Square,Rectangular,Assorted"
+          }
+        },
+        "7ba6dc1d-3387-445d-9807-f54160aa9906": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Features",
+            "filter_tags": "Hot & Cold,Non Insulated,Full Body Triply,Triply Base,Induction Base"
+          }
+        },
+        "17d7f384-d609-4077-a2b5-a2b80d11509f": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Color",
+            "filter_tags": "Steel,Black,White,Grey,Red,Blue,Yellow,Olive Green,Pink,Purple,Gold,Copper,Orange,Brown,Green,Maroon,Multicolor"
+          }
+        },
+        "22273c12-dfce-4d31-bfe7-7773ea903bf4": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Type",
+            "filter_tags": "Wide Mouth,Narrow Mouth"
+          }
+        },
+        "8e39eb39-4c28-4cc1-9a4c-b663e4b58011": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Bag Type",
+            "filter_tags": "Tall,Flat"
+          }
+        },
+        "555cbbab-5a20-4f0a-b6e7-5934e21bb32f": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Lid Type",
+            "filter_tags": "Airtight Screwtop Lid,Push Lid,Screwtop Lid,Sipper Lid,Toddler Bottles"
+          }
+        },
+        "bbc05ef0-b28f-43e1-9ac4-1ec0dec55beb": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Material",
+            "filter_tags": "Stainless Steel,Aluminium,Non Stick,Copper,Glass"
+          }
+        },
+        "9f6282c1-7b31-4634-bf1e-760fdc4bbf30": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Capacity",
+            "filter_tags": "Less than 0.5 L,0.5 L - 1 L,More than 1 L"
+          }
+        },
+        "58591c58-cdbb-4a43-9c89-4674819b8599": {
+          "type": "tag_filters",
+          "settings": {
+            "filter_name": "Number of Containers",
+            "filter_tags": "1 Container,2 Containers,3 Containers,4 Containers"
+          }
+        }
+      },
+      "block_order": [
+        "7ce48c6d-2b44-4bf0-858a-0befa2219f94",
+        "tag_filters_PMLcXY",
+        "9d3a8d95-1f2e-4e26-a849-1db28fb719fe",
+        "81f96fdd-fbf3-47ad-b0ea-22c5ca6d129f",
+        "7ba6dc1d-3387-445d-9807-f54160aa9906",
+        "17d7f384-d609-4077-a2b5-a2b80d11509f",
+        "22273c12-dfce-4d31-bfe7-7773ea903bf4",
+        "8e39eb39-4c28-4cc1-9a4c-b663e4b58011",
+        "555cbbab-5a20-4f0a-b6e7-5934e21bb32f",
+        "bbc05ef0-b28f-43e1-9ac4-1ec0dec55beb",
+        "9f6282c1-7b31-4634-bf1e-760fdc4bbf30",
+        "58591c58-cdbb-4a43-9c89-4674819b8599"
+      ],
+      "settings": {
+        "exclude_oos_products": false,
+        "show_oos_last": true,
+        "enable_price_filter": true,
+        "price_filter_heading": "Price",
+        "price_ranges": "0-500,501-1000,1001-2000,2001-3000,3001-5000",
+        "enable_tag_filter": true,
+        "pagination_type": "basic_pagination",
+        "product_per_page": 48
+      }
+    },
+    "166081357645bb85bc": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "New Arrivals",
+        "collection": "new-arrival",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "swipe_on_mobile": true,
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    },
+    "1656325379065ad6f4": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "title": "Featured Products",
+        "collection": "recommended",
+        "products_to_show": 4,
+        "show_view_all": true,
+        "swipe_on_mobile": true,
+        "image_ratio": "adapt",
+        "show_secondary_image": true,
+        "add_image_padding": false,
+        "show_image_outline": true,
+        "show_vendor": false,
+        "show_rating": false
+      }
+    }
+  },
+  "order": [
+    "product-grid",
+    "166081357645bb85bc",
+    "1656325379065ad6f4"
+  ]
+}

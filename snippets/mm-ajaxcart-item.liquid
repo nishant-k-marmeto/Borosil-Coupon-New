@@ -1,0 +1,81 @@
+<li class="mm-ajaxcart-item {% if item.properties.virtualBundleMainProductId %} virtual-bundle-product remove-pointer-events{% endif %}" data-line="{{ forloop.index }}" {% if item.properties.virtualBundleMainProductId %} data-main-product-id ="{{ item.properties.virtualBundleMainProductId }}" {% endif %} data-variant-id = "{{ variant_id }}">
+    <div class="mm-ajaxcart-item-image">
+      {% if item.properties.Image != blank  %}
+        <img class="" loading="lazy" srcset="{{ item.properties.Image }}" alt="{{ item.image.alt | escape }}" width="80" height="80">
+      {% else %}
+        <img class="" loading="lazy" srcset="{{ item | img_url: 'x200' }}" alt="{{ item.image.alt | escape }}"
+        width="80" height="80">
+      {% endif %}
+    </div>
+    <div class="mm-ajaxcart-item-info">
+      <div class="mm-ajaxcart-info-header">
+        <a class="mm-ajaxcart-item-name" 
+          {% unless item.type == 'Hidden Charges' %}{% unless item.properties.virtualBundleMainProductId %} href="{% if item.variant.metafields.secomapp.freegifts %}{{ item.product.url }}{% else %}{{ item.url }}{% endif %}"{% endunless %}{% endunless %}>
+          {{ item.product.title }}{% if item.variant.title != 'Default Title' %}, {{ item.variant.title | remove: '/ Default Title'| remove: 'Default Title' | remove: '/ Default' | remove: 'Default' | replace: '(Freegifts)', ''  }}{% endif %}
+        </a>
+        <div class="mm-ajaxcart-size-qty-wrapper">
+            <div class="mm-ajaxcart-content {% if item.properties.virtualBundleMainProductId && item.properties.virtualBundleMainProductImageUrl && item.properties.virtualProductBundleTitle %} hidden {% endif %}">
+              {% assign cart_inventory_quantity = item.variant.inventory_quantity %}
+              <div class="mm-ajaxcart-qty-container qty">
+                <button class="mm-qty-decrement" data-key="{{ item.key }}" data-line="{{ forloop.index }}">-</button>
+                    <input type="number" class="mm-ajaxcart-input purchase-options-variants-input" value="{{ item.quantity }}" data-key="{{ item.key }}" data-line="{{ forloop.index }}" onkeypress="return event.charCode >= 48" min="1" max="{{ cart_inventory_quantity }}">
+                    <div class="mm-ajaxcart-qty purchase-options-quantity">
+                        <div class="purchase-options-quantity-selector-value">{{ item.quantity }}</div>
+                    </div>
+                  <button class="mm-qty-increment" data-key="{{ item.key }}" data-line="{{ forloop.index }}">+</button>
+              </div>
+            </div>
+            <div class="mm-ajaxcart-item-price h4 {% if item.properties.virtualBundleMainProductId && item.properties.virtualBundleMainProductImageUrl && item.properties.virtualProductBundleTitle %} hidden {% endif %}">
+              <span class="money">{{ item.final_price | times: item.quantity | money  }}</span>
+              {% if item.variant.compare_at_price > item.original_price %}         
+                <s><span class="compare_money">{{ item.variant.compare_at_price | times: item.quantity | money }}</span></s> 
+              {% assign discount_percentage = item.variant.compare_at_price | minus: item.final_price | times: 100.0 | divided_by: item.variant.compare_at_price  %}
+                {% assign discount_percentage = discount_percentage | floor %}
+                {% if item.discount_allocations.size == 0 %}
+                  <span class="discount_percentage" >{{discount_percentage}}% OFF</span>
+                {% endif %}
+              {% endif %}
+            </div>
+        </div>
+    
+        {% if item.properties.Image != blank  %}
+            {% if item.properties.Name != '-' %}
+              <span class="ajax-customise-name">Name : {{ item.properties.Name }}</span><br>
+            {% endif %}
+            <a class="ajax-customise-message" href="{{ item.properties.Image }}">Your Design</a> <span class="ajax-customise-message">{{ item.product.metafields.custom.personalize_price }}</span>
+        {% endif %}
+
+        <!-- Glood:Dev - Bundle Discount Applied -->
+        
+        {% if item.properties._discount_code %}
+          <script type="application/json" name="rkItemProperties" style="display:none" data-rk-product-id="{{ item.product_id }}">{{ item | json }}</script>
+          <style>
+            [data-rk-product-id="{{ item.product_id }}"].rk-bundle-cart-item-info{
+              margin: 0;
+              background: #69B900 0% 0% no-repeat padding-box;
+              font: normal normal bold 9px/11px Mulish;
+              letter-spacing: 0px;
+              color: #FFFFFF;
+              padding: 5px;
+            }
+          </style>
+          <span class="rk-bundle-cart-item-info" data-rk-product-id="{{ item.product_id }}">Bundle discount applied</span>
+        {% endif %}
+
+        <!-- Glood:Dev - Bundle Discount Applied -->
+      </div>
+        <button class="mm-ajaxcart-remove-item {% if item.properties.virtualBundleMainProductId && item.properties.virtualBundleMainProductImageUrl && item.properties.virtualProductBundleTitle %} hidden {% endif %}"
+                data-line="{{ forloop.index }}"
+                data-name="{{ item.product.title }}"
+                data-id="{{ item.id }}"
+                data-price="{{ item.price | divided_by: 100 }}"{% if item.properties.added_from_cart %}	data-cart-added="true"{% endif %}>
+          <span>
+            <svg xmlns="http://www.w3.org/2000/svg" id="interface_3_" data-name="interface (3)" width="12.21" height="16.807" viewBox="0 0 12.21 16.807"><g id="Group_2660" data-name="Group 2660" transform="translate(0)"><g id="Group_2659" data-name="Group 2659"><path id="Path_26389" data-name="Path 26389" d="M81.671,1.686h-3V.548A.548.548,0,0,0,78.12,0H74.106a.548.548,0,0,0-.548.548V1.686h-3a.548.548,0,0,0-.548.548V3.92a.548.548,0,0,0,.548.548h.166l.5,11.814a.548.548,0,0,0,.548.525h8.685A.548.548,0,0,0,81,16.282l.5-11.814h.167a.548.548,0,0,0,.548-.548V2.234A.548.548,0,0,0,81.671,1.686ZM74.654,1.1h2.918v.59H74.654ZM79.93,15.711H72.3L71.82,4.468h8.587ZM81.123,3.372H71.1v-.59H81.123Z" transform="translate(-70.008)"/></g></g><g id="Group_2662" data-name="Group 2662" transform="translate(3.352 6.148)"><g id="Group_2661" data-name="Group 2661" transform="translate(0)"><path id="Path_26390" data-name="Path 26390" d="M172.687,187.3a.548.548,0,0,0-.548.548v6.785a.548.548,0,1,0,1.1,0v-6.785A.548.548,0,0,0,172.687,187.3Z" transform="translate(-172.139 -187.304)"/></g></g><g id="Group_2664" data-name="Group 2664" transform="translate(5.557 6.148)"><g id="Group_2663" data-name="Group 2663" transform="translate(0)"><path id="Path_26391" data-name="Path 26391" d="M239.85,187.3a.548.548,0,0,0-.548.548v6.785a.548.548,0,1,0,1.1,0v-6.785A.548.548,0,0,0,239.85,187.3Z" transform="translate(-239.302 -187.304)"/></g></g><g id="Group_2666" data-name="Group 2666" transform="translate(7.762 6.148)"><g id="Group_2665" data-name="Group 2665" transform="translate(0)"><path id="Path_26392" data-name="Path 26392" d="M307.013,187.3a.548.548,0,0,0-.548.548v6.785a.548.548,0,1,0,1.1,0v-6.785A.548.548,0,0,0,307.013,187.3Z" transform="translate(-306.465 -187.304)"/></g></g></svg>
+          </span>
+        </button>
+      <div class="cart-loader__outer"><div class="loader"></div></div>
+      {% if item.quantity == cart_inventory_quantity %}
+      <span class="error-quantity">Maximum available quantity is {{ cart_inventory_quantity }}</span>
+      {% endif %}
+    </div>
+</li>

@@ -1,0 +1,136 @@
+{% assign MagicToolboxShowMessage = 'Yes' %}
+{% assign MagicToolbox360IconURL = '//magictoolbox.sirv.com/shopify/icons/icon.spin.3.png' %}
+{% assign MagicToolboxDefaultView = 'Featured image' %}
+{% assign MagicToolboxMessage = 'Drag image to spin' %}
+{% assign MagicToolboxBigImageSize = 'original' %}
+{% assign MagicToolboxThumbnailImageSize = 'grande' %}
+{% assign MagicToolboxSelectorImageSize = 'small' %}
+{% assign MagicToolboxUseCustomWidth = 'No' %}
+{% assign MagicToolboxThumbnailImageWidth = '480' %}
+{% assign MagicToolboxSortImages = 'No' %}
+{% assign Magic360ImageCount = 72 %}
+
+{% for tag in product.tags %}
+  {% assign tag_ = tag | replace: 'spinimages=', '' %}
+  {% if tag_ != tag %}
+    {% assign Magic360ImageCount = tag_ | times: 1 %}
+  {% endif %}
+{% endfor %}
+
+{% for tag in product.tags %}
+  {% assign tag_ = tag | replace: 'spinrows=', '' %}
+  {% if tag_ != tag %}
+    {% assign rows = tag_ | times: 1 %}
+    <script>
+      Magic360.options.rows = {{ rows }}; Magic360.options.columns = {{ Magic360ImageCount | divided_by: rows }}
+    </script>
+  {% endif %}
+{% endfor %}
+
+{% if MagicToolboxUseCustomWidth == 'Yes' %}
+  <style type="text/css">
+    .MagicToolboxContainer .Magic360 > img { max-width: {{ MagicToolboxThumbnailImageWidth }}px !important; }
+  </style>
+{% endif %}
+
+{% assign still_images_count = product.media.size | minus: Magic360ImageCount %}
+{% if still_images_count < 0 %}
+  {% assign still_images_count = 0 %}
+{% endif %}
+
+{% assign m360Images = '' %}
+{% for image in product.media %}
+  {% if forloop.index > still_images_count %}
+    {% assign m360Images = m360Images | append: image.src | append: ';' %}
+  {% endif %}
+{% endfor %}
+
+{% if MagicToolboxSortImages == 'Yes' %}
+  {% assign m360Images = m360Images | split: ';' | sort %}
+{% else %}
+  {% assign m360Images = m360Images | split: ';' %}
+{% endif %}
+
+<!-- columns: {{ magic360_columns }}; -->
+{% assign m360ImagesOption = '' %}
+{% assign m360LargeImagesOption = '' %}
+{% for m360Image in m360Images %}
+  {% assign m360ImageUrl = m360Image | product_img_url: MagicToolboxThumbnailImageSize %}
+  {% assign m360ImagesOption = m360ImagesOption | append: ' ' | append: m360ImageUrl %}
+  {% assign m360ImageUrl = m360Image | product_img_url: MagicToolboxBigImageSize %}
+  {% assign m360LargeImagesOption = m360LargeImagesOption | append: ' ' | append: m360ImageUrl %}
+{% endfor %}
+
+{% capture spin %}
+        <a class="js-no-transition Magic360" href="#" data-magic360-options="columns: {{ Magic360ImageCount }}; images:{{ m360ImagesOption }}; large-images:{{ m360LargeImagesOption }};">
+            <img alt="{% if m360Images[0].alt != blank %}{{ m360Images[0].alt  | escape }}{% else %}{{ product.title  | escape }}{% endif %}" src="{{ m360Images[0] | product_img_url: MagicToolboxThumbnailImageSize }}" />
+        </a>
+        {% if MagicToolboxShowMessage == 'Yes' %}
+        <div class="MagicToolboxMessage">{{ MagicToolboxMessage }}</div>
+        {% endif %}
+    {% endcapture %}
+
+<div class="product-thumbnail-images">
+  {% for image in product.images %}
+    {% if forloop.index0 == 1 %}
+      <div class="product-thumbnail-image">
+        <img src="{{ MagicToolbox360IconURL }}" alt="2" loading="lazy">
+      </div>
+    {% endif %}
+    {% if forloop.index0 < still_images_count %}
+      {% unless image.alt == '360' %}
+        <div class="product-thumbnail-image">
+          <img
+            src="{{ image.src | img_url: 'master' }}"
+            alt="{% if forloop.index0 > 0 %}{{ forloop.index | plus: 1 }}{% else %}{{ forloop.index }}{% endif %}"
+            loading="lazy"
+          >
+        </div>
+      {% endunless %}
+      {% if image.alt == '360' %}
+        <div class="product-thumbnail-image">
+          <img
+            src="{{ product.metafields.custom.threesixty_image_place_holder.value }}"
+            alt="{{ forloop.index | plus: 1 }}"
+            loading="lazy"
+          >
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+<div class="product-main-images">
+  {% for image in product.images %}
+    {% if forloop.index0 == 1 %}
+      <div class="product-slick-image">
+        {{ spin }}
+      </div>
+    {% endif %}
+    {% if forloop.index0 < still_images_count %}
+      {% unless image.alt == '360' %}
+        <div class="product-slick-image">
+          <img
+            class="product-main-image"
+            src="{{ image.src | img_url: 'master' }}"
+            alt="{% if forloop.index0 > 0 %}{{ forloop.index | plus: 1 }}{% else %}{{ forloop.index }}{% endif %}"
+            loading="lazy"
+          >
+        </div>
+      {% endunless %}
+      {% if image.alt == '360' %}
+        {% render '360-product-image', image: image, product: product %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
+
+<script>
+  if (Magic360.options.rows>1) {
+    var $elm = document.querySelector('.Magic360');
+    if ($elm) {
+      var $attr = $elm.getAttribute('data-magic360-options');
+      $elm.setAttribute('data-magic360-options', $attr.replace(/columns *: *[0-9]{1,};/gmi,'') )
+    }
+  }
+</script>

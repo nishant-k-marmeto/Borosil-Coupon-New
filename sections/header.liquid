@@ -1,0 +1,445 @@
+<header>
+  <div class="header-container" id="header-container" >
+    <div class="brand-bar">
+      <div class="logo-and-hamburger">
+        <svg class="hamburger-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="16.3" viewBox="0 0 22 16.3">
+          <g id="Group_2032" data-name="Group 2032" transform="translate(-22 -18)">
+            <rect id="Rectangle_1512" data-name="Rectangle 1512" width="22" height="2.3" transform="translate(22 18)" fill="#d9e255"/>
+            <rect id="Rectangle_1513" data-name="Rectangle 1513" width="22" height="2.3" transform="translate(22 25)" fill="#d9e255"/>
+            <rect id="Rectangle_1514" data-name="Rectangle 1514" width="22" height="2.3" transform="translate(22 32)" fill="#d9e255"/>
+          </g>
+        </svg>
+        <div class="logo">
+          <a href="/">
+            {% render 'borosil-blue-logo' %}
+            {% render 'borosil-white-logo' %}
+            {% comment %} <img alt="borosil logo" class="logo-mobile" width="172" height="32" src="https://cdn.shopify.com/s/files/1/0551/8009/9722/files/Borosil-logo-blue.png?v=1693978280"> {% endcomment %}
+            {% comment %} <img alt="borosil logo" class="logo-desktop" width="172" height="32" src="//myborosil.com/cdn/shop/t/277/assets/Borosil-logo-white.png?v=181545771884648499631686559225"> {% endcomment %}
+          </a>
+        </div>
+      </div>
+      <div class="offer">
+        {% if section.settings.offer_announcement != blank %}
+        <a class="announcement" href="{{section.settings.offer_announcement_url}}">
+          <marquee>
+          {{section.settings.offer_announcement}}
+          </marquee>
+        </a>
+        {% endif %}
+        {% if section.settings.offer_announcement2 != blank %}
+        <a class="announcement" href="{{section.settings.offer_announcement2_url}}">
+          {{section.settings.offer_announcement2}}
+        </a>
+        {% endif %}
+
+        {% if section.settings.offer_announcement3 != blank %}
+        <a class="announcement" href="{{section.settings.offer_announcement3_url}}">
+          {{section.settings.offer_announcement3}}
+        </a>
+        {% endif %}
+      </div>
+      <div class="header-icons">
+        <div class="header-submenu">
+          <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" width="21.75" height="21.75" viewBox="0 0 21.75 21.75">
+            <g id="Group_2026" data-name="Group 2026" transform="translate(-14555.486 -14770.393)">
+              <g id="translation" transform="translate(14555.486 14770.393)">
+                <path id="Path_731" data-name="Path 731" d="M8.81,11.9a.319.319,0,0,0-.319-.319H1.34a.7.7,0,0,1-.7-.7V1.34a.7.7,0,0,1,.7-.7h9.535a.7.7,0,0,1,.7.7V8.491a.319.319,0,0,0,.637,0V1.34A1.342,1.342,0,0,0,10.875,0H1.34A1.342,1.342,0,0,0,0,1.34v9.535a1.342,1.342,0,0,0,1.34,1.34H8.491A.319.319,0,0,0,8.81,11.9Z" transform="translate(0 0)" fill="#fff"/>
+                <path id="Path_732" data-name="Path 732" d="M235.327,224.452H232.6a.319.319,0,1,0,0,.637h2.724a.7.7,0,0,1,.7.7v9.535a.7.7,0,0,1-.7.7h-9.535a.7.7,0,0,1-.7-.7v-9.535a.7.7,0,0,1,.7-.7h5.449a.319.319,0,0,0,0-.637h-5.449a1.342,1.342,0,0,0-1.34,1.34v9.535a1.342,1.342,0,0,0,1.34,1.34h9.535a1.342,1.342,0,0,0,1.34-1.34v-9.535A1.342,1.342,0,0,0,235.327,224.452Z" transform="translate(-214.917 -214.917)" fill="#fff"/>
+                <path id="Path_734" data-name="Path 734" d="M306.935,288.863a.456.456,0,0,0-.423-.284h0a.456.456,0,0,0-.423.284l0,.007-2.3,6.043a.319.319,0,1,0,.6.227l.5-1.3h3.258l.49,1.3a.319.319,0,0,0,.6-.225l-2.281-6.043Zm-1.818,4.341,1.394-3.66,1.381,3.66Z" transform="translate(-290.859 -276.321)" fill="#fff"/>
+                <path id="Path_735" data-name="Path 735" d="M93.114,309.107l-1.362-1.022a.319.319,0,1,0-.382.51l.6.448H90.879a2.067,2.067,0,0,1-2.065-2.065v-2.043a.319.319,0,0,0-.637,0v2.043a2.705,2.705,0,0,0,2.7,2.7h1.087l-.6.448a.319.319,0,0,0,.382.51l1.362-1.022a.319.319,0,0,0,0-.51Z" transform="translate(-84.431 -291.677)" fill="#fff"/>
+                <path id="Path_736" data-name="Path 736" d="M304.74,65.724l1.362,1.022a.319.319,0,0,0,.382-.51l-.6-.448h1.087a2.067,2.067,0,0,1,2.065,2.065V69.9a.319.319,0,0,0,.637,0V67.853a2.705,2.705,0,0,0-2.7-2.7h-1.087l.6-.448a.319.319,0,0,0-.382-.51l-1.362,1.022a.319.319,0,0,0,0,.51Z" transform="translate(-291.673 -61.404)" fill="#fff"/>
+              </g>
+              <g id="om" transform="translate(14558.479 14772.876)">
+                <path id="Path_738" data-name="Path 738" d="M96.23,123.067a1.937,1.937,0,0,0-1.634.926,2.02,2.02,0,0,0-.686-.668,1.413,1.413,0,0,0,.359-.947,1.309,1.309,0,1,0-2.615,0,.327.327,0,1,0,.654,0,.655.655,0,1,1,.654.689.345.345,0,0,0,0,.689,1.38,1.38,0,1,1-1.307,1.378.327.327,0,1,0-.654,0,1.964,1.964,0,1,0,3.922,0,1.309,1.309,0,1,1,1.307,1.378.345.345,0,0,0,0,.689,2.07,2.07,0,0,0,0-4.134Z" transform="translate(-91 -121)" fill="#fff"/>
+              </g>
+            </g>
+          </svg>
+          <script src="{{ 'p9_language.js' | asset_url }}" type="lazy-script"></script>
+          <ul class="icons-list">
+            <li>
+              <a onClick="RedurectUrl('English');">English</a>
+            </li>
+            <li>
+              <a onClick="RedurectUrl('Hindi');">Hindi</a>
+            </li>
+            <li>
+              <a onClick="RedurectUrl('kannada');">Kannada</a>
+            </li>
+            <li>
+              <a onClick="RedurectUrl('telugu');">Telugu</a>
+            </li>
+          </ul>
+        </div>
+        <div class="header-submenu">
+          <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" width="26.152" height="21.616" viewBox="0 0 26.152 21.616">
+            <path id="earphones" d="M25,56.383v-.06A11.908,11.908,0,0,0,4.655,47.9a11.838,11.838,0,0,0-3.5,8.421v.06A1.409,1.409,0,0,0,0,57.766v4.649a1.408,1.408,0,0,0,1.407,1.407h.869v.2a2,2,0,0,0,1.994,1.993h.772a1.223,1.223,0,0,0,1.221-1.221V55.386a1.223,1.223,0,0,0-1.221-1.221H4.269a2,2,0,0,0-1.994,1.994v.2H1.971v-.037a11.105,11.105,0,0,1,22.21,0v.037h-.305v-.2a2,2,0,0,0-1.994-1.994h-.772a1.223,1.223,0,0,0-1.221,1.221v9.409a1.223,1.223,0,0,0,1.221,1.221h.772a2,2,0,0,0,1.994-1.994v-.2h.869a1.408,1.408,0,0,0,1.406-1.406V57.766A1.409,1.409,0,0,0,25,56.383ZM3.093,56.159a1.178,1.178,0,0,1,1.176-1.176h.772a.4.4,0,0,1,.4.4V64.8a.4.4,0,0,1-.4.4H4.269a1.178,1.178,0,0,1-1.176-1.176ZM2.276,63H1.407a.59.59,0,0,1-.589-.589V57.766a.59.59,0,0,1,.589-.589h.869Zm20.783,1.018A1.178,1.178,0,0,1,21.883,65.2h-.772a.4.4,0,0,1-.4-.4V55.386a.4.4,0,0,1,.4-.4h.772a1.178,1.178,0,0,1,1.176,1.176Zm2.276-1.607a.59.59,0,0,1-.589.589h-.869V57.177h.869a.59.59,0,0,1,.589.589Z" transform="translate(0 -44.4)" fill="#fff"/>
+          </svg>
+          <ul class="icons-list">
+            {% for link in linklists[section.settings.support].links %}
+            <li>
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="header-submenu">
+          <a href="#swym-wishlist" class="swym-wishlist">
+            <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" width="23.582" height="21.616" viewBox="0 0 23.582 21.616">
+              <path id="heart_4_" data-name="heart (4)" d="M17.1,0a6.5,6.5,0,0,0-5.306,2.762A6.5,6.5,0,0,0,6.485,0,6.866,6.866,0,0,0,0,6.878c0,3.571,2.016,7.248,5.831,10.635a31.368,31.368,0,0,0,5.779,4.059.394.394,0,0,0,.361,0,31.372,31.372,0,0,0,5.778-4.059c3.817-3.387,5.833-7.065,5.833-10.635A6.866,6.866,0,0,0,17.1,0ZM11.791,20.776c-1.444-.8-11-6.362-11-13.9A6.06,6.06,0,0,1,6.485.786a5.71,5.71,0,0,1,4.963,2.9.409.409,0,0,0,.685,0A5.71,5.71,0,0,1,17.1.786a6.06,6.06,0,0,1,5.7,6.092c0,7.537-9.561,13.1-11,13.9Zm0,0" transform="translate(0 0)" fill="#fff"/>
+            </svg>
+          </a>
+        </div>
+        <div class="header-submenu">
+          <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 19.797 22.251">
+            <g id="user_7_" data-name="user (7)" transform="translate(0.197)">
+              <g id="Group_2027" data-name="Group 2027">
+                <g id="Group_2028" data-name="Group 2028">
+                  <path id="Path_739" data-name="Path 739" d="M12.091,9.539a5.074,5.074,0,1,0-4.81,0A9.693,9.693,0,0,0,0,18.911a.461.461,0,0,0,.923,0,8.764,8.764,0,0,1,17.527,0,.461.461,0,1,0,.922,0A9.693,9.693,0,0,0,12.091,9.539ZM5.535,5.074A4.151,4.151,0,1,1,9.686,9.225,4.156,4.156,0,0,1,5.535,5.074Z" fill="#fff"/>
+                  <path id="Path_740" data-name="Path 740" d="M0,20.616s4.744,2.857,9.348,2.857,9.071-2.857,9.071-2.857" transform="translate(0.489 -1.722)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+                </g>
+              </g>
+            </g>
+          </svg>
+          <ul class="icons-list">
+            {% if customer != blank %}
+            <p class="first-name">
+              {% if customer.first_name %}
+              Hi,{{ customer.first_name | truncate: 15}}</p>
+            {% else %}
+            Hi there!    
+            {% endif %}
+            {% else %}
+            <li class="login-button">
+              <a href="/account">Login</a>
+            </li>
+            {% endif %}
+
+            {% for link in linklists[section.settings.accounts].links %}
+              {% if link.title == "My favorites" %}
+                <li>
+                  <a href="#swym-wishlist" class="my-wishlist">{{ link.title }}</a>
+                </li>
+                {% elsif link.title == "My orders" %}
+                <li>
+                  <a href="/account#order">{{ link.title }}</a>
+                </li>
+              {% elsif link.title == "My details" %}
+                <li>
+                  <a href="/account#profile">{{ link.title }}</a>
+                </li>
+                {% else %}
+                <li>
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+            <li>
+              <a data-balance-modal="open-check-balance-modal">My Gift Card</a>
+            </li>
+            {% if customer %}
+            <li class="login-button">
+              {{ 'Log out' | customer_logout_link }}
+            </li>
+            <p style="height: 2px;padding: 0;margin-bottom: 0;"> </p>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+      <div class="mobile-search-cart-container">
+      <svg class="header-search-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 20.63 20.63">
+        <g id="noun_Search_3184147" transform="translate(0.25 0.25)">
+          <g id="_12" data-name="12" transform="translate(0 0)">
+            <path id="Path_681" data-name="Path 681" d="M23.9,22.737l-5.275-5.275a8.221,8.221,0,1,0-1.162,1.162L22.737,23.9A.824.824,0,0,0,23.9,22.737ZM7.58,16.91a6.552,6.552,0,1,1,4.661,1.947A6.594,6.594,0,0,1,7.58,16.91Z" transform="translate(-4.02 -4.02)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+          </g>
+        </g>
+      </svg>     
+        <div class="header-cart">
+          <a href="/cart" class="mm-ajaxcart-open">
+            <svg class="header-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 22.172 20.878">
+              <g id="noun_cart_1864278_1_" data-name="noun_cart_1864278 (1)" transform="translate(0.15 0.15)">
+                <g id="Group_1985" data-name="Group 1985">
+                  <path id="Path_568" data-name="Path 568" d="M23.884,9.535a2.215,2.215,0,0,0-1.726-.852H8.139L7.7,6.98A2.213,2.213,0,0,0,5.561,5.3H3.214a.714.714,0,0,0,0,1.427H5.561A.761.761,0,0,1,6.3,7.3L9.106,18.489a2.213,2.213,0,0,0,2.141,1.68h9.184a2.193,2.193,0,0,0,2.141-1.68L24.3,11.4A2.11,2.11,0,0,0,23.884,9.535Zm-.99,1.542-1.726,7.09a.761.761,0,0,1-.737.575H11.247a.761.761,0,0,1-.737-.575l-2-8.033h13.65a.763.763,0,0,1,.6.3A.722.722,0,0,1,22.894,11.077Z" transform="translate(-2.5 -5.3)" fill="#fff" stroke="#fff" stroke-width="0.3"/>
+                  <path id="Path_569" data-name="Path 569" d="M34.594,73.9a2.394,2.394,0,1,0,2.394,2.394A2.407,2.407,0,0,0,34.594,73.9Zm0,3.338a.944.944,0,1,1,.944-.944A.963.963,0,0,1,34.594,77.238Z" transform="translate(-25.364 -58.11)" fill="#fff" stroke="#fff" stroke-width="0.3"/>
+                  <path id="Path_570" data-name="Path 570" d="M68.994,73.9a2.394,2.394,0,1,0,2.394,2.394A2.407,2.407,0,0,0,68.994,73.9Zm0,3.338a.944.944,0,1,1,.944-.944A.963.963,0,0,1,68.994,77.238Z" transform="translate(-51.846 -58.11)" fill="#fff" stroke="#fff" stroke-width="0.3"/>
+                </g>
+              </g>
+            </svg>
+            <div data-cart-count-bubble>
+              <span aria-hidden="true" class="header-cart-counter {% if cart.item_count > 99 %}bigger-cart-count{% endif %}" data-cart-count>{{cart.item_count}}</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-search-container">
+      <form action="/pages/search" method="get">
+        <input class="mobile-search-input" name="st" placeholder="Search Product" type="search" autocomplete="off"/>
+        <input class="mobile-search-icon" type="image" src="{{"icon_search.svg" | asset_url}}" alt="Submit" width="16" height="16">
+      </form>                
+    </div>
+    
+    <div class="mobile-offer">
+      {% if section.settings.offer_announcement != blank %}
+      <a class="announcement" href="{{section.settings.offer_announcement_url}}">
+        <marquee>
+        {{section.settings.offer_announcement}}
+        </marquee>
+      </a>
+      {% endif %}
+      {% if section.settings.offer_announcement2 != blank %}
+      <a class="announcement" href="{{section.settings.offer_announcement2_url}}">
+        {{section.settings.offer_announcement2}}
+      </a>
+      {% endif %}
+
+      {% if section.settings.offer_announcement3 != blank %}
+      <a class="announcement" href="{{section.settings.offer_announcement3_url}}">
+        {{section.settings.offer_announcement3}}
+      </a>
+      {% endif %}
+    </div>
+    <div id="navbar-container">
+      <nav class="navbar" id="navbar">
+        <div class="nav-container">
+          <div class="navlinks">
+            <ul class="parent">
+              {% for link in linklists[section.settings.menu].links %}
+              <li class="header_navigation--item parents_items" data-submenu='{{ link.title | handle }}'>
+                <a class="header-menu-top nav-item-{{link.title | handle}} {%if forloop.last %}nav-item-deals{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="search-cart-container">
+            <div class="search-container">
+              <form action="/pages/search" method="get">
+                <input class="search-input" name="st" placeholder="Search Product" type="search" autocomplete="off"/>
+                <input id="search-icon" type="image" src="{{"icon_search.svg" | asset_url}}" alt="Submit" width="16" height="16">
+              </form>
+            </div>
+            
+            <div class="cart">
+              <a href="/cart" class="mm-ajaxcart-open">
+                <svg class="cart-icon" xmlns="http://www.w3.org/2000/svg" width="22.372" height="21.078" viewBox="0 0 22.372 21.078">
+                  <g id="noun_cart_1864278_1_" data-name="noun_cart_1864278 (1)" transform="translate(0.25 0.25)">
+                    <g id="Group_1985" data-name="Group 1985">
+                      <path id="Path_568" data-name="Path 568" d="M23.884,9.535a2.215,2.215,0,0,0-1.726-.852H8.139L7.7,6.98A2.213,2.213,0,0,0,5.561,5.3H3.214a.714.714,0,0,0,0,1.427H5.561A.761.761,0,0,1,6.3,7.3L9.106,18.489a2.213,2.213,0,0,0,2.141,1.68h9.184a2.193,2.193,0,0,0,2.141-1.68L24.3,11.4A2.11,2.11,0,0,0,23.884,9.535Zm-.99,1.542-1.726,7.09a.761.761,0,0,1-.737.575H11.247a.761.761,0,0,1-.737-.575l-2-8.033h13.65a.763.763,0,0,1,.6.3A.722.722,0,0,1,22.894,11.077Z" transform="translate(-2.5 -5.3)" fill="#013564" stroke="#013564" stroke-width="0.5"/>
+                      <path id="Path_569" data-name="Path 569" d="M34.594,73.9a2.394,2.394,0,1,0,2.394,2.394A2.407,2.407,0,0,0,34.594,73.9Zm0,3.338a.944.944,0,1,1,.944-.944A.963.963,0,0,1,34.594,77.238Z" transform="translate(-25.364 -58.11)" fill="#013564" stroke="#013564" stroke-width="0.5"/>
+                      <path id="Path_570" data-name="Path 570" d="M68.994,73.9a2.394,2.394,0,1,0,2.394,2.394A2.407,2.407,0,0,0,68.994,73.9Zm0,3.338a.944.944,0,1,1,.944-.944A.963.963,0,0,1,68.994,77.238Z" transform="translate(-51.846 -58.11)" fill="#013564" stroke="#013564" stroke-width="0.5"/>
+                    </g>
+                  </g>
+                </svg>
+                <div data-cart-count-bubble>
+                  <span aria-hidden="true" class="cart-counter {% if cart.item_count > 99 %}bigger-cart-count{% endif %}" data-cart-count>{{cart.item_count}}</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="mobile-navbar">
+      <div class="mobile-megamenu-container">
+        <div class="mobile-megamenu--header" style="display: none;">
+          <img alt="borosil logo" loading="lazy" src="{{ "Borosil-logo-white.png" | asset_url }}" width="100px" height="100px" />
+          <div class="close-button"> 
+            <svg class="close" xmlns="http://www.w3.org/2000/svg" width="20.117" height="20.117" viewBox="0 0 20.117 20.117">
+              <g id="Group_2457" data-name="Group 2457" transform="translate(-337.293 -16.308)">
+                <line id="Line_284" data-name="Line 284" x1="18.703" y2="18.703" transform="translate(338 17.016)" fill="none" stroke="#d9e255" stroke-width="2"/>
+                <line id="Line_285" data-name="Line 285" x2="18.703" y2="18.703" transform="translate(338 17.016)" fill="none" stroke="#d9e255" stroke-width="2"/>
+              </g>
+            </svg>
+          </div> 
+        </div>
+        <div class="mobile-megamenu--content">
+          <ul class="mobile-megamenu--list">
+            {% for link in linklists[section.settings.menu].links %}
+            <div class="listitem-cotainer-mm">
+              <li class="mobile-megamenu--listitem" data-link-url="{{link.url}}">
+                <a href="{{link.url}}" class="mlink nav-item-{{link.title | handle}}">{{ link.title }}</a>
+                <span class="mm-right-arrow"> </span>
+              </li> 
+            </div>
+            {% endfor %}
+            <div class="mobile-menu-header-foot">
+              <div class="mobile-menu-header-foot-1">
+                <svg class="mob-img" xmlns="http://www.w3.org/2000/svg" width="19.797" height="22.251" viewBox="0 0 19.797 22.251">
+                  <g id="user_7_" data-name="user (7)" transform="translate(0.197)">
+                    <g id="Group_2027" data-name="Group 2027">
+                      <g id="Group_2028" data-name="Group 2028">
+                        <path id="Path_739" data-name="Path 739" d="M12.091,9.539a5.074,5.074,0,1,0-4.81,0A9.693,9.693,0,0,0,0,18.911a.461.461,0,0,0,.923,0,8.764,8.764,0,0,1,17.527,0,.461.461,0,1,0,.922,0A9.693,9.693,0,0,0,12.091,9.539ZM5.535,5.074A4.151,4.151,0,1,1,9.686,9.225,4.156,4.156,0,0,1,5.535,5.074Z" fill="#fff"/>
+                        <path id="Path_740" data-name="Path 740" d="M0,20.616s4.744,2.857,9.348,2.857,9.071-2.857,9.071-2.857" transform="translate(0.489 -1.722)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"/>
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+                <ul class="mob-links">
+                  <li>
+                    <div class="heading-login-container">
+                      <a class="mob-title" href="{{ section.settings.accounts }}">My Account</a>
+                      <a class="mob-login" href="/account">
+                        {% if customer != blank %}
+                        {% if customer.first_name %}
+                        Hi,{{ customer.first_name | truncate: 15}}
+                        {% else %}
+                        Hi there!    
+                        {% endif %}
+                        {% else %}
+                        Login/SignUp
+                        {% endif %}
+                      </a>                                           
+                    </div>
+                  </li>
+                  {% for link in linklists[section.settings.accounts].links %}
+                  {% if link.title == "My favorites" %}
+                <li>
+                  <a class="mob-link" href="#swym-wishlist">{{ link.title }}</a>
+                </li>
+                {% elsif link.title == "My orders" %}
+                <li>
+                  <a  href="/account#order" class="mob-link">{{ link.title }}</a>
+                </li>
+                 {% elsif link.title == "My details" %}
+                <li>
+                  <a href="/account#profile" class="mob-link">{{ link.title }}</a>
+                </li>
+                {% else %}
+                <li>
+                  <a class="mob-link" href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+                {% endif %}
+                  {% endfor %} 
+                </ul>
+              </div>
+              <div class="mobile-menu-header-foot-2">
+                <svg class="mob-img" xmlns="http://www.w3.org/2000/svg" width="26.152" height="21.616" viewBox="0 0 26.152 21.616">
+                  <path id="earphones" d="M25,56.383v-.06A11.908,11.908,0,0,0,4.655,47.9a11.838,11.838,0,0,0-3.5,8.421v.06A1.409,1.409,0,0,0,0,57.766v4.649a1.408,1.408,0,0,0,1.407,1.407h.869v.2a2,2,0,0,0,1.994,1.993h.772a1.223,1.223,0,0,0,1.221-1.221V55.386a1.223,1.223,0,0,0-1.221-1.221H4.269a2,2,0,0,0-1.994,1.994v.2H1.971v-.037a11.105,11.105,0,0,1,22.21,0v.037h-.305v-.2a2,2,0,0,0-1.994-1.994h-.772a1.223,1.223,0,0,0-1.221,1.221v9.409a1.223,1.223,0,0,0,1.221,1.221h.772a2,2,0,0,0,1.994-1.994v-.2h.869a1.408,1.408,0,0,0,1.406-1.406V57.766A1.409,1.409,0,0,0,25,56.383ZM3.093,56.159a1.178,1.178,0,0,1,1.176-1.176h.772a.4.4,0,0,1,.4.4V64.8a.4.4,0,0,1-.4.4H4.269a1.178,1.178,0,0,1-1.176-1.176ZM2.276,63H1.407a.59.59,0,0,1-.589-.589V57.766a.59.59,0,0,1,.589-.589h.869Zm20.783,1.018A1.178,1.178,0,0,1,21.883,65.2h-.772a.4.4,0,0,1-.4-.4V55.386a.4.4,0,0,1,.4-.4h.772a1.178,1.178,0,0,1,1.176,1.176Zm2.276-1.607a.59.59,0,0,1-.589.589h-.869V57.177h.869a.59.59,0,0,1,.589.589Z" transform="translate(0 -44.4)" fill="#fff"/>
+                </svg>
+                <ul class="mob-links">
+                  <li>
+                    <a class="mob-title" href="{{ section.settings.support }}">Support</a>
+                  </li>
+                  {% for link in linklists[section.settings.support].links %}
+                  {% if link.title == "Product Registration" %}
+                <li>
+                  <a class="mob-link" href="/account#productRegistration">{{ link.title }}</a>
+                </li>
+                {% elsif link.title == "Track Order" %}
+                <li>
+                  <a  href="/account#order" class="mob-link">{{ link.title }}</a>
+                </li>
+                {% else %}
+                <li>
+                  <a class="mob-link" href="{{ link.url }}">{{ link.title }}</a>
+                </li>
+                {% endif %}
+                  {% endfor %} 
+                  <li class="mob-links--lists custom-lang__dropdown lang-parent">	
+                    <a class="mob-link">Language</a>	
+                  </li>	
+                  <div class="lang-child">	
+                    <ul class="">	
+                      <li class="mob-links--lists" onClick="RedurectUrl('English');">	
+                        <a class="mob-link" >English</a>	
+                      </li>	
+                      <li class="mob-links--lists" onClick="RedurectUrl('Hindi');">	
+                        <a class="mob-link" >Hindi</a>	
+                      </li>	
+                      <li class="mob-links--lists" onClick="RedurectUrl('kannada');">	
+                        <a class="mob-link" >Kannada</a>	
+                      </li>	
+                      <li class="mob-links--lists" onClick="RedurectUrl('telugu');">	
+                        <a class="mob-link" >Telugu</a>	
+                      </li>	
+                    </ul>	
+                  </div>
+                </ul>
+              </div>                            
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+                 
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "text",
+      "id": "offer_announcement",
+      "label": "Announcement 1",
+      "default": "Add offer announcement here",
+      "placeholder": "Announcement Offer"
+    },
+    {
+      "type": "url",
+      "id": "offer_announcement_url",
+      "label": "Announcement 1 link",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "offer_announcement2",
+      "label": "Announcement 2",
+      "placeholder": "Announcement Offer"
+    },
+    {
+      "type": "url",
+      "id": "offer_announcement2_url",
+      "label": "Announcement 2 link",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "offer_announcement3",
+      "label": "Announcement 3",
+      "placeholder": "Announcement Offer"
+    },
+    {
+      "type": "url",
+      "id": "offer_announcement3_url",
+      "label": "Announcement 3 link",
+      "default": "/"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "language_switcher",
+      "default": "main-menu",
+      "label": "Language Switcher"
+    },
+    {
+      "type": "link_list",
+      "id": "support",
+      "default": "main-menu",
+      "label": "Support"
+    },
+    {
+      "type": "link_list",
+      "id": "accounts",
+      "default": "main-menu",
+      "label": "Accounts"
+    },
+    {
+      "type": "url",
+      "id": "wishlist_url",
+      "label": "Wishlist Url",
+      "default": "/"
+    }
+  ],
+  "presets": [
+    {
+      "category": "header",
+      "name": "Header"
+    }
+  ]
+}
+{% endschema %}

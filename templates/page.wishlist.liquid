@@ -1,0 +1,28 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+{% include 'swym-custom-wishlist-page-css'%}
+
+<div class="customer-main">
+    <div class="customer account">
+        <div class="customer-left">
+            <div class="customer-menu">
+            <div class="username-boxs"><svg viewBox="0 0 21.9 19.5"><path d="M11,10.1c2.8,0,5-2.3,5-5.1c0-2.8-2.3-5-5.1-5c-2.8,0-5,2.3-5,5.1c0,0,0,0,0,0C6,7.8,8.2,10.1,11,10.1z"/><path d="M15.7,10.1L15.2,10l-0.3,0.3c-2.2,2.1-5.7,2.1-7.9,0L6.7,10l-0.4,0.1C2.8,10.3,0,13.3,0,16.8v2.7h21.9v-2.7 C21.9,13.3,19.2,10.3,15.7,10.1L15.7,10.1z"/> </svg> Hello {{ customer.first_name }}</div>
+                <ul class="menu">
+                    {% for account in linklists.account-menu.links %}
+                    <li><a href="{{ account.url }}" class="{% if account.active %}active{% endif %}">{{ account.title }}</a></li>
+                    {% endfor %}
+                </ul>      
+            </div>
+        </div>
+
+        <div class="customer-right">
+            <div class="customer-group">
+                <h2>{{ 'Wishlist' |  }}</h2>
+                <div id="wishlist-items-container"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="{{ 'swym-wishlist.js' | asset_url }}" async="async"></script>
